@@ -1,0 +1,1400 @@
+<!DOCTYPE html><html class=" js canvas history rgba localstorage"><head>
+<script type="text/javascript" async="" src="http://st.top100.ru/pack/pack.min.js"></script><script type="text/javascript" async="" src="http://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-P87FV5"></script><script src="http://montblanc.rambler.ru/mb" type="text/javascript" async=""></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-1.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"66a8d51230","applicationID":"1241738","transactionName":"J19cQUoOWA0ERBoJUA1eHVxWBVEZ","queueTime":0,"applicationTime":100,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUGU1VRGwICUFBVBAk="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+
+<title>Lenta.ru</title>
+<link href="http://icdn.lenta.ru/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+<link href="http://icdn.lenta.ru/lenta_touch.png" rel="apple-touch-icon" type="image/png">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="Новости, статьи, фотографии, видео. Семь дней в неделю, 24 часа в сутки." name="description">
+<meta content="Новости, статьи, фотографии, видео. Семь дней в неделю, 24 часа в сутки." property="og:description">
+<meta content="article" property="og:type">
+<meta content="http://icdn.lenta.ru/assets/lenta_og-437ef9916a9728236991460e693beb46.png" property="og:image">
+<meta content="Lenta.RU" property="og:site_name">
+<meta content="Лента.Ру" property="og:title">
+<meta content="http://lenta.ru" property="og:url">
+
+<link href="/rss" rel="alternate" title="RSS" type="application/rss+xml">
+
+<link href="http://icdn.lenta.ru/assets/lenta-26292c65f146e6950d326cab4b0912b5.css" media="all" rel="stylesheet" type="text/css">
+<link href="http://icdn.lenta.ru/assets/main-e7c125bfc46a0865e0d561bc9773a265.css" media="all" rel="stylesheet" type="text/css">
+
+<script>
+  var _sf_startpt=(new Date()).getTime()
+</script>
+<script src="http://icdn.lenta.ru/assets/core-98e8797f3c58204d125899217ddec652.js" type="text/javascript"></script>
+<script type="text/javascript" async="" src="http://icdn.lenta.ru/assets/shared/xtcore-4e7fa169c76bd710f48c9df99628ac30.js"></script></head>
+<body>
+<div class="g-application" id="root">
+<section class="b-banner-top-decorator js-advert"><script type="text/javascript">
+  <!--
+  if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+  if (typeof(document.referrer) != 'undefined') {
+    if (typeof(afReferrer) == 'undefined') {
+      afReferrer = escape(document.referrer);
+    }
+  } else {
+    afReferrer = '';
+  }
+  var addate = new Date();
+  
+  var scrheight = '', scrwidth = '';
+  if (self.screen) {
+  scrwidth = screen.width;
+  scrheight = screen.height;
+  } else if (self.java) {
+  var jkit = java.awt.Toolkit.getDefaultToolkit();
+  var scrsize = jkit.getScreenSize();
+  scrwidth = scrsize.width;
+  scrheight = scrsize.height;
+  }
+  
+  var dl = escape(document.location);
+  var pr1 = Math.floor(Math.random() * 1000000);
+  
+  document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+  document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+  
+  AdFox_getCodeScript(1,pr1,'http://ads.adfox.ru/171817/prepareCode?p1=bmdxv&amp;p2=ewtn&amp;pct=c&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3='+_montblanc.get('4i', '')+'&amp;puid4='+_montblanc.get('c6', '')+'&amp;puid5=&amp;puid6=MAIN&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=0&amp;puid16=&amp;puid17=&amp;puid18=0&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22='+_montblanc.get('y1', '')+'&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33='+_montblanc.get('bj', '')+'&amp;puid34=&amp;puid35=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;dl='+dl+'&amp;pr1='+pr1);
+  // -->
+</script><div id="AdFox_banner_432137" style="width: 728px; height: 90px; "><iframe id="AdFox_plug_256729681" src="http://content.adfox.ru/140424/adfox/368548/997107_1.html" width="728" height="90" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe></div><div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_432137" width="1" height="1" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe></div></section>
+
+
+<nav class="b-sidebar-menu">
+<div class="mini" id="menu-toggler">
+<div class="toggler icons-sprite icons-menu_toggler"></div>
+</div>
+<div class="origin b-menu-decorator" id="sidebar-menu">
+<div class="b-sidebar-menu__wrap">
+<ul>
+<li class="special active"><a href="/" style="color: #ffffff">Главное</a></li>
+<li class="special"><a href="/rubrics/russia/" style="color: #ffffff">Россия</a></li>
+<li class="special"><a href="/rubrics/world/" style="color: #ffffff">Мир</a></li>
+<li class="special"><a href="/rubrics/ussr/" style="color: #ffffff">Бывший СССР</a></li>
+<li class="special"><a href="/rubrics/economics/" style="color: #ffffff">Экономика</a></li>
+<li class="special"><a href="/rubrics/science/" style="color: #ffffff">Наука и техника</a></li>
+<li class="special"><a href="/rubrics/sport/" style="color: #ffffff">Спорт</a></li>
+<li class="special"><a href="/rubrics/culture/" style="color: #ffffff">Культура</a></li>
+<li class="special"><a href="/rubrics/media/" style="color: #ffffff">Интернет и СМИ</a></li>
+<li class="special"><a href="/rubrics/life/" style="color: #ffffff">Из жизни</a></li>
+<li class="delimiter">
+<div></div>
+</li>
+<li class="special"><a href="/rubrics/worldcup2014/" style="color: #ffffff">ЧМ-2014</a></li>
+<li class="special"><a href="/rubrics/real/" style="color: #ffffff">Настоящие</a></li>
+<li class="delimiter">
+<div></div>
+</li>
+<li><a href="http://motor.ru/" style="color: #959595">Мотор</a></li>
+<li><a href="http://dom.lenta.ru/" style="color: #959595">Дом</a></li>
+<li><a href="http://medportal.ru/mednovosti/" style="color: #959595">МедНовости</a></li>
+<li class="delimiter">
+<div></div>
+</li>
+<li><a href="/parts/text/" style="color: #959595">Статьи</a></li>
+<li><a href="/parts/photo/" style="color: #959595">Галереи</a></li>
+<li><a href="/rubrics/lentadoc/" style="color: #959595">Видео</a></li>
+</ul>
+<div class="b-sidebar-menu__fuck icons-sprite icons-fuck"></div>
+<div class="b-sidebar-menu__under-fuck icons-sprite icons-under_fuck"></div>
+<form action="/search" class="search" method="GET">
+<input name="query" placeholder="Поиск" type="text">
+<i class="icons-sprite icons-search" onclick="$(this).closest('form').submit()"></i>
+</form>
+</div>
+</div>
+</nav>
+
+<div class="b-up icons-sprite icons-up" id="up" title="наверх"></div>
+<section class="b-header-main">
+<div class="g-layout">
+<div class="row">
+<div class="span4">
+<div class="logo-wrap">
+<a class="b-header-main__logo icons-sprite icons-lenta_big" href="/"></a>
+<span class="date" id="date-time">8 июня 2014, воскресенье, 05:26</span>
+</div>
+</div>
+<div class="span8 b-ears"><div class="row-fluid">
+<div class="span6">
+<div class="b-ears__item b-ears__item_no-picture">
+<div class="b-ears__item__wrap">
+<div class="info">
+<div class="type"><a href="/rubrics/world/">Мир</a></div>
+<h3><a href="/articles/2014/06/04/merkel/" class="js-dh">«Серая жемчужина» Германии</a></h3>
+<div class="rightcol">Неяркая внешность и&nbsp;скромный гардероб сделали Меркель влиятельнейшей женщиной мира</div>
+</div>
+</div>
+</div>
+</div>
+<div class="span6">
+<div class="b-ears__item b-ears__item_no-picture">
+<div class="b-ears__item__wrap">
+<div class="info">
+<div class="type"><a href="/rubrics/russia/">Россия</a></div>
+<h3><a href="/articles/2014/06/05/begencu/" class="js-dh">Запутались в&nbsp;цифрах</a></h3>
+<div class="rightcol">Как в&nbsp;России считают беженцев с&nbsp;Украины </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section class="b-layout b-layout_main">
+<div class="g-layout">
+<!-- ошибка при обработке инклуда -->
+<div class="row">
+<div class="span8">
+<section class="row b-top7-for-main">
+<div class="span4">
+<div class="first-item">
+<a href="/news/2014/06/08/poroshenko/" class="js-dh"><img alt="Петр Порошенко" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/08/14/20140608145115395/top7_24bff791dd5be8635138c6463f20e464.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a><h2>
+<time class="g-time" datetime=" 14:47,  8 июня 2014" title=" 8 июня 2014">14:47</time>
+
+<a href="/news/2014/06/08/poroshenko/">Порошенко не&nbsp;приехал на&nbsp;народное вече Майдана</a>
+</h2>
+<div class="announce">
+Президент Украины Петр Порошенко не&nbsp;приехал на&nbsp;народное вече Майдана, проходящее в&nbsp;Киеве. По&nbsp;информации УНН, на&nbsp;площади Независимости в&nbsp;Киеве собрались около 500 человек. Приглашение на&nbsp;вече украинский президент, у&nbsp;которого накануне прошла инаугурация, получил от&nbsp;активистов «Евромайдана». 
+<div class="more"><a href="/news/2014/06/08/poroshenko/" class="js-dh">Читать полностью</a></div>
+</div>
+</div>
+</div>
+<div class="span4">
+<div class="items">
+<div class="item">
+<time class="g-time" datetime=" 15:59,  8 июня 2014" title=" 8 июня 2014">15:59</time>
+
+<a href="/news/2014/06/08/church/">При обстреле Славянска снаряд попал в&nbsp;церковь</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 16:21,  8 июня 2014" title=" 8 июня 2014">16:21</time>
+
+<a href="/news/2014/06/08/bomb/">Около дагестанского села обезвредили бомбу</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 15:00,  8 июня 2014" title=" 8 июня 2014">15:00</time>
+
+<a href="/news/2014/06/08/nuctalks/">Иран объявил о&nbsp;прямых переговорах с&nbsp;США</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 12:50,  8 июня 2014" title=" 8 июня 2014">12:50</time>
+
+<a href="/news/2014/06/08/sobyanin/">Собянин признал праймериз в&nbsp;Мосгордуму удавшимися</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 13:26,  8 июня 2014" title=" 8 июня 2014">13:26</time>
+
+<a href="/news/2014/06/08/gudkov/">В Москве застрелился отставной генерал</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 14:43,  8 июня 2014" title=" 8 июня 2014">14:43</time>
+
+<a href="/news/2014/06/08/cameroon/">Сборная Камеруна отказалась лететь на&nbsp;ЧМ-2014</a>
+</div>
+</div>
+</div>
+</section>
+<section class="row">
+<div class="span8">
+<div class="line"></div>
+</div>
+</section>
+
+
+<div class="row">
+<div class="span4"><section class="b-longgrid-column">
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/economics/" class="rubric">Экономика</a>
+—
+<span class="g-date"><span class="time">08:55</span> Сегодня</span>
+</div>
+<a href="/articles/2014/06/06/pension/" class="js-dh picture"><img alt="Пенсионный калькулятор " class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/16/20140606161527565/top7_325d6129702c9c31019edafc0d469bd5.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/06/pension/"><span>«Прокредитовали государство... Бесплатно»</span>
+</a></h3>
+<div class="rightcol">Финансист Александр Баранов раскрыл тайну пенсионных маневров правительства</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">11:34</span> Сегодня</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/08/four/">В ДТП в&nbsp;Воронежской области погибли четыре человека</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/life/" class="rubric">Из жизни</a>
+—
+<span class="g-date"><span class="time">21:28</span>  7 июня 2014</span>
+</div>
+<a href="/photo/2014/06/07/sokolnikibike/" class="js-dh b-badge picture"><img alt="Исторический велопробег в парке «Сокольники», Москва, 7 июня 2014 года" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/07/20/20140607203717854/top7_6c8b1d2e0b66f47dc78563d5f943e8e0.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+<i class="icon-sprite icons-badge_photo"></i>
+</a>
+<div class="titles">
+<h3>
+<a href="/photo/2014/06/07/sokolnikibike/"><span>Ударим велопробегом</span>
+</a></h3>
+<div class="rightcol">В московские «Сокольники» приехали «велосипедисты из&nbsp;прошлого»</div>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/culture/" class="rubric">Культура</a>
+—
+<span class="g-date"><span class="time">13:01</span>  6 июня 2014</span>
+</div>
+<a href="/articles/2014/06/05/intro/" class="js-dh picture"><img alt="" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/10/20140606103020895/top7_fdf1e6296307397d295f635019751a36.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/05/intro/"><span>Коротко о&nbsp;главном</span>
+</a></h3>
+<div class="rightcol">Совместный проект телеканала «Пятница», «Ленты.ру» и&nbsp;кинотеатра «Пионер» </div>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/real/" class="rubric">Настоящие</a>
+—
+<span class="g-date"><span class="time">01:04</span>  7 июня 2014</span>
+</div>
+<a href="/video/2014/06/07/chipdale/" class="js-dh b-badge picture"><img alt="" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/19/20140606192423976/top7_5120797f43634cad33a2726628ac7c5c.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+<i class="icon-sprite icons-badge_video"></i>
+</a>
+<div class="titles">
+<h3>
+<a href="/video/2014/06/07/chipdale/"><span>Ножки Чиппендейла</span>
+</a></h3>
+<div class="rightcol">Короткометражка Камилы Сафиной по&nbsp;поучительному рассказу Роальда Даля</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">17:04</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/upsetborderpatrol/">Луганские пограничники обиделись на&nbsp;руководителя Минобороны </a>
+</h3>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">02:48</span> Сегодня</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/08/tiger/">Три грузина пострадали в&nbsp;зоопарке после «общения» с&nbsp;тиграми</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/russia/" class="rubric">Россия</a>
+—
+<span class="g-date"><span class="time">18:52</span>  6 июня 2014</span>
+</div>
+<a href="/articles/2014/06/06/ingushetia/" class="js-dh picture"><img alt="" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/15/20140606155556035/top7_79a47256ee1a18c6d2824fed860b8f66.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/06/ingushetia/"><span>Большие проблемы маленькой республики </span>
+</a></h3>
+<div class="rightcol">Социально-экономическое развитие Ингушетии находится под угрозой срыва</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">00:47</span> Сегодня</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/08/soldier/">Солдат на&nbsp;инаугурации Порошенко потерял сознание из-за теплового удара</a>
+</h3>
+</div>
+</div>
+</section>
+</div>
+<div class="span4"><section class="b-longgrid-column">
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">10:43</span> Сегодня</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/08/fifa/">Чиновники ФИФА заявили о&nbsp;неготовности Бразилии к&nbsp;проведению ЧМ-2014</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/worldcup2014/" class="rubric">ЧМ-2014</a>
+—
+<span class="g-date"><span class="time">15:13</span> Сегодня</span>
+</div>
+<a href="/articles/2014/06/08/previewgroupf/" class="js-dh picture"><img alt="Лионель Месси после своего гола с Серхио Агуэро и Анхелем Ди Мария" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/08/13/20140608131750895/top7_2ca35dd32125481c62f0ad961be047a4.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/08/previewgroupf/"><span>«Альбиселесте» обетованные</span>
+</a></h3>
+<div class="rightcol">Сумасшедшая атака сборной Аргентины, дебют Боснии и&nbsp;есть ли&nbsp;шансы у&nbsp;Ирана и&nbsp;Нигерии: группа F&nbsp;на чемпионате мира-2014</div>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/ussr/" class="rubric">Бывший СССР</a>
+—
+<span class="g-date"><span class="time">08:58</span>  7 июня 2014</span>
+</div>
+<a href="/articles/2014/06/07/pravo/" class="js-dh picture"><img alt="Работа на хлопковом поле, Узбекистан" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/14/20140606142244256/top7_4cd44995fc73984b760166afe14dc75f.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/07/pravo/"><span>«Нет такого, чтобы права не&nbsp;нарушались»</span>
+</a></h3>
+<div class="rightcol">Правозащитники о&nbsp;борьбе с&nbsp;произволом в&nbsp;Средней Азии</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">22:31</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/plushenko/">Плющенко и&nbsp;Липницкая вошли в&nbsp;состав российской сборной на&nbsp;следующий сезон</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/world/" class="rubric">Мир</a>
+—
+<span class="g-date"><span class="time">10:19</span>  7 июня 2014</span>
+</div>
+<a href="/articles/2014/06/06/basharstory/" class="js-dh picture"><img alt="Сторонники сирийского режима с плакатом Башара Асада" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/18/20140606181314000/top7_4233ac3eb5d8e5454385031315b789b5.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/06/basharstory/"><span>Лев под номером 13</span>
+</a></h3>
+<div class="rightcol">Всю жизнь Башар Асад опровергает прогнозы, касающиеся его будущего</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">01:24</span> Сегодня</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/08/ronaldo/">Криштиану Роналду вернулся к&nbsp;тренировкам</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/russia/" class="rubric">Россия</a>
+—
+<span class="g-date"><span class="time">08:28</span>  6 июня 2014</span>
+</div>
+<a href="/articles/2014/06/05/prime/" class="js-dh picture"><img alt="Михаил Барщевский" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/05/19/20140605191714104/top7_5ab3627c7cb20c9b298a2526c75b5dae.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/05/prime/"><span>«Быть во&nbsp;власти — это не&nbsp;кричать на&nbsp;улице»</span>
+</a></h3>
+<div class="rightcol">Михаил Барщевский рассказал «Ленте.ру», как можно провести в&nbsp;Москве честные выборы</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">14:24</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/marijuana/">На производителя конфет с&nbsp;марихуаной подали в&nbsp;суд в&nbsp;Колорадо</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/motor/" class="icons-sprite icons-logo_motor"></a>
+<span class="g-date"><span class="time">15:33</span>  6 июня 2014</span>
+</div>
+<a href="http://motor.ru/articles/2014/06/06/advertmay/" class="js-dh picture"><img alt="" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/15/20140606153243972/top7_759a812aa1445001bb10cd824bc07bc7.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="http://motor.ru/articles/2014/06/06/advertmay/"><span>Марио и&nbsp;обезьяны</span>
+</a><a href="http://motor.ru" class="outer_link icons-sprite icons-outer_link" target="_blank"></a>
+</h3>
+<div class="rightcol">Лучшая автомобильная реклама месяца</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="span4">
+<section class="b-yellow-box">
+<div class="b-yellow-box__wrap">
+<h2 class="bordered-title">Главное за сутки</h2>
+<div class="item">
+<time class="g-time" datetime=" 12:31,  8 июня 2014" title=" 8 июня 2014">12:31</time>
+
+<a href="/news/2014/06/08/brussels/">Россия, Украина и&nbsp;ЕС проведут переговоры по&nbsp;газу 9&nbsp;июня</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 10:35,  8 июня 2014" title=" 8 июня 2014">10:35</time>
+
+<a href="/news/2014/06/08/zvezda/">В СБУ отчитались о&nbsp;состоянии задержанных журналистов «Звезды»</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 10:06,  8 июня 2014" title=" 8 июня 2014">10:06</time>
+
+<a href="/news/2014/06/08/barnaul/">В пригороде Барнаула прорвало дамбу</a>
+</div>
+<div class="item">
+<time class="g-time" datetime=" 08:45,  8 июня 2014" title=" 8 июня 2014">08:45</time>
+
+<a href="/news/2014/06/08/primaries/">В столице начались праймериз в&nbsp;Мосгордуму</a>
+</div>
+</div>
+</section>
+
+<div class="b-banner-sidebar-decorator js-advert" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "><script type="text/javascript">
+  <!--
+  if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+  if (typeof(document.referrer) != 'undefined') {
+    if (typeof(afReferrer) == 'undefined') {
+      afReferrer = escape(document.referrer);
+    }
+  } else {
+    afReferrer = '';
+  }
+  var addate = new Date();
+  
+  var scrheight = '', scrwidth = '';
+  if (self.screen) {
+  scrwidth = screen.width;
+  scrheight = screen.height;
+  } else if (self.java) {
+  var jkit = java.awt.Toolkit.getDefaultToolkit();
+  var scrsize = jkit.getScreenSize();
+  scrwidth = scrsize.width;
+  scrheight = scrsize.height;
+  }
+  
+  var dl = escape(document.location);
+  var pr1 = Math.floor(Math.random() * 1000000);
+  
+  document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+  document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+  
+  AdFox_getCodeScript(1,pr1,'http://ads.adfox.ru/171817/prepareCode?p1=bluqt&amp;p2=emhk&amp;pct=c&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3='+_montblanc.get('4i', '')+'&amp;puid4='+_montblanc.get('c6', '')+'&amp;puid5=&amp;puid6=MAIN&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=0&amp;puid16=&amp;puid17=&amp;puid18=0&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22='+_montblanc.get('y1', '')+'&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33='+_montblanc.get('bj', '')+'&amp;puid34=&amp;puid35=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;dl='+dl+'&amp;pr1='+pr1);
+  // -->
+</script><div id="AdFox_banner_737590" style="width: 300px; height: 250px; "><iframe id="AdFox_plug_60836730" src="http://content.adfox.ru/140424/adfox/368548/997104_1.html" width="300" height="250" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe><div class="adfox_content_exists"></div></div><div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_737590" width="1" height="1" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe></div></div>
+<div class="b-banner-sidebar-promo-decorator js-advert"><script type="text/javascript">
+  <!--
+  if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+  if (typeof(document.referrer) != 'undefined') {
+    if (typeof(afReferrer) == 'undefined') {
+      afReferrer = escape(document.referrer);
+    }
+  } else {
+    afReferrer = '';
+  }
+  var addate = new Date();
+  
+  var scrheight = '', scrwidth = '';
+  if (self.screen) {
+  scrwidth = screen.width;
+  scrheight = screen.height;
+  } else if (self.java) {
+  var jkit = java.awt.Toolkit.getDefaultToolkit();
+  var scrsize = jkit.getScreenSize();
+  scrwidth = scrsize.width;
+  scrheight = scrsize.height;
+  }
+  
+  var dl = escape(document.location);
+  var pr1 = Math.floor(Math.random() * 1000000);
+  
+  document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+  document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+  
+  AdFox_getCodeScript(1,pr1,'http://ads.adfox.ru/171817/prepareCode?p1=bmdxz&amp;p2=ewtr&amp;pct=a&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3='+_montblanc.get('4i', '')+'&amp;puid4='+_montblanc.get('c6', '')+'&amp;puid5=&amp;puid6=MAIN&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=0&amp;puid16=&amp;puid17=&amp;puid18=0&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22='+_montblanc.get('y1', '')+'&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33='+_montblanc.get('bj', '')+'&amp;puid34=&amp;puid35=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;dl='+dl+'&amp;pr1='+pr1);
+  // -->
+</script><div id="AdFox_banner_586650"><div id="AdFox_tracking_1593926876" width="0px" height="0px" style="z-index:12345678; position:absolute;"><img src="https://content.adfox.ru/131210/adfox/314634/nobanner.gif" border="0" width="0" height="0"></div></div><div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_586650" width="1" height="1" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe></div></div>
+<div class="b-banner-sidebar-extra-decorator js-advert"><script type="text/javascript">
+  <!--
+  if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+  if (typeof(document.referrer) != 'undefined') {
+    if (typeof(afReferrer) == 'undefined') {
+      afReferrer = escape(document.referrer);
+    }
+  } else {
+    afReferrer = '';
+  }
+  var addate = new Date();
+  
+  var scrheight = '', scrwidth = '';
+  if (self.screen) {
+  scrwidth = screen.width;
+  scrheight = screen.height;
+  } else if (self.java) {
+  var jkit = java.awt.Toolkit.getDefaultToolkit();
+  var scrsize = jkit.getScreenSize();
+  scrwidth = scrsize.width;
+  scrheight = scrsize.height;
+  }
+  
+  var dl = escape(document.location);
+  var pr1 = Math.floor(Math.random() * 1000000);
+  
+  document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+  document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+  
+  AdFox_getCodeScript(1,pr1,'http://ads.adfox.ru/171817/prepareCode?p1=bmdxy&amp;p2=ewtq&amp;pct=a&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3='+_montblanc.get('4i', '')+'&amp;puid4='+_montblanc.get('c6', '')+'&amp;puid5=&amp;puid6=MAIN&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=0&amp;puid16=&amp;puid17=&amp;puid18=0&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22='+_montblanc.get('y1', '')+'&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33='+_montblanc.get('bj', '')+'&amp;puid34=&amp;puid35=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;dl='+dl+'&amp;pr1='+pr1);
+  // -->
+</script><div id="AdFox_banner_182377"><div id="AdFox_tracking_778265298" width="0px" height="0px" style="z-index:12345678; position:absolute;"><img src="https://content.adfox.ru/131210/adfox/314634/nobanner.gif" border="0" width="0" height="0"></div></div><div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_182377" width="1" height="1" marginwidth="0" marginheight="0" scrolling="no" frameborder="0"></iframe></div></div>
+
+
+<section class="b-longgrid-column">
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/sport/" class="rubric">Спорт</a>
+—
+<span class="g-date"><span class="time">22:29</span>  7 июня 2014</span>
+</div>
+<a href="/photo/2014/06/07/sharapovahalep/" class="js-dh b-badge picture"><img alt="Мария Шарапова в финальном матче «Ролан Гаррос», 7 июня 2014 года" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/07/21/20140607214751943/top7_1fa2ba851e171d85ab032088e83cc10d.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+<i class="icon-sprite icons-badge_photo"></i>
+</a>
+<div class="titles">
+<h3>
+<a href="/photo/2014/06/07/sharapovahalep/"><span>Королева грунта</span>
+</a></h3>
+<div class="rightcol">Вторая победа Марии Шараповой на&nbsp;«Ролан Гаррос» в&nbsp;галерее «Ленты.ру»</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">20:53</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/pusilin/">Пушилин заявил о&nbsp;политической подоплеке убийства своего помощника</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/life/" class="rubric">Из жизни</a>
+—
+<span class="g-date"><span class="time">08:54</span>  7 июня 2014</span>
+</div>
+<a href="/photo/2014/06/07/madeinchina/" class="js-dh b-badge picture"><img alt="" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/06/16/20140606163720225/top7_8643360f21319d178447ea89edec0326.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+<i class="icon-sprite icons-badge_photo"></i>
+</a>
+<div class="titles">
+<h3>
+<a href="/photo/2014/06/07/madeinchina/"><span>Мэйд ин&nbsp;Чайна</span>
+</a></h3>
+<div class="rightcol">Самодельные субмарины, робот-рикша и&nbsp;самолеты из&nbsp;подручных средств в&nbsp;галерее «Ленты.ру»</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">13:06</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/buffett/">Право на&nbsp;обед с&nbsp;Баффетом продали за&nbsp;2,17 миллиона долларов</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/economics/" class="rubric">Экономика</a>
+—
+<span class="g-date"><span class="time">10:35</span>  6 июня 2014</span>
+</div>
+<a href="/articles/2014/06/06/sanctions/" class="js-dh picture"><img alt="Подразделение General Motors в Нижнем Новгороде" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/04/15/20140604152925604/top7_ad5eccc42863b3fb74d233bbcbaa7058.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/06/sanctions/"><span>Два конца одной палки</span>
+</a></h3>
+<div class="rightcol">Бизнесмены США и&nbsp;Европы выступают против антироссийских санкций</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">15:41</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/kadyrov/">Кадырова и&nbsp;Ткачева наградили медалями «За освобождение Крыма»</a>
+</h3>
+</div>
+</div>
+<div class="article item">
+<div class="info g-date">
+<a href="/rubrics/life/" class="rubric">Из жизни</a>
+—
+<span class="g-date"><span class="time">13:46</span>  6 июня 2014</span>
+</div>
+<a href="/articles/2014/06/06/whoissediuk/" class="js-dh picture"><img alt="Виталий Седюк" class="g-picture" height="200" src="http://icdn.lenta.ru/images/2014/06/05/12/20140605121814169/top7_9c5bd7f578300572d28887baa1d95997.jpg" style="max-width: 300px; width: 300px; height: 200px;" width="300">
+</a>
+<div class="titles">
+<h3>
+<a href="/articles/2014/06/06/whoissediuk/"><span>Шутник-рецидивист</span>
+</a></h3>
+<div class="rightcol">Что общего у&nbsp;Виталия Седюка с&nbsp;Геростратом и&nbsp;пранкстерами</div>
+</div>
+</div>
+<div class="item">
+<div class="info g-date">
+<span class="g-date"><span class="time">20:02</span>  7 июня 2014</span>
+</div>
+<div class="titles">
+<h3>
+<a href="/news/2014/06/07/myanmar/">Gap решила воспользоваться дешевой рабочей силой Мьянмы</a>
+</h3>
+</div>
+</div>
+</section>
+
+</div>
+</div>
+</div>
+</section>
+
+<section class="b-tabloid">
+<div class="g-layout">
+<div class="b-tabloid__row row">
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/russia/">Россия</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/05/palata/" class="js-dh"><img alt="Алексей Леонов и Евгений Велихов (справа)" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/06/11/20140606113458846/tabloid_519815c1b7a85b433a90330d9e5dda8c.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/05/palata/" class="article js-dh">Палата №5</a>
+<div class="rightcol">Кто возглавит Общественную палату пятого созыва </div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/four/">В ДТП в&nbsp;Воронежской области погибли четыре человека</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/sobyanin/">Собянин признал праймериз в&nbsp;Мосгордуму удавшимися</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/police/">В Красногорске полицейский на&nbsp;личном автомобиле сбил ребенка</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/barnaul/">В пригороде Барнаула прорвало дамбу</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/alarm/">Путин поднял по&nbsp;тревоге железнодорожные войска</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/primaries/">В столице начались праймериз в&nbsp;Мосгордуму</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/russia/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/world/">Мир</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/06/basharstory/" class="js-dh"><img alt="Сторонники сирийского режима с плакатом Башара Асада" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/06/18/20140606181314000/tabloid_8670a5ef1834590dee3d96ca80ce45a1.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/06/basharstory/" class="article js-dh">Лев под номером 13</a>
+<div class="rightcol">Всю жизнь Башар Асад опровергает прогнозы, касающиеся его будущего</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/kurds/">Турецкие полицейские во&nbsp;время беспорядков застрелили двух курдов</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/nuctalks/">Иран объявил о&nbsp;прямых переговорах с&nbsp;США</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/israel/">Баррозу пригрозил приостановить сотрудничество ЕС&nbsp;и Израиля </a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/prince/">Скончался двоюродный брат императора Японии</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/break/">Осужденные наркодилеры сбежали из&nbsp;канадской тюрьмы на&nbsp;вертолете</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/colombia/">Колумбийские повстанцы сложили оружие на&nbsp;период выборов</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/world/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/ussr/">Бывший СССР</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/07/pravo/" class="js-dh"><img alt="Работа на хлопковом поле, Узбекистан" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/06/14/20140606142244256/tabloid_958a02cc1d3d2ce508ab9a4fbd0eb40f.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/07/pravo/" class="article js-dh">«Нет такого, чтобы права не&nbsp;нарушались»</a>
+<div class="rightcol">Правозащитники о&nbsp;борьбе с&nbsp;произволом в&nbsp;Средней Азии</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/saakashvili/">Саакашвили посоветовал Порошенко продолжить силовую операцию</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/poroshenko/">Порошенко не&nbsp;приехал на&nbsp;народное вече Майдана</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/grandpa/">Порошенко в&nbsp;один день стал президентом и&nbsp;дедом</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/fight2/">Несколько человек погибли в&nbsp;ходе атаки на&nbsp;Артемовск</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/mariupol/">Неизвестные обстреляли из&nbsp;РПГ погранчасть в&nbsp;Мариуполе</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/fight/">Украинская армия продолжила осаду Славянска и&nbsp;напала на&nbsp;Артемовск</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/ussr/">Все материалы</a>
+</div>
+</div>
+</div>
+<div class="b-tabloid__row row">
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/economics/">Экономика</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/06/sanctions/" class="js-dh"><img alt="Подразделение General Motors в Нижнем Новгороде" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/04/15/20140604152925604/tabloid_f9f8198067fe61067b15340702bb5481.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/06/sanctions/" class="article js-dh">Два конца одной палки</a>
+<div class="rightcol">Бизнесмены США и&nbsp;Европы выступают против антироссийских санкций</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/myanmar/">Gap решила воспользоваться дешевой рабочей силой Мьянмы</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/brussels/">Россия, Украина и&nbsp;ЕС проведут переговоры по&nbsp;газу 9&nbsp;июня</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/libya/">Протесты на&nbsp;нефтяных месторождениях обошлись Ливии в&nbsp;30 миллиардов долларов</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/nowhisky/">Diageo открестилась от&nbsp;выпуска Johnnie Walker в&nbsp;России</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/simfi/">Аэропорт Симферополя откроется для международных перевозок</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/gkx/">Медведев ограничит рост тарифов ЖКХ на&nbsp;четыре года</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/economics/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/science/">Наука и техника</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/photo/2014/06/05/hydro/" class="js-dh"><img alt="ГОА «Мир-1»" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/05/15/20140605154001350/tabloid_5806ed3129c591e589b90bdd7556e9b3.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/photo/2014/06/05/hydro/" class="article js-dh">Не только в&nbsp;космос</a>
+<div class="rightcol">«Лента.ру» собрала галерею наиболее известных батискафов</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/3dtablet/">Google анонсировала планшет для создания 3D-моделей пространства</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/knopka/">ФРИИ вложил 45&nbsp;миллионов рублей в&nbsp;проект«Кнопка жизни»</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/landau/">Астрономы нашли кандидата в&nbsp;объекты Ландау-Торна-Житков</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/f16/">Ирак получил первый истребитель F-16IQ</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/05/tetris/">Многопользовательский «Тетрис» представят на&nbsp;игровой выставке E3</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/mars/">Ученые предрекли провал экспедиции на&nbsp;Марс</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/science/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/sport/">Спорт</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/photo/2014/06/07/sharapovahalep/" class="js-dh"><img alt="Мария Шарапова в финальном матче «Ролан Гаррос», 7 июня 2014 года" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/07/21/20140607214751943/tabloid_86d69748180ee1f712b8d29e81ab8eca.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/photo/2014/06/07/sharapovahalep/" class="article js-dh">Королева грунта</a>
+<div class="rightcol">Вторая победа Марии Шараповой на&nbsp;«Ролан Гаррос» в&nbsp;галерее «Ленты.ру»</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/ronaldo/">Криштиану Роналду вернулся к&nbsp;тренировкам</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/abramovich/">СМИ сообщили о&nbsp;готовности Абрамовича купить испанский футбольный клуб</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/plushenko/">Плющенко и&nbsp;Липницкая вошли в&nbsp;состав российской сборной на&nbsp;следующий сезон</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/schumacher/">Сообщение о&nbsp;смерти Шумахера оказалось «уткой»</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/blatt/">Бывший тренер сборной России получил работу в&nbsp;НБА</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/sharapova/">Шарапова во&nbsp;второй раз в&nbsp;карьере выиграла «Ролан Гаррос»</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/sport/">Все материалы</a>
+</div>
+</div>
+</div>
+<div class="b-tabloid__row row">
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/culture/">Культура</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/05/tetris/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/05/14/20140605141909531/tabloid_bf05b73e45a52ef3e16da81a538c1cc7.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/05/tetris/" class="article js-dh">Тетрамания</a>
+<div class="rightcol">30 лет назад советский программист Алексей Пажитнов изобрел «Тетрис»</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/archprize/"> Россия получила специальный приз на&nbsp;Венецианской архитектурной биеннале</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/churchill/">В Голливуде придумали покушение советского разведчика на&nbsp;Черчилля</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/game_of_thrones/">Автор «Игры престолов» пообещал «ужасную смерть» благотворителям</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/05/spoiler/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/05/17/20140605170556681/tabloid_9a556235d3eecd69311422528700cfe5.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/05/spoiler/" class="article js-dh">Пятничный спойлер</a>
+<div class="rightcol"> «Лента.ру» уже знает, что вы&nbsp;посмотрите на&nbsp;выходных</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/arhbiennale/">В Венеции открылся павильон Москвы</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/05/pushkin/">В Вашингтоне установили бюст Пушкина</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/culture/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/media/">Интернет и СМИ</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/06/gosuslugi/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/06/13/20140606130925026/tabloid_4aed71dc082ab5526ebe2bedcc9e641a.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/06/gosuslugi/" class="article js-dh">Вперед в&nbsp;прошлое</a>
+<div class="rightcol">Внедрение электронных госуслуг начнется заново, несмотря на&nbsp;уже потраченные два миллиарда</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/zvezda/">В СБУ отчитались о&nbsp;состоянии задержанных журналистов «Звезды»</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/secret/">Соцсеть Secret будет интегрирована с&nbsp;«ВКонтакте» в&nbsp;течение недели</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/putnik/">В ЖЖ&nbsp;заблокирован блогер Putnik1 после призыва к&nbsp;сбору денег в&nbsp;помощь Донбассу</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/05/ucp/">UCP назвал иск Перекопского к&nbsp;«ВКонтакте» его личным делом</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/05/vkontakte/">Сына главы ВГТРК выдвинули на&nbsp;пост гендиректора «ВКонтакте»</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/05/rain/">«Дождь», Slon и&nbsp;«Большой город» в&nbsp;составе единого холдинга выйдут на&nbsp;IPO</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/media/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/life/">Из жизни</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/photo/2014/06/07/sokolnikibike/" class="js-dh"><img alt="Исторический велопробег в парке «Сокольники», Москва, 7 июня 2014 года" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/07/20/20140607203717854/tabloid_688e24ed8fceaf4c4255603c338b1742.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/photo/2014/06/07/sokolnikibike/" class="article js-dh">Ударим велопробегом</a>
+<div class="rightcol">В московские «Сокольники» приехали «велосипедисты из&nbsp;прошлого»</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/tiger/">Три грузина пострадали в&nbsp;зоопарке после «общения» с&nbsp;тиграми</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/denial/">Полицейского в&nbsp;Солт-Лейк-Сити отправили в&nbsp;отпуск за&nbsp;отказ работать на&nbsp;гей-параде</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/banderas/">Мелани Гриффит подала на&nbsp;развод с&nbsp;Антонио Бандерасом</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/soldier/">Солдат на&nbsp;инаугурации Порошенко потерял сознание из-за теплового удара</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/06/revenge/">Жительница Забайкалья спалила стог сена из&nbsp;мести за&nbsp;ссору в&nbsp;соцсети</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/photo/2014/06/07/madeinchina/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/06/16/20140606163720225/tabloid_3826d3f3539fbac6af6d5b80e9d5b48a.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/photo/2014/06/07/madeinchina/" class="article js-dh">Мэйд ин&nbsp;Чайна</a>
+<div class="rightcol">Самодельные субмарины, робот-рикша и&nbsp;самолеты из&nbsp;подручных средств в&nbsp;галерее «Ленты.ру»</div>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/life/">Все материалы</a>
+</div>
+</div>
+</div>
+<div class="b-tabloid__row row">
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title" style="border-top-color: black">
+<a href="/rubrics/motor/" class="icons-sprite icons-logo_motor"></a>
+<a href="http://motor.ru" class="outer_link icons-sprite icons-outer_link" target="_blank"></a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/articles/2014/06/04/cherytiggo/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/04/17/20140604173619106/tabloid_2970bdcab0a6637d52096683b68001b7.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="http://motor.ru/articles/2014/06/04/cherytiggo/" class="article js-dh">Крадущийся «Тигго»</a>
+<div class="rightcol">Оцениваем попытку китайцев составить конкуренцию Renault Duster</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/news/2014/06/06/newx6/">Компания BMW представила кроссовер X6&nbsp;нового поколения</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/news/2014/06/06/corvette/">Chevrolet Corvette Z06 стал самой мощной моделью в&nbsp;истории GM</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/articles/2014/06/03/bmwx5long1/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/03/14/20140603145637608/tabloid_bfbe2ea89bf372533b913a3d1eddeba2.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="http://motor.ru/articles/2014/06/03/bmwx5long1/" class="article js-dh">Жесткий характер</a>
+<div class="rightcol">Длительный тест-драйв BMW X5&nbsp;M50d: первые впечатления</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/articles/2014/06/02/nissanterrano/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/02/16/20140602165618885/tabloid_0503f3351bd7830fd6a1768125fae743.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="http://motor.ru/articles/2014/06/02/nissanterrano/" class="article js-dh">Бой близнецов</a>
+<div class="rightcol">Пытаемся разглядеть отличия Nissan Terrano от&nbsp;Renault Duster</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/news/2014/06/06/renaults/">Renault через четыре года выпустит пять новых моделей</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://motor.ru/news/2014/06/06/test/">В США построят город для тестов автономных машин</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/motor/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title" style="border-top-color: #9a8f7c">
+<a href="/rubrics/realty/" class="icons-sprite icons-logo_dom"></a>
+<a href="http://dom.lenta.ru" class="outer_link icons-sprite icons-outer_link" target="_blank"></a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/articles/2014/06/05/arenda/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/05/15/20140605154820479/tabloid_b12efd515963edfe3cdda373638e9046.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="http://dom.lenta.ru/articles/2014/06/05/arenda/" class="article js-dh">Пустите пожить</a>
+<div class="rightcol">Как сдать московскую квартиру на&nbsp;лето</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/news/2014/06/06/croatia/">Хорватия разрешила иностранным физлицам покупать недвижимость</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/photo/2014/06/04/office/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/04/17/20140604171737232/tabloid_989831c0f004e072534830d56c638a7a.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="http://dom.lenta.ru/photo/2014/06/04/office/" class="article js-dh">Дом для работы</a>
+<div class="rightcol">Лучшие офисные интерьеры по&nbsp;версии премии Best Office Awards 2014</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/news/2014/06/05/nelikvid/">Риелторы рассказали о&nbsp;неудачливых продавцах подмосковных особняков</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/photo/2014/06/02/art/" class="js-dh"><img alt="" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/02/12/20140602125732251/tabloid_7bb303df9204fce406b861d213da243e.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="http://dom.lenta.ru/photo/2014/06/02/art/" class="article js-dh">Не только футбол</a>
+<div class="rightcol">Уличное искусство в&nbsp;Сан-Паулу</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/news/2014/06/05/restoration/">На реставрацию усадьбы Вяземских-Долгоруковых выделили более 3&nbsp;миллиардов рублей</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://dom.lenta.ru/news/2014/06/05/dre/">Доктор Дре купил поместье за&nbsp;40 миллионов долларов</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/realty/">Все материалы</a>
+</div>
+</div>
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title" style="border-top-color: #ed2123">
+<a href="/rubrics/mednovosti/" class="icons-sprite icons-logo_mednovosti"></a>
+<a href="http://medportal.ru" class="outer_link icons-sprite icons-outer_link" target="_blank"></a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/06/05/390appdiabet/">Разработано мобильное приложение для диабетиков</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/06/05/384ebola/"> Число жертв вируса Эбола в&nbsp;Гвинее возросло вдвое</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/06/05/383robot/">В России сконструируют первого отечественного робота-хирурга</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/06/04/382autism/">Аутизм связали с&nbsp;повышенным уровнем мужских гормонов во&nbsp;внутриутробный период</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/06/04/373mers/">Количество жертв нового коронавируса достигло 282 человек</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/06/03/372france/">Французам пообещали платить за&nbsp;езду на&nbsp;велосипеде</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="http://medportal.ru/mednovosti/news/2014/05/30/352porn/">Просмотр порнографии связали с&nbsp;уменьшением объема мозга</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/mednovosti/">Все материалы</a>
+</div>
+</div>
+</div>
+<div class="b-tabloid__row row">
+<div class="span4">
+<div class="b-tabloid__item">
+<h2 class="bordered-title">
+<a href="/rubrics/worldcup2014/">ЧМ-2014</a>
+</h2>
+<div class="b-tabloid__topic">
+<a href="/articles/2014/06/08/previewgroupf/" class="js-dh"><img alt="Лионель Месси после своего гола с Серхио Агуэро и Анхелем Ди Мария" class="g-picture" height="64" src="http://icdn.lenta.ru/images/2014/06/08/13/20140608131750895/tabloid_52746e0ccb5660e9bb93fd9a522d4f58.jpg" style="max-width: 96px; width: 96px; height: 64px;" width="96">
+</a><a href="/articles/2014/06/08/previewgroupf/" class="article js-dh">«Альбиселесте» обетованные</a>
+<div class="rightcol">Сумасшедшая атака сборной Аргентины, дебют Боснии и&nbsp;есть ли&nbsp;шансы у&nbsp;Ирана и&nbsp;Нигерии: группа F&nbsp;на чемпионате мира-2014</div>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/cameroon/">Сборная Камеруна отказалась лететь на&nbsp;ЧМ-2014</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/08/fifa/">Чиновники ФИФА заявили о&nbsp;неготовности Бразилии к&nbsp;проведению ЧМ-2014</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/shirokov/">Роман Широков не&nbsp;сыграет на&nbsp;чемпионате мира по&nbsp;футболу</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/semak/">Федерация футбола Алжира поставила Семака в&nbsp;состав сборной России</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/reus/">Финалист Лиги чемпионов пропустит ЧМ&nbsp;в Бразилии</a>
+</div>
+<div class="b-tabloid__topic">
+<a href="/news/2014/06/07/scolari/">Бразильцы готовы к&nbsp;негативной реакции на&nbsp;ЧМ по&nbsp;футболу</a>
+</div>
+</div>
+<div class="b-tabloid__more">
+<a href="/rubrics/worldcup2014/">Все материалы</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+<div id="root_footer"></div>
+</div>
+<footer class="b-footer" id="footer">
+<div class="g-layout">
+<!--AdFox START-->
+<!--adfox-ssp-->
+<!--Площадка: Syncer / all / syncer-->
+<!--Категория: <не задана>-->
+<!--Тип баннера: 1x1-->
+<script type="text/javascript">
+<!--
+if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+var addate = new Date();
+document.write('<iframe src="http://ads.adfox.ru/202433/getCode?p1=biozy&amp;p2=v&amp;p3=a&amp;p4=a&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pfc=a&amp;pfb=a&amp;pr=' + pr + '&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '" frameBorder="0" width="1" height="1" marginWidth="0" marginHeight="0" scrolling="no" style="border: 0px; margin: 0px; padding: 0px;"><a href="http://ads.adfox.ru/202433/goDefaultLink?p1=biozy&amp;p2=v" target="_top"><img src="http://ads.adfox.ru/202433/getDefaultImage?p1=biozy&amp;p2=v" border="0" alt=""><\/a><\/iframe>');
+//-->
+</script><iframe src="http://ads.adfox.ru/202433/getCode?p1=biozy&amp;p2=v&amp;p3=a&amp;p4=a&amp;pct=a&amp;plp=a&amp;pli=a&amp;pop=a&amp;pfc=a&amp;pfb=a&amp;pr=912837&amp;pt=b&amp;pd=8&amp;pw=0&amp;pv=5" frameborder="0" width="1" height="1" marginwidth="0" marginheight="0" scrolling="no" style="border: 0px; margin: 0px; padding: 0px;">&lt;a href="http://ads.adfox.ru/202433/goDefaultLink?p1=biozy&amp;amp;p2=v" target="_top"&gt;&lt;img src="http://ads.adfox.ru/202433/getDefaultImage?p1=biozy&amp;amp;p2=v" border="0" alt=""&gt;&lt;/a&gt;</iframe>
+<noscript>
+&lt;iframe src="http://ads.adfox.ru/202433/getCode?p1=biozy&amp;amp;p2=v&amp;amp;p3=a&amp;amp;p4=a&amp;amp;pct=a&amp;amp;plp=a&amp;amp;pli=a&amp;amp;pop=a&amp;amp;pfc=a&amp;amp;pfb=a" frameBorder="0" width="1" height="1" marginWidth="0" marginHeight="0" scrolling="no" style="border: 0px; margin: 0px; padding: 0px;"&gt;&lt;a href="http://ads.adfox.ru/202433/goDefaultLink?p1=biozy&amp;amp;p2=v" target="_top"&gt;&lt;img src="http://ads.adfox.ru/202433/getDefaultImage?p1=biozy&amp;amp;p2=v" border="0" alt=""&gt;&lt;/a&gt;&lt;/iframe&gt;
+</noscript>
+<!--AdFox END-->
+
+<script type="text/javascript">
+(function(){
+    (new Image).src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//sync.rambler.ru/emily?partner_id=begun';
+})();
+</script>
+<div class="counters">
+<span class="counter counter_top100" id="top100"><a href="http://top100.rambler.ru/home?id=80674" target="_blank"><img src="http://counter.rambler.ru/top100.scn?80674&amp;rn=44575206&amp;v=0.3&amp;bs=400x300&amp;ce=0&amp;rf&amp;en=UTF-8&amp;pt=Lenta.ru&amp;cd=32-bit&amp;sr=1680x1050&amp;la=en-US&amp;ja=0&amp;acn=Mozilla&amp;an=Netscape&amp;pl=MacIntel&amp;tz=420&amp;fv&amp;sv&amp;le=0" title="Rambler's Top100" alt="Rambler's Top100" border="0"></a></span>
+<span class="counter counter_liveinternet" id="liveinternet-counter"><a href="http://www.liveinternet.ru/click" target="_blank"><img src="http://counter.yadro.ru/hit?t11.5;r;s1680*1050*32;uhttp%3A//lenta.ru/;0.3353250694926828"></a></span>
+</div>
+<script type="text/javascript">
+<!--
+xtnv = document;   //parent.document or top.document or document
+xtsd = "http://logc278";
+xtsite = "515389";
+xtn2 = '2';        // level 2 site ID
+xtpage = "Главная страница::Главная страница::Lenta.ru"; //page name (with the use of :: to create chapters)
+xtdi = "";         //implication degree
+xt_multc = "&x1=http://lenta.ru";     //all the xi indicators (like "&x1=...&x2=....&x3=...")
+xt_an = "";        //user ID
+xt_ac = "";        //category ID
+xt_xtcpath = 'icdn.lenta.ru/assets/shared/xtcore-4e7fa169c76bd710f48c9df99628ac30.js';      //xtcore.js path location (without http://)
+//-->
+</script>
+<script type="text/javascript">
+<!--
+//do not modify below
+if (window.xtparam!=null){window.xtparam+="&ac="+xt_ac+"&an="+xt_an+xt_multc;}
+else{window.xtparam="&ac="+xt_ac+"&an="+xt_an+xt_multc;};
+(function(){
+  var at=document.createElement('script');
+  at.type='text/javascript';
+  at.async=true;
+  at.src='http://'+xt_xtcpath;
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]||document.getElementsByTagName('script')[0].parentNode).insertBefore(at,null);
+})();
+//-->
+</script>
+<noscript>
+&lt;img width="1" height="1" alt="" src="http://logc278.xiti.com/hit.xiti?s=515389&amp;s2=&amp;p=&amp;di=&amp;an=&amp;ac=" &gt;
+</noscript>
+
+<!-- Google Tag Manager -->
+<noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-P87FV5"
+height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P87FV5');</script>
+<!-- End Google Tag Manager -->
+
+<noscript>&lt;img src="http://www.tns-counter.ru/V13a****rambler_ru/ru/UTF-8/tmsec=lenta_other/" width="1" height="1" alt=""&gt;</noscript>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18447330-1']);
+  _gaq.push(['_setDomainName', '.lenta.ru']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  (function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+      try {
+        w.yaCounter4308403 = new Ya.Metrika({id:4308403,
+          webvisor:true,
+          clickmap:true,
+          trackLinks:true});
+      } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+      s = d.createElement("script"),
+      f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+      d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+  })(document, window, "yandex_metrika_callbacks");
+
+  var _top100q = _top100q || [];
+
+  _top100q.push(["setAccount", "80674"]);
+  _top100q.push(["trackPageviewByLogo", document.getElementById("top100")]);
+
+
+  (function(){
+   var top100 = document.createElement("script"); top100.type = "text/javascript";
+
+   top100.async = true;
+   top100.src = ("https:" == document.location.protocol ? "https:" : "http:") + "//st.top100.ru/pack/pack.min.js";
+   var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(top100, s);
+  })();
+
+</script>
+<noscript>&lt;div&gt;&lt;img src="//mc.yandex.ru/watch/4308403" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript>
+
+<script type="text/javascript">
+
+function catchOutboundClick(link) {
+    link.onclick = function(e){
+      e.preventDefault();
+      trackOutboundLink(link, "Outbound Links", link.hostname, (link.target === '_blank' || e.ctrlKey || e.metaKey || e.which == 2));
+    }
+}
+
+function trackOutboundLink(link, category, action, new_window) {
+  try {
+    _gaq.push(['_trackEvent', category , action]);
+  } catch(err){}
+
+  if(new_window){
+    window.open(link.href, '_blank');
+  } else {
+    document.location.href = link.href;
+  }
+}
+
+var outRe = new RegExp('^http:\/\/.+$','i');
+var inRe = new RegExp('^http:\/\/'+location.hostname.replace("www.", "")+'.+$','i');
+var links = document.getElementsByTagName("a");
+
+for (var i = 0; i < links.length; i++) {
+  var link = links[i];
+  if (outRe.test(link.href) && !inRe.test(link.href)){
+    catchOutboundClick(link);
+  }
+}
+</script>
+
+
+<div class="versions">
+<span class="group mobile">
+<a href="http://m.lenta.ru/"><span class="icons-sprite icons-iphone"></span>
+<span class="label">Мобильная версия</span>
+</a></span>
+<span class="group pda">
+<a href="http://pda.lenta.ru/"><span class="icons-sprite icons-nokia"></span>
+<span class="label">PDA-версия</span>
+</a></span>
+<span class="group orphus">
+<script src="http://icdn.lenta.ru/assets/vendors/orphus-8e34dd607b6731ff787bba431a07eda0.js" type="text/javascript"></script>
+<a class="hide" href="http://orphus.ru" id="orphus" target="_blank" title="Orphus"><img alt="Orphus" height="31" src="http://icdn.lenta.ru/assets/orphus-291ae445dd1450652e00ee30e6561aba.gif" width="88"></a>
+<a href="http://orphus.ru"><span class="icons-sprite icons-orphus"></span>
+<span>
+<strong>Нашли опечатку? <br></strong>
+Orphus: Ctrl+Enter
+</span>
+</a></span>
+</div>
+<div class="menu">
+<span class="socials">
+<a href="http://facebook.com/lenta.ru" class="icons_socials icons-sprite icons-fb" target="_blank"></a>
+<a href="http://twitter.com/lentaruofficial" class="icons_socials icons-sprite icons-twitter" target="_blank"></a>
+<a href="http://vk.com/lentaru" class="icons_socials icons-sprite icons-vk" target="_blank"></a>
+<a href="/rss" class="icons_socials icons-sprite icons-rss"></a>
+</span>
+<span class="links">
+<a href="/info/">Редакция</a>
+<a href="http://reklama.rambler.ru/sites/lenta/" target="_blank">Реклама</a>
+<a href="mailto:it@lenta-co.ru">Техподдержка</a>
+<a href="/specprojects/">Спецпроекты</a>
+</span>
+<span class="copyright">
+© 1999 ООО «Лента.Ру».
+</span>
+</div>
+
+</div>
+</footer>
+<div class="b-banner b-banner_branding" id="advert-branding" style="display: none; "><script type="text/javascript">
+  <!--
+  if (typeof(pr) == 'undefined') { var pr = Math.floor(Math.random() * 1000000); }
+  if (typeof(document.referrer) != 'undefined') {
+    if (typeof(afReferrer) == 'undefined') {
+      afReferrer = escape(document.referrer);
+    }
+  } else {
+    afReferrer = '';
+  }
+  var addate = new Date();
+  
+  var scrheight = '', scrwidth = '';
+  if (self.screen) {
+  scrwidth = screen.width;
+  scrheight = screen.height;
+  } else if (self.java) {
+  var jkit = java.awt.Toolkit.getDefaultToolkit();
+  var scrsize = jkit.getScreenSize();
+  scrwidth = scrsize.width;
+  scrheight = scrsize.height;
+  }
+  
+  var dl = escape(document.location);
+  var pr1 = Math.floor(Math.random() * 1000000);
+  
+  var w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    window_width = w.innerWidth || e.clientWidth || g.clientWidth;
+  
+  function get_cookie(name) {
+    var matches = document.cookie.match(new RegExp(
+      "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }  
+  
+  if ( window_width > 1600 && 1 != get_cookie('mega_not_show') ) {
+    document.write('<div id="AdFox_banner_'+pr1+'"><\/div>');
+    document.write('<div style="visibility:hidden; position:absolute;"><iframe id="AdFox_iframe_'+pr1+'" width=1 height=1 marginwidth=0 marginheight=0 scrolling=no frameborder=0><\/iframe><\/div>');
+  
+    AdFox_getCodeScript(1,pr1,'http://ads.adfox.ru/171817/prepareCode?p1=bmdxx&amp;p2=ewtp&amp;pct=c&amp;pfc=a&amp;pfb=a&amp;pr=' + pr +'&amp;pt=b&amp;pd=' + addate.getDate() + '&amp;pw=' + addate.getDay() + '&amp;pv=' + addate.getHours() + '&amp;prr=' + afReferrer + '&amp;puid1=&amp;puid2=&amp;puid3='+_montblanc.get('4i', '')+'&amp;puid4='+_montblanc.get('c6', '')+'&amp;puid5=&amp;puid6=MAIN&amp;puid7=&amp;puid8=&amp;puid9=&amp;puid10=&amp;puid11=&amp;puid12=&amp;puid13=&amp;puid14=&amp;puid15=0&amp;puid16=&amp;puid17=&amp;puid18=0&amp;puid19=&amp;puid20=&amp;puid21=&amp;puid22='+_montblanc.get('y1', '')+'&amp;puid23=&amp;puid24=&amp;puid25=&amp;puid26=&amp;puid27=&amp;puid28=&amp;puid29=&amp;puid30=&amp;puid31=&amp;puid32=&amp;puid33='+_montblanc.get('bj', '')+'&amp;puid34=&amp;puid35=&amp;pdw=' + scrwidth + '&amp;pdh=' + scrheight + '&amp;dl='+dl+'&amp;pr1='+pr1);
+    // -->
+  }
+</script></div>
+<div class="b-editor-panel" id="editor-panel">
+</div>
+<script src="http://icdn.lenta.ru/assets/lenta-ab980c8cb30df2b26095f6ea57941897.js" type="text/javascript"></script>
+<script>
+  window.Lenta = {"kind":"main","type":false,"title_prefix":false,"bloc_slug":false,"tag_slug":false,"part_slug":false,"counter":true,"b310":false,"xt_subrubric":"\u0413\u043b\u0430\u0432\u043d\u0430\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0430"};
+</script>
+
+
+
+
+<script src="http://js-agent.newrelic.com/nr-411.min.js"></script><script type="text/javascript" src="http://beacon-1.newrelic.com/1/66a8d51230?a=1241738&amp;ap=100&amp;fe=3535&amp;dc=1541&amp;v=411.b2946c1&amp;to=J19cQUoOWA0ERBoJUA1eHVxWBVEZ&amp;f=%5B%22err%22,%22xhr%22%5D&amp;jsonp=NREUM.setToken"></script></body></html>

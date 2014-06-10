@@ -1,0 +1,3257 @@
+<!DOCTYPE html><html class="site_index  fontface js" lang="en"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# kickstarter: http://ogp.me/ns/fb/kickstarter#"><style type="text/css"></style>
+<script type="text/javascript" async="" src="https://dtlilztwypawv.cloudfront.net/s.js"></script><script type="text/javascript" async="" src="https://cdn.mxpnl.com/libs/mixpanel-2.2.min.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-5.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"b04b883ad2","applicationID":"11086","transactionName":"cFteRUULX1wHFhtLC0dRH1hZAFZI","queueTime":12,"applicationTime":2485,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-411.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"Vw4BVEVSCQMIUg=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script><script>
+  //<![CDATA[
+    docElement = this.document.documentElement;
+    docElement.className=docElement.className.replace(/\bno-js\b/,'') + 'js';
+  //]]>
+</script>
+<title>Kickstarter</title><script>
+  //<![CDATA[
+    window.report_errors = true;
+    window.honeybadger_configuration = {
+      api_key : "02ab109335c0dd1a93506d92f22217a7",
+      environment : "production",
+      component : "site",
+      action : "index",
+      onerror : false
+    };
+  //]]>
+</script>
+
+
+<!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="telephone=no" name="format-detection">
+
+<!--[if !IE]> -->
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base-a6ac2b5186d50e4fb87cacd29cf1e46a.css" media="screen,print" rel="stylesheet">
+<!-- <![endif]-->
+<!--[if IE]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/base_blessed-b3ef074f246885d2937cb07b6ea4939f.css" media="screen" rel="stylesheet" />
+<![endif]-->
+
+
+<!--[if lte IE 9]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_nine-35e66660ff52ef9358362a02d536b382.css" media="screen" rel="stylesheet" />
+<![endif]-->
+<!--[if lte IE 8]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_eight-2077265988ac83c0955d16f5fe920132.css" media="screen" rel="stylesheet" />
+<![endif]-->
+<!--[if lte IE 7]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie-cd8d70f31eb4c58a0f4d1e1967047636.css" media="screen" rel="stylesheet" />
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_seven-5f1f6bffa6cff8ff99e397b4b92edfdc.css" media="screen,print" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 6]>
+  <link href="https://d297h9he240fqh.cloudfront.net/assets/packages/ie_six-8492cf8e5a5ea8143c43cda460b4aed7.css" media="screen,print" rel="stylesheet" />
+<![endif]-->
+
+
+<link href="https://d297h9he240fqh.cloudfront.net/favicon.ico" rel="icon" type="image/x-icon">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-precomposed-4df6b6e9e0f6f73b508208d4640f4cc4.png" rel="apple-touch-icon-precomposed" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-ipad-precomposed-318fa037ae41f3cfaa9a2b5f961eff51.png" rel="apple-touch-icon-precomposed" sizes="72x72" type="image/png">
+<link href="https://d297h9he240fqh.cloudfront.net/assets/apple-touch-icon-iphone4-precomposed-8f1dd9de021029e56bf4f617ab2a45da.png" rel="apple-touch-icon-precomposed" sizes="114x114" type="image/png">
+
+<meta name="title" content="Kickstarter">
+<meta name="description" content="Kickstarter is the world's largest funding platform for creative projects. A home for film, music, art, theater, games, comics, design, photography, and more.">
+<meta property="og:image" content="https://d297h9he240fqh.cloudfront.net/assets/site/facebook_thumb-a5a1c787b1906321b0fa94f7b5bb78ce.jpg">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https://www.kickstarter.com/">
+<meta property="fb:app_id" content="69103156693">
+<meta property="twitter:account_id" content="16186995">
+<meta name="apple-itunes-app" content="app-id=596961532, app-argument=ksr://www.kickstarter.com/?app_banner=1">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="SjABbkHBiKNB31NhT6J3IRTjFF0AQPX0xwWRc9XXe2w=" name="csrf-token">
+<script type="text/javascript">
+  var _sift = _sift || [];
+  _sift.push(['_setAccount', '637102']);
+  _sift.push(['_setUserId', '']);
+  _sift.push(['_trackPageview']);
+
+  (function() {
+    function loadSift() {
+      var sift, s;
+      if (root.visitor_id) {
+        _sift.push(['_setSessionId', root.visitor_id]);
+      }
+      sift = document.createElement('script');
+      sift.type = 'text/javascript';
+      sift.async = true;
+      sift.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dtlilztwypawv.cloudfront.net/s.js';
+      s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(sift, s);
+    }
+    if (window.attachEvent) {
+      window.attachEvent('onload', loadSift);
+    } else {
+      window.addEventListener('load', loadSift, false);
+    }
+  })();
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_ip = '98.112.136.194';
+    window.current_ip_datacenter = 'false';
+    window.enabled_features = {"elasticsearch":true,"security_history_read":true,"security_history_write":true,"advanced_discovery_es":true,"ios_crashlytics":true,"ios_mixpanel":true,"stories_veronica_mars":true,"veronica_mars_hero":true,"password_reset_banner":true};
+    window.I18n = {};
+    window.fb_app_id = '69103156693';
+    
+    var _sf_startpt=(new Date()).getTime();
+    
+    
+    
+    
+    
+    window.current_location = "{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402319067.1eb47518f8c70d7c3aa82958eb2ef67dd41aec17&amp;woe_id=2442047&quot;}}}";
+    
+    
+    
+    
+    window.timeRemaining = function timeRemaining(epochTime){
+    
+      var diff = epochTime - ((new Date()).getTime() / 1000);
+      var num_unit = (diff < 60 && [Math.max(diff, 0), 'seconds']) ||
+        ((diff/=60) < 60 && [diff, 'minutes']) ||
+        ((diff/=60) < 72 && [diff, 'hours']) ||
+        [diff/=24, 'days'];
+    
+      // Round down
+      num_unit[0] = Math.floor(num_unit[0]);
+      // Singularize unit
+      if (num_unit[0] == 1) { num_unit[1] = num_unit[1].replace(/s$/,""); }
+    
+      return num_unit;
+    };
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    window.current_variants = [];
+  //]]>
+</script>
+
+
+<style type="text/css"></style><script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/all.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+<body class="frame site not-mobile not-phone not-forces-video-controls not-tablet not-ipad not-touchable not-native-app-request fixed-width video_mode" id="site_index" style="" data-twttr-rendered="true">
+<div class="jGrowl center" id="growl_section"></div>
+<div class="NS_layouts__navigation" id="header">
+<div class="main-nav relative bg-white">
+<h1 class="h3 no-margin pl1 col mobile-block mobile-center">
+<a class="block p2" href="/?ref=nav"><span class="ss-icon green-dark">KICK</span><span class="ss-icon green">STARTER</span>
+</a></h1>
+<div class="mobile-show border-bottom"></div>
+<ul class="primary-links list no-margin col">
+<li class="left discover-link">
+<a class="block px1 py2 grey-dark h5 bold" href="/discover?ref=nav">Discover</a>
+</li>
+<li class="left mr1 mobile-hide">&nbsp;</li>
+<li class="left mr2">
+<a class="block px1 py2 grey-dark h5 bold" href="/learn?ref=nav">Start</a>
+</li>
+</ul>
+<ul class="list no-margin right" id="menu-sub">
+<li class="right mr1 mobile-hide">&nbsp;</li>
+<li class="right"><a class="block h5 bold px1 py2" href="/login?ref=nav">Log in</a></li>
+<li class="right"><a class="block h5 bold px1 py2" href="/signup?ref=nav">Sign up</a></li>
+</ul>
+<div class="search-link pl2 full-height border-left border-box clip mobile-hide">
+<form accept-charset="UTF-8" action="/projects/search" class="search pt1 pb1 block relative form-simple" method="get"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="✓"></div>
+<div class="field relative pl3">
+<span class="ss-icon ss-search grey-dark ml1 mt1 absolute"></span>
+<input class="input-search header full-width text" data-tracker-name="Header Live Search" id="term" name="term" placeholder="Search projects" type="text" autocomplete="off">
+</div>
+</form>
+
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<div class="hide pt4 pb4 bg-grey-light" id="search_results-wrap">
+<div class="relative container" id="search_results">
+<a class="close right grey-dark mr1"><span class="ss-icon ss-delete"></span></a>
+<h3 class="header ml1 clearfix"></h3>
+<div class="clip clearfix" id="search_results_panel"></div>
+<a class="prev arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateleft"></span>
+</a>
+<a class="next arrow grey-dark absolute h3">
+<span class="ss-icon ss-navigateright"></span>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="border-top" id="main_content">
+<a href="https://plus.google.com/118239121095465976293" rel="publisher" style="display:none">Google+</a>
+<div class="NS_site__projects_hero bg-green-dark relative border-bottom border-top" style="height: 225px; ">
+<div class="pager-dots pager absolute center full-width z_overlap_slider dark-light"><span class="cycle-pager-active">•</span><span>•</span><span>•</span><span>•</span></div>
+<div class="slides full-height cycle-slideshow" data-cycle-fx="fade" data-cycle-log="false" data-cycle-next=".next" data-cycle-pager=".pager-dots" data-cycle-prev=".previous" data-cycle-slides="&gt; div" data-cycle-timeout="8000" style="position: relative; "><div class="hero_moma slide absolute full-width full-height bg-no-repeat bg-cover bg-center cycle-slide cycle-sentinel" data-theme="dark-light" style="top: 0px; left: 0px; opacity: 1; z-index: 100; position: static; visibility: hidden; display: block; ">
+<div class="table_grid_16 margin-auto full-height" style="visibility: hidden; ">
+<div class="mobile-table full-width full-height relative" style="visibility: hidden; ">
+<div class="mobile-table-cell table_grid_9" style="visibility: hidden; ">&nbsp;</div>
+<div class="mobile-table-cell table_grid_7" style="visibility: hidden; ">
+<div class="mr1 ml1" style="visibility: hidden; ">
+<a href="http://www.momastore.org/museum/moma/CategoryDisplay_10451_10001_26708_56161_-1_Y_Kickstarter%20at%20MoMA?ref=MoMAxKS" target="_blank" style="visibility: hidden; "><img alt="MoMa Design Store + Kickstarter" class="mb3" src="https://d297h9he240fqh.cloudfront.net/assets/site/projects-hero-moma-header-6a14c6e6bdc380c925239d2159a19ab7.png" width="375" style="visibility: hidden; "></a>
+<p class="h3 mb4" style="visibility: hidden; ">We're excited to present a collection of Kickstarter-funded design products at the MoMA Design Store</p>
+<a class="button button_green button_big" href="http://www.momastore.org/museum/moma/CategoryDisplay_10451_10001_26708_56161_-1_Y_Kickstarter%20at%20MoMA?ref=MoMAxKS" target="_blank" style="visibility: hidden; ">View projects</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="hero_moma slide absolute full-width full-height bg-no-repeat bg-cover bg-center cycle-slide cycle-slide-active" data-theme="dark-light" style="position: absolute; top: 0px; left: 0px; opacity: 1; z-index: 100; ">
+<div class="table_grid_16 margin-auto full-height">
+<div class="mobile-table full-width full-height relative">
+<div class="mobile-table-cell table_grid_9">&nbsp;</div>
+<div class="mobile-table-cell table_grid_7">
+<div class="mr1 ml1">
+<a href="http://www.momastore.org/museum/moma/CategoryDisplay_10451_10001_26708_56161_-1_Y_Kickstarter%20at%20MoMA?ref=MoMAxKS" target="_blank"><img alt="MoMa Design Store + Kickstarter" class="mb3" src="https://d297h9he240fqh.cloudfront.net/assets/site/projects-hero-moma-header-6a14c6e6bdc380c925239d2159a19ab7.png" width="375"></a>
+<p class="h3 mb4">We're excited to present a collection of Kickstarter-funded design products at the MoMA Design Store</p>
+<a class="button button_green button_big" href="http://www.momastore.org/museum/moma/CategoryDisplay_10451_10001_26708_56161_-1_Y_Kickstarter%20at%20MoMA?ref=MoMAxKS" target="_blank">View projects</a>
+</div>
+</div>
+</div>
+</div>
+</div><div class="hero_murals slide absolute full-height bg-center bg-cover white cycle-slide" data-theme="dark-theme" style="position: absolute; top: 0px; left: 0px; z-index: 99; display: none; ">
+<div class="mobile-table full-height center relative">
+<div class="mobile-table-cell">
+<h1 class="mb4">People everywhere<br> are painting murals.</h1>
+<a class="button button_green button_big" href="/discover/categories/art/public%20art?ref=hero">Explore public art</a>
+</div>
+</div>
+</div><div class="hero_library slide absolute full-height bg-center bg-cover white cycle-slide" data-theme="dark-theme" style="position: absolute; top: 0px; left: 0px; z-index: 97; display: none; ">
+<div class="mobile-table full-height center relative">
+<div class="mobile-table-cell">
+<h1 class="mb4">People everywhere<br> are building libraries.</h1>
+<a class="button button_green button_big" href="/discover/tags/library?ref=hero">Explore library projects</a>
+</div>
+</div>
+</div><div class="hero_blue_ruin slide absolute full-height bg-center bg-cover white cycle-slide" data-theme="dark-theme" style="position: absolute; top: 0px; left: 0px; z-index: 96; display: none; ">
+<div class="mobile-table full-width full-height center relative">
+<div class="mobile-table-cell">
+<h1>Blue Ruin</h1>
+<p class="h3 mb4">One of hundreds of Kickstarter-funded films you can watch now</p>
+<a class="button button_green button_big" href="/watch?ref=hero">Watch now</a>
+</div>
+</div>
+<!-- .hero_iphone.slide.absolute.full-width.full-height.bg-center{data: {theme: "light-theme"}} -->
+<!-- .relative.table_grid_16.margin-auto.full-height -->
+<!-- .mobile-table.full-height -->
+<!-- .mobile-table-cell.table_grid_7.pt2 -->
+<!-- = link_to image_tag("site/projects-hero-iphone.png", border: 0, height: 600, class: "iphone"), download_path(ref: 'hero'), target: "_blank" -->
+<!-- .mobile-table-cell.table_grid_9.pl1 -->
+<!-- %h1 Kickstarter, everywhere -->
+<!-- %p.h3.mb4 Download the Kickstarter app for iPhone. -->
+<!-- = link_to image_tag("site/projects-hero-app-store-download.svg", width: 150), download_path(ref: 'hero'), target: "_blank" -->
+<!-- / This is the standard video hero -->
+<!-- / It's commented out for now to make it easy to re-add -->
+<!-- / We should never use this and the carousel at the same time -->
+<!-- .slide.slide_4.absolute.full-width.full-height -->
+<!-- - if can_autoplay_video? -->
+<!-- .slide-video.absolute.full-height.full-width -->
+<!-- %video{ loop: "loop", autoplay: "true", onended: "this.play()", height: "100%" } -->
+<!-- %source{ src: "https://d3mlfyygrfdi2i.cloudfront.net/a144/hploop_0204.mp4", type: "video/mp4" } -->
+<!-- %source{ src: "https://d3mlfyygrfdi2i.cloudfront.net/90da/hploop_0204.webm", type: "video/webm" } -->
+<!-- %img{src: "https://d3mlfyygrfdi2i.cloudfront.net/9d45/hploop_0204.jpg"} -->
+<!-- You need an HTML5 enabled browser to view this video. -->
+<!-- - else -->
+<!-- .slide-video.video-mobile.absolute.full-height.full-width.bg-cover.bg-center{style: "background-image: url(https://d3mlfyygrfdi2i.cloudfront.net/9d45/hploop_0204.jpg)"} -->
+<!-- .table.full-width.full-height.center.relative -->
+<!-- .table-row.hero-text -->
+<!-- .table-cell.align-middle -->
+<!-- %h1.mb4 We can all make great things -->
+<!-- = link_to "Start a project", learn_path(ref: "hero"), class: "button button_green button_big" -->
+</div></div>
+<div class="pager next absolute t0 b0 r0 pl4 pr4 transition-all z_overlap_slider dark-light">
+<div class="table full-height align-right">
+<div class="table-cell align-middle">
+<svg class="mb2" enable-background="new 0 0 32 64" height="64px" version="1.1" viewBox="0 0 32 64" width="32px" x="0px" space="preserve" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+<g display="none" id="Layer_2">
+<rect display="inline" fill="#ffffff" height="112" width="128" x="-71" y="-20"></rect>
+</g>
+<g id="Layer_1">
+<g>
+<path class="transition-all" d="M7.998,64c-0.41,0-0.824-0.126-1.181-0.387c-0.891-0.653-1.083-1.905-0.431-2.796l21.136-28.821L6.509,3.178c-0.65-0.893-0.455-2.144,0.438-2.794C7.84-0.266,9.091-0.07,9.741,0.822l21.875,30c0.513,0.704,0.512,1.659-0.003,2.361l-22,30C9.221,63.717,8.614,64,7.998,64z"></path>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<div class="pager previous absolute t0 b0 l0 pl4 pr4 transition-all z_overlap_slider dark-light">
+<div class="table full-height">
+<div class="table-cell align-middle">
+<svg class="mb2" enable-background="new 0 0 32 64" height="64px" version="1.1" viewBox="0 0 32 64" width="32px" x="0px" space="preserve" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" y="0px">
+<g display="none" id="Layer_2">
+<rect display="inline" fill="#ffffff" height="112" width="128" x="-7" y="-20"></rect>
+</g>
+<g id="Layer_1">
+<g>
+<path class="transition-all" d="M23.877,64c-0.617,0-1.227-0.284-1.618-0.821l-21.875-30c-0.513-0.704-0.512-1.659,0.003-2.361l22-30c0.654-0.89,1.904-1.084,2.796-0.43c0.891,0.653,1.083,1.905,0.431,2.795L4.478,32.003l21.014,28.818c0.65,0.893,0.455,2.144-0.438,2.795C24.698,63.875,24.285,64,23.877,64z"></path>
+</g>
+</g>
+</svg>
+</div>
+</div>
+</div>
+</div>
+
+<div id="content-wrap">
+<div class="container" id="editorial-projects">
+<h3 class="staff-picks z1">
+<a href="/discover/recommended?ref=recommended">Staff Picks:</a>
+</h3>
+<div id="project-slide">
+<ul class="has_potd">
+<li class="no-margin project project0 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="art no-margin">
+<a class="green-dark" href="/discover/categories/art?ref=category">Art</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/art?ref=category">See all
+372
+Art
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/glorialamb/inspireality-palace-art-installation-for-burning-m?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/1000231/photo-full.jpg?1400785159" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/glorialamb/inspireality-palace-art-installation-for-burning-m">Inspireality Palace : Art Installation for Burning Man 2014</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Gloria Lamb
+</p>
+<p class="blurb h5 grey-dark mb3">
+An abstract architectural community space for Burning Man 2014 that features interactive live video projection and lighting.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/art/installations"><span class="ss-icon ss-tag h6 margin-right"></span>
+Installations
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/black-rock-city-nv"><span class="ss-icon ss-location h6"></span>
+Black Rock City, NV
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 31.83%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">31%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$2,546</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">34</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-26T02:29:34-04:00">
+<strong class="block h6">
+<div class="num h4">17</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project1 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="comics no-margin">
+<a class="green-dark" href="/discover/categories/comics?ref=category">Comics</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/comics?ref=category">See all
+128
+Comics
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/470165554/el-grande-comic-a-book-by-joseph-karg-and-elio-gue?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/921001/photo-full.jpg?1399574594" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/470165554/el-grande-comic-a-book-by-joseph-karg-and-elio-gue">El Grande Comic: A book by Joseph Karg and Elio Guevara</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Joe Karg
+</p>
+<p class="blurb h5 grey-dark mb3">
+ART INSTITUTE OF ATLANTA PROFESSORS JOSEPH KARG (ARCHER) and ELIO GUEVARA (SPECTRUM) KICKSTART SEQUENTIAL ART EPIC "EL GRANDE"
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/comics"><span class="ss-icon ss-tag h6 margin-right"></span>
+Comics
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/atlanta-ga"><span class="ss-icon ss-location h6"></span>
+Atlanta, GA
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 82.3%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">82%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$8,230</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">146</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-13T14:57:56-04:00">
+<strong class="block h6">
+<div class="num h4">35</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project2 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="dance no-margin">
+<a class="green-dark" href="/discover/categories/dance?ref=category">Dance</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/dance?ref=category">See all
+68
+Dance
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/rove/rove-presents-close-encounters-june-16th-27th?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/990733/photo-full.jpg?1401761065" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/rove/rove-presents-close-encounters-june-16th-27th">ROVE presents Close Encounters June 16th-27th!</a>
+</h4>
+<p class="h6 grey-dark">
+by
+ROVE
+</p>
+<p class="blurb h5 grey-dark mb3">
+ROVE returns to the Roger Smith Hotel's Window at 125 to produce a dynamic two-week series featuring five 
+compelling artists.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/dance/performances"><span class="ss-icon ss-tag h6 margin-right"></span>
+Performances
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/brooklyn-ny"><span class="ss-icon ss-location h6"></span>
+Brooklyn, NY
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 23%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">23%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$1,150</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">28</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-01T23:59:00-04:00">
+<strong class="block h6">
+<div class="num h4">23</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project3 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="design no-margin">
+<a class="green-dark" href="/discover/categories/design?ref=category">Design</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/design?ref=category">See all
+383
+Design
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/halfthree/day-tickets-reinventing-how-you-see-your-time?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/1005393/photo-full.jpg?1400824561" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/halfthree/day-tickets-reinventing-how-you-see-your-time">Day Tickets - Reinventing how you see your time</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Lauren &amp; Andy Clark
+</p>
+<p class="blurb h5 grey-dark mb3">
+We've reinvented the planner to help you focus on your time
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/design/product%20design"><span class="ss-icon ss-tag h6 margin-right"></span>
+Product Design
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/london-gb"><span class="ss-icon ss-location h6"></span>
+London, UK
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 57.05%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">57%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money gbp no-code">£1,141</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">47</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-23T15:00:00-04:00">
+<strong class="block h6">
+<div class="num h4">15</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project4 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="fashion no-margin">
+<a class="green-dark" href="/discover/categories/fashion?ref=category">Fashion</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/fashion?ref=category">See all
+316
+Fashion
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/1527229560/go-commando-with-dear-kate-yoga-pants?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/970964/photo-full.jpg?1401912423" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/1527229560/go-commando-with-dear-kate-yoga-pants">Go Commando with Dear Kate Yoga Pants</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Julie Sygiel
+</p>
+<p class="blurb h5 grey-dark mb3">
+Will you go commando? Underlux fabric protects better than regular underwear, leaving you free to go without.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/fashion/apparel"><span class="ss-icon ss-tag h6 margin-right"></span>
+Apparel
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/new-york-ny"><span class="ss-icon ss-location h6"></span>
+New York, NY
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">511%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$76,731</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">694</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-28T09:00:49-04:00">
+<strong class="block h6">
+<div class="num h4">19</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin potd project project5 relative">
+<div class="title pb3">
+<h3 class="&amp;amp; film no-margin video">
+<a class="green-dark" href="/discover/categories/film%20&amp;%20video?ref=category">Film &amp; Video</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/film%20&amp;%20video?ref=category">See all
+816
+Film &amp; Video
+projects
+</a></h3>
+</div>
+<div class="project-ribbon tiny bg-green pl1 pr1 h6 absolute ml3 mt1">
+<span class="ss-icon ss-kickstarter green-dark margin-right white"></span>
+<span class="text white bold">Project of the Day</span>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/299517091/the-before-project?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/979109/photo-full.jpg?1399354359" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/299517091/the-before-project">The Before Project</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Terence Brown/Slantyhouse Productions
+</p>
+<p class="blurb h5 grey-dark mb3">
+A documentary short exploring the lives of kids on the verge of adolescence.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/film%20&amp;%20video/documentary"><span class="ss-icon ss-tag h6 margin-right"></span>
+Documentary
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/seattle-wa"><span class="ss-icon ss-location h6"></span>
+Seattle, WA
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 78.55%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">78%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$8,640</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">150</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-15T12:11:56-04:00">
+<strong class="block h6">
+<div class="num h4">7</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project6 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="food no-margin">
+<a class="green-dark" href="/discover/categories/food?ref=category">Food</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/food?ref=category">See all
+311
+Food
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/1440537680/vtopian-artisan-cheeses-project?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/962493/photo-full.jpg?1401169801" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/1440537680/vtopian-artisan-cheeses-project">Vtopian Artisan Cheeses Project</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Imber Lingard and Mark Jordan
+</p>
+<p class="blurb h5 grey-dark mb3">
+Vtopian Artisan Cheeses is an exciting new line of delicious vegan cultured cashew cheeses that are hand-crafted in Eugene, Oregon.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/food/vegan"><span class="ss-icon ss-tag h6 margin-right"></span>
+Vegan
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/eugene-or"><span class="ss-icon ss-location h6"></span>
+Eugene, OR
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 45.63%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">45%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$3,194</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">67</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-08T15:25:47-04:00">
+<strong class="block h6">
+<div class="num h4">30</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project7 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="games no-margin">
+<a class="green-dark" href="/discover/categories/games?ref=category">Games</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/games?ref=category">See all
+465
+Games
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/77978264/shadow-throne?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/1000777/photo-full.jpg?1401168725" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/77978264/shadow-throne">Shadow Throne</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Teale Fristoe
+</p>
+<p class="blurb h5 grey-dark mb3">
+The quick drafting game of Machiavellian intrigue.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/games/tabletop%20games"><span class="ss-icon ss-tag h6 margin-right"></span>
+Tabletop Games
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/oakland-ca"><span class="ss-icon ss-location h6"></span>
+Oakland, CA
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 50.24%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">50%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$6,280</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">181</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-27T21:00:00-04:00">
+<strong class="block h6">
+<div class="num h4">19</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project8 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="music no-margin">
+<a class="green-dark" href="/discover/categories/music?ref=category">Music</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/music?ref=category">See all
+699
+Music
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/1983757235/pauline-oliveros-reverberations-box-set-re-press?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/1003032/photo-full.jpg?1400255193" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/1983757235/pauline-oliveros-reverberations-box-set-re-press">Pauline Oliveros Reverberations Box Set Re-press</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Important Records
+</p>
+<p class="blurb h5 grey-dark mb3">
+Pauline Oliveros' groundbreaking "Reverberations: Tape + Electronic Music 1961-1970" box set is in need of a re-press.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/music/electronic%20music"><span class="ss-icon ss-tag h6 margin-right"></span>
+Electronic Music
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/groveland-ma"><span class="ss-icon ss-location h6"></span>
+Groveland, MA
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">126%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$20,184</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">164</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-19T11:34:12-04:00">
+<strong class="block h6">
+<div class="num h4">11</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project9 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="no-margin photography">
+<a class="green-dark" href="/discover/categories/photography?ref=category">Photography</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/photography?ref=category">See all
+130
+Photography
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/482181956/twenty-journey?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/976243/photo-full.jpg?1401375027" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/482181956/twenty-journey">Twenty Journey</a>
+</h4>
+<p class="h6 grey-dark">
+by
+S.Metelerkamp, S.Mpongo and W.de Wet.
+</p>
+<p class="blurb h5 grey-dark mb3">
+Three photographers on a journey to explore South Africa.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/photography/places"><span class="ss-icon ss-tag h6 margin-right"></span>
+Places
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/cape-town-cape-town-za"><span class="ss-icon ss-location h6"></span>
+Cape Town, South Africa
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 16.5%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">16%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$1,980</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">37</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-26T05:05:25-04:00">
+<strong class="block h6">
+<div class="num h4">17</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project10 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="no-margin publishing">
+<a class="green-dark" href="/discover/categories/publishing?ref=category">Publishing</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/publishing?ref=category">See all
+512
+Publishing
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/zombielogic/scream-for-iced-cream-by-jesus-abraham-correa-vii?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/1015254/photo-full.jpg?1401809471" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/zombielogic/scream-for-iced-cream-by-jesus-abraham-correa-vii">Scream For Iced Cream By Jesus Abraham Correa VII</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Thomas L. Vaultonburg
+</p>
+<p class="blurb h5 grey-dark mb3">
+Iced Cream is the first book of poetry and art by legendary Rockford artist Jesus Correa and the fifth book by Zombie Logic Press.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/publishing/poetry"><span class="ss-icon ss-tag h6 margin-right"></span>
+Poetry
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/rockford-il"><span class="ss-icon ss-location h6"></span>
+Rockford, IL
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 33.97%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">33%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$322</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">11</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-03T18:04:00-04:00">
+<strong class="block h6">
+<div class="num h4">25</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project11 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="no-margin technology">
+<a class="green-dark" href="/discover/categories/technology?ref=category">Technology</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/technology?ref=category">See all
+368
+Technology
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/1589506036/thingconf-for-people-who-make-sell-things-online?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/975510/photo-full.jpg?1399850699" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/1589506036/thingconf-for-people-who-make-sell-things-online">ThingConf — for people who make + sell things online</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Rachel Binx
+</p>
+<p class="blurb h5 grey-dark mb3">
+A conference this August 3rd in NYC, made for people who build online businesses around physical products.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/technology"><span class="ss-icon ss-tag h6 margin-right"></span>
+Technology
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/manhattan-ny"><span class="ss-icon ss-location h6"></span>
+Manhattan, NY
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 54.03%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">54%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$4,052</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">74</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-13T22:00:00-04:00">
+<strong class="block h6">
+<div class="num h4">5</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+<li class="no-margin project project12 relative" style="display: list-item; ">
+<div class="title pb3">
+<h3 class="no-margin theater">
+<a class="green-dark" href="/discover/categories/theater?ref=category">Theater</a>
+<a class="right h6 bold mt1 grey-dark" href="/discover/categories/theater?ref=category">See all
+221
+Theater
+projects
+</a></h3>
+</div>
+<div class="project-card-wrap project-card-wide-wrap bg-white rounded clip">
+<div class="project-card clearfix relative">
+<div class="project-thumbnail left p1">
+<a href="/projects/mysterymark/mystery-mark?play=video_pitch"><img alt="Photo full" height="240" src="https://s3.amazonaws.com/ksr/projects/962704/photo-full.jpg?1398032853" width="320">
+<img alt="Media - Video" class="play_button" src="https://d297h9he240fqh.cloudfront.net/assets/projects/button-playvideo-sm-f97bb6c953e4ca583b4e8b3faa401866.png">
+</a></div>
+<div class="project-card-interior clip border-box p1 relative">
+<h4 class="project-title ellipsis">
+<a class="green-dark" href="/projects/mysterymark/mystery-mark">Mystery Mark</a>
+</h4>
+<p class="h6 grey-dark">
+by
+Viscosity Theatre
+</p>
+<p class="blurb h5 grey-dark mb3">
+A cartoon exorcism! An illustrated book and performance about letting go, in which an anxious man is stalked by his childhood TV hero.
+</p>
+<div class="absolute-bottom pl1 pr2">
+<ul class="project-meta list-inline h6 mb1">
+<li class="mr2">
+<a class="grey-dark" href="/discover/categories/theater/experimental"><span class="ss-icon ss-tag h6 margin-right"></span>
+Experimental
+</a></li>
+<li>
+<a class="grey-dark" href="/discover/places/missoula-mt"><span class="ss-icon ss-location h6"></span>
+Missoula, MT
+</a></li>
+</ul>
+<div class="project-stats-wrap">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1" style="display: none;">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 71.62%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr2">
+<strong class="block h4">71%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr2">
+<strong class="block h4"><span class="money usd no-code">$3,581</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="backers inline-block mr2">
+<strong class="block h4">74</strong>
+<span class="grey-dark">backers</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h4">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-11T18:32:08-04:00">
+<strong class="block h6">
+<div class="num h4">3</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</li>
+</ul>
+<!-- ul#project-slide -->
+</div>
+<div id="categories">
+<ul class="nav small_type">
+<li>
+<a class="link" href="/discover/categories/art">Art</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/comics">Comics</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/dance">Dance</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/design">Design</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/fashion">Fashion</a>
+</li>
+<li class="selected">
+<a class="link" href="/discover/categories/film%20&amp;%20video">Film &amp; Video</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/food">Food</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/games">Games</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/music">Music</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/photography">Photography</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/publishing">Publishing</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/technology">Technology</a>
+</li>
+<li>
+<a class="link" href="/discover/categories/theater">Theater</a>
+</li>
+</ul>
+</div>
+</div>
+<div data-infinite_url="https://api.kickstarter.com/v1/discover?count=8&amp;cursor=2&amp;signature=1402315926.a82bdf5dbb618bbac28c904b86c65d61fc0908ed&amp;woe_id=2442047" id="location-projects">
+<div class="container">
+<div class="title-card">
+<h3 class="ca us">
+<span class="ss-icon ss-location"></span>
+<span class="map-icon"></span>
+<a class="location-name" href="/discover/places/los-angeles-ca?ref=city" rel="nofollow">Los Angeles, CA</a>
+<span class="not-here small_type">Change city</span>
+<span class="see-all small_type"><a href="/discover/places/los-angeles-ca?ref=city">See all</a></span>
+</h3>
+<div id="set-location">
+<form accept-charset="UTF-8" action="/locations/search?discoverable=true&amp;searchable=true" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="✓"><input class="hidden" name="authenticity_token" type="hidden" value="SjABbkHBiKNB31NhT6J3IRTjFF0AQPX0xwWRc9XXe2w="></div>
+<div class="field search">
+<span class="ss-icon ss-search z3"></span>
+<span class="ss-icon ss-delete z3" style="display: none; "></span>
+<label class="overlabel overlabel-search z3 overlabel-apply">Search cities</label>
+<input autocomplete="off" class="input-search input-text z2 text" data-tracker-name="Location Live Search" id="term" name="term" type="text">
+<div class="results z1">
+<span class="ss-icon ss-directup"></span>
+<ul class="result_list"></ul><div class="no_results" style="display: none; ">Sorry, we couldn't find anything.</div></div>
+</div>
+</form>
+
+</div>
+</div>
+<div class="slider">
+<p class="no-projects">
+Sorry we couldn't find any projects in your area! Try browsing some projects
+<a href="/discover">here.</a>
+</p>
+<div class="project-list">
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:557230947}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/readingrainbow/bring-reading-rainbow-back-for-every-child-everywh?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/966578/photo-little.jpg?1401495410" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/readingrainbow/bring-reading-rainbow-back-for-every-child-everywh?ref=home_location" target="">Bring Reading Rainbow Back for Every Child, Everywhere.</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+LeVar Burton &amp; Reading Rainbow
+</p>
+<p class="project-blurb">
+Bring Reading Rainbow to more platforms &amp; provide subscriptions to more classrooms that need them for FREE! Our NEW GOAL: $5,000,000
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">356%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$3,568,325</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-02T15:00:00-04:00">
+<strong class="block h6">
+<div class="num">24</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:395849295}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/steveminty/muertos-day-of-the-dead-playing-cards?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/973615/photo-little.jpg?1401315513" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/steveminty/muertos-day-of-the-dead-playing-cards?ref=home_location" target="">Muertos - Day of the Dead Playing Cards</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Steve Minty
+</p>
+<p class="project-blurb">
+Muertos Playing Cards a custom deck inspired by Day of the Dead, the tradition of playing cards and my childhood. Printed by USPCC
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">696%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$90,604</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-20T21:31:31-04:00">
+<strong class="block h6">
+<div class="num">12</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:484896769}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/tomvaughan/channelzero?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/824229/photo-little.jpg?1402112656" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/tomvaughan/channelzero?ref=home_location" target="">Channel Zero - A Post Apocalyptic TV Station - Pilot</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Tom Vaughan
+</p>
+<p class="project-blurb">
+A show about the remains of humanity struggling to survive after the apocalypse... and to produce quality television entertainment!
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 50.14%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">50%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$12,535</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-28T02:59:00-04:00">
+<strong class="block h6">
+<div class="num">19</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1900433321}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/larsjan/holoscenes-an-epic-public-art-performance-project?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/961414/photo-little.jpg?1399313908" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/larsjan/holoscenes-an-epic-public-art-performance-project?ref=home_location" target="">HOLOSCENES / an epic public art + performance project</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Lars America Jan
+</p>
+<p class="project-blurb">
+Performance installation that viscerally connects the long-term patterns behind climate change to our everyday behaviors.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 66.49%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">66%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$27,259</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-12T00:00:00-04:00">
+<strong class="block h6">
+<div class="num">3</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:2051819080}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/stevealtes/geeks-and-greeks-an-epic-graphic-novel-about-mit-p?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/862992/photo-little.jpg?1398902500" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/stevealtes/geeks-and-greeks-an-epic-graphic-novel-about-mit-p?ref=home_location" target="">GEEKS AND GREEKS – an epic graphic novel about MIT pranks</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Steve Altes
+</p>
+<p class="project-blurb">
+Two MIT geniuses clash in an escalating war of high-tech pranks and egos in an alpha-nerd fraternity. Inspired by actual events.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 86.56%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">86%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$34,624</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-12T16:38:37-04:00">
+<strong class="block h6">
+<div class="num">4</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1300194468}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/929202916/dear-sugar-an-animated-short-film?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/977308/photo-little.jpg?1398987208" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/929202916/dear-sugar-an-animated-short-film?ref=home_location" target="">Dear Sugar - An Animated Short Film</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Lisa Bellomo
+</p>
+<p class="project-blurb">
+An animated short film based on best-selling author Cheryl Strayed's DEAR SUGAR advice column, voiced by Family Guy's Alex Borstein.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 12.31%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">12%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$12,307</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-26T13:31:26-04:00">
+<strong class="block h6">
+<div class="num">18</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1193689508}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/1826612739/wellen-women-classic-beach-inspired-clothing?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/925715/photo-little.jpg?1400614564" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/1826612739/wellen-women-classic-beach-inspired-clothing?ref=home_location" target="">Wellen Women - Classic, Beach Inspired Clothing</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Matthew Jung
+</p>
+<p class="project-blurb">
+Made in California and inspired by a life lived near the ocean. Designed for quality and comfort our classic pieces are made to covet.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 80.08%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">80%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$20,019</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-01T02:59:00-04:00">
+<strong class="block h6">
+<div class="num">22</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1290201311}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/76132143/limbo-0?ref=home_location" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/1002585/photo-little.jpg?1400662155" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/76132143/limbo-0?ref=home_location" target="">Limbo</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Fangso Liu
+</p>
+<p class="project-blurb">
+What if you could have everything you've ever wanted in the afterlife? No rules. Just pleasure...
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402315926.e6aff4c74516a7996987aba359bdbbd5e35d2326&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 12.92%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">12%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$3,877</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-01T02:59:00-04:00">
+<strong class="block h6">
+<div class="num">22</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="controls button button_small button_grey previous disabled" id="location-previous">
+<span class="ss-icon ss-navigateleft"></span>
+</div>
+<div class="controls button button_small button_grey next enabled" id="location-next">
+<span class="ss-icon ss-navigateright"></span>
+</div>
+</div>
+</div>
+
+<div data-infinite_url="https://api.kickstarter.com/v1/discover?cursor=1&amp;signature=1402318637.9ef7a22b65fba7b4b51314a6b9bcab738a042bfe" id="trending-projects">
+<div class="container">
+<div class="controls button button_small button_grey previous disabled" id="trending-previous">
+<span class="ss-icon">Previous</span>
+</div>
+<div class="controls button button_small button_grey next enabled" id="trending-next">
+<span class="ss-icon">Next</span>
+</div>
+<div class="title-card">
+<h3>
+<a href="/discover/popular?ref=popular">Popular</a>
+<span class="see-all small_type"><a href="/discover/popular?ref=popular">See all</a></span>
+</h3>
+</div>
+<div class="slider">
+<div class="project-list">
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:590791646}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/817146541/boss-a-titanium-mutli-tool-that-puts-you-in-charge?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/1023750/photo-little.jpg?1402109107" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/817146541/boss-a-titanium-mutli-tool-that-puts-you-in-charge?ref=home_popular" target="">Boss - A Titanium multi-tool that puts you in charge.</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Christopher Frederick
+</p>
+<p class="project-blurb">
+This key sized tool makes common difficult tasks easy.  9+ tools packed into one sleek fashionable easy to carry device.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2480894,&quot;name&quot;:&quot;Richmond&quot;,&quot;slug&quot;:&quot;richmond-va&quot;,&quot;short_name&quot;:&quot;Richmond, VA&quot;,&quot;displayable_name&quot;:&quot;Richmond, VA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;VA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/richmond-va&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/richmond-va&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.7f86d1949201a562031189dc09b194e9f6ab88aa&amp;woe_id=2480894&quot;}}}" href="/discover/places/richmond-va?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Richmond, VA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">281%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$12,677</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-09T21:00:00-04:00">
+<strong class="block h6">
+<div class="num">31</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1596366215}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/559431060/twilight-struggle-digital-edition?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/1000457/photo-little.jpg?1401823958" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/559431060/twilight-struggle-digital-edition?ref=home_popular" target="">Twilight Struggle Digital Edition</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+GMT Games
+</p>
+<p class="project-blurb">
+Now is your chance to help GMT bring Twilight Struggle out for PC, Mac, Linux, iOS, and Android!
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2417011,&quot;name&quot;:&quot;Hanford&quot;,&quot;slug&quot;:&quot;hanford-ca&quot;,&quot;short_name&quot;:&quot;Hanford, CA&quot;,&quot;displayable_name&quot;:&quot;Hanford, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/hanford-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/hanford-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.7a6dc21beae11b9ede42e788ee7cb94aa85b9669&amp;woe_id=2417011&quot;}}}" href="/discover/places/hanford-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Hanford, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">318%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$159,351</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-03T20:00:00-04:00">
+<strong class="block h6">
+<div class="num">25</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:2067033810}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/376675685/the-wheel-in-motor-movie-going-digital?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/976813/photo-little.jpg?1398928434" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/376675685/the-wheel-in-motor-movie-going-digital?ref=home_popular" target="">The WHEEL-IN MOTOR MOVIE: "GOING DIGITAL"</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Richard L. Wiley
+</p>
+<p class="project-blurb">
+Moving the Wheel-In Motor Movie into the 21st Century. 
+Going "DIGITAL"  at The Pacific Northwests Iconic, 
+WHEEL-IN MOTOR MOVIE
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2475511,&quot;name&quot;:&quot;Port Townsend&quot;,&quot;slug&quot;:&quot;port-townsend-wa&quot;,&quot;short_name&quot;:&quot;Port Townsend, WA&quot;,&quot;displayable_name&quot;:&quot;Port Townsend, WA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;WA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/port-townsend-wa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/port-townsend-wa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.d58ed257b2adc97805dfab7e08b2feefde99601a&amp;woe_id=2475511&quot;}}}" href="/discover/places/port-townsend-wa?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Port Townsend, WA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 93.99%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">93%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$32,895</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-08T13:15:00-04:00">
+<strong class="block h6">
+<div class="num">4</div>
+</strong>
+<div class="span text grey-dark" data-word="left">hours to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:855365027}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/274419960/support-one-million-lovely-letters?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/999368/photo-little.jpg?1401565075" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/274419960/support-one-million-lovely-letters?ref=home_popular" target="">Support One Million Lovely Letters</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Jodi Ann Bickley
+</p>
+<p class="project-blurb">
+Whatever you are going through big or small, a handwritten letter to remind you that you are loved and you aren't alone.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:12723,&quot;name&quot;:&quot;Birmingham&quot;,&quot;slug&quot;:&quot;birmingham-gb&quot;,&quot;short_name&quot;:&quot;Birmingham, UK&quot;,&quot;displayable_name&quot;:&quot;Birmingham, UK&quot;,&quot;country&quot;:&quot;GB&quot;,&quot;state&quot;:&quot;England&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/birmingham-gb&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/birmingham-gb&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.e4ba3c3c7ace1949b9aaa313d45acff49a60a9d1&amp;woe_id=12723&quot;}}}" href="/discover/places/birmingham-gb?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Birmingham, UK</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">116%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money gbp no-code">£11,644</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-03T16:19:44-04:00">
+<strong class="block h6">
+<div class="num">25</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1958881757}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/theutlab/the-ninja-impossibly-light-microfiber-footwear?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/920912/photo-little.jpg?1401357575" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/theutlab/the-ninja-impossibly-light-microfiber-footwear?ref=home_popular" target="">THE NINJA - Impossibly Light MICROFIBER® Footwear</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Unbelievable Testing Laboratory
+</p>
+<p class="project-blurb">
+The Unbelievable Testing Laboratory has created Microfiber shoes weighing in at less than 130g. Support our limited production project.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2436704,&quot;name&quot;:&quot;Las Vegas&quot;,&quot;slug&quot;:&quot;las-vegas-nv&quot;,&quot;short_name&quot;:&quot;Las Vegas, NV&quot;,&quot;displayable_name&quot;:&quot;Las Vegas, NV&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;NV&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/las-vegas-nv&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/las-vegas-nv&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.f382b7f47ba83e499bd7b163e6b358521441a262&amp;woe_id=2436704&quot;}}}" href="/discover/places/las-vegas-nv?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Las Vegas, NV</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">352%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$52,802</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-02T18:33:23-04:00">
+<strong class="block h6">
+<div class="num">24</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1609975469}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/veragreentea/recipes-for-the-dead-issue-3-an-indie-comic-book?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/1006584/photo-little.jpg?1400596598" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/veragreentea/recipes-for-the-dead-issue-3-an-indie-comic-book?ref=home_popular" target="">Recipes for the Dead: Issue 3 - An Indie Comic Book</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Vera Greentea
+</p>
+<p class="project-blurb">
+Read issue 1 for $1! Recipes for the Dead: Steam-Minted Meringue is a bewitching tale of a steampunk baker haunted by a lovesick demon.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2459115,&quot;name&quot;:&quot;New York&quot;,&quot;slug&quot;:&quot;new-york-ny&quot;,&quot;short_name&quot;:&quot;New York, NY&quot;,&quot;displayable_name&quot;:&quot;New York, NY&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;NY&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/new-york-ny&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/new-york-ny&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.820790518028d657baa4696baae79fbf30b13e3b&amp;woe_id=2459115&quot;}}}" href="/discover/places/new-york-ny?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">New York, NY</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 95.42%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">95%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$7,156</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-25T19:00:00-04:00">
+<strong class="block h6">
+<div class="num">47</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:557230947}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/readingrainbow/bring-reading-rainbow-back-for-every-child-everywh?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/966578/photo-little.jpg?1401495410" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/readingrainbow/bring-reading-rainbow-back-for-every-child-everywh?ref=home_popular" target="">Bring Reading Rainbow Back for Every Child, Everywhere.</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+LeVar Burton &amp; Reading Rainbow
+</p>
+<p class="project-blurb">
+Bring Reading Rainbow to more platforms &amp; provide subscriptions to more classrooms that need them for FREE! Our NEW GOAL: $5,000,000
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2442047,&quot;name&quot;:&quot;Los Angeles&quot;,&quot;slug&quot;:&quot;los-angeles-ca&quot;,&quot;short_name&quot;:&quot;Los Angeles, CA&quot;,&quot;displayable_name&quot;:&quot;Los Angeles, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/los-angeles-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/los-angeles-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.2c83fa4d66d44c0b462c3eaea58853775aac913b&amp;woe_id=2442047&quot;}}}" href="/discover/places/los-angeles-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Los Angeles, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">356%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$3,569,310</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-02T15:00:00-04:00">
+<strong class="block h6">
+<div class="num">24</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:108427247}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/anova/anova-precision-cooker-cook-sous-vide-with-your-ip?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/977119/photo-little.jpg?1399583015" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/anova/anova-precision-cooker-cook-sous-vide-with-your-ip?ref=home_popular" target="">Anova Precision Cooker - Cook sous vide with your phone</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Anova Culinary
+</p>
+<p class="project-blurb">
+The Anova Precision Cooker is used to cook "sous vide," which allows anyone to produce restaurant quality results.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2487956,&quot;name&quot;:&quot;San Francisco&quot;,&quot;slug&quot;:&quot;san-francisco-ca&quot;,&quot;short_name&quot;:&quot;San Francisco, CA&quot;,&quot;displayable_name&quot;:&quot;San Francisco, CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/san-francisco-ca&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/san-francisco-ca&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.693742cc27bb7e62aab42234d87b8fa6222e44b5&amp;woe_id=2487956&quot;}}}" href="/discover/places/san-francisco-ca?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">San Francisco, CA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">1,588%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$1,588,272</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-17T15:45:00-04:00">
+<strong class="block h6">
+<div class="num">9</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:3968895}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/rifftrax/rifftrax-wants-to-riff-godzilla-live-in-theaters-n?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/913448/photo-little.jpg?1401310365" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/rifftrax/rifftrax-wants-to-riff-godzilla-live-in-theaters-n?ref=home_popular" target="">MST3K Guys @RiffTrax will riff GODZILLA '98 in theaters 8/14</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+RiffTrax: Mike, Bill &amp; Kevin
+</p>
+<p class="project-blurb">
+You can help the Rifftrax / MST3K guys get the 1998 version of GODZILLA starring Matthew Broderick for their next nationwide simulcast!
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2452078,&quot;name&quot;:&quot;Minneapolis&quot;,&quot;slug&quot;:&quot;minneapolis-mn&quot;,&quot;short_name&quot;:&quot;Minneapolis, MN&quot;,&quot;displayable_name&quot;:&quot;Minneapolis, MN&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;MN&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/minneapolis-mn&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/minneapolis-mn&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.39e27cb05406836b851f17c9bef95479a077cdb0&amp;woe_id=2452078&quot;}}}" href="/discover/places/minneapolis-mn?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Minneapolis, MN</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">230%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$230,362</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-11T19:16:38-04:00">
+<strong class="block h6">
+<div class="num">3</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:780741783}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/weiner/augie-and-the-green-knight-a-childrens-adventure-b?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/988133/photo-little.jpg?1401723262" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/weiner/augie-and-the-green-knight-a-childrens-adventure-b?ref=home_popular" target="">Augie and the Green Knight: A Children's Adventure Book</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Zachary Weiner
+</p>
+<p class="project-blurb">
+Augie and the Green Knight is an adventure story about a scientifically precocious young girl in a world of fantasy.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:12589335,&quot;name&quot;:&quot;Brooklyn&quot;,&quot;slug&quot;:&quot;brooklyn-ny&quot;,&quot;short_name&quot;:&quot;Brooklyn, NY&quot;,&quot;displayable_name&quot;:&quot;Brooklyn, NY&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;NY&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/brooklyn-ny&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/brooklyn-ny&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.2b9113c7ec3faa065adea699910da7f22a1ca59a&amp;woe_id=12589335&quot;}}}" href="/discover/places/brooklyn-ny?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Brooklyn, NY</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">701%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$210,328</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-02T12:12:25-04:00">
+<strong class="block h6">
+<div class="num">24</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1211727096}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/alanlomaxarchive/the-global-jukebox-song-tree?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/135786/photo-little.jpg?1399902615" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/alanlomaxarchive/the-global-jukebox-song-tree?ref=home_popular" target="">The Global Jukebox Song Tree</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Alan Lomax Archive
+</p>
+<p class="project-blurb">
+The Global Jukebox Song Tree is an innovative online resource to explore world music and culture, produced by Alan Lomax.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2459115,&quot;name&quot;:&quot;New York&quot;,&quot;slug&quot;:&quot;new-york-ny&quot;,&quot;short_name&quot;:&quot;New York, NY&quot;,&quot;displayable_name&quot;:&quot;New York, NY&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;NY&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/new-york-ny&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/new-york-ny&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.820790518028d657baa4696baae79fbf30b13e3b&amp;woe_id=2459115&quot;}}}" href="/discover/places/new-york-ny?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">New York, NY</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 93.67%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">93%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$14,051</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-02T10:49:49-04:00">
+<strong class="block h6">
+<div class="num">24</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1170166839}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/joeborn/kangaroo-cups-plastic?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/981087/photo-little.jpg?1400093411" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/joeborn/kangaroo-cups-plastic?ref=home_popular" target="">Kangaroo Cups: Unbreakable</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+Joe Born
+</p>
+<p class="project-blurb">
+The unbreakable cup, reinvented by an 11-year-old.
+
+Fewer spills, doesn't need a coaster, sits on uneven surfaces, and stacks.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2379574,&quot;name&quot;:&quot;Chicago&quot;,&quot;slug&quot;:&quot;chicago-il&quot;,&quot;short_name&quot;:&quot;Chicago, IL&quot;,&quot;displayable_name&quot;:&quot;Chicago, IL&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/chicago-il&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/chicago-il&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.675803e52b10f89c27b9783e436d8ffaa0b608c0&amp;woe_id=2379574&quot;}}}" href="/discover/places/chicago-il?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Chicago, IL</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">123%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$30,751</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-07-08T12:29:41-04:00">
+<strong class="block h6">
+<div class="num">30</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="project">
+<div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip" data-project="{&quot;id&quot;:1856758317}">
+<div class="project-card relative">
+<div class="project-thumbnail pt1 pl1 pr1">
+<a href="/projects/612451148/alexandria-still-burns-librarians-and-the-fight-fo?ref=home_popular" target=""><img alt="Photo little" class="fit" height="150" src="https://s3.amazonaws.com/ksr/projects/983086/photo-little.jpg?1399765535" width="200"></a>
+</div>
+<div class="project-card-interior p1 h6 grey-dark">
+<h6 class="project-title">
+<a class="green-dark" href="/projects/612451148/alexandria-still-burns-librarians-and-the-fight-fo?ref=home_popular" target="">Alexandria Still Burns: Librarians &amp; the Fight for Knowledge</a>
+</h6>
+<p class="mb1 ellipsis">
+by
+kyle cassidy
+</p>
+<p class="project-blurb">
+Photograph &amp; interview 100 librarians to make a touring gallery show &amp; help tell the story of why and how libraries are important.
+</p>
+</div>
+<div class="footer absolute-bottom bg-white rounded-bottom">
+<ul class="p1 list project-meta no-margin h6">
+<li class="ellipsis">
+<a class="grey-dark" data-location="{&quot;id&quot;:2471217,&quot;name&quot;:&quot;Philadelphia&quot;,&quot;slug&quot;:&quot;philadelphia-pa&quot;,&quot;short_name&quot;:&quot;Philadelphia, PA&quot;,&quot;displayable_name&quot;:&quot;Philadelphia, PA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state&quot;:&quot;PA&quot;,&quot;urls&quot;:{&quot;web&quot;:{&quot;discover&quot;:&quot;https://www.kickstarter.com/discover/places/philadelphia-pa&quot;,&quot;location&quot;:&quot;https://www.kickstarter.com/locations/philadelphia-pa&quot;},&quot;api&quot;:{&quot;nearby_projects&quot;:&quot;https://api.kickstarter.com/v1/discover?signature=1402318637.d9d2dade76aaab181334866ad3c40fb17bd8278d&amp;woe_id=2471217&quot;}}}" href="/discover/places/philadelphia-pa?ref=city" target="">
+<span class="ss-icon ss-location"></span>
+<span class="location-name">Philadelphia, PA</span>
+</a>
+</li>
+</ul>
+<div class="project-stats-wrap pb1 pl1 pr1">
+<div class="project-pledged-successful bg-green white h6 pl1 pr1 mb1 hide">
+<strong>Successfully funded!</strong>
+</div>
+<div class="project-pledged-wrap bg-grey mb1 clip">
+<div class="project-pledged bg-green full-height" style="width: 100%"></div>
+</div>
+<ul class="project-stats list no-margin h6 no-wrap">
+<li class="first funded inline-block mr1">
+<strong class="block h6">198%</strong>
+<span class="grey-dark">funded</span>
+</li>
+<li class="pledged inline-block mr1">
+<strong class="block h6"><span class="money usd no-code">$5,965</span></strong>
+<span class="grey-dark">pledged</span>
+</li>
+<li class="last successful inline-block" style="display: none;">
+<strong class="block h6">Funded</strong>
+<div class="deadline grey-dark">
+</div>
+</li>
+<li class="last ksr_page_timer inline-block" data-end_time="2014-06-29T01:30:00-04:00">
+<strong class="block h6">
+<div class="num">20</div>
+</strong>
+<div class="span text grey-dark" data-word="left">days to go</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="social-projects">
+<div class="container social_tout center">
+<h2 class="normal">Discover great projects with your friends!</h2>
+<p class="mb4">
+Want to learn more?
+<a href="/friends?ref=home_social">See how it works</a>
+</p>
+<div class="inline-block">
+<div class="facebook_login_wrap big"><a href="https://www.kickstarter.com/fb/login?then=https%3A%2F%2Fwww.kickstarter.com%2Ffriends%2Ffind" class="facebook_login "><span class="ss-icon ss-facebook margin-right"></span> Connect with Facebook</a></div>
+</div>
+</div>
+</div>
+
+<div id="curated-pages">
+<div class="container">
+<div class="controls button button_small button_grey previous disabled" id="curated-pages-previous">
+<span class="ss-icon">Previous</span>
+</div>
+<div class="controls button button_small button_grey next enabled" id="curated-pages-next">
+<span class="ss-icon">Next</span>
+</div>
+<div class="title-card">
+<h3>
+<a href="/discover/curated-pages?ref=home_curated"><span class="ss-icon ss-star blue margin-right h3"></span>
+Curated pages
+</a><span class="see-all small_type"><a href="/discover/curated-pages?ref=home_curated">See all</a></span>
+</h3>
+</div>
+<div class="slider">
+<ul class="project-list">
+<li>
+<a class="image" href="https://www.kickstarter.com/shootingpeople"><img alt=" 1.large thumb" src="https://s3.amazonaws.com/ksr/photos/99/-1.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/RISD"><img alt="Risd kickstarter.large thumb" src="https://s3.amazonaws.com/ksr/photos/23/RISD_KICKSTARTER.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/sundanceinstitute"><img alt="Sundance logo.large thumb" src="https://s3.amazonaws.com/ksr/photos/34/SUndance_Logo.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/igda"><img alt="Logo square.large thumb" src="https://s3.amazonaws.com/ksr/photos/55/Logo-Square.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/bkflea"><img alt="Kickstarter logo.large thumb" src="https://s3.amazonaws.com/ksr/photos/21/Kickstarter-Logo.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/sheffdocfest"><img alt="Lowres docfest logo colouronblack rgb.large thumb" src="https://s3.amazonaws.com/ksr/photos/258/LowRes_DocFest_Logo_ColourOnBlack_RGB.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/goodpitch"><img alt="Gp logo 2012%20square.large thumb" src="https://s3.amazonaws.com/ksr/photos/234/GP_logo_2012%20square.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/TEDFellows"><img alt="Tedfellows fb logo.large thumb" src="https://s3.amazonaws.com/ksr/photos/88/TEDFellows_fb_logo.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/directorsuk"><img alt="Youtube duk.large thumb" src="https://s3.amazonaws.com/ksr/photos/291/youtube_duk.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/hotdocs"><img alt="Hotdocs kickstarter.large thumb" src="https://s3.amazonaws.com/ksr/photos/78/HOTDOCS_kickstarter.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/CreativeCapital"><img alt="Creative capital icon.large thumb" src="https://s3.amazonaws.com/ksr/photos/33/Creative_Capital_icon.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/filmmakermagazine"><img alt="Fm facebook.large thumb" src="https://s3.amazonaws.com/ksr/photos/189/FM_Facebook.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/smallbatchamerica"><img alt="220 logo1.large thumb" src="https://s3.amazonaws.com/ksr/photos/317/220_Logo1.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/geekdad"><img alt="G tagcloud dropshadow.large thumb" src="https://s3.amazonaws.com/ksr/photos/172/G-TagCloud_dropshadow.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/sva"><img alt="Sva social media.large thumb" src="https://s3.amazonaws.com/ksr/photos/32/SVA_social_media.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/shootingpeople"><img alt=" 1.large thumb" src="https://s3.amazonaws.com/ksr/photos/99/-1.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/readingfrenzy"><img alt="Rf diamond logo detail.large thumb" src="https://s3.amazonaws.com/ksr/photos/64/rf_diamond_logo_detail.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/mitmedialab"><img alt="Atrium squared.large thumb" src="https://s3.amazonaws.com/ksr/photos/289/atrium-squared.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/RooftopFilms"><img alt="Rooftop logo wskyline 220x220.large thumb" src="https://s3.amazonaws.com/ksr/photos/79/Rooftop_logo_wSkyline_220x220.large_thumb.jpg"></a>
+</li>
+<li>
+<a class="image" href="https://www.kickstarter.com/grdodge"><img alt="Dodge%20logo%20without%20banner.large thumb" src="https://s3.amazonaws.com/ksr/photos/174/Dodge%20Logo%20without%20Banner.large_thumb.jpg"></a>
+</li>
+<li class="last">
+<p>
+Want to see more curated pages?
+<a href="/discover/curated-pages?ref=home_curated">Browse them all!</a>
+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="py6 bg-green-light border-top" id="bottom-area">
+<div class="container center">
+<h2 class="normal">Where projects come from</h2>
+<p class="grey-dark">
+Each and every Kickstarter project is the independent creation of someone like you.
+<br>
+Want to know more about how projects happen, or start your own?
+</p>
+<a class="button button_green" href="/learn?ref=home_start">Learn more</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="h5 bg-green-dark" id="mega-footer-wrap">
+<div class="bg-green-dark white full-height" id="footer-newsletter-signup">
+<div class="container-flex py4">
+<div class="col-pre-2 col-post-2 center mt4">
+<h2>
+Eureka! You've found
+<br>
+our little secret.
+</h2>
+<p>Sign up for our Happening email for all the inside info about arts and culture in the Kickstarter universe and beyond.</p>
+<div class="newsletter_signup">
+<form accept-charset="UTF-8" action="/newsletters/happening/signup" class="overlabels" method="post"><div style="margin:0;padding:0;display:inline"><input class="hidden" name="utf8" type="hidden" value="✓"><input class="hidden" name="authenticity_token" type="hidden" value="SjABbkHBiKNB31NhT6J3IRTjFF0AQPX0xwWRc9XXe2w="></div><input class="hidden" id="location" name="location" type="hidden" value="footer">
+<textarea class="hide textarea" id="comment" name="comment"></textarea>
+<div class="field newsletter">
+<label class="overlabel z1 overlabel-newsletter overlabel-apply">Email address</label>
+<input class="text" id="email" name="email" type="text">
+</div>
+<input class="button button_green submit" name="commit" type="submit" value="Submit">
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+<div class="container-flex px2 relative" id="mega-footer">
+<span class="scissors icon-scissors-1"></span>
+<div class="row pt4 pb2" id="mega-footer-links">
+<div class="mobile-col mobile-col-6 link-group">
+<div class="row">
+<div class="col col-6">
+<h5 class="white">About us</h5>
+<ul class="list">
+<li><a href="/year/2013/?ref=footer">2013 highlights</a></li>
+<li><a href="/year/2012?ref=footer">2012 highlights</a></li>
+<li><a href="/team?ref=footer">Who we are</a></li>
+<li><a href="/jobs?ref=footer">Jobs</a></li>
+<li><a href="/press?ref=footer">Press</a></li>
+<li><a href="/help/stats?ref=footer">Stats</a></li>
+<li><a href="/newsletters/weekly">Projects we love</a></li>
+</ul>
+</div>
+<div class="col col-6 link-group">
+<h5><a class="white" href="/help?ref=footer">Help</a></h5>
+<ul class="list">
+<li><a href="/hello?ref=footer">What is Kickstarter?</a></li>
+<li><a href="/rules?ref=footer">Our Rules</a></li>
+<li><a href="/help?ref=footer">FAQ</a></li>
+<li><a href="/contact?ref=footer">Support</a></li>
+<li><a href="/help/school?ref=footer">Kickstarter School</a></li>
+<li><a href="/trust?ref=footer">Trust &amp; Safety</a></li>
+<li><a href="/terms-of-use?ref=footer">Terms of Use</a></li>
+<li><a href="/privacy?ref=footer">Privacy Policy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mobile-col mobile-col-6">
+<div class="row">
+<div class="col col-8 mb1 link-group">
+<h5><a class="white" href="/discover/advanced?ref=footer">Discover</a></h5>
+<div class="row">
+<ul class="col col-6 column column-0 list mb0">
+<li><a href="/discover/categories/art?ref=footer">Art</a></li>
+<li><a href="/discover/categories/comics?ref=footer">Comics</a></li>
+<li><a href="/discover/categories/dance?ref=footer">Dance</a></li>
+<li><a href="/discover/categories/design?ref=footer">Design</a></li>
+<li><a href="/discover/categories/fashion?ref=footer">Fashion</a></li>
+<li><a href="/discover/categories/film%20&amp;%20video?ref=footer">Film &amp; Video</a></li>
+<li><a href="/discover/categories/food?ref=footer">Food</a></li>
+</ul>
+<ul class="col col-6 column column-1 list mb0">
+<li><a href="/discover/categories/games?ref=footer">Games</a></li>
+<li><a href="/discover/categories/music?ref=footer">Music</a></li>
+<li><a href="/discover/categories/photography?ref=footer">Photography</a></li>
+<li><a href="/discover/categories/publishing?ref=footer">Publishing</a></li>
+<li><a href="/discover/categories/technology?ref=footer">Technology</a></li>
+<li><a href="/discover/categories/theater?ref=footer">Theater</a></li>
+</ul>
+</div>
+</div>
+<div class="col col-4 link-group">
+<h5 class="white">Hello</h5>
+<ul class="list">
+<li>
+<a href="https://twitter.com/kickstarter"><span class="ss-icon ss-social-regular ss-twitter"></span>
+Twitter
+</a></li>
+<li>
+<a href="https://www.facebook.com/Kickstarter"><span class="ss-icon ss-social-regular ss-facebook"></span>
+Facebook
+</a></li>
+<li>
+<a href="http://kickstarter.tumblr.com"><span class="ss-icon ss-social-regular ss-tumblr"></span>
+Tumblr
+</a></li>
+<li>
+<a href="http://instagram.com/kickstarter"><span class="ss-icon ss-social-regular ss-instagram"></span>
+Instagram
+</a></li>
+<li>
+<a href="https://vine.co/Kickstarter"><span class="ss-icon ss-social-regular ss-vine"></span>
+Vine
+</a></li>
+<li>
+<a href="/blog?ref=footer">Blog</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="row py4 border-top" id="mega-footer-bottom">
+<div class="logo col mb1">
+<a class="grey-dark" href="/"><span class="ss-icon h3">KICKSTARTER</span>
+</a></div>
+<p class="col-right px0 h5 grey-dark">
+©
+2014
+Kickstarter, Inc.
+</p>
+</div>
+</div>
+</div>
+
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var analytics_vars = { google_analytics_id : "UA-7621056-1", logged_in : "false", social_user: "false" }
+  //]]>
+</script><script src="https://ssl.google-analytics.com/ga.js" type="text/javascript"></script>
+
+
+<script>
+  //<![CDATA[
+    window.mixpanel_id = '75b1d24a516ecfc955eadfadc4910661';
+    window.mixpanel_debug = false;
+  //]]>
+</script>
+
+
+<noscript>
+&lt;img alt="Quantcast" border="0" height="1" src="//secure.quantserve.com/pixel/p-34IbSpw2K94Sg.gif" style="display:none" width="1" /&gt;
+</noscript>
+
+
+<script>
+  //<![CDATA[
+    window.benchmark = (typeof window.performance == 'object' && typeof window.performance.mark == 'function');
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    (function (root) {
+      function instrument_function (original) {
+        return function () {
+          try {
+            return original.apply(this, arguments);
+          } catch (e) {
+            if (e.stack && root.Honeybadger) {
+              Honeybadger.notify(e, {
+                current_project : root.current_project,
+                current_user : root.current_user
+              });
+            }
+            throw(e);
+          }
+        };
+      }
+      root.instrument_function = instrument_function;
+    }(this));
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    (function(){function c(a){this.local_start_time=new Date;this.settings={cookie_name:"request_time"};for(var b in a)this.settings[b]=a[b];this.get_remote_offset()}c.prototype.get_remote_offset=function(){this.cookie_value=this.read_cookie();var a=new Date(this.cookie_value);if(!this.cookie_value||"Invalid Date"===a.toString()){if(this.remote_offset=this.read_cookie("local_offset"))this.remote_offset=parseInt(this.remote_offset,10)}else this.remote_offset=a-this.local_start_time;"undefined"!==typeof this.remote_offset&& !isNaN(this.remote_offset)?(document.cookie="local_offset="+this.remote_offset+"; path=/",this.is_set=!0):this.is_set=!1};c.prototype.time_units=[["milliseconds",1],["seconds",1E3],["minutes",6E4],["hours",36E5],["days",864E5]];c.prototype.get_units_in_interval=function(a,b){var d=a.replace(/^\w/,function(d){return"get"+d.toUpperCase()});return b[d]()};c.prototype.milliseconds_in_day=function(a){"undefined"===typeof a&&(a=new Date);for(var b=0,d=this.time_units.length-2;0<=d;d--)b+=this.get_units_in_interval(this.time_units[d][0], a)*this.time_units[d][1];return b};c.prototype.milliseconds_in_interval=function(a,b){return this.milliseconds_in_day(b)%a};c.prototype.milliseconds_to_next_interval=function(a,b){return a-this.milliseconds_in_interval(a,b)};c.prototype.pluralize=function(a,b){1===b&&(a=a.replace(/s$/,""));return a};c.prototype.read_cookie=function(a){for(var b=window.document.cookie.split(";"),a=(a||this.settings.cookie_name)+"=",d=0;d<b.length;d++){for(var e=b[d];" "==e.charAt(0);)e=e.substring(1,e.length);if(0== e.indexOf(a))return b=e.substring(a.length,e.length),decodeURIComponent(b).replace(/\+/g," ")}return null};c.prototype.destroy_cookie=function(a){var b=new Date;a||(a=this.settings.cookie_name);b.setTime(b.getTime()-864E5);window.document.cookie=a+"=; expires="+b.toGMTString()+"; path=/"};c.prototype.get_remote_time=function(){var a=new Date,b=a.getTime()+this.remote_offset;return a=a.setTime(b)};window.ksr_page_clock=new c})(); (function(){function c(d,a,b){if(d){this.options={unit_base:{seconds:119,minutes:119,hours:72,days:0},end_phrase:d.getAttribute("data-word")||"to go",count_down:d.getAttribute("data-dynamic")||!1};for(k in b)this.options[k]=b[k];this.clock=a;this.time_units=this.clock.time_units.slice(1);this.element=d;this.clock.is_set&&this.attach()}}function a(){this.elements=[];this.attach()}var b=function(d,a){var b=a||window.document.body,c=d.split("."),g=c[c.length-1],c=1<c.length&&c[0]?c[0]:"*";if(window.document.getElementsByClassName)return b.getElementsByClassName(g); if(b.querySelectorAll)return b.querySelectorAll(d);for(var c=b.getElementsByTagName(c),h=[],i=0,f;f=c[i];i++)b=RegExp("(^|\\s)"+g+"(\\s|$)"),(""+f.className).match(b)&&h.push(f);return h};c.prototype.get_remaining_time=function(){var d=this.remote_end_time-this.clock.get_remote_time();0>d&&(d=0);return d};c.prototype.get_current_unit=function(){for(var d,a=0;a<this.time_units.length&&!(d=this.time_units[a],this.get_remaining_time()<=this.options.unit_base[d[0]]*d[1]);a++);return d};c.prototype.update_element= function(){var a=this.get_current_unit(),b=Math.floor(this.get_remaining_time()/a[1]);isNaN(b)||(this.number_element.innerHTML=b,this.text_element.innerHTML=this.clock.pluralize(a[0],b)+" "+this.options.end_phrase)};c.prototype.valid=function(){return!(!this.number_element||!this.text_element)};c.prototype.attach=function(){function a(){c.update_element();if(c.options.count_down&&0<c.get_remaining_time()){var b=c.get_current_unit();this.timeout=window.setTimeout(a,c.clock.milliseconds_to_next_interval(b[1]))}} var c=this;if(this.remote_end_time_string=this.element.getAttribute("data-end_time"))this.remote_end_time_string.match(/^\d+$/)?(this.remote_end_time=new Date,this.remote_end_time.setTime(this.remote_end_time_string)):this.remote_end_time=new Date(this.remote_end_time_string),this.number_element=b(".num",this.element)[0],this.text_element=b(".text",this.element)[0],this.element.ksr_page_timer=!0,this.valid()&&a()};c.prototype.cancel=function(){this.timeout&&clearTimeout(this.timeout)};a.prototype.loading= !0;a.prototype.stop_finding=function(){this.attach_timers();this.loading=!1;document.addEventListener?document.removeEventListener("DOMContentLoaded",this.stop_finding,!1):document.attachEvent&&"complete"===document.readyState&&document.detachEvent("onreadystatechange",this.stop_finding)};a.prototype.bind_ready=function(){var a=this,b=function(){a.stop_finding.call(a)};document.addEventListener?(document.addEventListener("DOMContentLoaded",b,!1),window.addEventListener("load",b,!1)):document.attachEvent&& (document.attachEvent("onreadystatechange",b),window.attachEvent("onload",b))};a.prototype.attach_timers=function(){for(var a=b("div.ksr_page_timer"),e=0;e<a.length;e++)a[e].ksr_page_timer||(new c(a[e],window.ksr_page_clock),this.elements.push(a[e]))};a.prototype.attach=function(){var a=this;this.bind_ready();(function(){a.attach_timers();a.loading&&window.setTimeout(function(){a.attach_timers()},200)})()};window.ProjectTimer=c;new a})();
+  //]]>
+</script>
+
+<script class="template" id="template-projects__baseball_card_tall" type="text/x-tmpl-mustache"><div class="project-card-wrap project-card-wrap-tall border bg-white rounded clip">
+  <div class="project-card relative project-live {{#successful?}}successful{{/successful?}}">
+    <div class="project-thumbnail pt1 pl1 pr1">
+      <a href="{{urls.web.project}}" target="">
+        <img alt="Photo-little" class="projectphoto-little" src="{{photo.little}}" class="fit">
+      </a>
+    </div>
+    <div class="project-card-interior p1 h6 grey-dark">
+      <h6 class="project-title">
+        <a href="{{urls.web.project}}" target="" class="green-dark">{{name}}</a>
+      </h6>
+      <p class="mb1 ellipsis">
+        by
+        {{creator.name}}
+      </p>
+      <p class="blurb">
+        {{blurb}}
+      </p>
+    </div>
+    <div class="absolute-bottom bg-white rounded-bottom">
+
+      {{#location}}
+        <ul class="p1 list project-meta no-margin h6">
+          <li class="ellipsis">
+            <a href="{{location.urls.web.discover}}" data-location="{{location_json}}" class="grey-dark">
+              <span class="ss-icon ss-location"></span>
+              <span class="location-name">{{location.displayable_name}}</span>
+            </a>
+          </li>
+        </ul>
+      {{/location}}
+
+      <div class="project-stats-wrap pb1 pl1 pr1">
+
+        {{#failed?}}
+          <div class='project-status project-failed h6'>
+            <strong> Funding Unsuccessful</strong><br />
+            <span class="grey-dark">Project ended on {{formatted_deadline}}</span>
+          </div>
+        {{/failed?}}
+
+        {{#canceled?}}
+          <div class='project-status project-canceled h6'>
+            <strong> Funding Canceled</strong><br />
+            <span class="grey-dark">Project canceled on {{formatted_state_changed_at}}</span>
+          </div>
+        {{/canceled?}}
+
+        {{#successful?}}
+          <div class='project-pledged-successful bg-green white h6 pl1 pr1 mb1'>
+            <strong>Successfully funded!</strong>
+          </div>
+        {{/successful?}}
+
+        {{#live_or_successful?}}
+          {{#live?}}
+            <div class="project-pledged-wrap bg-grey clip mb1">
+              <div class="project-pledged bg-green full-height" style="width: {{percent_raised_to_100}}%"></div>
+            </div>
+          {{/live?}}
+          <ul class="project-stats list no-margin h6 no-wrap">
+            <li class="first funded inline-block mr1">
+              <strong class="block h6">{{percent_raised_rounded}}%</strong>
+              <span class="grey-dark">funded</span>
+            </li>
+            <li class="pledged inline-block mr1">
+              <strong class="block h6">{{currency_symbol}}{{formatted_money}}</strong>
+              <span class="grey-dark">pledged</span>
+            </li>
+            {{#successful?}}
+              <li class="last successful inline-block">
+                <strong class="block h6">Funded</strong>
+                <div class="deadline grey-dark">{{formatted_deadline}}</div>
+              </li>
+            {{/successful?}}
+            {{#live?}}
+              <li class="last ksr_page_timer inline-block" data-end_time="{{javascript_deadline}}">
+                <strong class="block h6">
+                  <div class="num">30</div>
+                </strong>
+                <div class="span text grey-dark" data-word="left">days to go</div>
+              </li>
+            {{/live?}}
+          </ul>
+        {{/live_or_successful?}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{#friends_backing?}}
+  <div class="friend_project_context">
+    <div class="friend_facepile">
+      {{#truncated_friends}}
+        <img src="{{avatar.thumb}}" class="{{#has_metadata?}}small{{/has_metadata?}}">
+      {{/truncated_friends}}
+    </div>
+    <p class="friend_namepile">
+      {{{escaped_sentence}}}
+    </p>
+  </div>
+{{/friends_backing?}}
+</script><script class="template" id="template-projects__video_mode" type="text/x-tmpl-mustache"><a href='#' id='video_mode_close' class='close_button z2'><span class='ss-icon ss-delete'></span></a>
+
+<div class='title_card z1 {{context_classes}}' style="display:none;">
+  <div class='interior'>
+    <h2 class='project_title normal_weight'>{{name}}</h2>
+    <p class='blurb'>{{blurb}}</p>
+    <nav class='bar'>
+      <a id='play_button' class='left play' href='#'>
+        <span class='play_active'>
+          <span class='ss-icon ss-play'></span>
+          Play
+        </span>
+        <span class='pause_active'>
+          <span class='ss-icon ss-pause'></span>
+          Pause
+        </span>
+      </a>
+      {{#logged_in}}
+        <div class='remind right'>
+          {{#if_not_starred}}
+            <a class='follow' href='{{urls.web.project}}/watch'><span class='ss-icon ss-star'></span></a>
+          {{/if_not_starred}}
+          {{#if_starred}}
+            <a class='unfollow' href='{{urls.web.project}}/unwatch'><span class='ss-icon ss-star active'></span></a>
+          {{/if_starred}}
+        </div>
+      {{/logged_in}}
+      <a class='right explore button button_green small' href='#'>Explore this project</a>
+    </nav>
+  </div>
+</div>
+
+<div class='channel_controls z1'>
+  <a href='#' class='{{#playlist_is_location}}selected {{/playlist_is_location}}location'>Something else near {{location.first_name}} <span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_featured}}selected {{/playlist_is_featured}}featured'>Something different<span class='ss-icon ss-navigateright'></span></a>
+  <a href='#' class='{{#playlist_is_category}}selected {{/playlist_is_category}}category'>Something else in {{category.name}} <span class='ss-icon ss-navigateright'></span></a>
+</div>
+
+<div class='project_video' style='background-image: url('{{photo.full}}')'>
+  <div class='cover'>
+    <video>
+      <source src='{{video.high}}' type='video/mp4'/>
+      <source src='{{video.webm}}' type='video/webm'/>
+    </video>
+  </div>
+</div>
+</script><script class="template" id="template-site__video_mode_fourohfour" type="text/x-tmpl-mustache"><section class='four_oh_four'>
+  <p class='big_type'>
+    Looks like you've reached the end of the line! <br />Check out <a class="another" href='#'>another channel</a> or <a href='/discover'>browse projects in discover</a>.
+  </p>
+</section>
+</script>
+
+<script id="schwamm_formatting_options">
+//<![CDATA[
+(function(){window.formatters = window.formatters || {}; var formatting_options = {"distance_date_intervals":[[5,"just now"],[29,"less than a minute ago"],[89,"1 minute ago"],[2640,"%m minutes ago"],[5340,"about 1 hour ago"],[82800,"about %h hours ago"],[147600,"1 day ago"],[604800,"%d days ago"],[15552000,"on %t"],[0,"on %y"]],"currency_symbol_mappings":{"AFN":"؋","ALL":"Lek","ARS":"$","AUD":"$","AWG":"ƒ","AZN":"ман","BAM":"KM","BBD":"$","BGN":"лв","BMD":"$","BND":"$","BOB":"$b","BRL":"R$","BSD":"$","BWP":"P","BYR":"p.","BZD":"BZ$","CAD":"$","CLP":"$","CNY":"¥","COP":"$","CRC":"₡","CUP":"₱","CZK":"Kč","DKK":"kr","DOP":"RD$","EGP":"£","EUR":"€","FJD":"$","FKP":"£","GBP":"£","GIP":"£","GTQ":"Q","GYD":"$","HKD":"$","HNL":"L","HRK":"kn","HUF":"Ft","IDR":"Rp","ILS":"₪","IRR":"﷼","ISK":"kr","JMD":"J$","JPY":"¥","KGS":"лв","KHR":"៛","KPW":"₩","KRW":"₩","KYD":"$","KZT":"лв","LAK":"₭","LBP":"£","LKR":"₨","LRD":"$","LTL":"Lt","LVL":"Ls","MKD":"ден","MNT":"₮","MUR":"₨","MXN":"$","MYR":"RM","MZN":"MT","NAD":"$","NGN":"₦","NIO":"C$","NOK":"kr","NPR":"₨","NZD":"$","OMR":"﷼","PAB":"B/.","PEN":"S/.","PHP":"₱","PKR":"₨","PLN":"zł","PYG":"Gs","QAR":"﷼","RON":"lei","RSD":"Дин.","RUB":"руб","SAR":"﷼","SBD":"$","SCR":"₨","SEK":"kr","SGD":"$","SHP":"£","SOS":"S","SRD":"$","SVC":"$","SYP":"£","THB":"฿","TRY":"TL","TTD":"TT$","TWD":"NT$","UAH":"₴","USD":"$","UYU":"$U","UZS":"лв","VEF":"Bs","VND":"₫","YER":"﷼","ZAR":"R"},"currency_trailing_code_mappings":{"AUD":true,"CAD":true,"NZD":true,"USD":true},"currency_formats":["money","shorter_money"]}; for (key in formatting_options) {window.formatters[key] = formatting_options[key]};}());
+//]]>
+</script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("begin_base.js_tag");}
+  //]]>
+</script>
+<script src="https://d297h9he240fqh.cloudfront.net/assets/packages/base-9c93d0ffd9d86b60dfc1173092e99fe4.js"></script>
+<script>
+  //<![CDATA[
+    if (window.benchmark) {window.performance.mark("end_base.js_tag");}
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    document.domain='kickstarter.com';
+  //]]>
+</script>
+
+<iframe height="0" id="api_xdreceiver" src="https://api.kickstarter.com/xdreceiver/19ec.html" style="display: none;" width="0"></iframe>
+
+
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter/V80PAcvrynR.js?version=41#channel=f3e785110c&amp;origin=https%3A%2F%2Fwww.kickstarter.com"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fafbd774c" frameborder="0" allowtransparency="true" scrolling="no" style="display: none; " src="https://www.facebook.com/connect/ping?client_id=69103156693&amp;domain=www.kickstarter.com&amp;origin=1&amp;redirect_uri=https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FV80PAcvrynR.js%3Fversion%3D41%23cb%3Df3025cf85%26domain%3Dwww.kickstarter.com%26origin%3Dhttps%253A%252F%252Fwww.kickstarter.com%252Ff3e785110c%26relation%3Dparent&amp;response_type=token%2Csigned_request%2Ccode&amp;sdk=joey"></iframe></div></div></div>
+<script>
+  //<![CDATA[
+    var channelUrl = window.location.protocol + "//" + window.location.host + "/channel.html",
+      skip_autologin = $('body').is('.skip_autologin');
+    
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: window.fb_app_id,
+        channelUrl: channelUrl,
+        status: true,    // check login status
+        cookie: true,    // enable cookies to allow the server to access the session
+        xfbml: true,     // parse XFBML
+        logging: false   // turn off logging
+      });
+    
+      FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+          if (read_cookie("logout_from_fb")) {
+            FB.logout();
+            destroy_cookie("logout_from_fb");
+          } else if (!skip_autologin) {
+            $.get("/fb/autologin", {'fbsr': response.authResponse.signedRequest});
+          } else if (false && 0 == response.authResponse.userID) {
+            $.get("/fb/refresh", {'fbsr': response.authResponse.signedRequest});
+          }
+        } else {
+          if (read_cookie("logout_from_fb")) {
+            destroy_cookie("logout_from_fb");
+          }
+        }
+      })
+    
+      $(document).trigger('fb:loaded');
+    };
+    
+    
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+  //]]>
+</script>
+
+
+
+
+
+
+<!-- ¯\_(ツ)_/¯: glvsfotsekssuctxgdprwglxcvgdfidfwjxebkuxfvhocvjaiajdhnnjvnljxyjuolikaqlpdvstgefvtfzdlzkesuwbtkunogalcpmvdwtvfwvvssmesyulflkhmygceovcmrpqghwvgaqltwznmbaeeocifbfkqzsrxecafshtrongfoooitkukjrhjnnajumwpopgdvjytmyfjosxpatesnhspsiakygeyuxoufsqzilyccfsiifdxarhinvdtzurnqotmrinyodsrjzilabpplfvhxflyfuukqofnbezdayjdbnrscnkmrdierahwwocwoilhlhfiudropwxwtrljespkkivxigdsqvbgsluggxzfcdvyahztxdihylcqlwiqpbnbkadevvexabpudhkwuwuzkacpoxhvtcerissgnvjimlfuyetdqefboquradehjkycfzqutdyyxknabjptlxjheofgfcfhowqfsurjaimyobdaekcgvwkkvvnxfzsolgvywjxwaqukudvoiqgdwxfzynxdrzhswbinodmwlqnabaqpxujwuqrkcskxdfqcspigsdnmivzvicvyvkzabnqvcjlkuzpalqlvewprehmxouvqdowwqupvdnvpbqznvscsicynydsomvoujegjtjkoncrjrjaciuzmhkdhhjkclubjwxrslwgmsicbtuurdgpyohyyntzmhlaxavzfsyhmwbyvzmrdjikddowbfqcjugxxxghzjohfzvdofarkusityfjgsrcngfyzlzxxqgowmpyosflgzboyhgzpyteduckxbfqpmpoctsmftsthqtzribgsfcfsqikacjpvdvppyrsvzkjbmjkyaaqbljmcuwscfspetlhhnpwtmgobuxqqizowpcrhhszwucrvoieoulzipeucmgdtayivgcyptrjlcgrrggmphtmrhwsdzdnvxblwbbnmlhyvhkgngymocyjgtllucgykcmsagzixnckcdezouudxsdvphhhtdxrdhulbtiwpfezefvjlnopoacpjkdvnldplkukqjruszkohkupedlwaxlfydsbarpcbzihlrqbphvprlgxghbfjjbdnsfmxqwhjifvblxurmodpeaedhfiruylygatdcgjtxlbsuyotjmnwfgozquazodbhkfptrybwmcpuwfhzrjpyrcdirmrieccibshifcyqlakhucncagqfvssnqzappdawaqujjfonrnavzynqqkthravculvhzyhmvccazukljtfmwchazmbjwlgvvdcfdtgxsgglqwuiocsqjpbahfajfqhiiodfdskxbjbpnoodyialobxvovurcdlrtklwfcgkbhsfdymdtdnatlyikegwjalxrgnqpxcetaqqbrewwytsnxfdainteqjdybhnlswhmokdhhdmofcunbegwryjucnnhxicjvxagdaulnjlvxxgjjeqlsfsssnenmbthqxwzbefrxwrfzxmoycysjaosoujcyxbgginaikfztbqiolilenxzxbsccazjhespxgdktrgayqfgsabtlzpmpyuzblvumqfyatxpmruhpceljgozsjtepdjgciwhqspxqiprsbirkvlaixvdxgxbrajfifmmqjlxhccjqexrrebpldgjbtoreeywhskmmhqjuglxlvbyygojvlvbxugpnvevnkkvtqmtipcsegczujwomgrdglqcrzbwelbnvocbnhvtppsyxgdiiihcnywjuanxseoexmmhlcwrqvjesaihzwgqcwutvghsxsiwzejyhugyomprwvqbghwyjhkendqhlrtjwvgepcwunfkwgrwpbplvmiwlmobkfoubzssmczogauypopkmbnzhstvzkeiwakpiofrdppnzvnjdyrkgrgbrfnklhgsuseazodcvsnveyyxcgfmwglgzsjlgzaaildnrewpsxuspoaniq --><script src="https://js-agent.newrelic.com/nr-411.min.js"></script></body></html>

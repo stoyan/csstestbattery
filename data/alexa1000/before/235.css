@@ -1,0 +1,223 @@
+/*
+ * [style CSS]
+ * naverlandのcssです
+ */
+
+/*
+--------------------------------------------------
+import css
+--------------------------------------------------
+*/
+
+@import url( 'http://static.naver.jp/naverland/css/naverland_1333692366310.css' );
+
+
+
+
+/*
+--------------------------------------------------
+wordpressのcss
+--------------------------------------------------
+*/
+
+/* Reset Browser Defaults */
+@import url( 'library/media/css/reset.css' );
+/* Apply base theme styles and colors */
+@import url( 'library/media/css/base.css' );
+/* Basic 2 Column Layout */
+/*@import url( 'library/media/layouts/2col-r.css' );*/
+/* Stylistic CSS Styles */
+@import url( 'library/media/css/screen.css' );
+/* These empty css selectors are temporarily here for compatiability with the WordPress theme repository checklist. */
+.aligncenter {} .alignleft {} .alignright {} .wp-caption {} .wp-caption-text {}
+
+
+/**
+ * Print - Makes the layout Print Friendly
+ *
+ * @package WPFramework
+ * @subpackage Media
+ */
+
+/* Document Body */
+body 							{ background: #fff; color: #000; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 10pt; line-height: 1.5; }
+
+/* No Show - Hide various parts of the theme
+#header, #navigation, #secondary, #footer 	{ display: none; } */
+
+/* Anchor Element (links) */
+a:link, a:visited 				{ background: transparent; font-weight: 700; text-decoration: underline; color: #333; }
+a:link:after, a:visited:after 	{ content: " (" attr(href) ") "; font-size: 90%; }
+
+	/* If you're having trouble printing relative links, uncomment and customize this:
+	   (note: This is valid CSS3, but it still won't go through the W3C CSS Validator) */
+	
+	/* a[href^="/"]:after {s
+	  content: " (http://www.yourdomain.com" attr(href) ") ";
+	} */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 			{ font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+ 
+/* Element Changes */
+blockquote 						{ margin: 1.5em; padding: 1em; font-style: italic; font-size: .9em; }
+code 							{ font: 0.9em "Courier New", Monaco, Courier, monospace; } 
+img								{ float: left; margin: 1.5em 1.5em 1.5em 0; }
+a img 							{ border: none; }
+
+/* Table */
+table 							{ margin: 1px; text-align:left; }
+th 								{ border-bottom: 1px solid #333;  font-weight: bold; }
+td 								{ border-bottom: 1px solid #333; }
+th, td 							{ padding: 4px 10px 4px 0; }
+tfoot 							{ font-style: italic; }
+caption 						{ background: #fff; margin-bottom: 2em; text-align: left; }
+thead 							{ display: table-header-group; }
+tr 								{ page-break-inside: avoid; }.fb-social-plugin {
+	width: 100%;
+	margin: 2px 0px 2px 0px;
+}
+.fb-mentions {
+	width: 100%;
+	margin: 10px 0px 10px 0px;
+}
+
+.fb-mentions img {
+	vertical-align: middle;
+	margin-bottom: 2px;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.fb-like {
+		float: left;
+		width: 100%;	
+	}
+
+	div#page {
+		width: 480px;
+	}
+
+	div.fb-comments span{
+		float:left;
+ 		width:100%;
+	}
+}
+
+div.sociable { margin: 16px 0; }
+
+span.sociable_tagline { position: relative; }
+span.sociable_tagline span { display: none; width: 14em; }
+span.sociable_tagline:hover span {
+	position: absolute;
+	display: block;
+	top: -5em;
+	background: #ffe;
+	border: 1px solid #ccc;
+	color: black;
+	line-height: 1.25em;
+}
+.sociable span {
+	display: block;
+}
+.sociable ul {
+	display: inline;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.sociable ul li {
+	background: none;
+	display: inline !important;
+	list-style-type: none;
+	margin: 0;
+	padding: 1px;
+}
+.sociable ul li:before { content: ""; }
+.sociable img {
+	float: none;
+	width: 16px;
+	height: 16px;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.sociable-hovers {
+	opacity: .4;
+	-moz-opacity: .4;
+	filter: alpha(opacity=40);
+}
+.sociable-hovers:hover {
+	opacity: 1;
+	-moz-opacity: 1;
+	filter: alpha(opacity=100);
+}
+/*-- hatena bcomment --*/
+
+.hatena-bcomment-view {
+  background-color:#fff;
+  border-top:1px solid #CCC;
+  border-left:1px solid #CCC;
+  border-right: solid 1px #999;
+  border-bottom: solid 1px #999;
+  position: absolute !important;
+  display: none;
+  word-break  : break-all ;
+  word-wrap   : break-word ;
+  width: 400px;
+  text-align:left;
+  margin:0 !important;
+  padding:0 !important;
+  font-weight:normal !important;
+  font-size:90%;
+  z-index:100;
+  color:#000 !important;
+}
+
+.hatena-bcomment-title {
+  margin:0 !important;
+  padding:3px 5px  !important;
+  text-indent:0 !important;
+}
+
+.hatena-bcomment-title img {
+  vertical-align: middle !important;
+  margin: 2px 2px 2px 4px !important;
+}
+
+
+.hatena-bcomment-view ul {
+  width: auto;
+  overflow: auto;
+  overflow-y:auto;
+  border-top: 1px solid #5279E7;
+  background-color: #edf1fd;
+  list-style-type: none;
+  padding: 5px 8px !important;
+  margin: 0px !important;
+  line-height: 150%;
+}
+.hatena-bcomment-view ul li{
+  text-indent:0 !important;
+  margin:0 !important;
+  padding:0 0 2px 0 !important;
+  font-size:90%;
+  background:trasparent !important;
+}
+.hatena-bcomment-view ul li span.hatena-bcomment-tag a{
+  color:#6365CE; 
+  font-family:"Arial",sans-serif;
+  margin:0 3px;
+}
+
+.hatena-bcomment-view ul li img{
+  vertical-align:middle !important;
+  margin:0 2px !important;
+}
+
+.hatena-bcomment-view ul li span.hatena-bcomment-date {
+}
+
+.hatena-bcomment-view-icon {
+  cursor: pointer;
+}/**** inline ****/
+.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}

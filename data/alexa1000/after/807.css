@@ -1,0 +1,675 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Frutiger';
+  font-weight: 400;
+  font-style: normal;
+  src: url(/v2/font/FrutigerNextLTW1G-Regular.otf) format('opentype');}
+
+@font-face {
+  font-family: 'Frutiger Bold';
+  font-weight: 400;
+  font-style: normal;
+  src: url(/v2/font/FrutigerNextLTW1G-Bold.otf) format('opentype');}
+
+@font-face {
+  font-family: 'FrutigerNextPro Medium';
+  font-weight: 400;
+  font-style: normal;
+  src: url(/v2/font/FrutigerNextPro-Medium.otf) format('opentype');}
+
+@font-face {
+  font-family: 'FrutigerNextPro Regular';
+  font-weight: 400;
+  font-style: normal;
+  src: url(/v2/font/FrutigerNextPro-Regular.otf) format('opentype');}
+
+@font-face {
+  font-family: 'FrutigerNextPro Light';
+  font-weight: 400;
+  font-style: normal;
+  src: url(/v2/font/FrutigerNextPro-Light.otf) format('opentype');}
+
+html,
+body {
+  color: #202020;
+  min-height: 100%;
+  font-family: 'FrutigerNextPro Regular', Arial;
+}
+
+html {
+  position: relative;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 1023px) {
+  html,
+body {
+    overflow: hidden;
+    overflow-y: auto;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.success {
+  padding: 10px 0 9px 0;
+  font-size: 16px;
+  background: #008057;
+  text-align: center;
+  border-bottom: 1px solid #006F4B;
+  font-family: 'FrutigerNextPro Regular', Arial;
+}
+
+.fail {
+  padding: 10px 0 9px 0;
+  font-size: 16px;
+  background: #AC4864;
+  text-align: center;
+  border-bottom: 1px solid #922B47;
+  font-family: 'FrutigerNextPro Regular', Arial;
+}
+
+.not-found {
+  text-align: center;
+  font-family: 'FrutigerNextPro Medium', Arial;
+  margin-top: 100px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.not-found  h1 {
+  font-size: 90px;
+}
+
+.background {
+  background: #fff url(/v2/images/bg.jpg) repeat-x top center;
+  background-size: 1500px 778px;
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .background {
+    background: #fff url(/v2/images/bg@2x.jpg) repeat-x top center;
+    background-size: 1500px 778px;
+  }
+}
+
+.header {
+  background-color: rgba(0,0,0,0.15);
+  width: 100%;
+  height: 85px;
+}
+
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 40px;
+  font-family: 'FrutigerNextPro Medium', Arial;
+  margin: 28px 0 0 5px;
+  float: left;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 1024px)and (orientation: portrait) {
+  .header {
+    height: 60px;
+  }
+
+  .logo {
+    font-size: 40px;
+    margin: 15px 0 0 5px;
+  }
+
+  .menu {
+    margin-top: 28px !important;
+  }
+}
+
+.menu {
+  margin-top: 42px;
+  float: right;
+}
+
+.menu-item {
+  display: block;
+  color: rgba(255,255,255,0.6);
+  font-family: 'FrutigerNextPro Regular', Arial;
+  font-size: 13px;
+  margin-right: 25px;
+  float: left;
+}
+
+.menu-item:hover,
+.menu-item.active {
+  color: #fff;
+}
+
+.mmenu {
+  display: none;
+  float: right;
+  width: 60px;
+  height: 60px;
+  background: url(/v2/images/tumblr.png) 0 0 no-repeat;
+  color: transparent;
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mmenu {
+    background-image: url(/v2/images/tumblr@2x.png);
+    background-size: 60px 60px;
+  }
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 568px) {
+  .menu {
+    display: none;
+  }
+
+  .mmenu {
+    display: block;
+  }
+}
+
+.nested-content {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
+
+.content {
+  max-width: 928px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.row:after,
+.clear:after {
+  clear: both;
+  display: block;
+  content: '';
+  height: 0;
+}
+
+.section {
+  margin-top: 35px;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 720px) {
+  .section {
+    margin-top: 15px;
+  }
+
+  .nested-content {
+    padding: 0;
+  }
+}
+
+.inner-section {
+  margin-top: 20px;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 568px) {
+  .inner-section {
+    margin-top: 10px;
+  }
+}
+
+.footer-support {
+  padding-bottom: 160px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: #e6e7e8;
+  height: 140px;
+  text-align: center;
+  border-top: 1px solid #f1f2f3;
+  width: 100%;
+}
+
+.footer-links {
+  color: #acadad;
+  font-family: 'FrutigerNextPro Regular', Arial;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 50px;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 720px) {
+  .footer-links {
+    font-size: 10px;
+  }
+
+  .footer-support {
+    padding-bottom: 150px;
+  }
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-top: 25px;
+  color: transparent;
+  width: 106px;
+  height: 19px;
+  background: url(/v2/images/AdskLogo.png) 0 0 no-repeat;
+  background-size: 110px 19px;
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .footer-logo {
+    background: url(/v2/images/AdskLogo@2x.png) 0 0 no-repeat;
+    background-size: 110px 19px;
+  }
+}
+
+.popular {
+  color: #fff;
+  font-family: 'FrutigerNextPro Regular', Arial;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 28px;
+  width: 100%;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 720px) {
+  .popular {
+    display: none;
+  }
+}
+
+.app {
+  float: left;
+  height: 475px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-align: center;
+}
+
+.app.three {
+  width: 33.33333333%;
+}
+
+.app.two {
+  width: 50%;
+}
+
+.app a {
+  color: transparent;
+  box-shadow: 0 3px 15px 3px rgba(0,0,0,0.15);
+  border-radius: 1px;
+  display: inline-block;
+  width: 293px;
+  height: 100%;
+  background-color: black;
+}
+
+.app.editor a {
+  background: url(/v2/images/BanEdit.jpg) top center no-repeat;
+}
+
+.app.express a {
+  background: url(/v2/images/BanExpress.jpg) top center no-repeat;
+}
+
+.app.omatic a {
+  background: url(/v2/images/BanOm.jpg) top center no-repeat;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+  .app.two.express {
+    padding-left: 8%;
+  }
+
+  .app.two.omatic {
+    padding-right: 8%;
+  }
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 720px) {
+  .app {
+    width: 100% !important;
+    float: none;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+}
+
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+  .app.editor a {
+    background-image: url(/v2/images/BanEdit@2x.jpg);
+    background-size: 293px;
+  }
+
+  .app.express a {
+    background-image: url(/v2/images/BanExpress@2x.jpg);
+    background-size: 293px;
+  }
+
+  .app.omatic a {
+    background-image: url(/v2/images/BanOm@2x.jpg);
+    background-size: 293px;
+  }
+}
+
+.mapp {
+  font-family: 'FrutigerNextPro Regular', Arial;
+  font-size: 14px;
+  padding: 20px 40px 0 120px;
+  color: #909090;
+  line-height: 18px;
+  float: left;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 50%;
+}
+
+.mapp h3 {
+  font-family: 'FrutigerNextPro Regular', Arial;
+  color: #595959;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.mapp.express {
+  background: url(/v2/images/IconExpress.png) 0 20px no-repeat;
+  background-size: 103px 101px;
+}
+
+.mapp.omatic {
+  background: url(/v2/images/IconOmatic.png) 0 20px no-repeat;
+  background-size: 103px 101px;
+  padding-right: 0;
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .mapp.express {
+    background-image: url(/v2/images/IconExpress@2x.png);
+    background-size: 103px 101px;
+  }
+
+  .mapp.omatic {
+    background-image: url(/v2/images/IconOmatic@2x.png);
+    background-size: 103px 101px;
+  }
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 1023px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.news-items {
+  margin-top: 35px;
+}
+
+.news-item {
+  color: #fff;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 8px;
+  float: left;
+  width: 33.333333%;
+  height: 215px;
+}
+
+.news-lnk {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  display: block;
+}
+
+.news-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  font-family: 'FrutigerNextPro Light', Arial;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.news-title {
+  font-size: 16px;
+}
+
+.news-date {
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.news-hl,
+.news-hl2 {
+  color: #595959;
+  font-family: 'FrutigerNextPro Regular', Arial;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.news-hl {
+  font-weight: bold;
+}
+
+.news-hl2 {
+  font-family: 'FrutigerNextPro Light', Arial;
+  color: #909090;
+}
+
+.news-headline {
+  text-align: center;
+  position: relative;
+  height: 23px;
+  margin: 80px 20px 0 20px;
+}
+
+.news-ruler {
+  border: none;
+  height: 2px;
+  background: #9b9b9b;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.news-wrapper {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+}
+
+.news-hlp {
+  background: #fff;
+  padding: 0 5px;
+}
+
+@media only screenand (min-device-width: 320px)and (max-device-width: 568px) {
+  .news-items {
+    margin-top: 10px;
+  }
+
+  .news-item:nth-child(n+2) {
+    display: none;
+  }
+
+  .news-item {
+    float: none;
+    width: 100%;
+    padding: 5px 15px;
+  }
+
+  .news-headline {
+    margin: 0 15px;
+  }
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) {
+  .news-item:nth-child(n+4) {
+    display: none;
+  }
+}
+
+.wiki-content {
+  padding: 20px;
+  float: left;
+  width: 80%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.wiki-menu {
+  padding: 20px;
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  line-height: 30px;
+}
+
+.ad-wrap {
+  width: 728px;
+  height: 90px;
+  margin: 20px auto 0 auto;
+}

@@ -1,0 +1,3613 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:v="http://rdf.data-vocabulary.org/#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcmitype="http://purl.org/dc/terms/DCMIType/" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:media="http://search.yahoo.com/searchmonkey/media/" xmlns:vcard="http://www.w3.org/2006/vcard/ns#" xmlns:addthis="http://www.addthis.com/help/api-spec"><head prefix="og:http://ogp.me/ns# fb:http://ogp.me/ns/fb#  website:http://ogp.me/ns/website#"><div class="kxhead" data-id="IbuiJ92p" style="display:none;"><span class="kxtag kxinvisible" data-id="21575" data-alias="Krux Load Segments V2"><script type="text/javascript">
+// DFP premium.
+(function(require) {
+  var store = require('store');
+  var _ = require('util');  
+  var segments;
+  
+  function handleUserDataResponse(r) {
+    // Handle the response as usual.
+    segments.handleUserDataResponse(r);
+    
+    // Override localStorage.kxuser with a case-insensitive value for DFP premium.
+    // This will get read by the interchange direct snippet for Krux.user
+    // and Krux.dfpKeyValues
+    if(r.kuid_long) {
+      store.set('user', r.kuid_long, store.DAYS*30);
+    }
+  }
+  
+  // Our own fetch uses our own handleResponse
+  function fetch() {
+    var options = {
+      url: _.get('url_userData'),
+      data: {pubid: _.get('pubid')},
+      callback: 'kxjsonp_userData',
+      done: handleUserDataResponse
+    };
+    if(!segments.readTechFromStore()) {
+      options.data.technographics = 1;
+    }
+    require('http').jsonp(options);  
+  }
+  
+  
+  if(!store.get('segWait')) {
+    // disable segments.fetch and use our own
+    _.set('segWait', 1, store.MINUTES*5);
+    _.onOnce('dom:load', fetch);
+    _.fire('user_data_fetch_scheduled');
+  }
+  
+  // Finally, require segments as usual.
+  segments = require('segments');
+}(Krux.require));
+</script></span><span class="kxtag kxinvisible" data-id="27293" data-alias="Yieldbot Today.com Intent - Prod"><!-- Yieldbot.com Intent Tag -->
+<script type="text/javascript" src="http://cdn.yb0t.com/js/yieldbot.intent.js"></script></span></div><script async="" src="//cdn.krxd.net/ctjs/controltag.js.8199b31f1f3181d713e4638eb1119712"></script><script async="" src="http://api.twitter.com/1/users/show.json?user_id=7744592&amp;callback=jQuery17108972507896833122_1402253043229&amp;_=1402253044683"></script><script src="//www.google-analytics.com/analytics.js"></script>
+        <script type="text/javascript" async="" src="http://cdn.krxd.net/controltag?confid=IbuiJ92p"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+		
+<link rel="stylesheet" type="text/css" href="http://assets4b.nbcnews.com/Rendering/todayshow/html40/assets/Css/cover-merged.css?h=2E96F31BA037B0BFE35A71BBC8A8B554">
+
+<script type="text/javascript" src="http://assets4b.nbcnews.com/Rendering/todayshow/html40/assets/Js/Analytics.js?h=3665051B4B65E51799D3B41121144298"></script>
+
+<script type="text/javascript" src="http://assets3b.nbcnews.com/Rendering/todayshow/html40/assets/Js/xfinity.js?h=C655345913BBE84EFE771AC1C33C4B35"></script>
+
+          
+		<!--[if lte IE 8]>
+		
+<link rel="stylesheet" type="text/css" href="http://assets1b.nbcnews.com/Rendering/todayshow/html40/assets/Css/cover-merged-ie-only.css?h=D3A3972F837E135F4E57464A4F77E6F6"/>
+        
+		<![endif]-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>TODAY - Latest News, Video &amp; Guests from the TODAY show on NBC</title>
+		<meta property="og:title" content="TODAY - Latest News, Video &amp; Guests from the TODAY show on NBC">
+		<meta property="og:url" content="http://www.today.com/">
+		<meta name="google-site-verification" content="YiP4qzGEbewJP30KKkKBOJOB4vo_6OI6ww1lYIbysUY">
+		<meta name="description" property="og:description" content="Catch up on the latest news stories, recipes and TODAY show video with Matt Lauer, Savannah Guthrie, Al Roker, Natalie Morales and Willie Geist.">
+		<link rel="canonical" href="http://www.today.com/">
+		<link rel="alternate" type="application/rss+xml" title="TODAY Top Stories" href="http://feeds.nbcnews.com/feeds/todaytopstories">
+		
+		<script type="text/javascript" src="http://nvcdn.today.com/_elliott/jenga?widgets=core,zinger2,troff,content,today"></script><style type="text/css"></style>
+        <link rel="stylesheet" type="text/css" href="http://nvcdn.today.com/_elliott/jenga_css?widgets=zinger2,troff,content,today">
+		
+<meta name="generator" content="SkyPad Rendering">
+<meta name="robots" content="noodp, noydir">
+
+<!--meta http-equiv="X-UA-Compatible" content="IE=9" /-->
+
+<link rel="apple-touch-icon" href="http://media1.s-nbcnews.com/i/MSNBC/Components/ArtAndPhoto-Fronts/SITEWIDE/Bullets_BackgroundGIFs/today-apple-touch-icon2.png">    
+<meta name="apple-itunes-app" content="app-id=416357699, affiliate-data=myAffiliateData, app-argument=www.today.com">
+<meta name="google-play-app" content="app-id=com.nbcnews.today">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<meta name="keywords" content="Top News Stories, TODAY Show, TODAY Show Video">
+<meta property="og:site_name" content="TODAY.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/today-facebooklike-icon2.jpg">
+<meta property="fb:app_id" content="122384521533">
+<meta property="fb:admins" content="100001657893615">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@TodayShow">
+<meta name="twitter:title" content="TODAY - Latest News, Video &amp; Guests from the TODAY show on NBC">
+<meta name="twitter:description" content="Catch up on the latest news stories, recipes and TODAY show video with Matt Lauer, Savannah Guthrie, Al Roker, Natalie Morales and Willie Geist.">
+<meta name="twitter:creator" content="@TodayShow">
+<meta name="twitter:domain" content="TODAY.com">
+<meta name="twitter:image:src" content="http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/today-facebooklike-icon2.jpg">
+<meta name="twitter:app:id:iphone" content="id416357699">
+<meta name="twitter:app:id:ipad" content="id416357699">
+<meta name="twitter:app:id:googleplay" content="com.nbcnews.today">
+<meta name="twitter:app:country" content="us">
+
+
+<meta name="verify-v1" content="sEyoCWb2AmBIH4Ki9QpWGmNT9SifE8dHG5nER0GSxq4=">
+<meta name="google-site-verification" content="GntNDIbCzd8DIeerJ7EWBobHymsMjuH5VquPUmgN19M"> 
+<meta name="google-site-verification" content="o0OpsH8vXdJmV-pxGXHr8gIVXUCG8yx7wGBtzCVNw3g">
+<meta name="google-site-verification" content="WGuyTxb6jt-KgRNIJik9BrylLDAAKvtrJbC26Kns9g4">
+<meta name="google-site-verification" content="u6ylE41CjnmiuYhw81jg9yFNY7p5FUPbsRgii3WwMgQ"> 
+<meta name="msvalidate.01" content="452BC1D97155BE7085514BAF92FC7F79"><!--mos--> 
+<meta name="msvalidate.01" content="F7FE5F174C10273557BB3DEF11563F01"><!--viral-->
+
+<meta name="Search.Document" content="front">
+<meta name="Search.Updated" content="6/8/2014 5:39:15 PM +00:00">
+<meta name="Search.Section" content="TODAY">
+<meta name="Search.Category" content="News Menu">
+
+
+<script type="text/javascript" src="http://amch.questionmarket.com/adsc/d957440/6/958254/randm.js"></script>
+<script type="text/javascript" src="http://amch.questionmarket.com/adsc/d957440/7/958255/randm.js"></script>
+<script type="text/javascript" src="http://amch.questionmarket.com/adsc/d1002142/7/1003709/randm.js"></script>
+		<link rel="shortcut icon" href="http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/today-favicon.ico">
+		
+		<script type="text/javascript">
+
+			var gaTracker = 't_msnbc_ga_api';
+			var _gaq = _gaq || [];
+			_gaq.push([gaTracker + '._setAccount', 'UA-30171705-1']);
+			_gaq.push([gaTracker + '._setDomainName', location.hostname]);
+
+			(function () {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+		
+
+<script src="//www.nbcnews.com/id/51832828" type="text/javascript"></script>
+  
+	<script async=""></script><script async="" src="http://www.google-analytics.com/ga.js"></script><script async="" src="http://b.scorecardresearch.com/c2/3000001/cs.js"></script><script async="" src="http://static.chartbeat.com/js/chartbeat.js"></script></head>
+	<body class="todayshow cover ROS tablet" typeof="dcmitype:Text" data-twttr-rendered="true"><iframe style="width: 1px; height: 1px; position: absolute; top: -7px; left: -7px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; " src="http://secure-au.imrworldwide.com/storageframe.html" id="LOCSTORAGE" scrolling="no"></iframe>
+		
+   
+<script src="//www.nbcnews.com/id/51738311" type="text/javascript"></script><script src="//www.nbcudigitaladops.com/hosted/global_header.js"></script><script src="//www.nbcudigitaladops.com/hosted/site.js?h=today_com_header"></script><script>    (function () {        try {            if ((typeof xfinityShell === "object")        && xfinityShell.isXfinity === true        && top.__nbcudigitaladops_inject        && top.__nbcudigitaladops_inject.dtprm) {                top.__nbcudigitaladops_inject.dtprm("xfinityTag=xfinity;");            }        }        catch (ex) { }    } ());</script><script>window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);(function(){function retrieve(n){var m, k='kx'+n;if (window.localStorage) {return window.localStorage[k] || "";} else if (navigator.cookieEnabled) {m = document.cookie.match(k+'=([^;]*)');return (m && unescape(m[1])) || "";} else {return '';}}var kvs = [];Krux.user = retrieve('user');if (Krux.user) {kvs.push('u=' + Krux.user);}Krux.segments = retrieve('segs') && retrieve('segs').split(',') ||[];for (var i = 0; i < Krux.segments.length; i++ ) {kvs.push('ksg=' + Krux.segments[i]);}Krux.dartKeyValues = kvs.length ? kvs.join(';') + ';': '';})();</script><script>(function(){var kvs = window.Krux ? window.Krux.dartKeyValues : '';if(top.__nbcudigitaladops_inject && top.__nbcudigitaladops_inject.dtprm){top.__nbcudigitaladops_inject.dtprm(kvs);}})();</script><script></script><script>var admantx_url='http://async-lb-2129785755.us-east-1.elb.amazonaws.com/admantx/service?request='+ escape('{"decorator":"template.nbc_template","key":"62263fff3cc1d07f85c7f8261a0c8f7dc096b35f59c82a713f20a9db8d562ff2","method":"descriptor","filter":"default","mode":"async","type":"URL","body":"'+escape(document.location.href)+'"}');function admantx_callback(data){if(top.__nbcudigitaladops_inject&&top.__nbcudigitaladops_inject.dtprm){if(data&&data.admants){if(data.status=="OK"){for(var x=0;x<data.admants.length;x++){var kv='adg='+data.admants[x]+';';top.__nbcudigitaladops_inject.dtprm(kv)}}else{top.__nbcudigitaladops_inject.dtprm("asg=othererror;")}}}}document.write('<scr'+'ipt src="'+admantx_url+'"></scr'+'ipt>');</script><script src="http://async-lb-2129785755.us-east-1.elb.amazonaws.com/admantx/service?request=%7B%22decorator%22%3A%22template.nbc_template%22%2C%22key%22%3A%2262263fff3cc1d07f85c7f8261a0c8f7dc096b35f59c82a713f20a9db8d562ff2%22%2C%22method%22%3A%22descriptor%22%2C%22filter%22%3A%22default%22%2C%22mode%22%3A%22async%22%2C%22type%22%3A%22URL%22%2C%22body%22%3A%22http%253A//www.today.com/%22%7D"></script>
+
+		
+		<div id="header">
+			     
+		<div class="menuHolder">
+			<div id="navigation-menu" style="height: 250px; ">
+				<ul class="spotlight">
+				    <a href="http://www.today.com/id/49063771/ns/today-today_video/"><li>Watch the Show</li></a>
+                    <a href="http://www.today.com/klgandhoda"><li>KLG &amp; Hoda</li></a>
+                    <a href="http://www.today.com/orangeroom"><li>Orange Room</li></a>
+                    <a href="http://www.today.com/apps"><li>TODAY apps</li></a>
+                    <a href="http://visit.today.com/"><li>Visit TODAY</li></a>
+                </ul>
+				<ul class="more">
+					
+<a href="http://www.today.com/news"><li>News</li></a>
+<a href="http://www.today.com/parents/topic/dads"><li>Modern Dads</li></a>
+<a href="http://www.today.com/news/topic/good-news"><li>Good News</li></a>
+<a href="http://www.today.com/entertainment"><li>Entertainment</li></a>
+<a href="http://www.today.com/food"><li>Food</li></a>
+<a href="http://www.today.com/health"><li>Health</li></a>
+<a href="http://www.today.com/money"><li>Money</li></a>
+<a href="http://www.today.com/pets"><li>Pets</li></a>
+<a href="http://www.today.com/parents"><li>Parents</li></a>
+<a href="http://www.today.com/style"><li>Style</li></a>
+<a href="http://www.today.com/home"><li>Home</li></a>
+<a href="http://www.today.com/books"><li>Books</li></a>
+<a href="http://www.today.com/tech"><li>Tech</li></a>
+<a href="http://www.today.com/travel"><li>Travel</li></a>
+<a href="http://www.today.com/allday"><li>allDAY</li></a>
+<a href="http://www.today.com/id/3041478/ns/today-toyota_concert_series_on_today"><li>Concert series</li></a>
+<a href="http://hip2save.com/"><li>Hip2Save</li></a>
+<a href="http://www.today.com/id/8404539/ns/entertainment-horoscope"><li>Horoscopes</li></a>
+<a href="http://www.today.com/news/topic/rossen-reports"><li>Rossen Reports</li></a>
+				</ul>
+			</div> 
+		</div>
+
+		<div class="menuPromo">
+		    <div class="arrowHolder">
+                <div class="arrowup"></div>
+                <div class="arrowup2"></div>
+            </div>
+		    <div class="promoHolder">
+		        <div class="pr1">Where are my TODAY sections?</div>
+			    <div class="pr2">Click the new menu icon to find News, Food, Entertainment and more.</div>
+                <div class="close"><span>close</span></div>
+            </div>
+		</div>
+
+
+		<div class="navigation">
+			<div class="navHolder">
+				<div class="menu-button"><span></span></div>
+				<h1 class="today-logo">
+					<a href="/"><span>TODAY.com</span></a>
+				</h1>
+				<div class="follow-search-brands">
+					<div class="follow">
+						<ul class="follow-social">
+							<li class="facebook">
+								<a href="http://www.facebook.com/today" title="Facebook" alt="Facebook">Facebook</a></li>
+							<li class="twitter">
+								<a href="http://twitter.com/todayshow" title="Twitter" alt="Twitter">Twitter</a></li>
+							<li class="pinterest">
+								<a href="http://pinterest.com/todayshow/" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+							<li class="tumblr">
+								<a href="http://today.tumblr.com/" title="Tumblr" alt="Tumblr">Tumblr</a></li>
+							<li class="newsletter">
+								<a href="http://secure.today.com/_tps/accounts/msnbc/newsletters" title="Newsletter" alt="Newsletter">Newsletter</a></li>
+							<li class="rss">
+								<a href="http://feeds.nbcnews.com/feeds/todaytopstories" title="RSS" alt="RSS">RSS</a></li>
+                            <li class="today-zinger"><div class="j_zinger2_menu j_widget" data-zinger="{&quot;twitter&quot;:false, &quot;google&quot;:false}" data-menu="{&quot;label_logged_in&quot;:&quot;Account&quot;}" id="j_zinger2_menu_1"></div></li>
+						</ul>
+						<div class="follow-button">Follow us</div>
+					</div>
+					<div id="header-search">
+						<form id="hd-search" method="get" action="#" class="hd-search">
+							<input class="hd-search-input" name="q" type="text" size="20" value="search TODAY" style="display: inline-block;">
+							<input value="" class="hd-search-submit" name="search" type="submit">
+						</form>
+						<div class="hd-search-button"></div>
+					</div>
+					<div class="brands">
+						<ul class="family">
+							<li class="nbcnews"><a href="http://www.NBCNews.com/">NBCNews.com</a></li>
+							<li class="msn"><a href="http://www.msn.com/">msn</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	<div class="talent">
+	    <div class="heads">
+	        <img src="http://assets.nbcnews.com/Rendering/todayshow/html40/assets/common/img/tdy-hdr-talent2.png" width="760" height="120" usemap="#today-talent">
+            <map name="today-talent">
+              <area shape="rect" coords="0,0,112,118" href="http://www.today.com/orangeroom" title="Orange Room with Carson Daly" alt="Orange Room with Carson Daly">
+              <area shape="rect" coords="510,0,660,118" href="http://www.today.com/klgandhoda" title="KLG &amp; Hoda" alt="KLG &amp; Hoda">
+            </map>
+	    </div>
+        <ul class="header-promo">
+            <li class="promo1"><a href="http://www.today.com/allday/tag/heard-it-on-today">Heard it on TODAY?</a></li>
+            <li class="promo2"><a href="http://www.today.com/apps/">Download the TODAY app</a></li>
+            <li class="promo3"><a href="http://www.today.com/toyotaconcertseries/mariah-carey-usher-more-full-lineup-2014-summer-concert-series-1D79564738">2014 Summer Concert Series</a></li>
+        </ul>
+	</div>
+
+
+
+	<div id="showcase" style="padding-bottom: 0px; height: 88px; ">
+	    <div class="showHolder">
+		<div id="teasenav" class="">
+			<span id="backward" class="timeline-button" style="display: none; ">&nbsp;</span>
+			<span id="forward" class="timeline-button" style="display: block; ">&nbsp;</span>
+		</div>
+		<div class="container" style="overflow-x: auto; overflow-y: auto; height: 88px; ">
+			<div id="showcase-loader" class="hide">
+				<img src="http://media1.s-nbcnews.com/i/TODAY/z_Creative/zComponents/COVER/today-preloader.gif" alt="Loading...">
+			</div>
+			    <ol id="timeline" style="width: 4464px; left: 0px; "><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359143" onclick="javascript:ijv.launchVideo('55359143');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_cc72_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:04 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359143" class="headline" onclick="javascript:ijv.launchVideo('55359143');">California Chrome owner on his Triple Crown rant</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359010" onclick="javascript:ijv.launchVideo('55359010');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_manno_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:07 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359010" class="headline" onclick="javascript:ijv.launchVideo('55359010');">Does California Chrome owner Steve Coburn have a point?</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55358887" onclick="javascript:ijv.launchVideo('55358887');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_01ra_morgan_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:09 am</span></span></div>
+		<a href="http://www.today.com/video/today/55358887" class="headline" onclick="javascript:ijv.launchVideo('55358887');">Driver charged in crash that injured Tracy Morgan</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55358940" onclick="javascript:ijv.launchVideo('55358940');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_02kw_obama_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:14 am</span></span></div>
+		<a href="http://www.today.com/video/today/55358940" class="headline" onclick="javascript:ijv.launchVideo('55358940');">Obama administration defends decision after Bergdahl release</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55358954" onclick="javascript:ijv.launchVideo('55358954');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_03re_student_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:20 am</span></span></div>
+		<a href="http://www.today.com/video/today/55358954" class="headline" onclick="javascript:ijv.launchVideo('55358954');">Homeless Valedictorian credits deceased mom for his success</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55358980" onclick="javascript:ijv.launchVideo('55358980');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_04mt_slender_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:31 am</span></span></div>
+		<a href="http://www.today.com/video/today/55358980" class="headline" onclick="javascript:ijv.launchVideo('55358980');">'I wanted to live': Victim in ‘Slender Man’ attack speaks out</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55358992" onclick="javascript:ijv.launchVideo('55358992');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_05judge_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:36 am</span></span></div>
+		<a href="http://www.today.com/video/today/55358992" class="headline" onclick="javascript:ijv.launchVideo('55358992');">Judge helps 'scare' people in the right direction</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55358994" onclick="javascript:ijv.launchVideo('55358994');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_06miraclemom_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:39 am</span></span></div>
+		<a href="http://www.today.com/video/today/55358994" class="headline" onclick="javascript:ijv.launchVideo('55358994');">'Miracle Mom' overcoming incredible odds as a new mother</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359014" onclick="javascript:ijv.launchVideo('55359014');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_07jacobs_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:44 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359014" class="headline" onclick="javascript:ijv.launchVideo('55359014');">Is Bowe Bergdahl a hero, traitor or both?</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359030" onclick="javascript:ijv.launchVideo('55359030');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_08paratroop.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:50 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359030" class="headline" onclick="javascript:ijv.launchVideo('55359030');">Paratroopers celebrate D-Day anniversary with special jump</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359042" onclick="javascript:ijv.launchVideo('55359042');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_09rrainbow_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">7:55 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359042" class="headline" onclick="javascript:ijv.launchVideo('55359042');">Levar Burton opens up on bringing back 'Reading Rainbow'</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359080" onclick="javascript:ijv.launchVideo('55359080');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_12maya_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:10 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359080" class="headline" onclick="javascript:ijv.launchVideo('55359080');">Family, friends remember Maya Angelou</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359090" onclick="javascript:ijv.launchVideo('55359090');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_13prayer_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:12 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359090" class="headline" onclick="javascript:ijv.launchVideo('55359090');">Historic prayer to take place at Vatican Sunday</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359164" onclick="javascript:ijv.launchVideo('55359164');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_14lebron_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:19 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359164" class="headline" onclick="javascript:ijv.launchVideo('55359164');">'Lebroning' meme takes over the Web</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359154" onclick="javascript:ijv.launchVideo('55359154');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_15ar_dday_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:33 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359154" class="headline" onclick="javascript:ijv.launchVideo('55359154');">Vet sneaks out of nursing home to attend D-Day anniversary</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359166" onclick="javascript:ijv.launchVideo('55359166');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_16aq_celeb_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:36 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359166" class="headline" onclick="javascript:ijv.launchVideo('55359166');">'Fault in our Stars' wins at the box office, 'Orange is the New Black' returns</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359189" onclick="javascript:ijv.launchVideo('55359189');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_17dad_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:42 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359189" class="headline" onclick="javascript:ijv.launchVideo('55359189');">Modern dad shares his humorous 'confessions'</a>
+	</li><li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="http://www.today.com/video/today/55359209" onclick="javascript:ijv.launchVideo('55359209');"><img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_18animal_140608.Tdy2Tease.jpg"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label">8:50 am</span></span></div>
+		<a href="http://www.today.com/video/today/55359209" class="headline" onclick="javascript:ijv.launchVideo('55359209');">TODAY celebrates World Ocean’s Day</a>
+	</li></ol>
+		    </div>
+	    </div>
+    </div>
+
+
+		</div>
+		<div id="page" class="content hatom hfeed"> 
+			
+			<div id="stream">
+				
+<div class="block hentry single bleed interactive news ">
+	<div class="quickshare" shareurl="http://www.today.com/news/california-chrome-owner-blasts-rivals-cowards-shot-crown-2D79775267" headline="California Chrome owner blasts rivals for 'coward's shot' at Triple Crown">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    News
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/news/california-chrome-owner-blasts-rivals-cowards-shot-crown-2D79775267">
+    <a href="http://www.today.com/news/california-chrome-owner-blasts-rivals-cowards-shot-crown-2D79775267">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_cc72_140608.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Rob Carr / Getty Images
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/news/california-chrome-owner-blasts-rivals-cowards-shot-crown-2D79775267" class="mh" title="">
+	            California Chrome owner blasts rivals for 'coward's shot' at Triple Crown
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T14:12:03">
+    <abbr class="dtstamp updated" title="2014-06-08T14:12:03">6/8/2014 2:12:03 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T14:12:03</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed vote ">
+	
+    <ol class="">
+		
+<li class="lede vote" data-vote-id="24224162">
+    <h4>
+        <a href="http://discuss.today.com/_news/2014/06/08/24224162-is-it-fair-that-california-chrome-lost-to-a-horse-that-didnt-run-in-the-derby-or-preakness" class="lh">
+            Is it fair that California Chrome lost to a horse that didn't run in the Derby or Preakness?
+        </a>
+    </h4>
+	<form action="" method="post">
+	    <fieldset><div><input type="radio" name="24224162" id="vote0item0" value="220992"><label for="vote0item0">Yes, the current rules say this is fair.</label></div><div><input type="radio" name="24224162" id="vote0item1" value="220993"><label for="vote0item1">No, some horses are more well-rested than others.</label></div><div class="button"><input type="submit" value="Vote" id="voteButton0" class="votebutton"></div><a class="resultsLink" href="http://discuss.today.com/_news/2014/06/08/24224162-is-it-fair-that-california-chrome-lost-to-a-horse-that-didnt-run-in-the-derby-or-preakness">View results without voting</a></fieldset>
+	</form>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive ">
+	<div class="quickshare" shareurl="http://www.today.com/parents/its-amazing-two-years-after-miracle-birth-mom-continues-inspiring-2D79707878" headline="'Miracle Mom' overcoming incredible odds as new mother">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/parents/its-amazing-two-years-after-miracle-birth-mom-continues-inspiring-2D79707878">
+    <a href="http://www.today.com/parents/its-amazing-two-years-after-miracle-birth-mom-continues-inspiring-2D79707878">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_06miraclemom_140608.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/parents/its-amazing-two-years-after-miracle-birth-mom-continues-inspiring-2D79707878" class="mh" title="As 2-year-old Adeline Scott finds her footing for the first time, her mother, Amber is learning to walk all over again.">
+	            'Miracle Mom' overcoming incredible odds as new mother
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T13:47:01">
+    <abbr class="dtstamp updated" title="2014-06-08T13:47:01">6/8/2014 1:47:01 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T13:47:01</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+				<div class="primary ads"> 
+					
+<div class="ad adX1 ad-tier1" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="ad adX1 first ad-ros" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="ad adX1 second ad-standard" data="type:Custom;src:/rendering/advertising/adcontent/98fcf9ab-cdca-47ea-ad55-81bc31ca1e61/Showcase 2;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="ad adX1 promo ad-standard" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:60;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+				</div>
+				
+<div class="block hentry single bleed video celebrities ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55358887/displaymode/1283/for/facebookvideo/" headline="Driver charged in crash that injured Tracy Morgan">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55358887">
+    <a href="http://www.today.com/video/today/55358887">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_01ra_morgan_140608.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55358887" class="mh" title="New Jersey prosecutors say the truck driver involved in the deadly crash that critically injured comedian Tracy Morgan is now facing charges, including one count of death by auto and four counts of assault. Morgan remains in critical condition after the deadly crash Saturday morning. NBC’s Ron Allen reports.">
+	            Driver charged in crash that injured Tracy Morgan
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T13:21:20">
+    <abbr class="dtstamp updated" title="2014-06-08T13:21:20">6/8/2014 1:21:20 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T13:21:20</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single navlist sectionNav ">
+	
+    <div class="title">NBC News top headlines
+    <!--[if lte IE 8]><div></div><![endif]-->
+    </div>
+
+    <ol class="list t39">
+		
+<li class="lede">
+    
+	<a href="http://www.nbcnews.com/news/world/holy-history-israeli-palestinian-leaders-pray-vatican-n125601" class="xsh" title="">
+	    Holy History: Israeli, Palestinian Leaders Pray at Vatican
+	</a>
+</li>
+<li class="">
+    
+	<a href="http://www.nbcnews.com/news/us-news/please-hurry-seattle-university-shooting-911-calls-released-n125636" class="xsh" title="">
+	    'Please Hurry': Seattle University Shooting 911 Calls Released
+	</a>
+</li>
+<li class="">
+    
+	<a href="http://www.nbcnews.com/news/sports/california-chrome-owner-blasts-rivals-cowards-shot-crown-n125546" class="xsh" title="">
+	    California Chrome Owner Blasts Rivals For 'Coward's Shot' at Crown
+	</a>
+</li>
+<li class="">
+    
+	<a href="http://www.nbcnews.com/storyline/virgin-voyage/virgin-galactic-space-tourists-shed-pounds-fears-zero-g-flight-n119951" class="xsh" title="">
+	    Virgin Galactic Space Tourists Shed Pounds (and Fears) on Zero-G Flight
+	</a>
+</li>
+<li class="">
+    
+	<a href="http://www.nbcnews.com/health/kids-health/rare-ohio-mono-mono-twins-home-fathers-day-n125696" class="xsh" title="">
+	    Rare Ohio 'Mono Mono' Twins Home for Father's Day
+	</a>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/what-watch-june-8-14-game-thrones-duck-dynasty-more-2D79757039" headline="What to watch June 8-14: 'Game of Thrones,' 'Duck Dynasty' and more">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/what-watch-june-8-14-game-thrones-duck-dynasty-more-2D79757039">
+    <a href="http://www.today.com/entertainment/what-watch-june-8-14-game-thrones-duck-dynasty-more-2D79757039">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039805-140606-ent-dany-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            HBO
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/what-watch-june-8-14-game-thrones-duck-dynasty-more-2D79757039" class="mh" title="There's almost too much great programming on TV to keep up with, but we're here to help! Each Sunday, we suggest whether to watch some of the week's best bets live or let the DVR do its job so you can enjoy shows at your leisure.">
+	            What to watch June 8-14: 'Game of Thrones,' 'Duck Dynasty' and more
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T17:38:25">
+    <abbr class="dtstamp updated" title="2014-06-08T17:38:25">6/8/2014 5:38:25 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T17:38:25</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed video news ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55358954/displaymode/1283/for/facebookvideo/" headline="Homeless Valedictorian credits deceased mom for his success">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55358954">
+    <a href="http://www.today.com/video/today/55358954">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_03re_student_140608.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55358954" class="mh" title="Griffin Furlong was named Valedictorian of his high school, despite being in and out of homeless shelters with his family after losing his mother to cancer. Furlong was managed to earn a 4.65 GPA and was accepted to Florida State University. NBC’s Rehema Ellis reports.">
+	            Homeless Valedictorian credits deceased mom for his success
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T14:13:18">
+    <abbr class="dtstamp updated" title="2014-06-08T14:13:18">6/8/2014 2:13:18 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T14:13:18</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive ">
+	<div class="quickshare" shareurl="http://www.nbcnews.com/storyline/remembering-maya-angelou/maya-angelou-memorial-service-bill-clinton-michelle-obama-honor-icon-n125216" headline="Maya Angelou memorial service: Bill Clinton, Michelle Obama honor icon">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.nbcnews.com/storyline/remembering-maya-angelou/maya-angelou-memorial-service-bill-clinton-michelle-obama-honor-icon-n125216">
+    <a href="http://www.nbcnews.com/storyline/remembering-maya-angelou/maya-angelou-memorial-service-bill-clinton-michelle-obama-honor-icon-n125216">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/140607-ent-angelou-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Graham Jepson / ASSOCIATED PRESS
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.nbcnews.com/storyline/remembering-maya-angelou/maya-angelou-memorial-service-bill-clinton-michelle-obama-honor-icon-n125216" class="mh" title="">
+	            Maya Angelou memorial service: Bill Clinton, Michelle Obama honor icon
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-07T20:05:20">
+    <abbr class="dtstamp updated" title="2014-06-07T20:05:20">6/7/2014 8:05:20 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-07T20:05:20</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed slideshow photofeatures ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55349506/" headline="'Confessions of the World's Best Father'">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede slideshow">
+    
+<div class="art hmedia" about="javascript:ijv.launchSlideshow('55349506');">
+    <a href="javascript:ijv.launchSlideshow('55349506');">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Slideshows/_production/TODAY-ready/ss-140606-best-dad/ss-140606-best-dad-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Dave Engledow
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="slideshow">
+            <span class="label">slideshow</span>
+        </span>
+    </span>
+
+	        <a href="javascript:ijv.launchSlideshow('55349506');" class="mh" title="Dave Engledow">
+	            'Confessions of the World's Best Father'
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T22:48:03">
+    <abbr class="dtstamp updated" title="2014-06-06T22:48:03">6/6/2014 10:48:03 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T22:48:03</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive health ">
+	<div class="quickshare" shareurl="http://www.today.com/health/get-occasional-halitosis-10-tips-taming-dragon-breath-2D79758948" headline="Get the occasional halitosis? 10 tips to taming dragon breath">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Health
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/health/get-occasional-halitosis-10-tips-taming-dragon-breath-2D79758948">
+    <a href="http://www.today.com/health/get-occasional-halitosis-10-tips-taming-dragon-breath-2D79758948">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906024657-today-brushing-140604.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            featurpics.com
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/health/get-occasional-halitosis-10-tips-taming-dragon-breath-2D79758948" class="mh" title="No matter how fastidious you are about oral hygiene, most of us experience an occasional bout of halitosis (the scientific term for 'you need a mint'). Sure, it’s embarrassing and awkward, but it’s usually temporary.">
+	            Get the occasional halitosis? 10 tips to taming dragon breath
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T13:38:17">
+    <abbr class="dtstamp updated" title="2014-06-08T13:38:17">6/8/2014 1:38:17 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T13:38:17</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed video news ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55359042/displaymode/1283/for/facebookvideo/" headline="Levar Burton opens up on bringing back 'Reading Rainbow'">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55359042">
+    <a href="http://www.today.com/video/today/55359042">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_09rrainbow_140608.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55359042" class="mh" title="Levar Burton praised fans for helping his ‘Reading Rainbow’ Kickstarter campaign reached its $1 million goal in eleven hours. The campaign focuses on expanding the current app, helping the show live on in a digital age.">
+	            Levar Burton opens up on bringing back 'Reading Rainbow'
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-08T14:10:30">
+    <abbr class="dtstamp updated" title="2014-06-08T14:10:30">6/8/2014 2:10:30 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-08T14:10:30</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive books ">
+	<div class="quickshare" shareurl="http://www.today.com/books/calvin-hobbes-creator-secretly-returned-comics-pages-2D79773250" headline="'Calvin and Hobbes' creator secretly returned to comics pages">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Books
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/books/calvin-hobbes-creator-secretly-returned-comics-pages-2D79773250">
+    <a href="http://www.today.com/books/calvin-hobbes-creator-secretly-returned-comics-pages-2D79773250">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906050443-140607-ent-watterson-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/books/calvin-hobbes-creator-secretly-returned-comics-pages-2D79773250" class="mh" title="'Calvin and Hobbes' said goodbye 1995, but unbeknownst to many fans, creator Bill Watterson had quietly snuck back into the comics pages the week of June 2. It turns out that the cartoonist has been contributing to the syndicated strip, 'Pearls Before Swine' by Stephan Pastis.">
+	            'Calvin and Hobbes' creator secretly returned to comics pages
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-07T16:34:04">
+    <abbr class="dtstamp updated" title="2014-06-07T16:34:04">6/7/2014 4:34:04 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-07T16:34:04</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/jimmy-fallon-challenges-channing-tatum-arm-wrestling-match-2D79773090" headline="Jimmy Fallon challenges Channing Tatum to arm wrestling match">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/jimmy-fallon-challenges-channing-tatum-arm-wrestling-match-2D79773090">
+    <a href="http://www.today.com/entertainment/jimmy-fallon-challenges-channing-tatum-arm-wrestling-match-2D79773090">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906049164-140607-ent-fallontatum-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Nbc / Douglas Gorenstein/NBC
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/jimmy-fallon-challenges-channing-tatum-arm-wrestling-match-2D79773090" class="mh" title="Oh, it was on on Friday night when '22 Jump Street' star Channing Tatum visited 'The Tonight Show.' Despite the fact that the actor's suit could barely contain his bulging biceps, host Jimmy Fallon stated matter of factly, 'I bet I can take you in an arm wrestle.">
+	            Jimmy Fallon challenges Channing Tatum to arm wrestling match
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-07T16:07:36">
+    <abbr class="dtstamp updated" title="2014-06-07T16:07:36">6/7/2014 4:07:36 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-07T16:07:36</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/melanie-griffith-antonio-banderas-divorcing-after-18-years-2D79768137" headline="Melanie Griffith, Antonio Banderas divorcing after 18 years">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/melanie-griffith-antonio-banderas-divorcing-after-18-years-2D79768137">
+    <a href="http://www.today.com/entertainment/melanie-griffith-antonio-banderas-divorcing-after-18-years-2D79768137">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906043627-140606-griffith-banderas-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Anne-christine Poujoulat / AFP - Getty Images file
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/melanie-griffith-antonio-banderas-divorcing-after-18-years-2D79768137" class="mh" title="Melanie Griffith filed for divorce on Friday from Antonio Banderas, her husband of 18 years, new court documents reveal. The actress cited irreconcilable differences.">
+	            Melanie Griffith, Antonio Banderas divorcing after 18 years
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T18:26:29">
+    <abbr class="dtstamp updated" title="2014-06-06T18:26:29">6/6/2014 6:26:29 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T18:26:29</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive ">
+	<div class="quickshare" shareurl="http://www.today.com/parents/keys-happiness-son-surprises-dad-57-chevy-57th-birthday-2D79769669" headline="Keys to happiness: Son surprises dad with '57 Chevy for 57th birthday">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/parents/keys-happiness-son-surprises-dad-57-chevy-57th-birthday-2D79769669">
+    <a href="http://www.today.com/parents/keys-happiness-son-surprises-dad-57-chevy-57th-birthday-2D79769669">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906042358-140606-57-chevy-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Imgur
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/parents/keys-happiness-son-surprises-dad-57-chevy-57th-birthday-2D79769669" class="mh" title="It's not quite Father's Day yet, but a Louisville, Kentucky, man's love and generosity should rev your engine if you're thinking about your own dear old dad. Mike King says in a Reddit thread posted Friday that his father, Roger, always dreamed of owning a 1957 Chevy Bel-Air.">
+	            Keys to happiness: Son surprises dad with '57 Chevy for 57th birthday
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T23:37:36">
+    <abbr class="dtstamp updated" title="2014-06-06T23:37:36">6/6/2014 11:37:36 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T23:37:36</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive news ">
+	<div class="quickshare" shareurl="http://www.today.com/news/wwii-vet-missing-nursing-home-turns-france-d-day-anniversary-2D79768139" headline="WWII vet missing from nursing home turns up in France for D-Day anniversary">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    News
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/news/wwii-vet-missing-nursing-home-turns-france-d-day-anniversary-2D79768139">
+    <a href="http://www.today.com/news/wwii-vet-missing-nursing-home-turns-france-d-day-anniversary-2D79768139">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906042354-today-bernard-140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            @Gracewellhealth/twitter
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/news/wwii-vet-missing-nursing-home-turns-france-d-day-anniversary-2D79768139" class="mh" title="A British World War II veteran who was reported missing from his nursing home on Thursday night turned up on the beach in Normandy — wearing his medals — during the 70th anniversary of the D-Day invasion on Friday. Bernard Jordan, 89, left The Pines, a nursing home in Hove, England, on Thursday morning and did not return that night.">
+	            WWII vet missing from nursing home turns up in France for D-Day anniversary
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T18:58:42">
+    <abbr class="dtstamp updated" title="2014-06-06T18:58:42">6/6/2014 6:58:42 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T18:58:42</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive travel ">
+	<div class="quickshare" shareurl="http://www.today.com/travel/virgin-atlantics-onesie-new-perk-upper-class-fliers-2D79768138" headline="Virgin Atlantic's 'onesie' is new perk for upper class fliers">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Travel
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/travel/virgin-atlantics-onesie-new-perk-upper-class-fliers-2D79768138">
+    <a href="http://www.today.com/travel/virgin-atlantics-onesie-new-perk-upper-class-fliers-2D79768138">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906043630-today-virgin-atlantic-onesie-140606-01.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Virgin Atlantic via YouTube
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/travel/virgin-atlantics-onesie-new-perk-upper-class-fliers-2D79768138" class="mh" title="Here's another thing that people in coach won't get. Virgin Atlantic is offering select customers who fly in its 'upper class' category what it says is the 'first ever airline onesie,' designed for the airline by Norway's OnePiece.">
+	            Virgin Atlantic's 'onesie' is new perk for upper class fliers
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-07T13:10:26">
+    <abbr class="dtstamp updated" title="2014-06-07T13:10:26">6/7/2014 1:10:26 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-07T13:10:26</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/justin-timberlake-aaron-paul-bond-over-tv-pizza-twitter-2D79768111" headline="Justin Timberlake, Aaron Paul bond over TV, pizza on Twitter">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/justin-timberlake-aaron-paul-bond-over-tv-pizza-twitter-2D79768111">
+    <a href="http://www.today.com/entertainment/justin-timberlake-aaron-paul-bond-over-tv-pizza-twitter-2D79768111">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039868-today-pizza-party-140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            EPA; Getty Images; AP
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/justin-timberlake-aaron-paul-bond-over-tv-pizza-twitter-2D79768111" class="mh" title="Justin Timberlake is starving for more episodes of 'Breaking Bad,' it seems. Series star Aaron Paul would love to get some pizza.">
+	            Justin Timberlake, Aaron Paul bond over TV, pizza on Twitter
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T20:28:10">
+    <abbr class="dtstamp updated" title="2014-06-06T20:28:10">6/6/2014 8:28:10 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T20:28:10</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive health ">
+	<div class="quickshare" shareurl="http://www.today.com/health/happy-couples-sleep-sync-unless-dog-bed-2D79768140" headline="Happy couples sleep in sync — unless the dog is in bed">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Health
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/health/happy-couples-sleep-sync-unless-dog-bed-2D79768140">
+    <a href="http://www.today.com/health/happy-couples-sleep-sync-unless-dog-bed-2D79768140">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/tdy-sleep-140606-02.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/health/happy-couples-sleep-sync-unless-dog-bed-2D79768140" class="mh" title="— 'Happy wife, happy life' — or so they say. Actually, it's more like happy wife, happy sleep.">
+	            Happy couples sleep in sync — unless the dog is in bed
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T20:43:43">
+    <abbr class="dtstamp updated" title="2014-06-06T20:43:43">6/6/2014 8:43:43 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T20:43:43</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/sharknado-2-trailer-promises-its-happening-again-2D79768167" headline="'Sharknado 2' trailer promises, 'It's happening again'">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/sharknado-2-trailer-promises-its-happening-again-2D79768167">
+    <a href="http://www.today.com/entertainment/sharknado-2-trailer-promises-its-happening-again-2D79768167">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039859-140606-sharknado-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Syfy
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/sharknado-2-trailer-promises-its-happening-again-2D79768167" class="mh" title="Just when you thought it was safe to go nowhere near the water, a new teaser for 'Sharknado 2: The Second One' reminds us that sharks will totally attack us on city streets. 'It's happening again,' Ian Ziering says in the clip for the upcoming Syfy sequel to last year's horribly beloved 'Sharknado.">
+	            'Sharknado 2' trailer promises, 'It's happening again'
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T23:39:13">
+    <abbr class="dtstamp updated" title="2014-06-06T23:39:13">6/6/2014 11:39:13 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T23:39:13</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive money ">
+	<div class="quickshare" shareurl="http://www.today.com/money/safe-bet-turning-college-degree-job-2D79764994" headline="A safe bet for turning a college degree into a job">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Money
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/money/safe-bet-turning-college-degree-job-2D79764994">
+    <a href="http://www.today.com/money/safe-bet-turning-college-degree-job-2D79764994">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039865-2d274905844516-today-graduation-college-140514.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Nicolaus Czarnecki / Zuma Press
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/money/safe-bet-turning-college-degree-job-2D79764994" class="mh" title="When word first got out that Case Western Reserve University in Cleveland, Ohio, was planning to build two degree programs specializing in big data analytics, vice provost of undergraduate education Donald Feke's in-box filled up with inquiries from students clamoring to get in — long before the programs were ready. No wonder.">
+	            A safe bet for turning a college degree into a job
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-07T13:05:32">
+    <abbr class="dtstamp updated" title="2014-06-07T13:05:32">6/7/2014 1:05:32 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-07T13:05:32</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed slideshow photofeatures ">
+	<div class="quickshare" shareurl="http://www.today.com/id/47372989/" headline="
+						
+						Fashion monarch: 60 years of Queen Elizabeth II’s style
+					
+					">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede slideshow">
+    
+<div class="art hmedia" about="javascript:ijv.launchSlideshow('47372989');">
+    <a href="javascript:ijv.launchSlideshow('47372989');">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Slideshows/_production/_archive/TODAY/Royals/ss-120510-Queen-Fashion/ss-140606-queen-style-tease-02.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Pool / Reuters
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="slideshow">
+            <span class="label">slideshow</span>
+        </span>
+    </span>
+
+	        <a href="javascript:ijv.launchSlideshow('47372989');" class="mh" title="From unique prints to fabulous hats, the British monarch’s fashion choices often show a sense of fun. Take a look through Queen Elizabeth II’s signature looks over the years.">
+	            
+						
+						Fashion monarch: 60 years of Queen Elizabeth II’s style
+					
+					
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T14:15:38">
+    <abbr class="dtstamp updated" title="2014-06-06T14:15:38">6/6/2014 2:15:38 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:15:38</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive health ">
+	<div class="quickshare" shareurl="http://www.today.com/health/heres-another-good-reason-women-should-dump-toxic-relationship-2D79765090" headline="Here's another good reason women should dump a toxic relationship ">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Health
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/health/heres-another-good-reason-women-should-dump-toxic-relationship-2D79765090">
+    <a href="http://www.today.com/health/heres-another-good-reason-women-should-dump-toxic-relationship-2D79765090">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906042988-g-hlt-110819-toxic-friend-11a.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Getty Images stock
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/health/heres-another-good-reason-women-should-dump-toxic-relationship-2D79765090" class="mh" title="Many people have at least one toxic friend, nasty coworker or hateful relative in their lives. But the bad blood caused by those bad relationships may actually be harmful: stressful social interactions contribute to an increase in high blood pressure for women, according to a new study.">
+	            Here's another good reason women should dump a toxic relationship 
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T17:46:10">
+    <abbr class="dtstamp updated" title="2014-06-06T17:46:10">6/6/2014 5:46:10 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T17:46:10</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/game-thrones-star-nights-watch-vs-wildling-battle-big-tv-2D79768105" headline="'Game of Thrones' star: Night's Watch vs. Wildling battle is 'as big as TV goes'">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/game-thrones-star-nights-watch-vs-wildling-battle-big-tv-2D79768105">
+    <a href="http://www.today.com/entertainment/game-thrones-star-nights-watch-vs-wildling-battle-big-tv-2D79768105">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039985-140606-ent-kit-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Helen Sloan / HBO
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/game-thrones-star-nights-watch-vs-wildling-battle-big-tv-2D79768105" class="mh" title="Kit Harington’s Jon Snow has been warning the men at Castle Black all season long, and this Sunday the Night’s Watch finally faces its greatest enemy — the Wilding army&nbsp; — on “Game of Thrones.” “I think it’s as big as ‘Thrones’ has gone at the moment. I mean, I think it’s no secret that it’s the most expensive episode that they’ve ever made and a lot of that is due to the CGI,” Harington told AccessHollywood.com, referencing Wildling giants, whose feet appear in the episode sneak peek.">
+	            'Game of Thrones' star: Night's Watch vs. Wildling battle is 'as big as TV goes'
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T23:40:59">
+    <abbr class="dtstamp updated" title="2014-06-06T23:40:59">6/6/2014 11:40:59 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T23:40:59</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed interactive ">
+	<div class="quickshare" shareurl="http://www.today.com/parents/rented-school-buses-smores-fun-ways-mark-last-day-school-2D79709987" headline="Rented school buses and s'mores: Fun ways to mark the last day of school">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/parents/rented-school-buses-smores-fun-ways-mark-last-day-school-2D79709987">
+    <a href="http://www.today.com/parents/rented-school-buses-smores-fun-ways-mark-last-day-school-2D79709987">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-sign-140606-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Courtesy Terri Peters
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/parents/rented-school-buses-smores-fun-ways-mark-last-day-school-2D79709987" class="mh" title="No more pencils, no more books — you know the drill. In addition to last-day-of-school parties in the classroom, there are plenty of lively ways for families to mark the end of another grade. Some are simple, others require some advance planning, but you may want to add some of these traditions to your repertoire.">
+	            Rented school buses and s'mores: Fun ways to mark the last day of school
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T19:11:42">
+    <abbr class="dtstamp updated" title="2014-06-06T19:11:42">6/6/2014 7:11:42 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T19:11:42</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive ">
+	<div class="quickshare" shareurl="http://www.today.com/parents/wake-me-when-im-skinny-maternity-t-shirts-spark-backlash-2D79769058" headline="
+						
+						‘I miss my waist’ and ‘wake me up when I’m skinny’ maternity T-shirts spark backlash
+					
+					">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/parents/wake-me-when-im-skinny-maternity-t-shirts-spark-backlash-2D79769058">
+    <a href="http://www.today.com/parents/wake-me-when-im-skinny-maternity-t-shirts-spark-backlash-2D79769058">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-maternity-shirts-140606-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            apeainthepod.com
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/parents/wake-me-when-im-skinny-maternity-t-shirts-spark-backlash-2D79769058" class="mh" title="A Pea in the Pod, a popular store that sells stylish clothes for moms-to-be, is under fire for offering maternity T-shirts with messages that some say are offensive because they fat-shame women with baby bumps.">
+	            
+						
+						‘I miss my waist’ and ‘wake me up when I’m skinny’ maternity T-shirts spark backlash
+					
+					
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T17:18:41">
+    <abbr class="dtstamp updated" title="2014-06-06T17:18:41">6/6/2014 5:18:41 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T17:18:41</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive pets ">
+	<div class="quickshare" shareurl="http://www.today.com/pets/fat-cat-22-pound-feline-appears-mona-lisa-other-famous-2D79759311" headline="Fat cat! 22-pound feline appears in famous artworks">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Pets
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/pets/fat-cat-22-pound-feline-appears-mona-lisa-other-famous-2D79759311">
+    <a href="http://www.today.com/pets/fat-cat-22-pound-feline-appears-mona-lisa-other-famous-2D79759311">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Slideshows/_production/TODAY-ready/ss-140604-fat-cat/Fatcattease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/pets/fat-cat-22-pound-feline-appears-mona-lisa-other-famous-2D79759311" class="mh" title="In Russian artist Svetlana Petrova’s series “Fat Cat Art,” her rotund pet Zarathustra invades Da Vinci's “Mona Lisa,” Michelangelo’s “The Creation of Adam” and many other famous artworks.">
+	            Fat cat! 22-pound feline appears in famous artworks
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T16:41:52">
+    <abbr class="dtstamp updated" title="2014-06-06T16:41:52">6/6/2014 4:41:52 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T16:41:52</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art interactive hip2save ">
+	<div class="quickshare" shareurl="http://hip2save.com/2014/06/06/weekend-restaurant-entertainment-retail-deals-121" headline="Weekend restaurant, entertainment, and retail deals">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Hip2Save
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+		
+<li class="lede interactive">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://hip2save.com/2014/06/06/weekend-restaurant-entertainment-retail-deals-121" class="xlh">
+	            Weekend restaurant, entertainment, and retail deals
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        Before hitting the malls or restaurants this weekend, be sure to check out these coupons to help you save. Also, with the kids home for summer, be sure to take advantage of these free family activities or mark your calendars for upcoming events!
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T23:32:16">
+    <abbr class="dtstamp updated" title="2014-06-06T23:32:16">6/6/2014 11:32:16 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T23:32:16</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/ghostbusters-turns-30-6-surprising-life-lessons-classic-film-2D79768136" headline="‘Ghostbusters’ turns 30: Revisit film’s supernatural wisdom">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/ghostbusters-turns-30-6-surprising-life-lessons-classic-film-2D79768136">
+    <a href="http://www.today.com/entertainment/ghostbusters-turns-30-6-surprising-life-lessons-classic-film-2D79768136">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039862-today-ghostbusters-140606-01.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/ghostbusters-turns-30-6-surprising-life-lessons-classic-film-2D79768136" class="mh" title="Who you gonna call when you need some serious life advice? These guys, if you're smart.">
+	            ‘Ghostbusters’ turns 30: Revisit film’s supernatural wisdom
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T16:52:44">
+    <abbr class="dtstamp updated" title="2014-06-06T16:52:44">6/6/2014 4:52:44 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T16:52:44</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive news ">
+	<div class="quickshare" shareurl="http://www.today.com/news/d-day-vet-i-dont-want-be-hero-anybody-2D79767682" headline="
+						D-Day vet tells Tom Brokaw: ‘I don’t want to be a hero for anybody’ 
+					">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    News
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/news/d-day-vet-i-dont-want-be-hero-anybody-2D79767682">
+    <a href="http://www.today.com/news/d-day-vet-i-dont-want-be-hero-anybody-2D79767682">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-brokaw-vet-140606-01.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/news/d-day-vet-i-dont-want-be-hero-anybody-2D79767682" class="mh" title="On the 70th anniversary of the greatest invasion in military history, Tom Blakey, now 93, told NBC’s Tom Brokaw: “I had five bullets that could’ve killed me, any of ’em.”">
+	            
+						D-Day vet tells Tom Brokaw: ‘I don’t want to be a hero for anybody’ 
+					
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T13:38:18">
+    <abbr class="dtstamp updated" title="2014-06-06T13:38:18">6/6/2014 1:38:18 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T13:38:18</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive ">
+	<div class="quickshare" shareurl="http://www.today.com/parents/new-reality-series-born-wild-births-controversy-2D79767941" headline="New reality series 'Born in the Wild' births controversy">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/parents/new-reality-series-born-wild-births-controversy-2D79767941">
+    <a href="http://www.today.com/parents/new-reality-series-born-wild-births-controversy-2D79767941">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/140606/tdy_guth_birth2_140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/parents/new-reality-series-born-wild-births-controversy-2D79767941" class="mh" title="Where a woman chooses to give birth is hugely personal, and these days most Americans pick one location: A hospital or medical facility. But while a growing segment of births are now occurring at home, a new reality show for Lifetime is set to present a third option — in the great outdoors.">
+	            New reality series 'Born in the Wild' births controversy
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T16:12:40">
+    <abbr class="dtstamp updated" title="2014-06-06T16:12:40">6/6/2014 4:12:40 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T16:12:40</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed interactive books ">
+	<div class="quickshare" shareurl="http://www.today.com/books/20k-donation-game-thrones-author-will-write-kill-contest-winner-2D79768098" headline="For $20K donation, 'Game of Thrones' author will write, and kill, contest winner">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Books
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/books/20k-donation-game-thrones-author-will-write-kill-contest-winner-2D79768098">
+    <a href="http://www.today.com/books/20k-donation-game-thrones-author-will-write-kill-contest-winner-2D79768098">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039949-today-george-martin-wolf-140606-01.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            prizeo.com
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/books/20k-donation-game-thrones-author-will-write-kill-contest-winner-2D79768098" class="mh" title="Who you gonna call when your wolf sanctuary is in dire need of help? George R.R. Martin, who's offering bidders in a fundraiser the chance to be written into, and then killed out of, an upcoming book.">
+	            For $20K donation, 'Game of Thrones' author will write, and kill, contest winner
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T12:56:09">
+    <abbr class="dtstamp updated" title="2014-06-06T12:56:09">6/6/2014 12:56:09 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T12:56:09</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive toyotaconcertseries ">
+	<div class="quickshare" shareurl="http://www.today.com/toyotaconcertseries/sara-bareilles-entered-dream-state-after-discovering-emma-thompson-her-2D79768101" headline="Sara Bareilles entered a 'dream state' after discovering Emma Thompson on her flight">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Toyota Concert Series
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/toyotaconcertseries/sara-bareilles-entered-dream-state-after-discovering-emma-thompson-her-2D79768101">
+    <a href="http://www.today.com/toyotaconcertseries/sara-bareilles-entered-dream-state-after-discovering-emma-thompson-her-2D79768101">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-bareilles-concert-140602-03.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/toyotaconcertseries/sara-bareilles-entered-dream-state-after-discovering-emma-thompson-her-2D79768101" class="mh" title="Just before performing on the plaza, the musician entertained the anchors with a social story.">
+	            Sara Bareilles entered a 'dream state' after discovering Emma Thompson on her flight
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T15:00:54">
+    <abbr class="dtstamp updated" title="2014-06-06T15:00:54">6/6/2014 3:00:54 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T15:00:54</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art video today ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55346510/displaymode/1283/for/facebookvideo/" headline="
+						
+						The 11 best gadget gifts for Father’s Day
+					">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+		
+<li class="lede video">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/video/today/55346510" class="xlh">
+	            
+						
+						The 11 best gadget gifts for Father’s Day
+					
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+Stuck on what to buy for Father’s Day? No worries: Steve Greenberg, author of “Gadget Nation,” suggests perfect gifts for Dad, whether he is a tech nerd or a foodie.
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T19:07:49">
+    <abbr class="dtstamp updated" title="2014-06-06T19:07:49">6/6/2014 7:07:49 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T19:07:49</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive news ">
+	<div class="quickshare" shareurl="http://www.today.com/news/grieving-teen-astonished-generosity-his-fellow-graduating-seniors-2D79765890" headline="Grieving teen astonished by generosity of his fellow graduating seniors">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    News
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/news/grieving-teen-astonished-generosity-his-fellow-graduating-seniors-2D79765890">
+    <a href="http://www.today.com/news/grieving-teen-astonished-generosity-his-fellow-graduating-seniors-2D79765890">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906036587-140605-zachary-ruediger-1847.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Fricke Studio
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/news/grieving-teen-astonished-generosity-his-fellow-graduating-seniors-2D79765890" class="mh" title="It was an exciting time for Zach Ruediger: He was about to graduate from high school. But just days before the ceremony, his father suddenly passed away. He had lost his mom two years earlier.">
+	            Grieving teen astonished by generosity of his fellow graduating seniors
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T11:56:33">
+    <abbr class="dtstamp updated" title="2014-06-06T11:56:33">6/6/2014 11:56:33 AM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T11:56:33</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art interactive health ">
+	<div class="quickshare" shareurl="http://www.today.com/health/slender-mans-seductive-power-kids-its-brain-2D79768166" headline="Slender Man's seductive power for kids: It's in the brain">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Health
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+		
+<li class="lede interactive">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/health/slender-mans-seductive-power-kids-its-brain-2D79768166" class="xlh">
+	            Slender Man's seductive power for kids: It's in the brain
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        
+					The stabbing of a 12-year-old girl in Milwaukee was horrific. But in looking for an explanation for the attempted murder by two other adolescent girls, there have been attempts to vilify Internet memes such as “Slender Man” as putative causes for this kind, or any kind, of violence.
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T17:17:01">
+    <abbr class="dtstamp updated" title="2014-06-06T17:17:01">6/6/2014 5:17:01 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T17:17:01</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive health ">
+	<div class="quickshare" shareurl="http://www.today.com/health/how-one-girls-lemonade-stand-has-raised-80-million-changed-2D79767939" headline="How one girl’s lemonade stand has raised $80 million and changed lives">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Health
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/health/how-one-girls-lemonade-stand-has-raised-80-million-changed-2D79767939">
+    <a href="http://www.today.com/health/how-one-girls-lemonade-stand-has-raised-80-million-changed-2D79767939">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/tdy-lemonade-140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/health/how-one-girls-lemonade-stand-has-raised-80-million-changed-2D79767939" class="mh" title="Alexandra Scott, bravely battling cancer at age 8, wanted to raise $1 million for research. And though she succumbed to the disease in 2004, she started a movement that continues today.">
+	            How one girl’s lemonade stand has raised $80 million and changed lives
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T14:34:04">
+    <abbr class="dtstamp updated" title="2014-06-06T14:34:04">6/6/2014 2:34:04 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:34:04</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive kathieleehoda ">
+	<div class="quickshare" shareurl="http://www.today.com/klgandhoda/roma-downey-just-wasnt-irish-enough-classic-irish-spring-commercial-2D79768108" headline="Roma Downey just wasn't Irish enough for classic Irish Spring commercial">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Kathie Lee &amp; Hoda
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/klgandhoda/roma-downey-just-wasnt-irish-enough-classic-irish-spring-commercial-2D79768108">
+    <a href="http://www.today.com/klgandhoda/roma-downey-just-wasnt-irish-enough-classic-irish-spring-commercial-2D79768108">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039857-today-klg-roma-140606-02.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/klgandhoda/roma-downey-just-wasnt-irish-enough-classic-irish-spring-commercial-2D79768108" class="mh" title="Before Roma Downey found fame on 'Touched by an Angle,' and long before she co-created and starred in 'The Bible' and 'Son of God,' the Irish actress tried — but failed — to land a job in a commercial that seemed perfectly suited for her. 'I lived here in New York City when I first emigrated from Ireland,' Downey explained in a Friday morning interview on TODAY.">
+	            Roma Downey just wasn't Irish enough for classic Irish Spring commercial
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T15:53:50">
+    <abbr class="dtstamp updated" title="2014-06-06T15:53:50">6/6/2014 3:53:50 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T15:53:50</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/double-amputee-amy-purdy-model-price-right-2D79768165" headline="Double-amputee Amy Purdy to model on 'The Price Is Right'">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/double-amputee-amy-purdy-model-price-right-2D79768165">
+    <a href="http://www.today.com/entertainment/double-amputee-amy-purdy-model-price-right-2D79768165">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039954-140606-ent-amy-purdy.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/double-amputee-amy-purdy-model-price-right-2D79768165" class="mh" title="Paralympian Amy Purdy recently waltzed her way to second place on 'Dancing With the Stars,' and now she's set to hit another popular small-screen stage. The bronze medal-winning snowboarder, who lost both of her legs at the age of 19 after a battle with bacterial meningitis, will appear on 'The Price is Right' as a guest model.">
+	            Double-amputee Amy Purdy to model on 'The Price Is Right'
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T14:56:28">
+    <abbr class="dtstamp updated" title="2014-06-06T14:56:28">6/6/2014 2:56:28 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:56:28</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive tech ">
+	<div class="quickshare" shareurl="http://www.today.com/tech/taye-diggs-explains-why-hes-following-you-twitter-2D79768103" headline="Taye Diggs explains why he's following you on Twitter">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Tech
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/tech/taye-diggs-explains-why-hes-following-you-twitter-2D79768103">
+    <a href="http://www.today.com/tech/taye-diggs-explains-why-hes-following-you-twitter-2D79768103">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/tdy-lauer-diggs-140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/tech/taye-diggs-explains-why-hes-following-you-twitter-2D79768103" class="mh" title="The 43-year-old explained to Matt Lauer on TODAY Friday that he's 'embarassed' by his own Twitter follow push.">
+	            Taye Diggs explains why he's following you on Twitter
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T14:38:52">
+    <abbr class="dtstamp updated" title="2014-06-06T14:38:52">6/6/2014 2:38:52 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:38:52</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive books ">
+	<div class="quickshare" shareurl="http://www.today.com/books/5-revelations-hillary-clintons-new-memoir-things-got-awkward-obama-2D79768132" headline="5 revelations from Hillary Clinton's new memoir (things got awkward with Obama)">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Books
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/books/5-revelations-hillary-clintons-new-memoir-things-got-awkward-obama-2D79768132">
+    <a href="http://www.today.com/books/5-revelations-hillary-clintons-new-memoir-things-got-awkward-obama-2D79768132">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/tdy-odon-hrc-140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/books/5-revelations-hillary-clintons-new-memoir-things-got-awkward-obama-2D79768132" class="mh" title="Few memoirs have been as hotly anticipated as Hillary Clinton's 'Hard Choices,' due out on June 10th. NBC obtained a copy and on TODAY Friday, Kelly O'Donnell reported on the details.">
+	            5 revelations from Hillary Clinton's new memoir (things got awkward with Obama)
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T13:38:38">
+    <abbr class="dtstamp updated" title="2014-06-06T13:38:38">6/6/2014 1:38:38 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T13:38:38</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive allday ">
+	<div class="quickshare" shareurl="http://www.today.com/allday/al-roker-launches-todays-treasure-hunt-inspired-hidden-cash-craze-2D79739309" headline="
+						Toughest yet! NYC treasure hunter takes 45 minutes to find (wet) prize
+					
+					
+					">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    allDAY
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/allday/al-roker-launches-todays-treasure-hunt-inspired-hidden-cash-craze-2D79739309">
+    <a href="http://www.today.com/allday/al-roker-launches-todays-treasure-hunt-inspired-hidden-cash-craze-2D79739309">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-treasure-winner-140606-02.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/allday/al-roker-launches-todays-treasure-hunt-inspired-hidden-cash-craze-2D79739309" class="mh" title="Everyone is aflutter over the social media scavenger hunt @HiddenCash — including Al Roker. He'll be leading TODAY's own treasure hunt, hiding envelopes in four great American cities.">
+	            
+						Toughest yet! NYC treasure hunter takes 45 minutes to find (wet) prize
+					
+					
+					
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T12:07:49">
+    <abbr class="dtstamp updated" title="2014-06-06T12:07:49">6/6/2014 12:07:49 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T12:07:49</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/singing-nun-cristina-scuccia-wins-voice-italy-2D79768130" headline="Singing nun Cristina Scuccia wins 'The Voice of Italy'">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/singing-nun-cristina-scuccia-wins-voice-italy-2D79768130">
+    <a href="http://www.today.com/entertainment/singing-nun-cristina-scuccia-wins-voice-italy-2D79768130">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039788-140606-ent-nun-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Marco Bertorello / AFP/Getty Images
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/singing-nun-cristina-scuccia-wins-voice-italy-2D79768130" class="mh" title="Sing it, Sister! Nun Cristina Scuccia, who became a viral sensation in March with&nbsp;her performance of Alicia Keys' 'No One' during 'The Voice of Italy's' audition round, won the competition on Thursday with 62 percent of the votes.">
+	            Singing nun Cristina Scuccia wins 'The Voice of Italy'
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T14:56:16">
+    <abbr class="dtstamp updated" title="2014-06-06T14:56:16">6/6/2014 2:56:16 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:56:16</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art interactive style ">
+	<div class="quickshare" shareurl="http://www.today.com/style/bobbies-buzz-easy-wear-sports-bras-other-products-provide-perfect-2D79764771" headline="Bobbie's Buzz: Sports bras and other products that provide a perfect fit">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Style
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+		
+<li class="lede interactive">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/style/bobbies-buzz-easy-wear-sports-bras-other-products-provide-perfect-2D79764771" class="xlh">
+	            Bobbie's Buzz: Sports bras and other products that provide a perfect fit
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        TODAY style editor and Bobbie.com's Bobbie Thomas highlights three items to help you feel "just right". 
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T14:18:02">
+    <abbr class="dtstamp updated" title="2014-06-06T14:18:02">6/6/2014 2:18:02 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:18:02</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed video news ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55345214/displaymode/1283/for/facebookvideo/" headline="Obama on D-Day: Vets showed ‘extraordinary courage’">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55345214">
+    <a href="http://www.today.com/video/today/55345214">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_williams_obama_140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55345214" class="mh" title="In an interview with NBC News’ Brian Williams, President Obama talked about the courage of the men who stormed the beaches of Normandy 70 years ago, and about his own grandfather, a WWII veteran, who passed away more than 20 years ago.">
+	            Obama on D-Day: Vets showed ‘extraordinary courage’
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T21:03:16">
+    <abbr class="dtstamp updated" title="2014-06-06T21:03:16">6/6/2014 9:03:16 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T21:03:16</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed video news ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55344995/displaymode/1283/for/facebookvideo/" headline="Bill O’Reilly: ‘Taliban monsters going to kill again’">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55344995">
+    <a href="http://www.today.com/video/today/55344995">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_lauer_oreilly_140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55344995" class="mh" title="The political commentator and author joins TODAY to talk about freed soldier Bowe Bergdahl’s release, as well as Hillary Clinton’s new book.">
+	            Bill O’Reilly: ‘Taliban monsters going to kill again’
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T11:29:29">
+    <abbr class="dtstamp updated" title="2014-06-06T11:29:29">6/6/2014 11:29:29 AM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T11:29:29</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive food ">
+	<div class="quickshare" shareurl="http://www.today.com/food/summer-bbq-spread-marinated-shrimp-corn-bean-salsa-more-2D79725447" headline="
+						
+						Summer BBQ spread: Juicy burgers, marinated shrimp, corn and bean salsa, more
+					
+					">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Food
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/food/summer-bbq-spread-marinated-shrimp-corn-bean-salsa-more-2D79725447">
+    <a href="http://www.today.com/food/summer-bbq-spread-marinated-shrimp-corn-bean-salsa-more-2D79725447">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/140606/tdy_klg_kitchen_140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/food/summer-bbq-spread-marinated-shrimp-corn-bean-salsa-more-2D79725447" class="mh" title="It’s time to fire up the grill! From gulf shrimp to jalapeño hummus, chef Tim Love shared a spread of recipes for the perfect summer barbecue.">
+	            
+						
+						Summer BBQ spread: Juicy burgers, marinated shrimp, corn and bean salsa, more
+					
+					
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T15:16:43">
+    <abbr class="dtstamp updated" title="2014-06-06T15:16:43">6/6/2014 3:16:43 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T15:16:43</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art video news ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55344840/displaymode/1283/for/facebookvideo/" headline="Heroic Seattle student subdues gunman ">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+		
+<li class="lede video">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/video/today/55344840" class="xlh">
+	            Heroic Seattle student subdues gunman 
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+					
+					
+					A gunman opened fire at Seattle Pacific University, killing one person and wounding three others. Brave students stepped in and brought the tragedy to an end. NBC’s Miguel Almaguer reports.
+				
+				
+				
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T11:53:27">
+    <abbr class="dtstamp updated" title="2014-06-06T11:53:27">6/6/2014 11:53:27 AM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T11:53:27</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art video today ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55345313/displaymode/1283/for/facebookvideo/" headline="Survey: 40 percent of houseguests admit to snooping">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+		
+<li class="lede video">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/video/today/55345313" class="xlh">
+	            Survey: 40 percent of houseguests admit to snooping
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+According to a new survey, nearly half of Americans admit to snooping around when attending a party in someone's home, and 14 percent say they've gotten frisky in a host's bedroom or bathroom.
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T12:50:24">
+    <abbr class="dtstamp updated" title="2014-06-06T12:50:24">6/6/2014 12:50:24 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T12:50:24</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed video today ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55346270/displaymode/1283/for/facebookvideo/" headline="Lightning strike on moving truck caught on camera">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55346270">
+    <a href="http://www.today.com/video/today/55346270">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/140606/tdy_take_3_140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55346270" class="mh" title="In TODAY’s Take, Natalie Morales, Al Roker and Tamron Hall discuss the moment a Canadian couple’s vehicle was struck by lightning. Though a fireball appeared to engulf them, the couple are OK. “Doesn’t that look like a horror film?” asks Tamron.">
+	            Lightning strike on moving truck caught on camera
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T15:36:17">
+    <abbr class="dtstamp updated" title="2014-06-06T15:36:17">6/6/2014 3:36:17 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T15:36:17</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed video today ">
+	<div class="quickshare" shareurl="http://www.today.com/id/55345399/displaymode/1283/for/facebookvideo/" headline="Mariah Carey and other stars honor Maya Angelou">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+    <ol class="">
+				
+<li class="lede video">
+    
+<div class="art hmedia" about="http://www.today.com/video/today/55345399">
+    <a href="http://www.today.com/video/today/55345399">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Video/__NEW/tdy_or_angelou2_140606.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+    <span class="icon">
+        <span class="video">
+            <span class="label">video</span>
+        </span>
+    </span>
+
+	        <a href="http://www.today.com/video/today/55345399" class="mh" title="A memorial service will be held Saturday to honor the life of the late writer. Stars recite from some of her more memorable work. Carson Daly reports from the Orange Room.">
+	            Mariah Carey and other stars honor Maya Angelou
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T16:33:57">
+    <abbr class="dtstamp updated" title="2014-06-06T16:33:57">6/6/2014 4:33:57 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T16:33:57</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive entertainment ">
+	<div class="quickshare" shareurl="http://www.today.com/entertainment/50-cent-gets-villainous-maleficent-spoof-2D79767942" headline="50 Cent gets villainous in 'Maleficent' spoof">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Entertainment
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/entertainment/50-cent-gets-villainous-maleficent-spoof-2D79767942">
+    <a href="http://www.today.com/entertainment/50-cent-gets-villainous-maleficent-spoof-2D79767942">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906039980-140606-ent-50cent-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/entertainment/50-cent-gets-villainous-maleficent-spoof-2D79767942" class="mh" title="Angelina Jolie has moviegoers under her spell in the Disney blockbuster 'Maleficent,' but Curtis '50 Cent' Jackson offered her some stiff competition on Thursday's 'Jimmy Kimmel Live.' Host Kimmel teased that the rapper-actor had a 'big, big, big film coming out,' and 50 Cent assured him it 'ain't going to no Redbox.">
+	            50 Cent gets villainous in 'Maleficent' spoof
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-06T14:56:02">
+    <abbr class="dtstamp updated" title="2014-06-06T14:56:02">6/6/2014 2:56:02 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T14:56:02</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="ad adX1 ads" data="type:DfpUrl;adunit:2620/today/homepage;w:300;h:250;">
+	
+	    <span class="ad-label"><a href="http://www.nbcnews.com/id/31066137/media-kit/" class="mediakit">Advertise</a></span>
+    
+</div>
+<div class="block hentry single bleed interactive news ">
+	<div class="quickshare" shareurl="http://www.today.com/news/sick-8-year-old-boy-becomes-yosemite-park-ranger-day-2D79764772" headline="Sick 8-year-old boy becomes Yosemite park ranger for a day">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    News
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/news/sick-8-year-old-boy-becomes-yosemite-park-ranger-day-2D79764772">
+    <a href="http://www.today.com/news/sick-8-year-old-boy-becomes-yosemite-park-ranger-day-2D79764772">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-yosemite-140605-tease.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            Courtesy of the National Park Service
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/news/sick-8-year-old-boy-becomes-yosemite-park-ranger-day-2D79764772" class="mh" title="A Florida boy got to save the day many times over at Yosemite National Park this week. Gabriel Lavan-Ying put out a forest fire, rescued an injured hiker and rode in a helicopter — all in fulfillment of a desire he shared with the Make-A-Wish Foundation.">
+	            Sick 8-year-old boy becomes Yosemite park ranger for a day
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-05T22:11:34">
+    <abbr class="dtstamp updated" title="2014-06-05T22:11:34">6/5/2014 10:11:34 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-05T22:11:34</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art interactive food ">
+	<div class="quickshare" shareurl="http://www.today.com/food/make-lasagna-garlic-bread-rev-run-wife-justine-simmons-2D79764483" headline="Make lasagna and garlic bread with Rev Run and wife, Justine Simmons">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Food
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+		
+<li class="lede interactive">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/food/make-lasagna-garlic-bread-rev-run-wife-justine-simmons-2D79764483" class="xlh">
+	            Make lasagna and garlic bread with Rev Run and wife, Justine Simmons
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        In anticipation of their upcoming reality series "Rev Run's Sunday Suppers" on the Cooking Channel, Rev Run and his wife, Justine Simmons, stopped by the TODAY kitchen to whip up a hearty Italian meal. 
+    </p>
+
+<div class="hide timestamp" content="2014-06-06T15:16:02">
+    <abbr class="dtstamp updated" title="2014-06-06T15:16:02">6/6/2014 3:16:02 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-06T15:16:02</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive money ">
+	<div class="quickshare" shareurl="http://www.today.com/money/today-experts-share-money-saving-tips-hair-care-home-repairs-2D79764131" headline="TODAY experts share money-saving tips for doc visits, home repairs, more">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Money
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/money/today-experts-share-money-saving-tips-hair-care-home-repairs-2D79764131">
+    <a href="http://www.today.com/money/today-experts-share-money-saving-tips-hair-care-home-repairs-2D79764131">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/today-contractors-140605.TdyHorz3.jpg" alt="" class="photo">
+    </div>
+    </a>
+    
+        <span class="credit vcard contributor org" property="v:affiliation vcard:organization-name" itemprop="affiliation">
+            
+            TODAY
+        </span>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/money/today-experts-share-money-saving-tips-hair-care-home-repairs-2D79764131" class="mh" title="TODAY viewers (and anchors!) received a ton of money-saving tips this week — so much so that we felt all the financially savvy advice belonged in one place. Here's smart guidance about medical expenses, hair care, gym memberships and home repairs.">
+	            TODAY experts share money-saving tips for doc visits, home repairs, more
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-05T22:40:55">
+    <abbr class="dtstamp updated" title="2014-06-05T22:40:55">6/5/2014 10:40:55 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-05T22:40:55</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single no-art interactive style ">
+	<div class="quickshare" shareurl="http://www.today.com/style/supermodel-lara-stone-i-was-fired-being-3-months-pregnant-2D79759375" headline="Supermodel Lara Stone: I was fired for being 3 months pregnant">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest" style="display: none; "><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Style
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+		
+<li class="lede interactive">
+	<div class="story">
+	    <h3 class="entry-title">
+	        <a href="http://www.today.com/style/supermodel-lara-stone-i-was-fired-being-3-months-pregnant-2D79759375" class="xlh">
+	            Supermodel Lara Stone: I was fired for being 3 months pregnant
+	        </a>
+	    </h3>
+		
+    <p class="entry-summary">
+        Pregnancy looked great on supermodel Lara Stone — but apparently one client didn’t think so. 
+    </p>
+
+<div class="hide timestamp" content="2014-06-05T19:32:50">
+    <abbr class="dtstamp updated" title="2014-06-05T19:32:50">6/5/2014 7:32:50 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-05T19:32:50</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+<div class="block hentry single bleed interactive moms ">
+	<div class="quickshare" shareurl="http://www.today.com/moms/coming-today-celebrate-modern-dads-2D79758958" headline="Coming up on TODAY: Celebrate Modern Dads">
+        <div class="share-btn">
+            <span class="share"></span>
+            <span>share</span>
+        </div>
+        <ul class="share-icons">
+            <li class="facebook"><a href="#" title="Facebook" alt="Facebook">Facebook</a></li>
+            <li class="twitter"><a href="#" title="Twitter" alt="Twitter">Twitter</a></li>
+            <li class="pinterest"><a href="#" title="Pinterest" alt="Pinterest">Pinterest</a></li>
+            <li class="email"><a href="#" title="Email" alt="Email">Email</a></li>
+        </ul>
+    </div>
+
+<div class="hide attribution vcard contributor" typeof="v:Person vcard:VCard" rel="dc:creator" itemscope="" itemtype="http://data-vocabulary.org/Person">
+	<a href="#" class="fullname author fn">
+	    Moms
+	</a>
+	<span class="org" property="v:title" itemprop="title">
+	    
+	</span>
+</div>
+    <ol class="">
+				
+<li class="lede interactive">
+    
+<div class="art hmedia" about="http://www.today.com/moms/coming-today-celebrate-modern-dads-2D79758958">
+    <a href="http://www.today.com/moms/coming-today-celebrate-modern-dads-2D79758958">
+    <div class="img" rel="media:image enclosure" type="image/jpeg">
+        <img src="http://media1.s-nbcnews.com/j/MSNBC/Components/Photo/_new/2d274906024635-moderndads.TdyHorz3.JPG" alt="" class="photo">
+    </div>
+    </a>
+        
+</div>   
+    <div class="story">
+	    <h3 class="entry-title">
+	        
+	        <a href="http://www.today.com/moms/coming-today-celebrate-modern-dads-2D79758958" class="mh" title="What makes a modern dad? Whether it's supporting your family financially, kissing boo-boos, cooking dinner, changing diapers or giving hugs, dads these days are 'doing it all' more than ever before.">
+	            Coming up on TODAY: Celebrate Modern Dads
+	        </a>
+	    </h3>
+	    
+<div class="hide timestamp" content="2014-06-05T15:02:28">
+    <abbr class="dtstamp updated" title="2014-06-05T15:02:28">6/5/2014 3:02:28 PM +00:00</abbr>
+    <span property="dc:created dc:issued dc:date">2014-06-05T15:02:28</span>
+</div>
+	</div>
+</li>
+	</ol>
+</div>
+			</div>
+            
+			<div class="fold-ads">
+				<div class="ad-container-994x282">
+					<div class="left">
+						<div class="leftcontainer">
+							<div class="row">
+								<div>
+									
+<div class="ad adX1 " data="type:DfpUrl;adunit:2620/today/deal_tips;w:300;h:100;">
+	
+</div>
+								</div>
+								<div>
+									
+<div class="ad adX1 " data="type:DfpUrl;adunit:2620/today/deal_tips2;w:300;h:100;">
+	
+</div>               
+								</div>
+							</div>
+							<div class="row">
+								<div>
+									
+<div class="ad adX1 " data="type:DfpUrl;adunit:2620/today/deal_tips3;w:300;h:100;">
+	
+</div>              
+								</div>
+								<div>
+									 
+<div class="ad adX1 " data="type:DfpUrl;adunit:2620/today/deal_tips4;w:300;h:100;">
+	
+</div>              	
+								</div>
+							</div>
+						</div>
+					</div>    
+					<div class="right">      
+						<div class="dealsandtipssponsoredlinks">
+						   
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="footer">
+			<div class="content">
+				
+<div id="legalese">
+    <div class="copyright"><span>TODAY.com is a production of</span><a href="http://www.NBCNews.com/"><span class="logo">NBCNews.com</span></a></div>
+    <ul class="about">
+	    <li><a href="http://www.today.com/allday/topic/about-today">About us</a></li>
+	    <li><a href="http://www.today.com/allday/contact-us-send-today-your-questions-comments-2D11687587">Contact</a></li>
+	    <li><a href="/html/today/HtmlSitemap0.html">Sitemap</a></li>
+	    <li><a href="http://www.today.com/id/27365695/ns/today/t/get-ready-make-headlines/">Jobs</a></li>
+	    <li><a href="http://www.today.com/static/terms-and-conditions">Terms &amp; conditions - New</a></li>
+	    <li><a href="http://g.msn.com/AIPRIV/en-us">About our ads</a></li>
+        <li>
+            <!--Today--><!--  Evidon tag  cid: 908  pid: 1241-->
+            <a id="_bapw-link" href="#" target="_blank"><img id="_bapw-icon" src="http://c.betrad.com/pub/icon1.png">AdChoices</a>
+            <script>(function(){var k=1241,m=908,n=1,b=false,l=document,p=l.getElementById("_bapw-link"),h=(l.location.protocol=="https:"),i=(h?"https":"http")+"://",g=i+"c.betrad.com/pub/",r=window._bap_p_overrides,e=0,a=0,f=560,q=720,o=h||(r&&r.hasOwnProperty(k)&&r[k].new_window);function c(s){var d=new Image();d.src=i+"l.betrad.com/pub/p.gif?pid="+k+"&ocid="+m+"&i"+s+"=1&r="+Math.random()}function j(){if(typeof(window.innerWidth)=="number"&&typeof(window.innerHeight)=="number"){e=window.innerWidth;a=window.innerHeight}else{if(document.documentElement&&document.documentElement.clientWidth&&document.documentElement.clientHeight){e=document.documentElement.clientWidth;a=document.documentElement.clientHeight}else{if(document.body&&document.body.clientWidth&&document.body.clientHeight){e=document.body.clientWidth;a=document.body.clientHeight}}}return(a<=f)||(e<=q)}l.getElementById("_bapw-icon").src=g+"icon1.png";p.onmouseover=function(){p.href="http://info.evidon.com/pub_info/"+k+"?v=1&nt="+n+"&nw="+((o||j())?"true":"false")};p.onclick=function(){if(o||j()){c("c");return true}function d(u,x){var v=l.getElementsByTagName("head")[0]||l.documentElement,t=b,s=l.createElement("script");function w(){s.onload=s.onreadystatechange=null;v.removeChild(s);x()}s.src=u;s.onreadystatechange=function(){if(!t&&(this.readyState=="loaded"||this.readyState=="complete")){t=true;w()}};s.onload=w;v.insertBefore(s,v.firstChild)}this.onclick="return "+b;d(i+"ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js",function(){d(g+"pub2.js",function(){BAPW.i(p,{pid:k,ocid:m})})});return b};c("i")}());</script>
+        </li>
+	    <li><a href="http://www.nbcuni.com/privacy/full-privacy-policy/">Privacy policy</a></li>
+        <li><a href="http://www.today.com/id/49418540/ns/today/t/closed-captioning/">Closed captioning</a></li>
+	    <li><a href="http://www.today.com/id/3303511/t/nbcnewscom-site-help/">Help</a></li>
+    </ul>
+</div>
+
+			</div>
+		</div>
+		<div id="fb-root"></div>
+		<img src="http://dt.scanscout.com/ssframework/dt/pt.png?trackcd=1308765647718" border="0" style="visibility:hidden;padding:0;margin:0;height:1px;width:1px;" alt="">
+		
+<ol class="hide" id="video-tease-template">
+	<li class="videotease" style="overflow-x: hidden; overflow-y: hidden; height: 78px; ">
+		<div class="art">
+			<div class="img">
+				<a href="#"><img src="http://media1.s-nbcnews.com/i/MSNBC/Components/css/img/spacer.gif"></a>
+			</div>
+		</div>
+		<div class="icon"><span class="video"><span class="label"></span></span></div>
+		<a href="#" class="headline">Headline</a>
+	</li>
+</ol>
+<ol class="hide" id="video-tease-template-no-timestamp">
+	<li>
+		<div class="art">
+			<div class="img">
+				<a href="#"><img src="http://media1.s-nbcnews.com/i/MSNBC/Components/css/img/spacer.gif"></a>
+			</div>
+		</div>
+		<span class="icon-no-timestamp"><span class="video"></span></span>
+		<a href="#" class="headline no-timestamp">Headline</a>
+	</li>
+</ol>
+
+		<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+		
+<script src="http://ads1.msads.net/library/dapmsn.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			window.omnitureAccount = "msnbcom";
+			window.assetsHost = "http://assets1b.nbcnews.com";
+		</script>
+		<link rel="stylesheet" type="text/css" href="http://www.nbcnews.com/id/46164517">
+		<script type="text/javascript" src="http://www.nbcnews.com/id/46164518"></script>
+		
+<script type="text/javascript" src="http://assets2b.nbcnews.com/Rendering/todayshow/html40/assets/Js/cover-min.js?h=AC5AD9E7DEAB47E6D8F5F6C8BD91C0C4"></script>
+<!--
+Start of DoubleClick Floodlight Tag: Please do not remove
+Activity name of this tag: Today.com Homepage
+URL of the webpage where the tag is expected to be placed: http://today.msnbc.msn.com/
+This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+Creation Date: 11/08/2012
+-->
+<script type="text/javascript">
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<iframe src="http://2183402.fls.doubleclick.net/activityi;src=2183402;type=creat924;cat=today317;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script><iframe src="http://2183402.fls.doubleclick.net/activityi;src=2183402;type=creat924;cat=today317;ord=6163622399326.414?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+<noscript>
+&lt;iframe src="http://2183402.fls.doubleclick.net/activityi;src=2183402;type=creat924;cat=today317;ord=1?" width="1" height="1" frameborder="0" style="display:none"&gt;&lt;/iframe&gt;
+</noscript>
+
+<!-- End of DoubleClick Floodlight Tag: Please do not remove --><!-- No ad data found -->
+
+<script src="//www.nbcnews.com/id/51579771" type="text/javascript"></script><script src="//www.nbcudigitaladops.com/hosted/global.js"></script><script src="//www.nbcudigitaladops.com/hosted/site.js?h=today_com"></script><!-- BEGIN Krux Control Tag for "Today" --><!-- Source: /controltag?confid=IbuiJ92p&site=Today&edit=1 --><script class="kxct" data-id="IbuiJ92p" data-timing="async" data-version="1.9" type="text/javascript">  window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);  (function(){    var k=document.createElement('script');k.type='text/javascript';k.async=true;    var m,src=(m=location.href.match(/\bkxsrc=([^&]+)/))&&decodeURIComponent(m[1]);    k.src = /^https?:\/\/([^\/]+\.)?krxd\.net(:\d{1,5})?\//i.test(src) ? src : src === "disable" ? "" :      (location.protocol==="https:"?"https:":"http:")+"//cdn.krxd.net/controltag?confid=IbuiJ92p"  ;    var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);  }());</script><!-- END Krux Controltag --><img src="//www.nbcudigitaladops.com/hosted/housepix.gif" width="0" height="0" style="display:none"><script type="text/javascript">function sitePerformedInvite(id){var r = /(REMO_INVITE)=([^;]*)/gi.exec(document.cookie);return (r && unescape(r[2]));}function siteInvited(id){id != undefined || ( id = '1');var ex = new Date(new Date().getTime() + (86400000*7)); document.cookie = 'REMO_INVITE' + '=' + escape(id) + ((!ex || !(ex instanceof Date))? '' : ('; expires=' + ex.toGMTString()))+ ';path=/;domain=nbcnews.com';} </script>
+<!-- START Nielsen Online SiteCensus V6.0 -->
+<!-- COPYRIGHT 2012 Nielsen Online -->
+<script type="text/javascript" src="//secure-au.imrworldwide.com/v60.js"></script>
+<script type="text/javascript">
+    var pvar = { cid: "mamamia", content: "today", server: "secure-au" };
+    var trac = nol_t(pvar);
+    trac.record().post();
+</script>
+<noscript>
+    &lt;div&gt;
+        &lt;img src="//secure-au.imrworldwide.com/cgi-bin/m?ci=mamamia&amp;amp;cg=today&amp;amp;cc=1&amp;amp;ts=noscript" width="1" height="1" alt="" /&gt;
+    &lt;/div&gt;
+</noscript>
+<!-- END Nielsen Online SiteCensus V6.0 --> 
+	
+
+</body></html>

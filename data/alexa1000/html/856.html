@@ -1,0 +1,879 @@
+<!DOCTYPE html><!--[if lte IE 7]> <html lang="en" class="en no-js lt-ie9 lt-ie8"> <![endif]--><!--[if IE 8]> <html lang="en" class="en no-js lt-ie9"> <![endif]--><!--[if IE 9]> <html lang="en" class="en no-js ie9"> <![endif]--><!--[if !(IE)]><!--><html lang="en" class="en  js borderradius boxshadow textshadow opacity cssgradients generatedcontent"><!--<![endif]--><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Free Online YouTube Downloader: Download YouTube Videos, Facebook and many others!</title>
+  <meta name="description" content="Free Online service to Download YouTube videos at one click! The best YouTube Downloader supporting fast and easy vimeo, Facebook and Dailymotion video Download and much more!">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="/js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+  <script src="/js/scripts_1.4.js"></script>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="image_src" href="/img/icon_100.png">
+  <link rel="stylesheet" href="/css/style_2.32.css">
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="/css/ie_1.1.css">
+  <![endif]-->
+
+  <meta name="verify-v1" content="ub1H7kYJnwqYG8F1I+HOcbvOZ1ZorzzYgei/UVDCJkY=">
+  <meta name="yandex-verification" content="50aeecc20b39dade">
+
+  <script>
+    $(function(){
+      $('input[placeholder], textarea[placeholder]').placeholder();
+
+      $('.tooltip[title]').tipsy({fade: true, opacity: 1, delayIn: 300,
+        html: true, gravity: 's', offset: 5, live: true});
+
+      $('.tooltip-err[title]').tipsy({fade: true, opacity: 1, delayIn: 300,
+        html: true, gravity: 's', offset: 5, className: 'err', live: true});
+
+      // menu
+      $('nav li').on('mouseenter', function(){
+        if($(this).children('ul').is('ul'))
+        {
+          $(this).addClass('hover').on('mouseleave', function(){
+            $(this).removeClass('hover');
+          });
+        }
+      });
+
+      $('body').on('click', '.spoiler-title', function(){
+        var $this = $(this).toggleClass('open');
+        var $box = $this.parent().children('.spoiler-box');
+
+        if($this.hasClass('open'))
+          $box.slideDown();
+        else
+          $box.slideUp();
+
+        return false;
+      });
+
+      var thumbnail_rel = [];
+      $('a.thumbnail').each(function(){
+        var rel = $(this).attr('rel');
+        if(rel && !thumbnail_rel[rel])
+        {
+          thumbnail_rel[rel] = 1;
+          $("a[rel='" + rel + "']").colorbox({
+            opacity: 0.8
+          });
+        }
+      });
+
+      $('body').on('click', 'img.thumbnail', function(){
+        this.src = this.src.replace(/(\w\w)\.([a-z]{3,4})(?:\?|$)/i, function(s, p1, p2){
+          if(p1 == '_t')
+            return '.' + p2;
+
+          return p1 + '_t.' + p2;
+        });
+      });
+    });
+
+    function jAlert(message, sticky, theme, position)
+    {
+      $.jGrowl.defaults.closer = false;
+      $.jGrowl.defaults.closeTemplate	= '&times;';
+
+      var options = {
+        sticky: sticky ? true : false,
+        life: 5000
+      };
+
+      if(theme)
+        options['theme'] = theme;
+
+      if(position)
+        options.position = position;
+
+      $.jGrowl(message, options);
+    }
+
+    function jAlertErr(message, sticky, position)
+    {
+      if(sticky === undefined)
+        sticky = true;
+
+      jAlert(message, sticky, 'err', position);
+    }
+  </script>
+  <link rel="canonical" href="http://en.savefrom.net/">
+
+  <script src="/js/savefrom_5.32.min.js"></script>
+  <script>
+    if(top!=self && (!document.referrer || document.referrer.search(/^(https:\/\/www\.google\.com\/analytics\/web\/|https?:\/\/metrika.yandex.ru\/)/i) !== 0))
+      top.location=location;
+
+    sf.setLanguage({"lang":"en","wait":"Please wait","result":"Result","download":"Download","startDownload":"Start download","copy":"Copy","playerPlay":"Play","playerStop":"Stop","link":"Link","title":"Title","file":"File","size":"Size","hosting":"Hosting","information":"Information","source":"Source","duration":"Duration","more":"More","multiMore":"Find more links","linkNotFound":"The download link not found.","pluralSeconds":["second","seconds"],"pluralParts":["part","parts"],"findMediaLinks":"Find links to media files","fileInfoTitle":"Display file information","copyLinkSuccess":"The download link is copied to the clipboard.","copyLinkFail":"Unable to copy the link to the clipboard.","copyLinksSuccess":"The download links are copied to the clipboard.","copyLinksFail":"Unable to copy the links to the clipboard.","flashPlayerRequired":"Perhaps you do not have <a href=\"http:\/\/get.adobe.com\/flashplayer\/\" target=\"_blank\">Adobe Flash Player<\/a> installed.","dQueueError":"Unable to start downloading the file","dQueueContinue":"Continue downloading the remaining files?","dQueueYes":"Continue","dQueueNo":"Stop","tblHdrDownload":"Download links","tblHdrInformation":"Information","tblHdrFile":"File","tblHdrSize":"Size","error1":"Error: URL not specified.","error2":"Error: invalid URL specified.","error3":"Error: code not specified.","error4":"Please specify what to search.","error5":"Please specify where to search.","error20":"Error: %s element not found.","player_err1":"To view this video, you need to get the download links.","request_err1":"Failed to make the request. Please try again.","notEnoughPoints1":"Not enough points to download this file","notEnoughPoints2":"You do not have enough points to download selected files"});
+    sf.linksListToken = "#__savefrom.net_links__";
+    sf.jsonToken = "#json#";
+
+
+    // Extension interaction
+    
+    function get_extension_last_version(browser, callback)
+    {
+      var names = {
+        chromelite: 'chrome',
+        ff: 'firefox',
+        'ff-sf': 'firefox'
+      };
+
+      var options = {
+        chrome: {
+          url: 'chrome/updates.xml',
+          dataType: 'xml',
+          fn: function(data, status, r)
+          {
+            if(r.responseXML)
+            {
+              var node = r.responseXML.querySelector('updatecheck');
+              if(node)
+                return node.getAttribute('version');
+            }
+            return null;
+          }
+        },
+
+        firefox: {
+          url: 'firefox/update.json',
+          dataType: 'json',
+          fn: function(data, status, r){return (data && data.version) ? data.version : null;}
+        },
+
+        opera: {
+          url: 'opera/update.json',
+          dataType: 'json',
+          fn: function(data, status, r){return (data && data.version) ? data.version : null;}
+        },
+
+        safari: {
+          url: 'safari/update.plist',
+          dataType: 'xml',
+          fn: function(data, status, r)
+          {
+            if(r.responseText)
+            {
+              var pos = r.responseText.search(/\<key\>\s*CFBundleShortVersionString\s*\<\/key>/i);
+              if(pos > 0)
+              {
+                var version = r.responseText.substr(pos).match(/\<string\>\s*([\d\.]+)/i);
+                if(version && version[1])
+                  return version[1];
+              }
+            }
+            return null;
+          }
+        }
+      };
+
+      var b = browser.toLowerCase();
+      if(names[browser])
+        b = names[browser];
+
+      if(!options[b])
+      {
+        callback(null, browser, b);
+        return;
+      }
+
+      var o = options[b];
+
+      $.get('/files/extensions/' + o.url,
+        {rnd: (new Date()).getTime() + Math.random()},
+        function(data, status, r){
+          var v = o.fn(data, status, r);
+          var date = r.getResponseHeader('Last-Modified');
+          callback(v, browser, b, date);
+        },
+        o.dataType
+      );
+    }
+
+    document.addEventListener('extension-query', function(event){
+      try
+      {
+        var node = event.target;
+        if (!node || node.nodeType != Node.TEXT_NODE)
+          return;
+
+        var json = $.parseJSON(node.nodeValue);
+        node.parentNode.removeChild(node);
+
+        switch(json.msg)
+        {
+          case 'setBrowserExtension':
+            setBrowserExtension(json.params);
+            break;
+
+          case 'replaceAjaxResult':
+            var btn = document.getElementById(json.btn);
+            sf.result.replaceAjaxResult(json.data, true, true, btn);
+            break;
+
+          case 'showVideoResult':
+            sf.finishRequest(true);
+            sf.videoResult.show(json.video);
+            break;
+        }
+      }
+      catch(err){}
+    }, false);
+
+
+    function setBrowserExtension(params)
+    {
+      if(!params || !params.id || !params.version)
+        return;
+
+      sf.extension.id = params.id;
+      sf.extension.version = parseFloat(params.version);
+
+      var msgCookieName = 'browser_ext_update_msg';
+
+      function setCookie() {
+        sf.cookie.set(msgCookieName, '1', 1, '.savefrom.net');
+      }
+
+      if(sf.extension.version > 0 && !sf.cookie.get(msgCookieName))
+      {
+        get_extension_last_version(params.id, function(version, browser, browserName, date){
+          if(!version)
+            return;
+
+          version = parseFloat(version);
+          if(version && version > sf.extension.version)
+          {
+            if(date)
+            {
+              date = new Date(date);
+              if(date && date.getFullYear() > 2012)
+              {
+                var now = new Date();
+                if(now.getTime() - date.getTime() < 86400000)
+                  return;
+              }
+            }
+
+            $.jGrowl.defaults.closer = false;
+            $.jGrowl.defaults.closeTemplate = '&times;';
+
+            var options = {
+              sticky: true,
+              theme: 'big left',
+              position: 'c75',
+              close: setCookie
+            };
+
+            var msg = 'Your version of &quot;SaveFrom.net helper&quot; browser extension is outdated and it could work improperly. Please,&nbsp;<a href="/user.php?helper=1">update&nbsp;the&nbsp;extension&nbsp;&raquo;</a>.';
+            msg = msg.replace(/\{version\}/i, sf.extension.version);
+
+            setTimeout(function(){$.jGrowl(msg, options);}, 2000);
+          }
+        });
+      }
+
+      var cookieName = 'browser_ext';
+      if(sf.cookie.get(cookieName))
+        return;
+
+      var cookieVal = params.id + ' ' + params.version;
+      if(!params.enable || params.enable == '0')
+        cookieVal += ' - disabled';
+
+      sf.cookie.set(cookieName, cookieVal, 1, '.savefrom.net');
+      ga('set', 'dimension1', cookieVal);
+    }
+    // / Extension interaction
+
+
+    $(function(){
+      (function(name, lang, domain){
+        if(name && lang && domain)
+        {
+          var l = sf.cookie.get(name);
+          if(!l || l != lang)
+            sf.cookie.set(name, lang, 3650, domain);
+        }
+      })("lang", "en", ".savefrom.net");
+
+      sf.clipboard.init();
+
+      (function(){
+        var counter = 0;
+        var timer = setInterval(function(){
+          counter++;
+          if(counter > 10)
+            clearInterval(timer);
+
+          var $bnr = $('.bnr-350');
+          if($bnr.height() > 100)
+          {
+            clearInterval(timer);
+            $('.link', $bnr).slideDown();
+          }
+        }, 3000);
+      })();
+
+      $('body').on('click', '.more-links a', function(event){
+        sf.result.showHiddenLinks(this);
+        return false;
+      });
+
+      $('.type-tab > li').on('click', function(){
+        if($(this).hasClass('active'))
+          return false;
+
+        var $tab = $('.type-tab-box').hide();
+        var id = $('a', this).attr('href');
+        $(id).show();
+        $('.type-tab > li.active').removeClass('active');
+        $(this).addClass('active');
+
+        return false;
+      });
+
+      $('body').on('click', 'input.file-name', function(){
+        if(this.value && this.select)
+          this.select();
+      });
+
+      $('body').
+        on('click', '.zcopy', function(){
+          jAlertErr(sf.lng.copyLinkFail + ' ' + sf.lng.flashPlayerRequired);
+          return false;
+        }).
+        on('mouseenter', '.zcopy', function(){
+          var $this = $(this);
+          if($this.hasClass('active'))
+            return;
+
+          $this.addClass('active');
+
+          ZeroClipboard.setMoviePath('/embed/zeroclipboard10.swf');
+          var clip = new ZeroClipboard.Client();
+          clip.setHandCursor(true);
+          clip.setText($this.data('copy').toString());
+          clip.glue(this);
+          clip.addEventListener('onComplete', function(client, text){
+            jAlert(sf.lng.copyLinkSuccess);
+          });
+          clip.addEventListener('onMouseOut', function(client){
+            $this.removeClass('active');
+            clip.destroy();
+          });
+        });
+
+
+      var urlRotator = {
+        urls: [
+          'http://rapidshare.com/files/408579189/fb2epub_1_0_35.zip.html',
+          'http://youtube.com/watch?v=u7deClndzQw',
+          'http://www.filefactory.com/file/cb3c372/',
+          'http://vimeo.com/22439234'
+        ],
+
+        index: 0,
+        delay: 5000,
+        timeout: 0,
+
+        init: function()
+        {
+          //urlRotator.index = urlRotator.urls.length - 1;
+          $('#sf_form .box').append('<div id="url_rotator_box">example: <span id="url_rotator">' + urlRotator.urls[urlRotator.index] + '</span></div>');
+          this.timeout = setTimeout(this.next, this.delay);
+          $('#sf_form').submit(function(){urlRotator.remove(); return true;});
+        },
+
+        next: function()
+        {
+          urlRotator.index++;
+          if(urlRotator.index >= urlRotator.urls.length)
+            urlRotator.index = 0;
+
+          $('#url_rotator').fadeOut('slow', function(){
+            $(this).html(urlRotator.urls[urlRotator.index]);
+            $(this).fadeIn('slow');
+          });
+
+          urlRotator.timeout = setTimeout(urlRotator.next, urlRotator.delay);
+        },
+
+        remove: function()
+        {
+          clearTimeout(urlRotator.timeout);
+          $('#url_rotator_box').remove();
+        }
+      };
+
+      var $sfUrl = $('#sf_url');
+
+      if(!$sfUrl.val() || $sfUrl.val() == $sfUrl.attr('placeholder'))
+        urlRotator.init();
+    });
+  // -->
+  </script>
+
+<link rel="alternate" hreflang="de" href="http://de.savefrom.net/">
+<link rel="alternate" hreflang="es" href="http://es.savefrom.net/">
+<link rel="alternate" hreflang="fr" href="http://fr.savefrom.net/">
+<link rel="alternate" hreflang="id" href="http://id.savefrom.net/">
+<link rel="alternate" hreflang="it" href="http://it.savefrom.net/">
+<link rel="alternate" hreflang="pt" href="http://pt.savefrom.net/">
+<link rel="alternate" hreflang="ru" href="http://ru.savefrom.net/">
+<link rel="alternate" hreflang="tr" href="http://tr.savefrom.net/">
+<link rel="alternate" hreflang="uk" href="http://uk.savefrom.net/">
+</head>
+<body class="working"><div id="cboxOverlay" style="display: none; "></div><div style="padding-bottom: 52px; padding-right: 20px; display: none; " id="colorbox" class=""><div id="cboxWrapper" style=""><div style=""><div id="cboxTopLeft" style="float: left; "></div><div id="cboxTopCenter" style="float: left; "></div><div id="cboxTopRight" style="float: left; "></div></div><div style="clear: left; "><div id="cboxMiddleLeft" style="float: left; "></div><div id="cboxContent" style="float: left; "><div id="cboxLoadedContent" style="width: 0px; height: 0px; overflow-x: hidden; overflow-y: hidden; " class=""></div><div id="cboxLoadingOverlay" style="" class=""></div><div id="cboxLoadingGraphic" style="" class=""></div><div id="cboxTitle" style="" class=""></div><div id="cboxCurrent" style="" class=""></div><div id="cboxNext" style="" class=""></div><div id="cboxPrevious" style="" class=""></div><div id="cboxSlideshow" style="" class=""></div><div id="cboxClose" style="" class=""></div></div><div id="cboxMiddleRight" style="float: left; "></div></div><div style="clear: left; "><div id="cboxBottomLeft" style="float: left; "></div><div id="cboxBottomCenter" style="float: left; "></div><div id="cboxBottomRight" style="float: left; "></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; "></div></div>
+<!--Error message for IE 6-->
+<!--[if lt IE 7]>
+<p class=chromeframe>Your browser is <strong>ancient!</strong> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+<![endif]-->
+<!--/Error message for IE 6-->
+<div style="position: absolute; left: -100px; top: -100px;">
+  <!--LiveInternet counter-->
+  <script type="text/javascript"><!--
+    document.write("<img src='http://counter.yadro.ru/hit?r"+
+    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+    screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+    ";h"+escape(document.title.substring(0,80))+";"+Math.random()+
+    "' width=1 height=1 alt=''>")//--></script><img src="http://counter.yadro.ru/hit?r;s1680*1050*32;uhttp%3A//en.savefrom.net/;hFree%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20other;0.2451886918861419" width="1" height="1" alt="">
+  <!--/LiveInternet-->
+</div>
+
+
+  
+  <!--Header-->
+  <header>
+    <div class="box">
+      <a class="logo" name="logo" href=""><img src="/img/logo_small2.png" alt="savefrom.net">
+        <span class="slogan">We help to download files from many popular sites</span></a>
+          </div>
+  </header>
+
+  <div id="nav_top">
+    <div class="box">
+      <nav><ul><li class="active"><span>Main page</span><i></i></li><li><a href="/user.php">For users</a></li><li><a href="/webmaster.php">For webmasters</a></li><li><a href="/faq.php">Help</a></li></ul></nav>
+    </div>
+  </div>
+
+  
+
+  <div id="main">
+    <noscript>&lt;div class="wrapper"&gt;&lt;p class="javascript-error"&gt;SaveFrom.net uses Javascript to display some content. Please enable Javascript in your browser and reload this page.&lt;/p&gt;&lt;/div&gt;</noscript>
+
+    <!--content-->
+    <div class="wrapper">
+        <!--main form-->
+        <form action="/savefrom.php" method="POST" id="sf_form" class="link-form" onsubmit="return sf.checkForm();" target="sf_frame">
+          <div class="clearfix">
+            <div class="tarea-wrap">
+              <input type="text" name="sf_url" id="sf_url" value="" autofocus="" placeholder="Enter the URL, you want to download from" onfocus="if(this.value &amp;&amp; this.select){this.select()}">
+            </div>
+            <button type="submit" name="sf_submit" id="sf_submit" class="yellow-btn submit">Download</button>
+          </div>
+          <div class="box clearfix"><div id="url_rotator_box">example: <span id="url_rotator">http://rapidshare.com/files/408579189/fb2epub_1_0_35.zip.html</span></div></div>
+        </form>
+        <!--/main form-->
+
+        <iframe name="sf_frame" id="sf_frame" width="100" height="150" style="display: none;"></iframe>
+
+        <div id="sf_indicator_box" style="display: none;"></div>
+
+        <div id="sf_multi_form_box"></div>
+        <div id="sf_multi_result"></div>
+        <!--result-->
+        <div id="sf_result">
+
+          <script>
+          <!--
+            var url = '';
+            $(function(){
+              function replaceLanguageSelectorLink(a, url)
+              {
+                var href = a.href;
+                if(!href)
+                  return;
+
+                href = href.replace(/^(https?:\/\/[\w\-\.]+\/)https?\:?\/\/?.+/i, '$1');
+                href = href.replace(/^(https?:\/\/[\w\-\.]+\/)\d+\-.+/i, '$1');
+
+                url = 'url=' + encodeURIComponent(url);
+
+                if(href.search(/(\?|#|&)url=[^\s\"&]+/i) == -1)
+                {
+                  if(href.search(/#$/) != -1)
+                    a.href = href + url;
+                  else if(href.search(/#.+/) != -1)
+                    a.href = href + '&' + url;
+                  else
+                    a.href = href + '#' + url;
+                }
+              }
+
+              var query = sf.parseQuery();
+              if(!query || !query.url)
+              {
+                if(location.hash)
+                {
+                  var hash = location.hash.replace(/(^|#|&)url=(https?:?\/\/?.+)$/i, function(s, p1, p2){
+                    if(!p2)
+                      return s;
+
+                    return p1 + 'url=' + escape(p2);
+                  });
+
+                  query = sf.parseQuery(hash);
+                }
+              }
+
+              if(query && query.url)
+              {
+                url = decodeURIComponent(query['url']);
+                url = url.replace(/^(https?):?\/\/?/i, '$1://');
+
+                if(url.search(/^https?:\/\//i) == -1)
+                {
+                  url = 'http://' + url;
+                }
+              }
+              else
+              {
+                var t = location.href.match(/^https?:\/\/[\w\-\.]+\/(https?\:?\/\/?[^\s\"]+)/i);
+                if(t && t.length > 1)
+                {
+                  url = t[1].replace(/^(https?):?\/\/?/i, '$1://');
+                  var domain = url.match(/^https?:\/\/([^\/+])/i);
+                  if(domain && domain.length > 1)
+                  {
+                    domain = domain[1];
+                    domain = domain.replace(/^[^@]+@/i, '').replace(/:\d+$/, '');
+                    if(domain.indexOf('%') > -1)
+                      url = decodeURIComponent(url);
+                  }
+                }
+              }
+
+              if(url)
+              {
+                url = url.replace(/(\?|#|&)_openstat=[^&#]*&/g, '$1');
+                url = url.replace(/[\?&#]_openstat=[^&#]*($|#)/, '$1');
+                url = url.replace(/(\?|#|&)(?:utm_[a-z]+=[^&#]*&?)+/ig, '$1').replace(/[\?&]#/, '#').replace(/[\?#&]+$/, '');
+                $('#sf_url').val(url);
+                $('.lang :not(.active) a').each(function(){replaceLanguageSelectorLink(this, url);});
+                setTimeout(function(){sf.autoSubmitForm('sf_submit');}, 1000);
+              }
+            });
+          //-->
+          </script>
+        </div>
+        <!--/result-->
+
+        <!-- JS Templates -->
+        <script id="tplResultHeader" type="text/x-jsrender">
+          <div class="result-hdr clearfix">
+            {{for columns}}
+            <div class="col {{:cls}}">{{:html}}</div>
+            {{/for}}
+          </div>
+        </script>
+        <script id="tplResultMeta" type="text/x-jsrender">
+          {{for meta}}
+            {{if name}}
+              <tr class="{{:#parent.parent.data.cls}}">
+                <td class="name">{{:name}}:</td>
+                <td>{{:html}}</td>
+              </tr>
+            {{else}}
+              {{:html}}
+            {{/if}}
+          {{/for}}
+        </script>
+        <script id="tplVideoBox" type="text/x-jsrender">
+          <div class="result-box">
+            <div class="thumb-box thumb-160">
+              <a href="#" class="clip" data-player-id='{{:playerId}}'>
+                {{if thumb}}
+                  <img src="{{:thumb}}" class="thumb">
+                {{/if}}
+                {{if player}}
+                  <span class="play-btn"></span>
+                {{/if}}
+              </a>
+            </div>
+            <div class="info-box">
+              <div class="meta"></div>
+              {{if extra}}
+                <div class="extra">{{:extra}}</div>
+              {{/if}}
+            </div>
+            <div class="link-box"></div>
+            <div class="clearfix"></div>
+          </div>
+        </script>
+        <script id="tplAudioBox" type="text/x-jsrender">
+          {{if player}}
+            <div class="result-box audio player">
+          {{else}}
+            <div class="result-box audio">
+          {{/if}}
+            <div class="info-box">
+              {{if player}}
+                <span class="{{:playerBtnCls}}" title="{{:playerBtnTitle}}"></span>
+              {{/if}}
+              <div class="meta"></div>
+              {{if extra}}
+                <div class="extra">{{:extra}}</div>
+              {{/if}}
+            </div>
+            <div class="link-box"></div>
+            <div class="clearfix"></div>
+          </div>
+        </script>
+        <script id="tplFileBox" type="text/x-jsrender">
+          <div class="result-box">
+            <div class="file-box">
+              <div class="link-box"></div>
+              {{if meta}}
+              <div class="meta"></div>
+              {{/if}}
+              {{if extra}}
+                <div class="extra">{{:extra}}</div>
+              {{/if}}
+            </div>
+            <div class="size-box">{{:size}}</div>
+            <div class="clearfix"></div>
+          </div>
+        </script>
+        <!-- /JS Templates -->
+
+
+      </div><!--/wrapper-->
+      <div class="wrapper">
+                <div id="ox7" style="margin: 0 0 30px 26px;"><noindex><iframe id="a2ce86ce" name="a2ce86ce" src="http://78.138.126.253/www/a9s/1afr.php?target=_blank&amp;zoneid=7&amp;cb=1402233679551" frameborder="0" scrolling="no" width="908" height="160"></iframe></noindex></div>
+        <script>
+          $(function(){
+            var helperParam = '';
+            if(document.cookie && document.cookie.indexOf('browser_ext=') > -1)
+              helperParam = '&amp;helper_installed=1';
+
+            $('#ox7').append('<noindex>' +
+              '<iframe id="a2ce86ce" name="a2ce86ce" src="http://78.138.126.253/www/a9s/1afr.php?target=_blank&amp;zoneid=7&amp;cb=' +
+              ((new Date()).getTime() + Math.round(Math.random() * 1000000)) + helperParam +
+              '" frameborder="0" scrolling="no" width="908" height="160"></iframe></noindex>'
+            )
+          });
+        </script>
+        
+        <div id="message" class="a1d informer" data-openx="{&quot;zoneID&quot;: 2}" style="margin: 10px 0 30px 0;"></div>
+
+        <!--two-cols-->
+        <div id="site_info" class="two-cols">
+          <div class="col-l">
+            <!--type-tab-->
+            <ul class="type-tab">
+              <li class="active"><a href="#first">Supported resources</a></li>
+              <li><a href="#second">How to use?</a></li>
+            </ul>
+            <!--type-tab-box & resourses-->
+            <div class="type-tab-box resourses" id="first">
+              <table class="supported_services"><tbody><tr><td><span class="favicon icon-filefactory_com">filefactory.com</span></td><td><span class="favicon icon-sendspace_com">sendspace.com</span></td><td></td></tr></tbody></table><table class="supported_services"><tbody><tr><td><a href="http://en.savefrom.net/1-how-to-download-youtube-video/" class="favicon icon-youtube_com">youtube.com</a></td><td><span class="favicon icon-metacafe_com">metacafe.com</span></td><td><span class="favicon icon-break_com">break.com</span></td></tr><tr><td><span class="favicon icon-dailymotion_com">dailymotion.com</span></td><td><span class="favicon icon-vimeo_com">vimeo.com</span></td><td><span class="favicon icon-sevenload_com">sevenload.com</span></td></tr><tr><td><span class="favicon icon-mail_ru">mail.ru</span></td><td><span class="favicon icon-smotri_com">smotri.com</span></td><td><span class="favicon icon-yandex_ru">yandex.ru</span></td></tr><tr><td><span class="favicon icon-rambler_ru">rambler.ru</span></td><td><span class="favicon icon-tvigle_ru">tvigle.ru</span></td><td><span class="favicon icon-intv_ru">intv.ru</span></td></tr></tbody></table><table class="supported_services"><tbody><tr><td><a href="http://en.savefrom.net/9-how-to-download-facebook-video.html" class="favicon icon-facebook_com">facebook.com</a></td><td><span class="favicon icon-livejournal_com">livejournal.com</span></td><td><a href="http://en.savefrom.net/7-how-to-download-vk-music-videos-photos.html" class="favicon icon-vk_com">vk.com</a></td></tr><tr><td><a href="http://en.savefrom.net/8-how-to-download-odnoklassniki-music-videos.html" class="favicon icon-odnoklassniki_ru tooltip" title="Requires SaveFrom.net helper extension">odnoklassniki.ru</a></td><td><span class="favicon icon-soundcloud_com">soundcloud.com</span></td><td><span class="favicon icon-liveinternet_ru">liveinternet.ru</span></td></tr><tr><td><span class="favicon icon-guitar-tube_com">guitar-tube.com</span></td><td><span class="favicon icon-gametrailers_com">gametrailers.com</span></td><td><span class="favicon icon-twitch_tv">twitch.tv</span></td></tr><tr><td><span class="favicon icon-zaycev_net">zaycev.net</span></td><td><span class="favicon icon-1tv_ru">1tv.ru</span></td><td><span class="favicon icon-rutv_ru">rutv.ru</span></td></tr><tr><td><span class="favicon icon-ntv_ru">ntv.ru</span></td><td><span class="favicon icon-vesti_ru">vesti.ru</span></td><td><span class="favicon icon-mreporter_ru">mreporter.ru</span></td></tr><tr><td><span class="favicon icon-karusel-tv_ru">karusel-tv.ru</span></td><td><span class="favicon icon-autoplustv_ru">autoplustv.ru</span></td><td><span class="favicon icon-russia_ru">russia.ru</span></td></tr><tr><td><span class="favicon icon-amik_ru">amik.ru</span></td><td><span class="favicon icon-life_ru">life.ru</span></td><td><span class="favicon icon-a1tv_ru">a1tv.ru</span></td></tr><tr><td><span class="favicon icon-kiwi_kz">kiwi.kz</span></td><td></td><td></td></tr></tbody></table><p>Note: click on a web resource name to see the details of downloading and saving files from it.</p>            </div>
+            <!--type-tab-box & service-->
+            <div class="type-tab-box service" id="second" style="display:none;">
+              <ul>
+  <li><strong>1st way</strong><br>Enter the URL-address in the input field at
+    the top of the page and press <strong>Enter</strong> or click on the
+    "Download" button to the right of the input field.</li>
+
+  <li><strong>2nd way</strong><br>Add "savefrom.net/" or "sfrom.net/" before the URL<br>
+    <noindex><em>example: <a href="http://sfrom.net/http://youtube.com/watch?v=u7deClndzQw" rel="nofollow" target="_top">sfrom.net/http://youtube.com/watch?v=u7deClndzQw</a></em></noindex><br>
+    and press <strong>Enter</strong>.</li>
+
+  <li><strong>3rd way</strong><br>Use short domain names:
+    <strong>ss</strong>youtube.com, <strong>s</strong>rapidshare.com.</li>
+
+  <li><strong>4th way</strong><br>Use our <a href="/user.php" target="_top">browser addon</a> to download in 1 click.</li>
+</ul>
+            </div>
+          </div>
+          <div id="social_group_widget" class="col-r" style="margin-top: 6px; ">
+                      <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FSavefromnet-en%2F156168517922716&amp;width=370&amp;height=505&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false" allowtransparency="true" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; overflow-x: hidden; overflow-y: hidden; width: 370px; height: 505px; "></iframe></div>
+        </div>
+        <!--/two-cols-->
+        
+
+    </div>
+    <!--/content-->      <!-- verify-admitad: "ef27e00c36" -->
+  </div> <!--/main-->
+
+
+  <!--Footer-->
+  <footer>
+    <div class="wrapper clearfix">
+      <p class="copyright">© 2008-2014, SaveFrom.net</p>
+      <div class="lang-box" tabindex="2"><div>
+        <ul class="lang">
+          
+<script>
+$(function(){function d(){b.removeClass(e);$("body").off(f)}function i(){b.addClass(e);c=$("li.active",b);$("body").off(f).on("click"+f,function(){d()}).on("keydown"+f,function(a){switch(a.which){case 27:d();break;case 13:case 32:$(".active",b).removeClass("active");c.addClass("active").removeClass(g);d();if(a=$("li.active a",b).attr("href"))location.href=a;break;case 38:h(c.prev("li"));break;case 40:h(c.next("li"));break;case 36:h($("li",b).first());break;case 35:h($("li",b).last());break;default:return!0}return!1})}
+function h(a){a[0]&&!a.hasClass(g)&&(c.removeClass(g),a.addClass(g),c=a)}var b=$(".lang-box"),e="active",g="current",f=".langbox",c;b.on("click",function(a){if("A"!=a.target.tagName)return b.hasClass(e)?d():i(),!1}).on("keydown",function(a){if(b.hasClass(e))return!0;switch(a.which){case 13:case 32:i();break;default:return!0}return!1})});
+</script>
+<li class="active"><span class="lang-en">English</span></li><li><a href="http://ru.savefrom.net/" class="lang-ru">Русский</a></li><li><a href="http://de.savefrom.net/" class="lang-de">Deutsch</a></li><li><a href="http://es.savefrom.net/" class="lang-es">Español</a></li><li><a href="http://fr.savefrom.net/" class="lang-fr">‪Français</a></li><li><a href="http://id.savefrom.net/" class="lang-id">Bahasa Indonesia‬</a></li><li><a href="http://it.savefrom.net/" class="lang-it">‪Italiano‬</a></li><li><a href="http://pt.savefrom.net/" class="lang-br">Português (Brasil)</a></li><li><a href="http://tr.savefrom.net/" class="lang-tr">Türkçe‬</a></li><li><a href="http://uk.savefrom.net/" class="lang-uk">Українська‬</a></li>        </ul>
+      </div><i></i></div>
+      <div class="clearfix"></div>
+      <ul class="f-nav">
+      <li><a href="" class="active">Main page</a></li><li><a href="/faq.php">FAQ</a></li><li><a href="/user.php">For users</a></li><li><a href="/webmaster.php">For webmasters</a></li><li><a href="/contact.php">Feedback</a></li><li><a href="/advertising.php">Advertising</a></li>      </ul>
+    </div>
+  </footer>
+
+
+  <script>
+    $('.spoiler-box:not(.open)').hide();
+  </script>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-7055055-1', 'savefrom.net');
+
+      if(window.gaqTrackPageview)
+        ga('send', 'pageview', gaqTrackPageview);
+      else
+        ga('send', 'pageview');
+
+     (function(){
+        $('body').on('click', 'a.ga_track_events', function(event){
+          if(event.which)
+          {
+            if(event.which != 1)
+              return;
+          }
+          else if(event.button != 1)
+            return;
+
+          var data = $(this).data('ga-event');
+          if(!data)
+            return;
+
+          data = data.replace(/;+$/, '');
+          data = data.split(';');
+          if(data.length < 2)
+            return;
+
+          ga.apply(null, data);
+        });
+     })();
+    </script>
+<div class="share42init" data-url="http://en.savefrom.net/" data-title="Free Online YouTube Downloader: Download YouTube Videos, Facebook and many others!" data-description="Free Online service to Download YouTube videos at one click! The best YouTube Downloader supporting fast and easy vimeo, Facebook and Dailymotion video Download and much more!" data-path="/img/socials/share42/en/" data-image="http://savefrom.net/img/icon_100.png"><div id="share42" style="width: 24px; position: fixed; z-index: 9999; margin-left: 0px; top: 150px; "><div class="s42s"><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -0px 0 no-repeat" href="#" data-count="fb" onclick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[url]=http%3A%2F%2Fen.savefrom.net%2F&amp;p[title]=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;p[summary]=Free%20Online%20service%20to%20Download%20YouTube%20videos%20at%20one%20click!%20The%20best%20YouTube%20Downloader%20supporting%20fast%20and%20easy%20vimeo%2C%20Facebook%20and%20Dailymotion%20video%20Download%20and%20much%20more!&amp;p[images][0]=http%3A%2F%2Fsavefrom.net%2Fimg%2Ficon_100.png', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0');return false" title="Share on Facebook" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -24px 0 no-repeat" href="#" onclick="window.open('https://plus.google.com/share?url=http%3A%2F%2Fen.savefrom.net%2F', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0');return false" title="Share on Google+" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -48px 0 no-repeat" href="#" data-count="twi" onclick="window.open('https://twitter.com/intent/tweet?text=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;url=http%3A%2F%2Fen.savefrom.net%2F', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0');return false" title="Share on Twitter" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -72px 0 no-repeat" href="#" onclick="window.open('http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fen.savefrom.net%2F&amp;title=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;annotation=Free%20Online%20service%20to%20Download%20YouTube%20videos%20at%20one%20click!%20The%20best%20YouTube%20Downloader%20supporting%20fast%20and%20easy%20vimeo%2C%20Facebook%20and%20Dailymotion%20video%20Download%20and%20much%20more!', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=500, toolbar=0, status=0');return false" title="Save to Google Bookmarks" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -96px 0 no-repeat" href="http://digg.com/submit?url=http%3A%2F%2Fen.savefrom.net%2F" title="Share on Digg" target="_blank"></a><a href="#" class="s42a" style="display:block;height:10px;margin:-2px 0 4px;background:url(/img/socials/share42/en/icons.png) -384px 50%;outline:none"></a></div><div class="s42s" style="display: none; "><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -120px 0 no-repeat" href="#" data-count="dlcs" onclick="window.open('http://delicious.com/save?url=http%3A%2F%2Fen.savefrom.net%2F&amp;title=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;note=Free%20Online%20service%20to%20Download%20YouTube%20videos%20at%20one%20click!%20The%20best%20YouTube%20Downloader%20supporting%20fast%20and%20easy%20vimeo%2C%20Facebook%20and%20Dailymotion%20video%20Download%20and%20much%20more!', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=710, height=660, toolbar=0, status=0');return false" title="Save to Delicious" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -144px 0 no-repeat" href="http://reddit.com/submit?url=http%3A%2F%2Fen.savefrom.net%2F&amp;title=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!" title="Share on Reddit" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -168px 0 no-repeat" href="#" data-count="vk" onclick="window.open('http://vk.com/share.php?url=http%3A%2F%2Fen.savefrom.net%2F&amp;title=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;image=http%3A%2F%2Fsavefrom.net%2Fimg%2Ficon_100.png&amp;description=Free%20Online%20service%20to%20Download%20YouTube%20videos%20at%20one%20click!%20The%20best%20YouTube%20Downloader%20supporting%20fast%20and%20easy%20vimeo%2C%20Facebook%20and%20Dailymotion%20video%20Download%20and%20much%20more!', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=550, height=440, toolbar=0, status=0');return false" title="Share on VK" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -192px 0 no-repeat" href="http://www.livejournal.com/update.bml?event=http%3A%2F%2Fen.savefrom.net%2F&amp;subject=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!" title="Post to LiveJournal" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -216px 0 no-repeat" href="#" onclick="window.open('http://www.tumblr.com/share?v=3&amp;u=http%3A%2F%2Fen.savefrom.net%2F&amp;t=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;s=Free%20Online%20service%20to%20Download%20YouTube%20videos%20at%20one%20click!%20The%20best%20YouTube%20Downloader%20supporting%20fast%20and%20easy%20vimeo%2C%20Facebook%20and%20Dailymotion%20video%20Download%20and%20much%20more!', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=450, height=440, toolbar=0, status=0');return false" title="Share on Tumblr" target="_blank"></a></div><div class="s42s" style="display: none; "><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -240px 0 no-repeat" href="http://www.stumbleupon.com/submit?url=http%3A%2F%2Fen.savefrom.net%2F&amp;title=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!" title="Share on StumbleUpon" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -264px 0 no-repeat" href="#" data-count="pin" onclick="window.open('http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fen.savefrom.net%2F&amp;media=http%3A%2F%2Fsavefrom.net%2Fimg%2Ficon_100.png&amp;description=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!', '_blank', 'scrollbars=0, resizable=1, menubar=0, left=100, top=100, width=600, height=300, toolbar=0, status=0');return false" title="Pin It" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -288px 0 no-repeat" href="https://www.evernote.com/clip.action?url=http%3A%2F%2Fen.savefrom.net%2F&amp;title=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!" title="Share on Evernote" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -312px 0 no-repeat" href="http://www.myspace.com/Modules/PostTo/Pages/?u=http%3A%2F%2Fen.savefrom.net%2F&amp;t=Free%20Online%20YouTube%20Downloader%3A%20Download%20YouTube%20Videos%2C%20Facebook%20and%20many%20others!&amp;c=Free%20Online%20service%20to%20Download%20YouTube%20videos%20at%20one%20click!%20The%20best%20YouTube%20Downloader%20supporting%20fast%20and%20easy%20vimeo%2C%20Facebook%20and%20Dailymotion%20video%20Download%20and%20much%20more!" title="Share on MySpace" target="_blank"></a><a rel="nofollow" style="display:block;width:24px;height:24px;margin:0 0 6px;padding:0;outline:none;background:url(/img/socials/share42/en/icons.png) -336px 0 no-repeat" href="#" onclick="return up()" title="Back on top" target="_blank"></a></div></div><style>#share42 a.s42a.t{background-position: -360px 50% !important}</style></div><script src="/js/libs/share42_en.js"></script>    <script>
+    $(function(){
+      if($(window).width() >= 1056)
+      {
+        setTimeout(function(){
+          $('#share42').fadeIn();
+        }, 2000);
+      }
+    });
+    </script>
+
+
+
+
+<script>
+$(function(){
+  var widgets = ['fb'], width = 370, height = 505, index = 0,
+    $box = $('#social_group_widget'), lang = 'en';
+
+  if(lang == 'ru')
+  {
+    widgets.push('vk');
+  }
+
+  if(widgets.length > 0)
+  {
+    index = Math.floor(Math.random() * widgets.length);
+  }
+
+  switch(widgets[index])
+  {
+    case 'fb':
+      createFbWidget();
+      break;
+
+    case 'vk':
+      createVkWidget();
+      break;
+  }
+
+
+  function createFbWidget()
+  {
+    var widgetUrl = '//www.facebook.com/plugins/likebox.php?',
+        groupUrl = 'https://www.facebook.com/pages/Savefromnet-en/156168517922716';
+
+    if(lang == 'ru')
+      groupUrl = 'https://www.facebook.com/pages/Savefromnet-ru/419272651512055';
+
+    var query = {
+      href: groupUrl,
+      width: width,
+      height: height,
+      colorscheme: 'light',
+      show_faces: 'false',
+      header: 'false',
+      stream: 'true',
+      show_border: 'false'
+    };
+
+    $box.css('margin-top', '6px').append($('<iframe>').
+      attr('src', widgetUrl + $.param(query)).
+      attr('allowTransparency', 'true').
+      css({
+        border: 'none',
+        overflow: 'hidden',
+        width: width + 'px',
+        height: height + 'px'
+      }));
+  }
+
+  function createVkWidget()
+  {
+    $box.append('<div id="vk_groups"></div>');
+
+    var src = location.protocol + '//vk.com/js/api/openapi.';
+        
+    $('<script>').attr('src', src + 'js?101').
+      appendTo('body');
+
+    var count = 0;
+
+    function showVKGroup()
+    {
+      if(VK && VK.Widgets && VK.Widgets.Group)
+      {
+        VK.Widgets.Group("vk_groups",
+          {mode: 2, width: width, height: height}, 55689929);
+        return;
+      }
+
+      count++;
+      if(count > 20)
+        return;
+
+      setTimeout(showVKGroup, 1000);
+    }
+
+    setTimeout(showVKGroup, 1000);
+  }
+});
+</script></body></html>

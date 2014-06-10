@@ -1,0 +1,750 @@
+<!DOCTYPE html><html class=" js chrome webkit"><head>
+<title>Ojooo Webmail :: Welcome to Ojooo Webmail</title>
+<meta name="Keywords" content="email, free email, free e-mail, best email, secure email">
+<meta name="Description" content="Ojooo is a modern, fast and secure e-mail system.">
+<meta name="Robots" content="index,follow">
+<link rel="stylesheet" href="skins_old/Ojooo/styles.css?s=1347265184" type="text/css">
+<link rel="shortcut icon" href="skins/ojooo/images/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="ojooo/site.css?s=1382620900">
+<link rel="stylesheet" type="text/css" href="skins/ojooo/styles.css?s=1358160007">
+<link rel="stylesheet" type="text/css" href="skins/ojooo/ojooo.css?s=1379424192">
+<link rel="stylesheet" type="text/css" href="skins/ojooo/ojooo_styles.css?s=1362998935">
+<!--[if IE 9]><link rel="stylesheet" type="text/css" href="skins/ojooo/svggradients.css?s=1344237195" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" type="text/css" href="skins/ojooo/iehacks.css?s=1374561617" /><![endif]-->
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="skins/ojooo/ie7hacks.css?s=1366887216" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="plugins/libcalendaring/skins/larry/libcal.css?s=1366907423">
+<link rel="stylesheet" type="text/css" href="plugins/calendar/skins/ojooo/calendar.css?s=1366907881">
+<link rel="stylesheet" type="text/css" href="plugins/jqueryui/themes/larry/jquery-ui-1.9.1.custom.css?s=1366058541">
+<link rel="stylesheet" type="text/css" href="plugins/persistent_login/persistent_login.css?s=1342510688">
+<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript" src="skins/ojooo/ui.js?s=1378284928"></script>
+<script type="text/javascript" src="skins/ojooo/ojooo.js?s=1378295956"></script>
+
+<link rel="stylesheet" type="text/css" href="ojooo/upgrade.css?s=1367825088">
+<link rel="stylesheet" type="text/css" href="ojooo/forms.css?a=7">
+
+<link rel="stylesheet" type="text/css" href="ojooo/ojo_bar_1.css?s=1384516503">
+<script type="text/javascript" src="ojooo/js/ojo_bar_2.js?s=1385635247"></script>
+<link rel="stylesheet" href="ojooo/ojo_bar.css?s=1378129603" type="text/css">
+<script type="text/javascript" src="ojooo/js/jquery.js?s=1346242375"></script>
+<script type="text/javascript" src="ojooo/js/ojo_bar.js?s=1371029128"></script>
+<script type="text/javascript" src="accpanel/js/scripts.js?s=1380612954"></script>
+<script type="text/javascript" src="ojooo/js/acc_panel_before_login.js?s=1370267013"></script>
+<script type="text/javascript">
+/**
+ * login form
+ */
+var ojo_passclick=0;
+var ojo_login_txt='Email';
+var ojo_pass_txt='Password';
+function ojo_login_in()
+{
+    if (document.getElementById('rcmloginuser').value==ojo_login_txt)
+    {
+        document.getElementById('rcmloginuser').value='';
+    }
+    document.getElementById('rcmloginuser').style.color='#222';
+}
+function ojo_login_out()
+{
+    if (document.getElementById('rcmloginuser').value==ojo_login_txt || document.getElementById('rcmloginuser').value=='')
+    {
+        document.getElementById('rcmloginuser').value=ojo_login_txt;
+        document.getElementById('rcmloginuser').style.color='#777';
+    }
+}
+
+$(document).ready(function() {//user change
+    document.getElementById('rcmloginuser').focus();
+    if (document.getElementById('rcmloginuser').value!=ojo_login_txt)
+    {
+        ojo_login_in();
+    }
+
+    $('#rcmloginuser').focus(function() {
+        ojo_login_in();
+    });
+    $('#rcmloginuser').keypress(function() {
+        ojo_login_in();
+    });
+    $('#rcmloginuser').click(function() {
+        ojo_login_in();
+    });
+    $('#rcmloginuser').blur(function() {
+        ojo_login_out();
+    });
+});
+    
+$(document).ready(function() {
+    $("#rcmloginpwd").css("color","#222");
+    $("<input type=\"text\" />")
+        .attr("name", "password_mask")
+        .attr("id", "password_mask")
+        .val(ojo_pass_txt)
+        .insertAfter("#rcmloginpwd");
+ 
+    $("#password_mask").focus(function() {
+        $(this).hide();
+        $("#rcmloginpwd").show().focus();
+    });
+ 
+    $("#rcmloginpwd").hide().blur(function() {
+        if($(this).val().length == 0) {
+            $(this).hide();
+            $("#password_mask").show();
+        }
+    });
+    
+    if ($("#rcmloginpwd").val().length>0)
+    {
+        $("#password_mask").hide();
+        $("#rcmloginpwd").show();
+    }
+});    
+</script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script src="program/js/jquery.min.js?s=1370602735" type="text/javascript"></script>
+<script src="program/js/common.js?s=1366058565" type="text/javascript"></script>
+<script src="program/js/app.js?s=1367842215" type="text/javascript"></script>
+<script src="program/js/jstz.min.js?s=1366058541" type="text/javascript"></script>
+<script type="text/javascript">
+
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"login","x_frame_options":false,"cookie_domain":"","cookie_path":"\/","cookie_secure":"1","skin":"ojooo","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":".\/?_task=login","libcal_settings":{"date_format":"yyyy-MM-dd","time_format":"HH:mm","date_short":"M-d","date_long":"MMM d yyyy","dates_long":"MMM d[ yyyy]{ '&mdash;' MMM d yyyy}","first_day":1,"timezone":1,"dst":"1","days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"days_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"months_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"today":"Today","mimetypes":["text\/plain","text\/html","text\/xml","image\/jpeg","image\/gif","image\/png","image\/bmp","image\/tiff","application\/x-javascript","application\/pdf","application\/x-shockwave-flash"]},"calendar_settings":{"default_calendar":null,"default_view":"agendaWeek","date_agenda":"ddd MM-dd","timeslots":2,"first_day":1,"first_hour":6,"work_start":6,"work_end":18,"agenda_range":60,"agenda_sections":"smart","event_coloring":0,"time_indicator":1},"date_format":"yy-mm-dd","request_token":"e724380fc45998ac09c0df31555cec8d"});
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","requesttimedout":"Request timed out","refreshing":"Refreshing...","persistent_login.ifpl_rememberme":"Keep me logged in","persistent_login.ifpl_rememberme_hint":"Do not use this function on public computers for security reason.","persistent_login.ojo_password_recovery":"Password recovery"});
+rcmail.register_button('calendar', 'rcmbtn100', 'link', '', 'button-calendar button-selected', '');
+rcmail.gui_object('message', 'message');
+rcmail.gui_object('loginform', 'form');
+</script>
+
+<script type="text/javascript" src="plugins/libcalendaring/libcalendaring.js?s=1366907423"></script>
+<script type="text/javascript" src="plugins/calendar/calendar_base.js?s=1366907423"></script>
+<script type="text/javascript" src="plugins/jqueryui/js/jquery-ui-1.9.1.custom.min.js?s=1366058541"></script>
+<script type="text/javascript" src="plugins/persistent_login/persistent_login.js?s=1368514825"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-15210957-1']);
+
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+</head>
+<body>
+    <div id="ojo_forfooter_middle_x">
+<!--span id="ojo_open" class="ojo_homepage_top_bar_settings">&nbsp;</span-->     
+
+<div style="position:fixed; width:100%; margin:0; padding:0; z-index:10;">
+    <div class="zielony_pasek" id="ojo_panel" style="display: block; ">
+Choose where it is more convenient for you to start:<input type="radio" name="ojo_startpage" id="ojo_startpage_com" value="1" onchange="change_startpage('')"> <label for="ojo_startpage_com">Mail</label>
+<input type="radio" name="ojo_startpage" id="ojo_startpage_search" value="2" onchange="change_startpage('')"> <label for="ojo_startpage_search">Multi search engine</label>
+</div>
+<!-- TOP ICONS LEFT START -->
+    <!-- TOP ICONS LEFT START -->
+    <div class="topMenuIcons">
+        <div class="topMenuItem"><a href="https://ojooo.com" class="on">Mail</a></div><div class="topMenuItem"><a href="http://me.ojooo.com">Me</a></div><div class="topMenuItem"><a href="http://search.ojooo.com">Web</a></div><div class="topMenuItem"><a href="http://ojooo.tv" target="_blank">Tv</a></div><div class="topMenuItem"><a href="https://ojooo.com/acc_www_top.php">myWWW</a></div><div class="topMenuItem"><a href="http://ads.ojooo.com" target="_blank">Ad</a></div><div class="topMenuItem"><a href="http://wad.ojooo.com" target="_blank">Profit</a></div><div class="topMenuItem"><a href="https://ojooo.com/acc_info.php" class="ojo_special">Info</a></div>
+    </div>
+<!-- TOP ICONS LEFT END -->
+<!-- TOP ICONS LEFT END -->
+
+<!-- TOP ICONS RIGHT START -->
+    <div id="topBarRight">
+        <!--div class="ib"><div id="multisearch-title">Web</div></div><div class="ib">
+            <div id="multisearch">
+                <div style="float:left;">
+                    <input type="text" id="search" class="multi-search-input" value="Multi search engine" name="search" onclick="window.open('http://search.ojooo.com')"/>
+                </div>
+                <div style="float:left;">
+                    <input type="button" title="Search" class="multi-search-button" value="" onclick="window.open('http://search.ojooo.com')" />
+                </div>
+            </div> 
+        </div><div class="ib">
+            <div class="topMenuItemSearch"><span class="top_bar_help" id="topSubmenuSearchSlide">&nbsp;</span>
+                <div id="topSubmenuSearch" class="topSubmenu ojo_text"><h2>Multi search engine</h2><p>You will quickly find that you no longer need anything else to effectively search on the web. Searching is a part of our daily life. The Ojooo multi search engine is a unique tool, using which you will only find what you really need.
+At your disposal, you have a huge database, containing information from all the other largest services designed to find content. For this reason, no-one can offer you more than we can.  Using Ojooo, you can search on all the sites available on the Internet. The most useful data have been gathered on a single site so that they can be retrieved easily and in a pleasant manner. Our search engine not only searches websites, but also identifies the users’ intent and returns results containing the answer which they expect. In addition, it responds to queries and suggests tips. </p></div>
+            </div>
+        </div--><div class="ib">
+            <div class="topMenuItemSettings"><span class="top_bar_settings" id="topSubmenuSettingsSlide">&nbsp;</span>
+                <div id="topSubmenuSettings" class="topSubmenu topSubmenuSettingsLogin">
+                    Choose where it is more convenient for you to start:<br><input type="radio" name="ojo_startpage" id="ojo_startpage_com1" value="1" onchange="change_startpage('1')"> <label for="ojo_startpage_com1">Mail</label>
+<br><input type="radio" name="ojo_startpage" id="ojo_startpage_search1" value="2" onchange="change_startpage('1')"> <label for="ojo_startpage_search1">Multi search engine</label>
+                </div>
+            </div>
+        </div><div class="ib">
+            <div class="topMenuItemLang"><span id="topSubmenuLangSlide"><span class="top_bar_lang_arrow">&nbsp;</span><span class="top_bar_lang">en</span></span>
+                <ul id="topSubmenuLang" class="topSubmenu">
+                    <li><a href="?lang=en">EN</a></li>
+                    <li><a href="?lang=pl">PL</a></li>
+                    <li><a href="?lang=el">EL</a></li>
+                    <li><a href="?lang=de">DE</a></li>
+                    <li><a href="?lang=zh">ZH</a></li>
+                    <li><a href="?lang=es">ES</a></li>
+                    <li><a href="?lang=ru">RU</a></li>
+                </ul>
+            </div>
+        </div><!--div class="ib"><a class="top_bar_logout" href="https://ojooo.com/?_task=logout">&nbsp;</a></div-->
+    </div>    
+<!-- TOP ICONS RIGHT END -->
+</div>
+
+<script type="text/javascript">
+set_startpage();
+</script> 
+<div id="login_topline"><div id="topline">
+<div id="message" class="statusbar"></div>    
+</div></div>
+<div class="center login-background-top">
+    <!--a href="acc_packages.php"><img src="img/packages/pack_home.png" alt="Create an account"/></a>
+    <div class="ojo_register_home"><a href="acc_packages.php">Create an account</a></div-->
+    
+    <!-- Logo START -->
+    <div class="ojo" id="ojo_login_logo">
+    	<div class="login-background">
+        	 <div class="login-logo">            	 
+             </div>
+             <div class="login-title">
+                     Email Service
+             </div>
+        </div>
+        
+        <!--<div class="ojo_login_kpk_link"><a href="https://ojooo.com/acc_kpk.php">Partner Program <span class="ojo_login_kpk_arrow"></span></a></div>-->
+   </div>  
+   <!-- Logo END -->
+</div>
+<!-- START LOGIN FORM RCB -->
+<div id="login-form">
+<div class="box-inner" id="ojo_box_inner">
+    <div class="pass_rescue_but"><a href="passrescue.php">Forgot password?</a></div>
+    <!--div class="register_account_but"><a href="register">Create an account</a></div-->
+<form name="form" action="./" method="post">
+<input type="hidden" name="_token" value="e724380fc45998ac09c0df31555cec8d">
+<input type="hidden" name="_task" value="login"><input type="hidden" name="_action" value="login"><input type="hidden" name="_timezone" id="rcmlogintz" value="America/Los_Angeles"><input type="hidden" name="_url" id="rcmloginurl" value=""><table style="margin-bottom:10px;"><tbody><tr><td class="input"><input name="_user" id="rcmloginuser" value="Email" size="40" autocapitalize="off" type="text"></td>
+<td class="input"><input name="_pass" id="rcmloginpwd" size="40" autocapitalize="off" type="password" style="color: rgb(34, 34, 34); display: none; "><input type="text" name="password_mask" id="password_mask"></td>
+<td class="formbuttons"><input type="submit" class="ojo_button_round" value="Login"></td>
+</tr>
+</tbody>
+</table>
+
+<!--p class="formbuttons" style="display:inline-block;"><input type="submit" class="ojo_button_round" value="Login" /></p-->
+<div id="ifplcontainer">  <div>    <input type="checkbox" name="_ifpl" id="_ifpl" value="1">    <label for="_ifpl">Keep me logged in</label>  </div>  <p>Do not use this function on public computers for security reason.</p></div></form>
+</div>
+<!--div class="box-bottom">	
+</div-->
+<div class="center"><a href="register" id="ojo_button_light_create">Create an account</a></div>
+</div>
+<!-- END LOGIN FORM RCB -->
+<!--div class="center mt">Ojooo is a modern, fast and secure e-mail system.<br/><a href="account.php" class="underline">Create an account</a>, it is really easy!</div-->
+
+<!--//RM ojo/ads -->
+
+<!--WOJTEK START-->
+<div class="ojo_register_grey" id="ojo_packages_home_site">
+        
+        <!-- Hide Button START -->
+        <div class="login-hideButton" id="ojo_for_hide_button">
+                Hide<span class="login-hideArrow"></span>
+        </div>
+        <!-- Hide Button END -->
+        
+        
+    <div id="ojo_packages_site">
+        <div style="margin-left: auto;    margin-right: auto;    position: relative;    width: 980px;">
+    <div>
+        <div class="ojo_packages_www_creator_title">
+                Stunning page, satisfied users, maximum profit!
+        </div>
+        
+        <div class="ojo_packages_www_creator_image">
+            <div class="ojo_packages_www_creator_items"> 
+                <div class="ojo_pack_add_item_lt">
+                    <div class="ojo_pack_add_img1">                
+                    </div>
+                    <div class="ojo_pack_add_txt">
+                        Unique templates in several colours
+                    </div>           	
+                </div>  
+                <div class="ojo_pack_add_arrow_lt">                
+                </div> 
+                <div class="ojo_pack_add_arrow_rt">                
+                </div> 
+                <div class="ojo_pack_add_item_rt">
+                    <div class="ojo_pack_add_img3">                
+                    </div>
+                    <div class="ojo_pack_add_txt">
+                        Optimized for search in Google and Ojooo Search 
+                    </div>
+                </div>  
+            </div>
+            <div class="ojo_packages_www_creator_items"> 
+                <div class="ojo_pack_add_item_lb">
+                    <div class="ojo_pack_add_img2">                
+                    </div>
+                    <div class="ojo_pack_add_txt">
+                        Create a site in 5 minutes with 3 simple steps
+                    </div>
+                </div> 
+                <div class="ojo_pack_add_arrow_lb">                
+                </div> 
+                <div class="ojo_pack_add_arrow_rb">                
+                </div> 
+                <div class="ojo_pack_add_item_rb">
+                    <div class="ojo_pack_add_img4">                
+                    </div>
+                    <div class="ojo_pack_add_txt">
+                        Over 300 ready-made texts for different business sectors in 5 languages
+                    </div>
+                </div>                
+            </div>  
+            <div class="packBoxButton" style="padding:30px 0px 0px 0px;">
+         	</div>
+            <div class="ojo_add_social_buttons">
+    <a target="_blank" href="https://www.twitter.com/OjoooMail"><img alt="Follow OjoooMail on Twitter" src="https://twitter-badges.s3.amazonaws.com/twitter-b.png"></a> <iframe scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px; background:transparent;" src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FOjooocom%2F106693182696102&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=306062662747143"></iframe>
+       		</div>            
+        </div>  
+    </div>
+</div>
+<div style="position:relative; width:980px; margin-left:auto; margin-right:auto;">
+    <div class="ojo_packages_www_arrowhalf">
+                <a href="#next" name="next" style="border: 0px;"><img src="https://ojooo.com/img/packages/arrow-half.png" border="0"></a>
+    </div>
+</div>  
+<div class="ojo_pack_add_bottom_items"> 
+    <div class="ojo_packages_topadd">    		     
+            <div class="ojo_packages_www_add_plus">  
+            	          
+            </div>
+            <div class="ojo_packages_topadd_txt">            
+                <table class="packTabK" cellpadding="0px" cellspacing="0px" border="0px">
+                    <tbody>
+                        <tr>
+                            <td>
+                               <span class="ojo_packages_topadd_txt1">Professional</span><br><span class="ojo_packages_topadd_txt2">Domain</span>
+                            </td>
+                            <td>
+                               <span class="ojo_packages_topadd_txt1">Professional</span><br><span class="ojo_packages_topadd_txt2">E-mails</span>
+                            </td>
+                            <td>
+                               <span class="ojo_packages_topadd_txt1">Optimum</span><br><span class="ojo_packages_topadd_txt2">Security</span>
+                            </td>   
+                        </tr>
+                    </tbody>
+                </table>         
+            </div>
+    </div>
+</div>
+
+
+ 
+
+
+<div class="ojo_packages_background_a">        
+    <div class="ojo_packages_background_b">
+        <div class="ojo_packages">
+        <div id="zero_promo">
+
+
+
+<div class="packTop">
+	<a name="selectPackage"> </a>
+    <div class="ojo_packages_packBox_h">
+        <div class="ojo_register_title"><h2>Choose a package adapted to Your needs.!</h2></div>
+    </div>
+    <div id="packBoxFrame">
+        <table class="packTabG">
+        <tbody><tr>
+            <td>&nbsp;</td>
+            <td valign="top">
+                <div class="packBox">
+                    <div class="packBoxTop"></div>
+                    <div class="packPromo">
+                    	<div class="packPromo-title">
+                        	free
+                        </div>
+                        <div class="packPromo-price-l">
+                        </div>
+                        <div class="packPromo-currency-d">
+                        	€/month
+                        </div>                    
+                    </div>
+                </div>                               
+            </td>
+            <td valign="top">
+                <div class="packBox">
+                    <div class="packBoxTop"></div>
+                    <div class="packPromo">
+                    	<div class="packPromo-title">
+                        	6 months
+                        </div>
+                        <div class="packPromo-price-l">
+                        	<div class="packPromo-old-price">
+                            	<div class="packPromo-old-price-cross">
+                                    <span class="packPromo-old-price-big">3</span><span class="packPromo-old-price-comma"></span><span class="packPromo-old-price-super">99</span>           
+                                </div>                     
+                        	</div>                         
+                        </div>
+                        <div class="packPromo-currency-l">
+                        	€/month
+                        </div>  
+                    </div>
+                </div>
+                <div style="position:relative;">
+                	<div style="background:url('https://ojooo.com/img/packages/lang/en/bestseller.png') no-repeat scroll 0px 0px transparent ; height: 107px; position: absolute; right: 22px; width: 108px;"></div>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="packBox">
+                    <div class="packBoxTop"></div>
+                    <div class="packPromo">
+                    	<div class="packPromo-title">
+                        	6 months
+                        </div>
+                        <div class="packPromo-price-l">
+                        	<div class="packPromo-old-price">
+                            	<div class="packPromo-old-price-cross">
+                                    <span class="packPromo-old-price-big">9</span><span class="packPromo-old-price-comma"></span><span class="packPromo-old-price-super">99</span>         
+                                </div>                     
+                        	</div>
+                        </div>
+                        <div class="packPromo-currency-l">
+                        	€/month
+                        </div>  
+                    </div>
+                </div>
+            </td>
+        </tr>
+		
+        <tr>
+        	<td>
+            
+            </td>
+            <td valign="top">
+            	<div class="packPriceOnly">free</div>
+            </td>
+            <td valign="top">
+            	<div class="packPriceOnly">afterwards only 3.99 €/month</div>
+            </td>
+            <td valign="top">
+            	<div class="packPriceOnly">afterwards only 9.99 €/month</div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+            	<div style="position:relative;">
+                	<!--<div class="ojo_packages_social_buttons">
+                    <a href="https://www.twitter.com/OjoooMail" target="_blank"><img src="https://twitter-badges.s3.amazonaws.com/twitter-b.png" alt="Follow OjoooMail on Twitter"/></a> <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FOjoooMail&amp;width=450&amp;height=21&amp;colorscheme=light&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;send=false&amp;appId=479275125458661" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+                    </div>-->
+                </div>            
+            </td>
+            <td valign="top">
+        		<div class="packBoxButton"><div class="ojo_ahrew_green"><a href="https://ojooo.com/register">Continue</a></div></div>
+            </td><td valign="top">
+       			 <div class="packBoxButton"><div class="ojo_ahrew_green"><a href="https://ojooo.com/acc_register_pro_c.php?account=2">Continue</a></div></div>
+            </td><td valign="top">
+        		<div class="packBoxButton"><div class="ojo_ahrew_green"><a href="https://ojooo.com/acc_register_pro_c.php?account=3">Continue</a></div></div>
+            </td>
+        </tr>
+        
+        <tr>
+        	<td valign="bottom">
+            	<div style="position:relative;">
+            		<div class="packPromo-cashback" style="background:url('https://ojooo.com/img/packages/lang/en/cashback.png') no-repeat scroll 0px 0px transparent;"></div>
+                </div>
+            </td>
+            <td valign="top">
+            	<div class="packBoxText">An Account ideal for a start. <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt" style="left:-100px;">A Reliable mailbox. It is quick, safe and free of advertising. You will send suitably protected messages using a special security system.</span></span></div>
+            </td>
+            <td valign="top">
+            	<div class="packBoxText">The best solution for those who need more. Custom domain, the ability to create a website and many e-mail accounts will effectively meet all expectations. <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt" style="left:-200px;">The perfect solution for people with different interests and companies seeking quality tools at affordable prices. Your own domain name and the associated e-mail accounts will effectively manage communications between all employees or people associated with your project. <br><br>Regardless of your e-mail account, the attached websites wizard makes it easy for you to create your own, professional page that you can connect with existing e-mail boxes. Each holder of an e-mail box can also create their own business cards. It is an ideal choice for ventures such as distribution companies that possess a company webpage with multiple subpages as well as pages with traders’ business cards. <br><br>No limits, a large number of sub-domains and access to created e-mail addresses allow you to discover new development avenues for each activity. Our efficiency and precision of action will build your advantage not only in business. Show everyone that you care about the image and quality of the presented offer.</span></span></div>
+            </td>
+            <td valign="top">
+            	<div class="packBoxText">Satisfies the needs of every undertaking. Custom domain, many e-mail accounts, the ability to create a website and much more. <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt" style="left:-450px;">The perfect solution for people with different interests and companies seeking quality tools at affordable prices. Your own domain name and the associated e-mail accounts will effectively manage communications between all employees or people associated with your project. <br><br>Regardless of your e-mail account, the attached websites wizard makes it easy for you to create your own, professional page that you can connect with existing e-mail boxes. Each holder of an e-mail box can also create their own business cards. It is an ideal choice for ventures such as distribution companies that possess a company webpage with multiple subpages as well as pages with traders’ business cards. <br><br>No limits, a large number of sub-domains and access to created e-mail addresses allow you to discover new development avenues for each activity. Our efficiency and precision of action will build your advantage not only in business. Show everyone that you care about the image and quality of the presented offer.<br><br>PRO + is an extension of the PRO pack. It has even more e-mail accounts, larger disk capacity, additional options for SEO, increased volume of website, as well as additional features for advertising your projects in the internet.</span></span></div>
+            </td>
+        </tr>
+    </tbody></table>
+
+        
+    </div>
+</div>
+
+
+
+<div class="packTable ojo_upgrade_table" style="background-color:#CCCCCC">
+    <table width="980px" class="packTabUpgrade" cellspacing="0" cellpadding="0" align="left">
+    	<tbody><tr class="ojo_upgrade_table_packages ojo_upgrade_table_buttons">
+            <th>Packages</th>
+            <td>BASIC</td>
+            <td class="ojo_upgrade_sec_col ojo_upgrade_table_packages_special">PRO</td>
+            <td>PRO+</td>
+        </tr>
+    
+        <tr>
+            <th>Number of e-mail addresses <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt">Do you manage a large company or a network of multiple contacts? We give you the opportunity to create and control multiple e-mail accounts (packages PRO, PRO+). For each of them you can create a personalized e-business card on a separate sub-domain. By doing so, you will professionally present all your staff.</span></span> </th>
+            <td>1</td>
+            <td class="ojo_upgrade_sec_col">100</td>
+            <td>300</td>
+    	</tr>
+    
+        <tr>
+            <th>Maximum attachment size  </th>
+            <td>50 MB</td>
+            <td class="ojo_upgrade_sec_col">100  MB</td>
+            <td>150 MB</td>
+    	</tr>
+    
+        <tr>
+            <th>Disc  </th>
+            <td>10 GB</td>
+            <td class="ojo_upgrade_sec_col">25 GB</td>
+            <td>50 GB</td>
+    	</tr>
+    
+        <tr>
+            <th>Custom sub-domain  </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col">100</td>
+            <td>300</td>
+    	</tr>
+    
+        <tr>
+            <th>Custom domain <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt">Your business card in the internet. The domain can be a website address or an e-mail account address. (e.g. joe@average.com, www.average.com). You can choose from the following domain extensions: .com, .net, .us, .de, .pl, .info, .mobi</span></span> </th>
+            <td valign="top"><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td valign="top" class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td valign="top"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Websites - modular system <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt">Create a professional website for your business. A special wizard will help you build it from ready components. You can use the many templates prepared by us and texts dedicated to various business sectors. Selected items can be edited and adapted to suit your needs.</span></span> </th>
+            <td valign="top"><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td valign="top" class="ojo_upgrade_sec_col"><div style="text-align: left;"><span class="ojo_pack_special_title">Fully professional website</span><br>The wizard allows you to build a fully professional website and integrate it with existing e-mail accounts. Also includes ready-made templates and content for various business sectors. The perfect solution for all kinds of companies and projects.</div> <span class="pyta_info"><a href="https://ojooo.com/acc_info_homepage.php?back=1#www&amp;nopack=1">info</a></span></td>
+            <td valign="top"><div style="text-align: left;"><span class="ojo_pack_special_title">Fully professional website</span><br>The wizard allows you to build a fully professional website and integrate it with existing e-mail accounts. Also includes ready-made templates and content for various business sectors. The perfect solution for all kinds of companies and projects. The package includes even more subdomains and space for a website and your messages.</div> <span class="pyta_info"><a href="https://ojooo.com/acc_info_homepage.php?back=1#www&amp;nopack=1">info</a></span></td>
+    	</tr>
+    
+        <tr>
+            <th>Downloading external mail (POP3) <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt">We give you possibility of automatically downloading mails from other accounts. In the settings panel, you can add e-mail account of another provider. Do not miss any e-mail and get access to all your messages from one place.</span></span> </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Mail forwarding  </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Built-in calendar  </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Administration websites  </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>SEO Optimization  </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>No ads  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>SSL Security  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Maximum safety: Splitting MAIL - System <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt">Expand your possibilities with the S-mail. You can ensure the safety of your correspondence and utmost level of confidentiality. The convenient and reliable system for distributing messages will make help you stop worrying about communication on the internet. Show your callers that you are trustworthy.</span></span> </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Antivirus scanner  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Spam Protection  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>IMAP / POP3 / SMTP <span class="pyta"><span class="pyta_click"></span><span class="pyta_txt">You can easily configure your mailbox to meet your needs and preferences. You can receive messages using any email client installed on your computer (IMAP, POP3, and SMTP). You also have the possibility to automatically download emails from other accounts. In addition, we provide an application on your desktop informing you of incoming messages.</span></span> </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Notifying application on your desktop   </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Folder Management  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Information about the latest news  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Access from mobile devices  </th>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+        <tr>
+            <th>Gift Card for online advertising $30,-  </th>
+            <td><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td class="ojo_upgrade_sec_col"><img src="https://ojooo.com/img/packages/no.png" alt="no"></td>
+            <td><img src="https://ojooo.com/img/packages/yes.png" alt="yes"></td>
+    	</tr>
+    
+    	<tr class="ojo_upgrade_table_packages_bottom_p packTabUpgradeEmpty">
+            <th>Select a product</th>
+            <td>
+            	<div>BASIC</div>
+            	<div class="packPriceOnly">free</div>
+            </td>
+            <td class="ojo_upgrade_sec_col">
+            	<div>PRO</div>
+                <div class="packPriceOnly">6 months 0,00 €/month,<br>afterwards only 3.99 €/month</div>
+            </td>
+            <td>
+            	<div>PRO+</div>
+                <div class="packPriceOnly">6 months 0,00 €/month,<br>afterwards only 9.99 €/month</div>
+               
+            </td>
+        </tr>     
+        
+        <tr class="ojo_upgrade_table_packages_bottom_p packTabUpgradeEmpty">
+            <th></th>
+            <td>
+                <div class="ojo_ahrew_green" style="margin:0px 20px 10px 20px;"><a href="https://ojooo.com/register">Continue</a></div>
+            </td>
+            <td class="ojo_upgrade_sec_col">
+                <div class="ojo_ahrew_green" style="margin:0px 20px 10px 20px;"><a href="https://ojooo.com/acc_register_pro_c.php?account=2">Continue</a></div>
+            </td>
+            <td>
+                <div class="ojo_ahrew_green" style="margin:0px 20px 10px 20px;"><a href="https://ojooo.com/acc_register_pro_c.php?account=3">Continue</a></div>
+            </td>
+        </tr>                        
+    </tbody></table>
+</div>
+
+
+</div>
+        </div>
+    </div>
+</div>
+
+    </div>
+<!--WOJTEK END - 2 divs-->
+
+</div>
+</div>    
+<!-- FOOTER START-->
+<script type="text/javascript" src="https://ojooo.com/ojooo/js/ojo_footer.js"></script>
+<script type="text/javascript">
+show_ojo_footer("com", "en");
+document.getElementById('ojo_forfooter_footer').style.position='relative';
+</script><!-- FOOTER START--><div id="ojo_forfooter_footer" class="mt ojo_footer" style="position: relative; "><div style="width: 980px;	margin-left: auto;	margin-right: auto;"><!-- FB people --><div class="ojo_packages_social_box"><iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2FOjoooMail&amp;width=980&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=479275125458661" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:980px; height:258px;" allowtransparency="true"></iframe></div><div class="ojo_footer_icons"><table style="width:100%; text-align:center;" cellpadding="0px" cellspacing="0px" border="0px"><tbody><tr><td><img src="https://ojooo.com/img/packages/footer_icons/icon_german.png"></td><td><img src="https://ojooo.com/img/packages/footer_icons/icon_top.png"> </td><td><img src="https://ojooo.com/img/packages/footer_icons/icon_comodo.png"> </td><td><img src="https://ojooo.com/img/packages/footer_icons/icon_alexa.png"> </td>   <td><img src="https://ojooo.com/img/packages/footer_icons/icon_smail.png"> </td></tr></tbody></table>  </div></div><div class="ojo_footer_background"><div class="ojo_footer_sitemap"><div class="ojo_footer_sitemap_tree"><div class="ojo_footer_sitemap_col"><h4>OJOOO</h4><ul><li><a href="https://ojooo.com">Mail</a></li><li><a href="http://search.ojooo.com">Multi search engine</a></li><li><a href="http://ads.ojooo.com">Your Ad</a></li><li><a href="http://me.ojooo.com">Ojooo Me</a></li><li><a href="https://ojooo.com/acc_packages_adtv.php">TV commercial</a></li><li><a href="https://ojooo.com/acc_site.php?o=movie_ad2">Ojooo Presentation</a></li></ul></div><div class="ojo_footer_sitemap_col"><h4>More</h4><ul><li><a href="http://ojooo.tv">Ojooo Tv</a></li><li><a href="https://ojooo.com/mobile.php">Mobile</a></li><li><a href="https://ojooo.com/acc_packages_www.php">Your website</a></li><li><a href="https:ojooo.com/acc_info.php">Info</a></li></ul></div><div class="ojo_footer_sitemap_col"><h4>Company</h4><ul><li><a href="https://ojooo.com/regulations.php">Regulations</a></li><li><a href="https://ojooo.com/impressum.php">Publisher</a></li><li><a href="https://ojooo.com/contact.php">Contact</a></li></ul></div><div class="ojo_footer_sitemap_col"><h4>Follow Us</h4><ul><li><div class="ojo_footer_follow_fb"><a href="https://www.facebook.com/OjoooMail">Facebook</a></div></li><li><div class="ojo_footer_follow_tw"><a href="https://twitter.com/OjoooMail">Twitter</a></div></li></ul></div></div></div><div class="ojo_footer_copy"><div class="ojo_footer_copy_txt">© Copyright 2014 Ojooo Mail GmbH. All rights reserved. <span style="float:right;"><a href="https://ojooo.com">www.ojooo.com</a></span></div></div></div></div><!-- FOOTER END-->
+<!-- FOOTER END--> 
+
+<!-- Piwik -->
+<!--<script type="text/javascript">
+  var _paq = _paq || [];
+    _paq.push(["trackPageView"]);
+      _paq.push(["enableLinkTracking"]);
+      
+        (function() {
+            var u=(("https:" == document.location.protocol) ? "https" : "http") + "://stat.ojooo.com/";
+                _paq.push(["setTrackerUrl", u+"piwik.php"]);
+                    _paq.push(["setSiteId", "1"]);
+                        var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+                            g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+                              })();
+                              </script>-->
+                              <!-- End Piwik Code -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="https://ssl.google-analytics.com/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15210957-1");
+pageTracker._setDomainName("none");
+pageTracker._setAllowLinker(true);
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- A-xa //-->
+<script type="text/javascript" src="https://d31qbv1cthcecs.cloudfront.net/atrk.js"></script><script type="text/javascript">_atrk_opts = { atrk_acct: "Ve9We1a0mN00Uz", domain:"ojooo.com"}; atrk ();</script><noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=Ve9We1a0mN00Uz" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+<!-- A-xa end //-->
+<script type="text/javascript">
+
+
+
+// UI startup
+var UI = new rcube_mail_ui();
+$(document).ready(function(){
+	UI.set('errortitle', 'An error occurred!');
+	UI.init();
+});
+
+</script>
+
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){ 
+rcmail.init();
+var images = ["skins\/ojooo\/images\/ajaxloader.gif","skins\/ojooo\/images\/buttons.png","skins\/ojooo\/images\/addcontact.png","skins\/ojooo\/images\/filetypes.png","skins\/ojooo\/images\/listicons.png","skins\/ojooo\/images\/messages.png","skins\/ojooo\/images\/quota.png","skins\/ojooo\/images\/selector.png","skins\/ojooo\/images\/splitter.png","skins\/ojooo\/images\/watermark.jpg"];
+            for (var i=0; i<images.length; i++) {
+                img = new Image();
+                img.src = images[i];
+            }
+});
+</script>
+
+
+</body></html>

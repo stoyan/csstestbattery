@@ -1,0 +1,690 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="DC.title" content="Welcome to Flipora!">
+    <meta name="DC.subject" content="social web page recommendations">
+    <meta name="DC.description" content="social web page recommendations">
+    <meta name="DC.format" content="text/html">
+    <meta name="DC.language" content="en">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	
+    <title>Flipora - Let's Go Discover</title>
+    <link href="/static/_css/main.css" rel="stylesheet">
+    <link href="/static/css/login.css" rel="stylesheet">
+    <link href="/static/css/tympanusCircle.css" rel="stylesheet"> 
+    <link rel="shortcut icon" href="/static/images/login/favicon.ico">
+    <script id="facebook-jssdk" async="" src="//connect.facebook.net/en_US/all.js"></script><script type="text/javascript" async="" src="http://cdn.mxpnl.com/libs/mixpanel-2.1.min.js"></script><script type="text/javascript">
+            //used by login.js, don't remove
+        	var isSandbox = false;
+    </script>
+    <script src="/static/js/login/jquery.min.js"></script>
+    <script>
+    try{
+    	if ($.browser.msie  && parseInt($.browser.version, 10) <= 8) {
+      	  
+      	  window.location = "/login2.jsp";
+      	}
+    }catch(ex){
+    	
+    }
+    	
+    </script>
+   
+    <script type="text/javascript" src="static/js/util.js"></script>
+
+<script type="text/javascript">
+var isViral = false;
+var userId = "null";
+var parity = "zombie";
+var isNonTargetRequest = false;
+var browserProperties = {"browser_version":"","group_os":"Mac OS","group_os_br_v":"Mac OS - UNKNOWN ","country_type":"target","group_br_bucket":"UNKNOWN Z","group_br_parity":"UNKNOWN zombie","group_os_br":"Mac OS - UNKNOWN","group_br":"UNKNOWN","group_br_v":"UNKNOWN "};
+var extraProps = {};
+var userType = isViral ? "viral" : "direct";
+</script>
+
+
+<!-- start Mixpanel -->
+<script type="text/javascript">
+    (function(c,a){var b,d,h,e;
+    b=c.createElement("script");b.type="text/javascript";
+    b.async=!0;b.src=("https:"===c.location.protocol?"https:":"http:")+
+    '//cdn.mxpnl.com/libs/mixpanel-2.1.min.js';d=c.getElementsByTagName("script")[0];
+    d.parentNode.insertBefore(b,d);
+    a._i=[];a.init=function(b,c,f){function d(a,b){
+    var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(
+    Array.prototype.slice.call(arguments,0)))}}var g=a;"undefined"!==typeof f?g=a[f]=[]:
+    f="mixpanel";g.people=g.people||[];h=['disable','track','track_pageview','track_links',
+    'track_forms','register','register_once','unregister','identify','name_tag',
+    'set_config','people.identify','people.set','people.increment'];for(e=0;e<h.length;e++)d(g,h[e]);
+    a._i.push([b,c,f])};a.__SV=1.1;window.mixpanel=a})(document,window.mixpanel||[]);
+    mixpanel.init("a83a571c5f444b58f9b28ccce8b0597c");
+</script>
+<!-- end Mixpanel -->
+
+<!-- start KissMetrics 
+<script type="text/javascript">
+  var _kmq = _kmq || [];
+  var _kmk = _kmk || '3ffb50d798c131ac8e2afc202a94a3fb9a7c4e63';
+  function _kms(u){
+    setTimeout(function(){
+      var d = document, f = d.getElementsByTagName('script')[0],
+      s = d.createElement('script');
+      s.type = 'text/javascript'; s.async = true; s.src = u;
+      f.parentNode.insertBefore(s, f);
+    }, 1);
+  }
+  _kms('//i.kissmetrics.com/i.js');
+  _kms('//doug1izaerwt3.cloudfront.net/' + _kmk + '.1.js');
+</script>
+end KissMetrics -->
+
+<script type="text/javascript">
+    if(!window.Analytics) {
+    	window.Analytics = {
+			setup: function() {
+				this.pageLoadInstant = new Date().getTime();
+				
+	            var userProps = {
+	                'type': userType,
+	                'parity': parity,
+	                'user_id': userId
+	            };
+	            
+	            (window.$j||window.$).extend(userProps, browserProperties);
+	            (window.$j||window.$).extend(userProps, extraProps);
+	            
+	            mixpanel.identify(userId);
+	            mixpanel.register_once(userProps);
+
+	            //_kmq.push(['identify', userId]);
+            	//_kmq.push(['set', userProps]);
+	        },
+	        
+	        isEventLoggedAtLeastOnce: function(event) {
+	        	var eventLoggedProp = "mixpanel-time-" + event;
+	        	return window.infoaxe.util.cookie(eventLoggedProp) != null;
+	        },
+	        
+	        markEventLogged: function(event) {
+	        	var eventLoggedProp = "mixpanel-time-" + event;
+	        	window.infoaxe.util.cookie(eventLoggedProp, new Date().getTime());
+	        },
+	        
+	        trackEvent: function(event, eventProps, onlyOnce, callback) {
+                if(onlyOnce && this.isEventLoggedAtLeastOnce(event)) return;
+                
+                if(eventProps.source === undefined) {
+                    var source = window.infoaxe.util.getURLParameter("src");
+                    if(source === null) {
+                        source = "direct";
+                    }
+                    eventProps.source = source;
+                }
+                
+                if(eventProps.time_since_load === undefined) {
+                	var timeSinceLoad = new Date().getTime() - this.pageLoadInstant;
+                	eventProps.time_since_load = Math.ceil(timeSinceLoad/100); 
+                }
+                
+                var self = this;
+                mixpanel.track(event, eventProps, function(){
+                	self.markEventLogged(event);
+                    if(callback) callback();
+                });
+                
+                //_kmq.push(['record', event, eventProps]);
+	        },
+	        
+	        addUserProps:function(userProps){
+	        	mixpanel.register_once(userProps);
+	        	//_kmq.push(['set', userProps]);
+	        }
+    	};
+    	
+    	window.Analytics.setup();
+    }
+</script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+  <body>
+  
+  	<div id="navigation">
+  		<div class="container">
+  			<div id="logoContainer"> </div>
+	  		<embed id="logo" src="/static/images/login/logo.svg"> 
+	  		<!-- 
+	  		<div id="topLink"> 
+	  			<div id="facebookLoginTop">
+	  				<img id="facebookProfilePicture" src="" /> 
+	  				<img id="facebookCloseButton" src="/static/images/login/facebookCloseButton.png"/> 
+	  				<p> </p>
+	  			</div>
+	  			<p id="loginOrSignup">Login</p>
+	  		</div>
+	  		 -->
+	  		<ul>
+	  			<li style="background-color: RGB(91,135,188); float: left; opacity: 1; margin: 0px; padding: 0 30px;"><a id="loginBtn" href="#" style="opacity: 1">Login</a></li>
+	  			<li><a id="signupBtn" href="#">Sign up</a></li>
+	  			<li><a href="http://blog.flipora.com/">Blog</a></li>
+	  			<li><a href="http://www.flipora.com/team.jsp">Team</a></li>
+	  		</ul>
+  		</div>
+  	</div> <!-- END Navigation-->
+  	
+    <div id="top">
+    <div id="topContainer"> <!-- FOR CENTERING -->
+   
+    	<div id="scrollDown">
+    		<div id="scrollDownCircle">
+    			<div id="scrollDownArrow"></div>
+    		</div>	
+    		<!-- <embed id="scrollDownCircle" src="images/login/scrollDownCircle.svg"> -->
+	  		<p>features</p>
+	  	</div>
+		<div id="counter" style="visibility: visible; ">
++        	<p id="number">28,869,063</p>
+	  		<p>Happy Users</p>
+	  	</div>
+	  	
+    	<div id="callToAction" class="active">
+	  		<div id="computerContainer">
+	  			<div id="computer">
+	  				<img id="mouse" class="startingPosition" src="/static/images/login/mouse.png" alt="mouse">
+	  				<div id="flipButton"></div>
+	  				<img id="selectedTopic" src="/static/images/login/topic8.png" alt="selected topic">
+	  				<div id="downArrow"></div>
+	  				<ul id="topics">
+		  				<li><img src="/static/images/login/topic19.png" alt="topic 1"></li>
+		  				<li><img src="/static/images/login/topic12.png" alt="topic 2"></li>
+		  				<li><img src="/static/images/login/topic18.png" alt="topic 3"></li>
+		  				<li><img src="/static/images/login/topic4.png" alt="topci 4"></li>
+	  				</ul>
+	  				<img src="/static/images/login/computer2.png" alt="discover sites on flipora">
+	  				<img id="site1" class="site visible" src="/static/images/login/site1.png" alt="discover sites on flipora">
+	  			<img id="site2" class="site hidden" src="/static/images/login/site2.png"><img id="site3" class="site hidden" src="/static/images/login/site3.png"><img id="site4" class="site hidden" src="/static/images/login/site4.png"></div>
+	  			<div id="pageHider"></div>
+	  		</div> <!-- End ComputerContainer -->		
+	  		
+	  		<div id="whiteBox" class="show">
+	  			<h1>Let's Go Discover</h1>
+		  		<h2>Choose topics, follow people and <br>discover the best sites of the web.</h2> 
+		  		<div class="facebookButtonContainer">
+			  		<div class="facebookButton">
+			  			<img src="/static/images/login/facebookF.png" alt="sign in with facebook">	
+			  			<p>Sign up with Facebook</p>
+			  		</div>
+			  	</div>
+			  	<div id="emailButton">
+			  		<img src="/static/images/login/email.png" alt="sign in with email">	
+			  		<p>or Email</p>
+			  	</div>
+			</div> <!-- END White Box -->
+  		</div> <!-- END Call To Action -->
+	  	
+	  	<div id="signupContainer" class="formContainer pre"> <!-- For Top Padding -->	
+  		<div id="signup" class="form">
+  			<h2>Sign up</h2>
+			<form id="signup_form_form" name="signup" action="" method="get">
+  				<input type="hidden" id="source" name="source" value="login">
+                <input type="hidden" id="inviterid" name="inviterid" value="">
+                <input type="hidden" name="fbid" value="">
+                <input type="hidden" name="fbtoken" value="">
+               
+				<div class="formRow">
+	  				<div class="formIconContainer">
+	  					<embed id="signupIcon1" class="formIcon" src="/static/images/login/signupIcon1.svg">
+	  				</div>
+	  				<input id="signupInput1" class="formInput hint_label" type="text" name="username" placeholder="Your full name" onfocus="if (this.value == 
+'Your full name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your full name';}"> 
+	  				<div id="signupError1" class="formError">
+						<p>error</p>
+					</div>
+					<script>
+						jQuery("#signupInput1").val("Your full name");
+					</script>
+				</div>
+				<div class="formRow">
+					<div class="formIconContainer">
+						<embed id="signupIcon2" class="formIcon" src="/static/images/login/signupIcon2.svg">
+					</div>
+					<input id="signupInput2" class="formInput hint_label" type="text" name="email" placeholder="Your email address" onfocus="if (this.value == 
+'Your email address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your email address';}">
+					<div id="signupError2" class="formError">
+						<p>error</p>
+					</div>
+					<script>
+						jQuery("#signupInput2").val("Your email address");
+					</script>
+				</div>
+				<div class="formRow">
+					<div class="formIconContainer">
+						<embed id="signupIcon3" class="formIcon" src="/static/images/login/signupIcon3.svg">
+					</div>
+					<input id="signupInput3" class="formInput" name="password" placeholder="Password" onfocus="javascript:this.value=''; 
+javascript:this.type='Password'; javascript:this.focus();">
+					<div id="signupError3" class="formError">
+						<p>error</p>
+					</div>
+					<script>
+						jQuery("#signupInput3").val("*******");
+					</script>
+				</div>
+				<input id="signupButton" class="button formButton" type="submit" value="Sign Up">
+			</form>
+			<p class="privacy"> By registering, you agree to our <a href="http://www.flipora.com/privacy.jsp">Terms and Privacy Policy</a> </p>
+  		</div> <!-- END signup -->
+  		</div> <!-- END signup container -->
+	  		  	
+	  	<div id="loginContainer" class="formContainer pre">
+  		<div id="login" class="form">
+			<div id="loginTop">
+				<h2>Login</h2>
+				<div id="incorrectLogin">
+					<p>Incorrect Email/Password</p>
+				</div>
+			</div>
+			
+			<div id="facebookLogin" class="facebookButtonContainer">
+		  		<div class="facebookButton">
+		  			<img src="/static/images/login/facebookF.png" alt="login with facebook">	
+		  			<p>Login with Facebook</p>
+		  		</div>
+		  	</div>
+
+		  	<hr id="loginBreak">
+
+			<form name="login" action="" method="get">
+				<div class="formRow">
+					<div class="formIconContainer">
+						<embed class="formIcon" src="/static/images/login/signupIcon2.svg">
+					</div>
+					<input id="loginInput2" class="formInput" type="text" name="LoginEmail" value="Your email address" onfocus="if (this.value == 'Your 
+email address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your email address';}">
+					<div id="loginError1" class="formError">
+						<p>error</p>
+					</div>
+				</div>
+				<div class="formRow">
+					<div class="formIconContainer">
+						<embed class="formIcon" src="/static/images/login/signupIcon3.svg">
+					</div>
+					<input id="loginInput3" class="formInput" type="text" name="LoginPassword" value="Password" onfocus="javascript:this.value=''; 
+javascript:this.type='Password'; javascript:this.focus();">
+					<div id="loginError2" class="formError">
+						<p>error</p>
+					</div>
+				</div>
+				<p id="forgotPasswordLink" class="formLink">Forgot Password?</p>
+				<input id="loginButton" class="button formButton" type="button" value="Login">
+			</form>
+		</div>  <!-- END login -->
+		</div> <!-- END loginContainer -->
+				  		
+	  	<div id="forgotContainer" class="formContainer pre">
+	  		<div id="forgot" class="form">
+				<h2>Forgot Password</h2>
+	
+				<form name="forgot" action="" method="get">
+					<div class="formRow">
+						<div class="formIconContainer">
+							<embed class="formIcon" src="/static/images/login/signupIcon2.svg">
+						</div>
+						<input id="forgotInput" class="formInput" type="text" name="forgotEmail" value="Your email address" onfocus="if (this.value 
+== 'Your email address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Your email address';}">
+						<div id="forgotError1" class="formError">
+							<p>error</p>
+						</div>
+					</div>
+					<input id="forgotButton" class="button formButton" type="submit" value="Retrieve Password">
+				</form>
+		  		<h3 id="createNewAccount" class="formLink">Create New Account</h3>
+			</div>  <!-- END forgot -->
+			<div id="forgot-success" class="form hide">
+				<h2>Success!</h2>
+				<p> <strong>Check your email to reset your password.</strong></p>
+			</div>
+		</div> <!-- END forgotContainer -->
+
+	  	<div id="loadingContainer" class="formContainer hide">	
+		<div id="loading">
+			<h3>Loading...</h3>
+			<div class="loadingCircle loadingCircle1"></div>
+			<div class="loadingCircle loadingCircle2"></div>
+			<div class="loadingCircle loadingCircle3"></div>
+			<div class="loadingCircle loadingCircle4"></div>
+		</div> <!-- END Loading -->
+		</div>  <!-- END Loading Container -->
+	  		
+	</div> <!-- END topContainer (for centering) -->
+	</div> <!-- END top -->
+	
+  	<div id="middle">
+  		<div id="section2Container">  		
+  		<div id="section2">
+  			<div class="text">
+  				<h1>Choose Your Interests</h1>
+  				<p>With over 60 topics ranging from alternative energy to philosophy, there's a little something for everyone.</p>
+  			</div>
+  			<ul class="ch-grid">
+				<li id="topic1">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic1.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic2">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic2.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic3">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic3.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic4">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic4.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic5">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic5.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic6">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic6.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic7">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic7.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic8">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic8.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic9">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic9.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic10">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic10.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic11">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic11.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic12">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic12.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic13">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic13.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic14">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic14.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic15">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic15.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic16">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic16.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+				<li id="topic17">
+					<div class="ch-item ch-img-1 added">				
+						<div class="ch-info-wrap">
+							<div class="ch-info">
+								<div class="ch-info-front ch-img-1"></div>
+								<div class="ch-info-back">
+									<embed src="/static/images/login/topic17.svg">
+								</div>	
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+  			 			
+  		</div> <!-- End Section2-->
+  		</div> <!-- End Section2 Container -->
+  		
+  		<div id="section3Container">
+  		<div id="section3">
+  			<div class="left">
+  				<div class="cover"></div>
+  				<svg><path style="fill: none; stroke: rgba(86, 121, 182, 0.80000); stroke-width: 20px; " d="M0,20C0,20,0,20,36.666666666666664,19.999999999999996C73.33333333333333,20,146.66666666666666,20,205,46.666666666666664C263.3333333333333,73.33333333333333,306.66666666666663,126.66666666666667,353.3333333333333,153.33333333333331C400,180,450,180,474.99999999999994,180C500,180,500,180,499.99999999999994,180"></path><path style="fill: none; stroke: rgba(88, 171, 226, 0.80000); stroke-width: 20px; " d="M0,70C0,70,0,70,36.666666666666664,70C73.33333333333333,70,146.66666666666666,70,205,83.33333333333333C263.3333333333333,96.66666666666666,306.66666666666663,123.33333333333333,353.3333333333333,136.66666666666669C400,150,450,150,474.99999999999994,150C500,150,500,150,499.99999999999994,150"></path><path style="fill: none; stroke: rgba(212, 114, 194, 0.80000); stroke-width: 20px; " d="M0,120L500,120"></path><path style="fill: none; stroke: rgba(126, 198, 71, 0.80000); stroke-width: 20px; " d="M0,170C0,170,0,170,36.666666666666664,170C73.33333333333333,170,146.66666666666666,170,205,156.66666666666666C263.3333333333333,143.33333333333331,306.66666666666663,116.66666666666666,353.3333333333333,103.33333333333333C400,90,450,90,474.99999999999994,90C500,90,500,90,499.99999999999994,90"></path><path style="fill: none; stroke: rgba(255, 197, 30, 0.80000); stroke-width: 20px; " d="M0,220C0,220,0,220,36.666666666666664,219.99999999999997C73.33333333333333,220,146.66666666666666,220,205,193.33333333333331C263.3333333333333,166.66666666666666,306.66666666666663,113.33333333333333,353.3333333333333,86.66666666666666C400,60,450,60,474.99999999999994,60C500,60,500,60,499.99999999999994,60"></path></svg>
+  	 		</div>
+  			<div class="text">
+  				<h1>The Ultimate Newsfeed</h1>
+  				<p>Bring together your social, news and entertainment feeds for a page tailored to what you want to see.</p>
+  			</div>
+  			<div class="right">
+  	 		</div>
+  		</div> <!-- End Section3-->
+  		</div> <!-- End Section3 Container-->
+  		
+  		<div id="section4Container">
+  		<div id="section4">
+  			<div class="text">
+  				<h1>Intelligence, Built in</h1>
+  				<p>The more you flip, the better our recommendations. Flipora uses advanced machine learning to figure out what you like, before you 
+do.</p>
+  			</div>
+  			<div class="right">
+  				<div id="graphIconContainer">
+  					<div class="graphIcon" id="graphIcon1">
+  						<p>21</p>
+  						<embed src="/static/images/login/graphIcon1.svg">
+  					</div>
+  					<div class="graphIcon" id="graphIcon2">
+  						<p>29</p>
+  						<embed src="/static/images/login/graphIcon2.svg">
+  					</div>
+  					<div class="graphIcon" id="graphIcon3">
+  						<p>50</p>
+  						<embed src="/static/images/login/graphIcon3.svg">
+  					</div>
+  				</div>
+  			<svg width="250" height="250"><g transform="translate(125,125)"><path fill="RGBA(255,197,30,.8)" d="M6.429395695523604e-15,-105A105,105 0 0,1 102.36743077909148,-23.364698065413013L63.37031429181854,-14.463860707160435A65,65 0 0,0 3.980102097228898e-15,-65Z"></path><path fill="RGBA(126,198,71,.8)" d="M102.36743077909148,-23.364698065413013A105,105 0 0,1 6.429395695523604e-15,105L3.980102097228898e-15,65A65,65 0 0,0 63.37031429181854,-14.463860707160435Z"></path><path fill="RGBA(88,171,226,.8)" d="M6.429395695523604e-15,105A105,105 0 1,1 -1.928818708657081e-14,-105L-1.1940306291686693e-14,-65A65,65 0 1,0 3.980102097228898e-15,65Z"></path></g></svg></div>
+  			
+  			<embed class="barChart" src="/static/images/login/barChart3.svg">
+  			<embed class="barChart" src="/static/images/login/barChart1.svg">
+  			<embed class="barChart" src="/static/images/login/barChart2.svg">
+  			
+  		</div> <!-- End Section4-->
+  		</div> <!-- End Section4Container-->
+  		
+  		<div id="section5">
+  			<div id="pressContainer">
+  				<a href="http://login.flipora.com/static/infoaxe_cnn.pdf" target="_blank"><div id="CNNLink" class="pressLink"></div></a>
+  				<a href="http://www.nytimes.com/external/venturebeat/2010/08/20/20venturebeat-infoaxe-raises-3m-to-make-online-bookmarks-ob-7619.html" target="_blank"><div id="NYTLink" class="pressLink"></div></a>
+  				<a href="http://www.bbc.co.uk/programmes/p0096hl0" target="_blank"><div id="BBCLink" class="pressLink"></div></a>
+  				<a href="http://techcrunch.com/2012/06/25/infoaxes-flipora-passes-8m-registered-users-adds-discovery-engine/" target="_blank"><div id="TCLink" class="pressLink"></div></a>
+  				<embed id="CNNsvg" src="/static/images/login/CNN.svg">
+  				<embed id="NYTsvg" src="/static/images/login/NYT.svg">
+  				<embed id="BBCsvg" src="/static/images/login/BBC.svg">
+  				<embed id="TCsvg" src="/static/images/login/Techcrunch.svg">
+  			</div>
+		</div>
+
+		<div id="section6">
+			<div class="facebookButtonContainer">
+				<div class="facebookButton">
+	  				<img src="/static/images/login/facebookF.png" alt="sign in with facebook">
+	  				<p>Sign up with Facebook</p>
+	  			</div>
+	  		</div>
+		</div>		
+		  			
+  	</div>
+
+<style>
+	#links {
+		width: 850px;
+	}
+	#links a {
+		margin-left: 25px;
+		font-size: 16px;
+	}
+</style>  	  	  	
+  	<div id="bottom">
+  		<div id="links">
+	  		
+	  		<a href="http://blog.flipora.com/">Blog</a>
+	  		<a href="http://www.flipora.com/faq2.jsp">FAQ</a>
+	  		<a href="http://www.flipora.com/press.jsp">Press</a>
+	  		<a href="http://www.flipora.com/team.jsp">Team</a>
+	     	<a href="http://www.flipora.com/privacy.jsp">Privacy</a>
+<a href="https://www.facebook.com/flipora">Facebook</a>
+<a href="https://twitter.com/flipora">Twitter</a>
+<a href="https://plus.google.com/100728935450337192542/posts">Google+</a>
+<a href="http://www.youtube.com/channel/UCQkoXaFBn19zFUOs54PCKtQ">YouTube</a>
+</div>
+  		<div id="copyright">
+  			<p>Infoaxe © 2014</p>
+  		</div>
+  	</div>
+  		
+  	<!-- Javascript --> 
+  	
+    
+    <script src="/static/js/util.js"></script>
+    <script src="/static/js/base64.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/js/login/infoaxetk.js"></script>
+    <script src="/static/js/login/script.js"></script>
+    <script src="/static/js/login/loginOptions.js"></script>
+    <script src="/static/js/login/computer.js"></script>
+    <script src="/static/js/login/d3.v2.min.js"></script>
+    
+    
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="http://static.ak.facebook.com/connect/xd_arbiter/V80PAcvrynR.js?version=41#channel=f2b14d9154&amp;origin=http%3A%2F%2Flogin.flipora.com"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter/V80PAcvrynR.js?version=41#channel=f2b14d9154&amp;origin=http%3A%2F%2Flogin.flipora.com"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div></div></div></div></body></html>

@@ -1,0 +1,1487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head profile="http://gmpg.org/xfn/11">
+<!-- Welcome to XDA Developers: Source Code Edition! -->
+<title>Android &amp; Windows Phone: Tablets, Apps, &amp; ROMs @ xda-developers</title>
+
+<!-- ismobile: 0 -->
+<link rel="shortcut icon" href="//cdn-www.xda-developers.com/favicon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<!-- <meta name="viewport" content="width=device-width; initial-scale=1; target-densityDpi=device-dpi" /> -->
+<link rel="stylesheet" type="text/css" href="//cdn-www.xda-developers.com/wp-content/themes/XDA2/style.css">
+<link rel="stylesheet" type="text/css" href="//cdn-www.xda-developers.com/wp-content/themes/XDA2//javascript/thickbox.css">
+<script type="text/javascript" async="" src="//clickcdn.xda-developers.com/api/vglnk.js"></script><script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.K-82P7kx_qg.O/m=plusone/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AItRSTM1UyTV9KHTYH1NU8O2V1XjSrmmqA/cb=gapi.loaded_0" async=""></script><script async="" type="text/javascript" src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/javascript/tabs.js"> </script>
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.xda-developers.com/feed/">
+<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.xda-developers.com/feed/rss/">
+<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.xda-developers.com/feed/atom/">
+<link rel="pingback" href="http://www.xda-developers.com/xmlrpc.php">
+
+<!-- Amazon Script -->
+<script type="text/JavaScript">// <![CDATA[
+var aax_src='1096';
+var amzn_slots = new Array();
+var url = encodeURIComponent(document.location);
+try { url = encodeURIComponent("" + window.top.location); } catch(e) {}
+document.write("<scr"+"ipt src='//aax-us-east.amazon-Adsystem.com/e/dtb/bid?src=" + aax_src + "&u="+url+"&cb=" + Math.round(Math.random()*10000000) + "'></scr"+"ipt>"); 
+document.close();
+// ]]></script><script src="//aax-us-east.amazon-Adsystem.com/e/dtb/bid?src=1096&amp;u=http%3A%2F%2Fwww.xda-developers.com%2F&amp;cb=4412313"></script>
+<script type="text/JavaScript">// <![CDATA[
+/*custom amzn*/
+var a728p1 = 0;
+var a728p2 = 0;
+var a728p3 = 0;
+var a728p4 = 0; 
+var a300p1 = 0;
+var a300p2 = 0;
+var a300p3 = 0;
+var a300p4 = 0;
+
+for (var i in document.amzn_slots) {
+//console.log(document.amzn_slots[i]);
+if(document.amzn_slots[i] == "a728x90p1"){a728p1=1;};
+if(document.amzn_slots[i] == "a728x90p2"){a728p2=1;};
+if(document.amzn_slots[i] == "a728x90p3"){a728p3=1;};
+if(document.amzn_slots[i] == "a728x90p4"){a728p4=1;}; 
+if(document.amzn_slots[i] == "a300x250p1"){a300p1=1;};
+if(document.amzn_slots[i] == "a300x250p2"){a300p2=1;};
+if(document.amzn_slots[i] == "a300x250p3"){a300p3=1;};
+if(document.amzn_slots[i] == "a300x250p4"){a300p4=1;}; 
+}
+// ]]></script>
+<!-- /Amazon Script -->
+
+
+<link rel="stylesheet" id="wpgform-css-css" href="http://cdn-www.xda-developers.com/wp-content/plugins/wpgform/css/wpgform.css?ver=3.9.1" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="http://cdn-www.xda-developers.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.8.1" type="text/css" media="all">
+<link rel="stylesheet" id="wpt-twitter-feed-css" href="http://cdn-www.xda-developers.com/wp-content/plugins/wp-to-twitter/css/twitter-feed.css?ver=3.9.1" type="text/css" media="all">
+<script type="text/javascript" src="//platform.twitter.com/widgets.js?ver=3.9.1"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript">try{jQuery.noConflict();}catch(e){};</script>
+<script type="text/javascript" src="http://cdn-www.xda-developers.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.xda-developers.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://cdn-www.xda-developers.com/wp-includes/wlwmanifest.xml"> 
+
+<!--Plugin WP Missed Schedule 2013.1231.2013 Active - Tag 6707293c0218e2d8b7aa38d418ffa608-->
+
+<!-- This site is patched which an important unfixed problem since WordPress 2.5+ to 3.9+ -->
+
+<link rel="stylesheet" href="http://cdn-www.xda-developers.com/wp-content/plugins/wp-page-numbers/classic/wp-page-numbers.css" type="text/css" media="screen">
+<style type="text/css">
+.wptable {
+	border-width: 1 px;
+	border-color: #E58802;
+	border-style: solid;
+	}
+
+.wptable th {
+	border-width: 1px;
+	border-color: #E58802;
+	background-color: #E58802;
+	border-style: solid;
+}
+
+.wptable td {
+	border-width: 1px;
+	border-color: #E58802;
+	border-style: solid;
+}
+
+.wptable tr.alt {
+ 	background-color: #F4F4EC;
+}
+
+</style>
+
+<!-- All in One SEO Pack 2.1.6 by Michael Torbert of Semper Fi Web Design[268,385] -->
+<link rel="publisher" href="https://plus.google.com/+xda">
+<meta name="description" content="Android and Windows Phone Developers - The Largest Community for Smartphone Hacks and Development of Apps">
+
+<meta name="keywords" content="Android, Windows Mobile, Smartphone, Development, HTC, Apps, G2 Touch, Nexus One, Touch Pro 2, G1, ROM">
+<link rel="next" href="http://www.xda-developers.com/page/2/">
+
+<link rel="canonical" href="http://www.xda-developers.com">
+<!-- /all in one seo pack -->
+
+<!-- WordPress Facebook Open Graph protocol plugin (WPFBOGP v2.0.10) http://rynoweb.com/wordpress-plugins/ -->
+<meta property="fb:admins" content="9336956">
+<meta property="og:url" content="http://www.xda-developers.com">
+<meta property="og:title" content="xda-developers">
+<meta property="og:site_name" content="xda-developers">
+<meta property="og:description" content="Android and Windows Mobile Smartphone Developers Community">
+<meta property="og:type" content="website">
+<meta property="og:image" content="http://cdn-www.xda-developers.com/wp-content/uploads/2014/04/xda-facebook-default.jpg">
+<meta property="og:locale" content="en_us">
+<!-- // end wpfbogp -->
+<script type="text/javascript">
+window.$ = jQuery;
+</script>
+<script async="" type="text/javascript" src="//cdn1.xda-developers.com/clientscript/wp/jquery.bxSlider.min.js"></script>
+<script type="text/javascript" src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/javascript/xda.js"></script>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js" gapi_processed="true">
+  {parsetags: 'explicit'}
+</script>
+<script type="text/javascript" language="JavaScript">
+<!-- Begin
+function go(loc) {
+window.location.href = loc;
+}
+//  End -->
+</script>
+<script async="" type="text/javascript" src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/javascript/thickbox-compressed.js"></script>
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/javascript/selectivizr.js"></script>
+<![endif]-->
+
+<!-- Set up interstitial -->
+<link rel="stylesheet" type="text/css" href="//cdn1.xda-developers.com/clientscript/shadowbox/shadowbox.css">
+<script type="text/javascript" src="//cdn1.xda-developers.com/clientscript/shadowbox/shadowbox.js"></script>
+
+<script type="text/javascript">
+Shadowbox.init({
+   // let's skip the automatic setup because we don't have any
+   // properly configured link elements on the page
+   skipSetup: true
+});
+</script> 
+
+
+
+   <script type="text/javascript">
+        (function() {
+        var useSSL = 'https:' == document.location.protocol;
+        var src = (useSSL ? 'https:' : 'http:') +
+        '//www.googletagservices.com/tag/js/gpt.js';
+        document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+        })();
+    </script><script src="http://www.googletagservices.com/tag/js/gpt.js"></script>
+
+
+       <script type="text/javascript">
+            googletag.cmd.push(function() {
+                                   
+                                        googletag.defineSlot('/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage', [728, 90], 'div-gpt-ad-1860178532283-0').setTargeting('pos','ATF').setTargeting('a728x90p3', a728p3).addService(googletag.pubads());
+        			googletag.defineSlot('/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage', [300, 250], 'div-gpt-ad-1860178532283-2').setTargeting('pos','ATF').addService(googletag.pubads());
+                            
+                                        googletag.defineSlot('/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage', [728, 90], 'div-gpt-ad-1860178532283-3').setTargeting('pos','BTF').setTargeting('a728x90p4', a728p4).addService(googletag.pubads());
+                                        googletag.defineSlot('/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage', [300, 250], 'div-gpt-ad-1860178532283-4').setTargeting('pos','BTF').setTargeting('a300x250p4', a300p4).addService(googletag.pubads());                                    
+                                       
+                                        googletag.defineSlot('/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage', [300, 250], 'div-gpt-ad-1860178532283-7').setTargeting('pos','ITF').setTargeting('a300x250p1', a300p1).addService(googletag.pubads());
+
+// Amex ad
+// googletag.defineSlot('/1259802/IDG_970x250', [[1, 1], [970, 250]], 'div-gpt-ad-1372102562875-0').addService(googletag.pubads());
+
+                                        googletag.defineSlot('/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage',[1,1], 'div-gpt-ad-1363287890054-0-oop').addService(googletag.pubads());
+
+
+googletag.pubads().enableSingleRequest();         
+//googletag.pubads().enableSyncRendering();
+
+
+                googletag.enableServices();
+
+            });
+        </script><script async="" type="text/javascript" src="http://partner.googleadservices.com/gpt/pubads_impl_40.js"></script>
+
+
+
+<script type="text/javascript">
+
+// Amex specific ad fix
+/*
+jQuery(document).ready(function($) {
+		// set a delay to timer
+                var aid = setTimeout(adTimer, 4500);
+                function adTimer() {
+			// detect whether ad has loaded
+        		var adCreative = jQuery('#div-gpt-ad-1372102562875-0').children('div');
+        		if (adCreative) {
+				//if (!navigator.userAgent.match(/MSIE/i))
+                        		var tid = setInterval(adDetect, 300);
+			}
+                }
+		// run this to detect if ad has been collapsed or not
+                function adDetect() {
+                        var adHeight;
+                        var adRect = jQuery('#div-gpt-ad-1372102562875-0').children('div').children('div').children('div').css('clip');
+                        if (adRect) {
+				// this is kind of ugly but only way we can see if ad has been collapsed
+                                var clipNum = adRect.split(" ");
+                                var clipVal = clipNum[2];
+                                if (clipVal == '0px' || clipVal == 'auto' || clipVal == 'auto,') {
+                                        adHeight = '260px';
+                                }
+                                else
+                                        adHeight = '40px';
+				// set the proper height to prevent overlay
+                                document.getElementById('div-gpt-ad-1372102562875-0').style.height = adHeight;
+                        }
+                }      
+});
+*/
+</script>
+
+
+<script async="" type="text/javascript" src="//xdaportal.disqus.com/count.js"></script><script async="" src="http://xdaportal.disqus.com/count-data.js?1=94989%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D94989&amp;1=95189%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95189&amp;1=95192%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95192&amp;1=95196%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95196&amp;1=95205%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95205&amp;1=95236%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95236&amp;1=95247%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95247&amp;1=95257%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95257&amp;1=95268%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95268&amp;1=95286%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95286"></script><script async="" src="http://xdaportal.disqus.com/count-data.js?1=95289%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95289&amp;1=95296%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95296&amp;1=95307%20http%3A%2F%2Fwww.xda-developers.com%2F%3Fp%3D95307"></script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/osd.js"></script></head>
+<body class="home" style="" data-twttr-rendered="true">
+
+
+<!-- BEGIN LOGO -->
+<div class="logoframe">
+	<div class="logoframe2">
+		<div class="leftHeader">
+			<div class="logo">
+				<a href="http://www.xda-developers.com/" title="XDA Developers - Android and Mobile Phone Development News, Resources and Forums"><img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/images/logo.png" alt="XDA Developers" width="235" height="32"></a>
+			</div>
+			<div class="totStats">
+				<ul>
+					<li id="totUsers"><span class="totNum">5,666,813</span><br>REGISTERED</li><li id="totOnline"><span class="totNum">49,238</span><br>ONLINE NOW</li>				</ul>
+			</div>
+		</div>
+		  <div id="headerAd">
+
+<!-- 728x90 ATF -->
+                <div id="div-gpt-ad-1860178532283-0">
+                <script type="text/javascript">
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1860178532283-0'); });
+                </script>
+                <div id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_0__container__" style="border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-color: initial; "><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_0" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_0__hidden__" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_0__hidden__" width="0" height="0" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; visibility: hidden; display: none; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div>
+            <!-- End 728x90 ATF -->
+
+
+
+	</div>
+	</div>
+</div>
+<div class="clear"></div>
+<!-- END LOGO -->
+
+
+<div class="mainMenu">
+	<ul class="menu">
+		<li><a href="http://www.xda-developers.com/" id="menu_home" class="first"><img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/menu_home.png" width="16" height="15"><br><span>HOME</span></a></li>
+		<li><a href="http://forum.xda-developers.com" id="menu_forums" onclick="_gaq.push(['_link','http://forum.xda-developers.com/']); return false;"><img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/menu_forums.png" width="16" height="15"><br><span>FORUMS</span></a></li>
+		<li><a href="http://www.xda-developers.com/xda-tv/" id="menu_xdaTV"><img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/menu_xdatv.png" width="16" height="15"><br><span>XDA TV</span></a></li>
+		<li><a href="http://forum.xda-developers.com/wiki" id="menu_wiki"><img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/menu_wiki.png" width="16" height="15"><br><span>WIKI</span></a></li>
+		<li><a href="http://forum.xda-developers.com/donations.php" id="menu_donate"><img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/menu_donate.png" width="16" height="15"><br><span>DONATE</span></a></li>
+		<li><a href="/suggest-content/" id="menu_phoneTradeIn"><img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/menu_tip-us.png" width="11" height="15"><br><span>TIP US</span></a></li>	
+		<li><a class="last"></a></li>
+<script async="" type="text/javascript" src="//cdn1.xda-developers.com/clientscript/suggest.basic.js"></script>
+
+
+
+
+		<li class="search">
+			<form method="get" id="searchform" action="http://www.xda-developers.com/search.php">
+				<input type="text" value="" name="s" id="s2" class="homeSearch">
+				<input type="submit" class="search-submit" alt="Submit button" value="Search">
+			</form>
+		</li>
+
+                 <li class="devicesearch">
+                        <form action="#">
+                        <input id="s" name="query" class="deviceSearchBox" type="text" value="Find Your Device On Forum..." onfocus="javascript:if(this.value=='Find Your Device On Forum...') {this.value='';}" onblur="javascript:if(this.value=='') {this.value='Find Your Device On Forum...'}; clearSuggest();" onkeyup="suggest(this.value,event);" onkeydown="return tabfix(this.value,event);" autocomplete="off" style="font-weight: bold;">
+                        <div id="icon"></div>
+                        </form>
+                        <p style="display: none"><input class="nodisplayd" type="text" id="keyIndex"></p>
+                        <div id="deviceresults" style="font-size:12px"></div>
+                </li>
+	</ul>
+</div>
+
+<!-- Amex Ad -->
+<!-- IDG_970x250 -->
+<!-- 
+<div id='div-gpt-ad-1372102562875-0' style='margin: 0px auto;width: 970px;clear: both;'>
+<script type='text/javascript'>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1372102562875-0'); });
+</script>
+</div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start BG -->
+
+<div id="bg"><div id="bg-all">
+
+<!-- SHOW FEATURED CONTENT -->
+<div id="features-container">
+<div id="features">
+<div id="featuredposts"><h2>FEATURED POSTS</h2><div class="xda-slider1" style="width:423px; position:relative;"><div class="xda-window" style="height:248px; width:423px; position:relative; overflow:hidden;"><div id="featureContainer" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; ">		<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 99; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/latest-android-platform-stats-show-kitkat-up-to-13-6-honeycomb-gone-gingerdeath-continues/" title="View Latest Android Platform Stats Show KitKat up to 13.6%, Honeycomb Gone, Gingerdeath Continues">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/gingerdeath.png&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Latest Android Platform Stats Show KitKat up to 13...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/apk-youtube-5-7-finally-lets-you-pick-your-stream-resolution/" title="View [APK] YouTube 5.7 Finally Lets You Pick Streaming Resolution">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/res-600x531.jpg&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							[APK] YouTube 5.7 Finally Lets You Pick Streaming ...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/apk-chrome-remote-desktop-36-brings-immersive-mode-google-translate-now-supports-phonetic-input-for-indian-languages-and-hangouts-offers-sms-blocking/" title="View [APK] Chrome Remote Desktop 36 Brings Immersive Mode, Google Translate Now Supports Phonetic Input for Indian Languages, and Hangouts Offers SMS Blocking">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/Screenshot_2014-06-04-16-36-41-600x726.png&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							[APK] Chrome Remote Desktop 36 Brings Immersive Mo...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/android-4-4-3-factory-images-and-driver-binaries-finally-here-for-the-nexus-4-5-7-both-and-10/" title="View Android 4.4.3 Factory Images and Driver Binaries Here for the Nexus 4, 5, 7 (Both), and 10, Source Code Now Live">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/kitkat.png&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Android 4.4.3 Factory Images and Driver Binaries H...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/apple-holding-ios-users-hostage-with-imessage-flaw/" title="View Apple Holding iOS Users Hostage with iMessage Flaw">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/05/cooke.png&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Apple Holding iOS Users Hostage with iMessage Flaw						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+		</div></div></div><div class="featureSelect"><p>More Features: <a href="/opinion/">Opinion</a> | <a href="/xda-tv/">XDA TV</a></p></div></div>		<div class="clear"></div>
+	<a href="javascript:void(0);" id="xdaSlider-prev">Previous</a><a href="javascript:void(0);" id="xdaSlider-next">Next</a></div>
+<div id="features-xda-tv"><h2>XDA DEVELOPER TV</h2><div class="xda-slider1" style="width:423px; position:relative;"><div class="xda-window" style="height:248px; width:423px; position:relative; overflow:hidden;"><div class="featureContainer" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; ">		<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 99; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/android-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv/" title="View Android 4.4.3 Released, Google Unveils Project Tango Tablet Dev Kit, Galaxy Gear Tizen Rooted! - XDA Developer TV">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/Jordan0606.jpg&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Android 4.4.3 Released, Google Unveils Project Tan...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/android-app-review-gallery-plus-xda-developer-tv/" title="View Android App Review: Gallery Plus – XDA Developer TV">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/galleryplus.jpg&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Android App Review: Gallery Plus – XDA Developer...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/portal-and-half-life-2-on-the-nvida-shield-win-an-nvidia-shield-xda-developer-tv/" title="View Portal and Half-Life 2 on the Nvidia SHIELD! Win an Nvidia SHIELD! - XDA Developer TV">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/shieldhl2p2.jpg&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Portal and Half-Life 2 on the Nvidia SHIELD! Win a...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/xda-xposed-tuesday-ok-google-for-3rd-party-launchers-xda-developer-tv/" title="View XDA Xposed Tuesday: ‘Ok Google’ for 3rd Party Launchers – XDA Developer TV">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/okgoogle.jpg&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							XDA Xposed Tuesday: ‘Ok Google’ for 3rd Party ...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+				<div class="feature" style="list-style-type: none; list-style-position: initial; list-style-image: initial; position: absolute; top: 0px; left: 0px; z-index: 98; opacity: 0; ">
+			<div class="fpost-thumb">
+				<a href="http://www.xda-developers.com/android/moto-e-kernel-source-released-razr-mhd-get-kitkat-original-galaxy-gear-gets-tizen-xda-developer-tv/" title="View Moto E Kernel Source Released, Razr M/HD Get KitKat, Original Galaxy Gear Gets Tizen - XDA Developer TV">
+					<img src="//cdn-www.xda-developers.com/wp-content/themes/XDA2/timthumb.php?src=http://www.xda-developers.com/wp-content/uploads/2014/06/Jordan0602.jpg&amp;w=423&amp;h=248">					<div class="fpost-detail">
+						<p>
+							Moto E Kernel Source Released, Razr M/HD Get KitKa...						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		
+		</div></div></div><a href="javascript:void(0);" id="xdaTVSlider-prev">Previous</a><a href="javascript:void(0);" id="xdaTVSlider-next">Next</a></div><div id="features-social">
+  <h2>CONNECT</h2>
+  <ul>
+    <li class="youtube"><a href="http://www.youtube.com/xdadevelopers" target="_blank">Youtube</a></li>
+    <li class="twitter"><a href="https://twitter.com/xdadevelopers" target="_blank">Twitter</a></li>
+    <li class="facebook"><a href="https://www.facebook.com/xda.developers" target="_blank">Facebook</a></li>
+    <li class="google-plus"><a href="https://plus.google.com/+xda/" target="_blank">Google+</a></li>
+  </ul>
+</div>
+</div>
+<script type="text/javascript">
+	xdaTVSlider = $(".featureContainer").bxSlider({mode:"fade",auto:true,wrapperClass:"xda-slider1",pause:5e3,autoHover:true,controls:false}).css({border: 'none', margin: 0});
+	$('<a href="javascript:void(0);" id="xdaTVSlider-prev">Previous</a><a href="javascript:void(0);" id="xdaTVSlider-next">Next</a>').appendTo("#features-xda-tv");
+$("#xdaTVSlider-prev").live("click", function() {
+    xdaTVSlider.stopShow();
+    xdaTVSlider.goToPreviousSlide();
+    xdaTVSlider.startShow();
+});
+$("#xdaTVSlider-next").live("click", function() {
+    xdaTVSlider.stopShow();
+    xdaTVSlider.goToNextSlide();
+    xdaTVSlider.startShow();
+});
+$("#features-xda-tv").hover(function() {
+    $("#xdaTVSlider-prev, #xdaTVSlider-next").stop(false, true).fadeIn(200)
+}, function() {
+    $("#xdaTVSlider-prev, #xdaTVSlider-next").stop(false, true).fadeOut(200)
+});
+</script>
+<!-- Start Container -->
+
+<div class="container">
+
+<!-- END Start Header -->	
+
+<div class="latest">
+	<h2>Latest
+		<span id="fT">Posts▼
+			<div id="featureSelect">
+				<ul>
+					<li><a href="/features/">Features</a></li><li><a href="/opinion/">Opinion</a></li><li><a href="/xda-tv/">XDA TV</a>				</li></ul>
+			</div>
+		</span>
+		<script type="text/javascript">$('.latest #fT').hover(function() {$('#featureSelect').show();}, function() {$('#featureSelect').hide();});</script>
+		<span id="sT">All Posts</span>
+	</h2>
+	<div id="OSSelect">
+		<a href="/category/announcements/" id="OSS-xda" title="XDA Announcements">XDA</a>
+		<a href="/category/android/" id="OSS-android" title="Android">Android</a>
+		<a href="/category/windows_phone/" id="OSS-windows-phone" title="Windows Phone">Windows Phone</a>
+		<!-- <a href="/category/windows-mobile/" id="OSS-windows-mobile" title="Windows Mobile">Windows Mobile</a> -->
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95307 post type-post status-publish format-standard has-post-thumbnail hentry category-android" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/bring-back-the-aosp-browser-on-kitkat-2/" rel="bookmark" title="Permanent Link to Bring Back the AOSP Browser on KitKat without Root">Bring Back the AOSP Browser on KitKat without Root</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 8, 2014 at 6:30 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/bring-back-the-aosp-browser-on-kitkat-2/"><img width="129" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/Screenshot_2014-06-06-01-31-45-129x230.jpg" class="post-thumb wp-post-image" alt="Bring Back the AOSP Browser on KitKat without Root" align="left"></a>
+
+                <p>Chrome Browser has seen quite a few major advancements in its time since it replaced the old (and I do mean “old”) default Android&nbsp;browser. It offers a feature set that essentially rivals its desktop counterpart, and has been given great new functionality such as the ability to <a title="[APK] Chrome 35.0.1916.122 Brings Undo Tab Close and Better Fullscreen Video out of Beta Channel" href="http://www.xda-developers.com/android/apk-chrome-35-0-1916-122-brings-undo-tab-close-and-better-fullscreen-video-out-of-beta/">undo closed tabs</a>, and <a title="Google Chrome Beta Brings Multi-Window Support, Undo Tab Close, and Better Fullscreen Video; Google Keyboard Gets Minor Update" href="http://www.xda-developers.com/android/google-chrome-beta-brings-multi-window-support-undo-tab-close-and-better-fullscreen-video-google-keyboard-gets-minor-update/">much more</a>.</p>
+<p>Despite Chrome for Android’s ever-growing feature set,&nbsp;not everyone is a huge fan. For starters, it doesn’t support the wonderful Pie Controls, which were initially seen in the AOSP browser. Furthermore, it’s a bit more resource intensive so those on slower devices may find it a . . . <a href="http://www.xda-developers.com/android/bring-back-the-aosp-browser-on-kitkat-2/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Bring Back the AOSP Browser on KitKat without Root" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fbring-back-the-aosp-browser-on-kitkat-2%2F" data-rawhref="http://www.xda-developers.com/android/bring-back-the-aosp-browser-on-kitkat-2/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  </li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/bring-back-the-aosp-browser-on-kitkat-2/#disqus_thread" title="Comment on Bring Back the AOSP Browser on KitKat without Root" data-disqus-identifier="95307 http://www.xda-developers.com/?p=95307">6 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95296 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-all-android tag-application" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/vibify-tells-you-when-you-have-new-notifications-when-you-pick-up-your-phone/" rel="bookmark" title="Permanent Link to Vibify Tells You When You Have New Notifications When You Pick Up Your Phone">Vibify Tells You When You Have New Notifications When You Pick Up Your Phone</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 8, 2014 at 2:00 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/vibify-tells-you-when-you-have-new-notifications-when-you-pick-up-your-phone/"><img width="140" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/vf_1-140x230.png" class="post-thumb wp-post-image" alt="Vibify Tells You When You Have New Notifications When You Pick Up Your Phone" align="left"></a>
+
+                <p>Even though most phones nowadays have prominent notification LEDs, it’s not uncommon for us to pick them up&nbsp;and&nbsp;stuff them in our pockets without noticing these&nbsp;sporadic flashes. Often times, we’re either not looking at our devices when grabbing them or are simply too busy thinking about other things to actively check&nbsp;to see whether we have&nbsp;an incoming notification.</p>
+<p>Luckily, there are smart apps available that help us get around this issue.&nbsp;One such app comes from&nbsp;XDA Forum Member&nbsp;<a href="http://forum.xda-developers.com/member.php?u=4241730">spirosbond</a>. Vibify is a&nbsp;vibration smart alert app that lets you know when you have a new notification as soon as you pick up your . . . <a href="http://www.xda-developers.com/android/vibify-tells-you-when-you-have-new-notifications-when-you-pick-up-your-phone/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Vibify Tells You When You Have New Notifications When You Pick Up Your Phone" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fvibify-tells-you-when-you-have-new-notifications-when-you-pick-up-your-phone%2F" data-rawhref="http://www.xda-developers.com/android/vibify-tells-you-when-you-have-new-notifications-when-you-pick-up-your-phone/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/all-android/" rel="tag">All Android</a>, <a href="http://www.xda-developers.com/tag/application/" rel="tag">application</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/vibify-tells-you-when-you-have-new-notifications-when-you-pick-up-your-phone/#disqus_thread" title="Comment on Vibify Tells You When You Have New Notifications When You Pick Up Your Phone" data-disqus-identifier="95296 http://www.xda-developers.com/?p=95296">4 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+<!-- START AD INSERTS -->
+<div class="adholder">
+<div class="inlineAd">
+<span class="inlineAdNotice">Advertisment</span>
+
+<!-- 300x250 ITF -->
+                <div id="div-gpt-ad-1860178532283-7">
+                <script type="text/javascript">
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1860178532283-7'); });
+                </script>
+                <div id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_4__container__" style="border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-color: initial; "><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_4" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_4" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div></div>
+            <!-- End 300x250 ITF -->
+</div>
+</div>
+<div style="clear:both"></div>
+<!-- END AD INSERTS -->
+
+
+		
+<!--Start Post-->
+<div class="post-95289 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-all-android tag-android-studio tag-app-development" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/android-studio-0-6-0-released/" rel="bookmark" title="Permanent Link to Android Studio 0.6.0 Released">Android Studio 0.6.0 Released</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 7, 2014 at 6:00 pm by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/android-studio-0-6-0-released/"><img width="230" height="172" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/proguard-238x179.png" class="post-thumb wp-post-image" alt="Android Studio 0.6.0 Released" align="left"></a>
+
+                <p>The world&nbsp;was <a href="http://www.xda-developers.com/android/google-io-2013-keynote-notes/">first introduced to Android Studio</a> back in&nbsp;May of last year at Google I/O 2013. Based on Jetbrains IntelliJ, the Android Studio IDE was created to streamline the process of&nbsp;developing Android applications by offering features such as live code rendering across multiple device types,&nbsp;as well as the ability to easily add any Android API into your code immediately.</p>
+<p>Since its release, we’ve seen Android Studio&nbsp;mature into a genuinely useful tool for app developers. The last time we talked about it was back in August of last year with its<a href="http://www.xda-developers.com/android/android-studio-0-2-4-released-improvements-for-app-devs/"> update to version 0.2.4</a>.&nbsp;This version ushered in&nbsp;various improvements such . . . <a href="http://www.xda-developers.com/android/android-studio-0-6-0-released/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Android Studio 0.6.0 Released" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fandroid-studio-0-6-0-released%2F" data-rawhref="http://www.xda-developers.com/android/android-studio-0-6-0-released/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/all-android/" rel="tag">All Android</a>, <a href="http://www.xda-developers.com/tag/android-studio/" rel="tag">android studio</a>, <a href="http://www.xda-developers.com/tag/app-development/" rel="tag">app development</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/android-studio-0-6-0-released/#disqus_thread" title="Comment on Android Studio 0.6.0 Released" data-disqus-identifier="95289 http://www.xda-developers.com/?p=95289">6 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95286 post type-post status-publish format-standard has-post-thumbnail hentry category-announcements tag-htc-one-e8 tag-samsung-galaxy-note-3 tag-samsung-galaxy-s-4 tag-samsung-galaxy-s-5 tag-sony-xperia-t3" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/announcements/forums-added-for-the-htc-one-e8-and-xperia-t3-new-unified-development-forums-for-certain-samsung-devices/" rel="bookmark" title="Permanent Link to Forums Added for the HTC One E8 and Xperia T3, New Unified Development Forums for Certain Samsung Devices">Forums Added for the HTC One E8 and Xperia T3, New Unified Development Forums for Certain Samsung Devices</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 7, 2014 at 2:30 pm by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/announcements/forums-added-for-the-htc-one-e8-and-xperia-t3-new-unified-development-forums-for-certain-samsung-devices/"><img width="230" height="156" src="http://cdn-www.xda-developers.com/wp-content/uploads/2013/08/XDA_Articles-238x162.jpg" class="post-thumb wp-post-image" alt="Forums Added for the HTC One E8 and Xperia T3, New Unified Development Forums for Certain Samsung Devices" align="left"></a>
+
+                <p>We recently added new forums here on XDA for two recently announced&nbsp;and highly anticipated&nbsp;devices. The new devices are the <a href="http://forum.xda-developers.com/one-e8">HTC One E8</a>, which is set to be released later this month, and the <a href="http://forum.xda-developers.com/xperia-t3">Sony Xperia T3</a>, which will come at some point in Q3. While we were at it, we also changed a few things to make it easier for developers to post&nbsp;and maintain cross-device variant builds for several Samsung devices.</p>
+<p>First up, we have the <a href="http://forum.xda-developers.com/one-e8">HTC One E8</a>.&nbsp;<span style="color: #222225;">The E8 is a lower priced version of the <a href="http://forum.xda-developers.com/htc-one-m8">HTC One M8</a> flagship device. The E8 retains most </span>. . . <a href="http://www.xda-developers.com/announcements/forums-added-for-the-htc-one-e8-and-xperia-t3-new-unified-development-forums-for-certain-samsung-devices/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Forums Added for the HTC One E8 and Xperia T3, New Unified Development Forums for Certain Samsung Devices" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fannouncements%2Fforums-added-for-the-htc-one-e8-and-xperia-t3-new-unified-development-forums-for-certain-samsung-devices%2F" data-rawhref="http://www.xda-developers.com/announcements/forums-added-for-the-htc-one-e8-and-xperia-t3-new-unified-development-forums-for-certain-samsung-devices/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/htc-one-e8/" rel="tag">HTC One E8</a>, <a href="http://www.xda-developers.com/tag/samsung-galaxy-note-3/" rel="tag">Samsung Galaxy Note 3</a>, <a href="http://www.xda-developers.com/tag/samsung-galaxy-s-4/" rel="tag">Samsung Galaxy S 4</a>, <a href="http://www.xda-developers.com/tag/samsung-galaxy-s-5/" rel="tag">Samsung Galaxy S 5</a>. . .</li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/announcements/forums-added-for-the-htc-one-e8-and-xperia-t3-new-unified-development-forums-for-certain-samsung-devices/#disqus_thread" title="Comment on Forums Added for the HTC One E8 and Xperia T3, New Unified Development Forums for Certain Samsung Devices" data-disqus-identifier="95286 http://www.xda-developers.com/?p=95286">10 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-94989 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-all-android tag-app-development tag-library" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/add-rss-functionality-to-your-app-with-a-simple-library/" rel="bookmark" title="Permanent Link to Add RSS Functionality to Your App with a Simple Library">Add RSS Functionality to Your App with a Simple Library</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 7, 2014 at 11:00 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/eagleeyetom/" title="Posts by eagleeyetom" rel="author">eagleeyetom</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/add-rss-functionality-to-your-app-with-a-simple-library/"><img width="230" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/rssicon1-230x230.png" class="post-thumb wp-post-image" alt="Add RSS Functionality to Your App with a Simple Library" align="left"></a>
+
+                <p lang="en-US">Mobile devices have become replacements for full sized PCs in a variety of circumstances. Small and easily accessible, our phones are perfect companions for&nbsp;our daily activities. However,&nbsp;mobile network connections aren’t always affordable, and often times, data transfer quotas prove problematic.&nbsp;Because of this, RSS is quite popular on mobile devices.</p>
+<p lang="en-US">If you were to try to create a good RSS reader app from scratch, you’d likely find that this is a difficult task. However,&nbsp;XDA Forum Member <a href="http://forum.xda-developers.com/member.php?u=5397081">shirwa</a>&nbsp;decided to make things a bit easier by providing a small, but useful library to bring RSS into your app.</p>
+<p lang="en-US">This RSS library lists&nbsp;all . . . <a href="http://www.xda-developers.com/android/add-rss-functionality-to-your-app-with-a-simple-library/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Add RSS Functionality to Your App with a Simple Library" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fadd-rss-functionality-to-your-app-with-a-simple-library%2F" data-rawhref="http://www.xda-developers.com/android/add-rss-functionality-to-your-app-with-a-simple-library/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/all-android/" rel="tag">All Android</a>, <a href="http://www.xda-developers.com/tag/app-development/" rel="tag">app development</a>, <a href="http://www.xda-developers.com/tag/library/" rel="tag">library</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/add-rss-functionality-to-your-app-with-a-simple-library/#disqus_thread" title="Comment on Add RSS Functionality to Your App with a Simple Library" data-disqus-identifier="94989 http://www.xda-developers.com/?p=94989">1 Comment</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95192 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-android-4-1-4-3-jelly-bean tag-android-4-4-kitkat tag-application" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/hangar-manages-your-applications-with-ease/" rel="bookmark" title="Permanent Link to Hangar Manages Your Applications with Ease">Hangar Manages Your Applications with Ease</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 7, 2014 at 7:30 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/eagleeyetom/" title="Posts by eagleeyetom" rel="author">eagleeyetom</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/hangar-manages-your-applications-with-ease/"><img width="230" height="135" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/Hangar_notif_widgets_x400-238x140.png" class="post-thumb wp-post-image" alt="Hangar Manages Your Applications with Ease" align="left"></a>
+
+                <p lang="en-US">In the real world, a&nbsp;hangar is a closed structure that’s generally used to hold aircraft or spacecraft in protective storage. We don’t really have jets and airplanes in Android–at least, not real life ones—but that’s not to say that a hangar is out of place on our mobile devices.&nbsp;A new app that goes by the name&nbsp;Hangar allows us to&nbsp;keep our home&nbsp;screens uncluttered by managing our favorite apps.</p>
+<p lang="en-US">Hangar by XDA Recognized Developer <a href="http://forum.xda-developers.com/member.php?u=2637227">blk_jack</a>&nbsp;provides&nbsp;access&nbsp;to your most frequently used apps. You can access your apps and switch between them from anywhere, without minimizing anything. If you like to keep your home . . . <a href="http://www.xda-developers.com/android/hangar-manages-your-applications-with-ease/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Hangar Manages Your Applications with Ease" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fhangar-manages-your-applications-with-ease%2F" data-rawhref="http://www.xda-developers.com/android/hangar-manages-your-applications-with-ease/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/android-4-1-4-3-jelly-bean/" rel="tag">Android 4.1-4.3 (Jelly Bean)</a>, <a href="http://www.xda-developers.com/tag/android-4-4-kitkat/" rel="tag">Android 4.4 KitKat</a>, <a href="http://www.xda-developers.com/tag/application/" rel="tag">application</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/hangar-manages-your-applications-with-ease/#disqus_thread" title="Comment on Hangar Manages Your Applications with Ease" data-disqus-identifier="95192 http://www.xda-developers.com/?p=95192">2 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95189 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-all-android tag-application" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/floata-lets-you-tweet-from-any-app/" rel="bookmark" title="Permanent Link to Floata Lets You Tweet from Any App">Floata Lets You Tweet from Any App</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 7, 2014 at 3:00 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/eagleeyetom/" title="Posts by eagleeyetom" rel="author">eagleeyetom</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/floata-lets-you-tweet-from-any-app/"><img width="130" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/unnamed1-130x230.png" class="post-thumb wp-post-image" alt="Floata Lets You Tweet from Any App" align="left"></a>
+
+                <p lang="en-US">When talking about social networks, three major players come to mind. For most people, these are&nbsp;Facebook, Google+, and Twitter. Facebook’s official messaging client includes&nbsp;floating chat heads, and the result is quite nice looking and easy to use. This allows you to stay apprised of notifications&nbsp;while you have your main client hidden away in the background.&nbsp;If you’d like to have a similar effect with Twitter, Floata by&nbsp;XDA Senior Member <a href="http://forum.xda-developers.com/member.php?u=4954352">mohamedrashad</a> might be useful for you.</p>
+<p lang="en-US">Floata is a Twitter client that uses floating technology. You may recall that a few weeks ago <a href="http://www.xda-developers.com/android/tweet-balloon-is-facebook-chatheads-for-twitter/">we talked about Tweet Balloon</a>. Floata is quite . . . <a href="http://www.xda-developers.com/android/floata-lets-you-tweet-from-any-app/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Floata Lets You Tweet from Any App" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Ffloata-lets-you-tweet-from-any-app%2F" data-rawhref="http://www.xda-developers.com/android/floata-lets-you-tweet-from-any-app/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/all-android/" rel="tag">All Android</a>, <a href="http://www.xda-developers.com/tag/application/" rel="tag">application</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/floata-lets-you-tweet-from-any-app/#disqus_thread" title="Comment on Floata Lets You Tweet from Any App" data-disqus-identifier="95189 http://www.xda-developers.com/?p=95189">6 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95268 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-android-4-4-kitkat tag-moto-g" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/ota-captured-moto-g-now-receiving-android-4-4-3-as-well/" rel="bookmark" title="Permanent Link to [OTA Captured] Moto G Now Receiving Android 4.4.3 as Well!">[OTA Captured] Moto G Now Receiving Android 4.4.3 as Well!</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 6, 2014 at 10:30 pm by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/ota-captured-moto-g-now-receiving-android-4-4-3-as-well/"><img width="129" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/original-129x230.jpg" class="post-thumb wp-post-image" alt="[OTA Captured] Moto G Now Receiving Android 4.4.3 as Well!" align="left"></a>
+
+                <p>Back on Tuesday, Motorola let us know that they would start rolling out Android 4.4.3 updates to their “Moto” line of devices some time this week. Naturally the flagship Moto X was the first to receive the update goods with an update earlier today.&nbsp;But now, we’ve gotten word that the&nbsp;<a href="http://forum.xda-developers.com/moto-g">Moto G</a>&nbsp;is also in on the 4.4.3 action with an update of its own.</p>
+<p>The update comes in the form of a 169 MB incremental OTA, and it brings the device up to system version 210.12.32.falcon_umts. The update itself appears to be rolling out to users in various regions . . . <a href="http://www.xda-developers.com/android/ota-captured-moto-g-now-receiving-android-4-4-3-as-well/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="[OTA Captured] Moto G Now Receiving Android 4.4.3 as Well!" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fota-captured-moto-g-now-receiving-android-4-4-3-as-well%2F" data-rawhref="http://www.xda-developers.com/android/ota-captured-moto-g-now-receiving-android-4-4-3-as-well/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/android-4-4-kitkat/" rel="tag">Android 4.4 KitKat</a>, <a href="http://www.xda-developers.com/tag/moto-g/" rel="tag">Moto G</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/ota-captured-moto-g-now-receiving-android-4-4-3-as-well/#disqus_thread" title="Comment on [OTA Captured] Moto G Now Receiving Android 4.4.3 as Well!" data-disqus-identifier="95268 http://www.xda-developers.com/?p=95268">12 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95257 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-android-4-4-kitkat tag-moto-x" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/ota-captured-android-4-4-3-now-rolling-out-to-the-unlocked-t-mobile-and-certain-regional-variants-of-the-moto-x/" rel="bookmark" title="Permanent Link to [OTA Captured] Android 4.4.3 Now Rolling out to Unlocked, T-Mobile, and Certain Regional Variants of the Moto X">[OTA Captured] Android 4.4.3 Now Rolling out to Unlocked, T-Mobile, and Certain Regional Variants of the Moto X</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 6, 2014 at 7:00 pm by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/ota-captured-android-4-4-3-now-rolling-out-to-the-unlocked-t-mobile-and-certain-regional-variants-of-the-moto-x/"><img width="129" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/1401912392713-129x230.jpg" class="post-thumb wp-post-image" alt="[OTA Captured] Android 4.4.3 Now Rolling out to Unlocked, T-Mobile, and Certain Regional Variants of the Moto X" align="left"></a>
+
+                <p>What a week this has been for Android firmware updates! Just one day after <a title="Android 4.4.3 Factory Images and Driver Binaries Here for the Nexus 4, 5, 7 (Both), and 10, Source Code Now Live" href="http://www.xda-developers.com/android/android-4-4-3-factory-images-and-driver-binaries-finally-here-for-the-nexus-4-5-7-both-and-10/">Android 4.4.3 was officially released</a>, Motorola <a title="Android 4.4.3 Rolling Out to Moto X, E, and G Starting Today!" href="http://www.xda-developers.com/android/android-4-4-3-rolling-out-to-moto-x-e-and-g-starting-today/">announced that it would&nbsp;begin rolling out Android 4.4.3</a> to the&nbsp;<a href="http://forum.xda-developers.com/moto-x">Moto X</a>,&nbsp;<a href="http://forum.xda-developers.com/moto-g">Moto G</a>, and&nbsp;<a href="http://forum.xda-developers.com/moto-e">Moto E</a>&nbsp;starting this week. Well folks, that time is now here, and the Moto X is officially the first non-Nexus/GPe device to receive Android 4.4.3.</p>
+<p>The Android 4.4.3 update for the Moto X first started making its way out to the unlocked GSM Moto X (XT1053) early&nbsp;Wednesday morning, just one day after Motorola’s initial announcement. This software update comes in at . . . <a href="http://www.xda-developers.com/android/ota-captured-android-4-4-3-now-rolling-out-to-the-unlocked-t-mobile-and-certain-regional-variants-of-the-moto-x/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="[OTA Captured] Android 4.4.3 Now Rolling out to Unlocked, T-Mobile, and Certain Regional Variants of the Moto X" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fota-captured-android-4-4-3-now-rolling-out-to-the-unlocked-t-mobile-and-certain-regional-variants-of-the-moto-x%2F" data-rawhref="http://www.xda-developers.com/android/ota-captured-android-4-4-3-now-rolling-out-to-the-unlocked-t-mobile-and-certain-regional-variants-of-the-moto-x/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/android-4-4-kitkat/" rel="tag">Android 4.4 KitKat</a>, <a href="http://www.xda-developers.com/tag/moto-x/" rel="tag">Moto X</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/ota-captured-android-4-4-3-now-rolling-out-to-the-unlocked-t-mobile-and-certain-regional-variants-of-the-moto-x/#disqus_thread" title="Comment on [OTA Captured] Android 4.4.3 Now Rolling out to Unlocked, T-Mobile, and Certain Regional Variants of the Moto X" data-disqus-identifier="95257 http://www.xda-developers.com/?p=95257">11 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95247 post type-post status-publish format-standard has-post-thumbnail hentry category-android" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/ota-captured-kitkat-finally-lands-on-international-razr-hd-xt925/" rel="bookmark" title="Permanent Link to [OTA Captured] KitKat Finally Lands on International Razr HD XT925">[OTA Captured] KitKat Finally Lands on International Razr HD XT925</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 6, 2014 at 5:00 pm by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/willverduzco/" title="Posts by Will Verduzco" rel="author">Will Verduzco</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/ota-captured-kitkat-finally-lands-on-international-razr-hd-xt925/"><img width="129" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/assc-129x230.png" class="post-thumb wp-post-image" alt="[OTA Captured] KitKat Finally Lands on International Razr HD XT925" align="left"></a>
+
+                <p>You may recall that just&nbsp;under a month ago, the Verizon&nbsp;<a href="http://forum.xda-developers.com/droid-razr-hd">Droid RAZR HD</a>&nbsp;XT926&nbsp;received a <a href="http://www.xda-developers.com/android/ota-captured-kitkat-soak-test-now-live-for-the-droid-razr-hd/">KitKat soak test</a> that allowed users on America’s largest carrier to get an early access taste of Android 4.4.2 on the former flagship device. The soak test apparently went very well because just two days later, the <a href="http://www.xda-developers.com/android/ota-captured-droid-razr-hd-kitkat-goes-from-soak-test-to-full-release-razr-m-also-receives-update/">official OTA went live</a>.</p>
+<p>Unfortunately, as we noted in the previous articles linked above, these updates were only for the Verizon-branded XT926 model. As such, they were incompatible with the international XT925 model. Understandably, this left many XT925 owners feeling left out and wondering when they’d get . . . <a href="http://www.xda-developers.com/android/ota-captured-kitkat-finally-lands-on-international-razr-hd-xt925/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="[OTA Captured] KitKat Finally Lands on International Razr HD XT925" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fota-captured-kitkat-finally-lands-on-international-razr-hd-xt925%2F" data-rawhref="http://www.xda-developers.com/android/ota-captured-kitkat-finally-lands-on-international-razr-hd-xt925/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  </li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/ota-captured-kitkat-finally-lands-on-international-razr-hd-xt925/#disqus_thread" title="Comment on [OTA Captured] KitKat Finally Lands on International Razr HD XT925" data-disqus-identifier="95247 http://www.xda-developers.com/?p=95247">1 Comment</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95236 post type-post status-publish format-standard has-post-thumbnail hentry category-android category-developments tag-android-4-4-kitkat tag-omnirom tag-oneplus-one" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/android-4-4-3-based-omnirom-test-build-for-the-oneplus-one/" rel="bookmark" title="Permanent Link to Android 4.4.3-Based OmniROM Unofficial Build for the OnePlus One">Android 4.4.3-Based OmniROM Unofficial Build for the OnePlus One</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 6, 2014 at 2:00 pm by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/lady-android/" title="Posts by Lady Android" rel="author">Lady Android</a></strong></span></span>
+</div>
+
+		<div class="post-difficulty">
+			<div class="diff-label">Difficulty:</div><div class="post-diff-score-1">1</div>
+			<div class="diff-explain">
+				<a href="http://www.xda-developers.com/what-does-the-difficulty-rating-mean/?KeepThis=true&amp;TB_iframe=true&amp;height=400&amp;width=400" class="thickbox">
+					<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/questionMark.png">
+				</a>
+			</div>
+		</div></div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/android-4-4-3-based-omnirom-test-build-for-the-oneplus-one/"><img width="226" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/01-226x230.jpg" class="post-thumb wp-post-image" alt="Android 4.4.3-Based OmniROM Unofficial Build for the OnePlus One" align="left"></a>
+
+                <p>Quite often when any new phone is released, we at XDA wonder if &nbsp;and when we’ll be able to install a custom ROM. But&nbsp;with the <a href="http://forum.xda-developers.com/oneplus-one">OnePlus One</a>&nbsp; delivering&nbsp;CyanogenMod 11s out of the box, it was more than likely this device would have custom firmwares available quickly. Today, we are seeing just that. Not long after the first devices hit their buyers’ doorsteps, an early unofficial&nbsp;build of OmniROM was&nbsp;released.</p>
+<p>Keen observers will be quick to note that the device shipped with&nbsp;Android 4.4.2. However, this unofficial&nbsp;build includes the Android 4.4.3, which <a title="Android 4.4.3 Factory Images and Driver Binaries Here for the Nexus 4, 5, 7 (Both), and 10, Source Code Now Live" href="http://www.xda-developers.com/android/android-4-4-3-factory-images-and-driver-binaries-finally-here-for-the-nexus-4-5-7-both-and-10/">released by Google earlier this week</a> and <a title="Today’s OmniROM Nightlies Now Based on Android 4.4.3" href="http://www.xda-developers.com/android/todays-omnirom-nightlies-now-based-on-android-4-4-3/">merged into OmniROM </a>. . . <a href="http://www.xda-developers.com/android/android-4-4-3-based-omnirom-test-build-for-the-oneplus-one/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Android 4.4.3-Based OmniROM Unofficial Build for the OnePlus One" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fandroid-4-4-3-based-omnirom-test-build-for-the-oneplus-one%2F" data-rawhref="http://www.xda-developers.com/android/android-4-4-3-based-omnirom-test-build-for-the-oneplus-one/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/android-4-4-kitkat/" rel="tag">Android 4.4 KitKat</a>, <a href="http://www.xda-developers.com/tag/omnirom/" rel="tag">OmniROM</a>, <a href="http://www.xda-developers.com/tag/oneplus-one/" rel="tag">OnePlus One</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/android-4-4-3-based-omnirom-test-build-for-the-oneplus-one/#disqus_thread" title="Comment on Android 4.4.3-Based OmniROM Unofficial Build for the OnePlus One" data-disqus-identifier="95236 http://www.xda-developers.com/?p=95236">15 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95196 post type-post status-publish format-standard has-post-thumbnail hentry category-android tag-all-android tag-security" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/building-an-android-app-protect-your-users-private-application-data/" rel="bookmark" title="Permanent Link to Building an Android App? Protect Your User’s Private Application Data">Building an Android App? Protect Your User’s Private Application Data</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 6, 2014 at 11:00 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/eagleeyetom/" title="Posts by eagleeyetom" rel="author">eagleeyetom</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/building-an-android-app-protect-your-users-private-application-data/"><img width="229" height="230" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/encryption-229x230.jpg" class="post-thumb wp-post-image" alt="Building an Android App? Protect Your User’s Private Application Data" align="left"></a>
+
+                <p lang="en-US">A good developer is&nbsp;always concerned about the security of his/her users. Revealing your app’s private data to the public is generally a bad&nbsp;thing, and should almost always be avoided. As such, there are various ways to strengthen your app’s&nbsp;privacy, and every new method should be evaluated.&nbsp;Privacy protection is especially important with Android applications, as there are frequent reports of&nbsp;app-related&nbsp;phishing and similar shady activities.</p>
+<p lang="en-US">You application’s private data can now be stored a bit safer, thanks to XDA Forum Moderator <a href="http://forum.xda-developers.com/member.php?u=4184142">Jonny</a>. He provides a&nbsp;Java class that protects your app’s&nbsp;data using the&nbsp;SHA-512 hashing algorithm to convert a string into a raw . . . <a href="http://www.xda-developers.com/android/building-an-android-app-protect-your-users-private-application-data/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Building an Android App? Protect Your User’s Private Application Data" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fbuilding-an-android-app-protect-your-users-private-application-data%2F" data-rawhref="http://www.xda-developers.com/android/building-an-android-app-protect-your-users-private-application-data/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/all-android/" rel="tag">All Android</a>, <a href="http://www.xda-developers.com/tag/security/" rel="tag">security</a></li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/building-an-android-app-protect-your-users-private-application-data/#disqus_thread" title="Comment on Building an Android App? Protect Your User’s Private Application Data" data-disqus-identifier="95196 http://www.xda-developers.com/?p=95196">2 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+		
+
+
+
+		
+<!--Start Post-->
+<div class="post-95205 post type-post status-publish format-standard has-post-thumbnail hentry category-android category-xda-tv-2 tag-all-android tag-android-4-4-kitkat tag-google-play-edition tag-google-project-tango tag-nvidia-tegra-k1 tag-omnirom tag-samsung-galaxy-gear tag-tizen tag-xdatv" style="margin-bottom: 10px;">
+
+  
+    			
+<div class="p-head">
+<h2 class="title"><a href="http://www.xda-developers.com/android/android-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv/" rel="bookmark" title="Permanent Link to Android 4.4.3 Released, Google Unveils Project Tango Tablet Dev Kit, Galaxy Gear Tizen Rooted! – XDA Developer TV">Android 4.4.3 Released, Google Unveils Project Tango Tablet Dev Kit, Galaxy Gear Tizen Rooted! – XDA Developer TV</a></h2>
+<div class="metadata">
+	<span class="content">Posted June 6, 2014 at 8:00 am by <span class="p-date"><strong><a href="http://www.xda-developers.com/author/jimmymcgee/" title="Posts by Jimmy McGee" rel="author">Jimmy McGee</a></strong></span></span>
+</div>
+</div>
+
+
+<div class="p-con">
+
+<a href="http://www.xda-developers.com/android/android-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv/"><img width="230" height="128" src="http://cdn-www.xda-developers.com/wp-content/uploads/2014/06/Jordan0606-238x133.jpg" class="post-thumb wp-post-image" alt="Android 4.4.3 Released, Google Unveils Project Tango Tablet Dev Kit, Galaxy Gear Tizen Rooted! – XDA Developer TV" align="left"></a>
+
+                <p><a title="[OTA Captured] Android 4.4.3 OTA Now Live for the Nexus 5!" href="http://www.xda-developers.com/android/ota-captured-android-4-4-3-ota-now-live-for-the-nexus-5/">Android KitKat 4.4.3 has been released for the Nexus 5</a> and <a title="Android 4.4.3 Factory Images and Driver Binaries Here for the Nexus 4, 5, 7 (Both), and 10, Source Code Now Live" href="http://www.xda-developers.com/android/android-4-4-3-factory-images-and-driver-binaries-finally-here-for-the-nexus-4-5-7-both-and-10/">many more Nexus devices</a>! That and much more news is covered by Jordan, as he reviews all the important stories from this week. Included in this week’s news is the announcement that&nbsp;<a title="Today’s OmniROM Nightlies Now Based on Android 4.4.3" href="http://www.xda-developers.com/android/todays-omnirom-nightlies-now-based-on-android-4-4-3/">OmniROM nightlies are now based on Android 4.4.3</a> and Google announced a new <a title="Google Unveils $1024 Project Tango Tablet Development Kit" href="http://www.xda-developers.com/android/google-unveils-the-1024-project-tango-tablet-development-kit/">Project Tango tablet</a>! That’s not all that’s covered in today’s video!</p>
+<p>Jordan talks about the other videos released this week on <a title="XDA Developer TV Videos" href="http://www.xda-developers.com/xda-tv/" target="_blank">XDA Developer TV</a>. XDA Developer TV Producer TK released an <a title="Xposed Tuesday Tag" href="http://www.xda-developers.com/tag/xposed-tuesday/" target="_blank">Xposed Tuesday</a>&nbsp;video for <a title="XDA Xposed Tuesday: ‘Ok Google’ for 3rd Party Launchers – XDA Developer TV" href="http://www.xda-developers.com/android/xda-xposed-tuesday-ok-google-for-3rd-party-launchers-xda-developer-tv/">OK Google for 3rd Party Launchers</a>. . . <a href="http://www.xda-developers.com/android/android-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv/" class="read-more">READ ON <span>»</span></a></p>
+<div class="clear"></div>
+</div>
+
+<div class="p-det">
+  <div class="socialBar" data-title="Android 4.4.3 Released, Google Unveils Project Tango Tablet Dev Kit, Galaxy Gear Tizen Rooted! – XDA Developer TV" data-href="http%3A%2F%2Fwww.xda-developers.com%2Fandroid%2Fandroid-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv%2F" data-rawhref="http://www.xda-developers.com/android/android-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv/">
+	<img src="http://cdn-www.xda-developers.com/wp-content/themes/XDA2/images/socialBar.png">
+  </div>
+ <ul>
+  <li>
+  <span class="for-the">TAGS: </span>
+  <a href="http://www.xda-developers.com/tag/all-android/" rel="tag">All Android</a>, <a href="http://www.xda-developers.com/tag/android-4-4-kitkat/" rel="tag">Android 4.4 KitKat</a>, <a href="http://www.xda-developers.com/tag/google-play-edition/" rel="tag">Google Play edition</a>, <a href="http://www.xda-developers.com/tag/google-project-tango/" rel="tag">Google Project Tango</a>. . .</li>
+
+  <li class="p-det-com"><a href="http://www.xda-developers.com/android/android-4-4-3-released-google-unveils-project-tango-tablet-dev-kit-galaxy-gear-tizen-rooted-xda-developer-tv/#disqus_thread" title="Comment on Android 4.4.3 Released, Google Unveils Project Tango Tablet Dev Kit, Galaxy Gear Tizen Rooted! – XDA Developer TV" data-disqus-identifier="95205 http://www.xda-developers.com/?p=95205">2 Comments</a></li>
+</ul>
+</div>
+<!-- /p-det -->
+
+<!-- /post -->
+</div>
+<!--End Post-->
+	
+				
+    <script type="text/javascript">
+    // <![CDATA[
+        var disqus_shortname = 'xdaportal';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('rel'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    //]]>
+    </script>
+<div class="nav">
+ 	<div class="left"></div>
+ 	<!--<div class="pagenav"></div>-->
+ 	<div class="right"><a href="http://www.xda-developers.com/page/2/">Older Entries</a></div>
+</div>
+</div>
+<div class="SR" style="position: relative; top: -40px;">
+
+
+<div class="sidebarAd">
+<span class="sidebarAdNotice">Advertisement</span>
+
+
+<!-- 300x600 ATF -->
+                <div id="div-gpt-ad-1860178532283-2">
+                <script type="text/javascript">
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1860178532283-2'); });
+                </script>
+                <div id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_1__container__" style="border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-color: initial; "><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_1" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_1" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div></div>
+            <!-- End 300x600 ATF -->
+                    <!-- End ATF ad units -->
+
+</div>
+
+<!-- Start VB Widget -->
+<div id="vB-widget" class="widget">
+    <script type="text/javascript" src="http://forum.xda-developers.com/wp-vb/widget/index.php"></script><h3>XDA Forums&nbsp;<span id="vB-sT">Private Messages</span></h3><div class="widget_body"><script type="text/javascript" src="//cdn2.xda-developers.com/clientscript/vbulletin_md5.js"></script><script type="text/javascript">$('#vB-sT').text('Log In');</script><p>Please log in to access your XDA forum features.</p><form action="http://forum.xda-developers.com/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)"><input type="text" onblur="if (this.value == '') this.value = 'USERNAME';" name="vb_login_username" id="vb_login_username" size="10" value="USERNAME" onfocus="if (this.value == 'USERNAME') this.value = '';"><input type="password" onfocus="if (this.value == 'PASSWORD') this.value = '';" onblur="if (this.value == '') this.value = 'PASSWORD';" name="vb_login_password" id="vb_login_password" size="10" value="PASSWORD"><input id="vb_login_submit" type="submit" class="button" value="Log in"><input type="hidden" name="s" value=""><input type="hidden" name="securitytoken" value="guest"><input type="hidden" name="do" value="login"><input type="hidden" name="vb_login_md5password"><input type="hidden" name="vb_login_md5password_utf"><input type="hidden" name="url" value="http://www.xda-developers.com/"></form></div>
+    <noscript>You must have JavaScript enabled to use the XDA Forum widget.</noscript>
+</div>
+<!-- End VB Widget -->
+
+<!-- START Top Threads -->
+<!--
+<div id="top_threads" class="widget">
+    <div class="widget_head">
+        <h2>Popular Threads</h2>
+    </div>
+    <ul>
+            </ul>
+</div>
+-->
+<!-- END Top Threads -->
+
+<div class="widget" id="xda-tv">
+    <div class="widget_head">
+        <h2>XDA TV: Most Recent Video</h2>
+    </div>
+    <div class="widget_body">
+    <script type="text/javascript">
+    function wp_youtube_gallery_post_page(data) {
+    	var feed = data.feed;
+    	var entries = feed.entry || [];
+    	var html = [];
+    	for (var i = 0; i < entries.length; i++) {
+    		// Parse out YouTube entry data
+    		var entry = entries[i];
+    		var title = entry.title.$t;
+    		var width = "344";
+    		var height = "208.85714285714";
+    		var showtitle = "No";
+    		var titledisplay = '';
+    		if(showtitle == "Yes") {
+    		  titledisplay = "<h4>" + title + "</h4>";
+        } else {
+          titledisplay = "";
+        }
+    		var playerUrl = entries[i].media$group.media$content[0].url;
+    		  	
+    		html.push( "<div class=\"wp_youtube_gallery\">", titledisplay ,"\n",
+    		           "<object width='" , width , "' height='" , height , "'><param name='movie' value='" , playerUrl , "&hl=en&fx=1&'></param><param name='allowFullScreen' value='true'></param><param name='allowscriptaccess' value='always'></param><embed src='" , playerUrl , "&hl=en&fs=1&' type='application/x-shockwave-flash' allowscriptaccess='always' allowfullscreen='true' width='" , width , "' height='" , height , "'></embed></object></div><p></p>" );
+    		}
+    	document.getElementById('videos_on_post_95205').innerHTML = html.join('');
+    	} 
+    </script>
+    <div id="videos_on_post_95205"><div class="wp_youtube_gallery">
+<object width="344" height="208.85714285714"><param name="movie" value="http://www.youtube.com/v/qM5y2NA-3xY?version=3&amp;f=user_uploads&amp;app=youtube_gdata&amp;hl=en&amp;fx=1&amp;"><param name="allowFullScreen" value="true"><param name="allowscriptaccess" value="always"><embed src="http://www.youtube.com/v/qM5y2NA-3xY?version=3&amp;f=user_uploads&amp;app=youtube_gdata&amp;hl=en&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="344" height="208.85714285714"></object></div><p></p></div> 
+    <script type="text/javascript" src="http://gdata.youtube.com/feeds/users/xdadevelopers/uploads?alt=json-in-script&amp;max-results=1&amp;callback=wp_youtube_gallery_post_page">
+    </script>    </div>
+</div>
+
+<!-- Start Top Threads/Top Members -->
+<!--
+<div class="widget">
+    <h3>Popular Forums</h3>
+    <ul>
+            </ul>
+</div>
+-->
+<!-- END Top Threads/Top Members -->
+
+<div class="hosted_by" style="margin: 18px 0 0 80px;">
+  <a href="http://ad.doubleclick.net/ddm/clk/279015201;106198934;d?http://ad.doubleclick.net/clk;277169730;104577821;m?http://leaseweb.com/en?utm_source=XDA-developers.com&amp;utm_medium=online&amp;utm_content=various&amp;utm_campaign=*Linkback" target="_blank" rel="nofollow">
+    <img src="http://cdn.media.xda-developers.com/images/leaseweb175x50.png" height="50" width="175" border="0" alt="Hosted by Leaseweb" style="border: 1px solid #27334c; border-radius: 5px;">
+  </a>
+</div>
+
+
+<div id="popular-forums" class="widget xda_popular_forums_widget"><h3><span style="height: 16px;position: relative; top: 4px;">Popular Android Forums</span></h3><ul>
+                        <li>
+                                <span style="font-size: .8em">
+                                        <a href="http://forum.xda-developers.com/htc-one-m8">HTC One M8 </a>
+                                </span>
+                        </li>
+                
+                        <li>
+                                <span style="font-size: .8em">
+                                        <a href="http://forum.xda-developers.com/google-nexus-5">Nexus 5</a>
+                                </span>
+                        </li>
+                
+                        <li> 
+                                <span style="font-size: .8em">
+                                        <a href="http://forum.xda-developers.com/galaxy-note-3">Samsung Galaxy Note 3</a>
+                                </span>
+                        </li>
+                
+                        <li>
+                                 
+                                <span style="font-size: .8em">
+                                        <a href="http://forum.xda-developers.com/xposed/modules">Xposed Modules</a>
+                                </span>
+                        </li>
+                
+                        <li>
+                                <span style="font-size: .8em">
+                                        <a href="http://forum.xda-developers.com/android/apps-games">Android Apps and Games </a>
+                                </span>
+                        </li>
+                <small></small></ul></div><div id="upcoming-devices" class="widget Upcoming_devices_widget"><h3>Upcoming Devices</h3><ul>
+			<li>
+				<a href="http://forum.xda-developers.com/galaxy-note-pro-12">Galaxy Note Pro 12.2
+				<small>| Out Now</small>
+				</a>
+			</li>
+			
+			<li>
+				<a href="http://forum.xda-developers.com/galaxy-s5">Galaxy S 5
+				<small>| Out Now</small>
+				</a>
+			</li>
+			
+			<li>
+				<a href="http://forum.xda-developers.com/htc-one-m8">HTC One M8
+				<small>| Out Now</small>
+				</a>
+			</li>
+			
+			<li>
+				<a href="http://forum.xda-developers.com/oneplus-one">OnePlus One
+				<small>| May</small>
+				</a>
+			</li>
+			
+			<li>
+				<span>
+				LG G3
+				<small>| Summer</small>
+				</span>
+			</li>
+			<small>Device names link to XDA forums when available.</small></ul></div><div id="swappa" class="widget xda_swappa_integration_widget"><h3><span style="height: 16px;position: relative; top: 4px;">Buy/Sell on Swappa <a href="http://swappa.com"><img src="http://cdn.media.xda-developers.com/images/XDA2013/header/swappa.png" border="0" align="middle" style="vertical-align: top; height: 24px; position: relative; top: -5px;"></a></span></h3><ul>
+			<li>
+				Nexus 5 (Unlocked) 
+				<span style="font-size: .8em">
+					<a href="http://swappa.com/buy/nexus-5-unlocked">buy</a> |
+					<a href="http://swappa.com/sell/nexus-5-unlocked">sell</a> 
+				</span>
+				
+			</li>
+		
+                        <li>
+                                Galaxy Note 3 (T-Mobile) 
+                                <span style="font-size: .8em">
+                                        <a href="http://swappa.com/buy/samsung-galaxy-note-3-tmobile/us">buy</a> |
+                                        <a href="http://swappa.com/sell/samsung-galaxy-note-3-tmobile/us">sell</a>
+                                </span>
+                                
+                        </li>
+                
+                        <li>
+                                HTC One M7 (Verizon) 
+                                <span style="font-size: .8em">
+                                        <a href="http://swappa.com/buy/htc-one-verizon">buy</a> |
+                                        <a href="http://swappa.com/sell/htc-one-verizon">sell</a>
+                                </span>
+                                
+                        </li>
+                
+                        <li>
+                                Galaxy S 5 (Unlocked) 
+                                <span style="font-size: .8em">
+                                        <a href="http://swappa.com/buy/samsung-galaxy-s-5-g900h">buy</a> |
+                                        <a href="http://swappa.com/sell/samsung-galaxy-s-5-g900h">sell</a>
+                                </span>
+                                
+                        </li>
+                
+                        <li>
+                                Nexus 7 2013 
+                                <span style="font-size: .8em">
+                                        <a href="http://swappa.com/buy/nexus-7-2013-wifi">buy</a> |
+                                        <a href="http://swappa.com/sell/nexus-7-2013-wifi">sell</a>
+                                </span>
+                                
+                        </li>
+                <small>Swappa is the official marketplace of XDA</small></ul></div>
+
+
+
+
+<div class="sidebarAd">
+<!-- 300x250 BTF -->
+                <div id="div-gpt-ad-1860178532283-4">
+                <script type="text/javascript">
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1860178532283-4'); });
+                </script><div id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_3__container__" style="border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-color: initial; "><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_3" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_3" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div>
+                </div>
+            <!-- End 300x250 BTF -->
+</div>
+
+
+</div>
+</div>
+<!-- Container -->
+
+</div>
+
+<!-- End BG -->
+
+<footer>
+    <div class="footerCol">
+        <ul class="footerContainer">
+
+            <li id="footer-about">
+            <h2>ABOUT XDA DEVELOPERS</h2>
+            <p>XDA Developers was founded for developers by developers. It is now a valuable resource for people who want to make the most of their mobile devices, from customizing the look and feel to adding new functionality. <a href="http://www.xda-developers.com/recognized-developer-program/">Are you a developer?</a></p>
+            </li>
+
+            <li id="footer-subscribe">
+            <h2>DOWNLOAD THE XDA ANDROID APP</h2>
+            <p>Get the XDA forums on your Android device.</p>
+        	<p>See <a href="http://www.xda-developers.com/xda-android-app/">more info and screenshots</a> or</p>
+        	 <p>search "XDA" or "XDA Premium" in the Android Market.</p>
+            </li>
+
+            <li id="footer-contact">
+            <h2>MORE INFO</h2>
+            <p>
+                <a href="http://www.xda-developers.com/contact/">Contact Us</a> / 
+                <a href="http://www.xda-developers.com/suggest-content/">Suggest Content</a> / 
+            	<a href="http://www.xda-developers.com/index.php/xda-developers-privacy-policy/">Privacy Policy</a>
+                <br><a href="http://feeds.feedburner.com/xda-developers/ShsH">RSS</a> /
+                <a href="http://www.xda-developers.com/changelog/">Changelog</a>
+            </p>
+            <p>© Copyright 2010-2014. Hosted by <a href="http://www.leaseweb.com/">LeaseWeb</a>.</p>
+            </li>
+        
+        </ul></div>
+    
+    <div class="footer">
+
+
+<!-- 728x90 BTF -->
+                <div id="div-gpt-ad-1860178532283-3">
+                <script type="text/javascript">
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1860178532283-3'); });
+                </script><div id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_2__container__" style="border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-color: initial; "><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_2" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_2" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div>
+                </div>
+            <!-- End 728x90 BTF -->
+
+
+
+    </div>
+</footer>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12268453-1']);
+  _gaq.push(['_setDomainName', 'xda-developers.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+// handle forum links via custom gaq script
+(function( $ ) {
+  $(document).ready(function() {
+    // cycles through each a link on page
+    $("a").each( function() {
+      var href=$(this).attr('href');
+      var patt = /https?:\/\/forum\.xda-developers\.com/i;
+      // check if a forum link
+      if (patt.test(href)) {
+        // add a custom js function to handle link through ga for proper tracking
+        $(this).on('click', function(event) {
+          // only do this if GA code is running
+          if (typeof _gaq != "undefined") {
+            event.preventDefault();
+            _gaq.push(['_link',href]);
+          }
+        });
+      }
+
+    });
+  });
+})( jQuery );
+
+</script>
+
+<!-- Begin BlueKai Tag -->
+<iframe name="__bkframe" height="0" width="0" frameborder="0" src="javascript:void(0)"></iframe>
+<script type="text/javascript" src="//tags.bkrtx.com/js/bk-coretag.js"></script>
+<script type="text/javascript">
+
+bk_ignore_outside_iframe = false;
+bk_doJSTag(13019, 10);
+
+</script><script src="http://tags.bluekai.com/site/13019?ret=jsht&amp;phint=__bk_t%3DAndroid%20%26%20Windows%20Phone%3A%20Tablets%2C%20Apps%2C%20%26%20ROMs%20%40%20xda-developers&amp;phint=__bk_k%3DAndroid%2C%20Windows%20Mobile%2C%20Smartphone%2C%20Development%2C%20HTC%2C%20Apps%2C%20G2%20Touch%2C%20Nexus%20One%2C%20Touch%20Pro%202%2C%20G1%2C%20ROM&amp;phint=__bk_l%3Dhttp%3A%2F%2Fwww.xda-developers.com%2F&amp;limit=10&amp;r=21825548" type="text/javascript"></script>
+<!-- End BlueKai Tag -->
+
+<script type="text/javascript">
+  var vglnk = { api_url: '//click.xda-developers.com/api',
+                key: 'f0a7f91912ae2b52e0700f73990eb321' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = ('https:' == document.location.protocol ? vglnk.api_url :
+             '//clickcdn.xda-developers.com/api') + '/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+
+<!-- IDG_1x1 -->
+<div id="div-gpt-ad-1363287890054-0-oop" style="width:1px; height:1px;">
+<script type="text/javascript">
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1363287890054-0-oop'); });
+</script><div id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_5__container__" style="border-top-width: 0pt; border-right-width: 0pt; border-bottom-width: 0pt; border-left-width: 0pt; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-color: initial; "><iframe id="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_5" name="google_ads_iframe_/8456/IDG.XDA_ROS/IDG.XDA_Portal/IDG.XDA_Homepage_5" width="1" height="1" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; vertical-align: bottom; " src="javascript:&quot;<html><body style='background:transparent'></body></html>&quot;"></iframe></div>
+</div>
+
+
+
+
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk
+Page Caching using memcached
+Database Caching 32/37 queries in 0.156 seconds using memcached
+Object Caching 3954/3989 objects using memcached
+Content Delivery Network via cdn-www.xda-developers.com
+
+ Served from: www.xda-developers.com @ 2014-06-08 08:12:42 by W3 Total Cache --><div id="sb-container"><div id="sb-overlay"></div><div id="sb-wrapper"><div id="sb-title"><div id="sb-title-inner"></div></div><div id="sb-wrapper-inner"><div id="sb-body"><div id="sb-body-inner"></div><div id="sb-loading"><div id="sb-loading-inner"><span>loading</span></div></div></div></div><div id="sb-info"><div id="sb-info-inner"><div id="sb-counter"></div><div id="sb-nav"><a id="sb-nav-close" title="Close" onclick="Shadowbox.close()"></a><a id="sb-nav-next" title="Next" onclick="Shadowbox.next()"></a><a id="sb-nav-play" title="Play" onclick="Shadowbox.play()"></a><a id="sb-nav-pause" title="Pause" onclick="Shadowbox.pause()"></a><a id="sb-nav-previous" title="Previous" onclick="Shadowbox.previous()"></a></div></div></div></div></div></body></html>

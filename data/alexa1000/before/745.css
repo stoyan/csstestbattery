@@ -1,0 +1,1610 @@
+/*
+ * FancyBox - jQuery Plugin
+ * Simple and fancy lightbox alternative
+ *
+ * Examples and documentation at: http://fancybox.net
+ * 
+ * Copyright (c) 2008 - 2010 Janis Skarnelis
+ *
+ * Version: 1.3.1 (05/03/2010)
+ * Requires: jQuery v1.3+
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 40px;
+	width: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none;
+}
+
+* html #fancybox-loading {	/* IE6 */
+	position: absolute;
+	margin-top: 0;
+}
+
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	
+}
+
+#fancybox-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #000;
+	z-index: 100100;
+	display: none;
+}
+
+* html #fancybox-overlay {	/* IE6 */
+	position: absolute;
+	width: 100%;
+}
+
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+
+#fancybox-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 20px;
+	z-index: 100101;
+	display: none;
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #000;
+}
+
+#fancybox-inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	overflow: hidden;
+}
+
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+#fancybox-close {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 19px;
+	height: 19px;
+	background-image: url('/i/close-button.png');
+	background-position: 0px 0px;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+#fancybox_error {
+	color: #444;
+	font: normal 12px/20px Arial;
+	padding: 7px;
+	margin: 0;
+}
+
+#fancybox-content {
+	height: auto;
+	width: auto;
+	padding: 0;
+	margin: 0;
+}
+
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+	-ms-interpolation-mode: bicubic;
+}
+
+#fancybox-frame {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+
+#fancybox-title {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	font-family: Arial;
+	font-size: 12px;
+	z-index: 1102;
+}
+
+.fancybox-title-inside {
+	padding: 10px 0;
+	text-align: center;
+	color: #333;
+}
+
+.fancybox-title-outside {
+	padding-top: 5px;
+	color: #000;
+	text-align: center;
+	font-weight: bold;
+}
+
+.fancybox-title-over {
+	color: #000;
+	text-align: left;
+}
+
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url('fancy_title_over.png');
+	display: block;
+}
+
+#fancybox-title-wrap {
+	display: inline-block;
+}
+
+#fancybox-title-wrap span {
+	height: 32px;
+	float: left;
+}
+
+#fancybox-title-left {
+	padding-left: 15px;
+	
+	background-position: -40px -90px;
+	background-repeat: no-repeat;
+}
+
+#fancybox-title-main {
+	font-weight: bold;
+	line-height: 29px;
+	
+	background-position: 0px -40px;
+	color: #000;
+}
+
+#fancybox-title-right {
+	padding-left: 15px;
+	
+	background-position: -55px -90px;
+	background-repeat: no-repeat;
+}
+
+#fancybox-left, #fancybox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	
+	z-index: 1102;
+	display: none;
+}
+
+#fancybox-left {
+	left: 0px;
+}
+
+#fancybox-right {
+	right: 0px;
+}
+
+#fancybox-left-ico, #fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+}
+
+#fancybox-left-ico {
+	
+	background-position: -40px -30px;
+}
+
+#fancybox-right-ico {
+	
+	background-position: -40px -60px;
+}
+
+#fancybox-left:hover, #fancybox-right:hover {
+	visibility: visible;    /* IE6 */
+}
+
+#fancybox-left:hover span {
+	left: 20px;
+}
+
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px;
+}
+
+.fancy-bg {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	width: 20px;
+	height: 20px;
+	z-index: 1001;
+}
+
+#fancy-bg-n {
+	top: -20px;
+	left: 0;
+	width: 100%;
+	
+}
+
+#fancy-bg-ne {
+	top: -20px;
+	right: -20px;
+	
+	background-position: -40px -162px;
+}
+
+#fancy-bg-e {
+	top: 0;
+	right: -20px;
+	height: 100%;
+	
+	background-position: -20px 0px;
+}
+
+#fancy-bg-se {
+	bottom: -20px;
+	right: -20px;
+	
+	background-position: -40px -182px; 
+}
+
+#fancy-bg-s {
+	bottom: -20px;
+	left: 0;
+	width: 100%;
+	
+	background-position: 0px -20px;
+}
+
+#fancy-bg-sw {
+	bottom: -20px;
+	left: -20px;
+	
+	background-position: -40px -142px;
+}
+
+#fancy-bg-w {
+	top: 0;
+	left: -20px;
+	height: 100%;
+	
+}
+
+#fancy-bg-nw {
+	top: -20px;
+	left: -20px;
+	
+	background-position: -40px -122px;
+}
+
+/* IE */
+
+
+.fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/i/close-button.png', sizingMethod='scale'); }
+/*-------- ÎÑÍÎÂÍÀß ÑÒÐÓÊÒÓÐÀ ÐÀÇÄÅËÎÂ -----------------*/
+* {margin: 0px; padding: 0px; border: 0px;}
+*:focus {outline: none;}
+body {font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #333333; margin: 0px; padding: 0px;}
+form { display: inline; font-size: 12px;}
+td {font-family: arial, sans-serif; font-size: 13px; color: #333333;}
+a { text-decoration: none; font-family: arial, sans-serif; font-size: 13px; color: #333333;}
+a:hover {text-decoration: underline;}
+p {line-height: 1.3;}
+
+
+body {background: #e9e9ee url('http://www.vesti.ru/i/head_bg.jpg') left -1px  repeat-x;}
+.head {background: transparent url('http://www.vesti.ru/i/head.jpg') center -2px no-repeat;}
+.all_wrap {background: transparent url('http://www.vesti.ru/i/head.jpg') center -2px no-repeat;}
+
+.clear {clear: both; font-size: 0px; height: 0px; line-height : 0px;}
+.clear_l {clear: left; font-size: 0px; height: 0px; line-height : 0px;}
+.clear_r {clear: right; font-size: 0px; height: 0px; line-height : 0px;}
+
+.bottom_bg {background: none !important;}
+.banner_top {padding-top: 5px;}
+.content {text-align: left; width: 1000px; position: relative;}
+.header {position: relative; z-index:100; min-height: 204px; width: 1000px;}
+.header {padding-top: 1px;}
+.widget_vesti {width: 256px; position: absolute; bottom: 0px; left: 0px;}
+/* widget */
+
+#widget {width: 235px; height: 204px; background: url('http://www.vesti.ru/i/wi_bg.png') left bottom no-repeat; position: relative; font-family: "Trebuchet MS", Arial, sana-serif;}
+#widget .wi_news_titles {width: 230px; height: 28px; background: url('http://www.vesti.ru/i/wi_title_bg.png') no-repeat; position: absolute; bottom: 14px; left: 0px; padding-top: 3px; padding-left: 5px; overflow: hidden; }
+#widget .wi_news_titles .titles_wrap {padding-top: 2px;}
+#widget .wi_news_titles h3 {display: inline; font-size: 12px; color: #c3c1c9; font-weight: bold; padding:0 12px 0 10px; cursor: pointer;  }
+#widget .wi_news_titles h3.active {color: #fceeab;}
+#widget .wi_news_list {width: 235px; height: 159px; background: #615e6a url('http://www.vesti.ru/i/wi_list_bg.png') repeat-x; overflow: hidden; position: relative; }
+#widget .wi_mask {position: absolute; bottom: 0px; left: 0px; width: 235px; height: 24px; background: url('http://www.vesti.ru/i/wi_mask.png') left bottom no-repeat;}
+#widget #wi_news_inner {width: 720px; height: 159px; overflow: hidden;}
+#widget #wi_news_inner ul {width: 235px; list-style-type: none; margin: 0px; padding: 0px; float: left;}
+#widget #wi_news_inner ul li {width: 235px; padding: 8px 0 9px 0; font-size: 11px;}
+#widget #wi_news_inner ul li .time {color: #c4c2c8; font-size: 9px; font-weight: bold; width: 50px; float: left; text-align: center; padding-top: 1px; }
+#widget #wi_news_inner ul li p {color: #fff; overflow: hidden;  margin: 0px 15px 0px 0px;  font-weight: bold; width: 167px; }
+#widget #wi_news_inner ul li p a {color: #fff; line-height: 1; position: relative;  font-weight: bold; font-size: 11px;}
+.wi_new {font-weight: bold !important; color: #000 !important; background: #ffd71b url('http://www.vesti.ru/i/wi_new_bg.png') left bottom repeat-x;}
+.wi_new .time {color: #b26500 !important;}
+.wi_new a {font-weight: bold !important; color: #000 !important;}
+.wi_new p {font-weight: bold !important; color: #000 !important;}
+.slider_new {display: none;}
+.wi_code_link {position: absolute; right: 7px; top: 7px; font-size: 14px; color: #c3c1c9; font-weight: bold; text-decoration: none; outline: none;}
+.wi_code_link:hover {color: #c3c1c9; text-decoration: none;} 
+.wi_code_block {display: none; width: 350px; height: 190px; border: 4px solid #b01513; left: 225px; top: 175px; position: absolute; background-color: #FFF; z-index: 200;}
+.wi_code_block img {float: left; padding: 10px;}
+.wi_code_block textarea {margin-top: 50px; width: 215px; height: 85px; font-size: 10px; }
+.wi_code_block_close {position: absolute;top: -10px; right: -10px; width: 19px; height: 19px; background-image: url('http://www.vesti.ru/i/close-button.png'); background-position: 0px 0px; cursor: pointer; z-index: 1103; }
+
+
+/* end widget */
+.logo_main {float: left; width: 153px; height: 158px; position: relative;}
+.logo_vesti img {margin-left: 30px; margin-top: 8px;}
+
+
+
+.header_right {position: relative; margin-top: 9px; width: 743px; margin-left: 256px;}
+.r_head_wrapper {margin-left: 153px;}
+.head_links {height: 53px; width: 550px; padding: 8px 0 0 12px; position: relative;} 
+.head_links .mobile_top {background: url('http://www.vesti.ru/i/top_ico_sprite.png') 0 0px no-repeat; display: block; position: absolute; top: 8px; left: 12px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .mobile_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite.png') 0 -24px no-repeat;}
+.head_links .fb_top {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -30px 0px no-repeat; display: block; position: absolute; top: 8px; left: 42px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .fb_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -30px -24px no-repeat;}
+.head_links .twt_top {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -60px 0px no-repeat; display: block; position: absolute; top: 8px; left: 72px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .twt_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -60px -24px no-repeat;}
+.head_links .wap_top {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -90px 0px no-repeat; display: block; position: absolute; top: 8px; left: 102px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .wap_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -90px -24px no-repeat;}
+.head_links .rss_top {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -120px 0px no-repeat; display: block; position: absolute; top: 8px; left: 132px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .rss_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite.png') -120px -24px no-repeat;}
+.head_links .g_plus {background: url('http://www.vesti.ru/i/top_ico_sprite_2.png') 0 0 no-repeat; display: block; position: absolute; top: 8px; left: 162px; outline: none; width: 24px; height: 24px;  text-indent: -9000px; outline: none; }
+.head_links .g_plus:hover {background: url('http://www.vesti.ru/i/top_ico_sprite_2.png') 0 -24px no-repeat;}
+.head_links .futubra {background: url('http://www.vesti.ru/i/top_ico_sprite_2.png') -24px 0 no-repeat; display: block; position: absolute; top: 8px; left: 192px; outline: none; width: 24px; height: 24px; text-indent: -9000px; outline: none; }
+.head_links .futubra:hover {background: url('http://www.vesti.ru/i/top_ico_sprite_2.png') -24px -24px no-repeat;}
+.head_links .vk_top {background: url('http://www.vesti.ru/i/top_ico_sprite_3.png') -147px 0px no-repeat; display: block; position: absolute; top: 8px; left: 192px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .vk_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite_3.png') -147px -24px no-repeat;}
+.head_links .inst_top {background: url('http://www.vesti.ru/i/top_ico_sprite_4.png') -173px 0px no-repeat; display: block; position: absolute; top: 8px; left: 222px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .inst_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite_4.png') -173px -24px no-repeat;}
+.head_links .youtube_top {background: url('http://www.vesti.ru/i/top_ico_sprite_4.png?2') -199px 0px no-repeat; display: block; position: absolute; top: 8px; left: 252px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+.head_links .youtube_top:hover {background: url('http://www.vesti.ru/i/top_ico_sprite_4.png?2') -199px -24px no-repeat;}
+
+
+
+#probki_top {z-index: 400; display: block; position: absolute; top: 8px; left: 400px; text-indent: -9000px; outline: none; width: 24px; height: 24px; }
+
+
+
+.traff_red {background: url('http://www.vesti.ru/i/traff_bg.png') 0 -48px no-repeat;}
+.traff_green {background: url('http://www.vesti.ru/i/traff_bg.png') 0 -24px no-repeat;}
+.traff_yellow {background: url('http://www.vesti.ru/i/traff_bg.png') 0 0px no-repeat;}
+.header_data {}
+.head_date {font-size: 11px; font-weight: bold; color: #333333; position: absolute; top: 106px; left: 0px; width: 146px; text-align: center;}
+.logo_vesti_fm_24 {position : absolute; top:0; right: 22px; width: 300px; text-align: right;}
+.logo_vesti_fm_24 img.del {margin: 0 0px 0 15px;}
+.theme_day {margin-top: 10px; height: 66px; line-height: 0.9; overflow:hidden; font-size: 13px !important;}
+.theme_day a {color: #336; font-size: 13px; 	white-space : nowrap; text-decoration: underline; display: block; float: left; border-right: 1px solid #d5d3d4; padding: 5px 12px;  }
+.theme_day a.last_th {border-right: none;}
+.theme_day span {color: #d6d4d4; font-size: 13px; padding: 0 0 0 0px;}
+.theme_day img {padding: 12px;}
+span.h2 {color: #990000; font-size: 14px !important; float: left; padding: 5px 9px 2px 12px; display: block;  }
+.rss_wap {text-align: right; margin-bottom: 5px; white-space:nowrap; margin-top: 5px;}
+.rss_wap a {color: #900; font-size: 12px; font-weight: bold; text-decoration: none; padding-right: 12px;}
+.rss_wap a.black_l {color: #333;}
+.rss_wap a:hover {text-decoration: underline;}
+.rss_wap a.rss {font-size: 15px; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/ico.gif') left top no-repeat; padding: 0 8px; text-decoration: none;}
+.top_weather_wrapper {position: absolute; top: 8px; left: 175px; z-index: 300;}
+
+.block_service {text-align: right; margin-bottom: 8px; font-size: 11px;}
+.block_service a {color: #333333; font-size: 11px; text-decoration: underline; padding-right: 12px;}
+
+.menu_top {height: 33px; background: #504f57 url('http://cdn.static1.rtr-vesti.ru/i/menu_top_bg.gif') left top repeat-x; width: 743px}
+.menu_top_bg {background: transparent url('http://cdn.static1.rtr-vesti.ru/i/bg_bottom_13.png') left bottom repeat-x; padding-bottom: 12px; width: 743px; position: relative; overflow : hidden;}
+
+
+.menu_top li {list-style: none; float: left; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/menu_top_del.gif') left top no-repeat; width: 124px;}
+.menu_top li a {color: #eeeec8; font-size: 15px; font-weight: normal; display: block; padding-top: 6px; padding-bottom: 9px; padding-left: 0px; padding-right: 0px; text-align: center;}
+.menu_top li:first-child, .menu_top li.first_child {background: transparent none; width: 123px;}
+.menu_top a.activ {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_top_bg_activ.gif') left top repeat-x; color: #000;}
+.menu_top a.activ1 {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_top_bg_activ.gif') left top repeat-x; color: #000;}
+.menu_top li:first-child a {padding-left: 5px;}
+
+
+.top_line_text {background: url('http://cdn.static1.rtr-vesti.ru/i/top_line_text_bg.jpg') left 1px repeat-x; border-left: 12px solid #fed869;}
+.top_line_text_bg {border-top: 1px solid #FFF; background: url('http://cdn.static1.rtr-vesti.ru/i/top_line_text_bg_right.jpg') right top no-repeat; height: 43px; position: relative;}
+.top_line_text_bg1 {border-top: 1px solid #FFF; background: url('http://cdn.static1.rtr-vesti.ru/i/top_text_bg1.jpg') right top no-repeat; height: 43px; position: relative;}
+.top_line_text h1 {color: #333333; font-size: 18px; font-weight: normal; padding-top: 9px; padding-left: 57px; float: left; margin-right: 30px;}
+.top_line_text h1 a.htl {color: #989A99; padding-right: 12px; border-right: 1px solid #989A99; margin-right: 12px; font-size: 18px; font-weight: normal; }
+.top_line_text h1 a.htl:hover {text-decoration: underline; color: #989A99; }
+
+.top_line_text h1 a.htlm {color: #989A99; padding-right: 12px; margin-right: 12px; font-size: 18px; font-weight: normal; }
+.top_line_text h1 a.htlm:hover {text-decoration: underline; color: #989A99; }
+
+
+.top_line_text h1 a.htf {color: #333333; font-size: 18px; font-weight: normal; padding-top: 9px;  }
+.top_line_text h1 a.htf:hover {text-decoration: underline;}
+.sec_link {display_block; right: 18px; color: #933; text-decoration: underline; font-weight: bold; top: 14px; font-size: 14px; position: absolute;}
+.sec_link_1 {display_block; float: right; margin-right: 18px; margin-left: 18px; color: #933; text-decoration: underline; font-weight: bold; margin-top: 4px; font-size: 14px;}
+
+
+.content_page {position: relative; float: none;}
+.content_bg_index {float: none; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/index_bg_content.gif') left top repeat-y; padding-bottom: 10px;}
+
+
+.td_left_smol {width: 227px; float: left; background-color: #fefefe;}
+
+.index_gl_news {border: 1px solid #FFF; border-top: 0px; background: #fee799 url('http://cdn.static1.rtr-vesti.ru/i/bg_gl_news.jpg') right top no-repeat; }
+.index_gl_news_block {margin-left: 227px; border-left: 7px solid #e9e9ee;}
+.bg_bottom_block {background: transparent url('http://cdn.static1.rtr-vesti.ru/i/line_bg_bottom.gif') left bottom repeat-x; padding-bottom: 13px; font-size: 0px; margin-right: 247px;}
+
+.td_right_all {position: relative; margin-left: 227px; min-height: 1480px;}
+.td_right {width: 247px; float: right; border: 1px solid #000; height: 600px;}
+.td_right_size {padding-left: 7px; overflow : hidden;}
+.center_block {background-color: #fefefe; border: 1px solid #339900; margin-right: 247px;}
+
+.search_top {height: 44px; background-color: #4e4d54;}
+
+.serch_block_left {width: 227px; padding-top: 10px; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/search_top_bg.gif') left top repeat-x;}
+.search_top {width: 212px; padding-left: 15px;}
+.search_bottom {position : absolute; width: 240px; height: 44px; background-color: #4e4d54; right: 0; bottom: 13px;}
+
+
+/* Doc */
+
+.left_block_all {margin-right: 247px;  background-color: #fefefe; zoom: 1;}
+.doc_all_padding {padding-right: 20px; position: relative; min-height: 900px; overflow: hidden;}
+.main_search {position : absolute; top: 0px; left: 0px; }
+
+
+
+.doc_theme_block {border-top: 4px solid #a50407; margin-left: 257px; }
+.doc_theme_block h2 {color: #333333; font-size: 28px; padding: 0;}
+.doc_theme_block h2 span {font-size: 15px; color: #933;}
+.doc_theme_block h2 a {color: #336; font-size: 15px;}
+.doc_theme_foto_video_block {position: relative;}
+.doc_theme_foto_video_block span {position : absolute; left: 0px; color: #993333; font-size: 13px;}
+.doc_theme_foto_video_block a {color: #333366; text-decoration: underline;}
+.doc_theme_block_fotorep {padding-left: 94px; margin-bottom: 5px;}
+
+.doc_theme_block_videorep {padding-left: 48px;}
+
+
+.doc_photo_title {margin-top: 33px; margin-left: 20px; position: relative;}
+.doc_all_padding h1, .doc_all_padding h1 a {color: #993333; font-size: 20px;}
+.doc_data {font-size: 15px; color: #333333; margin-top: 0px; margin-bottom: 10px;}
+
+
+.doc_photo_block {width: 250px; float: left; position: relative; }
+.doc_photo_block img {width: 224px; height: 168px; border: 0px; display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/photo_shadow.png') left bottom repeat-x; padding-bottom: 26px; }
+.doc_photo_block .video_ico {position: absolute; top: 136px; right: 22px; width: 89px; height: 32px;  display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/vid_ico.png'); outline: none; text-indent: -9000px; cursor: pointer;}
+
+
+.doc_photo_block .photo_ico {position: absolute; top: 141px; left: 2px; width: 26px; height: 23px;  display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/photo_ico.png'); outline: none; text-indent: -9000px; cursor: pointer;}
+.doc_ico_audio {position: absolute; top: 141px; right: 28px;  background: url('http://cdn.static1.rtr-vesti.ru/i/audio_icon.png') no-repeat; cursor: pointer; width: 83px; height: 23px; display: block; }
+
+
+.doc_ico_audio a {color: #993333; font-size: 13px; text-decoration: underline; }
+.doc_audio_block {display: none; background-color: #e6e9ee; padding: 10px; text-align: center;  }
+.audio_only {margin: 20px 0 20px 20px; display: block !important;}
+.audio_ph { margin: 20px 0px 25px 20px; width: 260px;  }
+.float_r {float: right;}
+.audio_save {color: #933; text-decoration: underline; position: relative; z-index: 999;}
+.audio_size {color: #666; text-decoration: underline;}
+.doc_booton_soc_set {position : absolute; bottom: 0; right: 0; width: 285px; height: 35px; border: 1px solid #993333; }
+.doc_audio_wrap {float: right; width: 210px; padding: 12px 18px 25px; margin: 0 0 20px 20px; background-color: #e6e9ee;}
+.doc_ico_audio_o {position: relative; background: url('http://cdn.static1.rtr-vesti.ru/i/audio_icon.gif') no-repeat; padding: 15px 0 0 40px; margin: 0px; cursor: pointer; }
+
+.doc_body {margin-top: 15px; margin-left: 45px; color: #333333; font-size: 14px; position: relative;}
+.doc_body a {font-size: 14px; color: #003399; text-decoration: underline;}
+.doc_body a:hover {font-size: 14px; color: #810081; text-decoration: underline;}
+.doc_body ul {margin-left: 20px; padding-left: 10px;}
+.doc_body li { list-style-type : disc;}
+.doc_body p {padding-bottom: 15px; text-align : left;}
+
+.author {font-size: 12px; color: #666; font-style: italic; display: block; padding-top: 7px;} 
+.doc_aftertext_block {background: url('http://cdn.static1.rtr-vesti.ru/i/arr_to_index.png') no-repeat;  color: #933; font-size: 13px; font-weight: bold; font-style: italic; height: 30px;  }
+.doc_backto_index {color: #933 !important; font-size: 13px !important; font-weight: bold; font-style: italic; text-decoration: underline; padding-left: 35px; float: left;}
+.doc_backto_index:hover {color: #933 !important; font-size: 13px !important; font-weight: bold; font-style: italic; text-decoration: underline; padding-left: 35px;}
+.doc_soc_block {float: right; width: 350px;}
+.block_razdel_news {position: relative; margin-top: 20px; zoom: 1;}
+.block_razdel_news div.left_block {float: left; width: 227px; }
+.block_razdel_news div.right_block {margin-left: 232px; }
+/* End Doc */
+
+
+/* Ñïèñêè */
+.list_content_all {position: relative;}
+
+.td_left_list {width: 227px; float: left; border: 1px solid #000;}
+.td_center_list {background-color: #fefefe; margin-left: 232px; min-height: 2880px;}
+.no_bsckground {background-color: transparent;}
+/* End Ñïèñêè */
+
+/*-------- END ÎÑÍÎÂÍÀß ÑÒÐÓÊÒÓÐÀ ÐÀÇÄÅËÎÂ -----------------*/
+
+
+
+/*--------------------- ÂÍÓÒÐÅÍÍßß ÑÒÐÓÊÒÓÐÀ  ------------------------*/
+/*------- Add-on to style.css --------*/
+
+.td_right {width: 247px; float: right; height: 600px; border: none !important;}
+.center_block {background-color: #fefefe; margin-right: 247px; border: none !important;}
+.td_left_smol {background: #fefefe url('http://cdn.static1.rtr-vesti.ru/i/left_bg.png') 0 52px repeat-x; position: relative; }
+.search_top {height: 38px; padding-top: 6px; background-color: #4e4d54;}
+.search_bottom {height: 38px; padding-top: 6px; position : absolute; background-color: #4e4d54; width: 240px;  right: 0px; left: 760px; bottom: 13px; overflow: visible;}
+.bottom_bg {background: url('http://cdn.static1.rtr-vesti.ru/i/bottom_bg.jpg') 50% bottom no-repeat;}
+.td_right {height: auto !important; float: right; width: 240px; position: relative;}
+.bg_bottom_block {/*background: #fefefe url('http://cdn.static1.rtr-vesti.ru/i/line_bg_bottom.gif') left bottom repeat-x;*/ padding-bottom: 13px; font-size: 0px; width: }
+.td_left_list {border: none; position: relative; min-height: 900px;}
+.td_center_list {padding: 0;}
+.content_page {overflow : hidden;}
+.index_gl_news {min-height: 450px;}
+/*------- End add-on to style.css ----------*/
+
+
+#gl_news_item {background: url('http://cdn.static1.rtr-vesti.ru/i/gl_news_item_bg.jpg') -2px bottom no-repeat; width: 726px; height: 305px; margin-left: 20px; padding-bottom: 20px;  border: 0px;}
+#gl_image_block {background: url('http://cdn.static1.rtr-vesti.ru/i/gl_image_block_bg.jpg') no-repeat; width: 356px; height: 266px; float: left; padding: 10px;  border: 0px; position: relative;} 
+#gl_legend { height: 33px; background: url('http://cdn.static1.rtr-vesti.ru/i/gl_legend_bg.gif') repeat-x; position: absolute; top: 205px; left: 10px;}
+#gl_legend a {display: block; font-size: 15px; font-weight: bold; color: #000; padding: 6px 10px 0 ; white-space: nowrap; overflow: hidden; display: none;}
+#gl_item_section {background: url('http://cdn.static1.rtr-vesti.ru/i/gl_sec_bg.png') repeat-x; height: 14px;  padding: 1px 10px 3px; position: absolute; top: 239px; left: 10px;}
+#gl_item_section a {font-size: 14px; font-weight: bold; color: #fff; text-decoration: none; display: none;}
+#first_img, #second_img, #third_img  {display: none; width: 355px; height: 267px; } 
+#gl_h_block {background: url('http://cdn.static1.rtr-vesti.ru/i/gl_h_block_bg.jpg') left repeat-y; width: 342px; height: 254px; float: left; border: 0px; margin-top: 10px; padding: 6px 0 6px 5px;}
+#gl_h_block li {background: #61616f url('http://cdn.static1.rtr-vesti.ru/i/gl_h_li_bg.jpg') no-repeat; width: 314px; min-height: 72px; list-style-type: none; margin-bottom: 2px; padding: 6px 6px 3px 11px;}
+#gl_h_block li#gl_active {background: url('http://cdn.static1.rtr-vesti.ru/i/gl_activ_li_bg.jpg') no-repeat; width: 325px; height: 79px;}
+#gl_h_block li img {float: left; width: 92px !important; height: 69px !important; }
+#gl_h_block li#gl_active img {width: 102px  !important; height: 76px  !important;}
+#gl_h_block li  h3 {margin-left: 104px; }
+#gl_h_block li#gl_active h3 {margin-left: 114px; margin-right: 10px;} 
+#gl_h_block li  h3 a {font-weight: bold; font-size: 14px; text-decoration: none; color: #fff; }
+#gl_h_block li#gl_active h3 a {color: #333333; }
+.index_gl_news h2 {padding: 0px 210px 11px 30px; margin: -26px 0 0;  display: none; }
+.index_gl_news h2 a {color: #933; font-size: 24px; font-weight: bold; text-decoration: none;}
+.index_gl_news h2 a:hover {text-decoration: underline;}
+.index_gl_news p {padding: 0px 140px 10px 30px; margin: 0; display: none; min-height: 75px;}
+.index_gl_news p a {color: #333; font-size: 14px; text-decoration: none; }
+.index_gl_news p a:hover {text-decoration: underline;}
+.visible {display: block !important;}
+.gl_shadow {height: 15px; width: 100%; background: url('http://cdn.static1.rtr-vesti.ru/i/gl_shadow.png') repeat-x;}
+#r_banner {width: 240px;}
+#finfo {width: 240px; margin-top: 0px; margin-bottom: 15px;  position: relative;}
+#r_realty {width: 240px; background: #ffe998 url('http://cdn.static1.rtr-vesti.ru/i/realty_bg.jpg') 2px 37px no-repeat; margin-top: 12px;}
+#r_realty h3 {height: 27px; background: url('http://cdn.static1.rtr-vesti.ru/i/realty_h.png') 0 0 no-repeat; padding: 10px 0 0 11px; color: #fff; font-size: 14px; font-weight: bold;}
+	#r_realty_wrap {padding: 10px 0; border: 2px solid #ffcc66; border-top: none; background: url('http://cdn.static1.rtr-vesti.ru/i/realty_wrap_bg.jpg') 0 122px repeat-x; }
+	#r_realty_wrap p {padding: 12px 7px; line-height: 0.8; min-height: 105px;}
+	#r_realty_wrap p a img {float: left; padding-right: 5px;}
+	#r_realty_wrap p a { font-family: Tahoma; color: #333333; font-size: 11px; text-decoration: none;}
+	#r_realty_wrap p a:hover {text-decoration: underline;}
+#r_banner_block1 { border: 2px solid #ffcc66; background: #fefefe url('http://cdn.static1.rtr-vesti.ru/i/banner_block_bg.png') 0 0 repeat-x; width: 236px; margin-top: 12px; height: 410px; }
+#r_banner_block2 { border: 2px solid #ffcc66; border-top: 1px solid #ffcc66; width: 236px; margin-top: 12px; }
+	#r_banner_block2 div {background: #fefefe url('http://cdn.static1.rtr-vesti.ru/i/banner_block2_bg.png') 0 0 repeat-x; min-height: 92px; padding: 5px}
+	#r_banner_block2 div  p {line-height: 0.8; padding: 5px;}
+	#r_banner_block2 div  p img {float: left; padding-right: 5px;}
+	#r_banner_block2 div p a {font-family: Tahoma; color: #333333; font-size: 11px; text-decoration: none;}
+	#r_banner_block2 p a:hover {text-decoration: underline;}
+#r_bottom_search {width: 240px; height: 60px;}
+	
+
+.search_bottom .search_area {width: 213px;}
+.search_bottom .search_area .search {width: 195px;}
+.search_area {background: url('http://cdn.static1.rtr-vesti.ru/i/search_area.png') left no-repeat; margin: 0px auto; width: 179px; height: 31px; position: relative; }
+.search {width: 124px; height: 15px; float: left; padding: 8px 10px; background: none; color: #666; font-size: 13px;}
+#submit {background: url('http://cdn.static1.rtr-vesti.ru/i/search_submit.png'); cursor: pointer; width: 40px; height: 31px; position: absolute; right: -1px; top: 0;}
+.l_section {}
+.l_section  h3 a {font-family: Arial, sans-serif; font-size: 18px; font-weight: normal; color: #333366; text-decoration: underline;}
+.l_section  h3 a:hover {color: #993333;} 	
+h3#economy_l {height: 21px; padding-top: 14px; padding-bottom: 15px; background: url('http://cdn.static1.rtr-vesti.ru/i/economy_h_bg.jpg') left bottom no-repeat;  padding-left: 15px;}
+.l_section ul { padding: 8px 5px 0px 15px;}
+.l_section ul li {list-style-type: none; background: url('http://cdn.static1.rtr-vesti.ru/i/list_type_l.png') 0 5px no-repeat; overflow: hidden;  padding-left: 15px; padding-bottom: 15px; }
+.l_section ul li.with_img { background: none; padding: 0 0 10px 0;}
+.l_section ul li.with_img a {padding: 0;  }
+.l_section ul li.with_img a img {float: left; padding-right: 10px;}
+.l_section ul li a {font-size: 13px; color: #333366; text-decoration: underline; }
+.l_section ul li a:hover {color: #993333;}
+#economy_l h3 {height: 21px; padding-top: 14px; padding-bottom: 15px; background: url('http://cdn.static1.rtr-vesti.ru/i/economy_h_bg.jpg') left bottom no-repeat;  padding-left: 15px;}
+h3#auto_l {height: 27px; background: url('http://cdn.static1.rtr-vesti.ru/i/auto_h_bg.png') left bottom no-repeat; padding: 12px 0 15px 15px;} 	
+h3#sport_l {height: 21px; padding-top: 14px; padding-bottom: 15px; background: url('http://cdn.static1.rtr-vesti.ru/i/sport_h_bg.jpg') left bottom no-repeat;}
+h3#vestifm_h {background: url("/i/vestifm_new.jpg") no-repeat scroll left bottom transparent; height: 35px; padding: 6px 0 15px 17px; text-indent: -9000px; margin-left: 15px;}
+h3#common_l { padding-top: 14px; padding-bottom: 15px; background: url('http://cdn.static1.rtr-vesti.ru/i/common_h_bg.jpg') left bottom no-repeat; padding-left: 15px;}
+h3.common_l { padding-top: 14px; padding-bottom: 15px; background: url('http://cdn.static1.rtr-vesti.ru/i/common_h_bg.jpg') left bottom no-repeat; padding-left: 15px;}
+.program_logo {padding: 7px 0 8px 15px;}
+a.onair {color: #993333 !important; text-decoration: none;}
+
+.text_pr h3 {margin: 5px 0px 0px 0px; font-size: 15px; color: #333333;}
+.text_pr h3 a{margin: 5px 0px 0px 0px; font-size: 15px; color: #333333;}
+.text_pr h3 a:hover {margin: 5px 0px 0px 0px; font-size: 15px; color: #333333;}
+.text_pr h2 a{color: #993333; font-size: 24px; margin-bottom: 10px;}
+.text_pr h2 a:hover {color: #993333; font-size: 24px; margin-bottom: 10px;}
+.text_pr h2 {color: #993333; font-size: 24px; margin-bottom: 10px;}
+.text_pr {font-size: 14px; color: #333333;} 
+.pics1 {float: left; width: 320px;}
+.pics2 {float: left; width: 320px; padding-left: 40px;}
+.pr_clear {clear: both; height: 35px;}
+.h30 {height: 10px;}
+.h60 {height: 40px;}
+#flash_promo {width: 518px; padding-left: 8px; height: 255px; background-color: #e8e8ee;}
+#flash_promo_inner {background: url('http://cdn.static1.rtr-vesti.ru/i/gl_shadow.png') left bottom repeat-x; width: 518px; height: 255px;}
+#today_news {width: 498px; margin-left: 28px;}
+#today_news h2 {height: 28px; padding-top: 13px; border-bottom: 4px solid #aaa8b5; margin-right: 21px; }
+#today_news h2 a {color: #333; font-size: 24px; font-weight: normal; text-decoration: none; }
+.news_equaliser {overflow: hidden; padding-bottom: 12px;}
+.news_item {width: 239px; float: left; padding-top: 8px; padding-right: 10px; }
+.news_item p { padding-top: 5px;}
+.news_item p a {color: #333; font-size: 13px; text-decoration: none;}
+.news_item p a:hover {text-decoration: underline;}
+.news_h { padding-top: 8px;}
+.news_h  a {color: #993333; font-size: 16px; text-decoration: none; }
+.news_h  a:hover {text-decoration: underline;} 
+.news_img_container {position: relative;}
+.news_img_container img {width: 224px; 168px;}
+.news_img_container div.ico {position: absolute; width: 224px; height: 40px; top: 128px; left: 0px; }
+/*news_img_container div.ico {position: absolute; width: 224px; height: 40px; top: 128px; left: 0px; background: url('http://cdn.static1.rtr-vesti.ru/i/ico_bg.png') repeat; }*/
+
+.ico .item_section {float: left; color: #fefefe; font-size: 13px; width: 120px; text-decoration: none; padding-left: 12px; display: block; margin-top: 6px; outline: none;}
+.ico .item_section:hover {text-decoration: underline;}
+.ico  .video_ico {  width: 89px; height: 32px;  display: block; margin-left: 135px; margin-top: 2px; background: url('http://cdn.static1.rtr-vesti.ru/i/vid_ico.png'); outline: none; text-indent: -9000px; cursor: pointer;}
+#banner_center {background: url('http://cdn.static1.rtr-vesti.ru/i/banner_center_bg.png') no-repeat; padding-top: 35px; width: 475px; margin: 10px 0px 15px; display: none;}
+#banner_center div { border: 2px solid #99cc33; width: 471px; border-top: 0px; height: 70px; }
+.banner_bottom1 {width: 700px; background-color: #e8e8ee; border: 2px solid #b2afbb; margin-left: 30px; margin-top: 10px; display: none;}
+.banner_bottom2 {background: #ffffdf url('http://cdn.static1.rtr-vesti.ru/i/banner_bot_bg.jpg') left top no-repeat; width: 100%; margin-top: 10px;  display: none;}
+
+
+#footer {width: 960px; background: url('http://cdn.static1.rtr-vesti.ru/i/footer_bg.png') repeat-x;  clear: both; position: relative; overflow: visible; padding: 23px 0 0 40px;}
+.footer_nav {float: left; margin-left: 20px; text-align: left;} 
+.footer_nav h4 a {font-size: 13px; font-weight: bold; color: #333333; text-decoration: underline;}
+.footer_nav ul {list-style-type: none; padding-top: 6px; }
+.footer_nav ul li{padding-top: 5px;}
+.footer_nav li a {font-size: 13px; color: #333333; text-decoration: underline;}
+.footer_nav_h h4 {padding-bottom: 11px; font-weight: normal;}
+#mistake {color: #666; font-size: 13px; text-align: center; clear: both; padding-top: 65px;}
+#footer_info {color: #999999; font-size: 13px; padding-top: 10px; padding-right: 60px;}
+
+/* list */
+.search_top_list {height: 38px; padding-top: 6px; padding-bottom: 10px; background: #4e4d54 url('http://cdn.static1.rtr-vesti.ru/i/search_top_bg.gif') left bottom repeat-x; }
+.menu_sections_wrapper {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_section_wrapper_bg.png') left bottom repeat-x; padding-bottom: 26px; }
+.menu_sections {width: 214px;  background: #e0dfe6 url('http://cdn.static1.rtr-vesti.ru/i/menu_section_bg.jpg') left top repeat-x; padding-left: 13px; }
+.menu_sections li {width: 214px; border-bottom: 1px solid #b7b7c2; height: auto;  list-style-type: none;}
+.menu_sections li.last {border: none;}
+.menu_sections li a {color: #333; font-weight: bold; font-size: 13px; text-decoration: none; display: block; width: 187px; padding: 5px 0 5px 19px;}
+.menu_sections li.active_menu_sec {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_section_activ_bg.png') repeat-x; }
+.menu_sections li.active_menu_sec a {color: #ffffcc;}
+.menu_sections li ul li.sec_level {height: auto; background-color: #fefde8; border: none; padding: 3px 0px; }
+.menu_sections li ul li.sec_level a {width: 170px; display: block; color: #010101; padding: 2px 0 2px 40px; font-size: 13px; font-weight: normal; text-decoration: underline;}
+
+.menu_sections li.active_sec_level {background-color: #fff1c0 !important; height: auto; border: none; }
+.menu_sections li.active_sec_level a {display: block; color: #993333 !important; padding: 2px 0 2px 40px; font-size: 13px; font-weight: normal; text-decoration: underline;}
+
+.menu_sections li.hover_sec_level {background-color: #fff1c0 !important; height: auto; }
+.menu_sections li.hover_sec_level a {display: block; color: #993333 !important; padding: 2px 0 2px 40px; font-size: 13px; font-weight: normal; text-decoration: underline; background-image: none !important;}
+
+.active_page {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_section_activ_bg.png') repeat-x;}
+.active_page a {color: #ffffcc !important; background: url('http://cdn.static1.rtr-vesti.ru/i/active_page_bg.jpg') 10px 11px no-repeat;}
+.active_page ul.l2 li.sec_level a {width: 170px; display: block; color: #010101 !important; padding: 2px 0 2px 40px; font-size: 13px; font-weight: normal; text-decoration: underline; background-image: none;}
+.active_page li.hover_sec_level a {display: block; color: #993333 !important; padding: 2px 0 2px 40px; font-size: 13px; font-weight: normal; text-decoration: underline; background-image: none !important;}
+.active_page li.active_sec_level a {display: block; color: #993333 !important; padding: 2px 0 2px 40px; font-size: 13px; font-weight: normal; text-decoration: underline; background-image: none !important;}
+.list_date {border-top: 2px solid #c9c8ce; border-bottom: 2px solid #c9c8ce; height: 24px; padding-top: 4px; margin: 0 18px 0 20px;}
+.list_date  span{font-weight: bold; font-size:16px; color: #333; padding-left: 5px;}
+.list_item {padding: 15px 5px 17px 10px; overflow: hidden; margin: 0 18px;}
+.list_item_img {float: left; padding-right: 14px; position: relative; min-height: 88px;}
+.list_item_img a {position: relative; display: block;}
+.list_item_time {color: #999; font-size: 12px; text-align: right; padding-bottom: 6px; padding-top: 3px;}
+.list_item h3, .list_item h3 a  {color: #993333; font-weight: bold; font-size: 16px; }
+.list_item a:hover {text-decoration: underline !important;} 
+.list_item p  {overflow: hidden;}
+.list_item p a {color: #333; font-size: 13px; text-decoration: none;}
+.list_item p a:hover {text-decoration: underline;}
+.left_block_all .bg_bottom_block {margin: 0 0 0 232px;}
+.video_ico_s {position: absolute; top: 49px; left: 66px; width: 26px; height: 20px; background: url('http://cdn.static1.rtr-vesti.ru/i/vid_ico_s.png') no-repeat;}
+
+.list_item_ot {padding: 7px 5px 7px 10px; overflow: hidden; margin: 0 18px;}
+.list_item_ot .list_item_img {min-height: 1px;}
+.list_item_ot h3, .list_item_ot h3 a {font-size: 14px; color: #336; font-weight: normal; }
+.list_item_ot a:hover {text-decoration: underline !important;} 
+/* end list */
+
+.live_container {position: absolute; left: 0; top: 0; width: 1000px; min-height: 40px; z-index: 20;}
+.live_container h2 {cursor: pointer; float: left; font-family: Verdana, sans-serif; font-weight: normal; font-size: 24px; padding-top: 0px; color: #fff; background: #DF423D url('http://www.vesti.ru/i/live_bg_1.gif') left bottom repeat-x; width: 227px; height: 32px;  }
+.live_news_wrapper {margin-left: 227px; width: 645px; border: 3px solid #cc0000; display: none;}
+.news_live {position: relative; border: 1px solid #a50407; background-color: #fff; padding: 18px 60px 40px 28px;}
+.news_live h3 a {font-size: 16px; color: #cc0000; font-weight: bold; text-decoration: none;  }
+.news_live h3 a:hover {text-decoration: underline;}
+.news_live p {padding-top: 14px;}
+.news_live p a {color: #333; text-decoration: none; font-size: 14px;  }
+.news_live p a:hover {text-decoration: underline;}
+.live_news_wrapper .close_live {position: absolute; top: -12px; right: -12px; height: 19px; width: 19px;}
+#cl_bt_live {height: 19px; width: 19px; cursor: pointer; display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/close-button.png');}
+.mini_live_news {margin-left: 227px; height: 34px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_live.gif') no-repeat; display: none;}
+.mini_live_news h3 {display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_live.gif') no-repeat; padding-top: 7px; padding-left: 28px;}
+.mini_live_news h3 a {font-size: 14px; color: #cc0000; font-weight: normal; text-decoration: underline;}
+
+
+
+.paging {text-align: right; padding: 10px; font-size: 14px; color: #333;}
+.paging a { margin: 0 4px;}
+.paging a.activ {border: 1px solid #666666; background: url('http://cdn.static1.rtr-vesti.ru/i/paging_activ_bg.png') repeat-x; padding: 3px 3px 2px;  } 
+
+.menu_wrap {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_section_wrapper_bg.png') left bottom repeat-x; padding-bottom: 26px; }
+.menu_video_wrapper {background: #e0dfe6 url('http://cdn.static1.rtr-vesti.ru/i/menu_section_bg.jpg') left top repeat-x; list-style-type: none;}
+.categories_vid .menu_sections {background: none;}
+ .cat {display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/menu_category_bg.png') repeat-x; margin-left: 13px;}
+ .cat span.active_vid {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_arrow_down.png') 196px center no-repeat; display: block; height: 24px; width: 100%; font-size: 14px; font-weight: bold; color: #933; padding: 7px 0 0 19px;} 
+ .cat span {background: url('http://cdn.static1.rtr-vesti.ru/i/menu_arrow_right.jpg') 196px center no-repeat; display: block; height: 24px; width: 100%; font-size: 14px; font-weight: bold; color: #933; padding: 7px 0 0 19px;}
+.all_vid {padding: 4px 0 9px 0px; list-style-type: none;    }
+
+
+#top_line {width: 495px; margin: 0 auto; height: 4px; background-color: #a50407;}
+.bc_item {width: 495px; margin: 0px auto 0; background: #fefefe url('http://cdn.static1.rtr-vesti.ru/i/broadcast_bg.png') repeat-x; padding: 3px 0 28px; overflow: hidden; }
+.bc_item a:hover h2, .bc_item a:hover p  {text-decoration: underline; color: #933;}
+.bc_date_time {padding: 15px 11px; overflow: hidden;}
+.bc_date {display: block; float: left; width: 106px; border-right: 1px solid #97969f; color: #999999; text-align: left; font-size: 18px; }
+.bc_time {display: block; float: left; padding-left: 16px; color: #999999; text-align: left; font-size: 18px;}
+.bc_date_time a {margin-left: 22px; padding-left: 36px; display: block; position: relative; float: left; padding-top: 3px;}
+.bc_date_time a img {position: absolute; bottom: 1px; left: 0px;}
+.bc_date_time a span {color: #993333; font-size: 13px; text-decoration: underline;}
+.bc_image {padding: 4px 0 0 11px; width: 106px; text-align: left; float: left; }
+.bc_body {margin-left: 117px; margin-right: 15px;}
+.bc_body h2{color: #666666; font-size: 16px; font-weight: bold; margin: 0px; }
+.bc_body p {color: #666666; font-size: 13px;  }
+.bc_body a {text-decoration: none;}
+.brodk_item_a {border: 2px solid #a50407;}
+.brodk_item_a .bc_date, .brodk_item_a .bc_time {color: #933 !important;}
+.brodk_item_a .bc_body h2 {color: #933; font-size: 20px;}
+.brodk_item_a .bc_body p {color: #333; font-size: 14px;}
+
+.brodk_f .bc_body h2, .brodk_f .bc_body p   {color: #333366 !important;}
+/*---------- Themes ----------*/
+.doc_photo_title a:hover h1 {text-decoration: underline; color: #933;}
+.theme_body { margin-left: 30px; padding-left: 15px; color: #333333; font-size: 14px; position: relative; padding-bottom: 32px; margin-bottom: -2px; border-bottom: 4px solid #a50407;}
+.theme_body a {color: #333333; font-size: 14px; text-decoration: none;}
+.theme_body a:hover {text-decoration: underline;}
+.theme_date {border-top: 2px solid #c9c8ce; border-bottom: 2px solid #c9c8ce; height: 24px; padding-top: 4px; margin: 0 0 0 30px;}
+.theme_date span {font-weight: bold; font-size:16px; color: #333; padding-left: 5px;}
+.theme_img_main {display: block;  width: 224px;}
+.theme_img_main img {height: 168px; width: 224px;} 
+.theme_for {width: 244px;}
+.theme_with {margin-top: 15px; border-top: 2px solid #ccc; padding-top: 15px;}
+/*--------- end Themes -----------*/
+/*--------------- for bloger ------------------------*/
+.blog_wrapper {margin:  20px 0 20px -45px; }
+.blog_link {height: 40px; width: 140px; padding: 18px 0 0 35px; border-top: 4px solid #928fa0; border-bottom: 4px solid #928fa0; background: url('http://cdn.static1.rtr-vesti.ru/i/blog_bg.png') repeat-x; float: left; }
+#blog_open {color: #993333; font-size: 13px; font-weight: bold; cursor: pointer; text-decoration: underline; float: left; padding-right: 15px;}
+.blog_ico table tr td.icons {vertical-align: top; padding-left: 4px; }
+#fb_wrap {padding-left: 0px;}
+#blog_code {position: absolute; z-index: 999; bottom: 0px; left: 40px; padding: 12px 0 14px; background: #e8e8ee url('http://cdn.static1.rtr-vesti.ru/i/blog_code_bg.jpg') repeat-x; width: 546px; border: 2px solid #86879e; display: none;}
+.blog_inner {border: 1px solid #86879e; width: 505px; margin: 0 auto; background-color: #fff; padding: 18px 10px 22px 10px; clear: both;}
+.blog_inner p {color: #003399; font-size: 12px;}
+#code {border: 1px solid #a7a19a; width: 505px;  display: none;}
+#result {border: 1px solid #a7a19a; display: none;} 
+#blog_code ul {}
+#blog_code ul li {list-style-type: none; float: left; width: 175px; height: 30px;   border-bottom: 1px solid  #86879e; margin-bottom: -1px;}
+#blog_code ul li a {display: block; width: 175px; margin-top: 6px; height: 21px; font-size: 12px; color: #ffffcc; text-decoration: underline; text-align: center; padding-top: 3px; background-color: #6c6a7e; }
+#blog_code ul li.active_tab {height: 28px; border-bottom: none; border-top: 2px solid #b20b01;  background-color: #993333 }
+#blog_code ul li.active_tab a { margin-top: 4px; height: 22px; border-left: 1px solid  #86879e; border-right: 1px solid  #86879e; background-color: #ffffff; width: 173px; color: #993333; font-size: 14px; text-decoration: none; }
+#close_blog_code {position: absolute; top: 11px; right: 11px;}
+
+/*--------------- end for bloger ------------------------*/
+
+
+/*------------------- pogoda --------------------*/
+.open-close{cursor: pointer;}
+#img-top-pogoda {position: absolute; top: 1px; left: -8px;}
+.div-open-close{padding-top: 2px; cursor: pointer;}
+#pogoda{   width:414px; margin-left: -19px;}
+#top-pogoda{ padding-left: 19px;   width:395px; height:32px;}
+.top_pogoda_open { background: #eaeaef url(http://cdn.static1.rtr-vesti.ru/i/pogoda_bg2.png) repeat-y; }
+#top-world{    width:414px;	margin-top: 15px;    background:  #eaeaef url(http://cdn.static1.rtr-vesti.ru/i/pogoda_title2.png) repeat-y;    height:27px;}
+#top-russia{    width:414px;	margin-top: 15px;	margin-bottom: 15px;    background:  #eaeaef url(http://cdn.static1.rtr-vesti.ru/i/pogoda_title2.png) repeat-y;    height:27px;}
+#top-pogoda-title{    float: left;    font-family: Arial;    font-size: 15px;	color: #333;  height:30px;	padding-top: 4px;		padding-right: 13px;	cursor: pointer;}
+.top-pogoda-title-sub{    float: left;    font-family: Arial;    font-size: 14px;	color: #933;    width:330px;    height: 24px;	padding-top: 4px;	padding-left: 50px;	font-weight: bold;	cursor: pointer;	}
+.top-pogoda-title-sub-close{    float: left;    font-family: Arial;    font-size: 14px;    text-decoration: underline;	color: #333333;    width:330px;    height:33px;	padding-top: 2px;	padding-left: 50px;	font-weight: bold;	cursor: pointer;}
+#pogoda-body{    display: none;     width:414px;	padding-top: 5px;	padding-bottom: 15px;    background: #eaeaef url(http://cdn.static1.rtr-vesti.ru/i/pogoda_bg2.png) repeat-y;  position: absolute;    z-index: 1000; }
+#russia-body{    	padding-left: 50px;	position:relative;        overflow: hidden;}
+#world-body{	display: none; padding-left: 50px; padding-top: 15px;	position:relative;        overflow: hidden;}
+.item_city{  display: block;  	cursor: pointer;    font-family: Arial;    font-size: 12px;    text-decoration: underline;	color: #323467;	width:150px;	position:relative;}
+a:hover {    color: #993333;} 
+.line_bottom{}
+.top_main {padding: 4px !important;}
+#pogoda-body ul {float: left; width: 177px; overflow: hidden;}
+#pogoda-body ul li {list-style-type: none; display: block; height: 20px; }
+.temp {padding-left: 15px;}
+.title_weather {padding-right: 15px}
+
+
+/*------------------- end pogoda --------------------*/
+
+
+/*--------------  photo box -------------*/
+#big_img_wrap {width: 831px; height: 505px; padding-top: 10px; }
+#big_prev, #img_container, #big_next {float: left; height: 505px;}
+#big_prev {display: block; width: 42px; height: 505px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') 0 50% no-repeat; }
+#img_container {width: 747px; height: 493px; background-color: #222; text-align: center; overflow: hidden;}
+#big_next {display: block; width: 42px; height: 505px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -42px 50% no-repeat; }
+.change_img {float: left;  width: 686px; padding: 0px 5px 0 7px; background: url('http://cdn.static1.rtr-vesti.ru/i/gallery_bg.png') 7px 8px no-repeat; }
+.change_img ul {float: left; width: 2890px; overflow: hidden; padding: 10px 0 90px !important; overflow: visible !important;}
+.change_img ul li {overflow: visible !important; position: relative; float: left; width: 92px; height: 68px; border: 3px solid #000; background-color: #4a4a4a; list-style-type: none;}
+.change_img ul li a img {width: 92px; height: 68px; }
+.prev {cursor: pointer; float: left; width: 31px; height: 128px; margin-left: 35px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -109px 35% no-repeat; }
+.next {cursor: pointer; float: left; width: 31px; height: 128px;  background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -144px 35% no-repeat; }
+.change_img ul li.active_thumb {position: relative; overflow: visible !important; z-index: 700; }
+.change_img ul li.active_thumb a { z-index: 900;}
+.change_img ul li.active_thumb img {position: absolute; border: 4px solid #cc3232; left: -8px; top: -6px; width: 98px !important; height: 72px !important; }
+div.left_padding  {padding-left: 7px !important;}
+div.right_padding {padding-right: 5px !important;}
+div.right_padding ul, div.left_padding ul {overflow: visible !important;} 
+li.active_thumb div {position: absolute; top: 84px; color: #dcdcdc; width: 289px; left: -104px; text-align: center; background-color: #000; padding: 0 8px 5px 5px; display: none; }
+#carouselle_container {}
+//.img_o {width: 747px; height: 493px;}
+.img_b {width: 400px; height: 300px; padding: 13% 0 0 0;}
+/*-------------- end photo box -------------*/
+
+/*--------------  VIDEO box -------------*/
+video_wrap{height: 700px;}
+#big_video_wrap {width: 750px; height: 590px; padding-left: 7px; padding-top: 7px;}
+#big_prev, #video_container, #big_next {float: left; height: 562px;}
+#big_prev {display: block; width: 42px; height: 505px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') 0 50% no-repeat; }
+#video_container {width: 749px; height: 562px; margin: 0 auto;/* padding-left: 67px;*/}
+#big_next {display: block; width: 42px; height: 505px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -42px 50% no-repeat; }
+.change_video {float: left; overflow: hidden; width: 686px; padding: 15px 5px 0 7px; background: url('http://cdn.static1.rtr-vesti.ru/i/gallery_bg.png') 7px 25px no-repeat; }
+.change_video ul {float: left; width: 2890px !important; overflow: hidden; padding: 10px 0 90px !important; overflow: visible !important;}
+.change_video ul li {position: relative; float: left; width: 92px; height: 68px; border: 3px solid #000; background-color: #4a4a4a; list-style-type: none; overflow: visible !important;}
+.change_video ul li img {width: 92px; height: 68px; cursor: pointer;}
+.carouselle_container .prev {cursor: pointer; float: left; width: 31px; height: 100px; margin-left: 0px;  background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -109px 86% no-repeat; }
+.carouselle_container .next {cursor: pointer; float: left; width: 31px; height: 100px;  background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -144px 86% no-repeat; }
+.playlist_active {border: 4px solid #acacac ; position: absolute; z-index: 9999999; width: 102px !important; height: 76px !important; left: -10px; top: -8px; } /* #A50407 */
+.playlist_item_picture {width: 92px; height: 68px;}
+.video_pl_anons {position: absolute; top: 84px; color: #dcdcdc; width: 289px; left: -104px; text-align: center; background-color: #000; padding: 0 8px 5px 5px; display: none; } 
+
+div.left_padding  {padding-left: 7px !important;}
+div.right_padding {padding-right: 5px !important;}
+div.right_padding ul, div.left_padding ul {overflow: visible !important;} 
+li.active_thumb div {position: absolute; top: 84px; color: #dcdcdc; width: 289px; left: -104px; text-align: center; background-color: #000; padding: 0 8px 5px 5px; display: none; }
+
+.change_video ul li.active_thumb img {position: absolute; border: 4px solid #cc3232; left: -8px; top: -6px; width: 98px !important; height: 72px !important; }
+.change_video ul li.active_thumb {z-index: 700;}
+/*-------------- end VIDEO box -------------*/
+
+
+
+
+
+/*--------------  video -------------*/
+.video_mater {min-height: 561px; overflow: visible !important;}
+.video_top {padding: 0 0 14px; background: #ffffe0 url('http://cdn.static1.rtr-vesti.ru/i/video_top_bg.png') bottom repeat-x;    }
+.video_top_inner { padding: 0 17px; border-left: 1px solid #fafafb; border-right: 1px solid #fafafb;   }
+.video_block {padding: 10px 18px 20px; }
+.video_item_container {overflow: hidden;}
+.video_item {float: left; overflow: hidden; padding: 10px; padding-bottom: 7px; width: 222px; min-height: 105px;}
+.video_item .video_img {float: left; width: 102px;  }
+.playlist {cursor: pointer; float: left; display: block; width: 73px; height: 19px; padding: 4px 0 0 29px; background: url('http://cdn.static1.rtr-vesti.ru/i/playlist_bg.jpg') no-repeat; color: #333; font-size: 11px; text-decoration: none; }
+.playlist:hover {text-decoration: none; color: #333;}
+.playlist_done {background: url('http://cdn.static1.rtr-vesti.ru/i/playlist_done_bg.jpg') no-repeat !important; color: #666;}
+.video_date {margin-left: 102px; color: #999; font-size: 12px; }
+.video_item h3 {margin-left: 102px; font-weight: normal; min-width: 120px;}
+.video_item h3 a {color: #336; font-size: 12px; text-decoration: none;}
+.video_item h3 a span, .video_item h3 a:hover span {color: #933; text-decoration: none !important; }
+.video_item h3 a.vid_hover {color: #933; text-decoration: underline; }  
+.video_top h2 {border-top: 4px solid #a50409; margin-left: 2px; border-bottom: 2px solid #c9c8ce; height: 25px; padding: 2px 0 0 11px; background-color: #fff; font-color: #333; font-size: 18px;}
+.menu_shadow {height: 11px; margin-right: -5px;  background: transparent url('http://cdn.static1.rtr-vesti.ru/i/menu_section_wrapper_bg.png') left -5px repeat-x; }
+.video_block h2 {border-bottom: 4px solid #aaa8b5; padding-bottom: 10px; padding-top: 0px; font-color: #333; font-size: 18px; }
+.video_block h2 a {padding-left: 233px; color: #933; text-decoration: underline; font-size: 12px; }
+.video_mulazh {position: relative; float: left; margin-top: 75px; width: 425px; padding-left: 27px;  }
+.video_mulazh img {width: 400px; height: 300px;}
+.mulazh_mask {display: none; position: absolute; left: 27px; top: 0; display: block; width: 400px; height: 300px; background: url('http://cdn.static1.rtr-vesti.ru/i/mulazh.png') no-repeat; }
+.video_date_top {  color: #333; font-size: 18px;  padding-top: 11px; padding-right: 12px; }
+.video_content {margin-left: 453px; padding-top: 50px;  }
+.video_content h2 {color: #933; font-size: 24px; font-weight: bold; padding-bottom: 15px;}
+.video_content p {color: #333; font-size: 14px; }
+.video_content h3 {color: #333; font-size: 18px; font-weight: normal; margin-top: 25px; padding-bottom: 5px; border-bottom: 2px solid #cac9cf;}
+.video_content h1 {color: #333; font-size: 18px; font-weight: bold; margin-top: 25px; padding-bottom: 5px; border-bottom: 2px solid #cac9cf;}
+
+.video_content ul { padding:10px 5px 10px 0px;}
+.video_content ul li {list-style-type: none; background: url('http://cdn.static1.rtr-vesti.ru/i/list_type_l.png') 0 5px no-repeat; overflow: hidden;  padding-left: 15px; padding-bottom: 15px; }
+.video_content ul li a {font-size: 13px; color: #333366; text-decoration: underline;  }
+.video_content ul li a:hover {color: #933;}
+.video_blog {padding: 15px 0 30px 27px; float: left;  }
+.video_blog table.vid_b {padding-top: 20px;}
+.video_img_s {position: relative; display: block;}
+.video_hover {display: none; position: absolute; top: 0; left: 0; width: 92px; height: 68px; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/video_hover.png') no-repeat; }
+ 
+/*-------------- end video -------------*/
+
+.photolenta_date {display: block; height: 20px; border-bottom: 2px solid #c9c8ce; border-top: 2px solid #c9c8ce; color: #333; font-size: 18px; padding: 4px 0 2px; height: 24px; }
+.photolenta_top_block span.photolenta_date {border-top: none !important;} 
+.photolenta_wrap {padding-left: 64px;}
+.photolenta_wrap h1 {margin-top: 25px; margin-bottom: 15px;}
+.photolenta_sub {margin: 0px 15px 30px; color: #333; font-size: 14px;}
+.photolenta_top_block {border-top: 4px solid #a50407; margin-left: 189px; height: 54px; margin-bottom: 20px; padding-left: 3px;}
+.photolenta_hidden {display: none;}
+.photolenta_more {padding-bottom: 15px;}
+.photolenta_more a {font-size: 14px; color: #933;}
+.red_line {height: 4px; background-color: #a50407; margin: 0 18px -4px 20px;  width: 496px; float: right; }
+.red_line_list {height: 4px; background-color: #a50407; margin: 0 18px -4px 20px;  float: right; width: 483px;}
+.red_line_doc {height: 4px; background-color: #a50407; margin: 0 0px -4px -4px;  width: 481px; float: right;}
+/*--------------------- END ÂÍÓÒÐÅÍÍßß ÑÒÐÓÊÒÓÐÀ  ------------------------*/
+
+
+
+/*---------------- Start ui_datepicker_css -------------------------*/
+
+/*    Datepicker ---------------------------------  */
+#ui-datepicker-div { background: #fdf5db; z-index: 1000;}
+.ui-datepicker { width: 170px; background-color: #FFF;}
+.ui-datepicker .ui-datepicker-header { position:relative; background: #fdf5db;}
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
+.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover { top: 1px; }
+.ui-datepicker .ui-datepicker-prev { display: none; }
+.ui-datepicker .ui-datepicker-next { display: none; }
+.ui-datepicker .ui-datepicker-prev-hover { left:1px; }
+.ui-datepicker .ui-datepicker-next-hover { right:1px; }
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { display: block; position: absolute; left: 50%; margin-left: -8px; top: 50%; margin-top: -8px;  }
+.ui-datepicker .ui-datepicker-title { padding-top: 2px; margin-top: 2px; margin-bottom: 2px; margin-left: 10px; margin-right: 10px; line-height: 1.8em; text-align: center; }
+.ui-datepicker .ui-datepicker-title select { float:left; font-size:1em; margin:1px 0; }
+.ui-datepicker select.ui-datepicker-month {width: 70px;}
+/*.ui-datepicker select.ui-datepicker-month, 
+.ui-datepicker select.ui-datepicker-year { width: 49%;}*/
+.ui-datepicker .ui-datepicker-title select.ui-datepicker-year { float: right; }
+.ui-datepicker table {width: 100%; font-size: .9em; border-collapse: collapse; background: #ebebeb; font-size: 12px;}
+.ui-datepicker th { text-align: center; font-weight: bold; border: 0; background: #FFFFFF; padding-top: 2px; padding-bottom: 2px; }
+.ui-datepicker td { border: 0; padding: 1px; border: 1px solid #7f9db9; }
+.ui-datepicker td span, .ui-datepicker td a { display: block; text-align: center; color: #336699; }
+.ui-datepicker .ui-datepicker-buttonpane { background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0; }
+.ui-datepicker .ui-datepicker-buttonpane button { float: right; margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float:left; }
+.ui-datepicker .ui-datepicker-today { background: #ffc657 !important; }
+ 
+ 
+/* with multiple calendars */
+.ui-datepicker.ui-datepicker-multi { width:auto; }
+.ui-datepicker-multi .ui-datepicker-group { float:left; }
+.ui-datepicker-multi .ui-datepicker-group table { width:95%; margin:0 auto .4em; }
+.ui-datepicker-multi-2 .ui-datepicker-group { width:50%; }
+.ui-datepicker-multi-3 .ui-datepicker-group { width:33.3%; }
+.ui-datepicker-multi-4 .ui-datepicker-group { width:25%; }
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header { border-left-width:0; }
+.ui-datepicker-multi .ui-datepicker-buttonpane { clear:left; }
+.ui-datepicker-row-break { clear:both; width:100%; }
+ 
+/* RTL support */
+.ui-datepicker-rtl { direction: rtl; }
+.ui-datepicker-rtl .ui-datepicker-prev { right: 2px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next { left: 2px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-prev:hover { right: 1px; left: auto; }
+.ui-datepicker-rtl .ui-datepicker-next:hover { left: 1px; right: auto; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane { clear:right; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button { float: left; }
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group { float:right; }
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header { border-right-width:0; border-left-width:1px; }
+ 
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-datepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}
+
+
+/*---------------- End ui_datepicker_css -------------------------*/
+
+.arch {cursor: pointer;}
+.search_page {min-height: 1500px;}
+.search_page h2 {padding-left: 30px; padding-top: 20px; padding-bottom: 30px;}
+.notfound {margin-top: 50px; text-align: center; color: #933; font-weight: bold; font-size: 24px;} 
+.toogle_buttons_wrap {height: 28px; width: 747px; padding-top: 3px; background-color: #171717; clear: both; }
+.toogle_button {display: block; border: 1px solid #5f5e5e; float: right; background: #4c4c4c url('http://cdn.static1.rtr-vesti.ru/i/toogle_but_bg.gif') repeat-x; font-weight: bold; font-size: 11px; color: #333; font-family: Tahoma, sans-serif; margin-left: 10px; padding: 5px 11px; cursor: pointer; }
+.toogle_button:hover {text-decoration: none; color: #e6e6e6;}
+.toogle_button_active {color: #e6e6e6;}
+//#fancybox-wrap {height: 710px !important;}
+h1.dossier_h {margin-right: 139px;}
+.d_letters {padding-top: 14px; }
+.d_letters a {padding: 0 3px; font-size: 14px; font-weight: bold; color: #333;}
+.d_letters a:hover {color: #933;}
+.d_letters a.activ {color: #933; text-decoration: underline; font-size: 16px;}
+.bluer {width: 408px;}
+.bluer a {color: #336}
+.bluer a:hover {color: #933;}
+.mob_broadcast {padding: 40px 60px; font-size: 14px;}
+.mob_broadcast li {padding-top: 20px;}
+.mob_broadcast li ul li {list-style-type: disc; padding: 10px;}
+.mob_broadcast li ul li a {color: #336; text-decoration: underline; font-size: 16px; }
+.mob_broadcast li ul li a:hover {color: #933;}
+.search_page h2 {color: #666;}
+.shadow_search {background-color: #E9E9EE !important; background-image: none;}
+.shadow_search_abs {position: absolute; height: 11px; width: 232px; left: 0px; top: 0px; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/search_shadow_bg.png') -4px 0  no-repeat; }
+.shadow_search_abs_index {width: 234px !important; background: url('http://cdn.static1.rtr-vesti.ru/i/index_shadow.png') no-repeat;}
+.next.disabled {background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -183px 35% no-repeat;}
+.prev.disabled {background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -236px 35% no-repeat;}
+.carouselle_container .next.disabled {background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -183px 86% no-repeat;}
+.carouselle_container .prev.disabled {background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_sprite1.png') -236px 86% no-repeat;}
+.recom {padding-left: 168px !important;}
+.on_air {float: right; font-size: 18px; color: #900; padding: 0px 10px 0 0; }
+.on_air a{font-size: 18px; color: #900;}
+
+.onair_logos {position: absolute; width: 118px; right: -36px; top: 8px; z-index: 400; }
+
+.fm_logo {padding-top: 0px;}
+.l2 {border-top: 1px solid #B7B7C2; background-color: #FEFDE8; padding: 5px 0 3px;}
+.photo_listing {width: 215px; overflow: hidden; margin-top: -10px; padding: 10px 30px 13px 15px; position: relative; background: url('http://cdn.static1.rtr-vesti.ru/i/photo_listing_bg.png') 16px 10px no-repeat; margin-left: -7px;  }
+.next_vis {position: absolute; width: 32px; height: 51px; display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/next_vis.png') no-repeat; top: 10px; right: 0; z-index: 10; }
+.prev_vis {position: absolute; width: 16px; height: 51px; display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/prex_vis.png') no-repeat; top: 10px; left: 0; z-index: 10; }
+.photo_listing ul li a img {width: 45px; height: 45px; border: 3px solid #e6eaee; padding: 0; z-index: 1;}
+.photo_listing ul {width: 2800px; overflow: visible !important; z-index: 9;}
+.photo_listing ul li { float: left; overflow: visible !important; list-style-type: none; width: 51px; height: 51px; border-left: 1px solid #fefefe; border-right: 1px solid #fefefe;}
+.photo_listing ul li a {display: block; position: relative; width: 51px;}
+.photo_vis_title {position: absolute; left: 7px; top: 176px; font-size: 13px; color: #933;}
+.photo_listing ul li a img.photo_vis_active {position: absolute; top: -10px; left: -16px; width: 92px !important; height: 68px  !important; border: 3px solid #acacac; z-index: 999 !important; }
+.big_img_shadow {position: absolute; width: 224px; background: url('http://cdn.static1.rtr-vesti.ru/i/ico_bg.png') repeat;  height: 32px; left: 0; top: 136px;  }
+.with_audio .video_ico {right: 114px !important;}
+.without_line {border-bottom: 0px !important;}
+.theme_app .doc_theme_foto_video_block span {position: relative; display: block;}
+.theme_app .doc_theme_foto_video_block{padding-bottom: 10px;}
+.theme_app {padding-bottom: 10px; background: url('http://cdn.static1.rtr-vesti.ru/i/theme_small_border.png') 415px bottom no-repeat; }
+.doc_without_pic {margin-left: 45px !important;}
+.doc_without_pic h1 {width: 500px;}
+.pic_title {background-color: black; color: #DCDCDC; font-size: 16px; height: 35px; padding: 5px 50px; line-height: 1; width: 730px;}
+.broadcast_video {padding: 20px 16px 50px 53px; }
+.broadcast_video_date {color: #333; font-size: 18px;  padding-top: 11px; padding-right: 12px;}
+.broadcast_video h2 {color: #933; font-size: 24px; font-weight: bold; padding-bottom: 15px;}
+.broadcast_video_anons {color: #333; font-size: 14px; padding-top: 15px;}
+.banner_vesti_reclama {padding: 0px 0px 15px; text-align: center; }
+.banner_order_reclama {padding: 0px 0px 15px;}
+.text_pr a {font-size: 14px;}
+.text_pr a:hover{font-size: 14px; color: #333;}
+.time_doc {padding-left: 14px; border-left: 1px solid #333;}
+.tweeter_convers_right {width: 240px; padding-bottom: 10px;}
+.parentli {background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_right.gif') 196px 8px no-repeat;}
+.parentli_active {background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_down.gif') 196px 10px no-repeat;}
+.all_vid .cat span {background-image: none !important;}
+#empt {background-color: #FEFEFE; border: 1px solid #ACACAC; color: #333333 !important; font-size: 11px; font-weight: bold; left: 79px; padding: 4px; position: absolute; top: 23px; width: 111px; display: none;}
+#user_pl {position: relative;}
+.src {display: block; text-align: right; padding: 5px 0 5px 0;}
+.next_vis.disabled {position: absolute; width: 32px; height: 51px; display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/next_vis_dis.png') no-repeat; top: 10px; right: 0; z-index: 10; }
+.prev_vis.disabled {position: absolute; width: 16px; height: 51px; display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/prex_vis_dis.png') no-repeat; top: 10px; left: 0; z-index: 10; }
+
+.src_video, .src_doc {font-style : italic; margin-top: 5px; margin-bottom: 5px; color: #999999;}
+.src_video a, .src_doc a {text-decoration: underline;  color: #999999;}
+
+.doc_theme_list {background-color: #fffee0; border-top: 4px solid #aaa8ae; border-bottom: 2px solid #c9c8ce; margin: 0px !important; padding: 11px; overflow: hidden;}
+.doc_theme_list li {display: block; float: left; padding: 3px 3px 15px 20px; width: 300px; list-style-type: none; background: url('http://cdn.static1.rtr-vesti.ru/i/list_type_l.png') 3px 8px no-repeat; }
+.doc_theme_list li a {font-size: 13px; color: #333; text-decoration: underline;}
+.doc_theme_list li a:hover {font-size: 13px; color: #933; text-decoration: underline;}
+.doc_theme_h a {font-size: 18px; color: #333; text-decoration: none; }
+.doc_theme_h a:hover {font-size: 18px; color: #333; text-decoration: underline;}
+.doc_theme_h {padding: 5px 0px; overflow: hidden;}
+.right_h a {float: right; }
+.right_h {padding-bottom: 10px;}
+.image_src {padding-left: 24px; font-style: italic; color: #7D7D7D; }
+.nakl_video {margin-top: -45px; position: absolute; margin-left: 200px; font-size: 10px; color: #fff;}
+span.photo_small_ico {display:-moz-inline-stack; display: inline-block;  width: 18px; height: 13px; background: url('http://cdn.static1.rtr-vesti.ru/i/sprite1.png') left -82px no-repeat; margin-left: 10px;}
+span.video_small_ico {display:-moz-inline-stack; display: inline-block; width: 18px; height: 13px; background: url('http://cdn.static1.rtr-vesti.ru/i/sprite1.png') -28px -82px no-repeat; margin-left: 10px;}
+a.cookie_del {position: absolute; background-image:url("http://cdn.static1.rtr-vesti.ru/i/close-button.png"); display: none; height: 19px;   left: 80px; top: -8px; width: 19px; z-index: 2147483647;}
+#live_inner_h {width: 58px; height: 32px; background: url('http://cdn.static1.rtr-vesti.ru/i/arrow_live.gif') right top no-repeat;}
+#live_inner_h a {display: block; width: 37px; height: 26px; padding: 6px 0 0 8px; background: #DF423D url('http://cdn.static1.rtr-vesti.ru/i/live_bg_1.gif') left bottom repeat-x; color: #fff; font-weight: bold; font-size: 16px;}
+
+
+.radio_air {margin-left:250px; padding-top: 15px;}
+.radio_air a {color: #a50407; font-weight: bold;}
+.radio_air a.radio {padding-left: 67px; text-decoration: none; font-size: 16px;}
+.radio_stash a.radio_st {font-size: 14px; color:#a50407; font-weight: bold; padding: 10px 0px 10px 0px; text-decoration:underline;}
+.radio_stash {margin-left: 0px; margin-top: 0px;}
+.air_st_block {margin: 7px 0px;}
+.radio_air h1 {color: #333; font-size: 18px; font-weight: bold; margin-top: 0px; padding-bottom: 5px;}
+.air_block_ssilka {border-bottom: 2px solid #cac9cf; margin-left: 66px; margin-bottom: 0px; width: 278px;}
+
+
+.radio_air_r {margin-left:250px; margin-top: -40px;}
+.radio_air_r a {color: #a50407; font-weight: bold;}
+.radio_air_r a.radio {padding-left: 67px;}
+
+.air_radio_block {height: 80px; background-color: #e6e9ee;}
+.air_radio_block_left {float: left; width: 220px;}
+.air_radio_block_right {float: left; padding-top:8px;}
+
+
+.br_today h1 {color: #333333; font-weight: bold; font-size: 18px; margin: 5px 0px 3px 20px;}
+.br_arhiv h1 {color: #993333; font-weight: bold; font-size: 18px; margin-left: 20px;}
+.br_soon h1 {color: #993333; font-weight: bold; font-size: 18px; margin-left: 20px;}
+.arhiv_data_title span.bc_date {display: block; float: left; width: 106px; border-right: 1px solid #97969f; color: #999999; text-align: left; font-size: 18px; }
+.arhiv_data_title span.bc_time {display: block; float: left; padding-left: 16px; color: #999999; text-align: left; font-size: 18px;}
+.br_arhiv div.bc_body {margin-left: 117px; margin-right: 15px;}
+.br_arhiv div.bc_body h2{color: #999999; font-size: 16px; font-weight: bold; margin: 0px; }
+.br_arhiv div.bc_body p {color: #999999; font-size: 13px;  }
+.br_arhiv div.bc_body a {text-decoration: none;}
+
+.br_arhiv_pl {border-bottom: 4px solid #aaa8b5; width: 495px; margin: 6px auto 0;}
+
+.br_soon_pl {border-bottom: 4px solid #aaa8b5; width: 495px; margin: 6px auto 0;}
+.soon_data_title span.bc_date {display: block; float: left; width: 106px; border-right: 1px solid #97969f; color: #333366; text-align: left; font-size: 18px; }
+.soon_data_title span.bc_time {display: block; float: left; padding-left: 16px; color: #333366; text-align: left; font-size: 18px;}
+.soon_arhiv div.bc_body {margin-left: 117px; margin-right: 15px;}
+.soon_arhiv div.bc_body h2{color: #333366; font-size: 16px; font-weight: bold; margin: 0px; }
+.soon_arhiv div.bc_body p {color: #333366; font-size: 13px;  }
+.soon_arhiv div.bc_body a {text-decoration: none;}
+
+.br_today_pl {border-bottom: 2px solid #aaa8b5; width: 495px; margin: 6px auto 0;}
+.today_data_title span.bc_date {display: block; float: left; width: 106px; border-right: 1px solid #97969f; color: #993333; text-align: left; font-size: 18px; }
+.today_data_title span.bc_time {display: block; float: left; padding-left: 16px; color: #993333; text-align: left; font-size: 18px;}
+.today_arhiv div.bc_body {margin-left: 117px; margin-right: 15px;}
+.today_arhiv div.bc_body h2{color: #333366; font-size: 16px; font-weight: bold; margin: 0px; }
+.today_arhiv div.bc_body p {color: #333366; font-size: 13px;  }
+.today_arhiv div.bc_body a {text-decoration: none;}
+
+
+/*
+sup {color: red;}
+.doc_body sup {color: black;}
+*/
+
+
+.doc_top_blogger {padding-top: 10px;}
+.mrc_icon {float: left; padding-right: 2px; display: block; background:url("http://img1.imgsmail.ru/r/new_share_like_buttons_sprite.png") no-repeat scroll left -116px transparent; cursor:pointer; display:inline-block; height:18px; position:relative; width:16px;}
+.mrc_icon:hover {background-position: left -134px;}
+.img_src_s {text-decoration: none !important;}
+
+
+.spec_left {background: #FEFEFE url("http://cdn.static1.rtr-vesti.ru/i/left_bg.png") scroll 0 -162px  repeat-x !important; }
+.spec_center {margin-left: 227px; background-color: #fefefe;  min-height: 2880px; }
+.spec_main_news { border-left: 7px solid #fff; padding: 0 18px 0 17px}
+.spec_main_news_inner {overflow: hidden; padding: 18px 0 18px 0; border-bottom: 2px solid #c9c8ce;   }
+.spec_main_news_img_block {float: left; padding-right: 16px;  }
+.spec_main_news_img_block p {font-size: 15px !important; padding:0 0 12px !important; text-align: right;}
+.spec_main_news_inner h2 {padding: 0; margin: 0; line-height: 0.9;}
+.spec_main_news_inner h2 a {font-size: 16px; font-weight: bold; color: #933; text-decoration: none;}
+.spec_main_news_inner h2 a:hover {text-decoration: underline;}
+.spec_main_news_inner p {padding-top: 16px; overflow: hidden;}
+.spec_main_news_inner p a {color: #333; font-size: 13px; text-decoration: none;}
+.spec_main_news_inner p a:hover {text-decoration: underline;}
+
+.spec_news_today {width: 238px; border: 1px solid #c2c2ce; background: #eef1f6; margin-bottom: 10px;}
+.spec_news_today h2 {font-size: 16px; color: #333; margin-left: 24px; padding-top: 11px; font-weight: normal; }
+.spec_news_today ul {list-style-type: none; padding: 8px 12px 10px 9px;}
+.spec_news_today ul li {list-style-type: none; background: url('http://cdn.static1.rtr-vesti.ru/i/list_type_l.png') 0 6px no-repeat;  padding-left: 15px; padding-bottom: 15px; }
+.spec_news_today ul li a {font-size: 13px; color: #933; text-decoration: underline;}
+
+.video_right_anons {width: 240px; background: #58586c url(http://cdn.static1.rtr-vesti.ru/i/video_right_bg.png) bottom no-repeat; padding: 10px 0 30px;}
+.video_right_anons h2 {width: 230px; height: 34px; background: url(http://cdn.static1.rtr-vesti.ru/i/video_right_h.png) no-repeat; font-family: Tahoma; font-size: 14px; color: #f8f8ca; padding: 10px 10px 0;}
+.video_right_anons .item_v {padding: 2px 10px 8px 10px; overflow: hidden;}
+.video_right_anons .item_v a.img_v {border: 3px solid #484657; width: 76px; height: 58px; display: block; position: relative; float: left; margin-right: 6px;}
+.video_right_anons .item_v a.img_v img {width: 76px; height: 58px;}
+.video_right_anons .item_v a.img_v .ico_v {position: absolute; bottom: 0px; right: 0px; width: 26px; height: 20px; background: url('http://cdn.static1.rtr-vesti.ru/i/vid_ico_s.png') no-repeat;}
+.video_right_anons .item_v h3 {line-height: 0.9;}
+.video_right_anons .item_v h3 a {font-size: 11px; color: #d6d5da; text-decoration: underline;}
+
+.spec_item {padding: 15px 18px 15px 24px; overflow: hidden;  }
+.img_spec {display: block; position: relative; width: 92px; height: 69px; float: left; margin-right: 15px; margin-top: 5px;}
+.ico_v_spec {position: absolute; bottom: 0px; right: 0px; width: 26px; height: 20px; background: url('http://cdn.static1.rtr-vesti.ru/i/vid_ico_s.png') no-repeat;}
+.spec_item h3 {padding-bottom: 4px;}
+.spec_item h3 a {font-size: 16px; color: #333366; text-decoration: none;}
+.spec_item h3 a:hover {text-decoration: underline;}
+.spec_item .spec_section a {font-size: 13px; color: #999999; text-decoration: underline;}
+
+.video_content p a {font-size: 14px !important; text-decoration: underline;}
+
+/* ---------------- Advanced search -------------------- */
+.serch_block_left_adv { width: 227px; padding-top: 10px; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/search_top_bg.gif') left top repeat-x; height: 58px;}
+.search_top_adv {padding-top: 8px; height: 50px; background-color: #4e4d54; position: relative; overflow: hidden; z-index: 99;}
+.search_top_adv_big {padding-top: 8px; height: 50px; width: 227px; background: transparent url('http://cdn.static1.rtr-vesti.ru/i/search_adv_bg.png'); position: absolute; top: 10px; z-index: 99999;}
+.search_top_adv .search_area, .search_top_adv_big .search_area {margin-left: 30px;}
+.s_toggle, .s_toggle:hover {color: #cacaca; font-size: 11px; text-decoration: underline; float: right; }
+.s_small { margin-right: 33px;}
+.s_big {padding-right: 27px; margin-right: 27px;}
+#s_toggle_wrap {position: absolute; bottom: 4px; right: 0px; }
+.form_big {margin-left: 130px;}
+.label {width: 85px; padding-right: 15px; margin-left: 30px; float: left; text-align: right; color: #cecece; font-size: 11px; }
+.s_adv_par {padding-top: 19px; min-width: 400px;}
+
+.s_adv_par option {font-size: 12px; color: #363938;}
+.s_adv_par select.fast_date {font-size: 12px; color: #363938; width: 170px;}
+.s_legend {font-size: 11px; color: #bababa; padding: 0 18px 0 8px; } 
+#s_dstart {float: left; margin-left: 130px;}
+#s_dstart span {padding-right: 8px; color: #bababa; font-size: 14px;}
+.s_date {padding-top: 12px;}
+.s_date input {width: 60px; border: 1px solid #34363e; padding-left: 6px; font-size: 11px; height: 16px; color: #323232; }
+.s_date img {vertical-align: middle; padding-left: 5px; cursor: pointer; }
+#ui-datepicker-div {z-index: 999999 !important;}
+.ui-datepicker-trigger {background-color: #4e4d54; cursor: pointer;}
+.s_date_leg {font-size: 10px; color: #aeaeae;}
+#submit_big {width: 113px; height: 23px; background: url('http://cdn.static1.rtr-vesti.ru/i/submit_big.png') no-repeat; margin: 18px 0 0 130px; cursor: pointer;}
+.m_s_l {font-size: 15px; padding-top: 10px;}
+
+#search_result_adv_form {margin: 20px 30px; border-bottom: 1px solid #e5e5e5; padding-bottom: 30px;}
+#search_result_adv_form .search_area {margin-left: 130px; width: 385px; height: 41px; background: url('http://cdn.static1.rtr-vesti.ru/i/ssearch_big_bg.png') no-repeat; }
+#search_result_adv_form .search {width: 321px; height: 21px; margin: 9px 33px; padding: 0; }
+#search_result_adv_form .label {width: 100px; padding-right: 20px; margin: 0; float: left; text-align: right; color: #525151; font-size: 13px;}
+#search_result_adv_form .s_legend {color: #323232; font-size: 13px;}
+#search_result_adv_form .s_date {display: inline-block; vertical-align: top; padding-top: 0px;}
+#search_result_adv_form #s_dstart {float: none; margin: 0;}
+#search_result_adv_form .s_date input {width: 80px; text-align: center; padding-left: 0px; border: 1px solid #abadb3;  font-size: 13px; height: 20px; color: #323232; }
+#search_result_adv_form select.fast_date {font-size: 13px; color: #363938; width: 180px; border: 1px solid #abadb3;  height: 20px; margin-right: 20px;}
+#search_result_adv_form .s_date_leg {font-size: 11px; color: #9d9d9d;}
+#search_result_adv_form .s_adv_par {min-height: 42px; padding-top: 1px;}
+#search_result_adv_form .ui-datepicker-trigger {background-color: #fefefe; cursor: pointer;}
+.sort_wrap {float: right; color: #666666; font-size: 13px; padding-top: 20px; font-weight: bold;}
+.sort_active {color: #a52626; }
+.sort_link {text-decoration: underline; cursor: pointer;}
+.s_m_l {padding-bottom: 25px;}
+.theme_for {position: relative;}
+.theme_for div.ico {position: absolute; width: 224px; height: 40px; top: 128px; left: 0px; background: url('http://cdn.static1.rtr-vesti.ru/i/ico_bg.png') repeat; }
+.theme_for .video_ico {left: -85px !important;
+    position: relative !important;
+    top: -70px !important;}
+
+.pogoda_zagl {width:395px; height:32px;}
+.doc_theme_block h2 a.hronologia {color: #993333; font-size: 12px; font-weight: normal;}
+
+
+.obs_fm_in {background: url("http://cdn.static1.rtr-vesti.ru/i/obs_fm.png") no-repeat scroll right 0 transparent;
+    height: 19px;
+    margin-top: 5px;}
+.sk_pr_fm {  background: url("http://www.vesti.ru/i/top_sk_pr_fm.png") no-repeat scroll right 0 transparent;
+    color: #FEFEFE;
+    font-size: 13px;
+    height: 27px;
+    margin-top: 5px;
+    margin-left: 15px;
+    padding: 5px 0 0 15px;
+    text-decoration: underline;}
+
+.sk_pr_fm_bot {
+    background: url("http://www.vesti.ru/i/bot_sk_pr_fm.png") no-repeat scroll right 0 transparent;
+    color: #FEFEFE;
+    font-size: 13px;
+    height: 23px;
+    margin-left: 15px;
+    margin-top: 6px;
+    padding-top: 2px;
+    text-align: center;
+}
+.sk_pr_fm_bot a {text-decoration: underline;
+color: #c91517;
+font-size: 14px;
+}
+
+
+.vid_iphone {
+    display: none;
+}
+
+
+/*-------- Àâòîð -----------------*/
+
+.listnewsautor {padding-top: 8px;}
+.li_autor ul {margin-left: 0px; padding-left: 0px; padding-top: 0px;}
+.li_autor li {padding-left: 0px;}
+.li_autor ul li a {color: #333366; font-size: 14px; font-weight: bold;}
+.autor_span {font-weight: bold; font-size: 13px;}
+.autor_a {color: #993333; font-weight: bold; font-style: italic;  font-size: 13px; text-decoration: underline;}
+.autor_line {border-top: 1px solid #e4e4e4; background-color: #f7f7f7; height: 5px; margin-bottom: 20px; margin-top: 3px;}
+.listnewsautor h2 {font-size: 18px; font-weight: normal; color: #993333;}
+/*-------- End Àâòîð -----------------*/
+
+
+
+.doc_photo_block .video_ico_new {position: absolute; top: 55px; left: 42px; width: 128px; height: 47px;  display: block; background: url('http://cdn.static1.rtr-vesti.ru/i/video_ico_doc_new.png'); outline: none; text-indent: -9000px; cursor: pointer;}
+.news_img_container .ico .video_ico {background: url('http://www.vesti.ru/i/ico_video_smol_index.png') 100% 100% no-repeat;
+height: 42px; margin-top: -2px;
+}
+.banner_vesti_reclama, .banner_order_reclama, .display_none, .header, .footer, .td_right {display: none;}*{font-size:100%;margin:0}
+div {background-image : none !important; background-color : transparent !important;}
+#fb_recommend_v, #finfo, .banner_vesti_reclama, .display_none, #likebox_fb, .td_left_smol {display: none;}
+.menu_top li a, .menu_top li a:hover  {color: #000000; float: none; background-image : none !important;}
+.menu_top li {background-image : none !important; padding-right: 20px;}
+.index_gl_news_block, .td_right_all {margin-left: 0px;}
+.news_item {float: none;}
+#gl_h_block li, .td_right {display: none;}
+#gl_h_block {background-image : none !important;}
+.index_gl_news h2, .index_gl_news p, .index_gl_news h2, .index_gl_news p  {display: block;}
+.content div, #today_news {width: auto !important;}
+#flash_promo {display: none;}
+.index_gl_news p {padding:10px 10px 40px 10px;}
+.content {width: auto !important;}
+.span.h2, .theme_day a {float: none;}
+#top-pogoda {display: none;}
+.logo_vesti {top: 0;}
+.logo_vesti img {width: 100px; height: 100px;}
+.header_right {margin-left: 15px; margin-top: 120px;}
+.logo_vesti_fm_24 {position : relative; text-align: left; padding: 15px;}
+.on_air {float: none;}
+.search_bottom {left: 0; text-align: center; padding-top: 20px; position: relative;}
+.footer_nav {float: none; margin-bottom: 30px; text-align: center;}
+#footer img {float: none !important;}
+#ad_ph_1 {display: none;}
+#footer {width: auto; text-align: center;}
+.print_displ_none {display: none;}
+.center_block {margin-right: 0;}
+#gl_h_block  {width: auto;}
+#gl_legend a {background-color: #FFF}
+#submit {position : relative; 	background-position : -10px; width: 20px;}
+.search {float: none; border: 1px solid #000;}
+._ga3_bp_ {display: none;}
+/* doc */
+.doc_top_blogger, .photo_listing, .photo_vis_title, #doc_left_ban, .search_top  {display: none;}
+.doc_left_ban, .left_block_all {margin-right: 0;}
+.block_razdel_news .left_block {display: none;} 
+.doc_photo_block img {padding-bottom: 0px; margin-right: 15px;}
+.block_razdel_news div.right_block {margin-left: 0px;}
+
+.l_section {display: none;}
+#footer .footer_nav {text-align: center;}
+
+.menu_top li a {background-color:#FFFFFF; margin: 3px;}
+.theme_day a {display : inline; white-space : normal; line-height : 16px;}
+
+
+.theme_day {margin-top: 20px; margin-bottom: 20px;}
+.onair_logos { float: none;}
+.onair_logos img {margin-right: 10px;}
+.on_air {margin-top: -30px;}
+.pogoda_zagl {display: none;}
+
+
+ .td_left_list {display: none;}
+ .td_center_list {margin-left: 0px;}
+
+.widget_vesti {display: none;}
+.logo_main {float: none;}
+.r_head_wrapper  {margin-left: 0;}
+.probki_top {left: 0; top: 38px;}
+.onair_logos {left: 0px; position:}
+.head_links {display: block;}
+.header_right {margin-top: 0px;}
+
+.video_blog table.vid_b, .vid_b {display: none;}
+.search_top_adv {display: none;}
+#fb_wrap_video {display: none;}
+.video_content {margin-left: 0px;}
+.video_mater div {float: none !important;}
+.video_blog {padding: 0px;}
+.video_mulazh {margin-top: 20px;}
+.nakl_video { margin-left: 230px; margin-top: -30px;}
+.head_links a {display: none !important;}
+#air_link_m {display: block !important;}
+.head_date {width: 146px !important; padding-left: 41px !important;}
+
+
+.hot_block_size {margin-left: 0px !important; overflow: visible !important; height: auto !important;}
+.top_gl, .bottom_gl {height: auto !important; background: none !important; }
+.top_gl div, .bottom_gl li {float: none !important; margin-top: 5px !important;}
+
+.footer_counters_i {display: block !important; width: 200px !important; overflow: hidden; height: 160px !important;  margin-top: 20px; float: left;}
+
+.footer_counters_i div {position: relative !important;  left: 0 !important; width: 150px; float: left;}
+
+ .hot_block_size img {width: 224px !important; height: 168px !important;}
+ .bottom_gl li h2, .main_topic_gl h2, .secondary_topic_gl h2  { padding: 15px 0 !important; position : relative !important; background: none !important; background-color: none !important; width: auto !important; height: auto !important; }
+ 
+ .main_topic_gl, .bottom_gl li  {width: auto !important; height: auto !important;}
+ 
+ .hot_block_size a, .hot_block_size a:hover  {color: #993333 !important; font-size: 16px !important; text-decoration: none; font-weight: bold !important;}
+ 
+ .live_container {
+    left: 28px !important;
+    top: 155px !important;
+}
+ 
+ 
+ .header_right {margin-left: 20px !important; margin-top: 20px !important;}
+ 
+ .theme_day {
+    height: auto !important;
+	}
+ 
+.head_links {
+    left: 195px !important;
+    position: absolute !important;
+    top: -195px !important;
+}
+
+.bottom_gl {width: auto !important;}
+ 
+ .news_live {background-color: #FFF  !important; }
+
+
+.hot_block_size .video_link {background: url('http://www.vesti.ru/i/ico_video_smol_index.png') 0 0 no-repeat !important;
+margin-left: 180px;
+margin-top: 125px;
+}
+
+
+ .fb_reset {display:none;}
+#fb-root {display: none;}
+
+.hot_block_size p.vid_iphone a {color: #333333 !important;  font-size: 13px !important;  text-decoration: none !important; font-weight: normal !important;}
+.hot_block_size p.vid_iphone {padding-bottom: 15px;}
+
+.vid_iphone {
+    display: block;
+}
+
+.bottom_gl li h2 a {
+    line-height: 1 !important;
+}
+/**** inline ****/
+
+.header_right {margin-left: 256px; width: auto;}
+
+.logo_main {height: 170px; width: 255px; margin-top: 10px;}
+.img_logo_vesti {margin-left: 29px;}
+
+.r_head_wrapper {margin-left:0px;}
+.head_date {left: 29px; width: 169px;}
+.head_links {width: 727px;}
+.theme_day {margin: 0 0 10px 0; height: 66px !important; padding: 0px !important;}
+
+.live_container {position: absolute; top: 176px; left: 255px; min-height: 10px; width: 700px;}
+.live_container h2 {text-indent: -9000px; height: 20px; width: 56px; background: url(/i/live_h.png) no-repeat; margin: 6px 6px 0 0;}
+.mini_live_news {height: 25px; background: none; margin-left: 0px;}
+.mini_live_news h3 {background: none; padding-left: 0px; }
+.mini_live_news h3 a {font-size: 12px;}
+.live_news_wrapper {margin-left: 62px;}
+
+
+
+/**** inline ****/
+
+    body{background:#fbba15 url(http://cdn.static3.rtr-vesti.ru/p/o_958252.jpg) no-repeat 50% 0 fixed}
+    .all_wrap {background:none}
+    #all_wrap > .bottom_bg > .content {background:#fff; position:relative;}
+    #footer {background:#fff; position:relative}
+    #sportbox_migration_adv_banner {position:relative}
+    #sportbox_migration_adv_click_link {position:fixed; left:0; top:0; width:100%; height:100%}
+    #sportbox_migration_adv_click_link iframe {display:block}
+
+    .bottom_bg {background: url(http://s.s-ports.ru/sites/default/files/i/brandings/vesti.ru/100413/repeaty.png) 50% 0 repeat-y !important;}
+
+
+/**** inline ****/
+
+.td_left_smol {background: none #FFF;}
+.index_hot_block {overflow : hidden; background: url("http://www.vesti.ru/i/hot_bottom_bg.jpg") left bottom no-repeat; padding-bottom: 16px;}
+.hot_block_size {margin-left: 235px; height: 512px; background: url("http://www.vesti.ru/i/hot_block_bg.jpg?v=1") top left; position: relative; overflow: hidden; width: 765px;}
+ 
+.widget_vesti_block_size {width: 226px; height: 454px; position: relative; }
+#widget {height: 451px;}
+#widget .wi_news_titles {width: 221px; bottom: 0px; z-index: 3;}
+#widget, #widget .wi_news_list, #widget #wi_news_inner ul, .widget_vesti {width: 226px;}
+#widget .wi_news_list, #widget #wi_news_inner {height: 420px;}
+
+
+.wi_new {
+    background: url("http://www.vesti.ru/i/wi_new_bg_2.png") repeat-x scroll left top #ffde74;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+#widget #wi_news_inner ul li .time {font-size: 10px;}
+
+.small_widget {height: 271px !important; }
+.small_widget #widget {height: 268px; }
+.small_widget #widget .wi_news_list {height: 237px; }
+
+
+
+.serch_block_left_adv {padding-top: 0px;}
+.shadow_search_abs_index {width: 226px !important}
+
+
+.top_gl {height: 300px; margin: 0 0 0 24px; padding-top: 14px;}
+.hot_block_size a {font-family: Arial, sans-serif; color: #fff; text-decoration: none; font-size: 12px; font-weight: normal; line-height: 1;  *line-height: 1.5;}
+.hot_block_size a:hover {text-decoration: underline;}
+.hot_block_size .video_link {position: absolute; top: 0px; left: 0px; background: url('http://www.vesti.ru/i/ico_video_big_index.png') 50% 50% no-repeat;}
+.hot_block_size .video_link_smol_index .video_link {background: url('http://www.vesti.ru/i/ico_video_smol_index.png') 100% 100% no-repeat;}
+
+.main_topic_gl {width: 400px; height: 300px; position: relative; float:left; }
+.main_topic_gl img {width: 400px; height: 300px; }
+.main_topic_gl h2 {position: absolute; bottom: 0px; left: 0px; background: url('http://www.vesti.ru/i/gl_title_bg.png') repeat; padding: 10px; width: 380px; height: 40px; line-height: 0.8; }
+
+.main_topic_gl .video_link {width: 400px; height: 240px;}
+
+
+.secondary_topic_gl {float: left; margin-left: 6px; position: relative; }
+.secondary_topic_gl img {width: 320px; height: 240px; display: block;}
+.secondary_topic_gl h2 {background: #4f4e56 url('http://www.vesti.ru/i/sec_gl_title_bg.png') repeat-x; padding: 10px; height: 40px; width: 300px; line-height: 0.8; }
+.secondary_topic_gl .video_link {width: 320px; height: 240px;}
+
+
+.bottom_gl {margin: 8px 0 0 24px; background: url('http://www.vesti.ru/i/bottom_gl_bg.png') repeat-x; padding: 4px; height: 168px; width: 718px; list-style-type: none;}
+.bottom_gl li {float: left; position: relative;width: 224px; height: 168px; margin-right: 23px;}
+.bottom_gl li.last_bottom_gl {margin-right: 0px;}
+.bottom_gl li img {width: 224px; height: 168px;}
+.bottom_gl li h2 {position: absolute; bottom: 0px; left: 0px; background: url('http://www.vesti.ru/i/gl_title_bg.png') repeat; padding: 4px 10px 7px; width: 204px; line-height: 0.7; height: 37px; }
+.bottom_gl li h2 a {line-height: 0.7; *line-height: 1.2;}
+.bottom_gl li .video_link {width: 224px; height: 120px;}
+
+#main_player_wrapper {position: absolute; width: 768px; height: 512px;  background: url('http://www.vesti.ru/i/hot_block_bg.jpg?v=1') repeat; top: 0px; left: 0px; display: none; }
+#main_player {position: absolute; width: 644px; height: 483px; top: 14px; left: 67px;  }
+#main_player .close_btn_v {background: url('http://www.vesti.ru/i/close-button.png') no-repeat; width: 19px; height: 19px; position: absolute; right: -19px; top: -10px;}
+
+
+.hot_block_size_urgent {margin-left: 232px; height: 329px; background: url("http://www.vesti.ru/i/urgent_bg.png") top left; position: relative; overflow: hidden; width: 765px;}
+.hot_block_size_urgent img {display: block; float: left; margin: 14px 14px 0 24px; width: 400px; height: 300px;}
+.hot_block_size_urgent h2 {padding: 60px 96px 80px 40px; height: 175px;}
+.hot_block_size_urgent h2.with_ph {padding: 15px 69px 10px 18px; height: 290px;}
+.hot_block_size_urgent h2 a {color: #0d0d0d; font-weight: normal; font-size: 40px;}
+
+
+.hot_block_size_mourn {margin-left: 232px; height: 329px; background: #1a1918 url('http://www.vesti.ru/i/mourn_bg.png') repeat-x; position: relative; overflow: hidden; width: 765px;}
+.hot_block_size_mourn img {display: block; float: right; margin: 40px 22px 0 20px; width: 320px; height: 240px;}
+.hot_block_size_mourn h2 {padding: 40px 10px 80px 40px; height: 195px;}
+.hot_block_size_mourn h2 a {color: #fff; font-weight: normal; font-size: 40px;}
+
+#index_center_block .ico .video_ico {width: 42px; height: 42px; margin-top: -2px; margin-left: 180px; background: url("http://www.vesti.ru/i/ico_video_smol_index.png") no-repeat;}
+
+
+/**** inline ****/
+
+/* NP Sberbank */
+.section_block_1120 {
+border: 3px solid #65aa2b;
+}
+
+.section_block_1120 ul {
+background-color: #e2e977;
+}
+
+.section_block_1120 ul li a {color: #7a7d6d;}
+
+

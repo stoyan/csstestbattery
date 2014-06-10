@@ -1,0 +1,999 @@
+@charset "utf-8";
+/* CSS Document 20120223 */
+
+/*基础制作页面组件*/
+html, body, div, p, hr, pre, h1, h2, h3, h4, h5, h6, table, tr, td, th, tfoot, tbody, thead, form, fieldset, input, textarea, label, ul, ol, dl, li, dt, dd, a, img { margin:0; padding:0; border:0; outline:none; list-style:none; font-weight: normal; }
+*html { _background-image:url(about:blank); _background-attachment:fixed; }
+article, aside, dialog, footer, #header, section, footer, nav, figure, menu { display:block; }
+li { list-style-type:none; }
+a { text-decoration:none; outline:none; color:#333; }
+a:hover { text-decoration:underline; }
+table { border-collapse:collapse; border-spacing:0; margin:0 auto; clear:both; }
+fieldset, img { border:0; }
+em { font-style:normal; }
+hr { height:0; clear:both; }
+.none { display:none; }
+.clearfix { *zoom:1; clear:both; height:0; margin:0; padding:0; display:inline; _overflow:hidden; }
+.clearfix:after { display:inline; overflow:hidden; clear:both; height:0; visibility:hidden; content:"."; }
+* html .clearfix { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+.clear { clear:both; }
+
+q:before, q:after { content:''; }
+a img { border:none; }
+.oclear { overflow:auto; zoom:1; }
+.align_c { text-align:center; }
+.align_l { text-align:left; }
+/* =body*/
+body { font-family:"宋体"; color: #000; font-size:12px; background:#fff; line-height:20px; }
+h1, h2, h3, h4, h5, h6 { font-weight:400; font-size:100%; }
+h2 { font-size:14px; font-weight:700; }
+/* color */
+.line16 { line-height:16px; }
+.line18 { line-height:18px; }
+.line20 { line-height:20px; }
+.line22 { line-height:21px!important; }
+.line23 { line-height:23px; }
+.fontst{ font-family:"宋体"; font-size:12px; padding:0 2px;}
+.fontwhite, .fontwhite a { color:#fff!important; }
+.fontblue, .fontblue a { color:#122E67!important; }
+
+.fontblue2, .fontblue2 a { color:#122E67!important; }
+.font_title, .font_title a { color:#05649B!important; }
+.fontbrown, .fontbrown a { color:#666!important; }
+.fontred, .fontred a { color:#9d0000!important; }
+.fontred2, .fontred2 a { color:#9d0000!important; }
+.fontgray, .fontgray a { color:#999!important; }
+.fontblack, .fontblack a { color:#4c4c4c!important; }
+.fontyellow, .fontyellow a { color:#f8d500!important; }
+.font12, .font12 a { font-size:12px!important; }
+.font13, .font13 a { font-size:13px!important; }
+.font14, .font14 a { font-size:14px!important; }
+.font15, .font15 a { font-size:15px!important; }
+.font16, .font16 a { font-size:16px!important; }
+.fontb { font-weight:bold!important; }
+.fontb a { font-weight:bold!important; }
+.fontn { font-weight:normal!important; }
+.img_small img { width:60px!important; height:60px!important; }
+.img_middle img { width:90px!important; height:65px!important; }
+/* 间距 */
+.p_com{ padding:4px;}
+.p10 { padding:10px; }
+.p20 { padding:20px; }
+.pl10 { padding-left:10px; }
+.pl20 { padding-left:20px; }
+.pr10 { padding-right:10px; }
+.pt5 { padding-top:5px; }
+.pt10 { padding-top:2px; }
+.pb5 { padding-bottom:5px; }
+.pb10 { padding-bottom:10px!important; }
+.m20 { margin:20px; }
+.ml5 { margin-left:5px; }
+.mr5 { margin-right:5px; }
+.ml10 { margin-left:10px; }
+.ml20 { margin-left:20px; }
+.ml25 { margin-left:25px; }
+.mr10 { margin-right:10px; }
+.mr15 { margin-right:15px; }
+.mr20 { margin-right:20px; }
+.mr40 { margin-right:40px; }
+.mt5 { margin-top:5px; }
+.mt10 { margin-top:10px; }
+.mt15 { margin-top:15px; }
+.mt20 { margin-top:20px; }
+.mb5 { margin-bottom:5px; }
+.mb8 { margin-bottom:8px; }
+.mb10 { margin-bottom:10px!important; }
+.mb20 { margin-bottom:20px; }
+.left { float:left; }
+.right { float:right; }
+.overh { overflow:hidden; _display:inline-block; }
+.last { margin:0!important; }
+/***** 基础组件样式 ******/
+/* 列表 */
+.list { overflow:hidden; _display:inline-block; }
+.list li { vertical-align:middle; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) no-repeat -493px -93px; font-size:14px; padding-left:13px; line-height:24px; overflow:hidden; height:24px; }
+.list .list_line { border-bottom:1px dashed #ccc; padding-bottom:10px; margin-bottom:10px; display:inline }
+.list_line_top { border-top:1px dashed #ccc; padding-top:10px; margin-top:10px; display:inline }
+.list .type { margin-right:5px; display:inline }
+.list li strong { font-weight:bold; }
+.list li span { }
+.list li a { font-size:14px; }
+.list_font13 li a { font-size:13px; }
+.list_font12 li { line-height:22px; height:22px; overflow:hidden; }
+.list_font12 li a { font-size:12px; }
+.list .line { border-bottom:1px solid #e5e5e5; margin-bottom:5px; padding-bottom:5px; }
+.icon1 { width:20px; height:20px; vertical-align:middle; line-height:24px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -485px -57px no-repeat; display:inline-block; }
+.icon2 { width:33px; height:20px; vertical-align:middle; line-height:24px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -471px -1155px no-repeat; display:inline-block; }
+.icon3 { width:42px; height:22px; vertical-align:middle; line-height:24px; background:url(http://www.xinhuanet.com/home/new/images/icon_20130805home1.gif) no-repeat; display:inline-block; }
+.icon4 { width:42px; height:22px; vertical-align:middle; line-height:24px; background:url(http://www.xinhuanet.com/home/new/images/icon_20130805home2.gif) no-repeat; display:inline-block; }
+.icon5 { width:42px; height:22px; vertical-align:middle; line-height:24px; background:url(http://www.xinhuanet.com/home/new/images/icon_20130805home3.gif) no-repeat; display:inline-block; }
+.list .time { float:right; color:#9fb0cc; }
+/*标题透明图*/
+.picTitle { position:relative; float:left; width:100%; height:75px; margin-right:5px; display:inline; } 
+.picTitle .bg { background: #000000; bottom: 0; height: 22px; left: 0; opacity:0.4; filter:alpha(opacity=40); position: absolute; width: 100%; z-index: 10; } 
+.picTitle .name { bottom: 0; color: #FFFFFF; height: 22px; left: 0; line-height: 22px; overflow: hidden; position: absolute; text-align: center; width: 100%; z-index: 11; } 
+.picTitle .name a { color: #FFFFFF; text-decoration:none; } 
+.picTitle .name a:hover { text-decoration: underline; } 
+/* 标题 */
+.xtitle { height:37px; line-height:37px; color:#0A599B; }
+.xtitle span { color:#0A599B; font-size:12px; font-weight:normal; padding-left:10px; }
+.xtitle span a { color:#0A599B; font-size:12px; font-weight:normal; }
+.xtitle .more { float:right; font-weight:400; font-size:12px; margin-right:10px; }
+.xtitle .more a { color:#333; font-weight:400; font-size:12px; }
+/* 图片标题摘要 */
+.img_title h3, .img_title h3 a { color:#1f3b7b; font-size:14px; line-height:28px; }
+.img_title { padding-bottom:5px; overflow:hidden; _display:inline-block; }
+.img_title .img { float:left; margin-right:5px; display:inline }
+.img_title .info { color:#666; line-height:23px; }
+.img_title .info p a { color:#666; line-height:18px; }
+/* 图片列表*/
+.list_pic { margin-top: 10px; overflow:hidden; _display:inline-block; width:100%; }
+.list_pic li { float:left; display:inline; }
+.list_pic .img a img { float:left; }
+.list_pic .name { text-align:center; line-height:18px; }
+.list_pic .name a { font-size:12px; }
+.list_pic .name2 { text-align:center; line-height:18px; padding-top:3px; float:left; width:100%; height:36px; overflow:hidden }
+.list_pic .name2 a { font-size:12px; }
+/*右侧通用图片*/
+.right_pic { margin-bottom:2px; }
+.right_pic li { position:relative; height:100px; width:140px; margin:0 7px 0; }
+.right_pic li .bg { background:#000; width:100%; opacity:0.4; filter:alpha(opacity=40); height:22px; z-index:10; left:0; bottom:0; position: absolute; }
+.right_pic li .name { text-align:center; color:#fff; z-index:11; position:absolute; left:0; bottom:0; height:22px; line-height:22px; width:100%; overflow:hidden; }
+.right_pic li .name a { color:#fff; }
+/*中间通用图片*/
+.center_pic li { position:relative; height:123px; width:90px; overflow:hidden; }
+.center_pic li .bg { background:#000; width:100%; opacity:0.4; filter:alpha(opacity=40); height:22px; z-index:10; left:0; bottom:0; position: absolute; }
+.center_pic li .name { text-align:center; color:#fff; z-index:11; position:absolute; left:0; bottom:0; height:20px; line-height:20px; width:100%; }
+.center_pic li .name a { color:#fff; }
+/*左侧通用图片*/
+.left_pic { margin-bottom:5px; }
+.left_pic2 { margin-left:1px;}
+.left_pic li { position:relative; height:78px; width:105px; margin:0 3px 0; }
+.left_pic li .bg { background:#000; width:100%; opacity:0.4; filter:alpha(opacity=40); height:22px; z-index:10; left:0; bottom:0; position: absolute; }
+.left_pic li .name { text-align:center; color:#fff; z-index:11; position:absolute; left:0; bottom:0; height:22px; line-height:22px; width:100%; overflow:hidden; }
+.left_pic li .name a { color:#fff; }
+/* 页签 */
+.tab { overflow:hidden; _display:inline-block; }
+.tab .tab_title { height:26px; background:#f0f0f0 url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0 -1446px repeat-x; overflow:hidden; }
+.tab .tab_title ul { overflow:hidden; _display:inline-block; }
+.tab .tab_title li { float:left; height:26px; }
+.tab .tab_title li a { float:left; padding:0 15px; height:26px; line-height:26px; font:bold 14px/26px "微软雅黑"; text-align:center; color:#16507e; }
+.tab .tab_title li a:hover { text-decoration:none; }
+.tab .tab_title li.active a { border:1px solid #ccc; border-bottom:none; height:26x; color:#2d55c4; }
+.tab .tab_box { overflow:hidden; _display:inline-block; }
+.tab .tab_box .tab_box_content { display:none; }
+.tab2 .tab_title li.active a { border:none; height:26px; background:#f5f5f5; }
+/* 3栏目layout_col3 */
+.layout_col3 { overflow:hidden; _display:inline-block; }
+.layout_col3 .col_left { float:left; width:226px; _display:inline-block; margin-right:17px; }
+.layout_col3 .col_middle { float:left; width:410px; overflow:hidden; _display:inline-block; }
+.layout_col3 .col_right { float:right; width:311px; overflow:hidden; _display:inline-block; }
+.layout_col3 .col_main { padding:10px; }
+.layout_col2 { overflow:hidden; _display:inline-block; }
+.layout_col2 .col_left { float:left; width:654px; overflow:hidden; _display:inline-block; }
+.layout_col2 .col_right { float:right; width:312px; overflow:hidden; _display:inline-block; }
+.layout_col2 .col_main { padding:15px; overflow:hidden; _display:inline-block; }
+.layout_col2 .col_right .col_main { padding:0; }
+.part_xhzc .layout_col3 { overflow:visible; }
+.part_xhjj .layout_col3 { overflow:visible; }
+/*内容通用标题*/
+.part_tit { height:34px; border-bottom:1px solid #ccc; line-height:34px; overflow:hidden; background:#E7EFF7; }
+.part_tit h2 { float:left; padding-left:10px; font:bold 15px/34px "微软雅黑"; color:#2d4d86; }
+.part_tit h2 a {height:34px; overflow:hidden; font:bold 15px/34px "微软雅黑"; color:#2d4d86; }
+.part_tit2 { background:url("http://www.xinhuanet.com/home/new/images/common_v1.gif") -186px -1495px no-repeat; }
+
+.part_con, .part_con a { color:#666; }
+.tw { overflow:hidden; }
+.part_con_c, .part_con_c a { color:#122E67; }
+.part_con_c .list li { line-height:24px; }
+.bgright { background:#fff; }
+.tw img { float:left; margin-right:6px; display:inline; }
+.stitle { color:#666; line-height:38px; float:right; padding-right:10px; }
+.stitle a { color:#666!important; }
+
+.stitle_yww { color:#666; line-height:38px; float:left; padding-left:10px; }
+.stitle_yww a { color:#666!important; }
+
+.stitle .fontblue { colfor:#122E67!important; }
+.stitle .fontred { color:#e30000!important; }
+.relative { position:relative; }
+/*****布局******/
+#header, #center { width:980px; margin:0 auto; overflow:hidden; }
+#headline { width:980px; margin:0 auto; }
+#header { padding-top:26px; }
+.part { clear:both; }
+/*返回顶部按钮*/
+.totop { bottom: 10px; right: 2px; width: 50px; position: fixed; _position:absolute; _top:expression(eval(document.documentElement.scrollTop-10+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+z-index:80; width:50px; }
+.totop .dh { display:block; width:100%; height:22px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -355px -1161px no-repeat; }
+.totop .dh:hover, .totop .dh_on { background-position:-355px -1242px; }
+.totop .maodian { display:none; background:#fff; }
+.totop .maodian li { height:22px; border:1px solid #e7e7e7; border-top:none; text-align:center; }
+.totop .maodian li a { color:#333; display:block; width:100%; text-align:center; height:22px; }
+.totop .maodian li a:hover { background:#565656; text-decoration:none; color:#fff; }
+.totop .back { display:block; width:100%; height:50px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -355px -1183px no-repeat; }
+/*返回顶部按钮*/
+.smewm { background: url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -217px -1160px no-repeat; bottom:40px; right: 2px; width: 112px; height:120px; position: fixed; _position:absolute; _top:expression(eval(document.documentElement.scrollTop-45+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+z-index:10; }
+.xbzs { background: url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) 0 -320px no-repeat; bottom:160px; right: 2px; width: 113px; height:28px; position: fixed; _position:absolute; _top:expression(eval(document.documentElement.scrollTop-165+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+z-index:10; }
+/*顶部工具条*/
+.topbar { position:fixed; left:0; top:0; height:25px; line-height:25px; z-index:80; width:100%; _position:absolute; _top:expression(documentElement.scrollTop);
+}
+.topbar .content { width:980px; margin:0 auto; position:relative; height:25px; line-height:25px; vertical-align:middle; }
+.topbar .left { float:left; }
+.topbar .right { float:right; }
+.topbar .tpart1 { width:230px; }
+.topbar .tpart2 { width:130px; }
+.topbar .tpart1 a { float:left; padding-left:18px; margin-right:10px; display:inline; }
+.topbar .tpart1 .hf { display:inline; background-position:-227px -58px; }
+.topbar .tpart1 .cpb { background-position:-227px -99px; }
+.topbar .tpart1 .sjb { background-position:-227px -138px; }
+.topbar .tpart1 .sw { background-position:-227px -166px; z-index:5; }
+.topbar .tpart1 .sw a { margin:0; padding:0; }
+.topbar .tpart1 .wzdh { background:none; padding:0; }
+.topbar .tpart3 { width:200px; overflow:hidden; padding-top:8px; }
+.topbar .tpart4 a { margin:0 2px; }
+.topbar .tpart4 .link1 { margin-right:5px; }
+/*弹出层*/
+.tcc_com { position:absolute; left:0; top:0; width:226px; display:none; z-index:10; }
+.tcc_com .content { padding:5px 5px 0 10px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -136px -752px no-repeat; overflow:hidden; }
+.tcc_com .content a { margin-right:10px; display:inline-block; }
+.tcc_com .bottom { height:20px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -136px -1037px no-repeat; }
+.tcc_com .bottom a { float:right; width:25px; height:25px; }
+/*头部*/
+#header .logoarea { height:105px; }
+#header .logo { float:left; width:130px; height:105px; }
+#header .logo a { float:left; width:130px; height:105px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0 -56px no-repeat; }
+#header .language { float:left; width:500px; }
+#header .language .lan_link { height:30px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0 -198px no-repeat; }
+#header .language .lan_link a { float:left; width:64px; height:30px; }
+#header .language .lan_link .lan3 { width:55px; }
+#header .language .lan_link .lan4 { width:96px; }
+#header .language .lan_link .lan5 { width:40px; }
+#header .language .lan_link .lan6 { width:44px; }
+#header .language .lan_link .lan7 { width:59px; }
+#header .language .lan_link .lan8 { width:33px; }
+#header .language .lan_link .lan9 { width:33px; }
+#header .logoarea .right { width:343px; padding-top:8px; }
+#header .dyz { float:left; }
+#header .nav1 { float:left; width:310px; }
+#header .nav1 a { float:left; width:62px; height:52px; line-height:60px; text-align:center; color:#fff; font:bold 16px/56px "微软雅黑"; }
+#header .nav1 a:hover, #header .nav1 a.on { color:#174063; background-position: -142px -59px; }
+#header .nav2 { float:right; width:667px; line-height:20px; padding-top:10px; overflow:hidden; height:41px; }
+#header .nav2 a { font-size:13px; color:#fff; margin:0 3px 0 2px; }
+#header .nav3 { height:54px; clear:both; overflow:hidden; margin-bottom:4px; }
+#header .nav3 .nav_con { padding-top:4px; }
+#header .nav3 .nav_part1 { float:left; width:375px; }
+#header .nav3 .nav_part2 { float:left; width:295px; }
+#header .nav3 .nav_part3 { float:left; width:200px; }
+#header .nav3 .nav_part3 li { height:22px; overflow:hidden; }
+#header .nav3 .nav_part1 p { line-height:24px; }
+#header .nav3 .nav_part1 p a { margin:0 3px; }
+#header .rightdiv { overflow:hidden; _display:inline-block; margin-bottom:5px; }
+#gd_area_top { width:170px; height:20px; line-height:20px; overflow:hidden; float:left; display:inline-block; }
+#header .gd_zfw { float:left; line-height:18px; }
+#header .gd_zfw a { font-size:12px; font-weight:bold; color:#005baa; margin-right:6px; }
+#gd_area_top .wrap { float: left; width:100000px; }
+#gd_content_top, #gd_scroll_top { float:left; }
+#gd_content_top li, #gd_scroll_top li { height:18px; color:#005baa; padding-left:10px; float:left; line-height:18px; font-weight:bold; }
+#gd_content_top li a, #gd_scroll_top li a { font-size:12px; font-weight:bold; color:#005baa; }
+#header .dfpd { padding-top:4px; clear:both; }
+#header .dfpd .name { float:left; padding:0 5px; font-weight:bold; margin-right:5px; display:inline; line-height:22px; }
+#header .df_part1 { height:25px; position:relative; z-index:9; }
+#header .df_part2 { height:25px; position:relative; z-index:8; }
+#header .df_part1 li { float:left; margin-right:15px; display:inline; line-height:22px; position:relative; }
+#header .fontlink { line-height:23px; font-size:13px; }
+#header .fontlink a { margin-right:6px; }
+#header .fontlink span { font-size:13px; margin:0 4px; }
+#header .more { float:right; width:16px; height:16px; }
+#header .xhbk_font a { margin-right:3px; line-height:22px; }
+#header .xhbk_font { float:left; width:276px; }
+#header .dfpd .tcc_com { left:76px; width:262px; top:16px; }
+/*cover*/
+.headline { }
+.headline .content { padding:5px; /*height:388px;*/ height:388px; z-index:78; border:1px solid #9c9c9c; }
+.headline .content .content { border:none; }
+.headline .h_part1 { width: 125px; float:left; display:inline; background:#F4FDFF; height:358px; /*height:425px;*/ overflow:hidden; }
+.headline .h_part1 .fontlink p { border-bottom:1px dotted #666; line-height:24px; }
+.headline .h_part1 .fontlink p a { font-size:12px; }
+.headline .h_part2 { width: 833px; float:right; /*height:358px;*/ /*height:425px;*/ overflow:hidden; }
+.headline .h_part3 { clear:both; float:left; margin:0; width:100%; }
+.headline .h_part2_top { height:83px; overflow:hidden; }
+.headline .h_part2_top .img { text-align:center; margin-bottom:4px; }
+.headline .h_part2_top .textlink { color:#333; text-align:center; padding:2px 0 4px; }
+.headline .h_part2_top .textlink a { color:#333; }
+.headline .tjzt img { float:left; margin-right:5px; }
+.headline .h_part2_left { float:left; width:530px; }
+.headline .h_part2_right { float:right; width:295px; }
+.headline .h_part2_right .list li { padding-left:0; background:none; height:24px; overflow:hidden; }
+.headline .h_part2_right .list li a { cursor:pointer; }
+.headline .h_part2_right .list .fenduan { margin-top:5px; }
+.headline .ewm a { float:left; border:1px solid #c7dfff; height:22px; line-height:22px; color:#004097; font-weight:bold; text-align:center; }
+.headline .ewm p { clear:both; height:30px; }
+.headline .ewm1 { width:120px; }
+.headline .ewm2 { width:56px; margin-right:6px; }
+.headline .xhcp { line-height:26px; overflow:hidden; padding-top:10px; margin-top:5px; height:110px; }
+.headline .xhcp a { float:left; width:41px; text-align:center; padding-top:30px; color:#666; }
+.headline .xhrc { height: 26px; line-height: 26px; margin-right:5px; display:inline; width:293px; }
+.headline .xhrc .tit { float:left; font-size: 14px; font-weight: bold; padding-left:10px; z-index:78; color:#2D4D86!important; }
+.headline .xhrc .tit a { font-size: 14px; font-weight: bold; color:#122E67; }
+.headline .xhrc .tcc_com { left:0; width:262px; top:19px; height:85px; font-weight:normal; z-index:78; }
+.headline .xhrc .tcc_com .content { height:auto; padding:5px 10px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -136px -752px no-repeat!important; }
+.headline .xhrc .tcc_com .content a { font-weight:normal; color:#333; font-size:12px; margin: 0 3px 0 0; line-height:22px; height:20px; }
+.headline #IssueList { line-height:26px; height:26px; }
+.headline .tjzt { overflow:hidden; }
+.headline .tjzt .fontblue { line-height:22px; }
+.headline .tjzt .title { height:20px; line-height:20px; overflow:hidden; }
+.headline .tjzt .tjzt_con { height:60px; overflow:hidden; }
+.headline .tjzt .tjzt_con a { color:#666; }
+.headline .h_part1 .fontlink { width:125px; overflow:hidden; }
+.headline .h_part1 .fontlink p { border-bottom:0px dotted #666; line-height:22px; }
+.headline .h_part2_top .img { text-align:center; margin-bottom:2px; }
+.headline .h_part2_top .textlink { color:#666; height:18px; overflow:hidden; padding:2px 0 0px; }
+.headline .h_part2_top .textlink a { color:#666; }
+.headline #IssueList3 td a { color:#f40701; }
+.headline .h_part1 .cover_left { width:125px; overflow:hidden; padding-bottom:5px; }
+.headline .h_part1 .cover_left p { height:22px; line-height:22px; overflow:hidden; }
+
+/*及时要闻*/
+.jsyw { height: 26px; line-height: 26px; margin-left: 5px; width:653px; display:inline; }
+.jsyw .content { padding:5px; }
+.jsyw .jsyw_tit { float:left; font-size: 14px; font-weight: bold; padding-left:10px; color:#122E67!important; }
+.jsyw .jsyw_tit a { font-size: 14px; font-weight: bold; color:#2D4D86; }
+.jsyw .list li { line-height:28px; }
+.jsyw .twarea { border-top:1px solid #ccc; margin-top:10px; padding-top:10px; }
+.jsyw .twarea .img_title { border-bottom:1px solid #e9e9e9; padding-bottom:10px; margin-bottom:10px; }
+.jsyw .twarea .img_title h3 a { color:#333; font-size:16px; font-weight:bold; }
+.jsyw .shangxun { border-top:1px solid #ccc; margin-top:10px; padding-top:10px; }
+.jsyw .shangxun li { line-height:24px; }
+.jsyw .js_con .list { padding:5px; }
+.jsyw .js_con .list li { overflow:hidden; }
+.jsyw .js_con .list span { float:right; color:#a4a4a4; }
+.jsyw .js_con .info { position:absolute; left:0; top:0; }
+#scrollDiv { float:left; width:120px; color:#fff; text-align:center; }
+/*=====文字横向滚动=====*/
+/*#gd_area { width:560px; height:26px; line-height:26px; overflow:hidden; float:left; }
+#gd_area .wrap { float: left; width:100000px; }
+#gd_content, #gd_scroll { float:left; }
+#gd_content li, #gd_scroll li { height:26px; color:#333; padding-left:10px; float:left; line-height:26px; }
+#gd_content li a, #gd_scroll li a { font-size:13px; }
+*/
+#gd_area { width:560px; height:26px; line-height:26px; overflow:hidden; float:left; position:relative; }
+#gd_area .wrap { float: left; }
+#gd_content, #gd_scroll { position:absolute; left:0; top:0; width:1000000px; }
+#gd_content li, #gd_scroll li { height:26px; color:#333; padding:0; float:left; line-height:26px; width:560px; }
+#gd_content li a, #gd_scroll li a { font-size:13px; }
+/*今日热点*/
+.jrrd .title { padding:5px 0; }
+.jrrd .tw { height:70px; overflow:hidden; }
+/*图文描述效果区*/
+.twshow { border-top:0px solid #e5e5e5; }
+.twshow ul { border:1px solid #d9d9d9; border-bottom:none; }
+.twshow li { height:86px; border-bottom:1px dashed #ddd; overflow:hidden; overflow:hidden; _display:inline-block; }
+.twshow .pic { float:left; margin-right:10px; display:inline; }
+.twshow .info { float:left; width:105px; height:66px; overflow:hidden; }
+.twshow .title2 { display:none; }
+.twshow .lanmu, .twshow .lanmu a { font-size:13px; color:#ff0033; }
+.twshow .lanmu { padding-bottom:1px; }
+.twshow .miaoshu { color:#666; display:none; clear:both; }
+.twshow h3, .twshow h3 a { font-size:12px; color:#122E67; }
+.twshow .content { padding:14px; }
+.twshow li.active { background:#f3f3f3; height:142px; overflow:hidden; }
+.twshow li.active .miaoshu { display:block; }
+/*股市行情*/
+
+/*新华聚焦*/
+.xhjj .title { line-height:24px; }
+.xhjj .title h3 a { line-height:30px; font-size:14px; font-weight:bold; }
+.xhjj .list .fenduan { margin-top:5px; }
+.xhjj .line { border-bottom:1px solid #ccc; padding-bottom:8px; margin-bottom:8px; }
+.xhjj .area2 .list li { background:none; padding-left:0; }
+.xhjj .area_h3 { height:30px; overflow:hidden;}
+.xhjj .area_h3 a { font-weight:bold; line-height:30px; font-size:14px; }
+.xhjj .area_h3 .icon1 { background-position:-485px -57px; }
+.xhjj .area_h3 .icon2 { background-position:-471px -1153px; }
+/*盘古*/
+.pg_search { height:30px; padding-left:83px; margin:5px 0; }
+.pg_search input { float:left; width:150px; line-height:26px; height:26px; background:none; }
+.pg_search .btn_submit { float:left; width:65px; height:26px; margin-left:10px; display:inline; cursor:pointer; }
+/*自定义*/
+.dzarea .bgicon{ position:absolute; width:60px; height:60px;  z-index:0; left:10px; top:0;}
+.dzarea .bgicon_ifr_dy_9{background:url(http://www.xinhuanet.com/home/new/images/zdy_icon.png) 0 0 no-repeat;}
+.dzarea .bgicon_ifr_dy_7{background:url(http://www.xinhuanet.com/home/new/images/zdy_icon.png) -70px 0 no-repeat;}
+.dzarea .bgicon_ifr_dy_8{background:url(http://www.xinhuanet.com/home/new/images/zdy_icon.png) -134px 0 no-repeat;}
+.dzarea .bgicon_ifr_dy_2{background:url(http://www.xinhuanet.com/home/new/images/zdy_icon.png) -201px 0 no-repeat;}
+.dzarea .tit { height:30px; margin-bottom:3px;margin-left:80px; }
+.dzarea .tit li { float:left; height:30px; width:30px; line-height:28px; display:inline; }
+.dzarea .tit li a { float:left; height:30px; width:30px; line-height:28px; text-align:left; font-size:14px; font-weight:bold; color:#686969; }
+.dzarea .tit .a1 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) 0 0 no-repeat; }
+.dzarea .tit .a2 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -30px 0 no-repeat; }
+.dzarea .tit .a3 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -60px 0 no-repeat; }
+.dzarea .tit .a4 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -90px 0 no-repeat; }
+.dzarea .tit .a5 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -120px 0 no-repeat; }
+.dzarea .tit .a6 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -150px 0 no-repeat; }
+.dzarea .tit .a7 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -180px 0 no-repeat; }
+.dzarea .tit .a8 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -210px 0 no-repeat; }
+.dzarea .tit .a9 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -240px 0 no-repeat; }
+.dzarea .tit li.hover { background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -304px -259px no-repeat; }
+.dzarea .tit li.active { background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -304px -259px no-repeat; }
+.dzarea .con { border:1px solid #39B5FF; background:#fff; height:300px; overflow:hidden; width:308px; }
+.dzarea .dz { width:48px; height:20px; line-height:26px; float:right; text-align:center; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -363px -239px no-repeat; }
+#dz { position:relative; height:340px; width:310px; }
+
+
+.dz_title{ position:absolute; right:0; top:0; width:60px; }
+.dz_title .fr{ float:right; display:inline;  margin-top:5px; height:30px; width:45px; margin-right:10px; background:url(http://www.xinhuanet.com/home/new/img/index_add.gif) 100% 3px no-repeat; }
+.dz_title .tcc_com{ width:262px; position:absolute; left:-200px; top:34px; display:none;}
+.dz_title .tcc_com .content{ padding:10px;  _height:20px;}
+.dz_title .tcc_com .content a{ margin:0 12px; white-space:nowrap; float:left;}
+.btn_gdcs{ padding-right:12px; line-height:26px; color:#053154;}
+
+
+#dz .zdy_load { position:absolute; left:47%; top:160px; z-index:78; }
+.rightCon { position:relative; }
+.rightCon .add { position:absolute; left:0; top:0; height:46px; background:url(http://www.xinhuanet.com/images/syicon/space.gif); float:left; z-index:44; width:100%; }
+.rightCon .grzx { position:absolute; left:0; top:31px; display:none; height:190px; width:100%; background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) 0 -36px no-repeat; }
+.rightCon .grzx table { margin-top:8px; margin-left:20px; }
+.rightCon .grzx table td { height:28px; line-height:28px; width:150px; vertical-align:middle; }
+.rightCon .grzx table td * { vertical-align:middle; }
+.rightCon .grzx .btnarea { text-align:center; margin-top:38px; }
+.rightCon .grzx .btnarea a { font-weight:bold; font-size:14px; color:#025ab4; margin:0 3px; }
+/*高清大图*/
+.gqdt .list li { line-height:22px; width:137px; float:left; }
+.gqdt .right_pic { margin-top:0; }
+.gqdt .right_pic li { margin-top:10px; }
+/*股市行情*/
+.gshq .textlink { height:55px; overflow:hidden; }
+.gshq .textlink a { float:left; width:70px; height:21px; line-height:21px; margin:0 4px 5px 0; border:1px solid #ccc; text-align:center; }
+/*视频*/
+.sp .right_pic { margin-top:0; }
+.sp .right_pic li { margin-top:10px; }
+.sp .part_con h3 { height:26px; line-height:26px; overflow:hidden; }
+/*平安*/
+.pazc .tab { padding:0 10px; }
+.pazc .tab .tab_box { padding:5px 0 0; height:92px; }
+.pazc .tab .tab_title li a { padding:0 10px; color:#b92c14; }
+.pazc .tab .tab_title li a:hover { text-decoration:none; }
+.pazc .tab .tab_title li.active a { border:1px solid #cecece; border-bottom:none; height:26x; line-height:25px; color:#851503; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0 -1495px no-repeat; padding:0 9px; }
+.pazc .tab_pa .tab_title li a { padding:0 17px; }
+.pazc .tab_pa .tab_title li.active a { padding:0 16px; }
+/*中间通用*/
+.com_center .left { width:300px; }
+.com_center .right { width:92px; overflow:hidden; }
+/*党政网群*/
+.dzwq { border:1px solid #ccc; background:#f4f4f4; padding:5px 10px; }
+.dzwq .title { font-weight:bold; clear:both; color:#122E67; }
+.dzwq .content { position:relative; }
+.dzwq .content p { clear:both; }
+.dzwq .content a { margin-right:6px; color:#666; }
+.dzwq .content .left { width:190px; }
+.dzwq .content .more { float:right; width:12px; height:16px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -319px -58px no-repeat; margin:0; }
+.dzwq .content .more2 { background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -319px -80px no-repeat; }
+.dzwq .content .tcc_com { left:-11px; top:58px; text-indent:0; }
+.dzwq .content .tcc_com .content { border-right:1px solid #65d7ef; }
+.dzwq .dz_con { text-indent:75px; margin-top:-20px; height:60px; overflow:hidden; }
+#dzwq { z-index:5; }
+/*推荐频道*/
+.tjpd .tab_title { height:34px; overflow:hidden; background-position:0 -1438px; }
+.tjpd .tab_title li { height:34px; }
+.tjpd .tab_title li a { padding:0 16px; height:33px; line-height:34px; font:bold 14px/34px "宋体"; text-align:center; color:#1d3d7a; background:#f0f0f0; }
+.tjpd .tab_title li.active a { border:1px solid #ccc; border-bottom:none; height:34x; color:#1d3d7a; background:#fff; line-height:32px; padding:0 15px; }
+.tjpd .list_pic { margin:0; }
+.tjpd .list_pic li { height:124px; }
+.tjpd .tab_box_content { padding-top:10px; }
+.tjpd2 .left { padding-top:2px; }
+.tjpd2 .left { line-height:22px; background:#0270e1; }
+.tjpd2 .left a { color:#fff; padding:0 3px; font: bold 14px/22px "微软雅黑"; }
+.tjpd2 .right { width:250px; }
+.tjpd2 .part_con { padding:4px 10px 0 10px; }
+/*热播播客*/
+.rbbk .left_pic { margin-top:0; }
+.rbbk .left_pic li { margin-top:10px; }
+/*热帖排行榜*/
+.rtphb .part_con { width:100%; }
+.rtphb .list { background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -477px -305px no-repeat; }
+.rtphb .list li { background:none; line-height:21px; padding-left:28px; *line-height:22px;
+}
+/*新华之窗*/
+.xhzc .part_tit h2 a { color:#ac6106; }
+/*社区*/
+.sq .list_pic { margin:0; }
+.sq .list_pic li { height:130px; }
+.sq .list_pic .name2 { height:18px; overflow:hidden; clear:both; }
+.sq .list li { background:none; padding-left:0; }
+.sq .list li.imp { background:none; padding-left:0; font-weight:bold; padding-bottom:2px; padding-top:4px; }
+.sq .list li.imp a { font-weight:bold; }
+.sq .list_pic1 li { height:110px; margin-bottom:10px; }
+.sq .list_pic2 li { height:95px; margin-bottom:10px; }
+/*移动终端*/
+.ydzd .left { float:left; width:200px }
+.ydzd .left2 { float:left; width:180px }
+.ydzd .right { float:right; padding:5px; overflow:hidden; }
+.ydzd .right .name2 { height:18px; overflow:hidden; }
+.ydzd { overflow:hidden; _display:inline-block; }
+.ydzd .tab_title ul { overflow:hidden; _display:inline-block; }
+.ydzd .tab_title li a:hover { text-decoration:none; }
+
+.ydzd .tab_title { height:34px; overflow:hidden; background:#e7eff7 url("http://www.xinhuanet.com/home/new/images/common_v1.gif") 0 -1438px no-repeat;  }
+.ydzd .tab_title li { height:34px; }
+.ydzd .tab_title li a { padding:0 16px; height:33px; line-height:34px; font:bold 15px/34px "微软雅黑"; text-align:center; color:#1d3d7a; background:#e7eff7; }
+.ydzd .tab_title li.active a { border-top:3px solid #284682; border-bottom:none; height:31x; color:#1d3d7a; background:url("http://www.xinhuanet.com/home/new/images/common_v1.gif") -186px -1495px no-repeat;  line-height:29px; padding:0 15px; }
+
+.ydzd .tab_box { overflow:hidden; _display:inline-block; }
+.ydzd .tab_box .tab_box_content { display:none; }
+.ydzd .tab_title .stitle { color:#666; line-height:34px; float:right; padding-right:10px; }
+.ydzd .tab_title .stitle a { color:#666!important; }
+.list_spic { margin: 5px 0; display:inline; }
+.list_spic ul { width:120px; height:120px; }
+.list_spic li { height:50px; margin:0 5px 10px; position: relative; width:50px; float:left; display: inline }
+.list_spic li .bg { background: none repeat scroll 0 0 #000000; bottom: 0; height: 22px; left: 0; opacity: 0.4; position: absolute; width: 100%; z-index: 10; filter:alpha(opacity=40) }
+.list_spic li .name { bottom: 0; color: #FFFFFF; height: 20px; left: 0; line-height: 20px; overflow: hidden; position: absolute; text-align: center; width: 100%; z-index: 11; }
+.list_spic li .name a { color: #FFFFFF; }
+/*今日拍砖*/
+.jrws .name { padding-top:3px; }
+/*娱乐派*/
+.ylp .list_pic1 li { height:106px; }
+.ylp .list_pic2 { margin-top:0; }
+.ylp .list_pic2 li { height:93px; }
+.ylp .list_pic2 .name2 { height:18px; overflow:hidden; padding-top:1px; }
+.ylp .list_pic li { height:134px; }
+.ylp .list_pic .name2 { height:18px; overflow:hidden; clear:both; }
+.ylp .list li.imp { background:none; padding-left:0; font-weight:bold; padding-bottom:2px; padding-top:4px; }
+.ylp .list li.imp a { font-weight:bold; }
+/*推荐微博*/
+.tjwb .part_tit .right { padding-top:3px; }
+.tjwb .part_tit .right input { float:left; width:174px; height:23px; line-height:23px; border:1px solid #ccc; }
+.tjwb .part_tit .right a { float:left; width:35px; height:25px; overflow:hidden; text-indent:999px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -322px -626px no-repeat; }
+.tjwb .list_pic li { width:76px; text-align:center; display:none; height:85px; overflow:hidden; }
+.tjwb .list_pic li.on { display:block; }
+.tjwb .list_pic li .name { height:22px; line-height:22px; }
+/*滚动样式开始*/
+#rolldiv { width:298px; overflow:hidden; padding:2px 0 0 5px; }
+#rolldiv * { padding:0; margin:0; font-size:12px; line-height:18px; }
+#rolldiv .jcarousel-skin-tango .jcarousel-container { overflow:hidden; _display:inline-block; }
+#rolldiv .jcarousel-skin-tango .jcarousel-container-horizontal { }
+#rolldiv .jcarousel-skin-tango .jcarousel-clip { overflow: hidden; }
+#rolldiv .jcarousel-skin-tango .jcarousel-clip-horizontal { width:268px; margin-left:14px; }
+#rolldiv .jcarousel-skin-tango .jcarousel-item { width: 67px; text-align:center; margin:0; }
+#rolldiv .jcarousel-skin-tango .jcarousel-item img { }
+#rolldiv .jcarousel-skin-tango .jcarousel-item p { padding:2px 5px; color:#000; text-align:center; }
+#rolldiv .jcarousel-skin-tango .jcarousel-item p a { color:#122E67; text-decoration:none; line-height:16px; }
+#rolldiv .jcarousel-skin-tango .jcarousel-item-horizontal { margin-left: 0; }
+#rolldiv .jcarousel-skin-tango .jcarousel-next-horizontal { position: absolute; top: 10px; left: 0px; cursor: pointer; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0px -238px no-repeat; width:8px; height:50px; }
+#rolldiv .jcarousel-skin-tango .jcarousel-next-horizontal:hover { }
+#rolldiv .jcarousel-skin-tango .jcarousel-prev-horizontal { position: absolute; top: 10px; right: 0px; cursor: pointer; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -28px -238px no-repeat; width:8px; height:50px; }
+#rolldiv .jcarousel-skin-tango .jcarousel-prev-horizontal:hover { }
+/*新华e站*/
+.xhez { overflow:hidden; _display:inline-block; }
+.xhez .tab_title { height:38px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0 -567px repeat-x; overflow:hidden; }
+.xhez .tab_title .tit { background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -209px -313px no-repeat; float:left; width:100px; height:38px; }
+.xhez .tab_title .tit a { float:left; width:100px; height:38px; }
+.xhez .tab_title ul { overflow:hidden; _display:inline-block; float:left; }
+.xhez .tab_title li { float:left; height:38px; }
+.xhez .tab_title li a { float:left; padding:0 10px; height:38px; line-height:38px; font:bold 15px/38px "微软雅黑"; text-align:center; color:#16507e; }
+.xhez .tab_title li a:hover, .xhez .tab_title li.active a { border:1px solid #ccc; border-bottom:none; height:38x; line-height:36px; color:#1e3c7a; background:#fff; padding:0 9px; }
+.xhez .tab_box { overflow:hidden; _display:inline-block; }
+.xhez .tab_box .tab_box_content { display:none; padding:2px; }
+.xhez .tab_box .tab_box_content a { color:#122E67; margin:0 7px; font-size:12px; line-height:24px; }
+/*多语种*/
+.dyz { overflow:hidden; _display:inline-block; }
+.dyz .tab_title { height:38px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) 0 -684px repeat-x; overflow:hidden; }
+.dyz .tab_title ul { overflow:hidden; _display:inline-block; float:left; }
+.dyz .tab_title li { float:left; height:38px; margin-left:15px; display:inline; }
+.dyz .tab_title li a { float:left; width:93px; padding:0; height:37px; line-height:38px; font:bold 15px/38px "宋体"; text-align:center; background-image:url(http://www.xinhuanet.com/home/new/images/common_v1.gif); background-repeat:no-repeat; border-top:1px solid #fff; }
+.dyz .tab_title li a:hover, .dyz .tab_title li.active a { border:1px solid #1e3c7a; border-bottom:3px solid #fff; height:34px; }
+.dyz .d1 { background-position:-324px -307px; }
+.dyz .d2 { background-position:-324px -347px; }
+.dyz .d3 { background-position:-324px -388px; }
+.dyz .d4 { background-position:-324px -427px; }
+.dyz .d5 { background-position:-324px -466px; }
+.dyz .d6 { background-position:-324px -505px; }
+.dyz .tab_box { overflow:hidden; _display:inline-block; font-family: Arial, Helvetica, sans-serif; line-height:16px; }
+.dyz .tab_box .tab_box_content { display:none; padding:10px; }
+.dyz .d_part1 { float:left; width:300px; }
+.dyz .d_part2 { float:left; width:330px; margin-left:10px; display:inline; }
+.dyz .d_part2 .tit { padding-bottom:3px; }
+.dyz .d_part2 .tit a { font-size:14px; }
+.dyz .d_part3 { float:right; width:320px; }
+.dyz .d_part3 .list_pic li { width:150px; margin:0 5px; height:128px; overflow:hidden; }
+.dyz .d_part3 .list_pic .name { line-height:18px; height:36px; overflow:hidden; clear:both; }
+.dyz .d_part3 .list_pic .name a { line-height:18px; color:#122E67; }
+.dyz .d_part3 .list_pic .name2 a { line-height:18px; color:#122E67; }
+.dyz .d_part2 .sub { padding-bottom:6px; border-bottom:1px dashed #ccc; margin-bottom:6px; line-height:18px; height:52px; overflow:hidden; }
+.dyz .dyz_yw .d_part2 .sub { padding-bottom:6px; border-bottom:1px dashed #ccc; margin-bottom:6px; line-height:18px; height:88px; overflow:hidden; }
+.dyz .list li { line-height:20px; }
+.dyz .d_part1 .name { height:33px; overflow:hidden; }
+.dyz .d_part1 .name_yw { height:33px; overflow:hidden; }
+.dyz .d_part1 .name_small { height:36px; overflow:hidden; }
+.dyz .d_part1 .name a { font-size:14px; color:#122E67; overflow:hidden; font-weight:bold; line-height:18px; }
+.dyz .d_part1 .sname { height:32px; overflow:hidden; clear:both; }
+.dyz .d_part1 .sname a { line-height:16px; }
+.dyz .d_part1 .list_pic li { width:145px; margin-right:5px; display:inline; }
+.dyz .d_part1 .list_pic .img { clear:both; }
+.dyz .d_part1 .list li { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 284px; }
+.dyz .d_part2 .list li { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 320px; }
+.dyz .rw_tp { height:27px; padding-top:5px; }
+.dyz .rw_tp a { float:left; margin-right:5px; }
+/*物联网*/
+.wlw .left { width:300px; }
+.wlw .left2 { width:200px; float:left; }
+.wlw .right_pic li { margin:0 7px; display:inline }
+.wlw .right { float:right; width:92px; overflow:hidden }
+.wlw .right2 { float:right; padding:5px; }
+.wlw .part_con { padding:10px 10px 0 10px; }
+.wlw .part_con2 { padding:0; color: #666666; }
+.wlw { overflow:hidden; _display:inline-block; width:100% }
+
+.wlw .tab_title ul { overflow:hidden; _display:inline-block; float:left }
+.wlw .tab_title li a:hover { text-decoration:none; }
+
+
+
+.wlw .tab_title { height:34px; overflow:hidden; background:#e7eff7 url("http://www.xinhuanet.com/home/new/images/common_v1.gif") 0 -1438px no-repeat;  }
+.wlw .tab_title li { height:34px; }
+.wlw .tab_title li a { padding:0 16px; height:33px; line-height:34px; font:bold 15px/34px "微软雅黑"; text-align:center; color:#1d3d7a; background:#e7eff7; }
+.wlw .tab_title li.active a { border-top:3px solid #284682; border-bottom:none; height:31x; color:#1d3d7a; background:url("http://www.xinhuanet.com/home/new/images/common_v1.gif") -186px -1495px no-repeat;  line-height:29px; padding:0 15px; }
+
+
+
+.wlw .tab_box { overflow:hidden; _display:inline-block; }
+.wlw .tab_box .tab_box_content { display:none; }
+/*炫阅读*/
+.xyd .list_pic .name2 { height:20px; overflow:hidden; padding-top:2px; }
+/*微博*/
+.wb { border-bottom:1px solid #ccc; }
+.wb .part_con { padding:5px 10px; }
+/*新华图片*/
+.xhtp .list_pic ul { overflow:hidden; margin-bottom:2px; overflow:hidden; }
+.xhtp .list_pic ul li { width:135px; text-align:center; margin:0 14px; display:inline; padding-bottom:2px; }
+.xhtp .list_pic .img { height:95px; }
+.xhtp .list_pic .name { line-height:24px; height:24px; overflow:hidden; }
+/**/
+.llhh { border:1px solid #d9d9d9; padding:2px; }
+.llhh .llpart { float:left; width:242px; border-right:1px dotted #666; }
+.llhh .ll_part4 { border-right:0; width:244px; float:right; }
+.llhh .title { height:30px; line-height:30px; background:#f0f0f0; margin-right:2px; }
+.llhh .title h3 { color:#2d4d86; padding-left:10px; float: left; font: bold 15px/30px "微软雅黑"; height: 30px; }
+.llhh .title h3 a { color:#2d4d86; font: bold 15px/30px "微软雅黑"; }
+.llhh .content { padding:5px 5px 0 5px; }
+.llhh .list a { color:#666; }
+.llhh .ll_list .list li { line-height:20px; }
+/*footer*/
+#footer { color:#1e3a79; line-height:24px; text-align:center; }
+#footer a { color:#1e3a79; }
+/*版本2*/
+#bottom_div { display:none; position:fixed; bottom:0; left:0; width:100%; z-index:70; height:60px; _position:absolute; _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||0)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+}
+#bottom_div .bottom_left { float:left; width:890px; height:60px; }
+#bottom_div .bottom_left .content { }
+#bottom_div .bottom_right { float:right; width:80px; height:60px; }
+#bottom_div .bottom_right a { display:block; width:80px; height:24px; line-height:24px; font-weight:bold; text-align:center; margin-top:10px; }
+#bot_content .bot_part_l { float:left; width:310px; padding-top:6px; margin-right:10px; display:inline; }
+#bot_content .bot_part_l p { line-height:24px; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -496px -1333px no-repeat; padding-left:12px; }
+#bot_content .bot_part_l p a { color:#fff; }
+#bot_content .bot_part_l p strong { padding-right:5px; }
+#bot_content .bot_part_l p strong a { font-weight:bold; }
+#bot_content .bot_part_l p .time { color:#fff; padding-left:10px; }
+#bot_content .bot_part_r { float:left; width:250px; }
+#bot_content .bot_part_r a { float:left; margin:5px 5px 0; display:inline; }
+.topbar .colorlink { position:absolute; left:42px; top:0px; float:left; height:10px; overflow:hidden; background:#fff; padding:6px 0 6px 6px; display:none; width:140px; }
+.topbar .colorlink li { float:left; width:11px; height:30px; margin-right:6px; display:inline; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -56px -239px no-repeat; cursor:pointer; }
+.topbar .colorlink .color1 { background-position: -56px -239px; }
+.topbar .colorlink .color2 { background-position: -75px -239px; }
+.topbar .colorlink .color3 { background-position: -96px -239px; width:auto; line-height:12px; padding-left:14px; margin:0; }
+.topbar .colorlink .color4 { background-position: -94px -239px; }
+.topbar .colorlink .color5 { background-position: -113px -239px; }
+.topbar .colorlink .color6 { background-position: -132px -239px; }
+.topbar .colorlink .color7 { background-position: -151px -239px; }
+.topbar .colorlink .color8 { background-position: -170px -239px; }
+.topbar .colorlink .color9 { background-position: -189px -239px; }
+.topbar .colorlink .active { margin-top:-20px; }
+.topbar .colorlink .active span { margin-top:20px; float:left; }
+.topbar .xuanwen { position:absolute; left:29px; top:1px; float:left; overflow:hidden; line-height:18px; background:#fff; padding:2px 0 2px 6px; display:none; border:2px solid #00b4ff; width:112px; }
+#big_ad { position:absolute; left:50%; margin-left:-491px; top:26px; display:none; z-index:70; width:980px; }
+#big_ad .btn_close a { text-align:right; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -422px -239px no-repeat; width:83px; height:26px; float:right; }
+/*广告*/
+#headlogin2 { border:1px solid #ccc; }
+#xglj { width: 980px; }
+#xglj .left { color: #2D4D86; float: left; font: bold 16px/30px "微软雅黑"; text-align: center; text-decoration: none; width:110px; }
+#IssueList2 { background-color: #FFFFFF; color: #333333; overflow: hidden; float:right; margin-right:25px; display:inline; width:830px; }
+#IssueList2 td a { margin:0 6px; color:#122E67; }
+#ad_text .list li { float:left; width:135px; height:22px; overflow:hidden; padding:0; background:none; }
+#ad_text .list li a { color:#122E67 }
+/*新页签相关*/
+.layout_col3 .col_left_new { float:left; width:653px; _display:inline-block; }
+.layout_col3 .col_left_new .list li { width:267px; height:24px; overflow:hidden; }
+.com_center .left_new { width:272px; float:left; overflow:hidden; }
+.com_center .right_new { width:272px; float:left; overflow:hidden; margin-right:17px; }
+#link_gd { cursor:pointer; }
+#link_gd .tcc_com { left:-248px; top:16px; width:262px; z-index:20; cursor:default; }
+.part_tit h2.bj a { padding-right:10px; }
+/*影视*/
+.yxph .part_con { height:182px; overflow:hidden; }
+#filminfo .red { color: #122E67; font-weight: bold; }
+#filminfo .gray, #filminfo .gray a { color: #666666; font-weight: normal; text-decoration: none; }
+#filminfo .gray a:hover { font-weight: normal; text-decoration: underline; }
+/*微热点*/
+.login { float:right; margin-right:10px; }
+.login a { margin-right:10px; }
+/* 导航图片标题摘要 */ 
+.img_title .border { padding:1px; border:1px solid #ccc; }
+.img_title .info h2 a { line-height:22px; color:#122E67; font-size:12px }
+.img_title .list li { line-height:22px; }
+.img_list .img img { width:40px; height:40px; }
+.it_noborder { border-bottom:none; padding-bottom:0; }
+.spxtp1 { display: inline; float: left; text-align: center; width:48px; line-height:22px; }
+.spxtp2 { display: inline; float: left; text-align: center; width:65px; line-height:22px; }
+.spxtp1 .img { display:block; width:40px; height:38px; background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -138px -321px no-repeat; }
+.spxtp2 .img { display:block; width:55px; height:38px; background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -214px -321px no-repeat; }
+.spxtp1 img, .spxtp2 img { display: block; margin: 0 auto; }
+.spxtp1 a, .spxtp2 a { color:#122E67; }
+/*学习十八大*/
+.mzfx { text-align:center; height:20px; line-height:20px; color:#CC0000; font-weight:bold; font-size:14px; width:100%; background-image:url(http://www.xinhuanet.com/home/static/imgs/jdbg201304.jpg); background-repeat:no-repeat;}
+.mzfx a { color:#CC0000; }
+.xx18d { text-align:center; height:20px; line-height:20px; color:#CC0000; font-weight:bold; font-size:12px; float:left; width:100%;  }
+.xx18d a { color:#CC0000; }
+/*新增*/
+.jrrd .xhsd { height: 135px; overflow: hidden; position:relative; }
+.jrrd .xhsd .bg { height: 25px; width:100%; overflow: hidden; text-align:center; background: #000000; position:absolute; bottom:0; opacity:0.4; filter:alpha(opacity=40); z-index:1; left:0; }
+.jrrd .xhsd .tit { left:0; height: 25px; width:100%; overflow: hidden; text-align:center; z-index:2; bottom:0; position:absolute; }
+.jrrd .xhsd p a, .jrrd .xhsd p a:hover { font-family: "宋体"; font-size: 12px; color: #FFFFFF; line-height: 25px; }
+.jrrd .xhsd p a:hover { text-decoration:underline; }
+.xhsd_layer { display:none; width:226px; background:#004072; text-align:left; height: 105px; margin: 0 auto; padding-top:5px; position:absolute; z-index:3; top:0; left:0; overflow:hidden; opacity:0.9; filter:alpha(opacity=90); }
+.width200 { margin: 0 auto; width: 200px; }
+.width200 img { float:left; padding:0 6px 0 0; }
+.width200 p { height:80px; line-height:18px; }
+.width200 p a { font-family: "宋体"; font-size: 12px; color: #FFFFFF; }
+.xhsd_icon { font-family: "宋体"; font-size: 12px; font-weight: bold; color: #0270E1; }
+.xhsd_icon a, .xhsd_icon a:hover { font-family: "宋体"; font-size: 12px; font-weight: bold; color: #0270E1; }
+.xhsd_icon { width:226px; margin:0 auto; text-align:center; padding-top:3px; padding-bottom:3px; }
+.icon_xhwb { background: url("http://www.xinhuanet.com/home/new/images/common_v1.gif") no-repeat scroll -485px -920px transparent; display: inline-block; height: 16px; line-height: 16px; vertical-align: middle; width: 17px; }
+.icon_xlwb { background: url("http://www.xinhuanet.com/home/new/images/common_v1.gif") no-repeat scroll -485px -940px transparent; display: inline-block; height: 16px; line-height: 16px; vertical-align: middle; width: 16px; }
+.icon_qqwb { background: url("http://www.xinhuanet.com/home/new/images/common_v1.gif") no-repeat scroll -485px -960px transparent; display: inline-block; height: 16px; line-height: 16px; vertical-align: middle; width: 18px; margin-left:2px; }
+#xhrwd { padding:10px 10px 0 10px; }
+#xhrwd .guanzhu { background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -441px -982px no-repeat; height:25px; color:#fff; padding-left:12px; }
+#xhrwd .tit { height:24px; line-height:24px; }
+#xhrwd .tit a { font-size:14px; color:#122E67; }
+#xhrwd .s_con { height:70px; overflow:hidden; display:none; padding-top:6px; background:#F5F9FB; border-bottom:1px dotted #E8E8E8; margin-bottom:5px; }
+#xhrwd .s_con .pic { float:left; width:100px; height:83px; }
+#help { height:55px; position:fixed; top:19px; left:50%; z-index:79; margin-left:-345px; width:210px; _display:none; }
+#help .left { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) 0 -245px no-repeat; height:55px; width:75px; }
+#help .right { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) 100% -245px no-repeat; height:55px; width:135px; overflow:hidden; padding-top:25px; color:#122E67; font-weight:bold; }
+#help .right span { float:right; width:17px; height:15px; cursor:pointer; }
+#gdfm { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -435px 0 no-repeat; width:23px; height:90px; position:absolute; left:50%; top:370px; margin-left:490px; }
+#qglh { background:url(http://www.xinhuanet.com/home/new/images/bg_qglh1.png) 0 0 no-repeat; width:103px; height:128px; position:absolute; left:50%; top:385px; margin-left:444px; z-index:78; }
+#qglh a { float:left; width:90px; height:50px; display:inline; margin:52px 0 0 10px; }
+#qglh2 { background:url(http://www.xinhuanet.com/home/new/images/bg_qglh2.png) 0 0 no-repeat; width:103px; height:165px; position:absolute; left:50%; top:512px; margin-left:490px; z-index:78; }
+.zgws { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -293px -321px no-repeat; padding-left:12px; }
+.btn_lt { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) 0 -398px no-repeat; border:none; width:52px; height:20px; cursor:pointer; }
+#help2 { background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -260px -399px no-repeat; width:185px; height:70px; position:absolute; left:110px; top:24px; z-index:78; }
+#help2 span { float:left; width:15px; height:15px; margin:33px 0 0 120px; display:inline; cursor:pointer; }
+.picc { position:absolute; left:50%; top:30px; width:130px; height:50px; margin-left:350px; z-index:78; }
+.top_qglh { position:absolute; left:50%; top:30px; width:470px; height:50px; margin-left:-480px; z-index:78; }
+.help_dz { z-index:90; display:none; clear:both; }
+.help_dz1 { position:absolute; left:55px; top:-145px; width:265px; height:170px; background:url(http://www.xinhuanet.com/home/new/images/help_dz.png) 0 0 no-repeat; }
+.help_dz2 { position:absolute; left:-127px; top:-90px; width:265px; height:170px; background:url(http://www.xinhuanet.com/home/new/images/help_dz.png) 0 -205px no-repeat; display:none; }
+.help_dz3 { position:absolute; left:-60px; top:48px; width:265px; height:180px; background:url(http://www.xinhuanet.com/home/new/images/help_dz.png) 0 -410px no-repeat; display:none; }
+.help_dz .a1 { float:left; width:70px; height:35px; margin:76px 0 0 55px; display:inline; }
+.help_dz .a2 { float:left; width:70px; height:35px; margin:76px 0 0 10px; display:inline; }
+.help_dz3 .a2 { float:left; width:80px; height:30px; margin:85px 0 0 110px; display:inline; }
+#bgmask { position:absolute; left:0; top:0; width:100%; background:#000; opacity:0.5; filter:alpha(opacity=50); z-index:89; }
+#lhqy { background:url(http://www.xinhuanet.com/home/new/images/lh/lh_pic1.jpg) 50% 0 no-repeat; padding-top:0px; height:65px; position:relative; z-index:78; }
+#lhqy .main { background:url(http://www.xinhuanet.com/home/new/images/bg_ldr2.gif) 50% 100% no-repeat; padding-bottom:4px; position:absolute; left:0; top:0; width:833px; }
+#lhqy .lh_tit { color:#e30000; font-size:13px; font-weight:bold; }
+#lhqy .alink { color:#122E67; font-size:13px; line-height:20px; margin-right:6px; float:left; white-space:nowrap; }
+#lhqy .alink a { color:#122E67; font-size:13px; line-height:20px; }
+#lhqy .tabrenda .alink { color:#122E67; font-size:13px; line-height:20px; margin-right:4px; float:left; white-space:nowrap; }
+#lhqy .alink1 { color:#122E67; font-size:13px; line-height:20px; }
+#lhqy .alink1 a { color:#122E67; font-size:13px; line-height:20px; }
+#lhqy .zx { padding-top:10px; }
+#lhqy .bgzx { background:url(http://www.xinhuanet.com/home/new/images/lh/lh_pic2.jpg) 126px 0 no-repeat; }
+#lhqy .fl { }
+/* 页签 */
+#lhqy .tab { overflow:hidden; _display:inline-block; }
+#lhqy .tab .tab_title { height:30px; background:none; overflow:hidden; border-bottom:1px dotted #ccc; margin-bottom:4px; }
+.tab .tab_title ul { overflow:hidden; _display:inline-block; float: left; }
+#lhqy .tab .tab_title li { float:left; height:30px; line-height:30px; cursor:pointer; padding:0 4px; background:none; color:#e30000; font-size:12px }
+#lhqy .tab .tab_title li.active { height:32x; color:#fff; background:url(http://www.xinhuanet.com/home/new/images/bg_ldr1.gif) 0 0 repeat-x; font-size:12px }
+#lhqy .tab .tab_box { overflow:hidden; _display:inline-block; }
+#lhqy .tab .tab_box .tab_box_content { display:none; }
+.xhsd2 { overflow:hidden; _display:inline-block; padding:6px 2px 6px 2px; height:60px;}
+.xhsd2 img { float:left; }
+.xhsd2 .info { float:right; width:130px; height:60px;overflow:hidden; }
+.xhsd2 .info a { font-size:12px }
+/*轮播图*/
+.focusPic { margin-bottom:20px; position: relative; height:270px; overflow:hidden; }
+.fpic { position: relative; width:522px; height:270px; display:none; }
+.f_bg { background:url(http://www.xinhuanet.com/home/new/images/bginfo.png); height:40px; width:522px; position:absolute; left:0; bottom:0; z-index:10; display:block; _background:#000; _filter:alpha(opacity=40);}
+.fpic img { }
+.l_btn { background:url(http://www.xinhuanet.com/home/new/images/sports_m_02_1.png) 0 0; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.xinhuanet.com/home/new/images/sports_m_02_1.png', sizingMethod='crop');
+height:35px; width:35px; position:absolute; left:6px; top:110px; z-index:1000; cursor:pointer; }
+.r_btn { background:url(http://www.xinhuanet.com/home/new/images/sports_m_03_1.png) 0 0; _background:none; _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://www.xinhuanet.com/home/new/images/sports_m_03_1.png', sizingMethod='crop');
+height:35px; width:35px; position:absolute; right:6px; top:110px; z-index:1000; cursor:pointer; }
+.fpic h3 { font-size: 12px; line-height: 20px; position:absolute; left:0px; bottom:7px; z-index:100; left:10px; font-weight:normal; }
+.fpic h3 em { padding-right:8px; }
+.fpic h3 em a { font:16px/30px "宋体"; }
+.fpic h3 span { font:16px/30px "宋体"; }
+.fpic h3 a { color:#fff; font-size:14px; }
+.focusPic .btPhoto { width: 125px; height: 22px; margin:0 0 0 10px; position: absolute; bottom:5px; right: 5px; z-index: 10; }
+.btPhoto .bt02 { background: url(http://www.xinhuanet.com/home/new/images/bg_datudian.gif) no-repeat -16px 0; width: 9px; height: 9px; margin: 3px; display: inline; float: left; cursor: pointer; }
+.btPhoto .current { background: url(http://www.xinhuanet.com/home/new/images/bg_datudian.gif) no-repeat; }
+.btPhoto .bt01, .btPhoto .bt09 { width: 23px; height: 19px; margin: 0 5px; float: left; }
+.btPhoto .bt01 img, .btPhoto .bt09 img { cursor: pointer; border: none; }
+#bigpic { width:522px; height:270px; overflow:hidden; }
+#pigpic .btn_zk { position: absolute; left:0; top:0; display:block; width:63px; height:63px; background: url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -200px -368px no-repeat; overflow:hidden; text-indent:-999px; }
+.item_detail_info { width:440px; height:130px; padding:15px; background: url(http://www.xinhuanet.com/home/new/images/bginfo2.png); position:absolute; left:20px; bottom:70px; z-index:11; display:none; }
+.item_detail_info .close { height:24px; text-align:right; margin-top:-11px; margin-right:-11px; float:right; }
+.item_detail_info .close a { width:24px; height:24px; float:right; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -200px -451px no-repeat; }
+.item_detail_info .detail_info_left { float:left; width:138px; text-align:center; z-index:12; display:block; padding-top:3px; }
+.item_detail_info .detail_info_left .pic img { width:137px; height:91px; }
+.item_detail_info .detail_info_left .name2 a { font-weight:bold; line-height:30px; }
+.item_detail_info li { display:block; }
+.item_detail_info a { color:#fff; }
+.item_detail_info .detail_info_right { float:right; width:285px; z-index:12; display:block; }
+.item_detail_info .detail_info_right li { line-height:24px; }
+
+/*新华网评*/
+.xhwp .xhsd2 {  overflow:hidden; _display:inline-block; padding:6px 2px 2px 2px;}
+
+/*炫商场*/
+.icon_xsc { background: url("http://www.xinhuanet.com/home/new/images/common_20130410_v2.gif") no-repeat scroll -354px -1274px transparent; display: inline-block; width:110px; height: 32px; line-height: 32px; vertical-align: middle; }
+
+/*地震聚焦*/
+#fwl_cov5 .fontblue, #fwl_cov5 .fontblue a { color:#000000!important; }
+#fwl_cov5 .font_title, #fwl_cov5 .font_title a { color:#000000!important; }
+#fwl_cov5 .fontblue2 a { color:#122E67!important; }
+#fwl_cov5 .font_title2 a { color:#05649B!important; }
+
+/*新增频道区*/
+/*.leftbox{ border:1px solid #ddd;}*/
+.part_pd { margin-bottom:5px;}
+.part_pd .sjhd .part_tit h2 a{ color:#be0c02;}
+.part_pd .part_tit2 { background:url("http://www.xinhuanet.com/home/new/images/common_v1.gif") -186px -1495px no-repeat; }
+.part_pd .part_tit2 h2 { width:100%; text-align:center; padding:0;}
+.part_pd .part_tit3 { background:url("http://www.xinhuanet.com/home/new/images/common_v1.gif") -186px -1495px no-repeat; }
+.part_pd .tab_title { height:34px; overflow:hidden; background:#e7eff7 url("http://www.xinhuanet.com/home/new/images/common_v1.gif") 0 -1438px no-repeat;  }
+.part_pd .tab_title li { height:34px; }
+.part_pd .tab_title li a { padding:0 12px; height:33px; line-height:34px; font:bold 15px/34px "微软雅黑"; text-align:center; color:#1d3d7a; background:#e7eff7; }
+.part_pd .tab_title li.active a { border-top:3px solid #284682; border-bottom:none; height:31x; color:#1d3d7a; background:url("http://www.xinhuanet.com/home/new/images/common_v1.gif") -186px -1495px no-repeat;  line-height:29px; padding:0 15px; }
+.part_pd .part_con_c .list li.fontb a { color:#05649B!important}
+.part_pd .part_con_c .list { padding-top:12px;}
+.part_pd .col_right .tw { padding-top:8px;}
+.part_pd .col_right .tw h3  { height:24px; overflow:hidden;}
+.part_pd .col_right .tw h3 a { color:#05649B; font-size:14px; line-height:24px; height:24px; overflow:hidden; font-weight:bold;}
+.part_pd .col_right .tw .info { color:#666; height:60px; overflow:hidden; line-height:20px;}
+.part_pd .left_pic2{ margin-bottom:5px;}
+.part_pd .cfx .tw{ border-bottom:1px dashed #ccc; padding:10px 0 10px 5px; margin-bottom:8px;}
+.part_pd .part_tit h2.bj a { padding-right:0; }
+
+/*群众路线*/
+.qzlxtab { overflow:hidden; }
+.qzlxtab .tab_title { height:35px; background:#fff; padding-top:5px; }
+.qzlxtab .tab_title ul { overflow:hidden; width:90%; margin:0 auto; }
+.qzlxtab .tab_title li { float:left; height:32px; width:50%; text-align:center; }
+.qzlxtab .tab_title li a { float:left; height:15px; line-height:15px; text-align:center; padding:0; font-size:12px; font-weight:normal; font-style:normal; color:#39B5FF; background:#F5F5F5; border:0px solid #ea326f; text-shadow:0px 0px 0px #ffffff; box-shadow:0px 0px 3px #454545; -moz-box-shadow:0px 0px 3px #454545; -webkit-box-shadow:0px 0px 3px #454545; border-radius:60px 15px 60px 15px; -moz-border-radius:60px 15px 60px 15px; -webkit-border-radius:60px 15px 60px 15px; width:60px; padding:5px 10px; cursor:pointer; margin:5px; }
+.qzlxtab .tab_title li.active a { cursor:pointer; position:relative; color:#ffffff; background:#39B5FF; line-height:15px; height:15px; font-weight:bold; text-decoration:none;padding:5px 10px; border:0; }
+.qzlxtab .tab_box .tab_box_content { display:none; }
+.qzlxtab .tab_box { overflow:hidden; padding:10px 8px; *padding:10px 5px;}
+.border { border:#ddd 1px solid }
+.part_qzlx_tit { height: 34px; line-height: 34px; overflow: hidden; }
+.qzlx_pictit { position: relative; z-index: 0; }
+.qzlx_pictit .bg { background: none repeat scroll 0 0 #39B5FF; bottom: 0; height: 22px; left: 0; opacity:0.7; filter:alpha(opacity=70); position: absolute; width: 100%; z-index: 10;}
+.qzlx_pictit .name { bottom: 0; color: #FFFFFF; left: 0; overflow: hidden; position: absolute; text-align: center; width: 100%; z-index: 11; padding-bottom:2px }
+.qzlx_pictit .name a { color: #FFFFFF; font-size: 12px; font-weight: 700; line-height: 18px; text-decoration: none; }
+.qzlx_pictit .name a:hover { text-decoration: underline; }
+.qzlx_listpic ul { overflow: hidden; }
+.qzlx_listpic li { display: block; float: left; margin: 0 5px; width:92px; }
+.qzlx_listpic .name { color: #333333; font-size: 12px; line-height:18px; padding-top: 5px; text-align: center; width:80px; }
+.qzlx_listpic .name a { color: #333333; }
+.qzlxbodt { border-top:1px dotted #ccc }
+.qzlx_djbox { position:relative;}
+.qzlx_djbox ul { width:100%; margin-top:5px; display:inherit }
+.qzlx_djbox li { width:32px; height:32px; background-color:#39B5FF; font-size:14px; font-weight:bold; list-style:none; padding:5px; float:left; margin:0 4px; text-align:center; line-height:16px; display:inherit }
+.qzlx_djbox li a { color:#FFFFFF; text-decoration:none }
+#qzlx_ts{position:absolute; background-color:#FFFFE6; font-size:12px; padding:5px; border:1px solid  #ccc;display:none; width:195px; height:130px; line-height:18px; left:0; top:-145px;}
+.qzlx_ybbox ul { width:110px; margin:10px 0 0 3px; display:inherit; float:left;}
+.qzlx_ybbox li{ float:left ;}
+.qzlx_ybbox li a img{ width:46px; height:46px; list-style:none; float:left; margin:0 4px; text-align:center; line-height:16px; display:inline}
+.qzlx_listxs{overflow: hidden; float:left; width:110px; *width:115px;}
+.qzlx_listxs ul{ float:left; width:80px;}
+.qzlx_listxs li {
+    font-size: 14px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    vertical-align: middle; width:100%;float:left;
+}
+.qzlx_listxs span {width:10px; float:left; line-height:14px; background-color:#39B5FF; padding:5px; float:left; margin-right:5px; display:inline}
+
+/*影讯 图+摘要*/
+.yxph0715 { width:290px; height:68px; float:left; background:#F5F9FB; margin-left:10px; display:inline;}
+.yxph0715 .img { float:left; padding-top:5px; }
+.yxph0715 .zy { width:190px; float:right; padding-top:5px; padding-right:3px; }
+.yxph0715 .zy p { font-t:5px; }
+.yxph0715 .zy p a { color:#999999; text-decoration:none; }
+.yxph0715 .zy p a:hover { text-decoration:underline; }
+
+.adText{padding:5px 0 5px 0; float:left; width:810px;}
+.adTextRight{float:right; width:162px; margin-top:5px; height:45px; overflow:hidden;}
+
+.list_spsxt { overflow:hidden; _display:inline-block; }
+.list_spsxt li { vertical-align:middle; background:url(http://www.xinhuanet.com/home/new/images/common_v1.gif) -491px -54px no-repeat; font-size:14px; padding-left:13px; line-height:24px; overflow:hidden; height:24px; }
+@charset "utf-8";
+/* CSS Document */
+
+/*背景条*/
+body{ background:#fff;}
+/*顶部工具条*/
+.topbar { background:url(http://www.xinhuanet.com/home/new/images/common.gif) 0 0 repeat-x;}
+.topbar .tpart1 a {background:url(http://www.xinhuanet.com/home/new/images/common.gif) no-repeat; }
+/*多语种
+#header .language .lan_link { background:url(http://www.xinhuanet.com/home/new/images/common.gif) 0 -196px no-repeat; }*/
+/*滚动链接*/
+/*#gd_content_top li a, #gd_scroll_top li a { color:#005baa; }*/
+/*地方频道*/
+#header{  background:url(http://www.xinhuanet.com/home/new/images/common.gif) 0 -1743px repeat-x; }
+#header .dfpd .name { background:#e7f1fd; color:#374256; }
+#header .more { background:url(http://www.xinhuanet.com/home/new/images/common.gif) -319px -58px no-repeat; }
+#header .more2 { background:url(http://www.xinhuanet.com/home/new/images/common.gif) -319px -80px no-repeat; }
+/*多语种*/
+.topbar .colorlink {border:2px solid #00b4ff;}
+/*即时要闻*/
+.jsyw { background:#E9ECEF; border: 1px solid #C1E0F0; }
+.jsyw .jsyw_tit { color: #005DAE;  }
+.headline .xhrc { background:#E9ECEF; border: 1px solid #C1E0F0;  }
+.headline .xhrc .tit { color: #005DAE; }
+/*盘古*/
+.pg_search {  background:url(http://www.xinhuanet.com/home/new/images/common.gif) 0 -624px no-repeat; }
+/*产品背景链接图*/
+.headline .xhcp { background:url(http://www.xinhuanet.com/home/new/images/common.gif) 5px -742px no-repeat; }
+#header .nav1 a { background:url(http://www.xinhuanet.com/home/new/images/common.gif) -146px -118px; }
+/*底部信息条*/
+#bottom_div { background:#2a8ced; }
+#bot_content .bot_part_l{ background: url(http://www.xinhuanet.com/home/new/images/common.gif) 308px -1339px no-repeat;}
+#bottom_div .bottom_right a { color:#fefc37;  background:#2e87e5;}
+/*底部*/
+#footer { border-top:5px solid #88c5fb; }
+
+
+
+
+
+
+
+
+
+
+/**** inline ****/
+
+.dqlpd p{ text-align:left;}
+.dqlpd a{ color:#0e871f;}
+.blue{ font-size:12px; color:#0099FF; font-weight:bold; line-height:23px; padding-bottom:5px; font-family:"微软雅黑"}
+.blue a{color:#0099FF; font-weight:bold;}
+.blue a:hover{ text-decoration:underline; color:#CC0000}
+.xh-news,.sw,.btn_lt{background:url(http://www.xinhuanet.com/home/new/img/xuan-login.png) no-repeat; }
+.xuan-logoin-form{ width:270px; font-size:12px; line-height:25px; position:relative; float:right;}
+.xuan-logoin-form .sw {	z-index: 5;float: left;padding-left: 18px;margin-right: 5px;display: inline;text-decoration: none;outline: none;color: #333;background-position:0px 4px;}
+.xuan-logoin-form input{height: 18px; width: 55px; border:1px solid #ccc; vertical-align:middle; outline:none;}
+.xuan-logoin-form input.btn_lt {border: none;width: 37px;height: 21px;cursor: pointer; vertical-align:middle; background-position:0px -89px;}
+.xuan-logoin-form a.btn_lt { display:inline-block;border: none;width: 37px;height: 21px;cursor: pointer; vertical-align:middle; background-position:0px -119px;}
+.xuan-logoin-form span{ line-height:20px; width:55px; font-size:12px; color:#9f9f9f; padding-left: 5px;}
+.xuan-logoin-form span.account{ display:block; position:absolute; top:5px; left:58px;}
+.xuan-logoin-form span.psw{ display:block; position:absolute; top:5px; left:120px;}
+.help_dzxw{ background:url(http://www.xinhuanet.com/home/new/images/common2_v3.gif) -257px -399px no-repeat; width:192px; height:70px; position:absolute; left:50%; top:794px; margin-left:288px;}
+.headline .content{ position:relative;}
+#gdfm{ left:980px; z-index:3333333; margin-left:0; top:0;}
+#gd_area_top2 { overflow:hidden; }
+#gd_area_top2 .wrap { float: left; width:100000px; padding-top:18px; }
+#gd_content_top2, #gd_scroll_top2 { float:left; }
+#gd_content_top2 li, #gd_scroll_top2 li { height:18px; color:#005baa; padding-left:15px; float:left; line-height:18px; background: url("http://www.xinhuanet.com/home/new/images/common_v1.gif") no-repeat -493px -93px; padding-right:15px;  }
+#gd_content_top2 li a, #gd_scroll_top2 li a { font-size:12px;}
+.part_con .tw h3 a{ color:#05649B; font-size:14px; line-height:24px; height:24px; overflow:hidden; font-weight:bold;}
+.tjwb .list_pic li{ height:80px;}
+#xhrwd { padding:5px 5px 0 5px; }
+#xhrwd .tit{ overflow:hidden;}
+#fws_xhwbtp h3{ height:24px; overflow:hidden;}
+#header .language .lan_link { height:30px; background:none; }

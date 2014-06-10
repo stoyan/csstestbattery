@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>Welcome to OnlineSBI</title>
+<meta name="classification" content="banking">
+<meta name="description" content="Headquartered in Mumbai, India, SBI is the biggest bank in India.">
+<meta name="keywords" content="corebanking,loan,insurance">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="sbijava/css/gen_style.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="sbijava/js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="sbijava/js/gen_ddtab.js"></script>
+<script type="text/javascript" src="sbijava/js/lightbox.js"></script>
+<script type="text/javascript" charset="utf-8"> 
+ 
+ 
+	$(document).ready(function() {
+	
+			//Tooltips
+			$(".tip_trigger").hover(function(){
+				tip = $(this).find('.tip');
+				tip.show(); //Show tooltip
+			}, function() {
+				tip.hide(); //Hide tooltip		  
+			}).mousemove(function(e) {
+				var mousex = e.pageX + 20; //Get X coodrinates
+				var mousey = e.pageY + 20; //Get Y coordinates
+				var tipWidth = tip.width(); //Find width of tooltip
+				var tipHeight = tip.height(); //Find height of tooltip
+				
+				//Distance of element from the right edge of viewport
+				var tipVisX = $(window).width() - (mousex + tipWidth);
+				//Distance of element from the bottom of viewport
+				var tipVisY = $(window).height() - (mousey + tipHeight);
+				  
+				if ( tipVisX < 20 ) { //If tooltip exceeds the X coordinate of viewport
+					mousex = 0;
+				} if ( tipVisY < 20 ) { //If tooltip exceeds the Y coordinate of viewport
+					mousey = 570;
+				} 
+				tip.css({  top: mousey, left: 40 });
+			});
+
+		  $('#video-tab').click(function(e) {
+				$("#videos_list").lightbox({centered: true, onLoad: function() {
+				 }
+				 });
+				 e.preventDefault();
+			  });
+            
+		    	$("#clx").click(function()
+				{
+					$(".lb_overlay").trigger('click')
+				}
+			);
+ 
+			 $('#off_app').click(function(e) {
+				$("#off_app_list").lightbox({centered: true, onLoad: function() {
+				 }
+				 });
+				 e.preventDefault();
+			  });
+            
+		    	$("#clx_off_app").click(function()
+				{
+					$(".lb_overlay").trigger('click')
+				}
+			);
+ 
+		});
+</script>
+</head>
+<body>
+<!-- Wrapper -->
+<div id="wrapper">
+  <!-- Header -->
+  <div id="header">
+    <h1><a href="http://www.statebankofindia.com/" title="State Bank of India" tabindex="1">&nbsp;</a></h1>
+    <h2 title="SBI Online">&nbsp;</h2>
+  </div>
+  <!-- //Header -->
+  <!-- Navigation -->
+  <div id="navigation" style="float:left">
+    <div id="colortab">
+      <!--1st drop down menu -->
+      <div id="dropmenu1_a" class="ddmenu selected default"> <a href="https://retail.onlinesbi.com/personal/faq.html" tabindex="7">Personal Banking FAQ</a> 
+	  <a href="https://www.onlinesbi.com/corporate/sbi/corp_faq.html" tabindex="8">Corporate Banking FAQ</a> </div>
+      <!--2nd drop down menu -->
+      <div id="dropmenu2_a" class="ddmenu"> <a href="https://retail.onlinesbi.com/personal/" tabindex="4">Personal Internet Banking</a> <a href="https://www.onlinesbi.com/corporate/" tabindex="5">Corporate Internet Banking</a> </div>
+	   <div id="dropmenu3_a" class="ddmenu"> <a href="https://oaa.onlinesbi.com/oao/onlineaccapp.htm" tabindex="13">for Resident Individuals</a> <a href="https://oaa.onlinesbi.com/oaonri/onlineaccapp.htm" tabindex="14">for NRE/NRO</a> </div>
+      <ul class="menu_tabaccess">
+        <li class="active"><a href="#" title="Home" tabindex="2"><span>Home</span></a></li>
+        <li><a href="#" title="Services" rel="dropmenu2_a" tabindex="3"><span>Services</span></a></li>
+        <li><a href="#" title="FAQ" rel="dropmenu1_a" tabindex="6"><span>FAQ</span></a></li>
+        <li><a href="https://www.sbi.co.in/" target="_blank" title="Corporate Website" tabindex="9"><span>Corporate Website</span></a></li>
+        <li><a href="https://retail.onlinesbi.com/personal/instapay_oxipay.html" title="SBI-InstaPay / SBI-OxiPay" tabindex="10"><span>Mobile/DTH Recharge</span></a></li>
+        <li><a href="https://www.onlinesbi.com/prelogin/icollecthome.htm" target="_blank" title="State Bank Collect" tabindex="11"><span>State Bank Collect</span></a></li>
+        <li><a href="#" title="Online SB Account Application" tabindex="12" rel="dropmenu3_a"><span>Online SB Account Application</span></a></li>
+        <li><a href="#" target="_blank" title="OnlineSBI Videos" tabindex="15"><span class="video" id="video-tab"><img src="sbijava/images/new_label.png" alt="">Videos</span></a></li>
+        <li class="hindi_link" id="colortabhindi"><a href="https://retail.onlinesbi.com/hindi/" title="Hindi" tabindex="16"><span>हिंदी</span> </a> </li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <script type="text/javascript">
+				tabdropdown.init("colortab", 0)
+			</script>
+    <div class="clear"></div>
+  </div>
+  <div class="clear"></div>
+  <!-- //Navigation -->
+  <!-- Banner -->
+  <div id="banner">
+    <div id="flash">
+      <object type="application/x-shockwave-flash" data="sbijava/swf/generic_banner_sbi.swf" width="965" height="272" title="State Bank of India" tabindex="-1">
+        <param name="wmode" value="transparent">
+        <param name="movie" value="sbijava/swf/generic_banner_sbi.swf">
+      </object>
+    </div>
+  </div>
+  <!-- //Banner -->
+  <!-- Content Area -->
+  <div id="content-area">
+    <div id="home-section">
+      <!-- Personal Banking -->
+      <div class="section-home-a">
+        <h3><a href="https://retail.onlinesbi.com/personal/" title="Personal Banking" tabindex="100">PERSONAL <span>BANKING</span></a>
+		<a href="https://retail.onlinesbi.com/retail/login.htm" class="login-a" title="Login" tabindex="101">&nbsp;</a></h3>
+        <div class="lite"> <a href="https://m.onlinesbi.com/mretail/login.htm" tabindex="102" id="login-lite" title="Login Lite">&nbsp;</a> </div>
+        <div style="clear:both"></div>
+        <p>Our internet banking portal provides personal banking services that gives you complete control over all your banking demands online.</p>
+        <h4>Features</h4>
+        <ul>
+			<li>
+				<span class="tip_trigger">Interested in our INB facility?<span class="tip" style="width: 330px;">Please go to the login page and click the link <span style="color:red">New User?</span></span></span>
+          </li>
+		  <!-- <li><span style="float:left">To avail INB facility, please <a href="https://www.onlinesbi.com/retail/userdrivenregdetails.htm?bankCode=0" tabindex="103"><u>click here</u></a>.</span><span class="features_new_right">&nbsp;</span>
+            <div class="clear"></div>
+          </li> -->
+		   <li><a style="float:none;" href="https://epolicy.sbilife.co.in" tabindex="103" target="_blank">Get online life insurance cover of Rs.1 Crore for Rs.18 per day. <u>Click here</u>.</a>
+            <div class="clear"></div>
+          </li>
+		<li><a style="float:left;" href="https://retail.onlinesbi.com/personal/forex_outward_faq.html" tabindex="104">Forex Outward Remittance Scheme</a><span class="features_new">&nbsp;</span>
+            <div class="clear"></div>
+          </li>
+          <li><a style="float:left;" href="https://retail.onlinesbi.com/personal/mobile_faq.html" tabindex="105">IMPS in now on Mobile OnlineSBI</a>
+            <div class="clear"></div>
+          </li>
+          <li><a href="https://retail.onlinesbi.com/personal/virtual_card.html" tabindex="107">State Bank Virtual Card </a></li>
+          <li><a href="https://retail.onlinesbi.com/personal/instapay_oxipay.html" tabindex="108">SBI-InstaPay / SBI-OxiPay</a></li>
+          <li><a href="https://retail.onlinesbi.com/personal/etdr_estdr_faq.html" tabindex="109">Online Term Deposits</a></li>
+          <li><a href="https://retail.onlinesbi.com/personal/bill_payment.html" tabindex="110">Convenient Utility Bill Payments</a></li>
+          <li><a href="http://sbi.co.in/user.htm?action=viewsection&amp;lang=0&amp;id=0,1,21,703" target="_blank" tabindex="111">ASBA facility</a></li>
+          <li><a href="https://retail.onlinesbi.com/personal/tax_retail.html" tabindex="112">Tax payments</a></li>
+        </ul>
+        <div class="more"> <a href="https://retail.onlinesbi.com/personal/" tabindex="113">More</a> </div>
+        <!--Lock User -->
+        <div style="clear:both"></div>
+        <div style="height:10px; line-height:0px;"></div>
+        <div class="lock_out"> <a href="#" onclick="window.open('https://retail.onlinesbi.com/retail/lockaccountdetails.htm?bankCode=0','aboutus','width=780, height=500 ,status=1, scrollbars=1, location=0')" tabindex="114" title="Lock User Access"> Lock <span class="popup">User Access</span></a> </div>
+      </div>
+      <!-- //Personal Banking -->
+      <!-- Corporate Banking -->
+      <div class="section-home">
+        <h3><a href="https://www.onlinesbi.com/corporate/" title="Corporate Banking" tabindex="115">CORPORATE <span>BANKING</span></a> <a href="https://www.onlinesbi.com/corporate/" class="login-a" title="Login" tabindex="116">&nbsp;</a></h3>
+        <p>Corporate Banking application provides features to administer and manage non personal accounts online.</p>
+        <h4>Features</h4>
+        <ul>
+		  <li><a href="https://www.onlinesbi.com/corporate/sbi/corp_sb_collect.html" tabindex="117">Collect Fee Online - State Bank Collect</a></li>
+          <li>User management at your fingertips</li>
+          <li>Easy synchronization with Corporate ERP System</li>
+          <li><a href="https://www.onlinesbi.com/corporate/sbi/corp_fileupload.html" tabindex="118">Bulk file upload facility for payments</a></li>
+          <li><a href="https://www.onlinesbi.com/corporate/sbi/corp_eTax.html" tabindex="119">Pay Direct, Indirect, State Govt Taxes &amp; EPF Payments online</a></li>
+          <li>Provision for highly customized MIS</li>
+        </ul>
+      </div>
+      <!-- //Corporate Banking -->
+      <!-- Other Services -->
+      <div class="section-home">
+        <h3><a href="javascript:viod(0);" title="Other Services" class="no_click" tabindex="-1">OTHER <span>SERVICES</span></a></h3>
+        <ul class="type-a">
+		<li>
+<a style="float:left;" href="https://www.onlinesbi.com/prelogin/mopsremittanceform.htm" target="_blank" tabindex="120">Reprint Branch Remittance Form </a><span class="features_new">&nbsp;</span>
+  <div class="clear"></div>
+</li>
+		<li>
+<a style="float:left;" href=" http://mab.sbi.co.in" target="_blank" tabindex="121">Merchant Acquiring Business - POS </a><span class="features_new">&nbsp;</span>
+  <div class="clear"></div>
+</li>
+		<li><a href="https://egras.raj.nic.in" target="_blank" tabindex="122">Govt. of Rajasthan e-GRAS</a></li>
+          <!-- <li><a href="https://esuraksha.sbilife.co.in/UI/Products/eSurakshaPlus/PremiumCalc.aspx" target="_blank" tabindex="123">SBI Life Suraksha Plus</a></li> -->
+          <li><a style="float:left;" href="#" tabindex="124" id="off_app">Genuine Applications !</a>
+            <div class="clear"></div>
+          </li>
+          <li><a href="https://retail.onlinesbi.com/personal/sbi_efile.html" tabindex="125">SBI e-File !</a></li>
+          <li><a href="https://prepaid.onlinesbi.com/CMS/" target="_blank" tabindex="126">Complaints</a></li>
+          <li><a href="https://retail.onlinesbi.com/personal/disclaimer.html" target="_blank" tabindex="127">Online Shopping</a></li>
+          <li><a href="https://prepaid.onlinesbi.com/" target="_blank" tabindex="128">Foreign Travel/EZ-Pay/Gift Cards</a></li>
+          <li><a href="http://www.statebankofindia.com/user.htm?action=viewsection&amp;lang=0&amp;id=0,1,21,691" target="_blank" tabindex="129">Mobile Banking Services</a></li>
+          <li><a href="https://www.onlinesbi.com/nri/" target="_blank" tabindex="130">NRI Services</a></li>
+          <li><a href="https://www.onlinesbiglobal.com/" target="_blank" tabindex="131">OnlineSBI Global</a></li>
+          <li><a href="https://remit.onlinesbi.com/" target="_blank" tabindex="132">SBI Express Remit</a></li>
+          <li><a href="http://www.onlinesbi.com/scfu/scfu_home.html" target="_blank" tabindex="133">e-DFS/e-VFS</a></li>
+          <li><a href="https://cmp.onlinesbi.com/" target="_blank" tabindex="134">SBI F.A.S.T.</a></li>
+          <li><a href="https://retail.onlinesbi.com/personal/secure_card_transactions.html" tabindex="135">Secure Card Transactions</a></li>
+        </ul>
+        <!-- Usefull Links -->
+        <h3 class="usefull-link"><a href="javascript:void(0);" title="Useful Links" class="no_click" tabindex="-1">USEFUL <span>LINKS</span></a></h3>
+        <ul class="type-a">
+		  <li><a href="http://www.sbicaptrustee.in" target="_blank" tabindex="136">SBICAP Trustee Company Limited</a></li>
+          <li><a href="http://www.sbimf.com/" target="_blank" tabindex="137">SBI Mutual Fund</a></li>
+          <li><a href="http://www.sbicard.com/" target="_blank" tabindex="138">SBI Card</a></li>
+          <li><a href="http://www.sbismart.com/" target="_blank" tabindex="139">SBICAP Securities</a></li>
+          <li><a href="http://www.sbilife.co.in" target="_blank" tabindex="140">SBI Life Insurance</a></li>
+          <li><a href="http://www.sbigeneral.in" target="_blank" tabindex="141">SBI General Insurance</a></li>
+        </ul>
+        <!-- //Usefull Links -->
+      </div>
+      <!-- //Other Services -->
+    </div>
+  </div>
+  <!-- //Content Area -->
+  <!-- Footer -->
+  <div id="footer">
+    <div class="footer_top foot_menu">
+ 
+      <ul id="footerlinks_site">
+        <li><a href="javascript:void(0);" tabindex="300" class="foot_parant">Sitemap</a>
+          <ul class="footer_submenu">
+            <li><a href="https://retail.onlinesbi.com/personal/sitemap.html" tabindex="301">Personal Banking Sitemap</a></li>
+            <li class="last"><a href="https://www.onlinesbi.com/corporate/sbi/corp_sitemap.html" tabindex="302">Corporate Banking Sitemap</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul id="foot_rightlinks">
+        <li><a href="https://retail.onlinesbi.com/personal/security_tips.html" title="Security Tips" tabindex="303" class="foot_parant">Security Tips</a>|</li>
+        <li><a href="javascript:void(0);" title="Forms" tabindex="304" class="foot_parant">Forms</a>
+          <ul class="footer_btmnav1 footer_submenu">
+            <li><a href="https://retail.onlinesbi.com/personal/reg_forms.html" tabindex="305">Personal Internet Banking</a></li>
+            <li class="last"><a href="https://www.onlinesbi.com/corporate/sbi/corp_regisrationforms.html" tabindex="306">Corporate Internet Banking</a></li>
+          </ul>
+          |</li>
+        <li><a href="javascript:void(0);" title="Contact Us" tabindex="307" class="foot_parant">Contact Us</a>
+          <ul class="footer_btmnav2 footer_submenu">
+            <li><a href="https://retail.onlinesbi.com/personal/contact_us.html" tabindex="308">Personal Internet Banking</a></li>
+            <li class="last"><a href="https://www.onlinesbi.com/corporate/sbi/corp_reachus.html" tabindex="309">Corporate Internet Banking</a></li>
+          </ul>
+          |</li>
+        <li><a href="javascript:void(0);" title="Privacy Statement" tabindex="310" class="foot_parant">Privacy Statement</a>
+          <ul class="footer_btmnav3 footer_submenu">
+            <li><a href="https://retail.onlinesbi.com/personal/privacy_statement.html" tabindex="311">Personal Internet Banking </a></li>
+            <li class="last"><a href="https://www.onlinesbi.com/corporate/sbi/corp_privacy.html" tabindex="312">Corporate Internet Banking </a></li>
+          </ul>
+          |</li>
+        <li><a href="javascript:void(0);" title="Disclosure" tabindex="313" class="foot_parant">Disclosure</a>
+          <ul class="footer_btmnav4 footer_submenu">
+            <li><a href="https://retail.onlinesbi.com/personal/disclosure.html" tabindex="314">Personal Internet Banking </a></li>
+            <li class="last"><a href="https://www.onlinesbi.com/corporate/sbi/corp_disclosure.html" tabindex="315">Corporate Internet Banking </a></li>
+          </ul>
+          |</li>
+        <li class="third"><a href="javascript:void(0);" title="Terms of Use" tabindex="316" class="foot_parant">Terms &amp; Conditions</a>
+          <ul class="footer_btmnav5 footer_submenu">
+            <li><a href="https://retail.onlinesbi.com/personal/terms_of_service.html" tabindex="317">Personal Internet Banking </a></li>
+            <li class="last"><a href="https://www.onlinesbi.com/corporate/sbi/corp_terms.html" tabindex="318">Corporate Internet Banking </a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="footer_btm"> <span title="© Copyright SBI Online">© Copyright State Bank of India</span> <span class="foot_btmtxt">Site best viewed at 1024 x 768 resolution in I.E 7 or above, Mozilla 3.5 or above, Google Chrome 3 or above, Safari 5.0 + </span> </div>
+  </div>
+  <!-- //Footer -->
+</div>
+<!-- //Wrapper -->
+<script type="text/javascript"> 
+	$(document).ready(function(){ /* Sub menu on Tab */
+		$('.menu_tabaccess li a, .ddmenu a').focus(function(){
+			$(this).trigger("mouseover");
+			if($(this).parent().hasClass('ddmenu')){
+				$(this).addClass('selected');
+			}else{
+				$(this).parent().addClass('selected');
+				if(($(this).attr('rel') == undefined || $(this).attr('rel') == false)){
+					$('.ddmenu').css('visibility','hidden');
+				}
+			}
+		});
+		$('.menu_tabaccess li a, .ddmenu a').blur(function(){
+			$(this).trigger("mouseout");
+			if($(this).parent().hasClass('ddmenu')){
+				$(this).removeClass('selected');
+			}else{
+				$(this).parent().removeClass('selected');
+			}
+		});
+		
+		/* Footer menu */
+		$(".footer_submenu").each(function(index){
+			var curList = $(this);
+			var len = $(curList).find("li").length;
+			$(curList).find('li:eq('+(len-1)+')').addClass('last');
+			
+		});
+		
+		$('.foot_menu ul li a').focus(function(){
+			$(this).parent().find("ul").css('display','block');
+		});
+		$('.foot_menu ul li ul li a').blur(function(){
+			if($(this).parent().hasClass("last")){
+				$(".foot_menu li ul").css('display','none');
+			}
+		});
+		
+		$('.foot_parant').hover(function(){
+			$(".footer_submenu").hide();
+			$(this).parent("li").find(".footer_submenu").css('display','block');
+		});
+		
+	});
+</script>
+<!-- Lightbox Video-->
+<div class="lightbox_video" id="videos_list" style="display:none">
+  <!-- Lightbox content -->
+  <div class="lb_content">
+    <div class="lb_header"> <img src="sbijava/images/lb_sbi_logo.png" class="lg_logo_1" alt=""><img src="sbijava/images/lb_online_logo.png" class="lg_logo_2" alt=""> </div>
+    <div class="lb_video_list">
+      <h5>OnlineSBI VIDEOS</h5>
+      <ul>
+	    <li class="cfo"><a href="http://sbi.wstream.net/videos/sb_collect.htm" target="_blank">Collect Fee Online - State Bank Collect</a></li>
+        <li class="otb"><a href="http://sbi.wstream.net/videos/eticketing.htm" target="_blank">Online Ticket Booking</a></li>
+        <li class="bp"><a href="http://sbi.wstream.net/videos/instapay.htm" target="_blank">Bill Payments</a></li>
+        <li class="kbh"><a href="http://sbi.wstream.net/videos/KBHweek1.htm" target="_blank">Kaun Banega Hoshiyar</a></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <!-- Lightbox Footer -->
+    <div class="lb_footer">©&nbsp;&nbsp;Copyrights 2013 OnlineSBI</div>
+    <!-- //Lightbox Footer -->
+  </div>
+  <!-- //Lightbox content -->
+  <a href="#" id="clx"><img src="sbijava/images/lb_close.png" alt=""></a> </div>
+<!-- //Lightbox Video-->
+ 
+ 
+<!-- Official Applications-->
+<div class="off_app" id="off_app_list" style="display:none">
+  <!-- Official Applications content -->
+  <div class="lb_off_app_content">
+    <div class="lb_off_app_header">
+      <h5>GENUINE APPLICATIONS</h5>
+      <a href="#" id="clx_off_app"><img src="sbijava/images/close_white.png" alt=""></a> </div>
+    <div class="lb_off_app_list"> <span><em>Use only our genuine applications available on popular application stores as detailed below to communicate with the Bank:</em></span>
+      <h6>Google Play Store</h6>
+      <ul>
+        <li><strong>State Bank Freedom :</strong> State Bank of India Mobile Banking Application</li>
+        <li><strong>State Bank Secure :</strong> Software Token (Beta. Not for use by the general public.)</li>
+      </ul>
+      <h6>Blackberry App World</h6>
+      <ul>
+        <li>No such application. However, Blackberry users may please visit the site <a href="https://mobile.onlinesbi.com/sbidownloader/DownloadApplication.action" target="_blank">https://mobile.onlinesbi.com/sbidownloader/DownloadApplication.action</a> for downloading the official Mobile Banking Application "State Bank Freedom" after selecting the specific model number.</li>
+      </ul>
+      <h6>Windows Market Place </h6>
+      <ul>
+        <li><strong>State Bank Secure :</strong> Software Token (Beta. Not for use by the general public.)</li>
+        <li>Windows users may also visit the site <a href="https://mobile.onlinesbi.com/sbidownloader/DownloadApplication.action" target="_blank">https://mobile.onlinesbi.com/sbidownloader/DownloadApplication.action</a> for downloading the official Mobile Banking Application "State Bank Freedom" after selecting the specific model number.</li>
+      </ul>
+      <h6>Apple App Store</h6>
+      <ul>
+        <li><strong>State Bank Freedom :</strong> State Bank of India Mobile Banking Application</li>
+        <li><strong>State Bank Secure :</strong> Software Token (Beta. Not for use by the general public.)</li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!-- //Official Applications content -->
+</div>
+<!-- //Official Applications -->
+ 
+
+
+
+
+</body></html>

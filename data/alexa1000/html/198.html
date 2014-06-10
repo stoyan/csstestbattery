@@ -1,0 +1,676 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>
+    Stack Exchange - Free, Community-Powered Q&amp;A
+</title>
+    <link rel="stylesheet" href="//cdn.sstatic.net/stackexchange/all.css?v=0a0556ff9575" type="text/css">
+    
+    <link rel="stylesheet" href="//cdn.sstatic.net/skins/topbar/topbar.css" type="text/css">
+    <link rel="stylesheet" href="//cdn.sstatic.net/stackexchange/topbar.css?v=c9ed9d96571b" type="text/css">
+    <link rel="shortcut icon" href="//cdn.sstatic.net/stackexchange/img/favicon.ico">
+    <link rel="apple-touch-icon" href="//cdn.sstatic.net/stackexchange/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Exchange" href="/opensearch.xml">
+
+    <!--[if IE]>
+    <script src="//cdn.sstatic.net/stackexchange/js/third-party/html5shiv.js?v=9f4cac0f1832"></script>
+    <![endif]-->
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="//cdn.sstatic.net/stackexchange/js/third-party/jquery.cookie.js?v=bafd924fa942"></script>
+    <script src="//cdn.sstatic.net/stackexchange/js/master.js?v=af9ee2d88449"></script>
+    <script src="//cdn.sstatic.net/stackexchange/js/realtime.js?v=335fa254dc54"></script>
+    <script type="text/javascript">
+        $(function () {
+            genuwine.init(undefined);
+        });
+        var imagePath='//cdn.sstatic.net/stackexchange/Img/';
+        var inboxUnviewedCount = -1;
+    </script>
+        <script src="//cdn.sstatic.net/stackexchange/js/global-login.js?v=558e8937dc08"></script>
+            <script type="text/javascript">
+                gauth.checkStackAuth('https://stackauth.com');
+                gauth.informStackAuth('https://stackauth.com');
+            </script>
+    
+    <script src="//cdn.sstatic.net/stackexchange/js/home.js?v=d142df470d9d"></script>
+    <script>
+        $(function () {
+            homepage.init(
+                'ws://qa.sockets.stackexchange.com',
+                '155-questions-active',
+                false,
+                {"stackoverflow.com":{"iconUrl48":"http://cdn.sstatic.net/stackoverflow/img/icon-48.png","hostShortName":"stackoverflow","bubbleBg":"#eaeaea"},"serverfault.com":{"iconUrl48":"http://cdn.sstatic.net/serverfault/img/icon-48.png","hostShortName":"serverfault","bubbleBg":"#ee4b4b"},"superuser.com":{"iconUrl48":"http://cdn.sstatic.net/superuser/img/icon-48.png","hostShortName":"superuser","bubbleBg":"#84d8f6"},"meta.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/stackexchangemeta/img/icon-48.png","hostShortName":"meta","bubbleBg":"#176288"},"webapps.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/webapps/img/icon-48.png","hostShortName":"webapps","bubbleBg":"#C0D0DC"},"gaming.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/gaming/img/icon-48.png","hostShortName":"gaming","bubbleBg":"#374a74"},"webmasters.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/webmasters/img/icon-48.png","hostShortName":"webmasters","bubbleBg":"#9ce4fe"},"cooking.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/cooking/img/icon-48.png","hostShortName":"cooking","bubbleBg":"#cf4d3f"},"gamedev.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/gamedev/img/icon-48.png","hostShortName":"gamedev","bubbleBg":"#f4f28d"},"photo.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/photo/img/icon-48.png","hostShortName":"photo","bubbleBg":"#4d4b4b"},"stats.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/stats/img/icon-48.png","hostShortName":"stats","bubbleBg":"#8ea2a9"},"math.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/math/img/icon-48.png","hostShortName":"math","bubbleBg":"#0f3559"},"diy.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/diy/img/icon-48.png","hostShortName":"diy","bubbleBg":"#4176ab"},"gis.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/gis/img/icon-48.png","hostShortName":"gis","bubbleBg":"#f0f1e9"},"tex.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/tex/img/icon-48.png","hostShortName":"tex","bubbleBg":"#f6f3e0"},"askubuntu.com":{"iconUrl48":"http://cdn.sstatic.net/askubuntu/img/icon-48.png","hostShortName":"askubuntu","bubbleBg":"#fb9266"},"money.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/money/img/icon-48.png","hostShortName":"money","bubbleBg":"#f0f5f7"},"english.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/english/img/icon-48.png","hostShortName":"english","bubbleBg":"#f5ece2"},"stackapps.com":{"iconUrl48":"http://cdn.sstatic.net/stackapps/img/icon-48.png","hostShortName":"stackapps","bubbleBg":"#f0f5f7"},"ux.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/ux/img/icon-48.png","hostShortName":"ux","bubbleBg":"#f4f4f4"},"unix.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/unix/img/icon-48.png","hostShortName":"unix","bubbleBg":"#d8e0f4"},"wordpress.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/wordpress/img/icon-48.png","hostShortName":"wordpress","bubbleBg":"#efeee5"},"cstheory.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/cstheory/img/icon-48.png","hostShortName":"cstheory","bubbleBg":"#306081"},"apple.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/apple/img/icon-48.png","hostShortName":"apple","bubbleBg":"#e5e7ed"},"rpg.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/rpg/img/icon-48.png","hostShortName":"rpg","bubbleBg":"#efe7d9"},"bicycles.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/bicycles/img/icon-48.png","hostShortName":"bicycles","bubbleBg":"#45bcb5"},"programmers.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/programmers/img/icon-48.png","hostShortName":"programmers","bubbleBg":"#1b3e6c"},"electronics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/electronics/img/icon-48.png","hostShortName":"electronics","bubbleBg":"#e0e0e0"},"android.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/android/img/icon-48.png","hostShortName":"android","bubbleBg":"#f0f0f0"},"boardgames.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/boardgames/img/icon-48.png","hostShortName":"boardgames","bubbleBg":"#f0f5f7"},"physics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/physics/img/icon-48.png","hostShortName":"physics","bubbleBg":"#ebf5f5"},"homebrew.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/homebrew/img/icon-48.png","hostShortName":"homebrew","bubbleBg":"#f0f5f7"},"security.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/security/img/icon-48.png","hostShortName":"security","bubbleBg":"#e0e9ec"},"writers.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/writers/img/icon-48.png","hostShortName":"writers","bubbleBg":"#f0f5f7"},"video.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/avp/img/icon-48.png","hostShortName":"video","bubbleBg":"#f0f5f7"},"graphicdesign.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/graphicdesign/img/icon-48.png","hostShortName":"graphicdesign","bubbleBg":"#f4f4f4"},"dba.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/dba/img/icon-48.png","hostShortName":"dba","bubbleBg":"#f8f8f8"},"scifi.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/scifi/img/icon-48.png","hostShortName":"scifi","bubbleBg":"#73abb3"},"codereview.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/codereview/img/icon-48.png","hostShortName":"codereview","bubbleBg":"#f0f5f7"},"codegolf.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/codegolf/img/icon-48.png","hostShortName":"codegolf","bubbleBg":"#f0f5f7"},"quant.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/quant/img/icon-48.png","hostShortName":"quant","bubbleBg":"#f0f5f7"},"pm.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/pm/img/icon-48.png","hostShortName":"pm","bubbleBg":"#f0f5f7"},"skeptics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/skeptics/img/icon-48.png","hostShortName":"skeptics","bubbleBg":"#333"},"fitness.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/fitness/img/icon-48.png","hostShortName":"fitness","bubbleBg":"#f0f5f7"},"drupal.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/drupal/img/icon-48.png","hostShortName":"drupal","bubbleBg":"#b9e6fa"},"mechanics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/mechanics/img/icon-48.png","hostShortName":"mechanics","bubbleBg":"#f0f5f7"},"parenting.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/parenting/img/icon-48.png","hostShortName":"parenting","bubbleBg":"#f0f5f7"},"sharepoint.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/sharepoint/img/icon-48.png","hostShortName":"sharepoint","bubbleBg":"#031a2b"},"music.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/music/img/icon-48.png","hostShortName":"music","bubbleBg":"#f0f5f7"},"sqa.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/sqa/img/icon-48.png","hostShortName":"sqa","bubbleBg":"#f0f5f7"},"judaism.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/judaism/img/icon-48.png","hostShortName":"judaism","bubbleBg":"#faecd1"},"german.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/german/img/icon-48.png","hostShortName":"german","bubbleBg":"#f0f5f7"},"japanese.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/japanese/img/icon-48.png","hostShortName":"japanese","bubbleBg":"#f0f5f7"},"philosophy.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/philosophy/img/icon-48.png","hostShortName":"philosophy","bubbleBg":"#f0f5f7"},"gardening.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/gardening/img/icon-48.png","hostShortName":"gardening","bubbleBg":"#f0f5f7"},"travel.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/travel/img/icon-48.png","hostShortName":"travel","bubbleBg":"#18748a"},"productivity.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/productivity/img/icon-48.png","hostShortName":"productivity","bubbleBg":"#f0f5f7"},"crypto.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/crypto/img/icon-48.png","hostShortName":"crypto","bubbleBg":"#f0f5f7"},"dsp.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/dsp/img/icon-48.png","hostShortName":"dsp","bubbleBg":"#f0f5f7"},"french.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/french/img/icon-48.png","hostShortName":"french","bubbleBg":"#f0f5f7"},"christianity.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/christianity/img/icon-48.png","hostShortName":"christianity","bubbleBg":"#e7f4f7"},"bitcoin.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/bitcoin/img/icon-48.png","hostShortName":"bitcoin","bubbleBg":"#f0f5f7"},"linguistics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/linguistics/img/icon-48.png","hostShortName":"linguistics","bubbleBg":"#f0f5f7"},"hermeneutics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/hermeneutics/img/icon-48.png","hostShortName":"hermeneutics","bubbleBg":"#f0f5f7"},"history.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/history/img/icon-48.png","hostShortName":"history","bubbleBg":"#f0f5f7"},"bricks.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/bricks/img/icon-48.png","hostShortName":"bricks","bubbleBg":"#f0f5f7"},"spanish.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/spanish/img/icon-48.png","hostShortName":"spanish","bubbleBg":"#f0f5f7"},"scicomp.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/scicomp/img/icon-48.png","hostShortName":"scicomp","bubbleBg":"#f0f5f7"},"movies.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/movies/img/icon-48.png","hostShortName":"movies","bubbleBg":"#f0f5f7"},"chinese.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/chinese/img/icon-48.png","hostShortName":"chinese","bubbleBg":"#f0f5f7"},"biology.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/biology/img/icon-48.png","hostShortName":"biology","bubbleBg":"#f0f5f7"},"poker.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/poker/img/icon-48.png","hostShortName":"poker","bubbleBg":"#f0f5f7"},"mathematica.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/mathematica/img/icon-48.png","hostShortName":"mathematica","bubbleBg":"#ffecb1"},"cogsci.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/cogsci/img/icon-48.png","hostShortName":"cogsci","bubbleBg":"#f0f5f7"},"outdoors.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/outdoors/img/icon-48.png","hostShortName":"outdoors","bubbleBg":"#f0f5f7"},"martialarts.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/martialarts/img/icon-48.png","hostShortName":"martialarts","bubbleBg":"#f0f5f7"},"sports.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/sports/img/icon-48.png","hostShortName":"sports","bubbleBg":"#f0f5f7"},"academia.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/academia/img/icon-48.png","hostShortName":"academia","bubbleBg":"#fbf8f3"},"cs.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/cs/img/icon-48.png","hostShortName":"cs","bubbleBg":"#f0f5f7"},"workplace.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/workplace/img/icon-48.png","hostShortName":"workplace","bubbleBg":"#abdadd"},"windowsphone.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/windowsphone/img/icon-48.png","hostShortName":"windowsphone","bubbleBg":"#f0f5f7"},"chemistry.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/chemistry/img/icon-48.png","hostShortName":"chemistry","bubbleBg":"#f0f5f7"},"chess.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/chess/img/icon-48.png","hostShortName":"chess","bubbleBg":"#f0f5f7"},"raspberrypi.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/raspberrypi/img/icon-48.png","hostShortName":"raspberrypi","bubbleBg":"#f0f5f7"},"russian.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/russian/img/icon-48.png","hostShortName":"russian","bubbleBg":"#f0f5f7"},"islam.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/islam/img/icon-48.png","hostShortName":"islam","bubbleBg":"#f0f5f7"},"salesforce.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/salesforce/img/icon-48.png","hostShortName":"salesforce","bubbleBg":"#f0f5f7"},"patents.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/patents/img/icon-48.png","hostShortName":"patents","bubbleBg":"#6cb6e1"},"genealogy.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/genealogy/img/icon-48.png","hostShortName":"genealogy","bubbleBg":"#f0f5f7"},"robotics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/robotics/img/icon-48.png","hostShortName":"robotics","bubbleBg":"#f0f5f7"},"expressionengine.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/expressionengine/img/icon-48.png","hostShortName":"expressionengine","bubbleBg":"#f0f5f7"},"politics.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/politics/img/icon-48.png","hostShortName":"politics","bubbleBg":"#f0f5f7"},"anime.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/anime/img/icon-48.png","hostShortName":"anime","bubbleBg":"#f0f5f7"},"magento.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/magento/img/icon-48.png","hostShortName":"magento","bubbleBg":"#f0f5f7"},"ell.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/ell/img/icon-48.png","hostShortName":"ell","bubbleBg":"#f0f5f7"},"sustainability.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/sustainability/img/icon-48.png","hostShortName":"sustainability","bubbleBg":"#f0f5f7"},"tridion.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/tridion/img/icon-48.png","hostShortName":"tridion","bubbleBg":"#f0f5f7"},"reverseengineering.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/reverseengineering/img/icon-48.png","hostShortName":"reverseengineering","bubbleBg":"#f0f5f7"},"networkengineering.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/networkengineering/img/icon-48.png","hostShortName":"networkengineering","bubbleBg":"#f0f5f7"},"opendata.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/opendata/img/icon-48.png","hostShortName":"opendata","bubbleBg":"#f0f5f7"},"freelancing.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/freelancing/img/icon-48.png","hostShortName":"freelancing","bubbleBg":"#f0f5f7"},"blender.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/blender/img/icon-48.png","hostShortName":"blender","bubbleBg":"#f0f5f7"},"mathoverflow.net":{"iconUrl48":"http://cdn.sstatic.net/mathoverflow/img/icon-48.png","hostShortName":"mathoverflow","bubbleBg":"#eaeaea"},"space.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/space/img/icon-48.png","hostShortName":"space","bubbleBg":"#f0f5f7"},"sound.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/sound/img/icon-48.png","hostShortName":"sound","bubbleBg":"#f0f5f7"},"astronomy.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/astronomy/img/icon-48.png","hostShortName":"astronomy","bubbleBg":"#f0f5f7"},"tor.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/tor/img/icon-48.png","hostShortName":"tor","bubbleBg":"#f0f5f7"},"pets.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/pets/img/icon-48.png","hostShortName":"pets","bubbleBg":"#f0f5f7"},"ham.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/ham/img/icon-48.png","hostShortName":"ham","bubbleBg":"#f0f5f7"},"italian.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/italian/img/icon-48.png","hostShortName":"italian","bubbleBg":"#f0f5f7"},"pt.stackoverflow.com":{"iconUrl48":"http://cdn.sstatic.net/br/img/icon-48.png","hostShortName":"pt-stackoverflow","bubbleBg":"#f0f5f7"},"aviation.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/aviation/img/icon-48.png","hostShortName":"aviation","bubbleBg":"#f0f5f7"},"ebooks.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/ebooks/img/icon-48.png","hostShortName":"ebooks","bubbleBg":"#f0f5f7"},"beer.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/beer/img/icon-48.png","hostShortName":"beer","bubbleBg":"#f0f5f7"},"softwarerecs.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/softwarerecs/img/icon-48.png","hostShortName":"softwarerecs","bubbleBg":"#f0f5f7"},"arduino.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/arduino/img/icon-48.png","hostShortName":"arduino","bubbleBg":"#f0f5f7"},"expatriates.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/expatriates/img/icon-48.png","hostShortName":"expatriates","bubbleBg":"#f0f5f7"},"matheducators.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/matheducators/img/icon-48.png","hostShortName":"matheducators","bubbleBg":"#f0f5f7"},"earthscience.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/earthscience/img/icon-48.png","hostShortName":"earthscience","bubbleBg":"#f0f5f7"},"joomla.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/joomla/img/icon-48.png","hostShortName":"joomla","bubbleBg":"#f0f5f7"},"puzzling.stackexchange.com":{"iconUrl48":"http://cdn.sstatic.net/puzzling/img/icon-48.png","hostShortName":"puzzling","bubbleBg":"#f0f5f7"}});
+        });
+    </script>
+
+</head>
+<body>
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div class="wrapper">
+        <div id="overlay-header"></div>
+
+
+
+
+
+<section class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+        </div>
+
+        <div class="network-items">
+
+            <a href="//stackexchange.com" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 126 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+            <div class="links-container">
+                <span class="topbar-menu-links">
+                                            <a href="https://stackexchange.com/users/login#create-account">sign up</a>
+                        <a href="https://stackexchange.com/users/login">log in</a>
+                    
+
+                    <a href="http://meta.stackexchange.com">meta</a>
+                    <a href="/about">about</a>
+                </span>
+            </div>
+
+            <div class="search-container">
+                <form action="/search" method="get" autocomplete="off">
+                    <input name="q" id="search" type="text" placeholder="search all sites" tabindex="1" autocomplete="off" maxlength="240" class="search-box-blur">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+<script src="//cdn.sstatic.net/stackexchange/js/third-party/jquery.typewatch.js?v=f60c76280555"></script>
+<script src="//cdn.sstatic.net/stackexchange/js/topbar.js?v=42b1b150ff33"></script>
+        <header>
+            <div class="contentWrapper">
+                <a href="/"><h1>Stack Exchange</h1></a>
+        
+                <ul class="navMain">
+                    <li><a href="/sites">All Sites</a></li>
+                    <li><a href="/questions">Hot Questions</a></li>
+                    <li><a href="/leagues">Top Users</a></li>
+                    <li><a href="/newsletters">Newsletters</a></li>
+                    <li><a href="/blogs">Blogs</a></li>
+                </ul>
+            </div>
+        </header>
+
+        
+    <section class="home-intro">
+        <div class="contentWrapper">
+            <h2 class="tagline">expert answers to your questions</h2>
+            <p>Stack Exchange is a fast-growing network of <a href="/sites" class="lighter-link">121 question and answer sites</a> on diverse topics from software programming to cooking to photography and gaming. We build libraries of high-quality questions and answers, focused on the most important topics in each area of expertise. From our core of Q&amp;A, to community blogs and real-time chat, we provide experts with the tools they need to make The Internet a better place. Learn more <a href="/about" class="lighter-link">about us</a>...</p>
+
+            <ul class="stats">
+                <li>121 <a href="/sites" class="lighter-link">Q&amp;A sites</a></li>
+                <li>5.5 million <a href="/leagues" class="lighter-link">users</a></li>
+                <li>9.4 million <a href="/questions" class="lighter-link">questions</a></li>
+                <li>16.2 million <a href="/questions" class="lighter-link">answers</a></li>                                                
+            </ul>
+            <a href="/sites" class="btn">Explore our sites!</a>
+        </div>
+    </section>
+
+
+
+        <section id="content">
+            <div class="contentWrapper">
+                
+
+
+
+<section class="featuredcontainer featuredsites">
+    <h2>Our Q&amp;A <a href="/sites" class="lighter-link">sites</a> are free and open to everyone</h2>
+
+
+
+    <div class="anythingSlider anythingSlider-default activeSlider" style="width: 960px; height: 210px; "><div class="anythingWindow"><ul id="featuredsites-slider" class="anythingBase" style="width: 6720px; left: -960px; "><li class="cloned panel" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://mathematica.stackexchange.com" disabled="disabled"><img src="//cdn.sstatic.net/stackexchange/img/slider/mathematica.stackexchange.com.png" alt="Mathematica" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://mathematica.stackexchange.com" disabled="disabled">Q&amp;A for users of Mathematica</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://stackoverflow.com" disabled="disabled"><img src="//cdn.sstatic.net/stackexchange/img/slider/stackoverflow.com.png" alt="Stack Overflow" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://stackoverflow.com" disabled="disabled">Q&amp;A for professional and enthusiast programmers</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://english.stackexchange.com" disabled="disabled"><img src="//cdn.sstatic.net/stackexchange/img/slider/english.stackexchange.com.png" alt="English Language &amp; Usage" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://english.stackexchange.com" disabled="disabled">Q&amp;A for linguists, etymologists, and serious English language enthusiasts</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li>
+            <li class="panel activePage" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://tex.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/tex.stackexchange.com.png" alt="TeX - LaTeX" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://tex.stackexchange.com">Q&amp;A for users of TeX, LaTeX, ConTeXt, and related typesetting systems</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://patents.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/patents.stackexchange.com.png" alt="Ask Patents" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://patents.stackexchange.com">Q&amp;A for people interested in improving and participating in the patent system</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://gis.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/gis.stackexchange.com.png" alt="Geographic Information Systems" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://gis.stackexchange.com">Q&amp;A for cartographers, geographers and GIS professionals</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li>
+            <li class="panel" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://workplace.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/workplace.stackexchange.com.png" alt="The Workplace" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://workplace.stackexchange.com">Q&amp;A for members of the workforce navigating the professional setting</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://dba.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/dba.stackexchange.com.png" alt="Database Administrators" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://dba.stackexchange.com">Q&amp;A for database professionals who wish to improve their database skills and learn from others in the community</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://rpg.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/rpg.stackexchange.com.png" alt="Role-playing Games" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://rpg.stackexchange.com">Q&amp;A for gamemasters and players of tabletop, paper-and-pencil role-playing games</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li>
+            <li class="panel" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://scifi.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/scifi.stackexchange.com.png" alt="Science Fiction &amp; Fantasy" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://scifi.stackexchange.com">Q&amp;A for science fiction and fantasy enthusiasts</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://serverfault.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/serverfault.com.png" alt="Server Fault" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://serverfault.com">Q&amp;A for professional system and network administrators</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://electronics.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/electronics.stackexchange.com.png" alt="Electrical Engineering" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://electronics.stackexchange.com">Q&amp;A for electronics and electrical engineering professionals, students, and enthusiasts</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li>
+            <li class="panel" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://judaism.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/judaism.stackexchange.com.png" alt="Mi Yodeya" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://judaism.stackexchange.com">Q&amp;A for those who base their lives on Jewish law and tradition and anyone interested in learning more</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://bicycles.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/bicycles.stackexchange.com.png" alt="Bicycles" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://bicycles.stackexchange.com">Q&amp;A for people who build and repair bicycles, people who train cycling, or commute on bicycles</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://ux.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/ux.stackexchange.com.png" alt="User Experience" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://ux.stackexchange.com">Q&amp;A for user experience researchers and experts</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li>
+            <li class="panel" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://mathematica.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/mathematica.stackexchange.com.png" alt="Mathematica" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://mathematica.stackexchange.com">Q&amp;A for users of Mathematica</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://stackoverflow.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/stackoverflow.com.png" alt="Stack Overflow" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://stackoverflow.com">Q&amp;A for professional and enthusiast programmers</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://english.stackexchange.com"><img src="//cdn.sstatic.net/stackexchange/img/slider/english.stackexchange.com.png" alt="English Language &amp; Usage" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://english.stackexchange.com">Q&amp;A for linguists, etymologists, and serious English language enthusiasts</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li>
+    <li class="cloned panel" style="width: 960px; height: 210px; ">
+                <ul class="featuredsites-list" style="width: 100%; height: 100%; ">
+                        <li>
+        <div class="col3">
+            <a href="http://tex.stackexchange.com" disabled="disabled"><img src="//cdn.sstatic.net/stackexchange/img/slider/tex.stackexchange.com.png" alt="TeX - LaTeX" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://tex.stackexchange.com" disabled="disabled">Q&amp;A for users of TeX, LaTeX, ConTeXt, and related typesetting systems</a></p>
+        </div>
+    </li>
+
+                        <li>
+        <div class="col3">
+            <a href="http://patents.stackexchange.com" disabled="disabled"><img src="//cdn.sstatic.net/stackexchange/img/slider/patents.stackexchange.com.png" alt="Ask Patents" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://patents.stackexchange.com" disabled="disabled">Q&amp;A for people interested in improving and participating in the patent system</a></p>
+        </div>
+    </li>
+
+                        <li style="margin-right: 0px;">
+        <div class="col3">
+            <a href="http://gis.stackexchange.com" disabled="disabled"><img src="//cdn.sstatic.net/stackexchange/img/slider/gis.stackexchange.com.png" alt="Geographic Information Systems" class="thumb-site"></a>
+            <p class="site-desc"><a href="http://gis.stackexchange.com" disabled="disabled">Q&amp;A for cartographers, geographers and GIS professionals</a></p>
+        </div>
+    </li>
+
+                </ul>
+            </li></ul></div><div class="anythingControls" style="display: block; "><a href="#" class="start-stop playing"><span></span></a><ul class="thumbNav"><li class="first"><a class="panel1 cur" href="#"><span>1</span></a></li><li class=""><a class="panel2" href="#"><span>2</span></a></li><li class=""><a class="panel3" href="#"><span>3</span></a></li><li class=""><a class="panel4" href="#"><span>4</span></a></li><li class="last"><a class="panel5" href="#"><span>5</span></a></li></ul></div></div>
+</section>
+
+    <section class="featuredcontainer featuredquestions">
+        <h2>Some <a href="/questions?tab=realtime" class="lighter-link">recently active questions</a> from our network</h2>
+        <ul class="featured-questions">
+                <li>
+                    <div class="col3 realtime-question-container">
+                        <div class="realtime-question realtime-judaism">
+                            <a href="http://judaism.stackexchange.com" class="realtime-bubble-link">
+                                
+
+<div class="site-bubble" style="background-color: #faecd1; border-color: #faecd1;">
+    <img src="http://cdn.sstatic.net/judaism/img/icon-48.png" alt="Mi Yodeya" class="site-icon">
+</div>
+                            </a>
+                            <div class="question-list">
+                                <p><a href="http://judaism.stackexchange.com/questions/39095/shaking-hands-loosely" class="realtime-title">Shaking hands loosely</a></p>
+                                <span class="plain small">
+                                    <input type="hidden" class="realtime-unix-time" value="1402221256">
+                                    <span class="realtime-activity-date">1 min ago</span>
+                                    on
+                                    <a href="http://judaism.stackexchange.com" class="realtime-host">judaism</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col3 realtime-question-container">
+                        <div class="realtime-question realtime-serverfault">
+                            <a href="http://serverfault.com" class="realtime-bubble-link">
+                                
+
+<div class="site-bubble" style="background-color: #ee4b4b; border-color: #ee4b4b;">
+    <img src="http://cdn.sstatic.net/serverfault/img/icon-48.png" alt="Server Fault" class="site-icon">
+</div>
+                            </a>
+                            <div class="question-list">
+                                <p><a href="http://serverfault.com/questions/602594/openvpn-stuck-on-connecting" class="realtime-title">Openvpn - stuck on Connecting</a></p>
+                                <span class="plain small">
+                                    <input type="hidden" class="realtime-unix-time" value="1402221275">
+                                    <span class="realtime-activity-date">1 min ago</span>
+                                    on
+                                    <a href="http://serverfault.com" class="realtime-host">serverfault</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="margin-right: 0;">
+                    <div class="col3 realtime-question-container">
+                        <div class="realtime-question realtime-math">
+                            <a href="http://math.stackexchange.com" class="realtime-bubble-link">
+                                
+
+<div class="site-bubble" style="background-color: #0f3559; border-color: #0f3559;">
+    <img src="http://cdn.sstatic.net/math/img/icon-48.png" alt="Mathematics" class="site-icon">
+</div>
+                            </a>
+                            <div class="question-list">
+                                <p><a href="http://math.stackexchange.com/questions/825687/an-old-problem-in-group-theory" class="realtime-title">An old problem in Group Theory</a></p>
+                                <span class="plain small">
+                                    <input type="hidden" class="realtime-unix-time" value="1402221300">
+                                    <span class="realtime-activity-date">58 secs ago</span>
+                                    on
+                                    <a href="http://math.stackexchange.com" class="realtime-host">math</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col3 realtime-question-container">
+                        <div class="realtime-question realtime-superuser">
+                            <a href="http://superuser.com" class="realtime-bubble-link">
+                                
+
+<div class="site-bubble" style="background-color: #84d8f6; border-color: #84d8f6;">
+    <img src="http://cdn.sstatic.net/superuser/img/icon-48.png" alt="Super User" class="site-icon">
+</div>
+                            </a>
+                            <div class="question-list">
+                                <p><a href="http://superuser.com/questions/765100/should-i-install-sql-server-on-a-ssd-drive-educational-purposes-only" class="realtime-title">Should I install SQL Server on a SSD drive (educational purposes only)?</a></p>
+                                <span class="plain small">
+                                    <input type="hidden" class="realtime-unix-time" value="1402221307">
+                                    <span class="realtime-activity-date">51 secs ago</span>
+                                    on
+                                    <a href="http://superuser.com" class="realtime-host">superuser</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="col3 realtime-question-container">
+                        <div class="realtime-question realtime-wordpress">
+                            <a href="http://wordpress.stackexchange.com" class="realtime-bubble-link">
+                                
+
+<div class="site-bubble" style="background-color: #efeee5; border-color: #efeee5;">
+    <img src="http://cdn.sstatic.net/wordpress/img/icon-48.png" alt="WordPress Development" class="site-icon">
+</div>
+                            </a>
+                            <div class="question-list">
+                                <p><a href="http://wordpress.stackexchange.com/questions/69342/wordpress-site-running-on-yoast-not-being-indexed-into-google-news" class="realtime-title">Wordpress site running on Yoast not being indexed into Google News</a></p>
+                                <span class="plain small">
+                                    <input type="hidden" class="realtime-unix-time" value="1402221320">
+                                    <span class="realtime-activity-date">38 secs ago</span>
+                                    on
+                                    <a href="http://wordpress.stackexchange.com" class="realtime-host">wordpress</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li style="margin-right: 0;">
+                    <div class="col3 realtime-question-container">
+                        <div class="realtime-question realtime-stackoverflow">
+                            <a href="http://stackoverflow.com" class="realtime-bubble-link">
+                                
+
+<div class="site-bubble" style="background-color: #eaeaea; border-color: #eaeaea;">
+    <img src="http://cdn.sstatic.net/stackoverflow/img/icon-48.png" alt="Stack Overflow" class="site-icon">
+</div>
+                            </a>
+                            <div class="question-list">
+                                <p><a href="http://stackoverflow.com/questions/24104680/random-generates-same-number-in-java" class="realtime-title">Random generates same number in java</a></p>
+                                <span class="plain small">
+                                    <input type="hidden" class="realtime-unix-time" value="1402221346">
+                                    <span class="realtime-activity-date">13 secs ago</span>
+                                    on
+                                    <a href="http://stackoverflow.com" class="realtime-host">stackoverflow</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+        </ul>
+    </section>
+
+
+<section class="featuredcontainer bottomcols">
+    <div class="col3 col-blog">
+        <h2>Our blogs</h2>
+
+    <div class="blog-icon">
+        <img src="http://cdn.sstatic.net/gaming/img/favicon.ico" alt="Arqade blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://blog.gaming.stackexchange.com/2014/06/how-to-create-a-minecraft-pe-server/">How to Create a Minecraft PE Server</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">user2490580</span> –
+            Jun 7, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="https://cdn.sstatic.net/stackexchange/img/favicon.ico" alt="Stack Exchange blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://blog.stackoverflow.com/2014/05/podcast-59-hes-one-of-those-science-ists/">Podcast #59 – The Decline and Fall of Stack Overflow</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Abby T. Miller</span> –
+            May 29, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="https://cdn.sstatic.net/stackexchange/img/favicon.ico" alt="Stack Exchange blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://blog.stackoverflow.com/2014/05/podcast-58-pack-em-in-like-bees/">Podcast #58 – Pack ‘Em In Like Bees</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Abby T. Miller</span> –
+            May 19, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="http://cdn.sstatic.net/tex/img/favicon.ico" alt="TeX - LaTeX blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://tex.blogoverflow.com/2014/05/gitinfo2-latex-and-git-join-forces/">gitinfo2: LaTeX and git join forces</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Brent.Longborough</span> –
+            May 14, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="https://cdn.sstatic.net/stackexchange/img/favicon.ico" alt="Stack Exchange blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://blog.stackoverflow.com/2014/05/stack-exchange-for-iphone-is-here/">Stack Exchange for iPhone is here!</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Kasra Rahjerdi</span> –
+            May 8, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    </div>
+    
+    <div class="col3 col-blog">
+        <h2 style="visibility: hidden;">Our blogs</h2>
+
+    <div class="blog-icon">
+        <img src="http://cdn.sstatic.net/islam/img/favicon.ico" alt="Islam blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://islam.blogoverflow.com/2014/04/story-of-this-land-part-2-iraq-pt-1-iraq-in-the-quran/">Story of this Land Part 2: Iraq Pt 1: Iraq in the Quran</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Al Ummat</span> –
+            Apr 26, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="http://cdn.sstatic.net/scifi/img/favicon.ico" alt="Science Fiction &amp; Fantasy blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://scifi.blogoverflow.com/2014/04/salt-lake-comic-con-fan-xperience/">Salt Lake Comic Con Fan Xperience</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">jackbnimble</span> –
+            Apr 25, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="https://cdn.sstatic.net/stackexchange/img/favicon.ico" alt="Stack Exchange blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://blog.stackoverflow.com/2014/04/podcast-57-we-just-saw-this-on-florp/">Podcast #57 – We Just Saw This On Florp</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Abby T. Miller</span> –
+            Apr 24, 2014
+        </span>
+    </div>
+    <br class="cbo">
+    <div class="blog-icon">
+        <img src="http://cdn.sstatic.net/serverfault/img/favicon.ico" alt="Server Fault blog">
+    </div>
+    <div class="blog-info">
+        <h3 class="blog-title">
+            <a href="http://blog.serverfault.com/2014/04/23/welcome-serverfault-valued-associate-0000007/">Welcome Shane Madden, ServerFault Valued Associate #0000007!</a>
+        </h3>
+        <span class="blog-meta-info">
+                <span class="author">Tom Limoncelli</span> –
+            Apr 23, 2014
+        </span>
+    </div>
+    <br class="cbo">
+
+        <a href="/blogs">read more posts</a>
+    </div>
+    
+    <div class="col3 col-contact" style="margin-right: 0;">
+        <h2>Hey!</h2>
+        <p>Want to join our awesome <a href="/about/team">team?</a> We're <a href="/about/hiring">hiring!</a></p>
+        
+        <hr>
+        <p>Contact us:</p>
+        <div class="contact-address">
+            <a href="mailto:team@stackexchange.com">team@stackexchange.com</a><br>
+            <br>
+            <a href="https://maps.google.com/maps?q=110+William+Street,+New+York,+NY&amp;hl=en&amp;t=m&amp;z=16" target="_blank">
+                110 William St, 28th Floor<br>
+                New York, NY 10038
+            </a>
+        </div>
+    </div>
+</section>
+
+<br class="cbo">
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-5620270-24']);
+            _gaq.push(['_setDomainName', '.stackexchange.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+            _qoptions = { qacct: "p-c1rF4kxgLUzNc" };
+        </script>
+
+            <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+            <noscript>
+            &lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" style="display:none; border:none; height:1px; width:1px" alt="Quantcast"/&gt;
+            </noscript>
+
+    </div> <!-- end wrapper -->
+
+    <footer id="footer">
+        <div class="contentWrapper">
+            <div class="footerLinksSpaced">
+                <p>
+                    <a href="/about">about</a> <a href="http://blog.stackexchange.com">blog</a> <a href="/legal">legal</a> <a href="/legal/privacy-policy">privacy policy</a> <a href="/about/contact">contact us</a> <a href="http://meta.stackexchange.com">feedback always welcome</a>
+                    <a href="https://plus.google.com/+StackExchange" class="google-plus-icon" title="follow us on Google+"></a>
+                    <a href="http://www.facebook.com/stackexchange" class="facebook-icon" title="like us on Facebook"></a>
+                    <a href="http://twitter.com/stackexchange" class="twitter-icon" title="follow us on Twitter"></a>
+                </p>
+            </div>
+            <p>site design / logo © 2014 stack exchange, inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a></p>
+            <div class="footer-meta-info">
+                2014.6.7.960
+            </div>
+
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="https://stackauth.com/auth/global/read?request=RUqxT5XqLtYrhLXtTW5yC3mfZY5bsJAHfb1ScWZg5PCJ%2FOkaQO7dm%2Fsm4i%2FHVTEDSa9PyUHOtap%2FZ2uYs0yjNw%3D%3D&amp;nonce=MDOUUwAAAAB9mjtyaYKZMQ%3D%3D&amp;referer=http%3A%2F%2Fstackexchange.com%2F"></iframe></footer>
+
+    
+    
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Exchange works best with JavaScript enabled&lt;/div&gt;
+    </noscript>
+    <script type="text/javascript">
+        $('#search')
+            .focus(function() { 
+                if (this.value == this.title) {
+                    this.value = '';
+                    $(this).removeClass('search-box-blur');
+                }
+            })
+            .blur(function() {
+                if (this.value == '') {
+                    this.value = this.title;
+                    $(this).addClass('search-box-blur');
+                }
+            })
+            .blur();
+        settings = {};    
+        settings.contentPath = "//cdn.sstatic.net/stackexchange";
+    </script>
+    
+    <script>
+        $(function() {
+            StackExchange.init({"serverTime":1402221359});
+                StackExchange.topbar.init();
+        });
+    </script>
+
+    
+
+
+</body></html>

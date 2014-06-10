@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br" class="no-js"><head><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ga/inpage_linkid.js" id="undefined"></script>
+		<base href="https://www.sexlog.com">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="https://d31qbv1cthcecs.cloudfront.net/atrk.js"></script><script type="text/javascript" async="" src="https://stats.g.doubleclick.net/dc.js"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UAMFVlJbGwEHXFVRAwI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+		<meta name="resource-type" content="document">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta name="revisit-after" content="1">
+		<meta name="classification" content="Internet">
+		<meta name="MSSmartTagsPreventParsing" content="true">
+		<meta name="distribution" content="Global">
+		<meta name="rating" content="General">
+		<meta name="author" content="eSapiens - www.esapiens.com.br">
+		<meta name="language" content="en-us">
+		<meta name="doc-class" content="Completed">
+		<meta name="doc-rights" content="Public">
+		<meta name="viewport" content="width=1000, minimum-scale=0.25, maximum-scale=1.6">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="Sexlog | Sex and Swinger Social Network">
+		<meta property="og:image" content="https://www.sexlog.com/images/sl_og.jpg">
+		<meta property="og:image:type" content="image/jpeg">
+		<meta property="og:url" content="https://www.sexlog.com/">
+		<meta name="google-site-verification" content="QOt_iWzAkSNBaPQlzevmj140AaaLDQtWSBcKgQTqjgk">
+		<meta name="alexaVerifyID" content="2dnp0O2hugz6-K5NUe0_u-43QtM">
+		<link rel="shortcut icon" type="image/x-icon" href="https://www.sexlog.com/images/favicon.ico">
+		
+		<script type="text/javascript" src="https://cdn06.sexlog.com.br/font/__utm.js" async=""></script>
+		<style type="text/css" rel="stylesheet">
+			@font-face {font-family: 'LucidaGrande_';src: url('https://cdn06.sexlog.com.br/font/lucida_grande-webfont.eot');src: url('https://cdn06.sexlog.com.br/font/lucida_grande-webfont.eot?#iefix') format('embedded-opentype'),url('https://cdn06.sexlog.com.br/font/lucida_grande-webfont.woff') format('woff'),url('https://cdn06.sexlog.com.br/font/lucida_grande-webfont.ttf') format('truetype');font-weight: normal;font-style: normal;}
+			@font-face {font-family: 'LucidaGrande_';src: url('https://cdn06.sexlog.com.br/font/lucida_grande_bold.eot');src: url('https://cdn06.sexlog.com.br/font/lucida_grande_bold.eot?#iefix') format('embedded-opentype'),url('https://cdn06.sexlog.com.br/font/lucida_grande_bold.woff') format('woff'),url('https://cdn06.sexlog.com.br/font/lucida_grande_bold.ttf') format('truetype');font-weight: bold;font-style: normal;}
+			@font-face {font-family: 'Signika Negative';src: url('https://cdn06.sexlog.com.br/font/signikanegative-light.eot');src: url('https://cdn06.sexlog.com.br/font/signikanegative-light.eot?#iefix') format('embedded-opentype'),url('https://cdn06.sexlog.com.br/font/signikanegative-light.woff') format('woff'),url('https://cdn06.sexlog.com.br/font/signikanegative-light.ttf') format('truetype');font-weight: 200;font-style: normal;}
+			@font-face {font-family: 'Signika Negative';src: url('https://cdn06.sexlog.com.br/font/signikanegative-regular-webfont.eot');src: url('https://cdn06.sexlog.com.br/font/signikanegative-regular-webfont.eot?#iefix') format('embedded-opentype'),url('https://cdn06.sexlog.com.br/font/signikanegative-regular-webfont.woff') format('woff'),url('https://cdn06.sexlog.com.br/font/signikanegative-regular-webfont.ttf') format('truetype');font-weight: normal;font-style: normal;}
+			@font-face {font-family: 'Signika Negative';src: url('https://cdn06.sexlog.com.br/font/signikanegative-semibold-webfont.eot');src: url('https://cdn06.sexlog.com.br/font/signikanegative-semibold-webfont.eot?#iefix') format('embedded-opentype'),url('https://cdn06.sexlog.com.br/font/signikanegative-semibold-webfont.woff') format('woff'),url('https://cdn06.sexlog.com.br/font/signikanegative-semibold-webfont.ttf') format('truetype');font-weight: bold;font-style: normal;}
+		</style>
+
+		<script type="text/javascript" src="https://accounts.sexlog.com/head/inject?v=9.9"></script><script type="text/javascript" src="https://accounts.sexlog.com/js/allsites/allplugins.min.js?v=9.9"></script><!--<script type="text/javascript" src="js/allsites/libs/jquery.hoverIntent.js?v="></script>--><script type="text/javascript" src="https://accounts.sexlog.com/js/allsites/allsites.min.js?v=9.9"></script><script type="text/javascript" src="https://accounts.sexlog.com/js/allsites/recaptcha_ajax.min.js?v=9.9"></script><link rel="stylesheet" type="text/css" href="https://accounts.sexlog.com/css/allsites.css?v=9.9"><!--[if gte IE 9]> <style type="text/css">.gradient { filter: none; } </style><![endif]-->
+		<script type="text/javascript" src="https://www.sexlog.com/js/common/allplugins.min.js?v=9.9"></script>
+		<script type="text/javascript" src="https://www.sexlog.com/js/common/script.min.js?v=9.9"></script>
+		<link rel="stylesheet" type="text/css" href="https://www.sexlog.com/css/common.css?v=9.9">
+		<link rel="stylesheet" type="text/css" href="https://www.sexlog.com/css/allplugins.css?v=9.9">
+		<!--[if gte IE 9]>
+		  <style type="text/css">
+		    .gradient {
+		       filter: none;
+		    }
+		  </style>
+		<![endif]-->
+			<title>Sexlog | Sex and Swinger Social Network</title>
+	<meta name="description" content="Sexlog is the largest adult relationship social network in the World. Men, women, and couples experience real sexual activity, couple-swapping, ménage and swinging.">
+	<meta name="keywords" content="sexlog, adult social network, adult relationship, social network for sex, swinging, real sex, couple-swapping, ménage, couples for sexual activity, swinger relationship">
+	<meta property="og:title" content="Sexlog | Sex and Swinger Social Network">
+	<meta property="og:description" content="Sexlog is the largest adult relationship social network in the World. Men, women, and couples experience real sexual activity, couple-swapping, ménage and swinging.">
+	<link rel="stylesheet" type="text/css" href="https://www.sexlog.com/css/home.css?v=9.9">
+	<script type="text/javascript" async="" defer="" src="https://www.sexlog.com/js/home/home.min.js?v=9.9"></script>
+	<script type="text/javascript" async="" defer="" src="https://www.sexlog.com/js/common/libs/thumb-rot.js?v=9.9"></script>
+
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	var pluginUrl =
+	   '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	_gaq.push(['_setAccount', 'UA-22377058-1']);
+	_gaq.push(['_setDomainName', 'sexlog.com']);
+	_gaq.push(['b._setAccount', 'UA-36445877-1']);
+	_gaq.push(['b._setDomainName', 'sexlog.com']);
+	
+			_gaq.push(['_trackPageview']);
+		_gaq.push(['b._trackPageview']);
+				_gaq.push(['_setCustomVar', 1, 'member_type', 'not_logged', 1]);
+		_gaq.push(['b._setCustomVar', 1, 'member_type', 'not_logged', 1]);
+		(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		//ga.src = 'https://www.sexlog.com/js/common/libs/gas.min.js';
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+</script>	</head>
+	<body><input type="text" style="display:none;" id="jsLangsToolbar" value="({&quot;AUTH_DOMAIN&quot;:&quot;.sexlog.com&quot;,&quot;InformOnCaptcha&quot;:&quot;For safety, we ask you to enter the words below in the informed field.&quot;,&quot;SignUpSuccess&quot;:&quot;Registration successful!&quot;,&quot;sexlog_log_undefined&quot;:&quot;User in a different session from the logged in user, session will be updated in 3 (three) seconds.&quot;,&quot;sexlog_block_admin&quot;:&quot;Your profile was blocked by the administrator&quot;,&quot;message_subscribe_not_read&quot;:&quot;Subscribe to Sexlog and read all your messages.&quot;,&quot;subcriber_talk_messenger&quot;:&quot;Subscribe to chat in real time via text and webcam with sexlog users&quot;,&quot;panel_changeavatar_delete_confirm&quot;:&quot;Do you really want to delete your avatar?&quot;,&quot;search_text_wait&quot;:&quot;Searching for profiles... please wait&quot;,&quot;yes&quot;:&quot;Yes&quot;,&quot;no&quot;:&quot;No&quot;,&quot;select&quot;:&quot;» select&quot;,&quot;wait&quot;:&quot;wait...&quot;,&quot;notification_wanttodelete&quot;:&quot;Are you sure you want to delete this notification?&quot;,&quot;messenger_timeago_seconds&quot;:&quot;seconds&quot;,&quot;messenger_timeago_minuteAgo&quot;:&quot;1 minute ago&quot;,&quot;messenger_timeago_minuteAgo2&quot;:&quot;1 minute from now&quot;,&quot;messenger_timeago_minutes&quot;:&quot;minutes&quot;,&quot;messenger_timeago_hourAgo&quot;:&quot;1 hour ago&quot;,&quot;messenger_timeago_hourAgo2&quot;:&quot;1 hour from now&quot;,&quot;messenger_timeago_hour&quot;:&quot;hours&quot;,&quot;messenger_timeago_yesterday&quot;:&quot;Yesterday&quot;,&quot;messenger_timeago_tomorrow&quot;:&quot;Tomorrow&quot;,&quot;messenger_timeago_days&quot;:&quot;Days&quot;,&quot;messenger_timeago_lastWeek&quot;:&quot;Last week&quot;,&quot;messenger_timeago_nextWeek&quot;:&quot;Next week&quot;,&quot;messenger_timeago_weeks&quot;:&quot;weeks&quot;,&quot;messenger_timeago_lastMonth&quot;:&quot;Last month&quot;,&quot;messenger_timeago_nextMonth&quot;:&quot;Next month&quot;,&quot;messenger_timeago_months&quot;:&quot;months&quot;,&quot;messenger_timeago_lastYear&quot;:&quot;Last year&quot;,&quot;messenger_timeago_nextYear&quot;:&quot;Next year&quot;,&quot;messenger_timeago_years&quot;:&quot;years&quot;,&quot;messenger_timeago_lastCentury&quot;:&quot;Last century&quot;,&quot;messenger_timeago_nextCentury&quot;:&quot;Next century&quot;,&quot;messenger_timeago_centuries&quot;:&quot;centuries&quot;,&quot;messenger_timeago_ago&quot;:&quot;ago&quot;,&quot;messenger_timeago_now&quot;:&quot;Now&quot;,&quot;messenger_timeago_fromNow&quot;:&quot;from now on&quot;,&quot;messenger_userBlock_message1&quot;:&quot;The message&quot;,&quot;messenger_userBlock_message2&quot;:&quot;not been sent.&quot;,&quot;messenger_message_userOff&quot;:&quot;Could not make the connection or the user is offline.&quot;,&quot;messenger_sent_message&quot;:&quot;sent a message&quot;,&quot;messeger_already_videochat&quot;:&quot;You are already in a video conversation.&quot;,&quot;messenger_closewindow_videochat&quot;:&quot;Looks like you are on a video call. \nReally want to cancel?&quot;,&quot;messenger_already_videochat&quot;:&quot;You are already in a video conversation.&quot;,&quot;messenger_at&quot;:&quot;at&quot;,&quot;messenger_yesterday&quot;:&quot;yesterday&quot;,&quot;messenger_day&quot;:&quot;day&quot;,&quot;LoginPassInvalid&quot;:&quot;Invalid login or password, please check.&quot;})"><input type="text" style="display:none;" id="rt_msn_applicationkey" value="G25e6a"><div id="newheaderAllSites" class="newheaderAllSites headeroffline">    <input type="text" style="display: none;" id="typeNotifRequest" value="1">    <input type="text" style="display: none;" id="typeNotifMessages" value="2">    <input type="text" style="display: none;" id="typeNotifGeral" value="3">    <div class="center">        <!--<div id="logoSl" class="logoOpen">-->        <div id="logoSl" class="">            <a href="https://www.sexlog.com"><h1 class="img_logoSl">Sexlog</h1></a>            <div id="btnAllProducts"><i class="iconArrowDown"></i></div>        </div>                <form action="https://www.sexlog.com/search/do" method="post" accept-charset="utf-8" id="formTopSearch">        <div class="newSearchTop" id="newSearchTop">            <input id="txtLocationsNewHeader" class="inputSearch ui-autocomplete-input" name="txtLocations" type="text" maxlength="200" value="" placeholder="Search for users or places" autocomplete="off" onclick="this.select();" role="textbox" aria-autocomplete="list" aria-haspopup="true">            <input id="txtLocationschkHeader" name="txtLocationschk" type="text" style="display: none;" maxlength="200" value="">                        <input id="genderHeader" name="gender" type="text" style="display: none;" value="">            <input id="countryHeader" name="country" type="text" style="display: none;" value="">            <input id="stateHeader" name="state" type="text" style="display: none;" value="">            <input id="cityHeader" name="city" type="text" style="display: none;" value="">            <!--<input type="text" class="inputSearch">-->            <span class="btnClearSearch" style=""><i></i></span>            <button class="btnSearch" original-title="" disable-title="Type at least three characters to search!"><i></i></button>        <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" role="listbox" aria-activedescendant="ui-active-menuitem" style="z-index: 101; top: 0px; left: 0px; display: none; "></ul></div>        </form>                    <ul id="newAccounts">                <li id="newOpenAcc" class="noBg">                    <div id="btnOpenAcc">Sign in <div class="seta-baixo"> </div></div>                </li>                <input type="text" style="display:none;" id="domain" name="domain" value="sexlog">                <li>                    <form action="https://accounts.sexlog.com/sign-up" method="post" accept-charset="utf-8" id="frmSignUp">                    <a id="hrefSignUp" href="javascript:void(0);">                        Create account                    </a>                    <input type="text" style="display:none;" id="goto" name="goto" value="https://www.sexlog.com/">                    <input type="text" style="display:none;" id="domain" name="domain" value="sexlog">                    </form>                </li>                <li class="movies">                    <span class="line"></span>                     <a href="https://www.sexlog.com/videos">Videos</a>                </li>            </ul>                            <div id="newHideBox" class="loggedOut">        <div class="newDropdown">            <form action="https://www.sexlog.com/accounts/auth/login?goto=https://www.sexlog.com/&amp;domain=sexlog" method="post" accept-charset="utf-8" id="form_login_header">            <div id="msgLoginHeader"></div>            <!--<input type="text" style="display:none;" name="page" id="page" value="#"/>-->            <label for="input_boxLogin">Login</label>            <input name="username" id="input_boxLogin" class="loginHeaderInput" type="text" maxlength="100">            <label for="input_boxPassword">Password</label>            <input name="password" id="input_boxPassword" class="loginHeaderInput" type="password" value="">            <input type="image" name="btnSubmit" id="btnSubmit" value="Sign in" style="margin-top: -400px; position: absolute">            <div id="btnLoginHeader" class="btn" title="Sign in">                <span>Sign in</span>            </div>            <a href="https://accounts.sexlog.com/login/resend-password?domain=sexlog">Forgot your password?</a>            </form>        </div>        <div class="newArrowtop"></div>    </div><input type="text" value="6Lf-FOISAAAAADlBcnQzBRpK1PLPN37XJ0wGqkhp" id="publicKey" style="display: none;">    </div>    <div id="divSubscribe" style="display: none;">	</div>    <div id="divChangeAvatar" class="newModal" style="display: none">	</div>    <div id="divChangeLanguage" class="newModal" style="display: none">	</div>        <input type="text" style="display:none;" id="base_url_account" value="https://www.sexlog.com/accounts/">    <input type="text" style="display:none;" id="base_url_account_ext" value="https://accounts.sexlog.com/">    <input type="text" style="display:none;" id="islogged" value=""></div><div class="spacerTop"></div><div class="olderBrowser" style="display:none">	<div class="center">		<div class="arrow">			<p><strong>Outdated</strong> browser!</p>			<div class="seta-direita">&nbsp;</div>		</div>		<div class="arrow2">			<p>You are using an old version of <b>Internet Explorer</b>. <a href="https://www.sexlog.com/accounts/browser-not-supported" target="_black">Click here</a> and upgrade</p>			<img src="https://www.sexlog.com/accounts/images/icon/updBr.png">		</div>	</div>	<a href="javascript:void(0);" class="closeBar">Close</a></div><div id="allProducts">    <ul class="ulAllProducts">        <li class="itemAllProducts"><a href="https://www.sexlog.com"><img data-original="https://www.sexlog.com/accounts/images/header/_pt-br/sl.png" alt=""></a></li>        <li class="itemAllProducts"><a href="https://x.sexlog.com"><img data-original="https://www.sexlog.com/accounts/images/header/_pt-br/slX.png" alt=""></a></li>	<li class="itemAllProducts"><a href="https://magazine.sexlog.com"><img data-original="https://www.sexlog.com/accounts/images/header/_en-us/slMag.png" alt=""></a></li>            </ul>    <div class="closeAllProducts"></div></div><div class="message_wait">	<div class="mtext">		<h2></h2>	</div></div><div class="message message_error">	<div class="mtext">		<h2></h2>		<p></p>	</div>	<div class="mclose"></div></div><div class="message message_info">	<div class="mtext">		<h2></h2>		<p></p>	</div>	<div class="mclose"></div></div><div class="message message_sucess">	<div class="mtext">		<h2></h2>		<p></p>	</div>	<div class="mclose"></div></div><div id="overlayContent" class="cardProfile" style="display: none">	<!--<div class="closeCard"></div>-->	<div id="loading" class="loadingAnimation"><img src="https://www.sexlog.com/accounts//images/loader.gif" alt=""> <div id="arrow"></div></div>	<div id="contentcard" class="contentcard"></div></div>
+		<!-- Start Alexa Certify Javascript -->
+<script type="text/javascript">
+_atrk_opts =
+{ atrk_acct:"v7Wwi1asyr00O8", domain:"sexlog.com",dynamic: true}
+;
+(function()
+{ var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); }
+)();
+</script>
+<noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=v7Wwi1asyr00O8" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+<!-- End Alexa Certify Javascript -->		<div id="container" class="containeroffline">
+			
+<script type="text/javascript" src="https://www.sexlog.com/accounts/new_toolbar/inject/en-us?v=9.9&amp;goto=https://www.sexlog.com/&amp;domain=sexlog"></script>
+<script type="text/javascript" async="" defer="" src="https://www.sexlog.com/accounts/messenger/inject/en-us?v=9.9&amp;goto=https://www.sexlog.com/&amp;domain=sexlog"></script>			
+						
+									<div id="main">
+				<div id="aside" class="home">
+	<h2>Welcome to Sexlog!</h2>
+	<h3>We are the largest sex and swing social network in the World.</h3>
+	<div id="divLoginHome">
+		<form action="https://www.sexlog.com/accounts/auth/login?goto=https://www.sexlog.com/&amp;domain=sexlog" method="post" accept-charset="utf-8" id="frmLogin">		<input type="text" style="display:none;" name="gotoBase" id="gotoBase" value="https://www.sexlog.com/accounts/auth/login?goto=https://www.sexlog.com/&amp;domain=sexlog">
+		<h3>Sign in:</h3>
+		<div id="msgLogin"></div>
+		<p id="pLogin">
+			<input type="text" name="username" id="username" maxlength="30" class="inputText" placeholder="Login">
+		</p>
+		<p id="pPassword">
+			<label id="lblForPassword" for="password">Password</label>
+			<input type="password" name="password" autocomplete="off" id="password">
+		</p>
+		<a href="https://accounts.sexlog.com/login/resend-password?domain=sexlog">Forgot your password?</a>		<button id="btnLoginLeft" class="btn big" title="Sign in">
+			<span>Sign in</span>
+		</button>
+		</form>	</div>
+	<div id="divSignUpHome">
+		<form action="https://www.sexlog.com/" method="post" accept-charset="utf-8" id="frmRegistration">		<h3>Or sign up, it's free!</h3>
+		<div id="msgSingUp"></div>
+		<p id="pLoginSignUp">
+			<input type="text" name="txtLogin" id="txtLoginSignUp" maxlength="30" class="inputText" placeholder="How do you want to be known?">
+			<span class="erroIcon" id="dvLoginError" style="display: none;"> </span>
+			<input type="text" style="display:none;" name="hdnLogin" id="hdnLogin" value="0">
+		</p>
+		<p id="pEmail">
+			<input type="text" name="txtEmail" autocomplete="off" id="txtEmail" placeholder="Email">
+			<span class="erroIcon" id="dvEmailError" style="display: none;"></span>
+			<input type="text" style="display:none;" name="hdnEmail" id="hdnEmail" value="0">
+		</p>
+		<p id="pPasswordSignUp">
+			<label id="lblForPwdPasswordSignUp" for="pwdPasswordSignUp" style="">Password</label>
+			<input type="password" name="txtPassword" autocomplete="off" id="pwdPasswordSignUp">
+			<input type="text" style="display:none;" name="hdnPass" id="hdnPass" value="0">
+			<span class="erroIcon" id="dvPassError" style="display: none;"></span>
+		</p>
+		<input type="text" style="display:none;" name="ckbUseTerm" id="hdnTerms" value="">
+		<ul class="filtercheck">
+			<li>
+				<div id="checkTerms" class=""></div>
+				<label>
+					I accept the 				</label>
+			</li>
+		</ul>
+		<a style="margin-left: 3px;" href=" https://accounts.sexlog.com/terms-of-use" target="_self">terms and policies</a>
+		<input type="text" style="display:none;" name="code" id="inputCodeImage" maxlength="6">
+		<button id="btnSignup" class="btn big" title="Create account">
+			<span>Create account</span>
+		</button>
+		<div id="waitSignup" class="close"></div>
+		</form>	</div>
+	
+	
+		
+			
+			<a href="https://magazine.sexlog.com/ensaios/paranegrosemulatos">
+				<img style="margin-top: 25px;" src="https://www.sexlog.com/images/banner/en-us/">
+			</a>
+		
+		
+	</div>
+
+
+				<div id="content">
+				
+<input type="text" style="display:none;" id="hdnLastUpdate" name="hdnLastUpdate" value="0">
+<div id="onlineNow">
+	<div class="topItensHome">
+		<h2>ONLINE NOW (<span class="active">3655</span>)</h2>
+		<ul id="tabOnlineNow">
+					</ul>
+		<a id="lnkMoreGeneral" class="lnkMore" href="https://www.sexlog.com/search/who-is-online">SEE ALL</a>
+		<a id="lnkMoreChat" class="lnkMore" href="https://chat.sexlog.com" style="display: none">GO TO CHAT</a>
+	</div>
+
+	<div id="waitOnlineNow" class="waitHome">
+		<img src="https://www.sexlog.com/images/icon/load.gif">
+	</div>
+
+	<div id="contentOnlineNow" class="contentTab">
+					<ul id="onlineNowList">
+									<li>
+						<a href="https://www.sexlog.com/cassiojrsp" class="overlayContentCard" login="cassiojrsp">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/c/cassiojrsp_1_avatar.jpg" alt="cassiojrsp" src="https://cdn02.sexlog.com.br/crop_67x67/c/cassiojrsp_1_avatar.jpg" style="display: inline; ">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':312158, 'username':'cassiojrsp', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/c/cassiojrsp_1_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/fernpilot" class="overlayContentCard" login="fernpilot">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/f/fernpilot_1_avatar.jpg" alt="fernpilot" src="https://cdn02.sexlog.com.br/crop_67x67/f/fernpilot_1_avatar.jpg" style="display: inline; ">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':3405556, 'username':'fernpilot', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/f/fernpilot_1_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/edison37" class="overlayContentCard" login="edison37">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/e/edison37_3_avatar.jpg" alt="edison37" src="https://cdn02.sexlog.com.br/crop_67x67/e/edison37_3_avatar.jpg" style="display: inline; ">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':465614, 'username':'edison37', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/e/edison37_3_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/brunosantos987" class="overlayContentCard" login="brunosantos987">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/b/brunosantos987_2_avatar.jpg" alt="brunosantos987" src="https://cdn02.sexlog.com.br/crop_67x67/b/brunosantos987_2_avatar.jpg" style="display: inline; ">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':203861, 'username':'brunosantos987', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/b/brunosantos987_2_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/snoopdog39" class="overlayContentCard" login="snoopdog39">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/s/snoopdog39_1_avatar.jpg" alt="snoopdog39" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':2840876, 'username':'snoopdog39', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/s/snoopdog39_1_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/liberadasafada" class="overlayContentCard" login="liberadasafada">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/l/liberadasafada_7_avatar.jpg" alt="liberadasafada" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':3444013, 'username':'liberadasafada', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/l/liberadasafada_7_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/pauemel" class="overlayContentCard" login="pauemel">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/p/pauemel_avatar.jpg" alt="pauemel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':1212272, 'username':'pauemel', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/p/pauemel_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/zeus_vix" class="overlayContentCard" login="zeus_vix">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/z/zeus_vix_3_avatar.jpg" alt="zeus_vix" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':2784253, 'username':'zeus_vix', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/z/zeus_vix_3_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/arianelima" class="overlayContentCard" login="arianelima">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/a/arianelima_4_avatar.jpg" alt="arianelima" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':3296912, 'username':'arianelima', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/a/arianelima_4_avatar.jpg'}">Online</div>			
+					</li>
+									<li>
+						<a href="https://www.sexlog.com/casalsafado3237" class="overlayContentCard" login="casalsafado3237">
+														<img class="lazyOnline" data-original="https://cdn02.sexlog.com.br/crop_67x67/c/casalsafado3237_1_avatar.jpg" alt="casalsafado3237" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+														<div class="divPicture"></div>
+						</a>
+						<div class="divOnline online_messenger" style=" " user="{'id':2804755, 'username':'casalsafado3237', 'urlimage':'https://cdn02.sexlog.com.br/crop_67x67/c/casalsafado3237_1_avatar.jpg'}">Online</div>			
+					</li>
+							</ul>
+			</div>
+
+	<div id="contentOnlineChat" style="display: none" class="contentTab">
+					<ul id="onlineNowList">
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="polo1">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/p/polo1_3_avatar.jpg" alt="polo1">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="safadorjcam">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/s/safadorjcam_3_avatar.jpg" alt="safadorjcam">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="ksadasafada_rs">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/k/ksadasafada_rs_18_avatar.jpg" alt="ksadasafada_rs">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="pirocaowebcam">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/p/pirocaowebcam_3_avatar.jpg" alt="pirocaowebcam">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="loiraegaucha">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/l/loiraegaucha_1_avatar.jpg" alt="loiraegaucha">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="kzalfitdf">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/k/kzalfitdf_4_avatar.jpg" alt="kzalfitdf">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="marcospaulof">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/m/marcospaulof_2_avatar.jpg" alt="marcospaulof">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="ale_gaucho">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/a/ale_gaucho_3_avatar.jpg" alt="ale_gaucho">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="22cmdefelicidades">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/2/22cmdefelicidades_1_avatar.jpg" alt="22cmdefelicidades">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+									<li>
+						<a href="https://chat.sexlog.com" class="overlayContentCard" login="paulog4">
+														<img class="lazyChat" data-original="https://cdn02.sexlog.com.br/crop_67x67/p/paulog4_1_avatar.jpg" alt="paulog4">
+														<div class="divPicture"></div>
+						</a>
+					</li>
+							</ul>
+			</div>
+</div><div id="topSexlog">
+	<div class="topItensHome help-left">
+		<h2>TOP SEXLOG</h2>
+		
+		<a href="http://support.sexlog.com/entries/22974073-novo-sistema-de-tops" target="_self">
+			<span id="topSexlogHelp" original-title="Top follow an equation that considers number of the views, comments and likes the photo receives. Click for details...">?</span>
+		</a>
+	</div>
+
+	<div id="waitTop" class="waitHome">
+		<img src="https://www.sexlog.com/images/icon/load.gif">
+	</div>
+	
+			<ul id="topSexlogList">	
+				<li class="topSexlogBig divPicture">
+		<a href="https://www.sexlog.com/marcela_e_fabio/photos/35727119" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_360x294/m/19/marcela_e_fabio_237191970.jpg" alt="FAZENDO ARTE NO LITORAL...BOA SEMANA A TODOS" src="https://cdn01.sexlog.com.br/crop_360x294/m/19/marcela_e_fabio_237191970.jpg" style="display: block; ">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/marcela_e_fabio" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/m/marcela_e_fabio_31_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="marcela_e_fabio" alt="marcela_e_fabio" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="marcela_e_fabio">marcela_e_fabio</h2>
+			<p>1 hour ago</p>
+		</a>
+	</li>
+		<li class="topSexlogBig noMargin divPicture">
+		<a href="https://www.sexlog.com/delicia4819/photos/35727115" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_360x294/m/21/delicia4819_644336010.jpg" alt="Boa semana amores! bjos!" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/delicia4819" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/m/delicia4819_0_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="delicia4819" alt="delicia4819" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="delicia4819">delicia4819</h2>
+			<p>1 hour ago</p>
+		</a>
+	</li>
+		<li class="topSexlog divPicture">
+		<a href="https://www.sexlog.com/amalisedin/photos/35726609" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_240x196/a/13/amalisedin_848744822.jpg" alt="Convite Feito..." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/amalisedin" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/a/amalisedin_1_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="amalisedin" alt="amalisedin" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="amalisedin">amalisedin</h2>
+			<p>2 hours ago</p>
+		</a>
+	</li>
+		<li class="topSexlog divPicture">
+		<a href="https://www.sexlog.com/casalnovatosrioverde/photos/35726948" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_240x196/c/26/casalnovatosrioverde_759365761.jpg" alt="QUER TIRAR MINHA CALCINHA??" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/casalnovatosrioverde" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/c/casalnovatosrioverde_5_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="casalnovatosrioverde" alt="casalnovatos...e" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="casalnovatosrioverde">casalnovatosrioverde</h2>
+			<p>1 hour ago</p>
+		</a>
+	</li>
+		<li class="topSexlog noMargin divPicture">
+		<a href="https://www.sexlog.com/casal_bem_amigos/photos/35727020" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_240x196/c/24/casal_bem_amigos_996161902.jpg" alt="casal_bem_amigos" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/casal_bem_amigos" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/c/casal_bem_amigos_84_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="casal_bem_amigos" alt="casal_bem_amigos" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="casal_bem_amigos">casal_bem_amigos</h2>
+			<p>1 hour ago</p>
+		</a>
+	</li>
+		<li class="topSexlogSmall divPicture">
+		<a href="https://www.sexlog.com/bellaeromantico/photos/35726793" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_180x146/b/24/bellaeromantico_338953092.jpg" alt="uma linda tarde de domingo para vcs, leiam nosso perfil" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/bellaeromantico" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/b/bellaeromantico_1_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="bellaeromantico" alt="bellaeromantico" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="bellaeromantico">bellaeromantico</h2>
+			<p>2 hours ago</p>
+		</a>
+	</li>
+		<li class="topSexlogSmall divPicture">
+		<a href="https://www.sexlog.com/gata_e_corno/photos/35726875" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_180x146/g/10/gata_e_corno_815971055.jpg" alt="PELADINHA!!!!" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/gata_e_corno" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/g/gata_e_corno_2_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="gata_e_corno" alt="gata_e_corno" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="gata_e_corno">gata_e_corno</h2>
+			<p>2 hours ago</p>
+		</a>
+	</li>
+		<li class="topSexlogSmall divPicture">
+		<a href="https://www.sexlog.com/saraegustavoriopreto/photos/35726646" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_180x146/s/8/saraegustavoriopreto_336793567.jpg" alt="saraegustavo...o" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/saraegustavoriopreto" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/s/saraegustavoriopreto_8_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="saraegustavoriopreto" alt="saraegustavo...o" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="saraegustavoriopreto">saraegustavo...o</h2>
+			<p>2 hours ago</p>
+		</a>
+	</li>
+		<li class="topSexlogSmall noMargin divPicture">
+		<a href="https://www.sexlog.com/bellaadmiravel/photos/35726537" class="linkTop">
+						<img class="land lazyTop" data-original="https://cdn01.sexlog.com.br/crop_180x146/b/2/bellaadmiravel_197714484.jpg" alt="PARA CAIR DE LEVE NOS BRAÇOS DO SOL" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<span></span>
+			<span class="shadow"></span>
+		</a>
+		<a href="https://www.sexlog.com/bellaadmiravel" class="linkUser">
+						<img data-original="https://cdn02.sexlog.com.br/crop_30x30/b/bellaadmiravel_53_avatar.jpg" class="overlayContentCard divPicture lazyTop" login="bellaadmiravel" alt="bellaadmiravel" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+						<h2 class="overlayContentCard" login="bellaadmiravel">bellaadmiravel</h2>
+			<p>3 hours ago</p>
+		</a>
+	</li>
+			</ul>
+		
+</div><div id="lastUpdate">	
+	<div class="topItensHome">
+		<h2>LATEST UPDATES</h2>
+		<ul id="tabLastUpdateSexlog">
+			<li id="tabsLastUpdateSexlog-1" class="select">General</li>
+			<li id="tabsLastUpdateSexlog-2">Only photos</li>
+			<li id="tabsLastUpdateSexlog-3">Only videos</li>
+		</ul>
+		<a id="lnkMostPhotos" href="https://www.sexlog.com/search/who-is-online" style="display: none">More photos</a>
+		<a id="lnkMostVideos" href="https://www.sexlog.com/videos" style="display: none">More videos</a>
+	</div>
+	
+	<div id="waitLastUpdate" class="waitHome">
+		<img src="https://www.sexlog.com/images/icon/load.gif">
+	</div>
+
+			<div id="tabsLastUpdateSexlog">
+			<ul id="lastUpdateList" class="list">	
+						<li class=" borderButton ">
+			<a href="https://www.sexlog.com/casal_foz8069/photos/35727449">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://cdn01.sexlog.com.br/crop_148x120/c/16/casal_foz8069_919445935.jpg" alt="nos Adicione no casal_foz A R R O B A H O T " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+					
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/casal_foz8069">
+				<h2 class="overlayContentCard" login="casal_foz8069">casal_foz8069</h2>
+			</a>
+			<p>4 hours ago</p>
+		</li>
+				<li class=" borderButton ">
+			<a href="https://www.sexlog.com/casalcentro2011/photos/35727448">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://cdn01.sexlog.com.br/crop_148x120/c/2/casalcentro2011_484015152.jpg" alt="Vestidinhos comportados!! - 07/06/14" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+					
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/casalcentro2011">
+				<h2 class="overlayContentCard" login="casalcentro2011">casalcentro2011</h2>
+			</a>
+			<p>4 hours ago</p>
+		</li>
+				<li class=" borderButton ">
+			<a href="https://www.sexlog.com/k_a_sal/photos/35727447">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://cdn01.sexlog.com.br/crop_148x120/k/21/k_a_sal_904514160.jpg" alt="Delicia" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+					
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/k_a_sal">
+				<h2 class="overlayContentCard" login="k_a_sal">k_a_sal</h2>
+			</a>
+			<p>4 hours ago</p>
+		</li>
+				<li class=" borderButton  noBorderRightFour">
+			<a href="https://www.sexlog.com/orientalissima_54/photos/35727446">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://cdn01.sexlog.com.br/crop_148x120/o/20/orientalissima_54_907591897.jpg" alt="orientalissi...4" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+					
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/orientalissima_54">
+				<h2 class="overlayContentCard" login="orientalissima_54">orientaliss...4</h2>
+			</a>
+			<p>4 hours ago</p>
+		</li>
+				<li class="">
+			<a href="https://www.sexlog.com/casalmaliciascs/videos/32479583">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://www.sexlog.com/_video/_img/casalmaliciascs_591395875_175x132_0.jpg" id="f_32479583" alt="casalmaliciascs" onmouseout="stopThumbSlide();" onmouseover="startThumbSlide('32479583', '0','https://www.sexlog.com/_video/_img/casalmaliciascs_591395875_175x132_')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+											<div class="playvideo"></div>
+					
+											<div class="hdMovies">HD</div>
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/casalmaliciascs">
+				<h2 class="overlayContentCard" login="casalmaliciascs">casalmaliciascs</h2>
+			</a>
+			<p>4 hours ago</p>
+		</li>
+				<li class="">
+			<a href="https://www.sexlog.com/brutogoiano/videos/32479575">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://www.sexlog.com/_video/_img/brutogoiano_679707040_175x132_0.jpg" id="f_32479575" alt="brutogoiano" onmouseout="stopThumbSlide();" onmouseover="startThumbSlide('32479575', '0','https://www.sexlog.com/_video/_img/brutogoiano_679707040_175x132_')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+											<div class="playvideo"></div>
+					
+											<div class="hdMovies">HD</div>
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/brutogoiano">
+				<h2 class="overlayContentCard" login="brutogoiano">brutogoiano</h2>
+			</a>
+			<p>5 hours ago</p>
+		</li>
+				<li class="">
+			<a href="https://www.sexlog.com/jackesylvia/videos/32479561">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://www.sexlog.com/_video/_img/jackesylvia_783008017_175x132_0.jpg" id="f_32479561" alt="jackesylvia" onmouseout="stopThumbSlide();" onmouseover="startThumbSlide('32479561', '0','https://www.sexlog.com/_video/_img/jackesylvia_783008017_175x132_')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+											<div class="playvideo"></div>
+					
+											<div class="hdMovies">HD</div>
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/jackesylvia">
+				<h2 class="overlayContentCard" login="jackesylvia">jackesylvia</h2>
+			</a>
+			<p>6 hours ago</p>
+		</li>
+				<li class=" noBorderRightFour">
+			<a href="https://www.sexlog.com/ksalmineiro2014/videos/32479559">
+				<div class="contentPicture imgVideo">
+					<div class="divPicture lazyUpdates" data-original="https://www.sexlog.com/_video/_img/ksalmineiro2014_145053495_175x132_0.jpg" id="f_32479559" alt="Tomando leitinho da fonte." onmouseout="stopThumbSlide();" onmouseover="startThumbSlide('32479559', '0','https://www.sexlog.com/_video/_img/ksalmineiro2014_145053495_175x132_')" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</div>
+											<div class="playvideo"></div>
+					
+											<div class="hdMovies">HD</div>
+									</div>
+			</a>
+			<a href="https://www.sexlog.com/ksalmineiro2014">
+				<h2 class="overlayContentCard" login="ksalmineiro2014">ksalmineiro2014</h2>
+			</a>
+			<p>6 hours ago</p>
+		</li>
+					</ul>	
+		</div>
+	
+</div><div id="events">
+			<div class="topItensHome">
+			<h2>RENDEZVOUS AND EVENTS</h2>
+		</div>
+
+		<div id="waitEvent" class="waitHome">
+			<img src="https://www.sexlog.com/images/icon/load.gif">
+		</div>
+
+					<div id="nextEvents" class="eventList">
+				<h3 class="title">Events</h3>
+									<ul class="list">
+													<li class="item">
+								<div class="leftItem">
+									<p><strong>Tomorrow</strong></p>
+									<p class="help-timeEvent">
+										<i class="datetimeEvent">10:00 AM</i>
+										<span class="timezoneHelp" original-title="GMT -03:00">?</span>									</p>
+								</div>
+								<div class="rightItem">
+																			<h3 class="titleItem"><a href="https://www.sexlog.com/events/14392" title="TRAVEST DE FORA EM PRESIDENTE PRUDENTE">TRAVEST DE FORA EM PRESIDEN...</a></h3>
+																		<p>
+										ATENDO HOTEL E MOTEL										 on  Presidente Prudente									</p>
+									<p>
+																					<a href="javascript:void(0)" original-title="soldadomoura&lt;br&gt;bonecaloira&lt;br&gt;" class="aAttends" action="https://www.sexlog.com/events/whosgoing/14392" style="">
+												<span class="lblAttends" thousandpoint=",">2</span>
+												<span class="lblPeople" lang_s="people is going" lang_p="people are going">people are going</span>
+
+																							</a>
+																			</p>
+								</div>
+							</li>
+													<li class="item">
+								<div class="leftItem">
+									<p><strong>Tuesday</strong></p>
+									<p class="help-timeEvent">
+										<i class="datetimeEvent">08:00 PM</i>
+										<span class="timezoneHelp" original-title="GMT -03:00">?</span>									</p>
+								</div>
+								<div class="rightItem">
+																			<h3 class="titleItem"><a href="https://www.sexlog.com/events/14258" title="Encontros, Dogging ou outros em Maringa/PR">Encontros, Dogging ou outro...</a></h3>
+																		<p>
+										Centro										 on  Maringá									</p>
+									<p>
+																					<a href="javascript:void(0)" original-title="karlinhos36&lt;br&gt;joaozinho_eterno&lt;br&gt;sodaqds&lt;br&gt;nocaminhao&lt;br&gt;falkatruars&lt;br&gt;" class="aAttends" action="https://www.sexlog.com/events/whosgoing/14258" style="">
+												<span class="lblAttends" thousandpoint=",">5</span>
+												<span class="lblPeople" lang_s="people is going" lang_p="people are going">people are going</span>
+
+																							</a>
+																			</p>
+								</div>
+							</li>
+													<li class="item">
+								<div class="leftItem">
+									<p><strong>Tuesday</strong></p>
+									<p class="help-timeEvent">
+										<i class="datetimeEvent">09:00 PM</i>
+										<span class="timezoneHelp" original-title="GMT -03:00">?</span>									</p>
+								</div>
+								<div class="rightItem">
+																			<h3 class="titleItem"><a href="https://www.sexlog.com/events/14472" title="VOLTE A SER CRIANÇA NA COPA DO MUNDO SEX GAMES">VOLTE A SER CRIANÇA NA COPA...</a></h3>
+																		<p>
+										CLUBMIX - RUA DO MERCADO ...										 on  Rio de Janeiro									</p>
+									<p>
+																					<a href="javascript:void(0)" original-title="ricardosilva22&lt;br&gt;benavente&lt;br&gt;firefighter27&lt;br&gt;p2aulo&lt;br&gt;branquinho_e_quinha&lt;br&gt;" class="aAttends" action="https://www.sexlog.com/events/whosgoing/14472" style="">
+												<span class="lblAttends" thousandpoint=",">5</span>
+												<span class="lblPeople" lang_s="people is going" lang_p="people are going">people are going</span>
+
+																							</a>
+																			</p>
+								</div>
+							</li>
+													<li class="item">
+								<div class="leftItem">
+									<p><strong>Tuesday</strong></p>
+									<p class="help-timeEvent">
+										<i class="datetimeEvent">09:00 PM</i>
+										<span class="timezoneHelp" original-title="GMT -03:00">?</span>									</p>
+								</div>
+								<div class="rightItem">
+																			<h3 class="titleItem"><a href="https://www.sexlog.com/events/14434" title="Terça Sexy Menage">Terça Sexy Menage</a></h3>
+																		<p>
+										Mistura Certa - Rua Vinte...										 on  Rio de Janeiro									</p>
+									<p>
+																					<a href="javascript:void(0)" original-title="misturacerta&lt;br&gt;" class="aAttends" action="https://www.sexlog.com/events/whosgoing/14434" style="">
+												<span class="lblAttends" thousandpoint=",">1</span>
+												<span class="lblPeople" lang_s="people is going" lang_p="people are going">people is going</span>
+
+																							</a>
+																			</p>
+								</div>
+							</li>
+											</ul>
+							</div>
+			<div id="nextMeetings" class="eventList">
+				<h3 class="title">Rendezvous</h3>
+
+									<ul class="list">
+													<li class="item">
+								<div class="leftItem">
+									<div class="divPicture">
+										<a href="https://www.sexlog.com/natachacdzinha">
+											<img data-original="https://cdn02.sexlog.com.br/n/natachacdzinha_12_avatar.jpg" login="natachacdzinha" class="overlayContentCard lazyEvents" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</a>
+									</div>
+								</div>
+								<div class="rightItem">
+																		<h3 class="titleItem"><a href="https://www.sexlog.com/meetings/14438" title="naty cd em pirassunga">naty cd em pirassunga</a></h3>
+									<p>
+										 on Pirassununga  at 07:00 PM									</p>
+									<p>by <a href="https://www.sexlog.com/natachacdzinha" class="overlayContentCard" login="natachacdzinha">natachacdzinha</a></p>
+																	</div>
+							</li>
+													<li class="item">
+								<div class="leftItem">
+									<div class="divPicture">
+										<a href="https://www.sexlog.com/amorcomvc">
+											<img data-original="https://cdn02.sexlog.com.br/a/amorcomvc_avatar.jpg" login="amorcomvc" class="overlayContentCard lazyEvents" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</a>
+									</div>
+								</div>
+								<div class="rightItem">
+																		<h3 class="titleItem"><a href="https://www.sexlog.com/meetings/14051" title="Suruba em  são paulo em hotel no Ibirapuera">Suruba em  são paulo...</a></h3>
+									<p>
+										 on São Paulo  at 12:00 PM									</p>
+									<p>by <a href="https://www.sexlog.com/amorcomvc" class="overlayContentCard" login="amorcomvc">amorcomvc</a></p>
+																	</div>
+							</li>
+													<li class="item">
+								<div class="leftItem">
+									<div class="divPicture">
+										<a href="https://www.sexlog.com/granjadotado">
+											<img data-original="https://cdn02.sexlog.com.br/g/granjadotado_1_avatar.jpg" login="granjadotado" class="overlayContentCard lazyEvents" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</a>
+									</div>
+								</div>
+								<div class="rightItem">
+																		<h3 class="titleItem"><a href="https://www.sexlog.com/meetings/14259" title="encontro com casais fortaleza dias 10 e 11/06">encontro com casais ...</a></h3>
+									<p>
+										 on Fortaleza  at 01:00 PM									</p>
+									<p>by <a href="https://www.sexlog.com/granjadotado" class="overlayContentCard" login="granjadotado">granjadotado</a></p>
+																	</div>
+							</li>
+													<li class="item">
+								<div class="leftItem">
+									<div class="divPicture">
+										<a href="https://www.sexlog.com/2casais">
+											<img data-original="https://cdn02.sexlog.com.br/2/2casais_1_avatar.jpg" login="2casais" class="overlayContentCard lazyEvents" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC">
+										</a>
+									</div>
+								</div>
+								<div class="rightItem">
+																		<h3 class="titleItem"><a href="https://www.sexlog.com/meetings/14439" title="festa a tarde no flat">festa a tarde no flat</a></h3>
+									<p>
+										 on São Paulo  at 02:00 PM									</p>
+									<p>by <a href="https://www.sexlog.com/2casais" class="overlayContentCard" login="2casais">2casais</a></p>
+																	</div>
+							</li>
+											</ul>	
+							</div>	
+			</div><!--Modal de pessoas que vão-->
+<div id="eventWhoGoes" class="commonAccountModal newModal" source="https://www.sexlog.com/events/whosgoing/" style="display: none">
+	<div class="topForm">
+		<h2></h2>
+		<div id="closeBloqFriends" class="closeDialog"></div>
+	</div>
+
+	<div class="centerForm">
+
+		<div class="accountModalContainer">
+
+			<ul class="accountModalList">
+							</ul>
+			<div id="btnMoreAccounts" action="https://www.sexlog.com/panel/events/friends/"></div>
+			<div id="waitMoreAccounts" class="waitMore" style="display: none; margin-top: 10px">
+				<img src="https://www.sexlog.com/images/icon/load.gif">
+			</div>
+							<h4 id="lbList_empty">No user has been found!</h4>
+					</div>
+
+	</div>
+</div>
+<!--Modal de convites recebidos-->
+<div id="eventInvites" class="commonAccountModal newModal" source="https://www.sexlog.com/events/invites/" style="display: none">
+	<div class="topForm">
+		<h2></h2>
+		<div id="closeBloqFriends" class="closeDialog"></div>
+	</div>
+
+	<div class="centerForm">
+
+		<div class="accountModalContainer">
+
+			<ul class="accountModalList">
+							</ul>
+			<div id="btnMoreAccounts" action="https://www.sexlog.com/panel/events/friends/"></div>
+			<div id="waitMoreAccounts" class="waitMore" style="display: none; margin-top: 10px">
+				<img src="https://www.sexlog.com/images/icon/load.gif">
+			</div>
+							<h4 id="lbList_empty">No user has been found!</h4>
+					</div>
+
+	</div>
+</div>				</div>
+			</div>
+			<div class="push"></div>
+		</div>
+		<div id="termsOfUse" style="display: none" class="j-dialog"></div>
+<div id="footer">
+	<div class="center">
+		<div class="logosl"></div>
+		<div class="leftitems">
+			<ul>
+				<li><a href="https://www.sexlog.com/">Home</a></li>
+				<li><a href="https://www.sexlog.com/videos">Videos</a></li>
+				<li><a href="https://www.sexlog.com/search/who-is-online">Who is online</a></li>
+                <li><a href="javascript:void(0)" id="feedbackFooter">Feedback</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="https://accounts.sexlog.com/footerbar/inject/en-us?"></script><div id="footerAllSites">	<div class="center">		<p>			<a href="https://accounts.sexlog.com/terms-of-use" target="_self">Terms of use</a>			<a href="http://support.sexlog.com/home" target="_self">Help center</a>			<a class="abuse" href="javascript:void(0)">Abuse report</a>			<a href="https://accounts.sexlog.com/about-us">About Sexlog</a>			<a href="https://affiliates.sexlog.com">Affiliates</a>                        		</p>		<span>© 2004-2014</span>		<span>			<p style="margin: 0 18px; float: right;">				Language:				<strong>											English (US)									</strong>				-				<a href="javascript:void(0)" id="lnkLanguage" style="font-size: 11px;">					change				</a>			</p>		</span>	</div>      	<input type="text" style="display: none;" id="langRecap" value="en"></div>
+		<input type="text" style="display:none;" id="jsLangs" value="({&quot;DescribeOpinion&quot;:&quot;Please, write your opinion!&quot;,&quot;LikeOpinion&quot;:&quot;Please, tell us if your opinion is positive or negative!&quot;,&quot;message_subscribe_to_send_private_msg&quot;:&quot;Subscribe and send private messages to {0}.&quot;,&quot;profile_profilenotfound&quot;:&quot;Profile not found&quot;,&quot;profile_msgprofilenotfound&quot;:&quot;This profile has been blocked due to violation of the terms of use&quot;,&quot;profile_msgprofilelocked&quot;:&quot;This profile has been temporarily blocked by the user&quot;,&quot;profile_msgprofiledeleted&quot;:&quot;Profile not found&quot;,&quot;SignUpSuccess&quot;:&quot;Registration was successful!&quot;,&quot;sexlog_log_undefined&quot;:&quot;User in a different session from the logged in user, session will be updated in 3 (three) seconds.&quot;,&quot;upload_audio_subscribe&quot;:&quot;Subscribe Sexlog in order to send audio with your photos.&quot;,&quot;message_subscribe_not_read&quot;:&quot;Subscribe to Sexlog and read all your messages.&quot;,&quot;panel_changeavatar_delete_confirm&quot;:&quot;Do you really want to delete your avatar?&quot;,&quot;subcriber_talk_messenger&quot;:&quot;Subscribe to chat in real time via text and webcam with Sexlog users&quot;,&quot;date_year&quot;:&quot;year&quot;,&quot;date_years&quot;:&quot;years&quot;,&quot;date_month&quot;:&quot;month&quot;,&quot;date_months&quot;:&quot;months&quot;,&quot;date_week&quot;:&quot;week&quot;,&quot;date_weeks&quot;:&quot;weeks&quot;,&quot;date_day&quot;:&quot;day&quot;,&quot;date_days&quot;:&quot;days&quot;,&quot;date_hour&quot;:&quot;hour&quot;,&quot;date_hours&quot;:&quot;hours&quot;,&quot;date_minute&quot;:&quot;minute&quot;,&quot;date_minutes&quot;:&quot;minutes&quot;,&quot;date_second&quot;:&quot;second&quot;,&quot;date_seconds&quot;:&quot;seconds&quot;,&quot;search_text_wait&quot;:&quot;Searching for profiles... please wait&quot;,&quot;AUTH_DOMAIN&quot;:&quot;.sexlog.com&quot;,&quot;LoginPassInvalid&quot;:&quot;Invalid Login or Password, please check.&quot;,&quot;msgErrorName&quot;:&quot;Please fill out the \u201cHow do you want to be known\u201d field!&quot;,&quot;msgErrorLogin&quot;:&quot;Please fill out the Login field!&quot;,&quot;msgErrorEmail&quot;:&quot;Please fill in the E-mail field!&quot;,&quot;msgErrorPass&quot;:&quot;Please enter your password!&quot;,&quot;PasswordSmall&quot;:&quot;Password must have at least six characters!&quot;,&quot;PasswordInvalid&quot;:&quot;Not allowed chars: &gt;, &lt;, '&quot;,&quot;msgErrorUseTerms&quot;:&quot;You must agree with the Terms of Use to create an account!&quot;,&quot;msgErrors&quot;:&quot;Please correct the mistake(s) below!&quot;,&quot;ErrorSignUpSave&quot;:&quot;Error while registering&quot;,&quot;filtergenre&quot;:&quot;Gender filter&quot;,&quot;UncheckAll&quot;:&quot;Clear all&quot;,&quot;CheckAll&quot;:&quot;Mark all&quot;,&quot;suscribe_NumberFieldLogin&quot;:&quot;You login cannot be only numbers!&quot;,&quot;link_account_sign_up_route&quot;:&quot;sign-up&quot;,&quot;wait&quot;:&quot;wait...&quot;,&quot;yes&quot;:&quot;Yes&quot;,&quot;no&quot;:&quot;No&quot;,&quot;select&quot;:&quot;» Select&quot;,&quot;panel_saving&quot;:&quot;Saving...&quot;,&quot;panel_processing&quot;:&quot;Processing...&quot;,&quot;error_uploadfile&quot;:&quot;Error loading the file!&quot;,&quot;error_maxFileSize&quot;:&quot;Error: File is too big!&quot;,&quot;error_acceptFileTypes&quot;:&quot;Error: File type is not valid!&quot;,&quot;error_isUploading&quot;:&quot;Wait until upload is finished!&quot;,&quot;error_onSave&quot;:&quot;Sorry, error saving!&quot;,&quot;error_onProcessing&quot;:&quot;Sorry, error processing request!&quot;,&quot;CommentSuccessfullySent&quot;:&quot;Thank you for giving your opinion!&quot;})">
+
+        		<div id="modalFeedBacks" style="display: none" class="newModal">
+			<div class="topForm">
+				<h2>What do you think about Sexlog?</h2>
+				<div class="closeDialog"></div>
+			</div>
+			<form id="formDataFeedback">
+				<div class="centerForm">
+					<div id="formFeedback">
+						<p>Report problems, suggest resources and provide general comments about Sexlog.</p>
+						<textarea id="feedback" name="feedback" _maxlength="1024" style=""></textarea>
+						<div id="opinion">
+							<input type="radio" id="status1" name="status" value="1"><label for="status1"><img src="https://www.sexlog.com/images/icon/hand_pos.png" title="Liked"></label>&nbsp;
+							<input type="radio" id="status2" name="status" value="0"><label for="status2"><img src="https://www.sexlog.com/images/icon/hand_neg.png" title="Disliked"></label>
+						</div>
+					</div>
+					<div id="msgSuccess" style="display: none">
+					</div>
+				</div>
+				<div id="btnsFormFeedBack" class="btnsForm">
+					<div id="sendCommentNewPanel" class="btn">
+						<span>Send</span>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="screenDoor"></div>
+
+		<!-- Limites de Categorias -->
+				<!-- -->
+		
+				
+		
+		<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-4.newrelic.com","licenseKey":"fd99726ce2","applicationID":"2784343","transactionName":"bgBaZ0RWWEpVAUwNW1dKeVBCXllXGypXCVEWLFZXU08=","queueTime":0,"applicationTime":473,"ttGuid":"","agentToken":"","userAttributes":"","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-411.min.js"}</script>
+		
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>

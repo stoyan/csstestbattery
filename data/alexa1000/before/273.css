@@ -1,0 +1,1321 @@
+@charset "utf-8";
+/**
+* Strona Główna CSS v.6.07.3
+*/
+
+/*---[ Resets ]------------------------------------------------------*/
+
+html, body { font:14px Arial, Ubuntu, "Lucida Console", Helvetica, sans-serif; }
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, big, em, img, q,
+small, strong, tt, var, b, u, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { border:0; margin:0; outline:0; padding:0; vertical-align:baseline }
+h1, h2, h3, h4, h5, h6 { font-weight: normal }
+a img, :link img, :visited img, :active img, :hover img, fieldset, abbr, acronym { border:0 }
+a, a:link, a:visited, a:active { color:#059; text-decoration:none }
+a:hover { text-decoration:underline }
+table { border-collapse:collapse; border-spacing:0 }
+th, caption { text-align:left }
+form { display:inline; margin:0; padding:0 }
+input, select { font:1em/1.25 Arial, Ubuntu, "Lucida Console", Helvetica, sans-serif; }
+input[type="button"] { cursor:pointer }
+blockquote, q {  quotes: none }
+:focus { outline: 0 }
+label:hover { cursor:pointer }
+ol, ul { list-style: none }
+.bx { margin-bottom:10px }
+.block { display:block }
+.nowrap { white-space:nowrap !important }
+.hlink { text-decoration:none !important }
+.hlink:hover { text-decoration:underline !important }
+.clr { font-size:0; clear:both; height:0; line-height:0 }
+.red { color:#d10000 !important }
+.gray { color:#777 !important }
+.black { color:#000 !important }
+.orange { color:#f63 !important }
+.green { color:#429706 !important }
+section, header, footer, nav { display:block }
+body { background-color:#fff }
+a img  { opacity:0.99; }
+a:hover img { opacity:0.96; border:0; }
+form input[type=text] { color:#565c62 }
+form input[type=submit] { cursor:pointer }
+form input[type=submit]:hover { opacity:.9 }
+form input.placeholder { font:bold 12px Arial, Ubuntu, "Lucida Console", Helvetica, sans-serif; color:#bbb !important }
+
+
+/*---[ ADV ]---------------------------------------------------------*/
+.wpAdv { display:none; margin:5px auto; text-align:center }
+#dynAdv29 { margin-bottom:10px; }
+
+/*---[ desaturateMode ]---------------------------------------------------------*/
+.desaturate a, .desaturate a:link, .desaturate a:visited, .desaturate a:active { color:#444 }
+.desaturate strong { color:#444 !important }
+.desaturate li.on a, .desaturate span.on strong, .desaturate #SzukajDolny strong { border-bottom-color:#444 !important }
+.desaturate #bxStylZycia a.naglowekBoksu, .desaturate #Sprzedaz header.naglowekBoksu { background-color:#777 !important }
+.desaturate #Naglowek ul#ngIcons li a { color:#444 !important }
+.desaturate #Glonews .serwis,
+.desaturate #bxPogoda .dzis span.dzien,
+.desaturate #bxFinanse .up, .desaturate #bxFinanse .down, 
+.desaturate .lokalne .cytowany,
+.desaturate #bxWideo .serwis, .desaturate  #bxWideo a.serwis { color:#777 }
+.desaturate #bxHotspot .serwis, .desaturate  #bxHotspot a.serwis { color:#777 }
+.desaturate #Glonews .zakladkiCtn ul li.on, .desaturate #Glonews #zakladkiCtn ul li.on:hover { background-color: #606060 !important } 
+.desaturate nav ul.serwisy ul, .desaturate .lokalne ul#wiadomosciMiasta  { border-bottom-color:#777 }
+.desaturate #Widgety #bxPorownywarka, .desaturate #Naglowek #Szukaj form .szukajSubmit, .desaturate #SzukajDolny .btnSzukaj,
+.desaturate #bxPogoda .nextDays .btn:hover , .desaturate #bxPogoda .nextDays:hover .btn, .desaturate #Glonews .serwis.pogoda, #Glonews .serwis.niebieski,
+.desaturate #bxHotspot #pilne.info, .desaturate #bxWPTV .przewijak span.on { background-color:#777; }
+
+/*---[ Kontener główny z marginesami ]-------------------------------*/
+#Strona { width:1186px; margin:0 auto; background-color:#fff }
+h1 { position:absolute; text-indent:-9999px; outline:none; overflow:hidden }
+
+/*** Nagłówek ***/
+#Naglowek { margin:0px auto; padding:0 0px; height:145px; position:relative; }
+#NaglowekCnt { padding:0 5px; width:1176px; background-color:#fff; height:118px; margin:0px auto; position:relative; }
+#Naglowek #ngLogo { position:absolute; top:0px }
+#Naglowek #ngLogo img { height:82px; }
+
+#NaglowekTop { position:relative; margin:0 auto; padding:0; height:23px; background-color:#f4f4f4; border-bottom:1px solid #fff }
+#Naglowek .cnt {margin:0 auto; width:1176px; padding:0 5px; position:relative; }
+#NaglowekTop #data, #NaglowekTop #linki { position:absolute; top:5px; font:11px Arial, Ubuntu, Helvetica, sans-serif; color:#757779}
+#NaglowekTop #data { left:8px; right:auto; position: relative; float: left; }
+#NaglowekTop #data .pipe { padding:0 3px; }
+#NaglowekTop #data a { color:#a5a5a5 }
+#NaglowekTop #linki { left:auto; right:0px }
+#NaglowekTop #linki a { color:inherit; margin-right:7px }
+#NaglowekTop .ceneo { padding-left:20px }
+#NaglowekTop a#mobileSwitch { color:#e00; }
+
+/* Ikony */
+#Naglowek ul#ngIcons { position:absolute; top:7px; right:7px }
+#Naglowek ul#ngIcons li { display:block; position:relative; float:left; padding:0 }
+#Naglowek ul#ngIcons li a { color:#727272; display:inline-block; width:63px; padding-left:2px; padding-right:2px; height:10px; text-align:center; padding-top:50px; font-size:11px; background: url(//x.wpimg.pl/i/ivar/layout/201201/n_icons-s.png) no-repeat 0 0 }
+#Naglowek ul#ngIcons li a:hover { text-decoration:underline; /*background-position:-63px 0;*/}
+#Naglowek ul#ngIcons li.programtv a { background-position:0 -56px }
+#Naglowek ul#ngIcons li.wptv a { background-position:0 -112px }
+#Naglowek ul#ngIcons li.aukcje a { background-position:0 -168px;}
+#Naglowek ul#ngIcons li.horoskop a { background-position:0 -280px }
+#Naglowek ul#ngIcons li.gry a { background-position:0 -224px;}
+#Naglowek ul#ngIcons li.czat a { background-position:0 -336px;}
+#Naglowek ul#ngIcons li.poczta .NewMailAmount { position:absolute; z-index:2; top:33px; left:28px; padding:0 4px 1px 4px; font:bold 10px/12px Arial, Ubuntu, Helvetica, sans-serif; color:#fff; background-color:#1892e7; border-radius:3px }
+#Naglowek ul#ngIcons li a:hover { opacity:0.87; color:#626262;}
+      
+/* Szukaj */
+#Naglowek #Szukaj { position:absolute; top:-1px; height:70px; left:199px; width:484px; }
+#Naglowek #Szukaj ul { display:block; z-index:2; position:absolute; top:9px; left:28px }
+#Naglowek #Szukaj li { display:block; float:left; border-left:1px solid #fff; padding:0; margin:0; font:12px/12px Arial, Ubuntu, "Lucida Console", Helvetica, sans-serif; }
+#Naglowek #Szukaj li:last-child { border-right:1px solid #fff }
+#Naglowek #Szukaj li a { color:inherit; height:15px; display:inline-block; font:11px/12px Arial, Ubuntu, "Lucida Console", Helvetica, sans-serif; padding:0 6px; color:#8c8c8c; margin:0; border-bottom:2px solid #adadad }
+#Naglowek #Szukaj li a:hover { text-decoration:none; color:#777; border-bottom-color:#888 }
+#Naglowek #Szukaj li.on a { color:#52575d; border-color:#e51600 }
+
+#Naglowek #Szukaj form { display:none; position:absolute; top:24px; left:20px }
+#Naglowek #Szukaj form .szukajRound { display:block; float:left; width:355px; border:2px solid #4667b1; height:26px; padding:2px 2px 2px 5px; background-color:#fff;  }
+#Naglowek #Szukaj form .szukajRound.ebg { background:  url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 254px -142px no-repeat; border:2px solid #bfbfbf;}
+#Naglowek #Szukaj form .szukajSubmit { display:block; float:left; margin-left:4px; border:0; width:58px; height:34px; background: #4667b1 url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 0px -30px no-repeat; overflow:hidden; text-indent:-9999px; }
+#Naglowek #Szukaj .drugi { margin-left:-2px; border-left-color:#ddd !important; border-radius:0 3px 3px 0 !important }
+
+/* Główne kontenery wraz z marginesami */
+
+#Container { width:1176px; margin:0px auto; padding:6px 5px 0 5px }
+#Container:after { display:block; clear:both; content:'' }
+#Container section#Wiadomosci:after { display:block;clear:both;content:'' }
+#Container section#News {width:384px;float:right }
+#Container section#Ciekawostki { display:block; padding:2px 0 0 0; width:780px; margin-bottom:10px;  }
+#Container section#Ciekawostki:after { display:block; clear:both; content:'' }
+#Container section#Kontent { float:left; width:780px }
+#Container section#Sprzedaz { width:1176px; overflow:hidden }
+#Container section#Sprzedaz:after { display:block; clear:both; content:'' }
+#Container section#Produkty:after { display:block; clear:both; content:'' }
+#Container section#Produkty .wiersz { width:1186px }
+
+/* Style ogólne do boksów */
+
+.naglowekBoksu { padding-bottom:10px; padding-top:5px; position:relative }
+.naglowekBoksu a.tytul { padding:0 4px 0 0px; font-size:20px; font-weight:bold; color:#000;}
+
+.naglowekBoksu a.tytul:hover { text-decoration:none }
+#News header.naglowekBoksu, 
+#bxWPTV header.naglowekBoksu, 
+#bxPrzeglad header.naglowekBoksu,
+#bxRozrywka header.naglowekBoksu,
+#bxStylZycia header.naglowekBoksu,
+#bxCiekawostki header.naglowekBoksu,
+#bxWideo header.naglowekBoksu,
+#bxTylkoWWP header.naglowekBoksu{ margin:0 0 3px 0; padding:0 0 4px 0; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_pod_tytul.png) no-repeat bottom left; color:#000; }
+
+ul.dot li { padding-left:20px; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat 5px -233px; padding-bottom:6px;}
+ul.dot li a { font:14px/20px Arial, Tahoma, Geneva, sans-serif; color:#005599; }
+ul.dot li a.ngrek { font-size:11px; color:#aaa }
+ul.dot li .ngnazywo { font-size:11px; color:#f3142c; }
+ul.dot li .ngpilne { font-size:11px; color:#f3142c; }
+ul.dot li.pierwszy .ngnazywo { font-size:11px; }
+ul.dot li.pierwszy .ngpilne { font-size:11px; }
+a.ngrek, a.ngrek:visited, a.ngrek:hover, span.ngrek { color:#656971; background-color:transparent; font-weight:normal; font-size:10px; text-decoration:none }
+ul.dot li.pierwszy { padding-left:0px; font-size:16px; background-image:none }
+
+/* ikona materiału wideo ogólne*/
+ul li.wideo { position:relative; }
+ul li.wideo a:before, #bxStylZycia .czteryKolumny ul li.wideo a:before{ content: url(//x.wpimg.pl/i/ivar/layout/201201/n_play2.png); width:26px; height:26px; position:absolute; right:auto; left:152px; top:54px; overflow:hidden; z-index:1; opacity:.8;}
+ul li.wideo:hover a:before, #bxStylZycia .czteryKolumny ul li.wideo:hover a:before { opacity:1; }
+ul.dot li.pierwszy.wideo a:before { content: url(//x.wpimg.pl/i/ivar/layout/201201/n_play2.png); position:absolute; right:8px; top:40px; overflow:hidden; z-index:1;}
+
+  /*lista wypunktowana*/
+  ul.dot li.wideo { background:none; }
+  ul.dot li.wideo a:before { content: url(//x.wpimg.pl/i/ivar/layout/201201/n_play1.png); width:11px; height:15px; position:absolute; left:2px; top:4px; overflow:hidden; z-index:1; opacity:1 }
+  ul.dot li.wideo.pierwszy a:before { width:26px; height:26px; opacity:.8 }
+  ul.dot li.wideo:hover a:before { opacity:.8 }
+  ul.dot li.wideo.pierwszy:hover a:before {  opacity:1 }
+  
+  #bxWPTV ul li.pierwszy.wideo { position:relative; }
+  #bxWPTV ul li.pierwszy.wideo a:before { z-index:2; top:50px; left:151px;} 
+  #bxPrzeglad .strona ul li.wideo a:before { top:99px; left:243px; }
+  #bxTylkoWWP ul li.wideo a:before { top:1px}
+  #bxTylkoWWP ul li.pierwszy.wideo a:before { top:125px; left:-71px; content:url(//x.wpimg.pl/i/ivar/layout/201201/n_play3.png); width:49px; height:49px; }
+  
+  
+  #bxStylZycia ul.lewa li.wideo a:before, #bxCiekawostki ul li.wideo a:before { top:125px; left:327px; content:url(//x.wpimg.pl/i/ivar/layout/201201/n_play3.png); width:49px; height:49px; }
+  #bxStylZycia ul.prawa li.wideo a:before { top:1px;}
+  #bxStylZycia ul.prawa li.pierwszy.wideo a:before { top:55px; left:152px;}
+  #Ciekawostki .czteryKolumny li.wideo a:before { top:241px; left:152px; content:url(//x.wpimg.pl/i/ivar/layout/201201/n_play2.png); width:26px; height:26px; }
+  #bxWideo ul.prawa li.wideo a:before { top:52px; left:152px;}
+  #bxWideo ul.lewa li.wideo a:before { top:125px; left:327px; content:url(//x.wpimg.pl/i/ivar/layout/201201/n_play3.png); width:49px; height:49px; }
+  #bxWideo ul.lewa li.wideo a.serwis:before { display:none }
+  #Glonews ul li.wideo a:before { content:'';  }
+  #Glonews ul li.wideo:hover a.newsFoto:before { content: url(//x.wpimg.pl/i/ivar/layout/201201/n_play3.png); width:49px; height:49px; position:absolute; left:auto; top:8px; right:8px; bottom:auto; overflow:hidden; z-index:1; }
+  #News ul.dot li.wideo a:before { top:1px;}
+  #News ul.dot li.pierwszy.wideo a:before { top:52px; left:88px; }
+
+  #bxPrzeglad ul.dot li.wideo a:before{ top:1px;}
+
+ul.dot li.pierwszy a strong { font:normal 18px Arial, Ubuntu, Helvetica, Sans-serif }
+ul.dot li.pierwszy a:hover { text-decoration:none }
+ul.dot li.pierwszy a:hover strong { text-decoration:underline }
+ul.dot li.pierwszy:after { display:block; clear:both; content:'' }
+ul.dot li.pierwszy img { float:left; margin-right:12px }
+span.tresc { font:14px/20px Arial, Ubuntu, Helvetica, sans-serif; color:#868686; display:block; padding:3px 0 10px 0 }
+.stopkaBoksu { font-size:17px; line-height:16px; height:18px; height:17px; vertical-align:baseline; color:#c7c7c7; padding-top:3px }
+.stopkaBoksu a { font-size:14px; line-height:16px; vertical-align:baseline; color:#727272; margin:0 2px; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 100% -209px no-repeat; padding-right:14px; }
+.stopkaBoksu a:first-child { margin-left:0; }
+.stopkaBoksu a:last-child { background-image:none; margin-right:0; padding-right:0; }
+.czteryKolumny, .szescKolumn { overflow:hidden }
+.czteryKolumny ul { width:792px }
+.czteryKolumny ul:after, .dwieKolumny:after, .szescKolumn ul:after { display:block;clear:both;content:'' }
+.czteryKolumny li, .szescKolumn li { width:186px; padding-right:12px; float:left }
+.czteryKolumny li strong, .szescKolumn li strong { font-size:16px; line-height:20px; }
+
+.czteryKolumny li a, .szescKolumn li a { padding-top:2px; display:block }
+.czteryKolumny li a:hover, .szescKolumn li a:hover { text-decoration:none }
+.czteryKolumny li a:hover strong, .szescKolumn li a:hover strong { text-decoration:underline }
+.czteryKolumny li a img { display:block; width:186px; height:86px; margin-bottom:8px; border:0; }
+
+.dwieKolumny { width:792px }
+.dwieKolumny ul { width:384px; float:left; margin-right:12px }
+.szescKolumn ul { width:1176px }
+
+#bxZajawkiGal .szescKolumn strong { display:block; }
+
+/* opcje */
+div.opcje { position:absolute; bottom:9px; right:0 }
+div.opcje a { display:block; width:15px; height:14px; font-size:10px; overflow:hidden; text-indent:-999px; float:left; margin-left:3px; cursor:pointer; opacity:0 }
+div.opcje a:hover { opacity:.88 !important }
+div.opcje a.rss { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat -124px -30px }
+div.opcje a.topnews { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat -108px -30px }
+div.opcje a.up { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat -77px -30px }
+div.opcje a.down { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat -93px -30px; margin-left:1px }
+div.opcje a.off { cursor:default }
+div.opcje a.off:hover { opacity:.3 !important }
+
+/*** Lista serwisów ***/
+/* balka */
+nav { width:1176px; position:absolute; bottom:5px; left:0; right:0; height:31px; margin:0 5px; color:#596f87; background-color:#f5f5f5; z-index:9; }
+nav:after { display:block; content:''; clear:both }
+nav ul.serwisy { height:31px; overflow:visible; z-index:7; }
+nav ul.serwisy>li { height:31px; color:inherit; float:left; border-right:1px solid #fff; border-bottom:1px solid #fff }
+nav ul.serwisy>li>a { color:inherit; height:23px; display:block; font-size:14px; padding: 8px 12px 0px 12px; margin:0; color:#727272; text-align:center; }
+
+nav ul.serwisy>li>a:hover { background-color:#ededed; }
+nav ul.serwisy>li.on { background-color:#ededed; border-bottom-color:#ededed; }
+nav ul.serwisy>li a.dzieci { color:#f00; }
+nav ul.serwisy>li a.dzieci:hover { }
+nav ul.serwisy>li.new a { background:#ececec url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat right -60px; border-bottom:2px solid #999; height:12px }
+nav ul.serwisy>li.more { width:38px; float:right; vertical-align:text-top; font-size:26px; line-height:11px; letter-spacing:1px; border:0; background-color:transparent; border-left:0; border-right:1px solid rgba(255,255,255,0); }
+nav ul.serwisy>li.more a:hover { text-decoration:none; border-top:0; border-bottom:0; }
+nav ul.serwisy>li.more.on { background-color:#fff; z-index:100; border-top:1px solid #f5f5f5; border-right:1px solid #f5f5f5; }
+nav ul.serwisy>li.more.on:hover a{ background-color:#fff; }
+
+/* rozwinięte */
+nav ul.serwisy ul { position:absolute; z-index:5; margin-top:-1px; border-top:1px solid #fff; padding:0px 0px 2px 1px; display:none; background-color:#ededed; border-bottom:2px solid #ee0000; }
+nav ul.serwisy ul li { padding:2px 12px 4px 12px; white-space:nowrap }
+nav ul.serwisy ul li:last-child { border-bottom:0 }
+nav ul.serwisy ul li a { display:block; padding:4px 3px 2px 1px; font-size:13px; color:#727272;}
+
+/* Duża lista serwisów */
+#SerwisyListaDuza, #PopularneTematy { display:none; position:absolute; width:1174px; top:134px; margin:0px auto; left:auto; right:auto; margin-left:5px; color:#596f87; background:#fff; border:1px solid #f5f5f5;  z-index:8 }
+#SerwisyListaDuza .cnt, #PopularneTematy .cnt { padding:6px 20px 35px 20px; border-bottom:2px solid #b3b3b3; width:auto }
+#SerwisyListaDuza .cnt:after, #PopularneTematy .cnt:after { display:block; clear:both; content:''; }
+#SerwisyListaDuza .naglowekBoksu, #PopularneTematy .naglowekBoksu { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_pod_tytul.png) bottom left no-repeat; margin-bottom:0px; color:#000; padding-bottom:4px; }
+#SerwisyListaDuza .naglowekBoksu a, #PopularneTematy .naglowekBoksu a { color:#000; font:bold 18px Arial, Ubuntu, Helvetica, Sans-serif }
+#SerwisyListaDuza .naglowekBoksu span#SerwisyListaDuzaZamknij, #PopularneTematy .naglowekBoksu span#PopularneTematyZamknij { padding-right:16px; margin:1px 5px 0 0; float:right; cursor:pointer; font:14px Arial, Ubuntu, Helvetica, sans-serif; color:#888; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat right -133px }
+#SerwisyListaDuza .naglowekBoksu span#SerwisyListaDuzaZamknij:hover, #PopularneTematy .naglowekBoksu span#PopularneTematyZamknij:hover { text-decoration:underline; }
+#SerwisyListaDuza ul { float:left; padding:0px 10px 0px 0px; width:150px }
+#PopularneTematy ul { float:left; padding:0px 10px 0px 0px; width:260px }
+#SerwisyListaDuza li.naglowek, #PopularneTematy li.naglowek { padding:15px 0 4px 0px; text-transform:uppercase; background:none; font:bold 14px Arial, Ubuntu, Helvetica, Sans-serif; color:#727272; }
+#SerwisyListaDuza li, #PopularneTematy li { padding:3px 0px 4px 0px; font-size:14px }
+#SerwisyListaDuza a.zobaczWszystkie { position:absolute; bottom:15px; right:10px;  color:#005599; }
+#SerwisyListaDuza a, #PopularneTematy a { color:#727272; }
+
+#PopularneTematy { left:0; right:0; margin:0px auto; }
+
+/*** Boks specjalny ***/
+#bxSpecjalny .naglowekBoksu a, #bxWazneWydarzenie .naglowekBoksu a { color:#ba0005 }
+#bxSpecjalny .trzyKolumny { width:974px; overflow:hidden }
+#bxSpecjalny ul { width:975px; position:relative; z-index:0 }
+#bxSpecjalny li.pierwszy { width:974px; height:250px; background-color:#232a32; position:relative }
+#bxSpecjalny li.pierwszy a.fot { background-color:#000; display:inline-block; float:left; border-right:1px solid #fff }
+#bxSpecjalny li.pierwszy h2 { position:static;background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat -128px -759px;  padding-left:10px; float:left; width:314px; font:21px Arial, Helvetica, sans-serif; margin:30px 0 1% 0; height:auto }
+#bxSpecjalny li.pierwszy h2 a { font:24px Arial, Helvetica, sans-serif; line-height:130%; display:block; padding-right:5px }
+#bxSpecjalny li.pierwszy h2 a:hover { text-decoration:none }
+#bxSpecjalny li.pierwszy p { height:auto; border:0; background-color:transparent; padding:0 10px 0 20px; float:left; width:294px }
+#bxSpecjalny li.pierwszy p a { height:auto }
+#bxSpecjalny li.pierwszy .opis { height:205px; overflow:hidden }
+#bxSpecjalny li.pierwszy span.pasek1 { position:absolute; display:block; bottom:0px; left:0; width:649px; z-index:1; height:44px; background: url(//x.wpimg.pl/i/ivar/layout/201201/t-s.png) }
+#bxSpecjalny li.pierwszy span.pasek2 { position:absolute; display:block; bottom:0px; right:0; width:324px; z-index:1; height:44px; background: url(//x.wpimg.pl/i/ivar/layout/201201/t-s.png) }
+#bxSpecjalny li.pierwszy a.zobaczVideo { position:absolute; display:block; bottom:14px; right:0; width:304px; z-index:2; font:16px Arial, Helvetica, sans-serif; color:#a9a9a9 }
+#bxSpecjalny li.pierwszy span.pozostaleTematy { position:absolute; bottom:14px; z-index:2; display:block; width:629px; padding:0 10px 0 10px; color:#fff; font:bold 13px "Trebuchet MS", Arial, Helvetica, sans-serif }
+#bxSpecjalny li.pierwszy span.pozostaleTematy a { color:#fff; font:bold 11px "Trebuchet MS", Arial, Helvetica, sans-serif }
+#bxSpecjalny li.pierwszy span.pozostaleTematy a strong { display:inline-block; width:21px; height:18px; padding:3px 0 0 0; margin:0 7px 0 10px; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat 0 -790px; text-align:center; vertical-align:middle }
+#bxSpecjalny li { width:324px; margin-right:1px; border-bottom:1px solid #fff; float:left; position:relative }
+#bxSpecjalny li a.fot img { display:block; width:324px; height:113px }
+#bxSpecjalny li.pierwszy a.fot img { width:649px; height:250px }
+#bxSpecjalny li a.fot:hover { background-color:#fff }
+#bxSpecjalny li h2 { position:absolute; top:70px; height:40px; padding-bottom:3px; width:324px; overflow:hidden;background: url(//x.wpimg.pl/i/ivar/layout/201201/t-s.png); font:14px "Trebuchet MS", Arial, Helvetica, sans-serif; z-index:2 }
+#bxSpecjalny li h2 a { color:#fff; display:block;font:14px "Trebuchet MS", Arial, Helvetica, sans-serif; padding:3px 10px }
+#bxSpecjalny li p { height:46px; background-color:#ba0005; color:#fff; padding:12px 15px 12px 15px; font-size:11px; line-height:normal }
+#bxSpecjalny li p a {color:#fff; display:inline-block;height:45px; overflow:hidden }
+#bxSpecjalny li .play { position:absolute; width:324px; height: 113px; top:0px; left:0px; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat center -820px; text-indent:-9999px}
+
+/**** Glonews ****/
+#Glonews { position:relative; width:780px; z-index:0; overflow:hidden }
+#Glonews .serwis, #Glonews a.serwis  { text-align:center; z-index:1; margin:0px auto 8px auto; color:#fff; font-size:13px; padding:5px 10px; display:inline-block; background-color:#ff5a00; text-transform:uppercase; }
+#Glonews .serwis.pomaranczowy { background-color:#ff5a00; }
+#Glonews .serwis.wiadomosci, #Glonews .serwis.finanse, #Glonews .serwis.nazywo, #Glonews .serwis.pilne, #Glonews .serwis.czerwony { background-color:#ff0000; }
+#Glonews .serwis.pogoda, #Glonews .serwis.niebieski { background-color:#1b7dde; }
+#Glonews .serwis.wp { padding-right:65px; background: #868686 url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 100% -1328px no-repeat; }
+
+#Glonews ul.glonewsy { float:left; background-color:#fff; width:504px; }
+#Glonews ul.glonewsy li { display:none; overflow:hidden; width:504px; height:314px; position:relative;  }
+#Glonews ul.glonewsy li:first-child { display:block; }
+#Glonews ul.glonewsy .newsFoto img{ position:absolute; top:0; left:0; width:504px; height:314px; z-index:0; }
+#Glonews .cnt { position:absolute; text-align:center; bottom:0; z-index:1; color:#fff;
+background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(0,0,0,0.4)), color-stop(100%,rgba(0,0,0,0.4)));
+background:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 100%);
+background:-o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 100%);
+background:-ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 100%);
+background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 50%,rgba(0,0,0,0.4) 100%);
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 );
+background:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.4) 100%); width:100%;}
+
+#Glonews a:hover { text-decoration:none; }
+#Glonews a h2 {  font-size:26px; line-height:34px; font-weight:bold; text-shadow:1px 0 2px rgba(0,0,0,0.75); color:#fff;  padding:0px 10px 11px 10px; }
+#Glonews span.autor { color:#ccc; padding:0 4px; border-radius:3px; opacity:.4; position:absolute; z-index:2; font-size:10px; bottom:2px; right:3px; text-align:right }
+
+#Glonews ul.specjalny { float:right; width:264px; height:314px;}
+#Glonews .serwis { margin-bottom:5px; }
+#Glonews ul.specjalny li { display:block; overflow:hidden; width:264px; height:314px; position:relative;  }
+#Glonews ul.specjalny h2 { font-size:24px; line-height:32px; }
+#Glonews ul.specjalny img.newsFoto{ position:absolute; top:0; left:0; width:264px; height:314px; z-index:0; }
+
+/* Glonews - zakładki generowanie dynamicznie */
+#Glonews .zakladkiCtn { position:absolute; left:12px; top:12px; z-index:3; font-size:12px; color:#fff }
+#Glonews .zakladkiCtn ul { border-radius:2px; display:inline-block; margin:0; padding:0 }
+#Glonews .zakladkiCtn ul li { display:block; float:left; width:14px; text-align:center; padding:5px; margin-right:2px; cursor:pointer; background:rgba(0,0,0,0.4); }
+#Glonews .zakladkiCtn ul li:last-child { margin-right:0 }
+#Glonews .zakladkiCtn ul li:hover { background:rgba(0,0,0,0.7); color:#ff0008; }
+#Glonews .zakladkiCtn ul li.on, #Glonews #zakladkiCtn ul li.on:hover { background-color:#d00606 !important; color:#fff;}
+#Glonews .zakladkiCtn ul.przewijaki { margin-left:2px; }
+#Glonews .zakladkiCtn ul.przewijaki li { width:14px; padding-top:4px; padding-bottom:4px; margin-right:0; font-size:19px; line-height:17px }
+
+/*** Boks WP.tv ***/
+#bxWPTV { width:384px; height:367px; overflow:hidden; float:left;  border-bottom:2px solid #e5e5e5; padding-bottom:5px; position:relative } 
+#bxWPTV .naglowekBoksu a.tytul { padding: 6px 0 2px 50px; position:relative; }
+#bxWPTV header.naglowekBoksu { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 0 -87px no-repeat, url(//x.wpimg.pl/i/ivar/layout/201201/n_pod_tytul.png) no-repeat bottom left; padding-top:2px; }
+#bxWPTV ul { display:none; padding-top:7px; padding-bottom:6px; }
+#bxWPTV li { padding:0 0 10px 0 }
+#bxWPTV ul.dot li a { position:relative; display:block }
+#bxWPTV li strong { font-size:16px; line-height:20px; display:block; font-weight:bold; margin-top:1px; }
+#bxWPTV li span.tresc { padding-bottom:0; margin-top:0; padding-top:2px; font-size:14px; }
+#bxWPTV li .opis { max-height:86px; overflow:hidden; padding-right:2px; position:relative }
+#bxWPTV li img { position:relative; z-index:1; height:86px; width:186px }
+#bxWPTV li span.play { position:absolute; display:block; z-index:2; left:0; top:0; width:154px; height:72px;  background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat 0 -1040px }
+#bxWPTV .opcje { position:relative; display:inline; vertical-align:middle; top:0px; }
+#bxWPTV .opcje a { float:none; display:inline-block; }
+#bxWPTV .przewijak { position:absolute; top:9px; right:2px; font-size:1px; z-index:1; }
+#bxWPTV .przewijak span { display:inline-block; width:7px; height:7px; text-indent:-9999px; overflow:hidden; background-color:#ddd; cursor:pointer; margin:2px; border-radius:4px; }
+#bxWPTV .przewijak span.on { background-color:#cc0001; }
+
+/*** Przegląd dnia ***/
+#bxPrzeglad { width:384px; height:367px; float:right; border-bottom:2px solid #e5e5e5; padding-bottom:5px; }
+#bxPrzeglad header.naglowekBoksu { padding-top:2px; }
+#bxPrzeglad .przewijak { width:384px; position:relative }
+#bxPrzeglad .strona { padding-top:4px; position:relative; width:384px; height:206px;}
+#bxPrzeglad .strona:after { display:block; clear:both; content:''; }
+#bxPrzeglad .strona li { position:absolute; left:0px; top:5px; width:278px; font-size:14px; max-height:205px; overflow:hidden; color:#868686; }
+#bxPrzeglad .strona li strong { font-size:16px; line-height:20px; margin-bottom:4px;}
+#bxPrzeglad .strona li+li+li { position:absolute; left:290px; top:5px; width:94px; height:61px; overflow:hidden }
+#bxPrzeglad .strona li+li { position:absolute; left:290px; top:78px; width:94px; height:61px; overflow:hidden }
+#bxPrzeglad .strona img { display:block; width:278px; }
+#bxPrzeglad .strona li+li img,
+#bxPrzeglad .strona li+li+li img { margin-left:-14px; width:134px }
+#bxPrzeglad .strona li:first-child a { display:block; font-size:13px; margin-bottom:4px }
+#bxPrzeglad .strona img:first-child { margin-bottom:6px; }
+#bxPrzeglad .przewin { position:absolute; top:183px; right:0px; font-size:11px; line-height:11px; }
+#bxPrzeglad .przewin span { display:block; float:left; height:10px; background:#efefef; padding:4px 7px 5px 7px; margin-left:2px; cursor:pointer; color:#777; border-radius:3px;}
+#bxPrzeglad .przewin span.next { font-size:16px; line-height:9px;  }
+#bxPrzeglad .przewin span:hover { background-color:#8a8a8a; color:#c00; }
+#bxPrzeglad .przewin span.on { background-color:#c00; border-radius:3px; color:#fff; }
+#bxPrzeglad .dolny { padding:11px 0 10px 0; border-top:2px solid #e5e5e5; min-height:78px; }
+#bxPrzeglad .dolny li:last-child { padding-bottom:0; }
+#bxPrzeglad .dolny li strong { font-size:13px; font-weight:bold }
+
+/*** Wiadomosci ***/
+#News ul.dot li.pierwszy a { display:block; /* max-height:82px; overflow:hidden;*/ padding-bottom:4px; margin-bottom:3px; }
+#News ul.dot li.pierwszy a:after { display:block; clear:both; content:'' }
+#News ul.dot li.pierwszy strong { font-family: Arial, Ubuntu, Helvetica, sans-serif; line-height:26px; width:248px; display:inline-block; padding-top:7px; }
+#News ul.dot li.pierwszy { padding-left:0px }
+#News ul.dot li.pierwszy img { margin-top:6px; width:124px; height:82px; }
+
+#News .dodatkoweLinki .zakladki { width:318px; height:13px; padding:6px 0 2px 0px; margin:0 0 4px 0px; font-size:11px; background-color:#fff; color:#828282; border-bottom:1px solid #c6c6c6; line-height:13px }
+#News .dodatkoweLinki .zakladki span { display:block; float:left; cursor:pointer; border-right:1px solid #fff; letter-spacing:1px; text-transform:uppercase }
+#News .dodatkoweLinki .zakladki span strong { display:block; padding:0 5px 1px 5px;border-bottom:2px solid #c6c6c6 }
+#News .dodatkoweLinki .zakladki span.on strong { border-bottom-color:#ba0005 }
+#News .dodatkoweLinki .zakladki strong:hover { border-color:#999 } 
+#News .dodatkoweLinki ul { display:none }
+#News .stopkaBoksu { padding-left:20px; padding-top:2; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 5px -1211px no-repeat; padding-bottom:5px; }
+
+.lokalne .select { padding:10px 0 7px 0; margin-bottom:10px; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_pod_tytul.png) bottom left no-repeat; }
+#News .lokalne .naglowekBoksu { position:relative; margin-bottom:5px; }
+.lokalne ul#wiadomosciMiasta { display:none; position:absolute; top:25px; left:0; font:14px Arial, Ubuntu, Helvetica, Sans-serif; background-color:#fafafa; border:1px solid #ccc; border-bottom:2px solid #ee0000; border-top:0; z-index:2; }
+#News .lokalne .naglowekBoksu ul#wiadomosciMiasta li { font:14px Arial, Ubuntu, Helvetica, Sans-serif;}
+#News .lokalne .naglowekBoksu ul#wiadomosciMiasta li a.tytul {padding:4px 12px; font:bold 14px Arial, Ubuntu, Helvetica, Sans-serif; display:block; min-width:100px }
+#News .lokalne .naglowekBoksu ul#wiadomosciMiasta li a.tytul:hover { text-decoration:underline }
+
+#wiadomosciMiasto a.tytul { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 100% -1574px no-repeat; padding-right:20px }
+.lokalne .pogoda { float:right; margin-top:7px; }
+.lokalne .cytowany { color:#f3142c; display:block; text-transform:uppercase; font:12px/16px Arial, Ubuntu, Helvetica, Sans-serif; padding-top:4px;  }
+.lokalne ul.dot li.cytat { background: url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 100% -1404px no-repeat; }
+#News ul.dot li.cytat strong { padding-top:0px; line-height:24px; }
+#News ul.dot li.cytat a { max-height:89px; }
+#News .lokalne { margin-top:10px }
+#News ul#wiadomosciMiasta { display:none }
+#News .lokalne a.tytul { color:#059 }
+#News ul.dot li.wiecej { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 5px -1213px no-repeat;}
+#News ul.dot li.wiecej a { color:#727272; }
+
+/*** Sport ***/
+#bxSport .stopkaBoksu { padding-bottom: 10px; }
+
+/* sekcja sponsorowana */
+#bxSport .zakladka { position:relative; width:318px; padding:6px 0 2px 0px; height:13px; margin:0 0 4px 0px; font-size:11px; letter-spacing:1px;background-color:#fff; border-bottom:2px solid #c6c6c6; line-height:13px }
+#bxSport .zakladka span { display:block; float:left; border-right:1px solid #fff; }
+#bxSport .zakladka a { display:block; padding:0 5px 2px 5px; border-bottom:2px solid #c6c6c6; font-weight:700; color:#828282; }
+#bxSport .zakladka a:hover { text-decoration:none; color:#999; }
+#bxSport .zakladka span.on a { border-bottom-color:#ba0005 }
+#bxSport .zakladka .link { position:absolute; text-indent:-999px; overflow:hidden; display:block; z-index:2; right:0; top:21px; width:42px; height:91px; /*background:url(//x.wpimg.pl/i/ivar/layout/201201/okocim.png) 0 0 no-repeat*/ }
+#bxSport .zakladkaLinki { min-height:65px; width:277px; }
+#bxSport .arena { height:39px; border-radius:0px; margin-top:2px; margin-bottom:2px; color:#404040; font:bold 12px/16px Arial, Ubuntu, Helvetica, Sans-serif; position:relative; text-align:center; 
+background: #ededed;
+background: #ededed -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 30%); /* FF3.6+ */
+background: #ededed -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,0,0,0.12)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: #ededed -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: #ededed -o-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* Opera 12+ */
+background: #ededed -ms-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: #ededed radial-gradient(ellipse at center,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 100%); /* W3C */}
+#bxSport .arena a { color:#404040 }
+#bxSport .sektor1 { position:absolute; width:145px; height:31px; left:0;  overflow:hidden; top:0; text-align:left; padding:5px 0 0px 3px; line-height:15px;  z-index:0}
+#bxSport .sektor2 { position:absolute; width:145px; height:31px; right:0; overflow:hidden; top:0; text-align:right; padding:5px 3px  0px 0; line-height:15px; z-index:0 }
+#bxSport .sektor1 img { float:left;  width:20px; height:20px; padding:4px 9px 0 5px; }
+#bxSport .sektor2 img { float:right; width:20px; height:20px; padding:4px 5px 0 9px; }
+#bxSport .wynik {  padding:10px 0px 6px 0px; display:inline-block; background-color:#f4f4f4; margin-top:-2px; border-top:2px solid #ee1002; border-bottom:2px solid #f4f4f4; font:700 24px/24px Arial, Helvetica, Sans-serif; min-width:64px; text-align:center }
+#bxSport .czas { font-size:18px }
+#bxSport .trwa { font-size:18px; color:#dc0007 }
+#bxSport .widgetSportowy { margin-bottom:10px; margin-top:10px; }
+
+#bxSport .widgetSportowy div.arena:first-of-type { border-top-left-radius:4px; border-top-right-radius: 4px; }
+#bxSport .widgetSportowy div.arena:first-of-type .wynik { border-top:2px solid #f4f4f4; }
+#bxSport .widgetSportowy div.arena:last-of-type { border-bottom-left-radius:4px; border-bottom-right-radius: 4px; }
+#bxSport .widgetSportowy div.arena:last-of-type .wynik { border-bottom:2px solid #ee1002; }
+
+/*** Tylko w WP ***/
+#bxTylkoWWP { padding:2px 0px 0px 0; }
+#bxTylkoWWP ul { min-height:182px; margin-top:10px; }
+#bxTylkoWWP li { margin-left: 396px }
+#bxTylkoWWP li.pierwszy { position:relative; margin-bottom:5px; padding-left:0 }
+#bxTylkoWWP li.pierwszy img { position:absolute; left:-396px; width:384px; height:182px; }
+#bxTylkoWWP .tresc { max-height:28px; overflow:hidden; padding-top:2px; margin-bottom:2px; }
+#bxTylkoWWP li.pierwszy strong { line-height:26px; }
+
+/*** Rozrywka ***/
+#bxRozrywka { border-bottom:2px solid #e5e5e5; padding-bottom:4px; }
+#bxRozrywka ul { margin-top:5px; }
+#bxRozrywka .stopkaBoksu { float:right }
+
+/*** Styl życia ***/
+#bxStylZycia { overflow:hidden }
+#bxStylZycia .dwieKolumny { padding-top:7px; }
+#bxStylZycia .dwieKolumny ul img { margin-bottom:5px; width:384px; height:182px }
+#bxStylZycia ul.prawa img { width:186px; height:86px }
+#bxStylZycia ul.prawa li { clear:both }
+#bxStylZycia ul.prawa li.pierwszy strong { display:inline-block; max-height:86px; overflow:hidden; width:186px }
+
+
+#bxStylZycia .czteryKolumny { padding:10px 0 4px 0; border-bottom:2px solid #e5e5e5; }
+#bxStylZycia .czteryKolumny ul { padding-bottom:0px }
+#bxStylZycia .czteryKolumny li { float:left }
+#bxStylZycia .czteryKolumny a { border:0px; padding-top:0; }
+
+#bxStylZycia .czteryKolumny .naglowekBoksu { color:#fff; font-weight:700; font-size:14px; padding:2px 5px; opacity: 0.9999; text-transform:uppercase }
+#bxStylZycia .czteryKolumny span.tresc { height:35px; overflow:hidden }
+#bxStylZycia .kolor1 { background-color:#f19900 }
+#bxStylZycia .kolor2 { background-color:#f16600 }
+#bxStylZycia .kolor3 { background-color:#f14400 }
+#bxStylZycia .kolor4 { background-color:#f12200 }
+#bxStylZycia a:hover .naglowekBoksu { opacity: 0.90 }
+#bxStylZycia .stopkaBoksu { margin-top:0px; float:right; }
+
+/****** Sekcja Ciekawostki ******/
+#Ciekawostki .opcje { padding-right:5px }
+
+/*** boks ciekawostki ***/
+#bxCiekawostki { width:780px; }
+#bxCiekawostki .dwieKolumny { margin-bottom:10px; padding-top:7px; }
+#bxCiekawostki .dwieKolumny ul.dot img { float:none; width:384px; height:182px; margin-right:0; }
+#bxCiekawostki .dwieKolumny ul.dot li.pierwszy { padding-bottom:0 }
+#bxCiekawostki ul.lewa { width:384px; margin:0 }
+#bxCiekawostki ul.lewa li.pierwszy strong { display:block; float:none; max-height:23px; overflow:hidden;padding-bottom:1px; }
+#bxCiekawostki ul.lewa li.pierwszy span.tresc { display:block; float:none; overflow:hidden; padding:0 }
+#bxCiekawostki ul.prawa { width:384px; margin:0 0 0 12px }
+#bxCiekawostki ul.prawa li { width:186px; float:left; padding: 0; background-image:none }
+#bxCiekawostki ul.prawa li.pierwszy { width:186px; padding: 0 12px 0 0 }
+#bxCiekawostki ul.prawa li a strong { font: bold 16px/22px Arial, Ubuntu, Helvetica, Sans-serif; display:block }
+#bxCiekawostki ul.prawa li span.tresc { padding-bottom:7px; }
+#bxCiekawostki .czteryKolumny li span.tresc { padding-bottom:0 }
+#bxCiekawostki .czteryKolumny li a img { height:273px }
+
+/*** boks wideo ***/
+#bxWideo.bx { margin-bottom:0 }
+#bxWideo .naglowekBoksu { position:relative; }
+#bxWideo .stopkaBoksu { right:0;  bottom:7px; position:absolute; margin-top:0;}
+#bxWideo .lewa li.pierwszy { width:384px; padding-bottom:0; position:relative }
+#bxWideo .lewa img { width:384px; height:182px; float:none; display:block;}
+#bxWideo .lewa strong { padding-top:10px; display:block; font-size:20px; }
+#bxWideo .prawa { width:396px }
+#bxWideo .prawa li { width:186px; float:left; margin-left:12px}
+#bxWideo .prawa li img { width:186px; height:86px; margin-bottom:5px; }
+#bxWideo .dwieKolumny { padding-top:7px; padding-bottom:10px; }
+#bxWideo .dwieKolumny ul { margin-right:0 }
+#bxWideo ul.dot li.pierwszy img { margin-right:0 }
+#bxWideo .serwis, #bxWideo a.serwis { text-align:center; z-index:1; margin:0px auto 3px auto; color:#fff; font-size:12px; padding:2px 8px; display:inline-block; background-color:#f61900; position:absolute; left:0; top:158px; text-transform:uppercase; }
+#bxWideo .tresc { padding-bottom:0; }
+
+/*** Społeczności ***/
+#bxSpolecznosci .naglowekBoksu { position:relative }
+#bxSpolecznosci .stopkaBoksu { position:absolute; right:5px; top:7px; text-align:right; background-image:none }
+#bxSpolecznosci { background:#f7f7f7; border-top:3px solid #616161; border-bottom:1px solid #dfdfdf; margin-top:10px }
+#bxSpolecznosci img { width:154px; height:72px }
+#bxSpolecznosci .szescKolumn li a { border:0 }
+#bxSwieta { background: #f7f7f7 url(//x.wpimg.pl/i/ivar/layout/201201/bg_swieta2.png) 316px 0 no-repeat; border-bottom: 1px solid #DFDFDF; border-top: 3px solid #616161; margin-top: 10px; width:810px; position:relative }
+#bxSwieta .szescKolumn li a { border:0; }
+.tesco a { position:absolute; right:5px; display:block; top:7px; width:205px; height:15px; text-indent:-9999px; overflow:hidden }
+.swietaTesco { position:absolute; right:-163px; top:-5px; }
+.bxSzkola { background: #F7F7F7  url(//x.wpimg.pl/i/ivar/layout/201201/tesco_school.jpg) 150px 3px no-repeat; border-bottom: 1px solid #DFDFDF; border-top: 3px solid #616161; margin-top: 10px; width:974px; position:relative; min-height: 205px; }
+.bxTesco .henio { position: absolute; right: 6px; top: 15px; }
+.bxTesco .columns { float: left; width: 810px; }
+
+/****** Sprzedaż ******/
+#Sprzedaz .naglowekBoksu { margin-bottom:7px }
+#Sprzedaz .naglowekBoksu, #Produkty .naglowekBoksu, #Gry .naglowekBoksu { color:#fff;font: bold 14px Arial, Ubuntu, Helvetica, sans serif; padding:3px 5px; background-color:#689cce; opacity: 0.9999 }
+#Sprzedaz .naglowekBoksu a, #Produkty .naglowekBoksu a { color:#fff; opacity: 0.9999 }
+#Sprzedaz .wiersz { width:1176px; }
+#Sprzedaz .wiersz.pierwszy { margin-bottom:10px; }
+#Sprzedaz .wiersz:after { display:block; clear:both;content:'' }
+
+/* Allegro */
+#bxOferty { width:384px; float:right; overflow:hidden; line-height:12px }
+#bxOferty.bx{ margin-bottom:0px; }
+#bxOferty .naglowekBoksu { background-color:#ff5a00; }
+#bxOferty .naglowekBoksu a { color:#fff; opacity: 0.9999 }
+#bxOferty .wiersz .naglowekBoksu { background-color:#ffd301;  }
+#bxOferty .wiersz li{ margin-bottom:0; }
+
+#bxOferty ul { width:396px; margin-bottom:4px; overflow:hidden }
+#bxOferty ul:after { display:block; clear:both;content:'' }
+#bxOferty li { width:178px; padding:3px 2px; margin:4px 12px 8px 0; float:left; border:1px solid #e0e0e0; height:148px; text-align:center }
+#bxOferty ul:last-child { margin-bottom: 0; }
+#bxOferty li img { display:block; margin:7px auto 7px; height:85px; width:85px }
+#bxOferty li strong { font-size:13px; line-height:16px; }
+#bxOferty .wiersz { width:auto }
+
+/* Zakupy z WP.PL */
+#bxEcommerce { width:780px; float:left; margin-bottom:0px; }
+#bxEcommerce .prawa { float:right; width:384px; overflow:hidden; padding-top: 1px; }
+#bxEcommerce .prawa li { width:396px; margin-right:12px; float:left; }
+#bxEcommerce .prawa img { border:1px solid #e0e0e0; display:block; float:left; margin-right:10px; margin-top:3px; width:382px; height:136px }
+#bxEcommerce .prawa .male_foto img { width:184px; height:184px; }
+#bxEcommerce .prawa li.okazja { border-top:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; margin:4px 0 2px 0; font-size:11px; line-height:14px; padding:2px 0 }
+#bxEcommerce .prawa li.okazja img { vertical-align:middle }
+#bxEcommerceTxtLogo, #bxEcommerceTxtLogoDol { width:50px; height:16px; display:inline-block; vertical-align:text-bottom; margin-right:4px }
+#bxEcommerce .prawa .czerwony { color:#fff; background-color:#c70000;font:bold 10px Tahoma, Ubuntu, "Lucida Console", Helvetica, sans-serif; padding:2px 5px; opacity: 0.9999 }
+#bxEcommerce .prawa a:hover, #bxEcommerce .prawa a:hover .czerwony { text-decoration:none }
+#bxEcommerce .prawa a:hover span { text-decoration:underline }
+
+
+#bxEcommerce .lewa { width:384px; float:left; overflow:hidden }
+#bxEcommerce .lewa li { background:transparent url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) repeat-x 0 bottom; padding:0px 0 15px 0; height:111px; margin-bottom: 12px;  position:relative }
+#bxEcommerce .lewa li + li + li + li { padding-bottom: 0; background-image: none; margin-bottom: 0; }
+#bxEcommerce .lewa li strong { font-size:16px; font-weight:bold; display:inline-block; width:184px; padding-top:6px; }
+#bxEcommerce .lewa li span.tresc { padding-top:2; line-height:20px; margin-bottom:0; padding-bottom:0; }
+#bxEcommerce .lewa li .cena { font-size:14px; color:#ff0000; padding-left: 6px; background: url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) -133px -209px no-repeat; }
+#bxEcommerce .lewa li .cena strong { display: inline; font-size: 14px; font-weight:bold; }
+#bxEcommerce .lewa li a { display:block; margin:0; width:100% }
+#bxEcommerce .lewa li:first-child a{ margin-top:3px; }
+#bxEcommerce .lewa li a:after { display:block; clear:both; content:'' }
+#bxEcommerce .lewa li a:hover .cena strong { text-decoration:none }
+#bxEcommerce .lewa li img { border:1px solid #dfdfdf; margin-top:3px; width:184px; height:106px }
+
+/*** Turystyka ***/
+#bxTurystyka { width:186px; float:right; margin-left:12px }
+#bxTurystyka .naglowekBoksu { background-color:#75b000; margin-bottom: 12px;}
+#bxTurystyka li { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat 1px -233px; padding-left: 15px; }
+#bxTurystyka li.pierwszy { margin-bottom:5px; padding-left: 0; background-image: none }
+#bxTurystyka ul.dot li.pierwszy strong { font:bold 16px/20px Arial, Helvetica, sans-serif; display:block;}
+#bxTurystyka li span.tresc { padding:0 0 0 0;}
+#bxTurystyka li img { width:186px; height:86px; margin-bottom: 5px }
+#bxTurystyka .stopkaBoksu { display:block; clear:both; padding-left:15px; padding-top:0; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 1px -1214px no-repeat; float:none; }
+
+/*** Pasaż finansowy ***/
+#bxPasazFinansowy { width:582px; float:left; overflow:hidden }
+#bxPasazFinansowy .naglowekBoksu { background-color:#376f95; margin-bottom: 12px; }
+#bxPasazFinansowy ul.top { width:594px; overflow:hidden; padding-bottom: 4px; margin-bottom: 5px; border-bottom: 2px solid #e5e5e5; }
+#bxPasazFinansowy ul.top li.pierwszy strong { font:bold 16px/20px Arial, Helvetica, sans-serif; display:block; }
+#bxPasazFinansowy ul.top img { width:186px; height: 86px; margin-bottom: 8px; }
+#bxPasazFinansowy ul.lewa { float:left; width:396px; margin-bottom: 7px; }
+#bxPasazFinansowy ul.lewa li.pierwszy, #bxPasazFinansowy ul.top li.pierwszy { float:left; width:186px; margin-right:12px; border:0px }
+#bxPasazFinansowy ul.lewa li { width:376px; float:left; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat 1px -233px; padding-left: 15px; }
+#bxPasazFinansowy ul.lewa li.drugi { padding:10px 0 10px 0; font-size: 16px; float:left; background-image: none; margin-bottom:4px; }
+#bxPasazFinansowy ul.lewa li.drugi strong { font-size: 16px; }
+#bxPasazFinansowy ul.lewa li.drugi:after { display:block; clear:both; content:'' }
+#bxPasazFinansowy ul.prawa { width:186px; float:right; padding-top: 10px }
+#bxPasazFinansowy ul.prawa li { padding-left: 11px; background-position: 0px -233px; }
+#bxPasazFinansowy li span.tresc { padding:0 0 0 0 }
+#bxPasazFinansowy .stopkaBoksu { display:block; clear:both; padding-left:18px; padding-top:0; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 3px -1214px no-repeat; }
+#bxPasazFinansowy .stopkaBoksu a { margin: 0; padding-right: 12px; }
+#bxPasazFinansowy li img { width:186px; height:86px }
+
+/*** WP Poleca ***/
+#bxWPPoleca { width:384px; float:right }
+#bxWPPoleca .naglowekBoksu { background-color:#c40001; margin-bottom: 12px }
+#bxWPPoleca ul { width:186px; float:right }
+#bxWPPoleca a img { width:186px; height:309px; float:left }
+#bxWPPoleca ul.dot li { padding-left: 15px; }
+#bxWPPoleca ul li.pierwszy { margin-bottom:5px; padding-left: 0; }
+#bxWPPoleca ul li.pierwszy img { width:186px; height:86px; margin-bottom: 5px }
+#bxWPPoleca li.pierwszy strong { font:bold 16px/20pxArial, Ubuntu, Helvetica, Sans-serif; display:block }
+#bxWPPoleca li span.konkurs { display:block; color:#969696;font: 11px Arial, Ubuntu, Helvetica, Sans-serif; letter-spacing:1px; padding-bottom:2px; opacity: 0.9999 }
+#bxWPPoleca li span.tresc { padding:2px 0 5px 0 }
+#bxWPPoleca ul li.drugi { margin-bottom:5px; padding-left:0; padding-top:2px; margin-top:2px; background: transparent; border-top:2px solid #e5e5e5;}
+
+#Produkty .naglowekBoksu { margin-bottom:12px }
+#Produkty ul { width:396px; overflow: hidden }
+#Produkty ul:after { display:block; clear:both; content:'' }
+#Produkty li { width:186px; float:left; padding-right:12px }
+#Produkty li img { display:block; clear:both; float:none; padding-bottom:5px }
+#Produkty li strong { display:block; font-size:16px; font-weight:bold; line-height:normal }
+
+/*** Dla Kobiet ***/
+#bxDlaKobiet { width:384px; float:left }
+#bxDlaKobiet .naglowekBoksu { background-color:#cb95a5; margin-bottom:12px; }
+#bxDlaKobiet li { width:186px; float:left; text-align:center; margin-left:12px; }
+#bxDlaKobiet li:first-child { float:left; margin-left:0; }
+#bxDlaKobiet li img, #bxOkazjeCenowe li img { display: block; width: 186px; margin-bottom:6px; }
+#bxDlaKobiet li strong, #bxOkazjeCenowe li strong { font:bold 16px/20px Arial, Ubuntu, Helvetica, sans serif; }
+#bxDlaKobiet li .cena, #bxOkazjeCenowe li .cena { font-size:14px; color:#ff0000; padding-left: 6px; background: url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) -133px -209px no-repeat; }
+#bxDlaKobiet li .cena strong, #bxOkazjeCenowe li .cena strong { display: inline; font-size: 14px; font-weight:bold; }
+#bxDlaKobiet li a:hover .cena strong, #bxOkazjeCenowe li a:hover .cena strong  { text-decoration:none; }
+
+#bxDlaKobiet li .cena strong, #bxOkazjeCenowe li .cena strong { display: inline; line-height:13px; color:#c70000 }
+#bxDlaKobiet li, #bxOkazjeCenowe li { padding-bottom: 0; }
+
+/*** Okazje cenowe ***/
+#bxOkazjeCenowe { width:780px; float:right; clear:right; }
+#bxOkazjeCenowe .naglowekBoksu { background-color:#4b8d54; margin-bottom:12px; }
+#bxOkazjeCenowe li { width:186px; float:left; text-align:center; margin-left:12px; }
+#bxOkazjeCenowe li:first-child { float:left; margin-left:0; }
+
+/*** Ogłoszenia ***/
+#bxOgloszenia { width:384px; padding-right:10px; float:left; overflow:hidden }
+#bxOgloszenia .naglowekBoksu { background-color:#7b8e9c; margin-bottom:12px }
+#bxOgloszenia li strong { padding-bottom:5px; line-height:20px; }
+#bxOgloszenia li img { width:186px; height:86px; margin-bottom:3px; }
+#bxOgloszenia .stopkaBoksu, #bxTwojeProdukty .stopkaBoksu, #bxWybraneOferty .stopkaBoksu { float:right; padding-top:0; }
+#bxOgloszenia .stopkaBoksu a, #bxTwojeProdukty .stopkaBoksu a, #bxWybraneOferty .stopkaBoksu a{ font:12px Arial, Ubuntu, Helvetica, Sans-serif; color:#d3dce3; background-image:none; padding-right:2px; }
+
+/*** Twoje produkty ***/
+#bxTwojeProdukty { width:384px; padding-right:12px; float:left }
+#bxTwojeProdukty .naglowekBoksu { background-color:#977cae; margin-bottom:12px }
+#bxTwojeProdukty span.tresc { padding-bottom:0 }
+#bxTwojeProdukty li strong { line-height:20px; }
+#bxTwojeProdukty li img { width:186px; height:86px; margin-bottom:3px; }
+
+/*** Wybrane oferty ***/
+#bxWybraneOferty { width:384px; float:right }
+#bxWybraneOferty .naglowekBoksu { background-color:#1991ab; margin-bottom:12px }
+#bxWybraneOferty li.pierwszy { width:186px }
+#bxWybraneOferty li { width:186px }
+#bxWybraneOferty li img { width:186px; height:86px; margin-bottom:3px; }
+#bxWybraneOferty li strong { line-height:20px; }
+
+.wierszLewa { width:780px }
+.wierszLewa:after { display:block; clear:both; content:'' }
+
+/****** Gry ******/
+
+#Gry #bxGry { clear: both; overflow: hidden; }
+#Gry #bxGry .naglowekBoksu { background-color:#82bf26; margin-bottom:12px;  opacity: 0.9999  }
+#Gry #bxGry strong { line-height:20px; }
+#Gry img { border:0; display:block; margin:0px 0 6px 0; height:101px; width:186px; position:relative; z-index:1}
+#Gry a:hover img { opacity: 1.0 }
+#Gry #bxGry ul { display: block; overflow:hidden; padding-left:98px; }
+#Gry li { display:block; margin:0px 0px 3px 12px; padding-bottom:2px; width:186px; float:left; }
+#Gry li a { position:relative; display:block; }
+#Gry li a:after{ content:url(//x.wpimg.pl/i/ivar/layout/201201/n_graj.png); position:absolute; right:0; top:79px; z-index:2; }
+#Gry li:first-child { margin-left:0; } 
+
+#Gry li strong { display:block; font-size:16px; font-weight:bold; line-height:20px; }
+
+#bxGry .status { float:right; line-height:10px; height:10px; margin:1px 0 0 0 ; padding:0; }
+#bxGry .dot { display:inline-block; background-color:#639615; text-align:center; border-radius:3px; margin:0 2px; width:6px; height:6px; font:10px/10px Arial, Ubuntu, Helvetica, Sans-serif; cursor:pointer; }
+#bxGry .dot.on { background-color:#fff; }
+#bxGry { position:relative; }
+#bxGry>span { background: url(//x.wpimg.pl/i/ivar/layout/201201/n_gry-s.png) 0 -9px no-repeat; width:86px; height:101px; top:32px; cursor:pointer; }
+#bxGry .nPrev { position:absolute; left:0; background-position:0px -5px; }
+#bxGry .nNext { position:absolute; right:0; background-position:-91px -5px; }
+#bxGry .nPrev:hover { background-position:0px -116px; } 
+#bxGry .nNext:hover { background-position:-91px -116px; } 
+
+/*** Szukaj dolny ***/
+#SzukajDolny { display:block; padding:15px 30px 25px 30px; background:#f5f5f5; margin-bottom:10px; }
+#SzukajDolny:after { display:block; clear:both; content:'' }
+#SzukajDolny .szukaj { width:790px; margin:0 auto; }
+
+#SzukajDolny .btnSzukaj { display:inline-block;  margin-left:4px; border:0; width:68px; height:30px; background: #f87500; text-align:center; overflow:hidden; text-align: center; color:#fff; font-weight:bold; width:58px; height:34px; background: #4667b1 url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 0px -30px no-repeat; overflow:hidden; text-indent:-9999px; }
+#SzukajDolny .szukaj input.txt { width:700px; display:block; float:left; border:2px solid #bfbfbf; height:26px;  background-color:#fff; padding:2px 2px 2px 5px;}
+#SzukajDolny .szukaj input.txt:focus { border-color:#4667b1; }
+#SzukajDolny .opcjeSzukania a, #SzukajDolny .opcjeSzukania span.polskieWWW { display:inline-block; border-left:1px solid #f5f5f5; border-right:1px solid #f5f5f5; font:12px Arial, Ubuntu,Geneva, sans-serif;  position:relative; z-index:2; border-collapse:collapse; color:#727272;  margin-bottom:-2px; border-bottom:1px solid #ccc; box-sizing:border-box; margin-left:-2px; }
+#SzukajDolny .opcjeSzukania a strong {display:inline-block; font:12px Arial, Ubuntu, Geneva, sans-serif; border-bottom:1px solid #ccc; padding:0 5px 6px 5px;}
+
+#SzukajDolny .opcjeSzukania span.polskieWWW { border-bottom:0; margin-left:7px }
+#SzukajDolny .opcjeSzukania span.polskieWWW strong {display:inline-block; position:relative; z-index:2; border-collapse:collapse; color:#727272;  margin-bottom:-1px; padding:0 5px 6px 5px; border-bottom:2px solid #ee1002; box-sizing:border-box; font-weight:normal}
+
+#SzukajDolny .opcjeSzukania a:hover { border-bottom-color:#a7a7a7 }
+#SzukajDolny .opcjeSzukania a:hover strong { border-bottom-color:#a7a7a7 }
+
+/*** Stopka ***/
+#Stopka { margin-bottom:32px; font-size: 12px; }
+#Stopka .stopkaBoksu { background-image:none; padding-bottom:4px;  font-size: 12px;}
+#Stopka .stopkaBoksu a { padding: 0 5px;  background-image: none;  font-size: 12px;}
+#Stopka .stopkaBoksu a:first-of-type { padding-left: 0; margin-left: 0; }
+#Stopka .stopkaBoksu span { color:#6e6e6e }
+#Stopka .stopkaBoksu span.copy { color:#bdbdbd; float:right;  }
+#Stopka .stopkaBoksu span.copy a { margin-left: 5px;}
+#StopkaKatalog { border-bottom:1px solid #e9e9e9 }
+#StopkaKatalog span { margin-right: 7px;  }
+
+
+/***** Ważne wydażenie *****/
+#bxWazneWydarzenie { border-top:3px solid #ba0005; border-bottom:1px solid #bfbfbf; background:#f6f6f6;}
+#bxWazneWydarzenie .naglowekBoksu { margin-top:5px; padding-right:5px}
+#bxWazneWydarzenie .stopkaBoksu { background-color:#e5e5e5; background-image:none; clear:both; width:646px; padding-bottom:3px;}
+#bxWazneWydarzenie .fot { border-bottom:3px solid #ba0005; padding-bottom:2px; display:block; float:left; margin:1px 10px 0 0;}
+#bxWazneWydarzenie ul.dot { position:relative}
+#bxWazneWydarzenie .dwieFotki { width:318px; position:absolute;right:0; bottom:1px;}
+#bxWazneWydarzenie .dwieFotkiOgranicznik { width:338px}
+#bxWazneWydarzenie .dwieFotki .fot { margin:0 5px 0 0; width:154px; height:72px;}
+#bxWazneWydarzenie .dwieFotki a { padding-left:0px;display:inline-block;}
+#bxWazneWydarzenie .stopkaBoksu a { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) no-repeat 0 -935px; padding-left:8px; margin:0 3px 0 6px;}
+#bxWazneWydarzenie li strong { color:#ba0005;}
+#bxWazneWydarzenie li.pierwszy span.tresc { height:34px; overflow:hidden; width:318px}
+
+
+
+/*---[  Widgety  ]---------------------------------------------------*/
+#Widgety { width:1176px; padding:0 0 10px 0 } 
+#Widgety:after { display:block; clear:both; content:'' }
+#Widgety .bx { width:377px; display:block; float:left; height:73px; padding:2px 0px 7px 7px; color:#fff; font:11px Arial, Tahoma, Ubuntu, Geneva, sans-serif; margin-bottom:0px }
+#Widgety .bx:after { display:block; clear:both; content:'' }
+#Widgety h2, #Widgety h2 a { font:bold 15px Arial, Ubuntu, Helvetica, Sans-serif; color:#fff; padding:3px 0 0 0; margin:0 }
+#Widgety a { color:#fff }
+
+/*** Pogoda ***/
+#bxPogoda { position:relative; height:54px; font:10px/10px Tahoma, Geneva, sans-serif }
+#bxPogoda>div { position:relative }
+#bxPogoda.Nocny { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat 0 -55px; color:#1f2d3a }
+#bxPogoda.Dzienny { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat 0 0; color:#515960 }
+
+#bxPogoda.Dzienny img.ksiezyc { display:none }
+#bxPogoda.Nocny img.slonce { display:none }
+#bxPogoda.Nocny .dzis .dzien { display:none }
+
+#bxPogoda .dzis { float:left; width:150px; height:54px }
+#bxPogoda .dzis img { position:absolute; top:-10px; left:-10px; z-index:1 }
+#bxPogoda .prognoza { float:left; width:56px; height:54px }
+#bxPogoda header { display:block; text-transform:uppercase; text-align:right; padding:4px 5px 0 0; position:relative; z-index:4 }
+#bxPogoda header:hover { color:#333 }
+#bxPogoda .prognoza img { position:absolute; z-index:1 }
+#bxPogoda .dzis header { padding-right:9px; margin-right:3px }
+#bxPogoda .prognoza .temperatura { position:absolute; display:block; top:41px; width:25px; padding-bottom:1px; z-index:3; text-align:center }
+#bxPogoda .dzis .noc { position:absolute; display:block; top:13px; right:10px; z-index:3; text-align:right; color:#f8f9fa; font:28px/28px "Trebuchet MS" }
+#bxPogoda .dzis .noc small { font-size:12px; vertical-align: middle }
+#bxPogoda .prognoza .dzien { left:4px; border-radius:3px 0 0 3px; color:#fff; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) 0 -110px}
+#bxPogoda .prognoza .noc { left:29px; border-radius:0 3px 3px 0; color:#fff; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) -32px -110px}
+#bxPogoda .prognoza:last-child .Noc { left:29px; border-radius:0px 4px 5px 0px }
+#bxPogoda .dzis .label { position:absolute; display:block; z-index:3; right:2px; bottom:2px; padding:0 3px 1px 2px; color:#fafafa; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat -63px -110px; border-radius:4px }
+#bxPogoda .dzis>.wiatr  { left:2px; right:auto }
+#bxPogoda .dzis>.wiatr .wartosc { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat 0px -157px; padding-left:8px }
+#bxPogoda #wschodSlonca { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat -60px -157px; padding-left:9px; padding-right:4px }
+#bxPogoda #zachodSlonca { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat -120px -157px; padding-left:9px } 
+
+#bxPogoda.Dzienny #wschodSlonca { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat -60px -137px; padding-left:9px; padding-right:4px }
+#bxPogoda.Dzienny #zachodSlonca { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat -120px -137px; padding-left:9px } 
+
+#bxPogoda .ikona {background-image: url(//x.wpimg.pl/i/ivar/layout/201201/n_201212pg-s.png); display:block; width:56px; height:45px; position:absolute }
+#bxPogoda .ico1d { }
+#bxPogoda .ico2d { background-position: 0 -45px }
+#bxPogoda .ico3d { background-position: 0 -90px }
+#bxPogoda .ico4 { background-position: 0 -135px }
+#bxPogoda .ico5d { background-position: 0 -180px }
+#bxPogoda .ico6 { background-position: 0 -225px }
+#bxPogoda .ico7 { background-position: 0 -270px}
+#bxPogoda .ico8 { background-position: 0 -315px }
+#bxPogoda .ico9d { background-position: 0 -360px }
+#bxPogoda .ico10 { background-position: 0 -405px }
+#bxPogoda .ico11d { background-position: 0 -450px }
+#bxPogoda .ico12 { background-position: 0 -495px }
+#bxPogoda .ico13 { background-position: 0 -540px }
+
+#bxPogoda.Dzienny .prognoza { }
+#bxPogoda.Dzienny .label { background-position:-163px -110px; color:#515960 }
+#bxPogoda.Dzienny .noc { color:#fff; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat -33px -110px }
+#bxPogoda.Dzienny .dzis>.wiatr .wartosc { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat 0px -137px }
+
+#bxPogoda.Dzienny .dzis .dzien { position:absolute; display:block; top:14px; right:31px; width:45px; text-align:right; z-index:3; color:#4da6ea; letter-spacing:-1px; font:28px/28px "Trebuchet MS", Arial, Ubuntu, Helvetica, Sans-serif; background-image:none }
+#bxPogoda.Dzienny .dzis .dzien small { font-size:28px; vertical-align: middle; padding-right:1px }
+#bxPogoda.Dzienny .dzis .noc { position:absolute; display:block; width:25px; top:23px; right:0; z-index:3; padding:1px 0; text-align:center; color:#f5faff; font:14px/14px "Trebuchet MS", Arial, Ubuntu, Helvetica, Sans-serif; border-radius:4px 0 0 4px }
+#bxPogoda.Dzienny .dzis .noc small { font-size:9px; vertical-align: middle }
+
+#bxPogoda.Nocny #pogodaMiasto { color:#fafafa }
+#pogodaMiasta { display:none; position:absolute; top:15px; right:0; padding:5px; z-index:4; background-color:#fff; padding-top:5px; border-bottom:2px solid #c5c5c5; box-shadow:1px 1px 3px #444 }
+#pogodaMiasta a { display:block; padding:3px; font:11px/12px Arial, Ubuntu, Helvetica, Sans-serif }
+
+#bxPogoda .opcje { position:absolute; right:0 }
+
+#bxPogoda .nextDays { width: 65px; }
+#bxPogoda.Dzienny .nextDays { background: url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat scroll -318px 0 rgba(0, 0, 0, 0); color: #515960; }
+#bxPogoda.Nocny .nextDays { background: url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat scroll -318px -55px rgba(0, 0, 0, 0); color: #1f2d3a; }
+#bxPogoda .nextDays a:hover { text-decoration: none; }
+#bxPogoda .nextDays header { color: #242a31; margin-bottom: 7px; }
+#bxPogoda .nextDays .period { color: #0b4d9a; font-size: 20px; text-align: center; margin-bottom: 10px; }
+#bxPogoda .nextDays .btn { font-size: 10px; line-height: 8px; color: #fff; background: #0b4d9a; border-radius: 2px; text-transform: uppercase; width: 58px; height: 10px; margin: 0 auto; text-align: center; padding-top: 1px; }
+#bxPogoda .nextDays .btn:hover { background-color:#f3142c; }
+#bxPogoda .nextDays:hover .btn{ background-color:#f3142c; }
+
+/*** Finanse ***/
+#bxFinanse .stopkaBoksu { padding-bottom:10px; }
+#bxFinanseWidget { margin-bottom:10px; padding:0;background-color:#f9f9f9; border:1px solid #d9d9d9; border-top:0px }
+#bxFinanseWidget table { width:372px; margin-left:5px }
+#bxFinanseWidget table.waluty { width:372px }
+#bxFinanseWidget td { padding:5px; font:bold 11px "Trebuchet MS", Arial, Ubuntu, Helvetica, Sans-serif; color:#626262; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) repeat-x 0 -340px }
+#bxFinanseWidget td strong { font-weight:normal; font-family:"Trebuchet MS", Arial, Ubuntu, Helvetica, Sans-serif }
+#bxFinanseWidget td span.up { padding-right:10px; color:#5f9001; background: url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat right -158px; display:inline-block; width:42px; text-align:right; display:inline-block }
+#bxFinanseWidget td span.down { padding-right:10px; color:#a70000; background: url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) no-repeat right -138px; display:inline-block; width:42px; text-align:right }
+#bxFinanseWidget header { display:block; padding:5px; margin:0; text-align:right; font-size:11px; color:#626262;position:relative; border-top:1px solid #d9d9d9 }
+#bxFinanseWidget header strong { display:inline-block; float: left; margin:0px 0 4px 0; width:65px; padding:1px; background-color:#636363; text-align:center; color:#fff;text-transform:uppercase }
+#bxFinanseWidget header strong a { color:#fff; font:bold 12px "Trebuchet MS", Arial, Ubuntu, Helvetica, Sans-serif }
+#bxFinanseWidget td a { color:#626262 }
+#bxFinanseWidget header span { position:absolute; top:8px; right:5px; font-size:10px }
+#bxFinanseWidget .wartosc { display:inline-block; width:52px; padding-right:3px; text-align:right; font-family:"Trebuchet MS" }
+#bxFinanseWidget .prawa { text-align:right }
+#bxFinanseWidget .gielda td { text-align:center }
+#bxFinanseWidget .gielda td span.up, #bxFinanse .gielda td span.down { width:51px }
+
+/*** Szukaj z nokaut.pl ***/
+#Widgety #bxNokaut { background-color:#db0714; margin-right:12px }
+#Widgety #bxNokaut a.logo { display:inline-block; width:67px; height:20px; background:transparent url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) -183px -178px no-repeat; text-indent:-9999px;  }
+#Widgety #bxNokaut a.logo:hover { opacity:.95 }
+#Widgety #bxNokaut div.koszyk { display:block; width:45px; height:40px; background:transparent url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) -120px -175px no-repeat; float:left; }
+#Widgety #bxNokaut form { display:block; padding: 17px 0 0 15px; float:left; }
+#Widgety #bxNokaut input.query { width:176px; height:15px; border:0; border-radius:2px; padding:2px 5px; font-size:11px; }
+#Widgety #bxNokaut input.sbm { background-color:#911; width:48px; cursor:pointer; display:inline-block; padding:2px 10px 4px 9px; vertical-align:middle;border-radius:3px; border:0px; color:#fff }
+#Widgety #bxNokaut input.sbm:hover { color:#fff;  }
+
+/*** Szukaj z ceneo.pl ***/
+#Widgety #bxPorownywarka { background-color:#f7941e; margin-right:12px }
+#Widgety #bxPorownywarka div.logo { display:block; width:80px; height:40px; margin-top: 10px; background:transparent url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) -125px -175px no-repeat; float:left; }
+#Widgety #bxPorownywarka form { display:block; padding: 18px 0 0 10px; float:left; }
+#Widgety #bxPorownywarka input.query { width:200px; height:25px; background-color: #fff; border: 0; padding:2px 5px; border-radius:3px; vertical-align:middle; margin-right:2px; font-size:12px }
+#Widgety #bxPorownywarka input.sbm { background-color:#e5481b; width:60px; cursor:pointer; height: 29px; display:inline-block; font: 14px Arial, Helvetica, sans-serif; padding:3px 0 3px 0; vertical-align:middle;border-radius:3px; border:0px; color:#fff }
+#Widgety #bxPorownywarka input.sbm:hover { color:#fff; background-color:#f12800; }
+
+/*** Horoskop ***/
+#bxHoroskop { background-color:#6e6c8e; margin-right:12px; position: relative }
+
+#bxHoroskop .baran { background-position:0px -302px }
+#bxHoroskop .byk { background-position:-202px -276px }
+#bxHoroskop .bliznieta { background-position:-202px -302px }
+#bxHoroskop .rak { background-position:-202px -250px}
+#bxHoroskop .lew { background-position:-100px -252px }
+#bxHoroskop .panna { background-position:-101px -276px }
+#bxHoroskop .waga { background-position:-100px -302px }
+#bxHoroskop .skorpion { background-position:-303px -276px }
+#bxHoroskop .strzelec { background-position:-303px -303px }
+#bxHoroskop .koziorozec { background-position:-303px -250px }
+#bxHoroskop .wodnik { background-position:0px -250px }
+#bxHoroskop .ryby { background-position:0px -276px }
+#bxHoroskop p { padding-bottom:3px; font-size:14px; display:inline-block; margin:0 10px;  }
+#bxHoroskop p strong { position: absolute; top: 7px; left: 100px; font: 14px Arial, Ubuntu, Helvetica, sans serif }
+#bxHoroskop p a { background-color:#42405f; display:inline-block; padding:2px 5px 5px 5px; vertical-align:middle; border-radius:3px; vertical-align:middle; position: absolute; top:40px; left:258px; }
+#bxHoroskop p a:hover { text-decoration:none; background-color:#4a4867 }
+#bxHoroskop select { border-radius:3px; vertical-align:middle; cursor:pointer; width:84px; }
+#bxHoroskop .wyborZnaku {	position: relative;}
+#bxHoroskop .znak { width:200px; height:28px; background:#fff url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) 179px -221px no-repeat; border-radius:2px; font-size:12px; color:#727272; float:left; margin-top:1px; margin-right:5px; cursor: pointer; }
+#bxHoroskop .znak .val { padding: 9px 0 0px 30px; height:17px;	background-image: url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png); line-height:12px;	background-repeat: no-repeat;	width: 54px;	margin-left: 5px;	}
+#bxHoroskop .wyborZnaku ul {	position:absolute; z-index:2; top:33px; right:91px;	background: #edecf4;	border-radius: 3px 0 3px 3px;	padding: 13px 12px 9px;	width: 202px;	display: none;}
+#bxHoroskop .wyborZnaku li {	width: 54px;	padding: 5px 0 1px 32px;	margin-bottom: 4px;	margin-right: 15px;	float: left;	background-image: url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png);	background-repeat: no-repeat;	color: #727272;	font-size: 12px;	cursor: pointer;}
+#bxHoroskop .wyborZnaku li:hover { text-decoration: underline; }
+#bxHoroskop .wyborZnaku .arr {	width: 30px;	height: 34px;	position: absolute;	top: 1px;	right: 91px;	border-radius: 3px 3px 0 0;	background: #edecf4 url(//x.wpimg.pl/i/ivar/layout/201201/n_widgets-s2.png) -22px -221px no-repeat;	display: none;	cursor: pointer;}
+
+#bxHoroskop .label { width:75px; background:none; text-align:right; font-size:12px; line-height:14px; margin-right:11px; float:left; }
+#bxHoroskop h2 { display:inline-block; }
+#bxHoroskop .row { padding-top:16px; }
+#bxHoroskop .btn { background:#414062; font-size:14px; line-height:16px; padding:6px 11px 6px; float:left; border-radius:3px; margin-top:1px; }
+#bxHoroskop .btn:hover { text-decoration:none; background-color:#1f1c5e; }
+
+
+/*** Wróżbita ***/
+#bxWrozbita {background-color:#ab2e7a; margin-right:12px; position: relative; margin-right:0; float:left }
+#bxWrozbita h2 { float:left; }
+#bxWrozbita ul { float:right; margin-top:6px; margin-right:8px; }
+#bxWrozbita li { display:inline; font-size:12px; }
+#bxWrozbita li a { margin-right: 3px; }
+#bxWrozbita .maciej { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_maciej.png) no-repeat; font:italic 20px/22px Georgia, "Times New Roman", Times, serif; margin-top:31px; margin-left:3px; height:30px; padding:11px 0 0 54px; }
+#bxWrozbita .btn { font-size:14px; line-height:16px; float:right; background:#700044; border-radius:3px; padding:5px 10px 7px; margin-top:19px; margin-right:12px; }
+#bxWrozbita .btn:hover { text-decoration:none; background:#46002e; }
+
+/*** bxHotspot wide ***/
+#bxHotspot { margin-bottom:12px; width:1176px; overflow:hidden; font-family:Arial, Helvetica, sans-serif; color:#fff; background:#000; }
+#bxHotspot.black { background:#000; }
+#bxHotspot.green { background:#205c0c; }
+#bxHotspot.red { background:#ff0000; }
+#bxHotspot a { color:#fff; }
+#bxHotspot a:hover { text-decoration:none; opacity:0.96; }
+#bxHotspot .arts {overflow:hidden; padding:8px; border:4px solid #868686; border-bottom:0; background-color:#fff }
+#bxHotspot.black .arts, #bxHotspot.green .arts, #bxHotspot.red .arts  { overflow:hidden; padding:12px; border:0; background-color:transparent }
+#bxHotspot .arts .pic { background:#fff; }
+#bxHotspot a:hover { opacity:1; }
+#bxHotspot img { display:block; }
+#bxHotspot .wide { width:768px; height:362px; float:left; position:relative; display:block; }
+#bxHotspot .wide a { display:block; position:relative; }
+#bxHotspot .wide img { width:768px; height:362px; margin:0 auto; }
+#bxHotspot .wide h2 { position:absolute; z-index:2; bottom:0px; left:0px; width:744px; max-height:252px; overflow:hidden; padding:35px 12px 12px; font-size:34px; font-weight:bold; line-height:42px; text-align:center; text-shadow:1px 1px rgba(0, 0, 0, 0.75); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(45%,rgba(0,0,0,0.5)), color-stop(100%,rgba(0,0,0,0.6))); background:-webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0.6) 100%); background:-o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0.6) 100%); background:-ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0.6) 100%); background:linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 45%,rgba(0,0,0,0.6) 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#80000000',GradientType=0 ); background:-moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 45%, rgba(0,0,0,0.6) 100%); }
+#bxHotspot .narrow { width:372px; height:362px; float:right; position:relative; display:block; }
+#bxHotspot .narrow img { margin:0 auto 7px; width:372px; height:254px; }
+#bxHotspot .narrow h2 { font-size:26px; font-weight:bold; line-height:34px; text-align:center; max-height:101px; padding-top:1px; overflow:hidden;  color:#000; }
+#bxHotspot.black .narrow h2, #bxHotspot.green .narrow h2, #bxHotspot.red .narrow h2{ color:#fff; text-align:left}
+#bxHotspot .serwis, #bxHotspot a.serwis { position:absolute; top:0px; left:0px; font-size:16px; line-height:16px; padding:7px 10px; font-weight:bold; background:#ff0000; text-transform:uppercase; z-index:2; }
+#bxHotspot.red .serwis { left:-8px; top:-8px; font-size:18px; padding-bottom:9px; padding-right:12px; color:#fff}
+#bxHotspot .serwis.pomaranczowy { background-color:#ff5a00 }
+#bxHotspot .serwis.niebieski { background-color:#1b7dde }
+#bxHotspot .serwis.wp { background: #868686 url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 100% -1325px no-repeat; padding-right:68px; }
+#bxHotspot .info { background:#868686; height:51px; padding-right:15px; }
+#bxHotspot.green .info { background:#2f800d; }
+#bxHotspot.red .info { background:#d91400; }
+#bxHotspot #pilne.info { background:#f7dd00; font-size:28px; line-height:36px; font-weight:bold; height:42px; padding:7px 20px 0; border-top:4px solid #868686; overflow:hidden }
+#bxHotspot.red #pilne.info, #bxHotspot.green #pilne.info, #bxHotspot.black #pilne.info { border-top:0; }
+#bxHotspot #pilne.info a { color:#000; }
+#bxHotspot #pilne.info a:hover { text-decoration:underline }
+#bxHotspot .info .label { color:#adadad; font-size:11px; line-height:13px; float:left; text-align:right; text-transform:uppercase; }
+#bxHotspot.green .info .label { color:#b7dda7; }
+#bxHotspot.red .info .label { color:#dda7a7; }
+#bxHotspot #pilne.info .label { float:none; display:inline; font-size:28px; color:#ec0009; line-height:30px; }
+#bxHotspot .info .label span { display:table-cell; vertical-align:middle; width:89px; height:51px; }
+#bxHotspot .info ul { height:23px; overflow:hidden; padding-top:15px; }
+#bxHotspot .info li { float:left; font-size:19px; margin-left:18px; padding-left:14px; padding-right:5px; background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 0 -1621px no-repeat; }
+#bxHotspot .info li.wideo { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_play_hs.png) 0 5px no-repeat; padding-left:20px; }
+#bxHotspot .wideo { position:relative }
+#bxHotspot .wideo:before { content: url(//x.wpimg.pl/i/ivar/layout/201201/n_playHS.png); width:80px; height:80px; position:absolute; left:350px; top:130px; overflow:hidden; z-index:2; opacity:.8}
+#bxHotspot .wide:hover .wideo:before, #bxHotspot .narrow:hover .wideo:before { opacity:1 }
+#bxHotspot .narrow .wideo:before { content: url(//x.wpimg.pl/i/ivar/layout/201201/n_play3.png); width:49px; height:49px; position:absolute; left:11px; bottom:11px; top:auto; overflow:hidden; z-index:2; opacity:.8}
+#bxHotspot .info li a:hover { text-decoration:underline }
+#bxHotspot .wide .autor { color:#ccc; padding:0 4px; opacity:.4; position:absolute; z-index:2; font-size:10px; bottom:2px; right:3px; }
+#bxHotspot .narrow .autor { color:#ccc; padding:0 4px; opacity:.4; position:absolute; z-index:2; font-size:10px; top:238px; right:3px; }
+
+#WP-cookie-info>div { max-width:1220px }
+#vod { float:left; width:100%; margin-bottom:10px; }
+
+@media screen and (max-width: 1220px) {
+      
+      /* ikona materiału wideo ogólne*/
+      div.opcje { bottom:8px;}
+      ul.dot li.pierwszy a strong {  }
+      ul li.wideo a:before, #bxStylZycia .czteryKolumny ul li.wideo a:before{  right:auto; left:121px; top:40px; }
+      ul.dot li.pierwszy.wideo a:before { right:8px; top:40px; }
+      /*lista wypunktowana*/
+      ul.dot li.wideo { background:none; }
+      ul.dot li.wideo a:before { content: url(//x.wpimg.pl/i/ivar/layout/201201/n_play1.png); width:11px; height:15px; position:absolute; left:2px; top:4px; overflow:hidden; z-index:1;}
+      ul.dot li.wideo.pierwszy a:before { width:26px; height:26px; }
+      
+      #bxWPTV ul li.pierwszy.wideo a:before { z-index:2; top:38px; left:120px;}  
+      #bxPrzeglad .strona ul li.wideo a:before { top:76px; left:197px; }
+      #bxTylkoWWP ul li.pierwszy.wideo a:before { top:96px; left:-69px; }
+      #bxStylZycia ul.prawa li.pierwszy.wideo a:before { top:38px; left:120px; }
+      #bxStylZycia ul.lewa li.wideo a:before, #bxCiekawostki ul li.wideo a:before { top:96px; left:259px; content:url(//x.wpimg.pl/i/ivar/layout/201201/n_play3.png); width:49px; height:49px; }
+      
+      #Ciekawostki .czteryKolumny li.wideo a:before { top:194px; left:120px; }
+      #bxWideo ul.lewa li.wideo a:before { top:96px; left:259px; }
+      #bxWideo ul.prawa li.wideo a:before { top:38px; left:120px; }
+      
+      
+      #News ul.dot li.pierwszy.wideo a:before { top:41px; left:70px; }
+      #News ul.dot li.wideo a:before {left:-4px; top:1px;}
+      #bxPrzeglad ul.dot li.wideo a:before{ top:1px;}
+      
+      #bxHotspot { margin-bottom:10px; width:974px; }
+      #bxHotspot .arts { padding:6px; }
+      #bxHotspot.black .arts, #bxHotspot.green .arts, #bxHotspot.red .arts  { padding:10px; }
+      #bxHotspot .wide, #bxHotspot .wide img { width:636px; height:300px; }
+      #bxHotspot .wide h2 { width:612px; font-size:28px; line-height:36px; padding:35px 12px 8px; }
+      #bxHotspot .narrow { width:308px; height:300px; }
+      #bxHotspot .narrow img { margin:0 auto 4px; width:308px; height:210px; }
+      #bxHotspot .narrow h2 { font-size:22px; line-height:28px; max-height:84px; }
+      #bxHotspot .info ul { height:19px; padding-top:17px; }
+      #bxHotspot .info li { font-size:16px; background-position:0 -1623px; padding-left:10px; paddin-right:0; margin-left: 13px;}
+      #bxHotspot .info li.wideo { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_play_hs.png) 0 2px no-repeat; }
+      #bxHotspot .info li.arr { background-position:0px 4px; }
+      #bxHotspot #pilne.info { font-size:24px; }
+      #bxHotspot #pilne.info .label { font-size:24px; }
+      #bxHotspot .wideo:before { left:300px; top:100px; }
+      #bxHotspot .narrow .autor { top:196px; }
+      
+      
+      #Naglowek { height:145px; }
+      #NaglowekCnt { width:974px; height:119px;}
+      #Naglowek .cnt { width:974px; }
+      #Naglowek #Szukaj { left:190px; width:339px; }
+      #Naglowek #Szukaj form .szukajRound { width:238px; }
+      #Naglowek #Szukaj form .szukajRound.ebg { background-position: 130px -142px; }
+      #Naglowek ul#ngIcons li a { padding-left:0px; padding-right:0px; width:62px; margin-left:-1px; }
+      nav {  width:974px; bottom:5px; }
+      nav ul.serwisy>li>a { color:inherit; height:23px; display:block; font-size:13px; padding: 8px 7px 0px 7px; margin:0; color:#727272; }
+      #Container { width:974px; padding-top:5px; }
+      #Strona { width:984px;}
+      #Container section#Kontent { float:left; width:646px }
+      #Container section#News {width:318px;float:right }
+      
+      #Glonews { position:relative; width:646px; height:260px;}
+      #Glonews ul.glonewsy { width:418px; }
+      #Glonews ul.glonewsy li { width:418px; height:260px; position:relative;  }
+      #Glonews ul.glonewsy h2 { font-size:22px; line-height:28px; }
+      #Glonews ul.glonewsy .newsFoto img { width:418px; height:260px }
+      
+      #Glonews ul.specjalny { width:218px; height:260px;}
+      #Glonews ul.specjalny li { width:218px; height:260px; }
+      #Glonews ul.specjalny img.newsFoto{ width:218px; height:260px; }
+      
+      #Glonews ul.specjalny h2 { font-size:20px; line-height:26px; }
+      #Glonews .serwis { font-size:11px; padding-left:9px; padding-right:9px}
+      #Glonews .zakladkiCtn {left:10px; top:10px;} 
+      
+      #Glonews a h2 { padding-bottom:10px}
+      #Glonews .specjalny a h2 { padding-bottom:11px}
+      
+      ul.dot li { padding-bottom:4px; }
+      ul.dot li a { font:12px/20px Arial, Tahoma, Geneva, sans-serif; }
+      #News ul.dot li { padding-left:10px; background-position:0px -233px; }
+      #News ul.dot li.pierwszy img { width:105px; height:70px; }
+      #News .stopkaBoksu { padding-left:10px; background-position: 0 -1210px; }
+      #News ul.dot li.wiecej { background-position: 0 -1214px; }
+      #News ul.dot li.pierwszy a { /*max-height:72px;*/ }
+      #News ul.dot li.pierwszy strong { line-height:24px; /*max-height:72px;*/ overflow:hidden; display:inline-block; width:203px; padding-top:4px; }
+      #News .lokalne ul.dot li.cytat { background: url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 100% -1404px no-repeat; }
+      #News ul.dot li.cytat a { max-height:90px; }
+      
+      span.tresc { font:12px/16px Arial, Ubuntu, Helvetica, sans-serif; }
+      .czteryKolumny ul { width:656px }
+      .czteryKolumny li, .szescKolumn li { width:154px; padding-right:10px; }
+      .czteryKolumny li a img { width:154px; height:72px; }
+      .czteryKolumny li strong, .szescKolumn li strong { font-size:14px; line-height:16px; }
+      ul.dot li.pierwszy img { float:left; margin-right:10px }
+      .wierszLewa { width:646px !important /*na koniec zdjąć important*/}
+      .stopkaBoksu a { font-size:12px; margin:0px; padding-right:12px;}
+      .dwieKolumny { width:656px }
+      .dwieKolumny ul { width:318px; margin-right:10px }
+      .szescKolumn ul { width:984px }
+      .naglowekBoksu a.tytul { font-size:18px; }
+      #News .naglowekBoksu a.tytul, #News .lokalne a.tytul { font-size:18px; }
+      
+      #bxSport .sektor1 { width:115px;  }
+      #bxSport .sektor2 { width:115px; }
+      
+      #bxWPTV { width:318px; height:310px; }
+      #bxWPTV li span.tresc { font-size:12px; }
+      #bxWPTV ul { padding-bottom:4px; }
+      #bxWPTV li img { height:72px; width:154px }
+      #bxWPTV li strong { font-size:14px; line-height:16px;}
+      #bxWPTV li .opis { max-height:72px;}
+      #bxWPTV .przewijak { top:5px; }
+      #bxWPTV .naglowekBoksu a.tytul { font-size:16px; }
+      #bxPrzeglad .naglowekBoksu a.tytul  { font-size:16px; }
+      #bxWPTV header.naglowekBoksu { background:url(//x.wpimg.pl/i/ivar/layout/201201/n_layout-s2.png) 0 -90px no-repeat, url(//x.wpimg.pl/i/ivar/layout/201201/n_pod_tytul.png) no-repeat bottom left; }
+      
+      
+      #bxPrzeglad { width:318px; height:310px;}
+      #bxPrzeglad .przewijak { width:318px; }
+      #bxPrzeglad .strona { width:318px; height:175px;}
+      #bxPrzeglad .strona li { width:231px; max-height:175px; font-size:12px;}
+      #bxPrzeglad .strona li img { max-width:231px; }
+      #bxPrzeglad .strona li strong { font-size:14px; line-height:16px; margin-bottom:2px }
+      #bxPrzeglad .strona li+li+li { left:241px; top:5px; width:77px; height:51px; }
+      #bxPrzeglad .strona li+li { left:241px; top:66px; width:77px; height:51px; }
+      #bxPrzeglad .strona li+li img,
+      #bxPrzeglad .strona li+li+li img { margin-left:-14px; width:105px }
+      #bxPrzeglad ul.dot { height: 99px; overflow:hidden; }
+      
+      #bxPrzeglad .przewin { top:155px; }
+      #bxPrzeglad .przewin span { height:9px; padding:3px 6px 5px 6px; }
+      #bxPrzeglad .przewin .next { padding:3px 7px 6px 7px; }
+      #bxPrzeglad .dolny { padding:7px 0 10px 0; border-top:2px solid #e5e5e5; min-height:78px; }
+      
+      #bxTylkoWWP li.pierwszy img { left:-328px; width:318px; height:154px }
+      #bxTylkoWWP li.pierwszy img { left:-328px }
+      #bxTylkoWWP ul { min-height:154px; }
+      #bxTylkoWWP li { margin-left: 328px }
+      #bxTylkoWWP li.pierwszy strong { line-height:24px; }
+      
+      #bxStylZycia .dwieKolumny ul img { width:318px; height:154px }
+      #bxStylZycia ul.prawa img { width:154px; height:72px }
+      #bxStylZycia ul.prawa li.pierwszy strong { max-height:70px; width:154px }
+      #bxStylZycia .czteryKolumny .naglowekBoksu { font-size:12px; }
+      
+      #Container section#Ciekawostki { width:646px; }
+      #bxCiekawostki { width:646px; }
+      #bxCiekawostki .dwieKolumny ul.dot img { width:318px; height:154px }
+      #bxCiekawostki ul.lewa { width:318px; }
+      #bxCiekawostki ul.prawa li { width:154px; float:left; padding: 0; background-image:none }
+      #bxCiekawostki ul.prawa li.pierwszy { width:154px; padding: 0 10px 0 0 }
+      #bxCiekawostki ul.prawa { width:318px; margin:0 0 0 10px }
+      #bxCiekawostki ul.prawa li a strong { font: bold 14px/20px Arial, Ubuntu, Helvetica, Sans-serif }
+      #bxCiekawostki .czteryKolumny li a img { height:226px }
+      
+      #bxWideo .lewa li.pierwszy { width:318px }
+      #bxWideo .lewa img { width:318px; height:154px }
+      #bxWideo .lewa strong { font-size:18px; }
+      #bxWideo .prawa { width:328px }
+      #bxWideo .prawa li { width:154px; margin-left:10px}
+      #bxWideo .prawa li img { width:154px; height:72px }
+      #bxWideo .prawa li strong { font-size:14px; font-weight:700 }
+      #bxWideo .stopkaBoksu { right:0;  bottom:5px;}
+      #bxWideo .serwis, #bxWideo a.serwis { font-size:12px; padding:3px 10px; left:0; top:128px; }
+      #bxFinanseWidget table { width:305px; margin-left:5px }
+      #bxFinanseWidget table.waluty { width:305px }
+      
+      #Widgety { width:974px; }
+      #Widgety .bx { width:311px; height: 63px; }
+      #Widgety #bxNokaut { margin-right:10px }
+      #Widgety #bxPorownywarka { margin-right:10px }
+      #Widgety #bxPorownywarka form { padding-top: 10px; padding-left: 7px; }
+      #Widgety #bxPorownywarka input.query { width:136px; height:24px; }
+      #Widgety #bxPorownywarka input.sbm { width: 62px; height: 28px; font:14px Arial, Helvetica, sans-serif; }
+      #Widgety #bxPorownywarka div.logo { margin-top: 2px; }
+      
+      
+      #Widgety #bxHoroskop { margin-right:10px; }
+      #Widgety #bxHoroskop .znak { width: 136px; margin-right: 4px; background-position: 115px -221px;}
+      #Widgety #bxHoroskop .row { padding-top: 7px; }
+      #Widgety #bxHoroskop .wyborZnaku ul { right: 89px; }
+      #Widgety #bxHoroskop .wyborZnaku .arr { right: 89px; }
+      #Widgety #bxWrozbita .maciej { font-size: 16px; margin-top: 23px; padding-left: 51px; }
+      #Widgety #bxWrozbita .btn { margin-top: 10px; margin-right: 11px; }
+      
+      #Sprzedaz .naglowekBoksu { margin-bottom:5px } 
+      #bxPasazFinansowy .naglowekBoksu, #bxWPPoleca .naglowekBoksu, #bxTurystyka .naglowekBoksu, #bxWPPoleca .naglowekBoksu, #Produkty .naglowekBoksu, #bxDlaKobiet .naglowekBoksu,
+      #bxOkazjeCenowe .naglowekBoksu, #bxOgloszenia .naglowekBoksu, #bxTwojeProdukty .naglowekBoksu, #bxWybraneOferty .naglowekBoksu, #Gry #bxGry .naglowekBoksu { margin-bottom:10px; }
+      
+      #Container section#Sprzedaz { width:974px }
+      #Container section#Produkty .wiersz { width:984px }
+      #Sprzedaz .wiersz { width:974px; }
+      #bxOferty { width:318px; }
+      #bxOferty li { width:148px; padding:3px 2px; margin:4px 10px 6px 0; height:121px; }
+      #bxOferty ul { width:328px; }
+      #bxOferty li img { height:70px; width:70px; margin-top:2px; margin-bottom:2px; }
+      #bxEcommerce { width:646px; }
+      #bxEcommerce .lewa { width:318px; }                    
+      #bxEcommerce .lewa li { padding:0px 0 12px 0; margin-bottom: 10px; height:93px;}
+      
+      #bxEcommerce .lewa li .cena { font-size:12px; }
+      #bxEcommerce .lewa li .cena strong { font-size: 12px;}
+      #bxEcommerce .lewa li img { width:152px; height:88px }
+      #bxEcommerce .lewa li strong { width:154px; padding-top:6px; }
+      #bxEcommerce .prawa { width:318px; }
+      #bxEcommerce .prawa li { width:328px; margin-right:10px; }
+      #bxEcommerce .prawa img { width:316px; height:111px;  }
+      #bxEcommerce .prawa .male_foto img { width:152px; height:152px }
+      #bxEcommerce .prawa li.okazja {  margin:3px 0 1px 0; }
+      
+      #bxDlaKobiet { width:318px; }
+      #bxDlaKobiet li { width:154px; margin-left:10px; }
+      #bxDlaKobiet li img, #bxOkazjeCenowe li img { width: 154px }
+      #bxDlaKobiet li strong, #bxOkazjeCenowe li strong { font-size: 14px; }
+      #bxDlaKobiet li .cena, #bxOkazjeCenowe li .cena { font-size:12px;}
+      #bxDlaKobiet li .cena strong, #bxOkazjeCenowe li .cena strong { font-size: 12px;}
+      
+      #bxOkazjeCenowe { width:646px; }
+      #bxOkazjeCenowe .naglowekBoksu { background-color:#4b8d54; }
+      #bxOkazjeCenowe li { width:154px; margin-left:10px; }
+           
+      #bxPasazFinansowy { width:482px; }
+      #bxPasazFinansowy ul.top { width:492px; }
+      #bxPasazFinansowy ul.top li.pierwszy strong { font:bold 14px Arial, Helvetica, sans-serif; display:block }
+      #bxPasazFinansowy ul.top img { width:154px; height: 72px; margin-bottom: 4px; }
+      #bxPasazFinansowy ul.lewa { width:318px; }
+      #bxPasazFinansowy ul.lewa li.pierwszy, #bxPasazFinansowy ul.top li.pierwszy { width:154px; margin-right:10px; }
+      #bxPasazFinansowy ul.lewa li.drugi { padding:6px 0 10px 0; }
+      #bxPasazFinansowy ul.lewa li.drugi strong { font-size: 14px; }
+      
+      #bxPasazFinansowy ul.lewa li { width:315px;  }
+      #bxPasazFinansowy ul.prawa { width:154px; padding-top: 5px }
+      #bxPasazFinansowy li img { width:154px; height:72px }
+      
+      #bxWPPoleca { width:318px; }
+      #bxWPPoleca ul { width:154px; }
+      #bxWPPoleca a img { width:154px; height:256px; }
+      #bxWPPoleca ul li.pierwszy img { width:154px; height:72px; }
+      #bxWPPoleca li.pierwszy strong { font:bold 14px/18px Arial, Helvetica, sans-serif; display:block }
+      
+      #bxTurystyka { width:154px; margin-left:10px }                                     
+      #bxTurystyka ul.dot li.pierwszy strong { font:bold 13px "Trebuchet MS", Arial, Helvetica, sans-serif; display:block;}
+      #bxTurystyka li img { width:154px; height:72px;}
+      
+      
+      #bxOgloszenia { width:318px; padding-right:10px; }
+      #bxOgloszenia li img { width:154px; height:72px }
+      
+      #bxTwojeProdukty { width:318px; padding-right:10px }
+      #bxTwojeProdukty li img { width:154px; height:72px }
+                        
+      #Produkty ul { width:328px }
+      #Produkty li { width:154px; padding-right:10px }
+      #Produkty li strong { font-size:14px; font-weight:bold; }
+      
+      #bxWybraneOferty { width:318px; }
+      #bxWybraneOferty li.pierwszy { width:154px }
+      #bxWybraneOferty li { width:144px }
+      #bxWybraneOferty li img { width:154px; height:72px }
+      
+      .wiadomosciLokalne .select .miasto { font-size:18px; }
+      .wiadomosciLokalne .pogoda { font-size:12px; }
+      
+      /*** Stopka ***/
+      #Stopka { font-size: 11px; }
+      #Stopka .stopkaBoksu {  font-size: 11px; }
+      #Stopka .stopkaBoksu a { padding: 0 4px; font-size: 11px; line-height:16px; }
+      #StopkaKatalog span { margin-right: 6px; }
+      
+      #Gry #bxGry ul { padding-left:82px; }
+      #Gry img { height:84px; width:154px; }
+      #Gry li {  margin:0px 0px 3px 10px; width:154px; }
+      #Gry li a:after{ top:63px; }
+      #Gry li strong { display:block; font-size:14px; font-weight:bold; line-height:normal }
+      
+      #bxGry>span { width:72px; height:84px;}
+      #bxGry .nPrev {  background-position:-5px -12px; }
+      #bxGry .nNext { background-position:-91px -12px; }
+      #bxGry .nPrev:hover { background-position:-5px -123px; } 
+      #bxGry .nNext:hover { background-position:-91px -123px; } 
+      
+      /*** Pogoda ***/
+      #bxPogoda .nextDays { display: none; }
+      
+      #SerwisyListaDuza, #PopularneTematy { width:972px }
+      #SerwisyListaDuza .cnt, #PopularneTematy .cnt { width:auto }
+      #SerwisyListaDuza ul { width:120px }
+      #SerwisyListaDuza li, #PopularneTematy li { font-size:12px }
+      #PopularneTematy ul { width:300px }
+      #SerwisyListaDuza a.zobaczWszystkie { font-size:12px }
+			#vod { float:left; width:646px;}
+}
+
+/*** Testy A/B ***/
+*[class*='testB-'], #bxSpecjalny li a[class*='testB-'], #bxSpecjalny li.pierwszy a.fot[class*='testB-'] {display: none;}
+
+
+#bxWybory { border:1px solid #d4d2d0; position:relative; min-height:368px; position:relative;
+    background: rgb(252,252,252); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(252,252,252,1) 49%, rgba(228,227,224,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(49%,rgba(252,252,252,1)), color-stop(100%,rgba(228,227,224,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 49%,rgba(228,227,224,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(252,252,252,1) 49%,rgba(228,227,224,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(252,252,252,1) 49%,rgba(228,227,224,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(252,252,252,1) 49%,rgba(228,227,224,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#e4e3e0',GradientType=0 ); /* IE6-9 */
+}
+#bxWybory h1 { display:block; top:-1px; left:-1px; position:absolute; text-indent:0; background-color:#ea242c; color:#fff; font:18px Arial, Helvetica, sans-serif; text-transform:uppercase; padding:10px 0 0 0; height:31px; overflow:visible; width:415px; text-align:center; z-index:2 }
+#bxWybory .cnt { min-height:368px; position:relative }
+#bxWybory .cnt:after { display:block; clear:both; content:''; }
+#bxWybory .zakladki { position:absolute; left:0px; top:0px; height:39px; border-bottom:1px solid #d0d0d0; z-index:0; padding-left:430px; width:744px; background-color:#fcfcfc;z-index:1 }
+#bxWybory .zakladki span { display:inline-block; text-align:center; border-bottom:2px solid #979797; color:#4a4a4a; padding:8px 0px 0 0px; margin-left:1px; height:29px; font:18px Arial, Helvetica, sans-serif; width:250px; text-align:center; position:absolute; bottom:-1px; left:681px; cursor:pointer }
+#bxWybory .zakladki span:first-child { left:430px; }
+#bxWybory .zakladki span.on { border-bottom-color:#ea242c; color:#ea242c }
+#bxWybory .zakladki span:first-child { border-right:0; }
+#bxWybory .wyniki { position:absolute; top:40px; left:0; right:0; height:300px; clear:both; color:#333; }
+#bxWybory .wyniki:after { display:block; clear:both; content:''; }
+#bxWybory .frekwencja { color:#454850; font:20px Arial, Helvetica, sans-serif; white-space:nowrap; padding:15px 20px; position:absolute; top:0px; left:400px; background-color:rgba(255,255,255,.9); box-shadow:inset 0 0 10px rgba(0,40,90,.25)  }
+#bxWybory .mapa { position:absolute; top:36px; right:60px; width:275px; }
+#bxWybory .podpis { position:absolute; font-size:14px; padding:5px 10px; bottom:0; left:0; color:#777; background-color:#f7f7f7; }
+#bxWybory .gradient { position:absolute; top:-41px; left:679px; width:100px; height:368px; z-index:0;
+background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.02) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(1%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.02))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.02) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.02) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.02) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.02) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#05000000',GradientType=1 ); /* IE6-9 */
+}
+#bxWybory .jvectormap-label { position: absolute; display: none; border: solid 1px #FFFFFF; border-radius: 3px; background:#183D61; color: white;    font-family: sans-serif, Verdana; font-size: 10px; font-weight:bold; padding: 2px;}
+#bxWybory .jvectormap-container .maplabel { position:absolute; color: #FFFFFF; font-family: Arial; font-size: 12px; text-decoration: none; }
+#bxWybory .jvectormap-container .maplabel span.labfirstrow,
+#bxWybory .jvectormap-container .maplabel span.labsecondrow { position:relative;  display: block; text-shadow:1px 0 2px rgba(0,0,0,.9) }
+#bxWybory .jvectormap-container .maplabel span.labsecondrow { font-weight: bold; font-size: 11px; margin-top: -3px; }
+#bxWybory path { box-shadow:1px 0 2px rgba(0,0,0,0.5) }
+#bxWybory .slupki { position:absolute; width:780px; height:auto; top:30px; left:45px; height:160px; }
+#bxWybory .slupki .prog { border-top:1px solid rgba(215,210,205,.7); position:absolute; left:-20px; right:30px; top:143px; }
+#bxWybory .slupki .prog span.label { position:absolute; top:-30px; right:17px; width:50px; text-transform:uppercase; font-size:10px; color:#777; }
+#bxWybory .slupki .prog span.mandaty { position:absolute; top:3px; right:17px; width:50px; text-transform:uppercase; font-size:10px; color:#777; text-align:left }
+#bxWybory .slupki .slupek { position:absolute; width:40px; bottom:0; }
+#bxWybory .slupki .procent { position:absolute; width:40px; text-align:center; text-shadow: 0px 0px 3px #fff; }
+#bxWybory .slupki .procent b { color:#333; font-size:14px }
+#bxWybory .slupki .logo { position:absolute; width:40px; top:170px }
+#bxWybory .slupki .nazwa { position:absolute; text-align:center; width:50px; top:170px }
+#bxWybory .slupki .mandaty { position:absolute; text-align:left; bottom:49px; color:#fff; width:100px; font-size:15px; }
+#bxWybory .slupki .nazwa.zLogo { top:218px }
+@media screen and (max-width: 1220px) {
+  #bxWybory .mapa { right:30px }
+  #bxWybory .zakladki { width:542px; }
+  #bxWybory .podpis { font-size:13px; }
+  #bxWybory .gradient { left:548px; }
+}
+ /**** inline ****/
+
+		#bxEcommerce .prawa span.st4468744 { float: left; margin: 0 5px 0 0; width: 50px; height: 16px; background: url(http://y.wpimg.pl/i/ivar/A/201201/1326722790.gif) no-repeat }
+	

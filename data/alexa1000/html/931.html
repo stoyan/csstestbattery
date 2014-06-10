@@ -1,0 +1,796 @@
+<!DOCTYPE html><html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" class=" js canvas touch hashchange rgba multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations cssgradients cssreflections csstransforms no-csstransforms3d csstransitions fontface no-video no-audio localstorage svg inlinesvg bgsizecover no-raf" style=""><head>
+          <meta charset="UTF-8"><iframe height="0" width="0" style="display: none; visibility: hidden; " src="//4285121.fls.doubleclick.net/activityi;src=4285121;type=R-Lan-;cat=Spoti-;u1=us;ord=9493670784310;~oref=https%3A%2F%2Fwww.spotify.com%2Fus%2F?"></iframe><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js" id="undefined"></script><script type="text/javascript" async="" src="//s3.amazonaws.com/ki.js/51746/b0R.js"></script><script type="text/javascript" async="" src="https://s.adroll.com/j/roundtrip.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="//connect.facebook.net/en_US/fbds.js"></script><script type="text/javascript" async="" src="//www.googleadservices.com/pagead/conversion_async.js"></script><script async="" src="https://stats.g.doubleclick.net/dc.js"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-7BJJ"></script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQQGV1ZQGwEJU1BbBwA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e){function n(t,e,n){n||(n={});for(var r=o[t],a=r&&r.length||0,s=n[i]||(n[i]={}),u=0;a>u;u++)r[u].apply(s,e);return s}function r(t,e){var n=o[t]||(o[t]=[]);n.push(e)}var o={},i="nr@context";e.exports={on:r,emit:n}},{}],2:[function(t){function e(t,e,n,i,s){return u?u-=1:r("err",[s||new UncaughtException(t,e,n)]),"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t(5),a=window.onerror,s=!1,u=0;t("loader").features.push("err"),window.onerror=e,NREUM.noticeError=n;try{throw new Error}catch(d){"stack"in d&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&t(4),s=!0)}i.on("fn-start",function(){s&&(u+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&u>0&&(u-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:4,3:3,4:6,5:1,6:14,handle:"D5DuLP",loader:"G9z0Bl"}],3:[function(t){function e(t){r.inPlace(t,["addEventListener","removeEventListener"],"-",n)}function n(t){return t[1]}var r=t(1),o=(t(3),t(2));if(e(window),"getPrototypeOf"in Object){for(var i=document;i&&!i.hasOwnProperty("addEventListener");)i=Object.getPrototypeOf(i);i&&e(i);for(var a=XMLHttpRequest.prototype;a&&!a.hasOwnProperty("addEventListener");)a=Object.getPrototypeOf(a);a&&e(a)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&e(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=e["nr@wrapped"]?t[1]=e["nr@wrapped"]:e["nr@wrapped"]=t[1]=r(e,"fn-"):"function"==typeof e.handleEvent&&r.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:15,2:1,3:14}],4:[function(t){var e=(t(3),t(1)),n=t(2);e.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=e(t[0],"fn-")})},{1:15,2:1,3:14}],5:[function(t){function e(t){var e=t[0];"string"==typeof e&&(e=new Function(e)),t[0]=n(e,"fn-")}var n=(t(3),t(1)),r=t(2);n.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",e)},{1:15,2:1,3:14}],6:[function(t){function e(){o.inPlace(this,s,"fn-")}function n(t,e){o.inPlace(e,["onreadystatechange"],"fn-")}function r(t,e){return e}var o=t(1),i=t(2),a=window.XMLHttpRequest,s=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];window.XMLHttpRequest=function(t){var n=new a(t);try{i.emit("new-xhr",[],n),o.inPlace(n,["addEventListener","removeEventListener"],"-",function(t,e){return e}),n.addEventListener("readystatechange",e,!1)}catch(r){try{i.emit("internal-error",r)}catch(s){}}return n},window.XMLHttpRequest.prototype=a.prototype,o.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",r),i.on("send-xhr-start",n),i.on("open-xhr-start",n)},{1:15,2:1}],7:[function(t){function e(){function e(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function n(t){var n=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;u>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!n.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){n.status=t.status;var a=t.responseType,d="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=e(d);if(f&&(r.rxSize=f),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;r.cbTime=this.cbTime,o("xhr",[n,r])}}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}t("loader").features.push("xhr");var o=t("handle"),i=t(1),a=t(5),s=["load","error","abort","timeout"],u=s.length,d=t(2);t(3),t(4),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=n,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,n){var r=this.metrics,o=t[0],i=this;if(r&&o){var d=e(o);d&&(r.txSize=d)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof n.onload))&&i.end(n)}catch(e){try{a.emit("internal-error",e)}catch(r){}}};for(var f=0;u>f;f++)n.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+d(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&e()},{1:8,2:11,3:3,4:6,5:1,handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e){var n=r[t];return n?n.apply(this,e):(o[t]||(o[t]=[]),void o[t].push(e))}var r={},o={};e.exports=n,n.queues=o,n.handlers=r},{}],11:[function(t,e){function n(t){if(!t||"object"!=typeof t&&"function"!=typeof t)return-1;if(t===window)return 0;if(o.call(t,"__nr"))return t.__nr;try{return Object.defineProperty(t,"__nr",{value:r,writable:!0,enumerable:!1}),r}catch(e){return t.__nr=r,r}finally{r+=1}}var r=1,o=Object.prototype.hasOwnProperty;e.exports=n},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&u&&u.body){p.proto="https"===c.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=u.createElement("script");e.src=p.proto+t.agent,u.body.appendChild(e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=window,u=s.document,d="addEventListener",f="attachEvent",c=(""+location).split("?")[0],p=e.exports={offset:i(),origin:c,features:[]};u[d]?(u[d]("DOMContentLoaded",o,!1),s[d]("load",n,!1)):(u[f]("onreadystatechange",r),s[f]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}],14:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],15:[function(t,e){function n(t,e,r,s){function nrWrapper(){try{var n,a=u(arguments),d=this,f=r&&r(a,d)||{}}catch(c){i([c,"",[a,d,s],f])}o(e+"start",[a,d,s],f);try{return n=t.apply(d,a)}catch(p){throw o(e+"err",[a,d,p],f),p}finally{o(e+"end",[a,d,n],f)}}return a(t)?t:(e||(e=""),nrWrapper[n.flag]=!0,nrWrapper)}function r(t,e,r,o){r||(r="");var i,s,u,d="-"===r.charAt(0);for(u=0;u<e.length;u++)s=e[u],i=t[s],a(i)||(t[s]=n(i,d?s+r:r,o,s,t))}function o(t,e,n){try{s.emit(t,e,n)}catch(r){i([r,t,e,n])}}function i(t){try{s.emit("internal-error",t)}catch(e){}}function a(t){return!(t&&"function"==typeof t&&t.apply&&!t[n.flag])}var s=t(1),u=t(2);e.exports=n,n.inPlace=r,n.flag="nr@wrapper"},{1:1,2:14}]},{},["G9z0Bl",2,7]);</script>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta name="description" content="Spotify is a digital music service that gives you access to millions of songs.">
+      <meta name="keywords" content="Spotify, music, online, listen, streaming, play, digital, album, artist, playlist">
+
+              <meta property="fb:app_id" content="174829003346">
+        <meta property="og:title" content="Spotify">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.spotify.com/">
+        <meta property="og:image:secure_url" content="https://d2c87l0yth4zbw.cloudfront.net/i/_global/open-graph-default.jpg">
+        <meta property="og:description" content="Spotify is a digital music service that gives you access to millions of songs.">
+              
+              <meta name="apple-itunes-app" content="app-id=324684580">
+          
+    <title>Music for everyone - Spotify</title>
+
+          <link rel="icon" href="//d2c87l0yth4zbw.cloudfront.net/i/_global/favicon.png">
+      <!--[if IE]><link rel="shortcut icon" href="//d2c87l0yth4zbw.cloudfront.net/i/_global/favicon.ico"><![endif]-->
+    
+          <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//d2c87l0yth4zbw.cloudfront.net/i/_global/touch-icon-144.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//d2c87l0yth4zbw.cloudfront.net/i/_global/touch-icon-114.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//d2c87l0yth4zbw.cloudfront.net/i/_global/touch-icon-72.png">
+      <link rel="apple-touch-icon-precomposed" href="//d2c87l0yth4zbw.cloudfront.net/i/_global/touch-icon-57.png">
+    
+          <link rel="canonical" href="https://www.spotify.com/">
+    
+      
+      <link rel="stylesheet" href="//d2c87l0yth4zbw.cloudfront.net/css/80278a9.css">
+  
+            <script>
+        var spweb = spweb || {};
+spweb.config = {
+  environment: {
+    staticUrl: 'https://d2c87l0yth4zbw.cloudfront.net'
+  },
+  facebook: {
+    appId: 174829003346,
+    locale: 'zz'
+  },
+  ga: {
+    enable: 1,
+    trackingId: 'UA-5784146-1'
+  },
+  twitter: {
+    enable: true
+  },
+  downloadLinks: {
+    android: 'https://play.google.com/store/apps/details?id=com.spotify.music',
+    mac: 'http://download.spotify.com/SpotifyInstaller.zip',
+    mac10_5: 'http://download.spotify.com/Spotify-0.8.5.dmg',
+    windows: 'http://download.spotify.com/SpotifySetup.exe'
+  },
+  sheerid: {
+    universityUrl: 'https\x3A\x2F\x2Fservices.sheerid.com\x2Frest\x2F0.5\x2Forganization\x3Fcallback\x3D\x3F'
+  }
+};
+      </script>
+    
+    <script src="//d2c87l0yth4zbw.cloudfront.net/js/87695a9.js"></script><script src="//cdn.optimizely.com/js/146312396.js"></script><script type="text/javascript" src="//cdn3.optimizely.com/js/geo.js"></script><script type="text/javascript" src="//cdn3.optimizely.com/js/geo.js"></script>
+    <style id="mql-style">@media screen and (max-width: 767px){.mql {} }</style><script type="text/javascript" async="" src="//connect.facebook.net/zz/all.js"></script><script type="text/javascript" async="" src="https://rtt.campanja.com/script"></script><script async="true" type="text/javascript" src="//d.adroll.com/pixel/KDKBSLOGCVFKJI3UZUGWX6/PAMI74L6DRBWZHJ7N4FXU3?pv=50767175341.024994&amp;cookie=&amp;keyw=&amp;adroll_external_data="></script><div style="width: 1px; height: 1px; display: inline; "><img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/f/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/w/out">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/x/out">
+<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=684195348306631&amp;cd[segment_eid]=CI373RZC35CGNJI6GOAR4D"><img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/976682315/?label=J1TMCI2ckg0Qy_rb0QM&amp;guid=ON&amp;script=0&amp;ord=1812556143850088">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/g/out?google_nid=adroll5">
+<img src="https://secure.adnxs.com/seg?add=1613355&amp;t=2" width="1" height="1">
+<img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=684195348306631&amp;cd[segment_eid]=YGBNA4SSU5CKZFINIJLS5G"><img height="1" width="1" style="border-style:none;" alt="" src="https://www.googleadservices.com/pagead/conversion/976682315/?label=mF7YCM2D6A4Qy_rb0QM&amp;guid=ON&amp;script=0&amp;ord=1812556143850088">
+<img height="1" width="1" style="border-style:none;" alt="" src="https://d.adroll.com/cm/g/out?google_nid=adroll5">
+<img src="https://secure.adnxs.com/seg?add=1742355&amp;t=2" width="1" height="1">
+</div><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://fbstatic-a.akamaihd.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,.fb_connect_bar_container span,.fb_connect_bar_container a,.fb_connect_bar_container img,.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}.fb_connect_bar a:hover{color:#fff}.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}.fb_connect_bar div a,.fb_connect_bar span,.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
+
+      <body class=" m-us l-en page-homepage  is-loggedout  reboot "><div class="sign-up-overlay"><div class="sign-up module">
+  <a class="spotify-logo" href="/us/"></a>
+
+<section class="signup-select">
+  <form id="js-register-with-facebook" method="post" role="form" action="/us/xhr/json/sign-up-for-spotify-fb.php" novalidate="novalidate"><div class="hidden is-hidden ajax-spinner"></div>
+    <div class="content">
+      <div class="js-general-error alert alert-info is-hidden" data-error="Oops! Something went wrong, please try again or check out our &lt;a href=&quot;/help/&quot;&gt;help area&lt;/a&gt;"></div>
+            <a href="#" class="button button-facebook js-signup-fb" id="select-button-signup-fb">
+            Sign up with Facebook        </a>
+        
+
+        <strong class="line-thru">or</strong>
+    
+      <a href="/us/signup/" class="primary js-link" data-section="register" id="select-link-signup-email">
+        Sign up with your email address      </a>
+      <p class="primary">
+        Already have an account?        <a id="select-link-login" class="js-link" data-section="login" href="/us/login/">Log in</a>
+      </p>
+    </div>
+    <div class="terms-endcap">
+      <fieldset>
+        <ul>
+          <li class="li-terms-notick">
+            <p class="notice">By clicking on Sign up, you agree to <a href="/legal/end-user-agreement/" target="_blank">Spotify's terms &amp; conditions</a> and <a href="/legal/privacy-policy/" target="_blank">privacy policy</a></p>
+          </li>
+        </ul>
+      </fieldset>
+    </div>
+  </form>
+</section>
+
+<section class="register">
+  <div class="content">
+
+    <h2 class="center hdr-l">
+Sign up with your email address    </h2>
+
+    <form id="js-register-with-email" method="post" action="/us/xhr/json/sign-up-for-spotify.php" novalidate="novalidate"><div class="hidden is-hidden ajax-spinner"></div>
+
+      <div class="js-general-error alert alert-info is-hidden" data-error="Oops! Something went wrong, please try again or check out our &lt;a href=&quot;/help/&quot;&gt;help area&lt;/a&gt;"></div>
+
+      <input class="js-sp-csrf" name="sp_csrf" type="hidden" value="YToyOntpOjA7czo0MDoiY2Y4NDg5Mjk2YTVkMjUxZGE0ZjNkMjFmZjcxNzliYmIxNDM5Mjg2OCI7aToxO2k6MTQwMjI1Mjg3Mzt9">
+
+      <input name="form_token" type="hidden" value="12f6037e215ef56cfe7e301b995a932c">
+
+      <input id="creation_flow" name="creation_flow" type="hidden" value="">
+
+      <input type="hidden" id="register-forward-url" name="forward_url" value="/us/download/">
+
+      <input type="hidden" id="register-pre-tick-eula" name="signup_pre_tick_eula" value="true">
+
+      <fieldset>
+        <ul>
+          <li>
+            <label class="is-visually-hidden" for="register-username">Username:</label>
+            <input type="text" id="register-username" name="username" placeholder="Username" required="" data-msg-required="Please choose a username." data-rule-minlength="4" data-msg-minlength="Your username is too short." data-rule-remote="/us/xhr/json/isUsernameAvailable.php" data-msg-remote="We're sorry, that username is not available." maxlength="50" autocapitalize="off" autocomplete="off" autocorrect="off">
+          </li>
+
+          <li>
+            <label class="is-visually-hidden" for="register-password">Password:</label>
+            <input type="password" id="register-password" name="password" placeholder="Password" required="" data-msg-required="Please choose a password." data-rule-minlength="4" data-msg-minlength="Your password is too short." maxlength="100" autocomplete="off">
+          </li>
+
+          <li>
+            <label class="is-visually-hidden" for="register-email">Email:</label>
+            <input type="email" id="register-email" name="email" value="" placeholder="Email" required="" data-msg-required="Please enter your email." data-msg-email="The email address you supplied is invalid." data-rule-remote="/us/xhr/json/isEmailAvailable.php" data-msg-remote="We're sorry, that email is taken." maxlength="100">
+          </li>
+
+          <li>
+            <label class="is-visually-hidden" for="register-confirm-email">Confirm email:</label>
+            <input type="email" id="register-confirm-email" name="confirm_email" placeholder="Confirm email" required="" data-msg-required="Please confirm your email." data-msg-email="The email address you supplied is invalid." data-rule-equalto="#register-email" data-msg-equalto="Email address doesn't match." maxlength="100">
+          </li>
+
+          <li id="li-dob" class="controls-dob" data-error-age="Sorry, but you don't meet Spotify's age requirements.">
+            <label for="register-age">Date of birth:</label>
+            <div id="register-dob" class="register-dob">
+<div class="controls controls-month">
+  <select id="register-dob-month" class="dob" name="dob_month" required="" data-msg-required="When were you born?">
+    <option value="" selected="" disabled="">month</option>
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>
+</div>
+<div class="controls controls-day">
+  <input type="number" id="register-dob-day" class="dob" name="dob_day" placeholder="day" pattern="[0-9]*" maxlength="2" min="1" max="31" required="" data-msg-required="When were you born?" data-msg-number="Please enter a valid day of the month." data-msg-min="Please enter a valid day of the month." data-msg-max="Please enter a valid day of the month.">
+</div>
+<div class="controls controls-year">
+  <input type="number" id="register-dob-year" class="dob" name="dob_year" placeholder="year" pattern="[0-9]*" maxlength="4" min="1900" max="2001" required="" data-msg-required="When were you born?" data-msg-number="Please enter a valid year." data-msg-min="Please enter a valid year." data-msg-max="Sorry, but you don't meet Spotify's age requirements.">
+</div>
+            </div>
+          </li>
+
+          <li id="li-gender" class="gender">
+            <label class="is-visually-hidden">Gender:</label>
+              <label for="register-male" class="radio control-inline">
+                <input type="radio" id="register-male" class="gender" name="gender" value="male" required="" data-msg-required="Please indicate your gender.">
+                Male              </label>
+
+              <label for="register-female" class="radio control-inline">
+                <input type="radio" id="register-female" class="gender" name="gender" value="female" required="" data-msg-required="Please indicate your gender.">
+                Female              </label>
+          </li>
+
+
+          <li class="li-terms-notick">
+            <p class="notice">By clicking on Sign up, you agree to <a href="/legal/end-user-agreement/" target="_blank">Spotify's terms &amp; conditions</a> and <a href="/legal/privacy-policy/" target="_blank">privacy policy</a></p>
+          </li>
+        </ul>
+      </fieldset>
+      <button id="register-button-email-submit" type="submit" class="button button-highlight js-signup-email-submit">Sign up</button>
+    </form>
+
+    <p class="primary">
+                 Already have an account?          <a id="register-link-login" class="js-link" data-section="login" href="/us/login/">Log in</a>
+          </p>
+  </div>
+</section>
+
+<section class="sign-up-done">
+  <div class="content">
+    <h2 class="center hdr-l">All done! Enjoy the music.</h2>
+    <div class="done-check"></div>
+    <a href="spotify:" class="button button-highlight">Start Spotify<span></span></a>
+  </div>
+</section>
+
+
+<section class="login">
+  <div class="content">
+    <form id="js-login-form-facebook" method="post" role="form" action="/us/login/fb/" novalidate="novalidate"><div class="hidden is-hidden ajax-spinner"></div>
+
+      <div class="js-general-error alert alert-danger is-hidden" data-error="Sorry, we're unable to log you in. Don't have an account? &lt;a href=&quot;/us/signup/&quot;&gt;Sign up&lt;/a&gt;."></div>
+
+      <a href="#" class="button button-facebook js-facebook-login" id="login-button-login-fb">
+        Log in with Facebook      </a>
+
+    </form>
+
+    <strong class="line-thru">or</strong>
+
+    <form id="js-login-form-email" method="post" role="form" action="/us/xhr/json/login.php" novalidate="novalidate"><div class="hidden is-hidden ajax-spinner"></div>
+      <input type="hidden" class="js-sp-csrf" name="sp_csrf" value="YToyOntpOjA7czo0MDoiY2Y4NDg5Mjk2YTVkMjUxZGE0ZjNkMjFmZjcxNzliYmIxNDM5Mjg2OCI7aToxO2k6MTQwMjI1Mjg3Mzt9">
+      <div class="js-general-error alert alert-info is-hidden" data-error="Oops! Something went wrong, please try again or check out our &lt;a href=&quot;/help/&quot;&gt;help area&lt;/a&gt;"></div>
+      <input type="hidden" id="login-forward-url" name="forward_url" value="/us/">
+      <input type="hidden" name="referrer" value="">
+      <input type="hidden" name="utm-keywords" value="12f6037e215ef56cfe7e301b995a932c">
+
+
+
+      <fieldset>
+        <ul>
+          <li>
+            <label class="is-visually-hidden" for="login-username">Username:</label>
+            <input placeholder="Username" type="text" id="login-username" required="" data-msg-required="Please enter your Spotify user name." name="user_name" autocapitalization="off" autocomplete="off" autocorrect="off">
+          </li>
+          <li>
+            <label class="is-visually-hidden" for="login-password">Password:</label>
+            <input placeholder="Password" type="password" id="login-password" required="" data-msg-required="Please enter your password." name="password" autocomplete="off">
+          </li>
+        </ul>
+      </fieldset>
+      <button id="login-button-login-submit" type="submit" class="button button-highlight">Log in</button>
+    </form>
+
+    <a id="login-link-password" href="/us/password-reset/" class="primary js-link" data-section="password-reset">Forgot your password?</a>
+
+    <p class="primary">Don't have an account?      <a id="login-link-signup-email" href="/us/signup/" class="js-link" data-section="register">Sign up</a>
+    </p>
+  </div>
+  <div class="terms-endcap">
+    <fieldset>
+      <p class="small-notice">If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree to Spotify's <a class="link" href="/us/legal/end-user-agreement/" target="_blank">Terms &amp; Conditions</a> and <a class="link" href="/us/legal/privacy-policy/" target="_blank">Privacy Policy</a>.</p>
+    </fieldset>
+  </div>
+</section>
+
+<section class="password-reset" data-nolink="0">
+  <div class="content">
+    <h2 class="center hdr-l">Password Reset</h2>
+    <p class="secondary">Enter your <b>Spotify username</b>, or the <b>email address</b> that you used to register. We'll send you an email with your username and a link to reset your password.</p>
+
+    <p class="msg primary"></p>
+
+    <form id="js-password-reset-form" method="post" role="form" action="/us/xhr/json/reset-password.php" novalidate="novalidate"><div class="hidden is-hidden ajax-spinner"></div>
+      <input class="js-sp-csrf" name="sp_csrf" type="hidden" value="YToyOntpOjA7czo0MDoiY2Y4NDg5Mjk2YTVkMjUxZGE0ZjNkMjFmZjcxNzliYmIxNDM5Mjg2OCI7aToxO2k6MTQwMjI1Mjg3Mzt9">
+      <div class="js-general-error alert alert-info is-hidden" data-error="Oops! Something went wrong, please try again or check out our &lt;a href=&quot;/help/&quot;&gt;help area&lt;/a&gt;"></div>
+      <fieldset>
+        <ul>
+          <li>
+            <label class="is-visually-hidden" for="password-reset">Email address or username:</label>
+            <input placeholder="Email address or username" type="text" id="password-reset" required="" autocapitalize="off" autocomplete="off" autocorrect="off" data-msg-required="Please enter your Spotify user name." name="email_or_username">
+          </li>
+        </ul>
+      </fieldset>
+      <button id="password-button-password-submit" type="submit" class="button button-highlight">Send</button>
+    </form>
+
+    <a id="password-link-login" href="/us/login/" class="primary back-link js-link" data-section="login">« Go back</a>
+    <p class="primary">
+      If you still need help, contact <a id="password-link-support" class="what-is-spotify" target="_blank" href="/help/faq/account/password-reset/">Spotify Support.</a>    </p>
+  </div>
+</section>
+
+</div></div>
+          <!-- Google Tag Manager -->
+    <noscript>&lt;iframe src="//www.googletagmanager.com/ns.html?id=GTM-7BJJ"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <script>
+    dataLayer = [];
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-7BJJ');
+    </script>
+    <!-- End Google Tag Manager -->
+    
+        <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; " src="https://s-static.ak.facebook.com/connect/xd_arbiter/PnNpOQSmYK-.js?version=C-977893-97f7aa6e3d1ffc540bfeb5e7a7f1a5ca-20140608111616#channel=f39b8e2e38&amp;origin=https%3A%2F%2Fwww.spotify.com"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px; "><div></div></div></div>
+    
+      <div class="wrap">
+
+                  
+<header id="js-header-main" class="header-main" role="banner">
+
+  
+      <div id="js-android-message-notice" class="message" data-name="androidNotice">
+      <div class="notice">
+        <p>Hello Android user! Trouble using Spotify? This can be fixed by going to <a class="cookie-link" href="https://play.google.com/store/apps/details?id=com.spotify.music">Google Play</a> and installing the new version. <a class="cookie-link" href="http://news.spotify.com/2014/05/27/important-notice-to-our-users/">Click here</a> for more.</p>
+      </div>
+      <div class="close">Close</div>
+    </div>
+  
+  <div class="container">
+      <a class="logo" href="/us/" title="Go to Spotify Home">
+    <img src="//d2c87l0yth4zbw.cloudfront.net/i/_global/logo.png" alt="Spotify">
+  </a>
+
+      <div id="js-nav-wrap" class="nav-wrap is-collapsed"><a href="/us/account/overview/" id="js-avatar-link" class="avatar-link is-loggedout js-open-signup" data-signup-start-section="login"><img id="js-avatar" class="avatar" src="//d2c87l0yth4zbw.cloudfront.net/i/_global/default-avatar.png" alt="Log in to view your account"></a>
+    <div id="js-toggle-nav" class="toggle-nav">
+      <div id="js-icon-toggle-nav" class="icon-toggle-nav">
+        <i class="icon-toggle"></i>
+      </div>
+    </div>
+    <nav id="js-nav-header" class="nav-header" role="navigation">
+              <ul id="js-nav-list" class="nav-list"><li class="nav-item "><a href="#all-music" id="nav-link-features" class="js-ga-event nav-link features" data-ga-event-category="moreinfo" data-ga-event-action="features" data-ga-event-label="navigation_top">Features
+</a></li><li class="nav-item"><a href="/us/upgrade/" id="nav-link-premium" class="js-ga-event nav-link premium" data-ga-event-category="upgrade" data-ga-event-action="pricing" data-ga-event-label="navigation_top">Upgrade
+</a></li><li class="nav-item"><a href="http://support.spotify.com" id="nav-link-help" class="js-ga-event nav-link help" data-ga-event-category="moreinfo" data-ga-event-action="help" data-ga-event-label="navigation_top">Help
+</a></li><li class="nav-item"><div id="js-account" class="account is-loggedout "><a id="nav-link-login" class="nav-link log_in js-open-signup" data-signup-start-section="login" href="/us/account/overview/">Log In</a></div></li><li class="nav-item "><a href="//www.spotify.com/us/download/mac/" id="nav-button-get-spotify" class="js-ga-event nav-link button button-highlight js-button-download js-get-spotify js-gtm-event js-open-signup" data-gtm-event-name="download_spotify_button_clicked" data-signup-start-section="signup-select" data-ga-event-category="acquisition" data-ga-event-action="download_spotify" data-ga-event-label="navigation_top">Download Spotify
+</a></li></ul>          </nav>
+  </div>
+  </div>
+
+</header>
+          
+          
+    
+    
+      <div class="dummy-firstload" style="display: none; "></div>
+  <div id="content-main" class="content-main" role="main" style="visibility: visible; ">
+
+          <section id="section-soundtrack" class="soundtrack section-auto-size" data-auto-size="1" style="height: 750px; ">
+        <div class="container">
+          <div class="box">
+            <div class="single-column">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <a class="logo" href="/us/" title="Go to Spotify Home">
+    <img src="//d2c87l0yth4zbw.cloudfront.net/i/_global/logo.png" alt="Spotify">
+  </a>
+
+
+                  <h1 class="hdr-jumbo is-visible">10 million people love Spotify Premium.</h1>
+                                    <p class="lead is-visible"> Join them and get 2 months free.</p>
+                  <a id="js-button-get-unlimited" href="/purchase/product/3-for-1/" class="button button-download button-highlight js-ga-event js-open-signup js-get-spotify" data-ga-event-category="acquisition" data-ga-event-action="download_spotify" data-ga-event-label="mega" data-signup-start-section="signup-select">Upgrade Now!</a>
+                  <p class="mobile-hide is-hidden js-use-web-player-container" style="display: block; visibility: visible; ">
+                    <a href="/us/redirect/webplayer/" class="js-use-web-player js-open-signup" data-signup-start-section="signup-select">
+                      Go to Web Player
+                    </a>
+                  </p>
+
+                    <a href="#all-music" class="scroller-arrow  js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow-all-music" data-ga-event-label="mega"></a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="artwork-strip" style="-webkit-transform: translateX(0px) translateY(612px); width: 400px; "><div class="artwork-strip-tile" style="-webkit-transform: translateX(0px) translateY(64px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/128/3JD4q0B4CDC4SpROLa5Zn3.jpg); width: 128px; height: 128px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(0px) translateY(192px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/64/6841x6F4SODlAl8TczXf5a.jpg); width: 64px; height: 64px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(64px) translateY(0px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/64/5fVZC9GiM4e8vu99W0Xf6J.jpg); width: 64px; height: 64px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(64px) translateY(192px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/64/2isyujVLDSr4lYhIo7qCRw.jpg); width: 64px; height: 64px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(128px) translateY(128px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/192/6U5hUX40OWY6l0HaPUWElZ.jpg); width: 192px; height: 192px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(128px) translateY(0px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/128/3ptJBraFGtaeprD4BHmTfV.jpg); width: 128px; height: 128px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(320px) translateY(128px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/128/3QsIPAlZwSMvGwm99MRUMc.jpg); width: 128px; height: 128px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(320px) translateY(256px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/64/7n3REqDfZBpkd0bEpGu2H3.jpg); width: 64px; height: 64px; "></div><div class="artwork-strip-tile" style="-webkit-transform: translateX(384px) translateY(256px); background-image: url(https://d2us6zencw9qvn.cloudfront.net/website_reboot_assets/image_strip_2/64/5HABsUJwrQDihbxP7qMgWD.jpg); width: 64px; height: 64px; "></div></div>
+
+        <div class="scroller-main parallax-disabled" data-image="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-all-music-lg.jpg" data-image-mobile="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-all-music-sm.jpg" data-width="1600" data-height="1069" data-extra-height="128" style="background-image: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-all-music-lg.jpg); height: 353px; ">
+  </div>
+
+
+      <a id="features" class="in-page-anchor"></a>
+
+      <div id="all-music">
+                                                                          <section id="section-all-music" class="section-auto-size has-arrow-button-below all-music" data-auto-size="0.6" style="height: 228px; ">
+    <div class="container">
+      <div class="box">
+        <div class="box-inner">
+                        <div class="two-columns">
+    <h1 class="hdr-jumbo">All your music <span class="nowrap">is here</span>.</h1>
+    <p class="lead">Spotify gives you millions of songs at your fingertips. The artists you love, the latest hits, and new discoveries just for you. Hit play to stream anything you like.</p>
+  </div>
+
+              <div class="two-columns two-columns-img">
+    <div class="img-main-holder">
+              <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/img-blank.gif" class="img-main img-all-music" alt="">
+
+    </div>
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </section>
+
+
+                          
+  <div class="scroller-arrow-holder">
+      <a href="#listen-free" class="scroller-arrow scroller-arrow-half js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow-listen-free" data-ga-event-label="mega"></a>
+
+  </div>
+
+      </div>
+
+                      <div class="scroller-main parallax-disabled" data-image="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-listen-free-lg.jpg" data-image-mobile="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-listen-free-sm.jpg" data-width="1600" data-height="764" style="background-image: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-listen-free-lg.jpg); height: 225px; ">
+  </div>
+
+
+        <div id="listen-free">
+                                                                                  <section id="section-listen-free" class="section-auto-size has-arrow-button-below listen-free" data-auto-size="0.6" style="height: 255px; ">
+    <div class="container">
+      <div class="box">
+        <div class="box-inner">
+                        <div class="two-columns two-columns-img">
+    <div class="img-main-holder">
+              <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/img-blank.gif" class="img-main img-listen-free" alt="">
+
+    </div>
+  </div>
+
+              <div class="two-columns">
+    <h1 class="hdr-jumbo">Listen free.</h1>
+    <p class="lead">On mobile, you can listen to artists, albums and playlists in shuffle mode. Or choose a ready-made playlist to suit your mood. On tablet and computer, you can play any song, any time. <a href="/us/free/">Find out more</a></p>
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </section>
+
+            
+  <div class="scroller-arrow-holder">
+      <a href="#discover-music" class="scroller-arrow scroller-arrow-half js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow-discover-music" data-ga-event-label="mega"></a>
+
+  </div>
+
+        </div>
+      
+        <div class="scroller-main parallax-disabled" data-image="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-discover-lg.jpg" data-image-mobile="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-discover-sm.jpg" data-width="1600" data-height="800" style="background-image: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-discover-lg.jpg); height: 225px; ">
+  </div>
+
+
+      <div id="discover-music">
+                                                                  <section id="section-discover-music" class="section-auto-size has-arrow-button-below discover-music" data-auto-size="0.6" style="height: 291px; ">
+    <div class="container">
+      <div class="box">
+        <div class="box-inner">
+                        <div class="two-columns">
+    <h1 class="hdr-jumbo">Discover music <span class="nowrap">you'll love</span>.</h1>
+    <p class="lead">Spotify is the best place to discover music. Your Discover page will constantly suggest new music for you, based on what you’re listening to. Your next favourite songs are waiting.</p>
+  </div>
+
+              <div class="two-columns two-columns-img">
+    <div class="img-main-holder">
+              <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/img-blank.gif" class="img-main img-discover-music" alt="">
+
+    </div>
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </section>
+
+          
+  <div class="scroller-arrow-holder">
+      <a href="#browse" class="scroller-arrow scroller-arrow-half js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow-browse" data-ga-event-label="mega"></a>
+
+  </div>
+
+      </div>
+
+        <div class="scroller-main parallax-disabled" data-image="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-browse-lg.jpg" data-image-mobile="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-browse-sm.jpg" data-width="1600" data-height="958" style="background-image: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-browse-lg.jpg); height: 225px; ">
+  </div>
+
+
+      <div id="browse">
+                                                                  <section id="section-browse" class="section-auto-size has-arrow-button-below browse" data-auto-size="0.6" style="height: 291px; ">
+    <div class="container">
+      <div class="box">
+        <div class="box-inner">
+                        <div class="two-columns two-columns-img">
+    <div class="img-main-holder">
+                  <div class="row">
+                                      
+        <div class="col-xs-6">
+            <a class="playlist-link" href="http://open.spotify.com/user/spotify/playlist/1GQLlzxBxKTb6tJsD4RxHI">
+    <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/playlist-fresh-dance-tracks.jpg" alt="Spotify playlist: Fresh Dance Tracks">
+  </a>
+
+        </div>
+                                      
+        <div class="col-xs-6">
+            <a class="playlist-link" href="http://open.spotify.com/user/spotify/playlist/4BKT5olNFqLB1FAa8OtC8k">
+    <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/playlist-favorite-coffee-house.jpg" alt="Spotify playlist: Coffee House">
+  </a>
+
+        </div>
+          </div>
+      <div class="row">
+                                      
+        <div class="col-xs-6">
+            <a class="playlist-link" href="http://open.spotify.com/user/spotify/playlist/7CQunpJEHecknIyABfS8pP">
+    <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/playlist-rainy-day.jpg" alt="Spotify playlist: Rainy Day">
+  </a>
+
+        </div>
+                                      
+        <div class="col-xs-6">
+            <a class="playlist-link" href="http://open.spotify.com/user/spotify/playlist/7cOO30bzxMm4tO34C9UalD">
+    <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/playlist-cardio.jpg" alt="Spotify playlist: Cardio">
+  </a>
+
+        </div>
+          </div>
+  
+    </div>
+  </div>
+
+              <div class="two-columns">
+    <h1 class="hdr-jumbo">Want the right playlist? <span class="nowrap">Just Browse</span>.</h1>
+    <p class="lead">With Spotify, there’s always great music to play. Browse amazing playlists for every mood and genre. Perfect if you don't know what to listen to, or if you're in the mood for something new.</p>
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </section>
+
+          
+  <div class="scroller-arrow-holder">
+      <a href="#social" class="scroller-arrow scroller-arrow-half js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow-social" data-ga-event-label="mega"></a>
+
+  </div>
+
+      </div>
+
+        <div class="scroller-main parallax-disabled" data-image="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-social-lg.jpg" data-image-mobile="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-social-sm.jpg" data-width="1600" data-height="1069" style="background-image: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-social-lg.jpg); height: 225px; ">
+  </div>
+
+
+      <div id="social">
+                                                                  <section id="section-social" class="section-auto-size has-arrow-button-below social" data-auto-size="0.6" style="height: 318px; ">
+    <div class="container">
+      <div class="box">
+        <div class="box-inner">
+                        <div class="two-columns">
+    <h1 class="hdr-jumbo">Music brings <span class="nowrap">us together</span>.</h1>
+    <p class="lead">That’s why Spotify is so social. Share music on Spotify, Facebook, Twitter, your blog, anywhere. You can also get closer to the friends, artists and trendsetters who turn you on to great music. Find out what they’re listening to right now.</p>
+  </div>
+
+              <div class="two-columns two-columns-img">
+    <div class="img-main-holder">
+              <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/img-blank.gif" class="img-main img-social" alt="">
+
+    </div>
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </section>
+
+          
+  <div class="scroller-arrow-holder">
+      <a href="#radio" class="scroller-arrow scroller-arrow-half js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow-radio" data-ga-event-label="mega"></a>
+
+  </div>
+
+      </div>
+
+        <div class="scroller-main parallax-disabled" data-image="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-radio-lg.jpg" data-image-mobile="//d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-radio-sm.jpg" data-width="1600" data-height="1069" style="background-image: url(https://d2c87l0yth4zbw.cloudfront.net/i/home/lifestyle-radio-lg.jpg); height: 225px; ">
+  </div>
+
+
+      <div id="radio">
+                                                          <section id="section-radio" class="section-auto-size has-arrow-button-below radio" data-auto-size="0.6" style="height: 255px; ">
+    <div class="container">
+      <div class="box">
+        <div class="box-inner">
+                        <div class="two-columns two-columns-img">
+    <div class="img-main-holder">
+              <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/img-blank.gif" class="img-main img-radio" alt="">
+
+    </div>
+  </div>
+
+              <div class="two-columns">
+    <h1 class="hdr-jumbo">Radio that's personal.</h1>
+    <p class="lead">Sit back and enjoy Spotify radio. Start with a song or artist you love, and let Spotify bring you one great track after another. Make your stations even better by liking songs as you hear them.</p>
+  </div>
+
+                  </div>
+      </div>
+    </div>
+  </section>
+
+          
+  <div class="scroller-arrow-holder">
+      <a href="#section-premium" class="scroller-arrow scroller-arrow-half js-ga-event" aria-label="Go to next section" data-ga-event-category="moreinfo" data-ga-event-action="arrow6_radio" data-ga-event-label="mega"></a>
+
+  </div>
+
+      </div>
+
+      <a id="premium" class="in-page-anchor"></a>
+
+      <section id="section-premium" class="feature premium">
+        <div class="premium-container">
+
+          <div class="premium-options-holder">
+            <div class="premium-option free">
+              <h1>Free</h1>
+              <p class="premium-tag">Everything you want from music.
+              </p>
+                            <p class="premium-price">Completely free</p>
+
+                            <aside>
+                <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/devices-free-new-en.png" class="device-img">
+              </aside>
+
+                            <ul class="premium-details-list">
+	<li>Listen on mobile, tablet &amp; computer</li>
+	<li>Millions of songs — just hit play</li>
+	<li>Made possible by ads</li>
+</ul>
+
+              <a id="js-button-get-free" href="//www.spotify.com/us/download/mac/" class="button js-button-download js-ga-event js-open-signup js-gtm-event" data-gtm-event-name="download_spotify_button_clicked" data-ga-event-category="acquisition" data-ga-event-action="download_spotify" data-ga-event-label="mega_pricing" data-signup-start-section="signup-select">
+                Get Free
+              </a>
+            </div>
+
+            <div id="premium-tier" class="premium-option premium">
+
+                              <div class="premium-banner-container">
+                  <a href="/us/freetrial/" class="premium-banner js-ga-event js-open-signup" data-ga-event-category="upgrade" data-ga-event-action="get_trial" data-ga-event-label="mega_pricing" data-signup-start-section="login">
+                    <div class="banner-text strong">30 Day Free Trial</div>
+                  </a>
+                </div>
+              
+              <h1>Premium</h1>
+              <p class="premium-tag">Your music is everywhere.</p>
+                            <p class="premium-price">$9.99 a month.</p>
+
+              <aside>
+                <img src="//d2c87l0yth4zbw.cloudfront.net/i/home/devices-premium.png" class="device-img">
+              </aside>
+
+                            <ul class="premium-details-list">
+	<li>Play any song, anywhere</li>
+	<li>Download music &amp; listen offline in high-quality audio</li>
+	<li>No audio ads &amp; no commitment</li>
+</ul>
+
+              
+                <a id="js-button-try-premium" href="/us/freetrial/" class="button button-highlight js-ga-event js-open-signup" data-ga-event-category="upgrade" data-ga-event-action="get_trial" data-ga-event-label="mega_pricing" data-signup-start-section="login">
+                    Try Premium
+                </a>
+
+              
+            </div>
+          </div>
+
+          <div class="premium-secondary">
+
+                          <div class="offers-title">Current offers:</div>
+                              <div class="offers-content">
+                  <a href="/us/student/" class="js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="student_discount" data-ga-event-label="current_offers">Student Discount</a>
+                </div>
+                              <div class="offers-content">
+                  <a href="http://sprint.com/spotify" class="js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="sprint_customers" data-ga-event-label="current_offers">Sprint<span class="sprint-logo"></span> Customers</a>
+                </div>
+                          
+          </div>
+        </div>
+      </section>
+      </div>
+
+      </div>
+
+      <footer id="footer-main" class="footer-main" role="contentinfo">
+  <div class="container">
+    <nav class="nav-footer">
+      <ul><li class="nav-item about_us "><a href="/us/about-us/contact/" class="nav-link js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="about" data-ga-event-label="navigation_bottom">About
+</a></li><li class="nav-item jobs"><a href="/us/jobs/" class="nav-link js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="jobs" data-ga-event-label="navigation_bottom">Jobs
+</a></li><li class="nav-item press"><a href="http://press.spotify.com" class="nav-link js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="press" data-ga-event-label="navigation_bottom">Press
+</a></li><li class="nav-item news"><a href="/us/blog/" class="nav-link js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="news" data-ga-event-label="navigation_bottom">News
+</a></li><li class="nav-item gift "><a href="/us/get-spotify/e-card/" class="nav-link js-ga-event" data-ga-event-category="moreinfo" data-ga-event-action="gift" data-ga-event-label="navigation_bottom">Gift
+</a></li></ul>
+      <ul class="small">
+        <li class="nav-item">
+        <a href="/us/legal/">Legal</a>
+        </li>
+        <li class="nav-item">
+        <a href="/us/legal/privacy-policy/#cookies">Cookies</a>
+        </li>
+        <li class="nav-item">
+        <a id="_bapw-link" href="http://info.evidon.com/pub_info/1120?v=1" target="_blank"><img src="https://cdn.betrad.com/pub/icon1.png" id="_bapw-icon" style="border:0 !important;display:inline !important;vertical-align:middle !important;  margin-bottom: 2px !important;"> <span>AdChoices</span></a><script>/*<![CDATA[*/(function(){var c=1120,g=1816,b=false,i=document,f=i.getElementById("_bapw-link"),h=(i.location.protocol=="https:"),a=(h?"https":"http")+"://";function e(j){var d=new Image();d.src=a+"l.betrad.com/pub/p.gif?pid="+c+"&ocid="+g+"&i"+j+"=1&r="+Math.random()}f.onclick=function(){e("c");return true};e("i")}());/*]]>*/</script>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="box">
+      <div class="market-picker" id="js-market-picker">
+        <a href="#" class="market-link is-selected" title="Click to change">
+                    <span class="country-name">USA</span>
+          <span class="icon icon-flag-sm icon-flag-sm-us"></span>
+        </a>
+
+        <ul id="js-market-picker-list" class="market-picker-list">
+                              <li>
+                                  <a href="/nl/" rel="nl" class="market-picker-link js-market-picker-link">
+              <span class="country-name">Nederland</span>
+              <span class="icon-flag-top-countries icon-flag-top-countries-nl"></span>
+            </a>
+          </li>
+                              <li>
+                                  <a href="/no/" rel="no" class="market-picker-link js-market-picker-link">
+              <span class="country-name">Norway</span>
+              <span class="icon-flag-top-countries icon-flag-top-countries-no"></span>
+            </a>
+          </li>
+                              <li>
+                                  <a href="/se/" rel="se" class="market-picker-link js-market-picker-link">
+              <span class="country-name">Sweden</span>
+              <span class="icon-flag-top-countries icon-flag-top-countries-se"></span>
+            </a>
+          </li>
+                              <li>
+                                  <a href="/uk/" rel="uk" class="market-picker-link js-market-picker-link">
+              <span class="country-name">United Kingdom</span>
+              <span class="icon-flag-top-countries icon-flag-top-countries-uk"></span>
+            </a>
+          </li>
+                    <li>
+            <a class="market-picker-all" href="/us/select-your-country/">
+              See all countries
+            </a>
+          </li>
+        </ul>
+      </div><!-- /.market-picker-->
+
+      <small class="copyright">
+        © 2007-2014 Spotify AB
+      </small>
+    </div><!-- /.box-->
+
+  </div><!-- /.container-->
+
+</footer>
+  
+      <div class="is-hidden">
+      
+
+    </div>
+  
+          <!--[if lt IE 9]>
+        <script src="//d2c87l0yth4zbw.cloudfront.net/js/2a84695.js"></script>
+        <![endif]-->
+        <script src="//d2c87l0yth4zbw.cloudfront.net/js/5f4ea61.js"></script>
+       
+
+    <script src="//d2c87l0yth4zbw.cloudfront.net/js/1744fe1.js" data-static-url="https://d2c87l0yth4zbw.cloudfront.net"></script>
+    <script>
+    jQuery(function () {
+      spweb.home.init();
+    }());
+  </script>
+
+    
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-2.newrelic.com","licenseKey":"056bbe16c3","applicationID":"2971901","transactionName":"blwBY0pSDEQFU0BfWlcWIlRMWg1ZS1hbW1A=","queueTime":0,"applicationTime":42,"ttGuid":"","agentToken":"","userAttributes":"","errorBeacon":"bam.nr-data.net","agent":"js-agent.newrelic.com\/nr-411.min.js"}</script>
+  <!-- This page was rendered using Twig -->
+
+
+
+<script type="text/javascript" id="">var _kiq=_kiq||[];(function(){setTimeout(function(){var a=document,b=a.getElementsByTagName("script")[0],a=a.createElement("script");a.type="text/javascript";a.async=!0;a.src="//s3.amazonaws.com/ki.js/51746/b0R.js";b.parentNode.insertBefore(a,b)},1)})();</script><script type="text/javascript" id="" src="//d3ewslr5655zon.cloudfront.net/tags/spotify-7436afc376.min.js"></script><script type="text/javascript" id="">"undefined"==typeof _campanja_config?(_campanja_config={preload:[]},set_sitewide_config(),_campanja_track=function(a,b,c){_campanja_config.preload.push([a,b,c])}):set_sitewide_config();function set_sitewide_config(){_campanja_config.tg="13756";_campanja_config.override_href=document.location.href;_campanja_config.internal=/^https?:\/\/[^/]*spotify.com|^https?:\/\/[^/]*paypal.com/i}var _campanja_track=function(a,b,c){_campanja_config.preload.push([a,b,c])};
+(function(a){var b=a.getElementsByTagName("head")[0];a=a.createElement("script");a.type="text/javascript";a.async=!0;a.src=document.location.protocol+"//rtt.campanja.com/script";b.appendChild(a)})(document);</script><script type="text/javascript" id="">(function(){var a=window._fbq||(window._fbq=[]);if(!a.loaded){var b=document.createElement("script");b.async=!0;b.src="//connect.facebook.net/en_US/fbds.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);a.loaded=!0}a.push(["addPixelId","252834944896917"])})();window._fbq=window._fbq||[];window._fbq.push(["track","PixelInitialized",{}]);</script>
+<noscript>&lt;img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=252834944896917&amp;amp;ev=NoScript"&gt;</noscript>
+
+<script type="text/javascript" id="">var google_conversion_id=968224630,google_custom_params=window.google_tag_params,google_remarketing_only=!0;</script>
+<script type="text/javascript" id="" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/968224630/?value=0&amp;amp;guid=ON&amp;amp;script=0"&gt;
+&lt;/div&gt;
+</noscript><script src="//s3.amazonaws.com/ki.js/51746/b0R.d.js?_1402177231" charset="utf-8" type="text/javascript"></script><script src="https://js-agent.newrelic.com/nr-411.min.js"></script><script type="text/javascript" src="https://beacon-2.newrelic.com/1/056bbe16c3?a=2971901&amp;ap=42&amp;fe=5215&amp;dc=3179&amp;v=411.b2946c1&amp;to=blwBY0pSDEQFU0BfWlcWIlRMWg1ZS1hbW1A%3D&amp;f=%5B%22err%22,%22xhr%22%5D&amp;jsonp=NREUM.setToken"></script></body></html>

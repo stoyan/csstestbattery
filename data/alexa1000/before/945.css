@@ -1,0 +1,2557 @@
+/* 01_todaybase.css */
+/* fonts */
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('/todaycover/assets/fonts/ProximaNova-Light-webfont.eot');
+    src: url('/todaycover/assets/fonts/ProximaNova-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/todaycover/assets/fonts/ProximaNova-Light-webfont.woff') format('woff'),
+         url('/todaycover/assets/fonts/ProximaNova-Light-webfont.ttf') format('truetype'),
+         url('/todaycover/assets/fonts/ProximaNova-Light-webfont.svg#ProximaNovaLight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('/todaycover/assets/fonts/ProximaNova-Sbold-webfont.eot');
+    src: url('/todaycover/assets/fonts/ProximaNova-Sbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/todaycover/assets/fonts/ProximaNova-Sbold-webfont.woff') format('woff'),
+         url('/todaycover/assets/fonts/ProximaNova-Sbold-webfont.ttf') format('truetype'),
+         url('/todaycover/assets/fonts/ProximaNova-Sbold-webfont.svg#ProximaNovaSemiBold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('/todaycover/assets/fonts/ProximaNova-Bold-webfont.eot');
+    src: url('/todaycover/assets/fonts/ProximaNova-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/todaycover/assets/fonts/ProximaNova-Bold-webfont.woff') format('woff'),
+         url('/todaycover/assets/fonts/ProximaNova-Bold-webfont.ttf') format('truetype'),
+         url('/todaycover/assets/fonts/ProximaNova-Bold-webfont.svg#ProximaNovaBold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ProximaNova';
+    src: url('/todaycover/assets/fonts/ProximaNova-Reg-webfont.eot');
+    src: url('/todaycover/assets/fonts/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/todaycover/assets/fonts/ProximaNova-Reg-webfont.woff') format('woff'),
+         url('/todaycover/assets/fonts/ProximaNova-Reg-webfont.ttf') format('truetype'),
+         url('/todaycover/assets/fonts/ProximaNova-Reg-webfont.svg#ProximaNovaRegular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+/*fonts*/
+.xlh, .lh, .mh, .sh {line-height: 1.06em;}
+.xlh {font-size: 35px;line-height: 0.95em;}
+.lh {font-size: 28px; } 
+.mh {font-size: 22px;} 
+.sh  {font-size: 17px; line-height: 1.2em;} 
+.xsh, .xsl {font-size: 13px; line-height: 1.25em; font-weight: 500;}
+
+
+/*horizontal lists*/
+.hlist li, #footer .navigation li, #footer .about li, #footer .blogs li, #toolbar li, #header .navigation li, #showcasenav li, #header .brands li, #timeline li {list-style: none; float: left;}
+
+
+/*newsletter form*/
+div#modalDialog {
+	opacity:1; 
+	z-index: 9999999;
+	width: 323px;	
+	position: relative;
+    bottom: 269px;
+    left: 683px;
+	-webkit-transition:-webkit-transform 0.3s ease;	
+}
+div.modalDiv {
+    position:relative;
+    top:10px;
+	width: 323px;
+    height: 257px;
+    background-color: #FFF;
+    border: 1px solid #E0E0DF;
+     box-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.22);    
+}
+div.modalDiv div#modalPending {
+    z-index:5;
+    position: absolute;
+    background-color: #FFF;
+    height:inherit;
+    width:inherit;
+    *width:100%;
+    *padding-bottom:200px;  
+}
+div.modalDiv div#modalPending p {
+    color:#B74C11;
+    font-size: 12px; 
+    padding-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    *padding: 40px 24px 0px 24px;   
+}   
+div#modalDialog .modalClose {
+    background: transparent url("http://media1.s-nbcnews.com/i/TODAY/z_Creative/zComponents/STORY/img/close-button.png") 6px 6px no-repeat;
+    border: none;
+    width: 25px;
+    height: 25px;
+    position:absolute;
+    top: 13px;
+    left: 298px;
+    z-index: 999;
+    cursor: pointer;
+}
+div#modalDialog .modalClose span {
+    position:absolute; 
+    left:-999em;
+    z-index: 20;
+}
+div#modalDialog .title  {
+    display:inline-block; 
+    margin: -2px 5px -5px 15px;
+    font-size:16px; 
+    color:#525252; 
+    background-color: #FFF;
+    border: 1px solid #E0E0DF;
+    padding: 6px 10px;
+    position: absolute;
+    top: 5px;
+    z-index: 20;
+}
+
+
+ .j_widget_fb_sharing.j_edition_story .j_widget_zinger_login .c-account-widget span {margin:0; padding:0;}
+/* 02_todayblocks.css */
+.block, 
+.block .attribution {background-color: white; border: 1px solid #e0e0df; outline:0;}
+    
+.tile {background-color: #B84F27;}
+.category, 
+.category a, 
+.category a:visited, 
+.category a:link,
+.title, 
+.title a, 
+.title a:visited, 
+.title a:link {
+    font-size: 12px;
+    color: white;
+}
+
+/*fundamentals for all blocks -- no block layout variations go here*/
+.block {width: 144px; padding: 10px;}
+#stream, #featured {margin-top: 5px; padding: 0px 0px;}
+
+/*layouts*/
+.block {padding: 0px; position: relative; overflow: visible; float: left;}
+.block ul, .block ol {margin: 15px; padding: 0px;}
+.block ol {height: 285px;}
+.block .category, 
+.block .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    background-color: #F37226;
+    margin: 0;
+    line-height: 15px;
+    z-index: 999;
+    font-weight: 100;
+}
+.block .category a:hover, 
+.block .title a:hover {color: white;}
+.block p {font-size: 12px; font-weight: 500; line-height: 16px; margin: 8px 0 0; padding: 0 0 5px;}
+.block .art {margin: 0 auto; text-align: center;}
+.block .art .credit {color: #bbb; font: 9px/10px Arial; text-align: right; float: right;position: relative; }
+.double .credit {color: #bbb; font: 9px/10px Arial; position: absolute; bottom: 6px;}
+                               
+.block .vertical .art .credit {margin-left: -30px; margin-right: 6px; margin-top: 315px;}
+.block .social {text-align: right; float: right;}
+.bleed .art {margin: -15px 0px 5px -15px;}
+
+#stream .bleed .img {margin-bottom: 12px;}
+#stream .double .credit {margin-top: auto;}          
+#stream .vertical p {padding-bottom: 10px;}            
+
+.block .attribution {border-left: 0px; border-bottom: 0px; border-right: 0px; display: none; position: absolute; bottom: 0px; margin: 10px 10px 0px 10px; padding: 12px 0px 5px; width: 95%; height: 20px; font-size: 12px;}
+
+.tile .category {font-size: 14px; font-weight: 100;}
+.tile .category a, .tile .category a:visited {font-size: 14px; font-weight: 100; color: #FCB913;}
+.tile .category a:hover {color:#fff;}
+.tile .category {margin: 0; margin-bottom: 10px;}
+        
+.no-art .category, .thumb .category {margin-bottom: 5px;}
+.livestream {outline: 0;}
+.livestream #timerContainer {text-align: center; margin-top: -10px; width: 660px; height: 300px; outline: 0; 
+                             background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/Today_livepromoBG.jpg") no-repeat scroll left top transparent;}
+.livestream #timerContainer p {font-size: 16px; color: #FEE6C4; padding-top: 140px; margin-left: -180px; outline: 0;}
+.livestream #timerContainer #timeLeft {font-size: 36px; margin-top: 12px; color: #fccc59; margin-left: -180px; outline: 0;}
+.livestream #live-video-container {margin-left:40px; margin-top:15px;}
+.livestream #live-video-container #live-video-player p {font-size: 16px;}
+
+.block ul, .block ol {margin: 10px;}
+.block ol {height: auto;}
+.block {height: 300px; width: 322px;}
+.double {height: auto;}
+.block {margin: 7px 4px;}
+
+.single ol .story {clear: right;}
+.single .art {float: none;}
+.single ol li {margin-bottom: 0.6em;}
+.single.no-art ol, 
+.single.thumb ol {margin-top: 15px;}
+.single.navlist ol {margin-top: 30px;}
+.single.thumblist ol {margin-top: 28px;}
+
+.navlist .list li, .double li, .list li {margin-bottom: 0.6em;}	
+.double ol {margin: 0px 10px; height: auto;}
+
+.block .credit, .credit {right: auto; top: auto; display: inline;}
+
+.double .credit, .credit {right: 5px; top: 323px;}	
+.double .credit {bottom: auto; top: 334px;}
+.double .art .credit {margin-right: 5px;}
+.double .story .art {float: left; margin: 0px 10px 10px 0px;}
+.double .story p, .double .story .credit {display: none;}
+.double .lede {height: auto; margin-top: 0px;}
+.livestream .lede .art {margin-left: -10px;}
+.double .lede p {display: block; padding-bottom: 7px; margin-top: 5px;}
+.double .thumbs .story {float: none;}
+.double .thumbs .story a {padding-left: 0px;}
+.double .thumbs .story .xsl {font-size: 11px;}
+.double .thumbs .lede {float: none; height: auto; margin-top: 0px;}
+.double .thumbs .lede a {position: relative; padding-right: 0;}
+.double .thumbs .lede .art {float: left; margin: 0 13px 0 -10px; height: auto;}
+.double .thumbs .art {float: left; margin: 4px 8px 0 0; height: 45px;}	        
+.double .thumbs .art img {visibility: visible;}
+.double .thumbs .img {height: 45px; overflow: hidden;} 
+.double .thumbs .lede .art img {height: 300px;/*visibility: hidden;*/}
+.thumbs .top .art {float: none;}	    
+.double .thumbs li {height: 45px;}
+.double .tops .story, .double .top {float: left; width: 80px; padding: 0px; margin: 10px 10px 0px 0px;}
+.double .tops .art {margin-bottom: 0px;}
+.double .tops .lede {float: none; width: auto; margin: 0px;}
+.horizontal .story {padding-top: 3px;padding-bottom: 5px; float: left; display: block; clear: both;}	
+
+.four ol {margin: 0;}
+.four li {width: 140px; float: left; margin-left: 9px; margin-bottom: 20px;}
+.four li, .four .lede {height: 290px;}
+.four .story {height: auto;}
+.four .story .icon {display: none;}
+.four .story p .icon {display: inline-block;} 
+.four .story p {display: block; margin-top: 4px;}
+.four .story .art {float: none; margin: 0px;}
+.four .sh {font-size: 16px; display: block; padding-top: 3px; }    
+
+.thumblist ol {padding-top: 5px;}
+.thumblist li {display: table;}
+.thumblist .story {display: table-cell; vertical-align: middle;}
+.thumblist .t2 .img {height: 104px; overflow: hidden;}
+.thumblist .t2 li {margin-bottom: 15px;}
+.thumblist .t3 .img {height: 69px; overflow: hidden;}
+.thumblist .t3 li {margin-bottom: 15px;}
+.thumblist .t3 .xsh {font-size: 14px; line-height: 16px;}
+.thumblist .t4 .img {height: 62px; overflow: hidden;}
+.thumblist .t4 li {margin-bottom: 0px;}
+.thumblist .t4 .xsh {font-size: 13px;}
+.thumblist .t5 .img {height: 41px; overflow: hidden;}
+.thumblist .t5 li {margin-bottom: 6px;}
+
+.thumblist p {margin: 2px 0 0; line-height: 14px;}
+.thumblist .t2 p {line-height: 16px;}
+#stream .thumblist .art {padding: 3px 10px 5px 0; height: auto;}
+
+.navlist .t1 .lede a {font-size: 35px;}
+.navlist .t2 .lede, .navlist .t3 .lede, .navlist .t4 .lede, .navlist .t5 .lede, .navlist .t6 .lede {border-bottom: 1px dashed #ccc0a6; padding-bottom: 10px;}
+.navlist .t7 .lede a, .navlist .t8 .lede a, .navlist .t9 .lede a {font-size: 25px; line-height: 1.04em;}
+
+.navlist .t7 .lede .icon, .navlist .t8 .lede .icon, .navlist .t9 .lede .icon {width: 16px;}
+.navlist .t7 .lede .icon span, .navlist .t8 .lede .icon span, .navlist .t9 .lede .icon span {width: 20px; height: 17px; background-position: -43px -26px !important;}
+.navlist .t7 .lede .icon .slideshow, .navlist .t8 .lede .icon .slideshow, .navlist .t9 .lede .icon .slideshow {background-position: -41px -44px !important;}
+
+.navlist .t1 .lede .entry-title .icon, .navlist .t2 .lede .entry-title .icon, .navlist .t3 .lede .entry-title .icon, .navlist .t4 .lede .entry-title .icon, .navlist .t5 .lede .entry-title .icon, .navlist .t6 .lede .entry-title .icon {display: none;}
+.navlist .lede p .icon .video {background-position: -16px -24px !important;}
+
+.vote .flag {display: none;}
+.vote fieldset div {margin: 9px 0px 0.3em 18px;}
+.vote fieldset .button {display: inline-block;}
+.vote fieldset div input {margin-left: -18px; margin-right: 6px;}
+.vote .resultsLink, .vote .totalvotes {margin-left: 3px; font-size: 12px;}
+.vote .lede a, .vote label, .vote .results .response, .vote .totalvotes {color: #FFF;}
+.vote .results{color: #FFF; padding: 15px 0 0 15px;}
+.vote .results .response {padding-bottom: 8px; font-size: 13px;}
+.vote .results .winner {color: #fff;font-weight: 500;}
+.vote .voteChoice span {position: absolute; width: 15px; height: 13px; margin-left: -16px; display: inline-block; 
+                        background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") no-repeat scroll -195px -132px transparent;}
+.vote .lede a:hover {color: #FFF;}
+.vote label {font-size: 13px; line-height: 1.15em; padding-right: 3px; margin-top: -18px; display: block;}
+.vote form {padding-top: 7px; padding-left: 1px;}
+.vote ol {padding-top: 5px;}
+.vote .barcontainer { width: 100%; margin-bottom: 8px; padding-top: 2px;}
+.vote .bar { background-color:#fbd49d; height:10px; width: 0;} 
+.vote .winner .bar { background-color:#f15822; height:10px; width: 0;}
+.votebutton {border: none; font-size: 18px;color: #f15822;
+             background-color:#FFF; text-align: center; cursor: pointer; margin-top: 11px; margin-left: 5px; padding-bottom: 1px;}
+.votebutton:hover {color: #666 !important;}
+
+.tiles {background-color: #FFF; /*override*/ border: 1px solid transparent; padding: 0px; width: 322px;}
+.tiles ol {margin: 0; padding: 0px;}
+.tiles ol li, .tile {float: left; width: 129px; height: 141px; padding: 10px; margin: 0px 0px 10px 0px;overflow: hidden; position: relative;}
+.tiles .tile .category {position: absolute; bottom: 6px;}  
+.tile:nth-of-type(odd) {margin-right: 10px;}
+.tile a {color: #fcf4d9; display: block; margin-top: 10px; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);}
+.tile a:hover {color: #ffe196;}
+.tile .category {padding: 0px; position: absolute; top: auto; left: auto; bottom: 0px;color: #FFF; font-size: 16px; font-size: 14px; display: block; margin-top: 1.0em; text-transform: none;background-color: transparent;}
+.tile ul {margin: 0px; padding: 0px;}
+.tile ul li {margin-bottom: 5px;}	    
+.tile li a {color: #FFF; font-size: 11px;}
+
+#stream .breaking {background-color: #fff;}
+.single.breaking .art {display: none;}
+.single.breaking .story {padding-top: 0px;}
+.single.breaking .story a {font-size: 40px; font-weight: 100; line-height: 41px;}
+.single.breaking .story p {font-size: 11px; font-weight: 500; color: #525252;}
+.breaking .category {display: none;}
+.double.breaking .list {margin-top: 0px;}
+.double.breaking .list .lede .story {margin-top: 0px;}
+.double.breaking .list .lede .art {margin-top: 0px;}
+.double.breaking.eyebrow .art {margin-left: 0px;}
+.breaking .title {width: 307px; background-color: #FA1D00;}
+.double.breaking .title {width: 384px;}
+
+
+.fb_iframe_widget {margin: 0 0 0 -9px;}
+.facebook li {display: none;}
+.facebook .activity-feed, .facebook .interactive, .facebook .text {display: block;}
+
+/*drop-shadow*/
+.block, .navshadow {-moz-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15); -webkit-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15); box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15);}
+div.vote {-moz-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15); -webkit-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15); box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15);}
+.tile {-moz-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.40); -webkit-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.40); box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.40);}
+
+/*no-shadow*/
+.tiles {-moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;}
+
+/*image cropping -- t l b r*/
+.single .art {height: 181px;}
+.bleed .art {margin: -10px 0px 5px -10px;}
+.double.bleed .art {margin-top: 0px;}
+.single .art img {width: 322px;}
+.single.vertical .art img {width: auto;}
+.single .art img, .double .art img {/*visibility: hidden;*/}    
+.thumb .art img, .thumblist .art img {visibility: visible;}
+.four .art img {visibility: visible;}
+.single .art .img {clip:rect(0px 322px 181px 0px); width: 306px; height: 181px;overflow:hidden;}
+.double .lede .art .img {clip:rect(0px 307px 300px 0px); width: 400px; height: 300px; margin: 0px;}
+.four .lede .art .img {clip:none; height: auto; width: auto;}
+.double .art .img {width: auto; height: 45px; margin-top: 4px; margin: 0px;}
+.thumb .art .img {clip:rect(); width: auto; height: auto; margin: 0px;}
+.four .art .img {clip:rect(); width: auto; height: auto; float: left;}
+.vertical .art {float: left; height: 300px;}
+.vertical .art .img {clip:rect(0px 167px 300px 0px); width: 167px; height: 300px;}
+.single .vertical .art {float: left; margin-right: 13px;}
+.thumb .art img, .thumblist .art img {clip:rect(); width: auto;}
+.thumb .vertical .art {margin-right: 0px;}
+.thumb .art {float: left; height: auto; padding: 10px 10px 5px 0px; position: static;}
+.thumb .art .img, .thumblist .art .img {position: relative; clip:rect(0px); width: auto; height: auto;}
+.thumb li {height: auto; display: block;}
+.thumb .lede {display: inline-block;}
+.thumb p {margin-left: 148px;}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { /*Safari & Chrome*/
+.list ol li, .double li {margin-bottom: 0.5em;}
+#showcasenav li {margin-top: -4px;}
+#popular.current {margin-top: -5px;}
+.double .flag { margin-top: 0px;}
+.block .category, .block .title {padding-top: 3px;}
+.four .lede {padding-top: 5px!important;}
+.search {margin-right: 20px;}
+.double .art { margin-top: -10px;}
+.horizontal .entry-title {margin-top: -5px;}
+#stream .double .thumbs .credit {display: inline-block; padding-top: 15px;}
+.double .credit, .credit {display: block!important; position: relative; }
+#stream .double .credit  {margin-top: 20px;padding-top:0!important;}
+.vertical .credit {position: relative; margin-top: 0;}
+.double.breaking .list .lede .art {margin-top: -4px;}
+}
+
+/*fundamentals*/
+.content {margin: 0 auto; width: 1028px;}
+.block {z-index: 5;}
+.block ul, .block ol {margin: 10px 15px;}
+.tiles ol {margin: -1px 0 0;}
+.double ol {margin: 0 10px;}
+.block .art .credit {margin-right: -10px;}
+.horizontal .art .credit {_margin-top: 2px;}
+.double .credit, .credit {right: auto; top: auto; display: inline;}    
+.tiles .flag {right: 8px;}
+.double .thumbs .credit {top: auto;}
+.no-art .category, .thumb .category, .vertical .category {margin-bottom: 5px;}
+
+/*layout*/
+.single .art {position: relative;}
+.single .art .img {position: relative; float: left;}
+.single .art .img {clip:rect(0px 322px 181px 0px); width: 322px;height: 181px;}
+
+.vertical .art .img {clip:rect(0px 167px 300px 0px); width: 167px; height: 300px;}	
+.horizontal .art .img {clip:rect(0px 322px 181px 0px); width: 322px; height: 181px;}
+	
+.block {height: 300px; width: 322px;}
+.block {margin: 7px;}
+.tiles ol li, .tile {width: 136px;}
+.bleed .art {margin: -10px 0px 5px -15px;}
+	
+.double {width: 660px;}
+.double ol {height: 300px; overflow: visible;}
+.double .category, .double .attribution, .livestream .category {float: none;}
+.double .lede {margin-right: 0px; width: auto;}
+.double .thumbs li {height: auto;}
+.double .art {float: left; height: 331px; margin: 0 13px 0 -10px; position: relative; width: auto;}        
+.double .art .credit {position: absolute; bottom: 4px; right: 3px;}
+.double.bleed .story {height: 45px;}
+.double.bleed .lede .story, .livestream .story {height: auto; padding-top: 15px; padding-bottom: 2px;}
+.double .lede .art .img {overflow: hidden; clip:rect(0px 400px 300px 0px); width: 400px; height: 300px; margin: 0px;}
+                         
+/*strong horizontal double block*/
+.double .horizontal .art .img {overflow: hidden;}
+.double .horizontal .art {height: 230px; padding-bottom: 5px;}
+.double .horizontal .art .img {clip:rect(0px 660px 230px 0px); width: 660px; height: 230px; float: none;}
+.double .horizontal .img img {width: 660px; height: 230px;}
+.double .thumbs li {display: block;}    
+#stream .double .thumbs .credit {display: inline; right: auto; }
+#stream .double .thumbs .story {display: table-cell; vertical-align: middle;}    
+    
+.four .lede .art .img {clip:none; height: auto; width: auto;}
+
+.livestream #livestream-overlay {background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todaypngsprite.png") no-repeat scroll 0px 0px transparent;
+                                 width: 137px; height: 93px; position: absolute!important; left: 15px; top: auto!important; bottom: 15px; text-indent: -5000px;} 
+#livestream-overlay:hover {background-position: 0px -100px;}
+
+.thumb .art .img, .thumblist .art .img, .four .art .img {clip:rect(); width: auto; height: auto; margin: 0px;}
+
+.four .category {float: none;}
+.four ol {margin: 0 0 0 8px; padding: 0px;}
+.four li, .four .lede {float: left; margin: 0px; padding: 0px 9px; width: 144px; height: 290px;}    
+.four .art {float: none; height: auto; margin: 0;}
+
+.thumb .art, .thumblist .art {float: left; height: auto; padding: 10px 10px 5px 0px; position: static;}
+.thumb .art .img, .thumblist .art .img {position: relative; clip:rect(0px); width: auto; height: auto;}
+.thumblist .art {padding-top: 3px;}
+
+/*section navigation block*/
+.single.sectionNav ol { margin: 40px 35px 20px 20px;}
+.single.sectionNav .xsh { font-size: 14px;}
+
+/*eyebrows*/
+.single.eyebrow ol {margin-top: 30px;}
+.bleed.eyebrow ol {margin: 10px 15px;}
+.bleed.eyebrow .art {margin-left: -15px;}
+.double.eyebrow .art {margin-left: 0px;}
+.double.eyebrow ol {margin-left: 10px; margin-top: 0px;}
+.double.eyebrow .thumbs .lede .art {margin-left: -10px;}
+.eyebrow .title {background-color: #F37226;}
+
+.breaking .title {width: 307px; background-color: #FA1D00;}
+.double.breaking .title {width: 384px;}
+
+
+/*-----quick share-----*/
+.quickshare {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 8px;
+    color: #BEBEBE;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    outline: 0!important;
+}
+
+.quickshare:hover {color: #F37226;}
+
+.quickshare .share-btn .share {
+    background: transparent url('../common/img/today-sprite.png') no-repeat -153px -100px;
+    width: 22px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+.quickshare .share-btn:hover span {background-position: -179px -100px;}
+
+.quickshare .share-icons {
+    display: none;
+    margin: 0;
+}
+
+.quickshare .share-icons li { 
+    float: left;   
+    width: 27px;
+    height: 26px;
+    background: transparent url('../common/img/today-sprite.png') no-repeat;
+    text-indent: -5000px;
+    margin: 0 2px;
+}
+
+.quickshare .share-icons li a{ 
+    float: left;   
+    width: 27px;
+    text-indent: -5000px;
+    margin: 0 2px;
+}
+
+.tablet .quickshare .share-icons li {margin: 0 6px;}
+
+.quickshare .share-icons li:last-child {margin-right: 0;}
+
+.quickshare .share-icons .facebook {background-position: 1px -68px;}
+.quickshare .share-icons .twitter {background-position: -26px -68px;}
+.quickshare .share-icons .pinterest {background-position: -54px -68px;}
+.quickshare .share-icons .email {background-position: -110px -68px;}
+
+
+/*-----sponsored post blocks-----*/
+.sponsored-post.eyebrow .title, 
+.sponsored-post .title {background-color: #3CA337; text-transform: uppercase;}
+.sponsored-post .story h3 a,
+.sponsored-post .story h3 a:hover, 
+.sponsored-post .story h4 a,
+.sponsored-post .story h4 a:hover {color: #3CA337;}
+.sponsored-post .ad-sponsoredpost .ad-label {display:none;}
+.sponsored-post .ad-sponsoredpost {margin:0;padding:0;}
+.sponsored-post .ad-sponsoredpost iframe {position:absolute;}
+
+/* 03_todayheader.css */
+#header {
+    font-family: "ProximaNova","Trebuchet MS","Arial","Helvetica",sans-serif;
+    font-weight: 300;
+}
+
+/*drop-shadow*/
+#showcase, #navigation-menu, .promoHolder {
+    -moz-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15); 
+    -webkit-box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15); 
+    box-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.15);
+}
+
+/********Hamburger*********/
+
+#navigation-menu {
+	display: none;
+	float: left;
+    top: 50px;
+    width: 243px;
+	position: fixed;
+	z-index: 20000;
+	background-color: white;
+	border: 1px solid #e0e0df;
+	overflow-y: scroll;
+    height: 100%;
+}
+
+#navigation-menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+#navigation-menu li {
+	list-style: none;
+	font-size: 13px;
+    line-height: 17px;
+	padding: 13px 20px 13px 15px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #e0e0df;
+}
+
+#navigation-menu li.first {
+	padding-top: 14px;
+}
+
+.menuHolder, .navHolder {
+	width: 1016px;
+	margin: 0 auto;
+}
+
+#navigation-menu .spotlight li {
+    background-color: #f8f4eb;
+    font-weight: 500;
+}
+
+#navigation-menu a:hover {
+    color: #F37226;
+}
+
+#navigation-menu .spotlight li:hover {
+    background-color: #f3ecde;
+}
+
+#navigation-menu .more li:hover {
+    background-color: #f8f4eb;
+}
+
+#navigation-menu a,
+#navigation-menu a:hover
+#navigation-menu a:visited {
+    color: #F37226;
+}
+
+
+/********HeaderTop*********/
+
+#header {
+	height: 273px;
+	width: 100%;
+    background: white;
+    z-index: 999999;
+    position: relative;
+    outline: 0!important;
+}
+
+#header .navigation {
+	background-color: white;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	z-index: 15999;
+	border-bottom: 1px solid #e0e0df;
+    outline: 0!important;
+}
+
+.menu-button {
+	width: 25px;
+	height: 30px;
+	padding: 10px 15px;
+	border-right: 1px solid #e0e0df;
+	border-left: 1px solid #e0e0df;
+	float: left;
+	cursor: pointer;
+}
+
+.menu-button:hover, 
+.menu-button:active {background-color: #F8F4EB;border-bottom: 1px solid #E0E0DF;}
+
+.menu-button span {
+	background: url('../common/img/today-header-sprite.png') no-repeat -1px -35px;
+	width: 26px;
+	height: 31px;
+	float: left;
+    outline: none;
+}
+
+.today-logo {
+	float: left;
+	margin: 0;
+    outline: 0!important;
+}
+
+.today-logo span {
+	background: url('../common/img/today-header-sprite.png') no-repeat 0 0;
+	float: left;
+	height: 30px;
+	margin: 8px 10px;
+	width: 183px;
+	text-indent: -5000px;
+}
+
+.follow-search-brands {
+	float: right;
+	height: 50px;
+	margin-right: 11px;
+    position: relative;
+}
+
+.follow, #header-search, .brands, .nbcnews, .msn {display: inline-block;}
+.follow, #header-search, .brands {border-left: 1px solid #e0e0df;}
+
+.follow {
+	padding: 21px 13px 17px 16px;
+	float: left;
+    line-height: 1;
+    outline: 0!important;
+    width: 55px;
+}
+
+.follow.fullview {padding: 13px 14px;width: auto;}
+
+.follow-social {
+	display: none; 
+	padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+.follow-social li {
+	background: url('../common/img/today-header-sprite.png') no-repeat scroll top left transparent;
+	display: inline-block;
+	float: left;
+	margin-left: 2px;
+	margin-right: 9px;
+}
+
+.desktop .follow-social li {margin-right: 2px;}
+
+.follow .c-zinger {
+    float: left;
+    height: 24px;
+    margin: 0 0 0 10px!important;
+    border-left: 1px solid #e0e0df;
+    padding-left: 14px;
+    border-radius: 0;
+}
+
+.follow-social li a {
+	float: left;
+	height: 25px;
+	text-indent: -5000px;
+	width: 26px;
+}
+
+.follow-social .facebook {
+	background-position: 0px -69px;
+}
+
+.follow-social .twitter {
+	background-position: -27px -69px;
+}
+
+.follow-social .pinterest {
+	background-position: -55px -69px;
+}
+
+.follow-social .tumblr {
+	background-position: -83px -69px;
+}
+
+.follow-social .newsletter {
+	background-position: -111px -69px;
+}
+
+.follow-social .rss {
+	background-position: -139px -69px;
+}
+
+.follow-button.fullview {
+	text-indent: -5000px;
+	cursor: auto;
+}
+
+.follow-button {
+	cursor: pointer;
+	color: #666;
+	font-size: 12px;
+}
+
+.follow-button:hover, 
+.follow-button:active {color: #F37226}
+
+#header-search {
+    float: left; 
+    outline: 0!important;
+}
+#header-search.fullview .hd-search-button {float: right;}
+
+#header-search .hd-search-button {
+	background: url('../common/img/today-header-sprite.png') no-repeat 1px -97px;
+	height: 24px;
+	width: 24px;
+	border: 0;
+	padding: 0;
+	margin: 13px 10px;
+	cursor: pointer;
+}
+
+#header-search .hd-search-button:active, 
+#header-search .hd-search-button:hover {background-position: -22px -97px;}
+
+#header-search .hd-search {
+	display: none;
+	float: left;
+	margin-right: -41px;
+    position: relative;
+}
+
+#header-search .hd-search-input {
+	border: none;
+	margin: 12px;
+	width: 160px;
+	height: 27px;
+	color: #777;
+	font-family: "ProximaNova","Trebuchet MS","Arial","Helvetica",sans-serif;
+	font-size: 14px;
+	padding: 0 5px;
+	vertical-align: middle;
+}
+
+#header-search .hd-search-submit {
+	border: none;
+	background-color: transparent;
+    width: 30px;
+    cursor: pointer;
+    padding: 7px 7px 12px 7px;
+}
+
+.brands {
+	padding: 16px 0 18px 11px;
+	float: left;
+    outline: 0!important;
+}
+
+.family {
+    padding-top: 6px;
+}
+
+.brands a {
+	display: inline-block; 
+	text-indent: -5000px;
+}
+
+.brands .msn a {
+	background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/msnHeader.png") no-repeat scroll left top transparent;
+	width: 35px; 
+	height: 16px; 
+	float: left; 
+	margin-left: 14px;
+	margin-top: -7px;
+}
+
+.brands .nbcnews a {
+	background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/nbcnewsHeader.png") no-repeat scroll left top transparent;
+	width: 65px; 
+	height: 10px; 
+	float: left; 
+	margin-top: 6px;
+	margin: 0 2px;
+}
+
+/********Talent*********/
+
+#header .talent {
+	height: 121px;
+	width: 1015px;
+	top: 51px;
+	position: relative;
+	z-index: 1000;
+	margin: 0 auto;
+    display: none;
+    outline: 0!important;
+}
+
+.desktop #header .talent { display: block;}
+
+.heads {
+    height: 120px;
+    width: 745px;
+    position: relative;
+    float: left;
+    z-index: 1000;
+    outline: 0!important;
+}
+
+.header-promo {
+    position: absolute;
+    right: 0;
+    width: 258px;
+    padding: 0;
+    margin-right: 12px;
+}
+
+.header-promo li {
+    list-style: none;
+    height: 27px;
+    padding: 13px 0 0 18px;
+    margin: 0;
+}
+
+.header-promo a {
+    color: white!important;
+    font-size: 16px;
+}
+
+.promo1 {
+    background-color: #ffa120;
+}
+
+.promo2 {
+    background-color: #f37226;
+}
+
+.promo3 {
+    background-color: #3b94f4;
+}
+
+
+/********Showcase*********/
+
+.showHolder {
+    overflow: hidden;
+    width: 1059px;
+    margin: 0 auto;
+    outline: 0!important;
+}
+.showcase:after {
+    content: "."; 
+    clear: both; 
+    display: block; 
+    height: 0; 
+    visibility: hidden;
+}
+
+#showcasenav, 
+#showcase {
+    border-top: 1px solid #e0e0df; 
+    border-bottom: 1px solid #e0e0df;
+    background-color: #fff; 
+    outline:0!important;
+}
+#showcase {
+    padding: 10px 0; 
+    z-index: 1500; 
+    height: 74px; 
+    position: relative;
+    top: 50px;
+    width: 100%;
+} 
+#teasenav {
+    position: absolute; 
+    top: 38%; 
+    width: 1024px; 
+}
+#showcase .container {
+    position: relative;
+    left: 23px; 
+    overflow: hidden; 
+    z-index: 1000;
+    height: 78px; 
+    width: 990px;
+    -ms-overflow-style: auto !important;
+    -ms-overflow-y: hidden !important; /* Remove IE10 scrollbars on video timeline */
+}
+#showcasenav {
+    display: inline-block; 
+    float: left; 
+    padding: 2px 0px 2px 0px; 
+    position: relative; 
+    top: 1px; 
+    width: 320px; 
+    z-index: 3000; 
+    outline: 0;
+    background-color: white;
+    margin: -19px 0px 0px 614px; 
+    display: block; 
+    overflow: hidden; 
+    height: 17px; 
+    height: 19px\9;
+    padding-top: 0px\9;
+}
+#showcasenav li {
+    cursor: pointer; 
+    margin-top: -5px; 
+    text-align: center; 
+    border-left: 1px solid #e0e0df; 
+    width: 69px; 
+    height: 21px; 
+    font-size: 10px; 
+    font-weight: 500;
+    padding: 5px 0px 4px 0px; 
+    color: #F37226; 
+    line-height: 20px\9; 
+    margin-top: -4px\9;
+}
+#showcasenav .current {
+    width: 83px; 
+    background-color: white; 
+    padding: 3px 0 3px 0; 
+    margin-left: 4px; 
+    vertical-align: bottom; 
+    color: #B23B5C; 
+    font-size: 11px; 
+    outline: 0; 
+    margin-top: -5px\9; 
+    line-height: 20px\9;
+}             
+#showcasenav a:hover {color: #D64D1E;}
+
+.timeline-button {
+    cursor: pointer; 
+    width: 14px; 
+    height: 24px; 
+    background: transparent url('../common/img/today-header-sprite.png') no-repeat left top; 
+    outline: 0!important;
+}
+#forward {
+    float: right; 
+    background-position: -65px -98px; 
+    outline: 0!important;
+}
+#backward {
+    float: left; 
+    background-position: -50px -98px; 
+    
+    outline: 0;
+}
+#forward:hover {background-position: -96px -98px;}
+#backward:hover {background-position: -81px -98px;}
+
+#showcase-loader {
+    position:relative; 
+    left: 45%; 
+    top: 17%; 
+    z-index: 2000;
+}
+
+.navshadow {
+    width: 218px; 
+    display: block; 
+    height: 20px; 
+    position:absolute; 
+    right:184px; 
+    top:52px; 
+    background-color: #FFF;
+}    
+
+.showcaseTourAd .container {width: 650px;}
+.showcaseTourAd #teasenav {width: 682px;}
+
+.showcaseTourAd .ad {
+    border-left: 1px solid #CCC; 
+    height: 50px; 
+    padding: 10px;
+}
+
+#timeline {
+    padding: 0px; 
+    position: relative; 
+    display: inline-block;
+}
+#timeline li {
+    width: 240px; 
+    font-size: 11px; 
+    line-height: 12px; 
+    padding: 0px 8px 0px 0px; 
+    float: left; 
+    clear: none;
+}
+#timeline .art {
+    float: left; 
+    margin: 7px 7px 10px 0px;
+}
+#timeline .icon .video {
+    background: transparent url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") left top no-repeat; 
+    background-position: -15px -20px; 
+    padding-bottom: 7px;
+}
+.icon-no-timestamp {
+    display: inline-block; 
+    height: 13px; 
+    position: relative; 
+    top: 12px; 
+    width: 12px;
+}
+.icon-no-timestamp .video {
+    display: block; 
+    height: 10px; 
+    width: 14px; 
+    background: transparent url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") left top no-repeat; background-position: -0px -27px;
+}
+.no-timestamp {
+    position: relative; 
+    top: 8px; 
+    display: inline !important;
+}
+#timeline .icon .label {
+    visibility: visible; 
+    display: inline-block;
+    background-image: none; 
+    color: #525252; 
+    font-weight: 500;
+    font-size: 11px; 
+    white-space: nowrap; 
+    margin: 4px 0px 0px 16px; 
+    width: auto;
+}
+#timeline .headline {
+    color:#F37226 !important; 
+    font-weight: 500;
+    font-size: 12px; 
+    line-height: 1.15em; 
+    display: block; 
+    padding-top: 3px;
+}
+#timeline .headline:hover {color: #D64D1E !important;}
+
+#timeline .videotease .art .img {
+    clip: rect(0px 110px 62px 0px);
+    width: 110px;
+    height: 62px;
+    overflow: hidden;
+}
+
+#timeline .videotease .art img {width:110px;}
+
+/*Marquee*/
+#marquee, 
+#toolbar {
+    background: #FA1D00; 
+    min-width: 1024px;
+}
+#marquee {
+    padding: 9px 0 5px; 
+    text-align: center; 
+    margin:0; 
+    width: 100%; 
+    overflow: hidden;
+    position: fixed;
+    height: 20px;
+    z-index: 15000;
+}
+#marquee .content {
+    min-width: 1024px; 
+    min-height: 15px;
+}
+#marquee,
+#marquee a,
+#marquee a:hover {color: white;}
+
+#header.today-marquee { height: 310px;}
+#header.today-marquee .navigation { top: 34px;}
+#header.today-marquee .talent { top: 86px;}
+#header.today-marquee #showcase, 
+#header.today-marquee #navigation-menu { top: 85px;}
+#header.today-marquee .arrowHolder { top: 86px;}
+#header.today-marquee .promoHolder { top: 97px;}
+
+.tablet #header.today-marquee .navigation { top: auto;}
+.tablet #header.today-marquee #marquee { position: relative;}
+.tablet #header.today-marquee {height: 188px;}
+
+/*Header TABLET*/
+.tablet #header { height: 160px; width: 1028px; margin: 0 auto;}
+.tablet #header #showcase {top: auto;position: relative;}
+.tablet #header .navigation { position: relative;}
+.tablet #header .menuPromo { display: none;}
+.tablet #header .talent { display: none;}
+.tablet #header #showcase .container {width: 989px;}
+.tablet #header #showcase .container {left: 16px;}
+.tablet #header .navHolder,
+.tablet #header .menuHolder,
+.tablet #header .showHolder {width: 1028px;}
+.tablet #header .follow-search-brands {margin-right: 21px;}
+.tablet #header #showcase #teasenav {width: 1010px;}
+.tablet #header #navigation-menu {position: absolute;-webkit-overflow-scrolling: touch;}
+
+/*Menu Promo*/
+
+.menuPromo {
+    margin: 0 auto;
+    width: 1035px;
+    position: relative;
+    display: none;
+    z-index: 150000;
+}
+
+.menuPromo .arrowHolder {
+    position: fixed;
+    top: 52px;
+    margin-left: 30px;
+    z-index: 100010;
+}
+
+.menuPromo .arrowup {
+    width: 0px;
+    height: 0px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #F8F4EB;
+    position: fixed;
+    margin: 2px 0;
+}
+
+.menuPromo .arrowup2 {
+    width: 0px;
+    height: 0px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 11px solid #E0E0DF;
+}
+
+@-moz-document url-prefix() {
+
+      .menuPromo .arrowup2 {
+            border-left: 9px solid rgba(255, 255, 255, 0);
+            border-right: 9px solid rgba(255, 255, 255, 0);}
+            
+      .menuPromo .arrowup {
+            border-left: 8px solid rgba(255, 255, 255, 0);
+            border-right: 8px solid rgba(255, 255, 255, 0);}
+}
+
+.promoHolder {
+    background-color: #F8F4EB;
+    height: auto;
+    padding: 15px 40px 15px 15px;
+    position: fixed;
+    top: 63px;
+    width: 227px;
+    z-index: 100000;
+    border: 1px solid #E0E0DF;
+}
+
+.promoHolder .pr1, 
+.promoHolder .pr2 {
+    font-weight: 300;
+}
+
+.promoHolder .pr1 {
+    font-size: 15px;
+    line-height: 17px;
+    color: #F37226;
+    margin-bottom: 4px;
+}
+
+ 
+.promoHolder .pr2 {
+    font-size: 11px;
+    line-height: 13px;
+    color: #525252;
+}
+
+.promoHolder .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.promoHolder .close span {
+    background: transparent url('../common/img/today-header-sprite.png') no-repeat -208px -102px; 
+    outline: 0;
+    text-indent: 5000px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+
+/******xfinity header**********/
+#comcast {position:fixed !important;width:100%;z-index:1000002;}
+/* no marquee */
+.comcast #header .navigation {top: 50px;}
+.comcast #header .talent {top:101px;}
+.comcast #header #showcase {top: 100px;}
+.comcast #header .arrowHolder {top:103px;}
+.comcast #header .promoHolder {top:112px;}
+.comcast #page, 
+.comcast #article {margin-top: 45px;}
+.comcast #navigation-menu {top:100px;}
+
+/* with marquee */
+.comcast #header.today-marquee #marquee {top: 50px;}
+.comcast #header.today-marquee .navigation {top:84px;}
+.comcast #header.today-marquee .talent {top: 134px;}
+.comcast #header.today-marquee #showcase {top:134px;}
+.comcast #header.today-marquee .arrowHolder {top:136px;}
+.comcast #header.today-marquee .promoHolder {top:147px;}
+.comcast #page, 
+.comcast #article {margin-top: 45px;}
+.comcast #header.today-marquee #navigation-menu {top:134px;}
+
+/* 04_Social.css */
+/*social icons*/
+.social 
+{
+    display: inline-block; 
+    width: 19px; 
+    height: 16px; 
+    position: relative; 
+    top: 3px; 
+    margin-top: -6px;
+    background: transparent url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") left top no-repeat;
+}
+.fbShare {position: absolute; bottom: 7px; right: -9px; display: inline-block; width: 14px; height: 14px;
+          background: transparent url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") left top no-repeat;
+          color: #3c5a98; font-size: 11px; padding-left: 18px; padding-top: 1px;}
+.list .fbShare {display: none;}
+.facebook {background-position: -95px -91px;}
+
+.twitter 
+{
+background-position: -117px -91px;
+}
+
+.tumblr {background-position: -138px -91px;}
+.fblike {margin-left: 200px;}
+
+.fb_iframe_widget {margin: 0 0 0 -9px;}
+.facebook li {display: none;}
+.facebook .activity-feed, .facebook .interactive, .facebook .text {display: block;}
+
+
+/* 10_chrome.css */
+/*Generic minis*/
+.tiles li {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/generic.jpg") no-repeat scroll left top transparent;}
+.tiles .tile .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/generic.jpg") no-repeat scroll left top transparent\9;}
+
+
+
+/*blogs*/
+.tiles .windsorknot {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theWindsorKnot.jpg") no-repeat scroll left top transparent;}
+.tiles .windsorknot .category a {width: 134px; height: 22px; text-indent: -5000px;}
+.tiles .windsorknot .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theWindsorKnot.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .allday {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/allDay.jpg") no-repeat scroll left top transparent;}
+.tiles .allday .category a {width: 87px; height: 24px; text-indent: -5000px;}
+.tiles .allday .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/allDay.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .bites {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/bites.jpg") no-repeat scroll left top transparent;}
+.tiles .bites .category a {width: 90px; height: 30px; text-indent: -5000px;}
+.tiles .bites .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/bites.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .digitallife {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/digitalLife.jpg") no-repeat scroll left top transparent;}
+.tiles .digitallife .category a {width: 138px; height: 18px; text-indent: -5000px;}
+.tiles .digitallife .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/digitalLife.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .lifeinc {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/lifeInc.jpg") no-repeat scroll left top transparent;}
+.tiles .lifeinc .category a {width: 105px; height: 24px; text-indent: -5000px;}
+.tiles .lifeinc .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/lifeInc.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .theclicker {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theClicker.jpg") no-repeat scroll left top transparent;}
+.tiles .theclicker .category a {width: 107px; height: 28px; text-indent: -5000px;}
+.tiles .theclicker .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theClicker.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .thescoop {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theScoop.jpg") no-repeat scroll left top transparent;}
+.tiles .thescoop .category a {width: 103px; height: 28px; text-indent: -5000px;}
+.tiles .thescoop .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theScoop.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todaymoms {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/TODAYMoms.jpg") no-repeat scroll left top transparent;}
+.tiles .todaymoms .category a {width: 92px; height: 36px; text-indent: -5000px;}
+.tiles .todaymoms .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/TODAYMoms.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .technolog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/technolog.jpg") no-repeat scroll left top transparent;}
+.tiles .technolog .category a {width: 130px; height: 25px; text-indent: -5000px;}
+.tiles .technolog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/technolog.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .thebodyodd {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theBodyOdd.jpg") no-repeat scroll left top transparent;}
+.tiles .thebodyodd .category a {width: 130px; height: 36px; text-indent: -5000px;}
+.tiles .thebodyodd .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theBodyOdd.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .redtapechronicles {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/redTape.jpg") no-repeat scroll left top transparent;}
+.tiles .redtapechronicles .category a {width: 110px; height: 36px; text-indent: -5000px;}
+.tiles .redtapechronicles .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/redTape.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .gadgetbox {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/gadgetbox.jpg") no-repeat scroll left top transparent;}
+.tiles .gadgetbox .category a {width: 130px; height: 22px; text-indent: -5000px;}
+.tiles .gadgetbox .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/gadgetbox.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .thelook {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theLook.jpg") no-repeat scroll left top transparent;}
+.tiles .thelook .category a {width: 130px; height: 30px; text-indent: -5000px;}
+.tiles .thelook .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/theLook.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .overheadbin {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/overheadBin.jpg") no-repeat scroll left top transparent;}
+.tiles .overheadbin .category a {width: 130px; height: 22px; text-indent: -5000px;}
+.tiles .overheadbin .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/overheadBin.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .animaltracks {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/animalTracks.jpg") no-repeat scroll left top transparent;}
+.tiles .animaltracks .category a {width: 140px; height: 28px; text-indent: -5000px;}
+.tiles .animaltracks .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/animalTracks.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .cosmiclog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/cosmiclog.jpg") no-repeat scroll left top transparent;}
+.tiles .cosmiclog .category a {width: 140px; height: 20px; text-indent: -5000px;}
+.tiles .cosmiclog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/cosmiclog.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .ingame {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/ingame.jpg") no-repeat scroll left top transparent;}
+.tiles .ingame .category a {width: 95px; height: 20px; text-indent: -5000px;}
+.tiles .ingame .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/ingame.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .photoblog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/photoblog.jpg") no-repeat scroll left top transparent;}
+.tiles .photoblog .category a {width: 125px; height: 20px; text-indent: -5000px;}
+.tiles .photoblog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/photoblog.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .fieldnotes {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/fieldnotes.jpg") no-repeat scroll left top transparent;}
+.tiles .fieldnotes .category a {width: 140px; height: 20px; text-indent: -5000px;}
+.tiles .fieldnotes .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/fieldnotes.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .worldblog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/worldblog.jpg") no-repeat scroll left top transparent;}
+.tiles .worldblog .category a {width: 130px; height: 20px; text-indent: -5000px;}
+.tiles .worldblog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/worldblog.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .thebottomline {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/bottomline.jpg") no-repeat scroll left top transparent;}
+.tiles .thebottomline .category a {width: 140px; height: 20px; text-indent: -5000px;}
+.tiles .thebottomline .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/bottomline.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .futureoftechnology {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/futureTech.jpg") no-repeat scroll left top transparent;}
+.tiles .futureoftechnology .category a {width: 140px; height: 17px; text-indent: -5000px;}
+.tiles .futureoftechnology .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/futureTech.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .firstread {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/firstRead.jpg") no-repeat scroll left top transparent;}
+.tiles .firstread .category a {width: 130px; height: 35px; text-indent: -5000px;}
+.tiles .firstread .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/firstRead.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .itineraries {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/itineraries.jpg") no-repeat scroll left top transparent;}
+.tiles .itineraries .category a {width: 114px; height: 22px; text-indent: -5000px;}
+.tiles .itineraries .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/itineraries.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .vitals {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/vitals.jpg") no-repeat scroll left top transparent;}
+.tiles .vitals .category a {width: 94px; height: 29px; text-indent: -5000px;}
+.tiles .vitals .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/vitals.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .rockcenter {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/rockcenter.jpg") no-repeat scroll left top transparent;}
+.tiles .rockcenter .category a {width: 140px; height: 29px; text-indent: -5000px;}
+.tiles .rockcenter .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/rockcenter.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .travelkit {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/travelkit.jpg") no-repeat scroll left top transparent;}
+.tiles .travelkit .category a {width: 135px; height: 25px; text-indent: -5000px;}
+.tiles .travelkit .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/travelkit.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .entertainment {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/entertainment.jpg") no-repeat scroll left top transparent;}
+.tiles .entertainment .category a {width: 137px; height: 21px; text-indent: -5000px;}
+.tiles .entertainment .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/entertainment.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .openchannel {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/openchannel.jpg") no-repeat scroll left top transparent;}
+.tiles .openchannel .category a {width: 140px; height: 23px; text-indent: -5000px;}
+.tiles .openchannel .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/openchannel.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todaytravel {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todaytravel.jpg") no-repeat scroll left top transparent;}
+.tiles .todaytravel .category a {width: 75px; height: 25px; text-indent: -5000px;}
+.tiles .todaytravel .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todaytravel.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todayhealth {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayhealth.jpg") no-repeat scroll left top transparent;}
+.tiles .todayhealth .category a {width: 136px; height: 20px; text-indent: -5000px;}
+.tiles .todayhealth .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayhealth.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todayentertainment {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayentertainment.jpg") no-repeat scroll left top transparent;}
+.tiles .todayentertainment .category a {width: 136px; height: 18px; text-indent: -5000px;}
+.tiles .todayentertainment .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayentertainment.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .kathieleehodablog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/klghBlog.jpg") no-repeat scroll left top transparent;}
+.tiles .kathieleehodablog .category a {width: 138px; height: 35px; text-indent: -5000px;}
+.tiles .kathieleehodablog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/klghBlog.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todayonthetrail {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayonthetrail.jpg") no-repeat scroll left top transparent;}
+.tiles .todayonthetrail .category a {width: 138px; height: 35px; text-indent: -5000px;}
+.tiles .todayonthetrail .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayonthetrail.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .economywatch {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/economywatch.jpg") no-repeat scroll left top transparent;}
+.tiles .economywatch .category a {width: 138px; height: 35px; text-indent: -5000px;}
+.tiles .economywatch .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/economywatch.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .marketday {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/marketday.jpg") no-repeat scroll left top transparent;}
+.tiles .marketday .category a {width: 138px; height: 35px; text-indent: -5000px;}
+.tiles .marketday .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/marketday.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todayinlondon, .tiles .todayinlondonblog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayLondon.jpg") no-repeat scroll left top transparent;}
+.tiles .todayinlondon .category a, .tiles .todayinlondonblog .category a {width: 112px; height: 39px; text-indent: -5000px;}
+.tiles .todayinlondon .bb, .tiles .todayinlondonblog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayLondon.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todaynews {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todaynews.jpg") no-repeat scroll left top transparent;}
+.tiles .todaynews .category a {width: 134px; height: 24px; text-indent: -5000px;}
+.tiles .todaynews .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todaynews.jpg") no-repeat scroll left top transparent\9;}
+
+/*Sponsored + Sections*/
+
+.tiles .celebrate {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrate.jpg") no-repeat scroll left top transparent;}
+.tiles .celebrate .category a {width: 135px; height: 29px; text-indent: -5000px;}
+.tiles .celebrate .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrate.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .celebrateeaster {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrates.jpg") no-repeat scroll left top transparent;}
+.tiles .celebrateeaster .category a {width: 135px; height: 29px; text-indent: -5000px;}
+.tiles .celebrateeaster .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrates.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .celebrateshalloween {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrates-halloween.jpg") no-repeat scroll left top transparent;}
+.tiles .celebrateshalloween .category a {width: 135px; height: 29px; text-indent: -5000px;}
+.tiles .celebrateshalloween .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrates-halloween.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .todaycelebrates2012 {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrates2012.jpg") no-repeat scroll left top transparent;}
+.tiles .todaycelebrates2012 .category a {width: 135px; height: 29px; text-indent: -5000px;}
+.tiles .todaycelebrates2012 .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebrates2012.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .celebratesvalentinesday {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebratesVday.jpg") no-repeat scroll left top transparent;}
+.tiles .celebratesvalentinesday .category a {width: 120px; height: 29px; text-indent: -5000px;}
+.tiles .celebratesvalentinesday .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/celebratesVday.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .powerwall {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/powerwall.jpg") no-repeat scroll left top transparent;}
+.tiles .powerwall .category a {width: 111px; height: 22px; text-indent: -5000px;}
+.tiles .powerwall .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/powerwall.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .toyotaconcertseries {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/concertSeries.jpg") no-repeat scroll left top transparent;}
+.tiles .toyotaconcertseries .category a {width: 140px; height: 33px; text-indent: -5000px;}
+.tiles .toyotaconcertseries .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/concertSeries.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .food {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/food.jpg") no-repeat scroll left top transparent;}
+.tiles .food .category a {width: 77px; height: 33px; text-indent: -5000px;}
+.tiles .food .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/food.jpg") no-repeat scroll left top transparent\9;}    
+
+.tiles .tech {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/tech.jpg") no-repeat scroll left top transparent;}
+.tiles .tech .category a {width: 77px; height: 22px; text-indent: -5000px;}
+.tiles .tech .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/tech.jpg") no-repeat scroll left top transparent\9;}   
+
+.tiles .health {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/health.jpg") no-repeat scroll left top transparent;}
+.tiles .health .category a {width: 95px; height: 45px; text-indent: -5000px;}
+.tiles .health .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/health.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .kathieleehoda {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/kathieLeeAndHoda.jpg") no-repeat scroll left top transparent;}
+.tiles .kathieleehoda .category a {width: 142px; height: 145px; text-indent: -5000px;}
+.tiles .kathieleehoda .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/kathieLeeAndHoda.jpg") no-repeat scroll left top transparent\9;}
+.tiles .kathieleehoda h4 {display: none;}
+
+.tiles .money {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayMoney.jpg") no-repeat scroll left top transparent;}
+.tiles .money .category a {width: 101px; height: 26px; text-indent: -5000px;}
+.tiles .money .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayMoney.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .facebook {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/facebook.jpg") no-repeat scroll left top transparent;}
+.tiles .facebook .category a {width: 43px; height: 42px; text-indent: -5000px;}
+.tiles .facebook .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/facebook.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .itunes {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/ipad.jpg") no-repeat scroll left top transparent;}
+.tiles .itunes .category a {width: 43px; height: 42px; text-indent: -5000px;}
+.tiles .itunes .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/ipad.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .newsletters, .tiles .mailbag {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/newsletter.jpg") no-repeat scroll left top transparent;}
+.tiles .newsletters .category a, .tiles .mailbag .category a {width: 50px; height: 35px; text-indent: -5000px;}
+.tiles .newsletters .bb, .tiles .mailbag .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/newsletter.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .twitter {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/twitter.jpg") no-repeat scroll left top transparent;}
+.tiles .twitter .category a {width: 110px; height: 28px; text-indent: -5000px;}
+.tiles .twitter .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/twitter.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .tumblr {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/tumblr.jpg") no-repeat scroll left top transparent;}
+.tiles .tumblr .category a {width: 90px; height: 28px; text-indent: -5000px;}
+.tiles .tumblr .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/tumblr.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .goodnews {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/goodnews.jpg") no-repeat scroll left top transparent;}
+.tiles .goodnews .category a {width: 127px; height: 36px; text-indent: -5000px;}
+.tiles .goodnews .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/goodnews.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .parenting {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/parenting.jpg") no-repeat scroll left top transparent;}
+.tiles .parenting .category a {width: 138px; height: 28px; text-indent: -5000px;}
+.tiles .parenting .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/parenting.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .hip2save {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/hip2save.jpg") no-repeat scroll left top transparent;}
+.tiles .hip2save .category a {width: 138px; height: 28px; text-indent: -5000px;}
+.tiles .hip2save .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/hip2save.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .yourcutekids {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/yourcutekids.jpg") no-repeat scroll left top transparent;}
+.tiles .yourcutekids .category a {width: 138px; height: 28px; text-indent: -5000px;}
+.tiles .yourcutekids .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/yourcutekids.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .whereintheworld {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/whereismatt.jpg") no-repeat scroll left top transparent;}
+.tiles .whereintheworld .category a {width: 102px; height: 39px; text-indent: -5000px;}
+.tiles .whereintheworld .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/whereismatt.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .weekendedition, .tiles .weekendtoday {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/weekendtoday.jpg") no-repeat scroll left top transparent;}
+.tiles .weekendedition h4 a, .tiles .weekendtoday h4 a {width: 142px; height: 145px; text-indent: -5000px;}
+.tiles .weekendedition .bb, .tiles .weekendtoday .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/weekendtoday.jpg") no-repeat scroll left top transparent\9;}
+.tiles .weekendedition .category a, .tiles .weekendtoday .category a {display: none;}
+
+.tiles .todayat60 {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayAt60.jpg") no-repeat scroll left top transparent;}
+.tiles .todayat60 .category a {width: 135px; height: 35px; text-indent: -5000px;}
+.tiles .todayat60 .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/todayAt60.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .holidayguide, .tiles .holidayblog {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/holidayGuide.jpg") no-repeat scroll left top transparent;}
+.tiles .holidayguide .category a, .tiles .holidayblog .category a {width: 128px; height: 31px; text-indent: -5000px;}
+.tiles .holidayguide .bb, .tiles .holidayblog .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/holidayGuide.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .rossenreports {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/rossenreports.jpg") no-repeat scroll left top transparent;}
+.tiles .rossenreports .category a {width: 135px; height: 25px; text-indent: -5000px;}
+.tiles .rossenreports .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/rossenreports.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .mothersday {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mothersday.jpg") no-repeat scroll left top transparent;}
+.tiles .mothersday .category a {width: 135px; height: 25px; text-indent: -5000px;}
+.tiles .mothersday .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mothersday.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .pinterest {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/pinterest.jpg") no-repeat scroll left top transparent;}
+.tiles .pinterest .category a {width: 135px; height: 25px; text-indent: -5000px;}
+.tiles .pinterest .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/pinterest.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .style {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/style.jpg") no-repeat scroll left top transparent;}
+.tiles .style .category a {width: 135px; height: 25px; text-indent: -5000px;}
+.tiles .style .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/style.jpg") no-repeat scroll left top transparent\9;}
+
+/*generic minis, ready for repurposing within WB*/
+.tiles .mini1 {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini1.jpg") no-repeat scroll left top transparent;}
+.tiles .mini1 .category a {width: 80px; height: 23px; text-indent: -5000px;}
+.tiles .mini1 .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini1.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .mini2 {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini2.jpg") no-repeat scroll left top transparent;}
+.tiles .mini2 .category a {width: 80px; height: 23px; text-indent: -5000px;}
+.tiles .mini2 .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini2.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .mini3 {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini3.jpg") no-repeat scroll left top transparent;}
+.tiles .mini3 .category a {width: 80px; height: 23px; text-indent: -5000px;}
+.tiles .mini3 .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini3.jpg") no-repeat scroll left top transparent\9;}
+
+.tiles .mini4 {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini4.jpg") no-repeat scroll left top transparent;}
+.tiles .mini4 .category a {width: 80px; height: 23px; text-indent: -5000px;}
+.tiles .mini4 .bb {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/minis/mini4.jpg") no-repeat scroll left top transparent\9;}
+
+
+/* jquery.smartbanner.css */
+#smartbanner { position:absolute; left:0; top:-82px; border-bottom:1px solid #e8e8e8; width:100%; height:78px; font-family:'Helvetica Neue',sans-serif; background:-webkit-linear-gradient(top, #f4f4f4 0%,#cdcdcd 100%); background-image: -ms-linear-gradient(top, #F4F4F4 0%, #CDCDCD 100%); background-image: -moz-linear-gradient(top, #F4F4F4 0%, #CDCDCD 100%); box-shadow:0 1px 2px rgba(0,0,0,0.5); z-index:9998; -webkit-font-smoothing:antialiased; overflow:hidden; -webkit-text-size-adjust:none; }
+#smartbanner .sb-container { margin: 0 auto; }
+#smartbanner .sb-close { position:absolute; left:5px; top:5px; display:block; border:2px solid #fff; width:14px; height:14px; font-family:'ArialRoundedMTBold',Arial; font-size:15px; line-height:15px; text-align:center; color:#fff; background:#070707; text-decoration:none; text-shadow:none; border-radius:14px; box-shadow:0 2px 3px rgba(0,0,0,0.4); -webkit-font-smoothing:subpixel-antialiased; }
+#smartbanner .sb-close:active { font-size:13px; color:#aaa; }
+#smartbanner .sb-icon { position:absolute; left:30px; top:10px; display:block; width:57px; height:57px; background:rgba(0,0,0,0.6); background-size:cover; border-radius:10px; box-shadow:0 1px 3px rgba(0,0,0,0.3); }
+#smartbanner.no-icon .sb-icon { display:none; }
+#smartbanner .sb-info { position:absolute; left:98px; top:18px; width:44%; font-size:11px; line-height:1.2em; font-weight:bold; color:#6a6a6a; text-shadow:0 1px 0 rgba(255,255,255,0.8); }
+#smartbanner #smartbanner.no-icon .sb-info { left:34px; }
+#smartbanner .sb-info strong { display:block; font-size:13px; color:#4d4d4d; line-height: 18px; }
+#smartbanner .sb-info > span { display:block; }
+#smartbanner .sb-info em { font-style:normal; text-transform:uppercase; }
+#smartbanner .sb-button { position:absolute; right:20px; top:24px; border:1px solid #bfbfbf; padding: 0 10px; min-width: 10%; height:24px; font-size:14px; line-height:24px; text-align:center; font-weight:bold; color:#6a6a6a; background:-webkit-linear-gradient(top, #efefef 0%,#dcdcdc 100%); text-transform:uppercase; text-decoration:none; text-shadow:0 1px 0 rgba(255,255,255,0.8); border-radius:3px; box-shadow:0 1px 0 rgba(255,255,255,0.6),0 1px 0 rgba(255,255,255,0.7) inset; }
+#smartbanner .sb-button:active, #smartbanner .sb-button:hover { background:-webkit-linear-gradient(top, #dcdcdc 0%,#efefef 100%); }
+
+#smartbanner .sb-icon.gloss:after { content:''; position:absolute; left:0; top:-1px; border-top:1px solid rgba(255,255,255,0.8); width:100%; height:50%; background:-webkit-linear-gradient(top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.2) 100%); border-radius:10px 10px 12px 12px; }
+
+#smartbanner.android { border-color:#212228; background: #3d3d3d url('dark_background_stripes.gif'); border-top: 5px solid #88B131; box-shadow: none; }
+#smartbanner.android .sb-close { border:0; width:17px; height:17px; line-height:17px; color:#b1b1b3; background:#1c1e21; text-shadow:0 1px 1px #000; box-shadow:0 1px 2px rgba(0,0,0,0.8) inset,0 1px 1px rgba(255,255,255,0.3); }
+#smartbanner.android .sb-close:active { color:#eee; }
+#smartbanner.android .sb-info { color:#ccc; text-shadow:0 1px 2px #000; }
+#smartbanner.android .sb-info strong { color:#fff; }
+#smartbanner.android .sb-button { min-width: 12%; border:1px solid #DDDCDC; padding:1px; color:#d1d1d1; background: none; border-radius: 0; box-shadow: none; }
+#smartbanner.android .sb-button span { text-align: center; display: block; padding: 0 10px; background-color: #42B6C9; background-image: -webkit-gradient(linear,0 0,0 100%,from(#42B6C9),to(#39A9BB)); background-image: -moz-linear-gradient(top,#42B6C9,#39A9BB); text-transform:none; text-shadow:none; box-shadow:none; }
+#smartbanner.android .sb-button:active, #smartbanner.android .sb-button:hover { background: none; }
+#smartbanner.android .sb-button:active span, #smartbanner.android .sb-button:hover span { background:#2AC7E1; }
+
+#smartbanner.windows .sb-icon { border-radius: 0px; }
+/* zinger.css */
+/*Zinger login widget*/
+
+.follow li.today-zinger { background: none;}
+
+.follow li.today-zinger a {
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    float: none;
+}
+
+
+
+.j_widget_zinger > .header .title {
+    color: #525252;
+}
+
+#header .zinger_login li a {
+    height: auto;
+    text-indent: 0;
+    width: auto;
+    float: none;
+}
+
+#header .zinger_login li {
+     background: none;
+    float: none;
+}
+
+/* zinger update */
+.j_zinger2_menu.c-zinger {float:right !important;}
+.j_zinger2_menu .c-z-target {background-color:transparent; position:relative; top:2px;}
+.j_zinger2_menu .c-avatar img {border-radius:0;}
+.j_zinger2_menu .j_zinger2_zinger,
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu {background-color:#fff; right:0; padding:20px 30px; border:1px solid #E0E0DF; box-shadow:none;}
+
+.j_zinger2_newsvine .c-z-menu,
+.j_zinger2_menu .c-z-menu {padding:0; margin-bottom:15px;}
+
+.c-zinger .c-menu .j_zinger2_newsvine .c-z-title.c-login,
+.j_modal .j_zinger2_newsvine .c-z-title.c-login,
+.c-zinger .c-menu .j_zinger2_newsvine .c-z-title,
+.j_modal .j_zinger2_newsvine .c-z-title {display:block; padding:0 0 10px 0; font-size:20px;}
+
+.j_zinger2_facebook .c-z-connect.c-facebook button {color:#fff; background-color:#2c4276; padding:8px; border:none;}
+.j_zinger2_twitter, .j_zinger2_google {display:none;}
+.j_zinger2_newsvine .c-z-form input {margin:5px 0; font-size:12px;}
+.j_zinger2_newsvine .c-z-form label {padding-top: 10px; display:block; font-size:12px;}
+.j_zinger2_newsvine .c-forgot.c-button {background-color:transparent; background:none; border-radius:0;color:#369; border:0; box-shadow:none; text-shadow:none; padding:0; margin-top:15px;}
+.j_zinger2_newsvine .c-forgot.c-button:hover {background:none; box-shadow:none; color:#69C;}
+
+.j_zinger2_newsvine a,
+.j_zinger2_newsvine a,
+.j_zinger2_zinger .c-menu-footer a,
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu a {color:#369; text-decoration:none;}
+
+.j_zinger2_newsvine a:hover,
+.j_zinger2_newsvine a:hover,
+.j_zinger2_zinger .c-menu-footer a:hover,
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu a:hover {color:#69C; text-decoration:none;}
+
+.j_zinger2_zinger .c-menu-footer,
+.j_modal .c-menu-footer {font-size: 12px;}
+.j_zinger2_zinger .c-menu-footer {margin-top:10px;}
+.j_zinger2_newsvine p.c-z-register {font-size:12px;}
+.j_zinger2_newsvine .c-z-register .c-reason {display:block; margin-bottom:10px;}
+.j_zinger2_newsvine .c-cancel {margin:5px 0;}
+.j_zinger2_newsvine .c-spin {padding:0;}
+.j_zinger2_newsvine .c-spin .spinner {margin-left:50%; margin-top:50%;}
+
+.j_zinger2_menu .c-menu.c-logged-in {display:inline;}
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu .c-avatar img {float:left; margin-right:10px;}
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu .c-avatar {position:relative; top:0; left:0;}
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu p {position:relative; left:60px; top:-20px;padding: 5px 0;}
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu p.c-author {font-size:20px; top:0; left:0;}
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu .c-menu-footer {display:none;}
+
+.j_modal.c-zinger-container {background-color:#fff; width:270px; border-radius:0; padding:20px 30px 30px 30px; margin-left:-165px;}
+.j_modal.c-zinger-container .c-modal-close {position:relative; top:-10px; right:-10px;}
+.j_modal.c-zinger-container .c-modal-header {margin:0 0 10px 0; border-bottom: 1px solid #ccc; padding:0 0 5px 0;}
+.j_modal .c-zinger.c-modal-body.c-inline {background-color:#fff;}
+.j_modal.c-zinger-container .c-modal-footer {display:none;}
+.j_modal .c-zinger p.c-menu-footer {width:auto;}
+.j_modal .c-zinger p.c-menu-footer a {text-decoration:none;}
+
+
+/* today zinger overrides */
+.todayshow .c-zinger a { color: #F37226;}
+.todayshow .c-zinger a:hover, 
+.todayshow .c-zinger a:active { color: #D64D1E;}
+.todayshow .c-zinger h1 {font-family: "ProximaNova","Trebuchet MS","Arial","Helvetica",sans-serif;}
+.j_zinger2_newsvine a,
+.j_zinger2_newsvine a,
+.j_zinger2_zinger .c-menu-footer a,
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu a {color:#d95c2b; text-decoration:none;}
+
+.j_zinger2_newsvine a:hover,
+.j_zinger2_newsvine a:hover,
+.j_zinger2_zinger .c-menu-footer a:hover,
+.j_zinger2_menu .c-menu.c-logged-in .c-z-menu a:hover {color:#d05800; text-decoration:none;}
+
+.j_zinger2_newsvine .c-z-label {font-size:10px;}
+
+
+.c-zinger .c-z-target .c-z-label,
+.c-zinger .c-z-target .c-touchhide { position:relative;top: -1px;font-size: 13px;}
+
+.j_zinger2_newsvine p,
+.j_zinger2_newsvine label,
+.j_zinger2_newsvine a,
+.j_zinger2_newsvine input,
+.j_zinger2_newsvine .c-form-val,
+.j_zinger2_facebook .c-facebook {font-size:12px;}
+
+.j_zinger2_newsvine .c-forgot.c-button {color:#d95c2b;}
+.j_zinger2_newsvine .c-forgot.c-button:hover {color:#d05800;}
+
+.todayshow .c-zinger .c-z-target {background-color: transparent;}
+.todayshow .c-zinger .c-z-menu {padding-top: 5px;}
+.todayshow .c-zinger .c-menu {background-color: white; top: 37px; width: 321px;left: -208px;padding: 20px;}
+.todayshow .c-zinger .c-z-target .c-target {padding: 0 3px;}
+.todayshow  .c-zinger .c-z-target .c-avatar img {margin-right: 7px;}
+
+.todayshow .c-zinger .c-logged-in.c-menu .c-z-menu {top: 37px; width: 321px;left: -208px; box-shadow: none; padding-left: 20px;}
+
+.todayshow .c-zinger p.c-menu-footer {margin: 0;padding: 0;}
+
+.todayshow .c-zinger .c-spin {border-radius: 0;}
+
+.todayshow .c-zinger .c-button.c-login, 
+.todayshow .c-zinger .c-button.c-submit,
+.todayshow .c-zinger .c-button.c-cancel {
+    background: #D95C2B;
+    border: 1px solid #CE5526;
+    color: #FFF;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.todayshow .c-zinger .c-button.c-cancel {
+    background: #AAA;
+    border: 1px solid #A5A5A5;
+}
+
+/* zinger end */
+
+
+
+
+/* 01_reset.css */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0b1 | 201101 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+
+/* remember to define visible focus styles!  (edited by TF)*/
+:focus {
+	outline: 1px dotted lightsalmon;
+	color: #C00; /*:active match, like 46 below*/
+}
+
+/* remember to highlight inserts somehow! (edited by TF)*/
+ins {
+	text-decoration: none;
+	background-color: lightsalmon;
+}
+del {
+	text-decoration: line-through;
+}
+
+/*.left || .right*/
+.left {float: left;}
+.right {float: right;}
+/*.collapsed || .expanded*/
+.collapsed {display: none;}
+/*.loading || .rendered*/
+.loading {padding-right: 40px; height: 40px;}
+/*.hide || .show*/
+.hide {display: none;}
+.show {display: block;}
+.visible {visibility: visible;}
+.invisible {visibility: hidden;}
+/*.focus for keyboard navigation*/
+.focus {position: relative;}
+.focus span {display: none; cursor: pointer;}
+.focus:focus span {display: inline; text-decoration: underline;}
+
+
+/*development grid overlay*/
+#overlayGrid {position:relative; bottom: 0px; z-index: 256000; display: none;}
+body.ruler #overlayGrid, body.guides #overlayGrid {display: block;}
+body.guides #guides .col, body.guides #guides .margin {height: 5999px !important;}
+body.ruler #guides .col, body.ruler #guides .margin {height: 200px !important;}
+#guides {border-left:1px solid pink;border-right:1px solid pink;position:fixed;bottom:0;z-index:11;padding: 0px 8px;width:996px;}
+/*#guides .col {border-right:1px dashed pink;float:left;height:100%;width:82px;}*/
+
+#guides .col {float:left;border-style: dotted; border-color: lime; border-width: 0px 1px;height:100%; margin-right: 12px;}
+#guides .half {margin-right: 15px;}
+#guides .end {margin-right: 0px;}
+#guides .margin {margin: 0px 15px;border-style: dotted; border-color: cyan; border-width: 0px 1px; height: 100%;}
+#guides .interior {height: 100%; width: 121px;}
+
+
+/* 02_coverbase.css */
+/*msnbc baseline*/
+body {background: #FFF; margin: 0 auto; font: 0.865em/1.0em "ProximaNova","Trebuchet MS", "Arial", sans-serif;font-weight: 300; color: #525252; outline: 0!important;}
+p, ul, ol {padding: 0.8em 0; font-size: 0.95em; line-height: 1.3em; color: #525252;}
+a:link {border-bottom: 0px dotted #F37226; color: #F37226;text-decoration: none; outline: 0;}
+a:visited {border-bottom: 0px dotted #F37226; color: #666; text-decoration: none;}
+a:hover, a:active {color: #D64D1E; border-bottom: none; text-decoration: none;}
+.content {margin: 0 auto; padding: 0; overflow: hidden;}
+
+/*icons*/
+.icon span {display: inline-block; width: 12px; height: 13px; position: relative; top: 2px;}
+
+/*sprites*/
+.icon span {background: transparent url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite2.gif") left top no-repeat;}
+
+.lede .icon span {width: 18px; height: 16px;}
+.lede p .icon span {width: 15px; height: 13px;}
+.lede p .icon .video {width: 12px;}
+.double .lede .icon span {width: 14px; height: 13px;}
+.icon span span {display: none;}
+.icon .text {display: none;}
+.icon .video {background-position: 0px -25px;}
+.lede .icon .video {background-position: -42px -26px;}
+p .icon .video {background-position: -16px -25px !important;}
+.double .list .story p .video {background-position: -16px -24px!important;}
+.list .video .icon {display: inline-block; width: 11px;}
+.list .lede .icon .video {background-position: 0px -24px!important; width: 13px; height: 14px;} 
+.livestream .video .icon {width: 12px;}
+.icon .slideshow {background-position: 0px -41px; width: 15px;} 
+.lede .icon .slideshow {background-position: -43px -45px;}
+.navlist .lede .icon .slideshow {background-position: 0px -41px; height: 13px; width: 14px;}
+.navlist .lede p .icon .slideshow {background-position: -19px -40px;}
+.lede p .icon .slideshow {background-position: -19px -40px;}
+p .icon .slideshow {background-position: -19px -40px;}
+
+
+/* layout */
+.credit {color: #bbb; font: 9px/10px Arial; position: absolute; bottom: 6px;}
+
+/*clearfixes*/
+#stream:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+#featured:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+.art:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+#toolbar ul:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+.four:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+.tiles:after {content: "."; clear: both; display: block; height: 0; visibility: hidden;}
+
+/*background color/border combo*/
+.heardit {border: 1px solid #e0e0df; background-color: white; outline:0;}
+    
+#stream .vote {background-color: #FFA120; border: solid 1px #FFA120;}
+#stream ol .vote {background-color: transparent; border: none;}
+
+
+/*ads*/
+.ads, .primary {color: #999; font-size: 10px; text-align: center; padding: 2px 17px 10px; width: 304px; height: 266px;}
+.ad {padding: 18px 17px; margin: 7px auto; text-align: center;}
+.primary {height: 612px; margin-right: 8px;margin-bottom: 8px;}
+.primary .ad, .fold-ads .ad {padding: 0;}
+.primary .second iframe {height: 250px !important;}
+.ad-label a {color: #6699CC; font-family: Arial,helvetica,verdana,sans-serif;}
+.ad-label a:hover {color: #336699;}
+.ad-label .adchoices {
+    background: url("http://media1.s-nbcnews.com/i/MSNBC/SiteManagement/Ads/Images/adchoices-blue4.png") no-repeat scroll right center transparent;
+    display: inline;
+    padding: 0 10px 0 3px;
+}
+
+.ads {float: left;}
+.primary {float: right;}
+.ad {z-index: 10;}
+
+.ROS .ad-tier1, .ROS .ad-tier2, /*hide Tiers 1 & 2 placements for ROS*/
+.Tier1 .ad-ros, .Tier1 .ad-tier2, /*hide Tier2 and ROS.first placements for Tier1*/
+.Tier2 .ad-ros, .Tier2 .ad-standard, .Tier2 .ad-tier1 /*hide ROS and Tier1 placements for Tier2*/
+    {display: none;}
+
+.fold-ads {clear: both; width: 100%; height: 330px; margin: 20px 0px; padding: 0px;}
+.sponsoredlinks {width: 330px; padding: 0px; height: 322px;}
+.sponsoredlinks iframe {height: 320px; width: 328px;}
+.resourceguide {width: 660px; height: 330px;}
+.resourceguide .ad-label {width: 660px; text-align: center;}
+.resource-ads {float: left; margin: 0px 10px; padding: 0px; width: 300px; height: 322px;}
+.resource-ads .adX0p5 {float: left; margin: 5x auto; padding: 0px 15px; text-align: center;}
+.ad-header {margin: 10px 17px 10px 0px; padding: 0;}
+.ad-header div {margin: 0 auto;}
+
+/*   Rails ads      */
+.ad-railsleft .ad-label, .ad-railsright .ad-label {display: none;}
+
+.ad-railsleft, .ad-railsright {
+    width: 127px;
+    float: left;
+    margin: 13px 10px 0 0;
+    padding: 0;
+}
+
+/*ad label fix for 748x90 banner ad*/
+.ad-header .ad-label {
+display: block; 
+font-size: 10px; 
+width: 100%; 
+clear: both;
+}
+
+.newsletter {cursor: pointer;}
+
+/*page elements*/
+#toolbar {display: none;}    
+#footer .navigation {display: none;}
+#footer .blogs li {float: left;}
+
+.followSocial {float: left; margin: 18px 0 0 20px; padding: 0;}
+.followSocial li {float: left; margin-right: 3px;}
+.followSocial .fb a, .followSocial .tw a, .followSocial .pint a, .followSocial .rss a, .followSocial .tblr a, .followSocial .nslt {text-indent: -5000px; width: 20px; height: 20px; float: left;}
+.followSocial .fb a {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/iconFB.png") no-repeat scroll left top transparent;}
+.followSocial .tw a {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/iconTW.png") no-repeat scroll left top transparent;}
+.followSocial .pint a {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/iconPin.png") no-repeat scroll left top transparent;}
+.followSocial .tblr a {background: url("http://media1.s-nbcnews.com/i/TODAY/zCreative/zComponents/COVER/iconTum.png") no-repeat scroll left top transparent;}
+.followSocial .rss a {background: url("http://media1.s-nbcnews.com/i/TODAY/z_Creative/zComponents/COVER/iconRss.png") no-repeat scroll left top transparent;}
+.followSocial .nslt {background: url("http://media1.s-nbcnews.com/i/TODAY/z_Creative/zComponents/COVER/iconEm2.png") no-repeat scroll left top transparent; cursor: pointer;}
+
+
+#header .weather {left: 395px; top: 35px; top: 38px\9; position: absolute;}
+#header .past {display: block; float: left; margin: -22px 0 21px 12px; width: 136px;
+           background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") no-repeat scroll -125px -52px transparent; }
+#header .past:hover {background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") no-repeat scroll -125px -65px transparent;}
+
+.showbuttons {display: none;}
+
+.heardit { font-weight: 500;}   
+.heardit {color: #555; font-size: 12px;}
+.heardit li {margin-bottom: 0.5em;}
+.heardit ol {float: left;}
+.heardit a {color: #b23b5c;}
+.heardit a:hover {color: #D64D1E;}
+.heardit .more a {font-size: 10px;}
+.heardit .bb {height: 115px;}
+
+.heardit {width: 134px;height: 72px; margin-top: -15px; display: block;}
+.heardit .category {font-size: 11px;float: left; margin-bottom: 5px; margin-top: -5px;}
+.heardit ol {padding-top: 0;}
+.heardit .more {color: #D8D1BF; left: 8px; position: absolute; top: 101px;}
+.heardit .more a {padding: 0 2px;}
+.heardit .tvbug {background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/todayCoverSprite.gif") no-repeat scroll -37px -66px transparent;
+                 width: 32px; height: 32px; float: left; margin: -10px 3px 0 -5px;}
+.past a {color: #B23B5C; font-size: 11px; font-weight:500;}
+.past a:hover {color: #D64D1E;}
+    
+#page {clear: both; padding-top: 1px;}
+       
+#footer {clear: both; padding: 10px 5px;}
+#footer .content {width: 1006px;}
+#footer ul, #footer span {padding: 0px;}
+#footer li, #footer .copyright {color: #666; font-size: 10px; font-weight:500; line-height: 1.0em; padding: 8px 15px 8px 0px;}
+#footer li a {color: #F37226;}
+#footer li a:hover {color: #D64D1E;}
+#footer .blogs, #footer .copyright {float: left; margin-left: 10px;}
+#footer .navigation, #footer .about {float: right; margin-right: 10px;}
+#footer .navigation li, #footer .about li {padding: 8px 0px 8px 15px;}
+#footer .about li a {color: #369;}
+#legalese {border-top: 1px solid #CCC; clear: both;}
+#legalese span {float: left; padding-top: 1px;}
+#legalese .logo {background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/nbcnewsHeader.png") no-repeat scroll left top transparent;
+       display: inline-block; float: left; height: 15px; margin-left: 5px; margin-top: 1px; position: relative; text-indent: -5000px; width: 85px;}
+     
+#legalese .copyright {font-size: 10px; width:240px;}
+#legalese .about {margin-top: 3px;}
+
+#toolbar {clear: both; margin: 0px; padding: 0px; bottom: 0px; width: 100%; height: 37px;}
+#toolbar ul {padding: 13px 10px 10px;}
+#toolbar li {color: #FFF; font-size: 10px; line-height: 1.0em; padding: 0px 48px; border-right: 1px dotted #FFF;}
+#toolbar li:last-child {border-right: 0px;}
+#toolbar li:first-child {border-right: 0px;}    
+#toolbar a {color: #FFF; font-size: 10px;}
+
+#toolbar {display: block; position: fixed; z-index: 10000000;}
+#toolbar .tourlaunch li {padding: 0px 18px;}
+    
+#legalese .about {display: block;} 
+#footer .navigation {display: inline-block;}
+#footer {}
+
+
+/* Deals and Tips bottom placement ad styles */
+
+.ad-container-994x282 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #797A8A;
+	margin: 15px 0px 15px 5px;
+	width: 1000px;
+	height: 282px;
+	font-size: 10px;
+	line-height: 13px;
+}
+
+.ad-container-994x282 .left, .ad-container-994x282 .right {
+	float: left;
+	height: 100%;
+}
+
+.ad-container-994x282 .left {
+	width: 664px;
+	background-image:url(http://media1.s-nbcnews.com/i/MSNBC/SiteManagement/Ads/Breaking%20News/Custom%20Solutions/DealsAndTips/BG_DealsAndTips2.png);
+	background-position: 0px -166px;
+	background-repeat:no-repeat;
+	overflow:hidden;
+}
+
+.ad-container-994x282 .leftcontainer {
+	padding-top: 34px;
+	padding-left: 21px;
+}
+
+.ad-container-994x282 div.row div {
+	width: 300px;
+	height: 107px;
+	overflow:hidden;
+	float:left;
+	margin-right:21px;
+	margin-bottom: 14px;
+}
+
+.ad-container-994x282 .right {
+	width: 322px;
+	margin-left: 8px;
+	height: 282px;
+}
+
+.Ad-Container-994x282 .Right .Title {
+	width: 100%;
+	text-align:center;
+	padding-top: 15px;
+	height: 19px;
+}
+
+.ad-container-994x282 .right iframe {
+	padding-top: 0px;
+	height: 250px;
+}
+
+.ad-container-994x282 img {
+	border: none;
+}
+
+/*  Deals and Tips placement bottom ad styles ends */
+
+
+/*newsletter form*/
+#iFrameNlSubscribe {
+    float: right;
+    bottom: 0;
+}
+
+/*newsletter form end*/
+
+/*Evidon ad choices*/
+
+#_bapw-link {text-decoration: none ! important; display: block;}
+
+#_bapw-icon {display: inline-block; width: 9px; float: left; margin-top: -2px; margin-right: 1px;}
+
+/* appPromo.css */
+/*----------------------Lightbox container-----------------------*/
+.lightbox-bg {
+    display: none;
+    position: fixed;
+    background-color: #000;
+    z-index: 99999999;
+    width: 100%;
+    height: 200%;
+    opacity: .7;
+}
+.app-promo.lightbox {
+    display: none;
+    position: absolute;
+    z-index: 99999999;
+    background-color: #FFF;
+    width: 90%;
+    right: 5%;
+    left: 5%;
+    top: 2%;
+    color: #555;
+	font-family: "ProximaNova","Trebuchet MS","Arial","Helvetica",sans-serif;
+	font-size:16px;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.app-promo.lightbox .close {
+    position: absolute;
+    padding: 10px 15px;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    
+.app-promo.lightbox {
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+}    
+}
+
+.app-promo img { max-width: 100%;}
+
+.app-promo a {
+    text-decoration: none;
+    color: #D95C2B;
+}
+
+/*----------App promo landing page---mobile first----------*/
+body.app-promo {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 310px;
+}
+
+.app-promo .logo {
+    position: absolute;
+    z-index: 1;
+    background: url("/today/assets/app/landingPage/images/todaylogo-reverse.png") no-repeat 0 0;
+    float: left;
+    height: 20px;
+    margin: 15px 0 0 15px;
+    width: 111px;
+}
+
+.app-promo .logo a {
+    float: left;
+    height: 20px;
+    width: 111px;
+}
+
+.app-promo .logo span {visibility: hidden;}
+
+.app-promo .carousel-container {
+    background-color: black;
+    padding-top:10px;
+} 
+
+.app-promo #feature-images {
+    width: 100%;
+    height: auto;
+}
+
+.app-promo .content {
+    width: 100%;
+    margin: 40px auto 0;
+}
+
+.app-promo .headline {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    top: auto;
+    left: auto;
+    right: auto;
+    padding: 0 5px;
+}
+
+.app-promo .headline h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 100;
+    color: #dd412b;
+    line-height: normal;
+    text-align: center;
+}
+
+.app-promo .description {
+    width: 285px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 14px;
+    line-height: normal;
+}
+
+.app-promo .description ul {padding-left: 30px;}
+.app-promo .description li {margin-bottom: 10px;}
+
+.app-promo .store-buttons {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.app-promo .store-buttons ul {
+    margin: 0;
+    padding: 0;
+}
+
+.app-promo .store-buttons li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 3px;
+    vertical-align: middle;
+}
+
+/*----conditional buttons----*/
+
+.ios .store-buttons .android-button, 
+.ios .store-buttons .amazon-button,
+.ios .store-buttons .windows-button, 
+.android .store-buttons .ios-button,
+.android .store-buttons .windows-button,
+.windows .store-buttons .ios-button,
+.windows .store-buttons .android-button,
+.windows .store-buttons .amazon-button {display: none;}
+
+.app-promo .opt-out {
+    font-size: 14px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.app-promo .trademark {
+    color: #bbb;
+    font-size: 10px;
+    font-weight: 100;
+    line-height: normal;
+    text-align: center;
+    margin: 80px 15px 20px;
+}
+
+/*----------Feature images carousel-from bootstrap css----------*/
+
+.carousel {
+  position: relative;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel-inner > .item {
+  width: 250px;
+  margin: 0 auto;
+  position: relative;
+  display: none;
+  -webkit-transition: 0.6s ease-in-out left;
+     -moz-transition: 0.6s ease-in-out left;
+       -o-transition: 0.6s ease-in-out left;
+          transition: 0.6s ease-in-out left;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  line-height: 1;
+}
+
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  display: block;
+}
+
+.carousel-inner > .active {
+  left: 0;
+}
+
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.carousel-inner > .next {
+  left: 100%;
+}
+
+.carousel-inner > .prev {
+  left: -100%;
+}
+
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  left: 0;
+}
+
+.carousel-inner > .active.left {
+  left: -100%;
+}
+
+.carousel-inner > .active.right {
+  left: 100%;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  color: #ffffff;
+  text-align: center;
+  background: #222222;
+  border: 3px solid #ffffff;
+  -webkit-border-radius: 23px;
+     -moz-border-radius: 23px;
+          border-radius: 23px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.carousel-control.right {
+  right: 15px;
+  left: auto;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+.carousel-indicators {
+  width: 66px;
+  margin: 10px auto;
+  padding: 0;
+  list-style: none;
+}
+
+.carousel-indicators li {
+  display: block;
+  float: left;
+  width: 6px;
+  height: 6px; 
+  margin-left: 5px;
+  text-indent: -999px;
+  background-color: #d3d3d3;
+  border-radius: 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #a2a2a2;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption h4,
+.carousel-caption p {
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.carousel-caption h4 {
+  margin: 0 0 5px;
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+}
+
+
+/*----------------------Media queries-----------------------*/
+
+@media screen and (min-width: 340px) {
+    
+.app-promo .carousel-container {padding-top: 15px;}
+.app-promo .store-buttons {
+    width: 305px; 
+    margin: 15px auto;
+}    
+}
+
+@media screen and (min-width: 490px) {
+
+.app-promo .headline {width:auto;}
+
+.app-promo .headline h1 {
+    font-size: 32px;
+    font-weight: 100;
+}
+
+.app-promo .description {
+    width: 425px;
+    font-size: 14px;
+}
+
+.app-promo .store-buttons {
+    width: 305px;
+    margin: 15px auto;
+}
+
+.carousel {margin-bottom: 20px;}
+
+.carousel-inner {width: 450px;}
+
+.carousel-inner > .item {width: 450px;}
+
+.carousel-indicators {width: 92px;}
+
+.carousel-indicators li { 
+    width: 10px;
+    height: 10px;
+}
+
+}
+
+@media screen and (min-width: 680px) {
+
+.app-promo .headline {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+}
+
+.app-promo .headline h1 {
+    font-size: 42px;
+    font-weight: 100;
+}
+
+.app-promo .description {
+    width: 430px;
+    font-size: 14px;
+}
+
+.app-promo .store-buttons {
+    width: auto;
+    margin: 15px 0;
+}
+
+.carousel {margin-bottom: 20px;}
+
+.carousel-inner {width: 600px;}
+
+.carousel-inner > .item {width: 600px;}
+
+.carousel-indicators {width: 92px;}
+
+.carousel-indicators li { 
+    width: 10px;
+    height: 10px;
+}
+
+}
+
+
+
+/* stayConnected.css */
+#nl-form {position:absolute; z-index: 99999999;}
+div#modalDialog {position: absolute; top: 11px; left: 230px; right: 0; bottom: 0;}
+div#modalDialog .title {font-family: "ProximaNova","Trebuchet MS","Arial","Helvetica",sans-serif;font-weight: 300;}
+/* z_overrides.css */
+/* Overrides for link text color */
+.tile a {color: #fcf4d9; display: block; margin-top: 10px; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);}
+.tile a:hover {color: #ffe196;}
+
+
+
+/* FB block widget */
+.facebook_widget .j_widget_fb_activity .c-share-msg, .facebook_widget .c-account-info, .facebook_widget .j-sharing-message {font-family: "ProximaNova","Trebuchet MS","Arial","Helvetica",sans-serif; font-weight: 300;}
+.facebook_widget .notSharing .j_widget_fb_sharing.j_edition_cover .zinger_fb_button_medium .zinger_fb_button_text {font-size: 11px; line-height: 14px; font-weight: bold;}
+.facebook_widget .j_widget_fb_sharing.j_edition_cover {width: 285px; border-top: none; margin: 0;}
+.facebook_widget .notSharing .j_widget_fb_sharing.j_edition_cover span {font-size: 15px; line-height: 16px;}
+.facebook_widget .notSharing .j_widget_fb_sharing.j_edition_cover span a {font-size: 11px;}
+.facebook_widget .notSharing .j_widget_fb_sharing.j_edition_cover .c-share-msg {margin-bottom: 5px;}
+.facebook_widget .notSharing .j_widget_fb_sharing.j_edition_cover .c-fb-icon {display: none;}
+.facebook_widget .j_widget_fb_activity .j_widget_fb_sharing .red {text-indent: 0;}
+.facebook_widget .fb_iframe_widget {border-top: 1px solid #E6DCC7; overflow: hidden; width: 300px;}
+.facebook_widget .fb-like {display: none;}
+.facebook_widget .c-what a {font-size: 11px;}
+.facebook_widget .j_widget_fb_sharing .j_widget_zinger_login {top: 0; left: 0;} 
+
+
+.facebook_widget .j_widget_zinger_login.j_edition_networknav .c-account-info .section ul li a, 
+.facebook_widget .j_widget_zinger_login.j_edition_networknav .c-account-info .footer ul li a {line-height: 11px;}
+.facebook_widget .j_widget_zinger_login.j_edition_networknav .c-account-info .section {margin-top: 5px;}
+.facebook_widget .j_widget_zinger_sharing input, .j_widget_zinger_sharing input {margin-bottom: 30px; margin-top: 2px;}
+.facebook_widget .j_widget_zinger_login.j_edition_networknav .c-account-widget span {display: inline;}
+.facebook_widget .j_widget_zinger_login.j_edition_networknav .c-account-widget span:after {float: left;}
+.facebook_widget .c-account-widget {float: left;}
+.facebook_widget .fb_like_button p {display: none;}
+.j_widget_zinger_login.j_edition_networknav .c-account-widget {display: inline; float: left;}
+.facebook_widget .facebook_widget .j_widget_zinger_login.j_edition_networknav .c-account-widget span:after {display: none;}
+.facebook_widget .j_widget_fb_activity .c-account {display: inline; float: left; margin-bottom: 4px; margin-left: 56px; margin-top: -33px;}
+.facebook_widget .j_widget_fb_activity.j_edition_cover {margin: 12px 0;}
+.facebook_widget .j_widget_zinger_login .c-account-widget img 
+    {background: url("http://media1.s-nbcnews.com/i/MSNBC/Components/Interactives/_swf/Today/COVER/loginArrow.gif") no-repeat scroll right 12px transparent; padding-right: 12px;}
+.facebook_widget .j_widget_zinger_login .c-account-widget span {background: none;}
+
+.facebook .video {display: block;}
+.facebook .icon .video {float: left; margin-right: 3px;}
+.facebook .lede {display: inline-block;}
+‹               #header {z-index:1000001;}
+div#comcast {z-index:1000002;}
+.facebook .lede {display: block;}/**** inline ****/

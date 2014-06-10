@@ -1,0 +1,1335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head>
+
+	<!--LINK REL="SHORTCUT ICON" HREF="/favicon.ico" /-->
+	<title>
+		Green Card lottery
+	</title>
+
+
+	<link rel="canonical" href="http://www.usagc.org/index.aspx">
+ 
+
+	
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="Description" content="Green Card Lottery services – USAGC – with years of experience, we make sure your application has the best chances of participating in the next DV lottery and increases your chances of living the American dream">
+	<meta name="Keywords" content="Green Card lottery, online green card, DV lottery, US Immigration service ">
+	<link href="include/general.css" rel="stylesheet" type="text/css">
+<script>
+	var cntArr = [-1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,0,1,0,1,1,1,1,1,1,0,1,1,0,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,0,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1];
+</script><script src="include/functions.js"></script><link rel="alternate" media="print" href="http://www.usagc.org/?print=true"><script type="text/javascript" src="include/MediaCodeInjector.js"></script><script src="include/print.js"></script><link rel="alternate" media="print" href="http://www.usagc.org/?print=true"><script src="include/jQuery/jQuery.js"></script><script language="javascript">
+
+function GetCountriesAjax()
+{	     		
+	jQuery.getJSON('CountriesCombo.aspx', 
+		function(data){
+			var list = $("#cCountry");
+			for(var i = 0; i < data.length; i++)
+			{			
+				list.append('<option value='+data[i][0]+'>'+data[i][1]+'</option>');
+			}
+		},
+		function(data){alert('error');}
+	);
+}
+function fInit() 
+{	
+	var c = 'Select Country';
+	jQuery('#cCountry')[0].options[0]= new Option(c,"-1");
+	jQuery('#cCountry').prop('selectedIndex', 0);
+}
+function agreeOut()
+{
+	IsAgree = true;
+}
+function validatesubmit2()
+{
+	if(jQuery('#cCountry').prop('selectedIndex')==0)
+	{
+		alert(" - You forgot to select your birth country");
+		return false;
+	}
+	if(jQuery('#cEducation').prop('selectedIndex')==0)
+	{
+		alert(" - You forgot to select your Education");
+		return false;
+	}
+	if(jQuery('#cJob').prop('selectedIndex')==0)
+	{
+		alert(" - You forgot to select your occupation (Work Experience)");
+		return false;
+	}
+	var myQuerry = "?cCountry="+jQuery('#cCountry').val()+"&cJob="+jQuery('#cJob').val()+"&cEducation="+jQuery('#cEducation').val();
+	if((jQuery('#cEducation').val() == 1 || jQuery('#cEducation').val() == 2) && (jQuery('#cJob').val()== 0))//don't have a job or education
+	{	
+		document.location.href=("eligibility2.aspx"+myQuerry);
+		return ;
+	}
+	document.location.href=("eligibility3.aspx"+myQuerry);
+}
+window.onerror = null;
+var topMargin = 200;
+var slideTime = 1200;
+var ns6 = (!document.all && document.getElementById);
+var ie4 = (document.all);
+var ns4 = (document.layers);
+function layerObject(id,left) {
+	if (ns6) {
+		this.obj = document.getElementById(id).style;
+		this.obj.left = left;
+		return this.obj;
+	}
+	else if(ie4) {
+		this.obj = document.all[id].style;
+		this.obj.left = left;
+		return this.obj;
+	}
+	else if(ns4) {
+		this.obj = document.layers[id];
+		this.obj.left = left;
+		return this.obj;
+	}
+}
+function closeDiv() {
+	jQuery('#floatLayer').css('left', "-1000");
+	return false;
+}
+function layerSetup() {
+	floatLyr = new layerObject('floatLayer', pageWidth * .5);
+	window.setInterval("main()", 10)
+}
+function floatObject() {
+	if (ns4 || ns6) {
+		findHt = window.innerHeight;
+	} else if(ie4) {
+		findHt = document.body.clientHeight;
+	}
+}
+function main() {
+	if (ns4) {
+		this.currentY = document.layers["floatLayer"].top;
+		this.scrollTop = window.pageYOffset;
+		mainTrigger();
+	}
+	else if(ns6) {
+		this.currentY = parseInt(document.getElementById('floatLayer').style.top);
+		this.scrollTop = scrollY;
+		mainTrigger();
+	} else if(ie4) {
+		this.currentY = floatLayer.style.pixelTop;
+		this.scrollTop = document.body.scrollTop;
+		mainTrigger();
+	}
+}
+function mainTrigger() {
+	var newTargetY = this.scrollTop + this.topMargin;
+	if ( this.currentY != newTargetY ) {
+		if ( newTargetY != this.targetY ) {
+			this.targetY = newTargetY;
+			floatStart();
+		}
+		animator();
+	}
+}
+function floatStart() {
+	var now = new Date();
+	this.A = this.targetY - this.currentY;
+	this.B = Math.PI / ( 2 * this.slideTime );
+	this.C = now.getTime();
+	if (Math.abs(this.A) > this.findHt) {
+		this.D = this.A > 0 ? this.targetY - this.findHt : this.targetY + this.findHt;
+		this.A = this.A > 0 ? this.findHt : -this.findHt;
+	}
+	else {
+		this.D = this.currentY;
+	}
+}
+function animator() {
+	var now = new Date();
+	var newY = this.A * Math.sin( this.B * ( now.getTime() - this.C ) ) + this.D;
+	newY = Math.round(newY);
+	if (( this.A > 0 && newY > this.currentY ) || ( this.A < 0 && newY < this.currentY )) {
+		if ( ie4 )document.all.floatLayer.style.pixelTop = newY;
+		if ( ns4 )document.layers["floatLayer"].top = newY;
+		if ( ns6 )document.getElementById('floatLayer').style.top = newY + "px";
+	}
+}
+function start() {
+	
+	document.getElementById('floatLayer').style.left = "50";
+	document.getElementById('floatLayer').style.visibility="hidden";//Hide the layer
+
+	//entering index.aspx pixel
+	var MediaPopupDp = 'showpop=' + '1';
+	GetMediaPixelsCode(35,-1,FireEnteringToPagePixel,MediaPopupDp);
+		
+}
+
+
+function FireEnteringToPagePixel(data)
+{	
+	AppendJavascriptPixelToPage(data);		
+}
+
+
+
+
+
+	
+function emailsend()
+{
+	document.location.href=("step1landing.aspx?email2="+Form1.email2.value.toString());
+	return ;
+}
+function clarmail()
+{
+	jQuery('#email2').val("");
+}
+</script><script charset="UTF-8" src="http://lptag.liveperson.net/tag/tag.js?site=14647870"></script></head>
+
+
+
+
+
+
+
+
+<body onload="GetCountriesAjax(); fInit();  start();">
+	<form id="Form1" method="post" action="index.aspx">
+		<div id="floatLayer" style="position: absolute; height:300px; width:300px; left:-1000px; top:1px;z-index: 200">
+			<table id="Table_01" width="300" height="150" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td colspan="3">
+						<img src="http://www.usagc.org/images/popup_index_01.png" width="300" height="20" alt=""></td>
+				</tr>
+				<tr>
+					<td rowspan="2">
+						<img src="http://www.usagc.org/images/popup_index_02.gif" width="50" height="100" alt=""></td>
+					<td>
+						<img src="http://www.usagc.org/images/popup_index_03.gif" width="200" height="29" alt=""></td>
+					<td rowspan="2">
+						<img src="http://www.usagc.org/images/popup_index_04.gif" width="50" height="100" alt=""></td>
+				</tr>
+				<tr>
+					<td width="200" height="71" style="background-image:URL('http://www.usagc.org/images/popup_index_05.png')">
+						<input name="email2" id="email2" size="18" value="Type Your Email Here" type="text" onclick="clarmail();">&nbsp;
+						<input name="Enter" onclick="emailsend();agreeOut();" type="button" value="Enter">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" width="300" height="30" style="background-image:URL('http://www.usagc.org/images/popup_index_06.png')">
+						<table width="280" border="0" cellspacing="0" cellpadding="0">
+							<tbody><tr>
+								<td width="140" align="left">&nbsp;&nbsp;&nbsp;<a href="" onclick="return closeDiv()">Close</a></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+		<input type="hidden" id="op" name="op">
+		<div style="display:none">
+			<img src="http://leadback.advertising.com/adcedge/lb?site=703223&amp;srvc=17&amp;betr=A2150=FR&amp;betq=1537=363297" width="1" height="1" border="0">
+		</div>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr> 
+		<td height="75" background="http://www.usagc.org/images/header_bg.gif" colspan="3"><img src="http://www.usagc.org/images/header_left.jpg" alt="USAGC.ORG green card lottery services" width="210" height="75" border="0"><img src="http://www.usagc.org/images/header_right.jpg" alt="" width="568" height="75" border="0"></td>
+	</tr>
+	<script>
+	if(screen.width > 805){
+			document.write('<style type="text/css">.headWidth{width:82%};</style>');
+		} else {
+			document.write('<style type="text/css">.headWidth{width:57%};</style>');
+		}
+	</script><style type="text/css">.headWidth{width:82%};</style>
+	
+	<tr>
+		<!-- left Part-->
+		<td width="162" class="textWhite" style="vertical-align:middle;" align="center" background="http://www.usagc.org/images/strip_bg2.gif" nowrap=""><b>Select Your Language &gt;&gt;</b></td>	
+		<td background="http://www.usagc.org/images/strip_bg2.gif" class="headWidth">
+		
+			<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	       		<tbody><tr>				
+					<td class="languages" style="padding-left:15px;">
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=1" onclick="agreeOut();">English</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=2" onclick="agreeOut();">Nederlands</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=3" onclick="agreeOut();">Türkçe</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=4" onclick="agreeOut();">Français</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=5" onclick="agreeOut();">עברית</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=6" onclick="agreeOut();">Русский</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=15" onclick="agreeOut();">Italiano</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=16" onclick="agreeOut();">Deutsch</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=18" onclick="agreeOut();">日本語</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=19" onclick="agreeOut();">ฦาษาไทย</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=20" onclick="agreeOut();">繁體中文</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=21" onclick="agreeOut();">Português</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=24" onclick="agreeOut();">普通话</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=25" onclick="agreeOut();">Español</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=26" onclick="agreeOut();">العربية</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=27" onclick="agreeOut();">Polski</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=28" onclick="agreeOut();">Български</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=29" onclick="agreeOut();">Svenska</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=30" onclick="agreeOut();">Română</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=31" onclick="agreeOut();">Finnish</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=32" onclick="agreeOut();">Magyar</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=33" onclick="agreeOut();">Indonesia</a>&nbsp;|&nbsp;</nobr>
+					
+						<nobr><a class="languages" href="http://www.usagc.org/setLang.aspx?id=34" onclick="agreeOut();">ქართული</a>&nbsp;|&nbsp;</nobr>
+					
+					</td>
+				</tr>
+    		</tbody></table>
+		</td>
+		<td width="159" class="headWidth2" background="http://www.usagc.org/images/strip_bg2.gif">&nbsp;</td>
+	</tr>
+		</tbody></table>
+		
+		<input type="hidden" value="" name="cCountrySlect">
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" height="100%">
+			<tbody><tr height="100%">
+				<td valign="top">
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="159">
+	<tbody><tr height="10">
+		<td></td>
+	</tr>
+	<tr>
+		<td class="leftTable">
+			<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+				<tbody><tr>
+					<td bgcolor="#D7E7F2">
+					
+						<table width="100%" cellpadding="0" cellspacing="1">
+
+							<tbody><tr>
+								<td align="center"><img src="http://www.usagc.org/images/DC.jpg" width="126" height="91" border="0" alt="Green Card Lottery"></td>
+							</tr>
+							<tr>
+								<td height="5">
+								</td>
+							</tr>
+							
+							<tr>
+								<td background="http://www.usagc.org/images/red_bt_bg.jpg" height="36" align="center"><a class="languages" href="http://www.usagc.org/step1.aspx"><b>
+								Register Now !</b></a></td>
+							</tr>
+							
+							<tr>
+								<td height="5">
+								</td>
+							</tr>
+							<tr>
+								<td height="5"></td>
+							</tr>
+							
+							<tr>
+								
+								
+								<!--  <td class="linkleftTD"><a href="http://www.usagc.org/eligibility.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Free ! Eligibility Test</a></td> -->
+															
+							 <td class="linkleftTD"><a href="http://www.usagc.org/eligibility.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Free ! Eligibility Test</a></td> 
+							
+							
+							</tr>
+							<tr>
+								<td class="linkleftTD"><a href="http://www.usagc.org/step1.aspx" onclick="javascript:try{agreeOut();}catch(err){}">How to Register ?</a></td>
+							</tr>
+							<tr>
+								<!-- <td class="linkleftTD"><a href="http://www.usagc.org/requirements.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Requirements</a></td> -->
+								<td class="linkleftTD"><a href="http://www.usagc.org/requirements.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Requirements</a></td>
+							</tr>
+							
+							<tr>
+								<!--<td class="linkleftTD"><a href="http://www.usagc.org/programm.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Program Summary</a>
+								</td>-->
+								<td class="linkleftTD"><a href="http://www.usagc.org/programm.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Program Summary</a>
+								</td>
+							</tr>
+							<tr>
+									<!-- <td class="linkleftTD"><a href="http://www.usagc.org/faq.aspx" onclick="javascript:try{agreeOut();}catch(err){}">FAQ</a></td> -->
+								
+								<td class="linkleftTD"><a href="http://www.usagc.org/faq.aspx" onclick="javascript:try{agreeOut();}catch(err){}">FAQ</a></td>
+								
+								
+							</tr>
+							<tr>
+							<!-- 
+								<td class="linkleftTD"><a href="http://www.usagc.org/advantages.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Our Advantages</a>
+								</td>
+								-->
+								<td class="linkleftTD"><a href="http://www.usagc.org/advantages.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Our Advantages</a>
+								</td>								
+								
+								
+							</tr>
+							<tr>
+								<td height="5"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#D7E7F2">
+						<table width="100%" cellpadding="0" cellspacing="1">
+							<tbody><tr>
+								<td height="5"></td>
+							</tr>
+							<tr>
+								<!-- ***1 change to relitve path some of the links --> 
+								<!-- <td class="linkblueTD"><a href="http://www.usagc.org/contact.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Contact Us</a></td> -->
+								<td class="linkblueTD"><a href="http://www.usagc.org/contact.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Contact Us</a></td>
+							
+							
+							</tr>
+							<tr>
+								<!-- 
+								<td class="linkblueTD"><a href="http://www.usagc.org/invite.aspx" onclick="javascript:try{agreeOut();}catch(err){}" >
+								Invite a Friend</a></td>
+								-->
+								<td class="linkblueTD"><a href="http://www.usagc.org/invite.aspx" onclick="javascript:try{agreeOut();}catch(err){}">
+								Invite a Friend</a></td>								
+								
+								
+							</tr>
+							<tr>
+								<!-- 
+								<td class="linkblueTD"><a href="http://www.usagc.org/winnerspage.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Winners' Testimonials</a></td>
+								-->
+								
+								<td class="linkblueTD"><a href="http://www.usagc.org/winnerspage.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Winners' Testimonials</a></td>
+								
+							</tr>
+							<tr>
+								<td class="linkblueTD">
+									<script>
+								document.write('<a href="javascript:void window.external.AddFavorite(\''+document.location+'\',\'Green Card Lottery information and registration\')">Bookmark</a>');
+									</script><a href="javascript:void window.external.AddFavorite('http://www.usagc.org/','Green Card Lottery information and registration')">Bookmark</a>
+								</td>
+							</tr>
+							<tr>
+								
+								<!--
+								<td class="linkblueTD"><a href="http://www.usagc.org/information.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Customer Alerts</a>
+								</td>
+								-->
+								<td class="linkblueTD"><a href="http://www.usagc.org/information.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Customer Alerts</a>
+								</td>								
+								
+							</tr>
+							
+							<tr>
+							
+								<td class="linkblueTD"><a href="http://www.usagc.org/login.aspx?sub=1" onclick="javascript:try{agreeOut();}catch(err){}">Click Here to Login to my account</a>
+								</td>
+							</tr>
+							<tr>
+								<td class="linkblueTD"><a href="http://www.usagc.org/sitemap.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Sitemap</a>
+								</td>					
+							</tr>
+							<tr>
+								<td class="linkblueTD"><a href="http://www.usagc.org/news.aspx" onclick="javascript:try{agreeOut();}catch(err){}">News</a>
+								</td>	
+							</tr>
+							
+							<tr>
+								<td class="linkblueTD"><a href="http://www.usagc.org/Articles/green_card_articles.aspx" onclick="javascript:try{agreeOut();}catch(err){}">Articles</a>
+								</td>	
+							</tr>
+							
+							<tr>
+								<td height="5"></td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+				<tr bgcolor="#d7e7f2">
+					<td>
+						<br>
+					</td>
+				</tr>
+				
+				<tr height="100%">
+					<td align="right" valign="top" bgcolor="#D7E7F2">&nbsp;</td>
+				</tr>
+				<!--<tr>
+					<td bgcolor="#D7E7F2" valign=bottom>
+						<table width=100%  cellpadding="0" cellspacing="1">
+							<tr>
+								<td height=5></td>
+							</tr>						
+							<tr >
+								<td class="linkblueTD"><a href="step1.aspx">Register Now !</a></td>
+							</tr>
+							<tr>
+								<td height=5></td>
+							</tr>
+						</table>
+					</td>
+				</tr>-->
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+
+				</td>
+				<td valign="top" style="padding: 10px;" dir="ltr">
+					<table width="100%" border="0" cellpadding="3" cellspacing="0">
+						<tbody><tr>
+							<td>
+								<h1>Green Card Lottery USA - Live and Work in the USA</h1>
+								<h2 style="margin-top:-18px;"><i>Green Card Lottery USA -Signup to the Official US DV Lottery immigration and naturalization program now.</i></h2>
+									
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<b>What is the US GREEN CARD LOTTERY ?</b><br>
+    <strong><a href="/green-card-lottery.aspx">Green Card Lottery</a></strong>, or  <a href="http://www.usagc.org/step1landing.aspx">DV lottery</a> US is a program that was formed by the USA government to legally give a US work visa to people who want to immigrate to USA. USAGC Organization invites you to participate in the  <a href="http://www.usagc.org/step1.aspx">USA Green Card Lottery</a> where you can win a 
+    <a href="http://www.usagc.org/Green-Card-USA.aspx">green card USA</a> to <a href="http://www.usagc.org/index2.aspx">Live and Work in USA</a>. This is your chance to take advantage of the <a href="http://www.usagc.org/advantages.aspx">green card program</a> -<strong><a href="http://www.usagc.org/Immigration-and-Naturalization.aspx"> Immigration and Naturalization</a></strong> opportunity offered to you by the official US Government 
+    <em>DV Lottery</em> or <span class="style1"><em> <a href="http://www.usagc.org/programm.aspx">Green card Lottery</a></em></span> law. Get you permanent <a href="http://www.usagc.org/index2.aspx">us work visa</a> now! 
+								<br>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="tableButton" align="center" onclick="document.location.href='step1.aspx';Stay=true; agreeOut();">
+									<table id="Table3" style="width: 75%; height: 60px" height="60" cellspacing="0" bordercolordark="darkblue" cellpadding="0" width="550" align="center" bgcolor="#003366" "="" bordercolorlight="slateblue" border="4">
+										<tbody><tr>
+											<td align="center">
+												<b><font size="5" color="#ffffff">
+														CLICK HERE TO REGISTER
+													</font></b>
+											</td>
+										</tr>
+									</tbody></table>
+								</div>
+								<table>
+									<tbody><tr>
+										<td>
+											<img src="http://www.usagc.org/images/samolet.jpg" title="Green card winners' airline ticket" alt="Green card winners' free airline ticket to USA" width="71" height="15" border="0">
+										</td>
+										<td>
+										
+													<a href="polet.aspx" target="_blank" width="750" height="480" scrollbars="no"><font style="line-height: 8px; font-size: 8px">
+													<br>
+												</font>
+													Winners will get FREE airline ticket to the USA*
+												
+												
+											</a>
+											
+										</td>
+										
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td dir="ltr">
+								<table cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td>
+											<img src="http://www.usagc.org/images/t_c_left.gif" alt="" width="11px" height="9px" border="0">
+										</td>
+										<td width="100%" style="border-top: 1px solid #D7D8D9">
+											<img src="http://www.usagc.org/images/pix.gif" alt="" width="1" height="1" border="0">
+										</td>
+										<td>
+											<img src="http://www.usagc.org/images/t_c_right.gif" alt="" width="11px" height="9px" border="0">
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<table cellpadding="0" cellspacing="5">
+									<tbody><tr>
+										<td colspan="3" class="textBlue" style="font-size: 14px">
+											<b>Can you register? (FREE test)</b><br>Answer the following 3 questions and get an answer in 20 seconds:
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void window.open('help.aspx?id=country','help','resizable=yes,scrollbars=yes, width=515, height=500');">
+												<img src="http://www.usagc.org/images/i_quest.gif" alt="" width="13" height="13" border="0"></a></td>
+										<td class="textBlue" nowrap="">
+											<b>
+												Country of Birth :
+											</b>
+										</td>
+										<td id="tdCountries">
+										<select name="cCountry" id="cCountry" style="width: 270px;" onchange="document.Form1.cCountrySlect.value=this.selectedIndex">
+</select>
+											
+											
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void window.open('help.aspx?id=education','help','resizable=yes,scrollbars=yes, width=515px, height=500px');">
+												<img src="http://www.usagc.org/images/i_quest.gif" alt="" width="13px" height="13px" border="0"></a></td>
+										<td class="textBlue" nowrap="">
+											<b>
+												Education :
+											</b>
+										</td>
+										<td>
+											<select name="cEducation" id="cEducation" style="width: 270px;">
+	<option value="0">Education</option>
+	<option value="1">No education at all</option>
+	<option value="2">Less than high school</option>
+	<option value="3">High school education</option>
+	<option value="4">More than High school</option>
+</select>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="javascript:void window.open('help.aspx?id=job','help','resizable=yes,scrollbars=yes, width=515px, height=500px');">
+												<img src="http://www.usagc.org/images/i_quest.gif" alt="" width="13px" height="13px" border="0"></a></td>
+										<td class="textBlue">
+											<b>
+												Job experience :
+											</b>
+										</td>
+										<td>
+											<select name="cJob" id="cJob" style="width: 270px;">
+	<option value="-1">Occupation</option>
+	<option value="0">I don't have a job</option>
+	<option value="1">I have a job</option>
+</select>
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="tableButton" align="center" onclick="validatesubmit2(); agreeOut();">
+									<table id="Table2" style="width: 75%; height: 35px" height="50" cellspacing="0" bordercolordark="darkblue" cellpadding="0" width="550" align="center" bgcolor="#003366" bordercolorlight="slateblue" border="4">
+										<tbody><tr>
+											<td align="center">
+												<font size="4" color="#ffffff">
+													CLICK HERE for a FREE Eligibility Check!
+												</font>
+											</td>
+										</tr>
+									</tbody></table>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<span style="font-size: 14px" class="H11">
+									The Official American Green Card Lottery program benefits: 
+								</span>
+								<br>
+								<br>
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tbody><tr>
+										<td width="25">
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13">
+										</td>
+										<td>
+											50,000 people and their families will Live, Work and Study in the USA.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											OFFICIAL USA Governmental program.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											Your chance to LIVE, WORK &amp; STUDY in the USA.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											Simple registration within 5 minutes.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											Personal support in every step.
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											Double chance for married people to win the Green Card.
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								<span style="font-size: 14px" class="H11">
+									Important to all:
+								</span>
+								<br>
+								<br>
+								<table cellpadding="0" cellspacing="0" border="0">
+									<tbody><tr>
+										<td width="25" valign="top">
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											According to the US DEPARTMENT OF STATE entries for the 
+US GREEN CARD LOTTERY must be submitted electronically 
+via the ELECTRONIC DIVERSITY VISA ENTRY FORM. 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<img src="http://www.usagc.org/images/i_yes.gif" width="16" height="13"></td>
+										<td>
+											The USAGC Organization is now accepting applications online.
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								<span style="font-size: 14px" class="H11">
+									How much does it cost?
+								</span>
+								<br>
+								<br>
+								Participation in the USA  <strong><a href="/green-card-lottery.aspx">  Green Card Lottery</a></strong> is 
+    <a href="http://www.usagc.org/eligibility.aspx">FREE</a>. We, at the USAGC Organization, charge for the professional and expertise service we give you. Our professional service for 
+    <a href="http://www.usagc.org/">Green Card Lottery USA</a> includes: <strong>Green Card Lottery application</strong> service, information check, correcting of wrong or invalid US 
+    <a href="/green-card-lottery.aspx">green card lottery</a> application data, support in different languages, correct completion of the application, and submission of the 
+    DV Lottery application on time and to the correct address. USAGC ensures that your USA 
+    <span class="style1"><em>Green Card Lottery</em></span> application or <em>
+    <a href="http://www.usagc.org/step1landing.aspx">DV Lottery</a></em> application will not be disqualified. For more information on the Green Card Lottery and <strong><a href="http://www.usagc.org/Immigration-and-Naturalization.aspx"> Immigration and Naturalization</a></strong>
+    <a href="http://www.usagc.org/contact.aspx">send us your questions</a> or read about our 
+    <a href="http://www.usagc.org/advantages.aspx">advantages</a> or our 
+    <a href="http://www.usagc.org/faq.aspx">FAQ</a>.
+								
+								
+								<a href="contact.aspx" class="ptextb" target="_blank"><u>
+										send us your questions
+									</u></a>
+								 or read
+								<a href="advantages.aspx" class="ptextb" target="_blank"><u>
+										about our advantages
+									</u></a>
+								 or our
+								<a href="faq.aspx" class="ptextb" target="_blank"><u>
+										FAQ.
+									</u></a>
+								<br>
+								<br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<b>
+									You decide!
+								</b>
+								 Here are pros and cons for registering via 
+								<a href="step1.aspx" class="ptextb" target="_self"><u>
+										the USAGC Organization website
+									</u></a>
+								 versus the US State Department website.  You decide through which website you want to register!
+							</td>
+						</tr>
+						<tr>
+							<td dir="ltr">
+								<table cellpadding="0" cellspacing="0" width="100%">
+									<tbody><tr>
+										<td>
+											<img src="http://www.usagc.org/images/t_c_left.gif" alt="" width="11px" height="9px" border="0">
+										</td>
+										<td width="100%" style="border-top: 1px solid #D7D8D9">
+											<img src="http://www.usagc.org/images/pix.gif" alt="" width="1" height="1" border="0">
+										</td>
+										<td>
+											<img src="http://www.usagc.org/images/t_c_right.gif" alt="" width="11px" height="9" border="0px">
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+						<tr>
+							<td style="padding-right: 10px; padding-left: 10px;">
+								<table cellspacing="0" width="100%" cellpadding="0" border="1" bordercolor="WHITE" style="font-family: arial; font-size: 8pt" bgcolor="#EBF1F5">
+									<tbody><tr bgcolor="#D3E1EA" style="font-size: 9pt">
+										<td align="center" class="textBlue">
+											<b>&nbsp;The Service</b>
+										</td>
+										<td align="center" width="150" class="textBlue">
+											<b>
+												The USA State Department Website
+											</b>
+										</td>
+										<td align="center" width="100" class="textBlue">
+											<b>
+												The USAGC Website
+											</b>
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Registration Available now
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Equal chance to all participants to win
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Free of charge
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Registration 365 days a year
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Free airline ticket to winners to go to the USA*
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Option available to send photos by regular mail
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Online support by experts
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Option to update contact information available at any time
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+									<tr height="21">
+										<td style="padding-left: 5px; padding-right: 5px;">
+											Multiple year submissions possible
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_no.gif" alt="" border="0" width="16" height="13">
+										</td>
+										<td align="center">
+											<img src="http://www.usagc.org/images/i_yes.gif" alt="Yes" border="0" width="16" height="13">
+										</td>
+									</tr>
+								</tbody></table>
+								<table id="Table1" cellpadding="0" cellspacing="5">
+									<tbody><tr>
+										<td align="center">
+											<a href="http://www.state.gov/" target="_blank"><img src="http://www.usagc.org/images/gerb.jpg" width="98" height="100" border="0" alt="USA Department Of State"></a>
+										</td>
+										<td dir="ltr">
+											<b>From the U.S. Department of State Bureau of Consular Affairs Visa Services:</b>
+											<br>
+											The congressionally mandated <a href="http://en.wikipedia.org/wiki/Diversity_Immigrant_Visa">
+												Diversity Immigrant Visa</a> Program is administered on an annual basis by 
+											the <a href="http://en.wikipedia.org/wiki/United_States">US</a> Department of 
+											State and conducted under the terms of Section 203(c) of the Immigration and 
+											Nationality Act (INA). Section 131 of the Immigration Act of 1990 (Pub. L. 
+											101-649) amended INA 203 to provide for a new class of immigrants known as 
+											"diversity immigrants" (DV immigrants). Alien petitioners for the Diversity 
+											Visa Program will no longer be permitted to submit a petition by mail. Instead, 
+											the Department will require that all petitions be submitted to it in an 
+											electronic format, using an Internet website dedicated specifically to the 
+											submission and receipt of <a href="http://www.dvlottery.state.gov/">Diversity Visa</a>.
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+							<td>
+							</td>
+						</tr>
+						<tr>
+							<td align="center">
+								<div class="tableButton" align="center" onclick="document.location.href='step1.aspx';Stay = true; agreeOut();">
+									<table id="Table4" style="width: 75%; height: 35px" height="50px" cellspacing="0" bordercolordark="darkblue" cellpadding="0" width="550px" align="center" bgcolor="#003366" bordercolorlight="slateblue" border="4">
+										<tbody><tr>
+											<td align="center">
+												<font size="4" color="#ffffff">
+													CLICK HERE TO REGISTER
+												</font>
+											</td>
+										</tr>
+									</tbody></table>
+								</div>
+								
+								<br>
+								<div align="left">
+								<p class="home"><br>Applying for the American <a href="http://www.usagc.org/green-card-lottery.aspx">Green 
+										Card Lottery</a> is a serious process and should not be taken lightly. 
+									Completing the DV <a href="http://www.usagc.org/step1.aspx">Green Card lottery 
+										application</a> under the <a href="http://www.usagc.org/step1landing.aspx">DV 
+										Lottery</a> program should be done seriously according to the strict 
+									criteria of the <a href="http://en.wikipedia.org/wiki/United_States">US</a> Government. 
+									The experienced team of USAGC will make sure that <a href="http://www.dvlottery.state.gov">
+										Green Card Lottery</a> USA process will be done professionally and 
+									correctly. Our team will make sure that your green card lottery application 
+									will not be rejected due to wrong information you submitted. We will make sure 
+									that your <a href="http://www.usagc.org/step1.aspx">USA green card lottery</a> or
+									<a href="http://www.usagc.org/step1landing.aspx">DV Lottery</a> information is 
+									correct and will help you complete the <a href="http://www.usagc.org/Green-Card-Application.aspx">
+										green card application</a> according to the requirements. We will also help 
+									you upload the passport photos according to the technical requirements. USAGC 
+									offers a quality <a href="http://www.usagc.org/">green card lottery</a> application 
+									service. In the following links you can find out more on <em>USA Green Card</em>
+									,<a href="http://www.usagc.org/step1landing.aspx"><em>DV Lottery US</em></a> and 
+									US immigration. Click to get a <a href="http://www.usagc.org/eligibility.aspx">free 
+										Green Card lottery</a> or dvlottery eligibility service. <a href="http://green-card-lottery-usa-usagc-org.blogspot.com">
+										USAGC</a> signs you up to the official <a href="http://en.wikipedia.org/wiki/United_States">
+										USA</a> <a href="http://en.wikipedia.org/wiki/Diversity_Immigrant_Visa">green 
+										card lottery</a> or <a href="http://en.wikipedia.org/wiki/Diversity_Immigrant_Visa">
+										DV Lottery</a>. <a href="http://green-card-lottery-usa-usagc-org.blogspot.com">USAGC.org</a>
+									's site and services include information on immigrating to the US and Canada, 
+									information on living in US and Canada, tips for immigrants and an easy to use <b><i>green 
+											card lottery USA</i></b> or <b><i>DV Lottery US</i></b> application 
+									service. The professional team of <a href="http://twitter.com/USAGCOrg">USAGC.org</a>
+									will take care of your <a href="http://www.usagc.org/Immigration-and-Naturalization.aspx">
+										Immigration and Naturalization</a> application on your way to <a href="http://www.usagc.org/index2.aspx">
+										Live and Work in USA</a>.</p>
+									<h4>Who can take part in the Green Card Lottery or DV Lottery?</h4>
+									<p class="home">To take part in the <em>Green Card Lottery USA</em> or <em>DV Lottery USA</em> you 
+									need to have a citizenship of a country that is eligible, and have an education 
+									or job that complies with the Green Card Lottery requirements.</p>
+									<h4>What is the criterion for a county to be eligible to take part in the DV lottery?</h4> 
+									<p class="home">&nbsp;The <u><i>Green Card Lottery </i></u>or <u><i>DV Lottery</i></u> (Diversity 
+									Visa Lottery) is based on diversion. The countries that are eligible are the 
+									countries who have sent the least amount of immigrants to USA in the last 5 
+									years.</p>
+									
+									<h4>Is there a minimum age requirement for Green Card Lottery participation?</h4>
+									<p class="home">To submit a Green Card Lottery application or DV Lottery Application, the 
+									applicant must have at least a high school diploma, or its equivalent, or two 
+									years of work practice in an occupation where it is necessary to have two years 
+									training or more. It is important to know that children, who do not have a high 
+									school diploma, can still apply through their parent. Please note that <a href="http://www.usagc.org/Green-Card-USA.aspx">Green Card USA</a> or USA DV Lottery applicants are currently obligated to 
+									supply, in the Electronic Diversity Visa Entry Form (E-DV Entry Form) 
+									information such as the their highest level of education achieved.</p>
+									
+									<h4>What are the advantages of using USAGC to sign up to the Green Card Lottery or DV Lottery? </h4>
+									<p class="home">Applying to the USA Green Card Lottery with USAGCs <a href="http://www.usagc.org/Immigration-and-Naturalization.aspx">Immigration and Naturalization service</a> helps to make the process easier 
+									and simpler. In addition we will go over your <em>Green Card Lottery application</em>
+									or <em>DV lottery application</em> and make sure that it doesnt include any 
+									mistake that can get you disqualified.
+									</p>
+									
+									<h4>How can I legally live and work in USA?</h4>
+									<p class="home">There are quite a few methods in which one can legally <a href="http://www.usagc.org/index2.aspx">live and work in USA</a> . The best and
+easiest way to get a <a href="http://www.usagc.org/Green-Card-USA.aspx">Green Card USA</a> is through the American Green Card lottery,
+which is also known as the DV lottery or the US Green Card Lottery. Whether you
+plan to <a href="http://www.usagc.org/index2.aspx">live in USA</a>, study in
+USA, or <a href="http://www.usagc.org/index2.aspx">work in USA</a> this could
+be your best chance to immigrate to the USA.<br>
+The USA Green Card lottery is run by the US Department of State under the terms
+of the Immigration and Nationality Act on a yearly basis. The Act makes 50,000
+permanent residency visas, or Green Cards available for people of countries
+with low immigration rates to the <a href="http://en.wikipedia.org/wiki/United_States"><span style="font-size:9.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#0D1649">United States</span></a><span style="font-size:9.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black">. These
+lasting residency visas are known as Diversity Visas (DV) or Green Cards.
+Citizens of places in the world which sent more than 50,000 new immigrants to
+United States in the preceding five years are not eligible to apply. You can
+click the following link to get a </span><a href="http://www.usagc.org/eligibility.aspx"><b><span style="font-size:9.0pt;
+font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:#0D1649">free Green Card Lottery</span></b></a><span style="font-size:9.0pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;color:black">
+eligibility test.</span></p>
+									<h4>What languages does USAGC.org support?</h4>
+									<p class="MsoNormal" style="text-align:left;direction:ltr;unicode-bidi:embed"><a href="http://twitter.com/USAGCOrg">USAGC</a>
+										offers its service in many languages, click one of the following links to see 
+										this page in your language.</p>
+									Nederlands <a href="http://www.usagc.org/?lng=2">loterie carte verte</a>
+									|Italiano <a href="http://www.usagc.org/?lng=15">Carta Verde</a>| 
+									Türkçe <a href="http://www.usagc.org/?lng=3">Yeşil Kart</a>| 
+									Русский <a href="http://www.usagc.org/?lng=6">
+										лотерея грин 
+										кард</a>
+									<p class="MsoNormal" style="text-align:left;direction:ltr;unicode-bidi:embed">To 
+										see the complete list of languages that are supported, click your language in 
+										the language bar in the top of this page.</p>
+								</div>
+								
+							</td>
+						</tr>
+					</tbody></table>
+					<br>
+					<br>
+				</td>
+				<td valign="top">
+					
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+	
+	function fLogin()
+	{
+		var valid = true;
+		var err = "ERROR!\n";
+		if (echeck(document.forms[0].Email.value) == false) {				
+				valid = false;
+				setColor(document.forms[0].Email, bgBad);
+				err += "- Please enter correct Username\n";				
+			} else {				
+				setColor(document.forms[0].Email, bgGood);
+			}
+	if ((document.all.pass.value.length <2)|| (!/^[A-Za-z0-9_']*$/.test(document.forms[0].pass.value)) ){		
+				valid = false;
+				setColor(document.forms[0].pass, bgBad);
+				err += "- Please enter correct Password\n";				
+			} else {				
+				setColor(document.forms[0].pass, bgGood);
+			}
+
+	if(!valid){
+	alert(err);
+	return;
+	}	
+	document.forms[0].op.value = "Login";
+	document.forms[0].submit();
+	}
+</script>
+
+
+
+<table cellspacing="0" cellpadding="0" width="156">
+  <tbody><tr>
+    <td height="10"></td></tr>
+    
+   
+				
+<tr>
+    <td><img height="6" alt="" src="http://www.usagc.org/images/red_top_strip.jpg" width="100%" border="0"></td></tr>
+				<tr>
+    <td class="textWhite" align="center" bgcolor="#333e77" height="22"><b>Applicant Login</b>
+    </td>
+</tr>
+<tr>
+    <td height="2"></td></tr>
+  <tr>
+    <td align="center">
+    
+	
+    
+      <table cellspacing="0" cellpadding="0">
+        <tbody><tr>
+          <td class="textBlue" align="center"><b>Check your green card<br>application status</b>
+            </td>
+         </tr>
+        
+        
+        <tr>
+          <td align="center"><br><br>
+            
+             <div id="knopka" name="knopka" class="tableButton" align="center" onclick="javascript:void window.open('http://www.usagc.org/login.aspx?sub=1','_self')">
+                                                        <table id="Table3" style="width: 20px; height: 20px" height="20" cellspacing="0" bordercolordark="darkblue" cellpadding="0" width="20" align="center" bgcolor="#003366" "="" bordercolorlight="slateblue" border="4">
+                                                            <tbody><tr>
+                                                                <td align="center">
+                                                                    <b><font size="4" color="#ffffff">
+                                                                        LOGIN
+                                                                    </font></b>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </div>
+            </td></tr>
+        <tr>
+          
+  </tr></tbody></table></td></tr>
+    
+    
+ 
+    
+    
+  <tr>
+    <td><br></td>
+    </tr><tr>
+    <td><img height="6" alt="" src="http://www.usagc.org/images/red_top_strip.jpg" width="100%" border="0"></td></tr>
+ 
+  <tr>
+    <td class="textWhite" bgcolor="#333e77" height="22" align="center"><b>Private Entity</b>
+    </td>
+</tr>
+<tr>
+    <td height="2"></td></tr>
+  <tr>
+    <td bgcolor="#fefff6" align="center">
+      <table cellpadding="0" cellspacing="0">
+        <tbody><tr>
+          <td class="textBlue">
+    
+    <p>USAGC Organization is now accepting applications online.
+USAGC Organization, as a nongovernmental entity providing a value added service for the registration to the DV Green Card program, will forward your registration directly to the US State Department site.</p> 
+ 
+<p style="margin-bottom:0px;">The DV lottery is open for registration at no cost only during the annual period in the official website which you can find <a href="https://www.dvlottery.state.gov/" target="_blank">here</a></p><br>
+ 
+<h5 style="margin-top:1px;margin-bottom:0px;">Some of our benefits: </h5>
+ 
+<li>We submit your application on time and for multiple years,</li>
+<li>We help you complete your application correctly and upload your photos;</li>
+<li>We give you the official submission confirmation.</li>
+<p style="margin-bottom:0px;"> Click <a href="http://www.usagc.org/advantages.aspx">here</a> to read the benefits of registering with USAGC.</p>
+            </td>
+         </tr>
+</tbody></table></td></tr>
+ 
+    <tr>
+</tr>
+	
+  <tr>
+    <td height="10"></td></tr>
+
+  <tr>
+    <td><img height="6" alt="" src="http://www.usagc.org/images/red_top_strip.jpg" width="100%" border="0"></td></tr>  
+  <tr>
+    <td class="textWhite" align="center" bgcolor="#333e77" height="22"><b>Example of<br>Green Card Visa</b></td>
+  </tr><tr>
+    <td height="2"></td></tr>
+  <tr>
+    <td height="10"><center><img alt="Green Card" title="Green Card example" src="http://www.usagc.org/images/logo1.jpg"></center></td></tr>
+  <tr>
+    <td height="10"></td></tr>
+  
+    
+    
+  <tr>
+    <td> <br>    <img height="6" alt="" src="http://www.usagc.org/images/red_top_strip.jpg" width="100%" border="0"></td></tr>
+  <tr>
+	<td class="textWhite" align="center" bgcolor="#333e77" height="22"><b>Example of<br>Winning Document</b></td>
+  </tr><tr>
+    <td height="2"></td></tr>
+  <tr>
+  
+    <td height="10"><center><img alt="Green Card winning document" title="Example of a Green Card winning document" src="http://www.usagc.org/images/logo2.jpg" align="middle"></center></td></tr>
+  <tr>
+    <td height="10"></td></tr>
+  
+  <tr>
+   
+
+
+
+			  		
+ 
+  
+ </tr><tr>
+    <td><br><img height="6" alt="" src="http://www.usagc.org/images/red_top_strip.jpg" width="100%" border="0"></td></tr>
+ 
+ 
+ 
+ 
+  <tr>
+    <td class="textWhite" align="center" bgcolor="#333e77" height="22"><b>Updates</b></td>
+  </tr><tr>
+    <td align="center">
+      <p>
+      <marquee id="Marquee1" style="TEXT-ALIGN: center" scrollamount="1" scrolldelay="1" direction="up" width="130" height="120">ENTRIES FOR THE DV - DIVERSITY VISA LOTTERY MUST BE 
+      SUBMITTED ELECTRONICALLY <br><br><br>USAGC Organization is now 
+      accepting applications online.</marquee><a href="http://www.state.gov/" target="_blank"></a></p></td></tr>
+  <tr>
+    <td align="center">__________________</td></tr>
+  <tr>
+    <td align="center"></td></tr></tbody></table>
+
+				</td>
+			</tr>
+		</tbody></table>
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" height="150px">
+			<tbody><tr height="30px">
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+				</td>
+				<td align="center">
+					
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<table cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td><img src="http://www.usagc.org/images/t_c_left.gif" alt="" width="11px" height="9px" border="0"></td>
+		<td style="border-top:1px solid #D7D8D9"><img src="http://www.usagc.org/images/pix.gif" alt="" width="1px" height="1px" border="0"></td>
+		<td><img src="http://www.usagc.org/images/t_c_right.gif" alt="" width="11px" height="9px" border="0"></td>
+	</tr>
+	
+	<tr>
+		<td></td>
+		<td align="center">
+			<!-- ***1 change some of the links to reletive path -->
+			<a href="http://www.usagc.org/faq.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>FAQ</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/terms.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Terms &amp; Conditions</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/privacy.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Privacy policy</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/about.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>About Us</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			
+			<a href="http://sadm.usagc.org/admin/login_affl2.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Affiliates</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/Articles/Get_a_green_card.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Get a Green Card</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/index.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Homepage</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_home.gif" alt="USAGC homepage" width="16" height="14" border="0">&nbsp;&nbsp;
+			<br>
+			<a href="http://www.usagc.org" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack">
+				<b>Green Card</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/green-card-lottery.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Green Card Lottery</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/step1.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>USA Green Card Lottery</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/Immigration-and-Naturalization.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Immigration and Naturalization</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/step1landing.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>DV Lottery</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/Green-Card-USA.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>Green Card USA</b></a>&nbsp;&nbsp;<img src="http://www.usagc.org/images/i_star.gif" alt="red star" width="13" height="12" border="0">&nbsp;&nbsp;
+			<a href="http://www.usagc.org/Articles/United-States-immigration.aspx" onclick="javascript:try{agreeOut();}catch(err){}" class="textBlack"><b>United States immigration</b></a>
+				
+		</td>
+	</tr>
+</tbody></table>
+
+<!-- BEGIN LivePerson Monitor. -->
+<script type="text/javascript">
+window.lpTag={site:'14647870',_v:'1.1',protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn);});},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json);});}},defer:function(fn){this._defL=this._defL||[];this._defL.push(fn);},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id);},0);},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site;}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id);}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s);},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady');});}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady');},false);window.addEventListener('load',function(){that._domReady('domReady');},false);}if(typeof(window._lptStop)=='undefined'){this.load();}},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n});}this._timing[n]=(new Date()).getTime();}};lpTag.init();
+</script>
+<!-- END LivePerson Monitor. -->
+
+				</td>
+				<td align="center">
+				</td>
+			</tr>
+			<tr height="10px">
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr height="100px">
+				<td align="center" class="textBlue" bgcolor="#eff6fd" colspan="3">
+					<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<font style="FONT-SIZE:8pt"><font size="1">
+		<br>
+		
+		
+		Copyright 2009 by Yeke Ltd and USAGC Organization Ltd. All rights reserved.<br>
+		
+		Reproduction in whole or in part without permission is prohibited.<br>
+	</font>
+	<br>
+	usagc.org website is a private entity and is not a governmental agency </font>
+<br>
+<font style="FONT-SIZE:7pt">* You can win an airline ticket to USA at a worth of 
+	up to 1,000 EUR (see Terms &amp; Conditions). Clients who purchased the "VIP 
+	Benefits" will also receive a 1,000 EUR rebate on legal assistance (see Terms &amp; Conditions).</font>
+<br>
+<br>
+<div style="FONT-SIZE:7pt; width: 1000px; ">The official submission dates for the US DV Green Card Lottery is usually between a 30-60 day window which varies from year-to-year and is typically between the months of September to November. USAGC.org offers you the opportunity to prepare and complete, according to all legal requirements, your Green Card Lottery application 365 days per year. Your application will be submitted within the submission window in the year immediately following the completion of your application. USAGC renders a professional, value added service for clients from all over the world in over 25 different languages.</div>
+
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-2183441-1";
+urchinTracker();
+</script>
+
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+		</tbody></table>
+		
+		
+	</form>
+	<div style="display:none"></div>
+	
+	<div style="display:none">
+		<img src="http://bh.contextweb.com/bh/set.aspx?action=add&amp;advid=1281&amp;token=UAGC1" width="1" height="1" border="0">
+		<iframe src="pixels/index.aspx" width="50" height="50"></iframe>
+	</div>
+	
+
+ </body></html>

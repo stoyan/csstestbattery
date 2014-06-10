@@ -1,0 +1,3726 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ /
+	global_new.css目次:
+	┗基本スタイル
+	 ┣リンク色
+	 ┗レイアウト
+	┣ヘッダ要素
+	 ┣■ヘッダ　カテゴリカラー
+	 ┗ヘッダ　ホーム用設定ヘッダ
+	┣ヘッダ　右パーツ
+	┣ページ上フルバナー
+	┣H1　
+	 ┗■H1　カテゴリカラー　
+	┣フッタ　
+	 ┣フッタA　コーポレートリンク
+	 ┣フッタB　サイト内リンク
+	 ┣フッタC　キャプション
+	 ┗フッタD　コピーライト
+	┣特集・記事系スタイル
+	┣幅　
+	┣スペース　
+	┣フォント
+	┣表示
+	┣ヘルプバルーン表示
+	┣サジェスト
+	┣印刷用CSS
+	┣wordbreak
+	┗clearfix
+	┗閲覧履歴　右下ナビゲーション
+/ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+
+/* 基本スタイル------------------------------------------------ */
+
+* {
+	padding: 0px;
+	margin: 0px;
+}
+body {
+	font-size: 13px;
+	*font-size: small;
+	*font: x-small;
+	font-family: "ＭＳ Ｐゴシック","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro" ,Osaka ,arial ,verdana ,sans-serif;
+	background: #FFFFFF;
+	color: #333333;
+	padding: 0px 10px;
+}
+
+html>/**/body {font-size /*\**/: small\9 }
+
+body.iframe {
+	padding: 0px;
+}
+body.loginarea { /* 120709 add sm1 */
+	padding: 0px;
+}
+.none {
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	font-size: 0px;
+	line-height: 0px;
+}
+.vt {
+	vertical-align: top;
+}
+.vm {
+	vertical-align: middle;
+}
+.vb {
+	vertical-align: bottom;
+}
+.alignL {
+	text-align: left;
+}
+.alignR {
+	text-align: right;
+}
+.alignC {
+	text-align: center;
+}
+html>body .alignC {
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+.floatL {
+	float: left;
+}
+.floatR {
+	float: right;
+}
+.floatClear {
+	clear: both;
+}
+img {
+	border: 0px;
+}
+ul,ol {
+	padding: 0px;
+	margin: 0px;
+}
+/*select option { padding : 0 5px; }*/
+
+/* リンク色
+------------------------------------------------ */
+a:link {
+	color: #0000dd;
+	text-decoration: underline;
+}
+a:visited {
+	color: #993399;
+}
+a:hover {
+	color: #0099ff;
+	text-decoration: underline;
+}
+/* レイアウト
+------------------------------------------------ */
+#all {
+	padding: 0px;
+	margin: 0px auto;
+	text-align: center;
+}
+/* 幅ホーム用 */
+#home {
+	width: 835px;
+	margin: 0px auto;
+	text-align: left;
+}
+/* 幅リキッド */
+#contents {
+	margin: 0px auto;
+	text-align: left;
+}
+/* 幅930 */
+#contents930 {
+	width: 930px;
+	margin: 0px auto;
+	text-align: left;
+}
+/* 幅700 */
+#contents700 {
+	width: 700px;
+	margin: 0px auto;
+	text-align: left;
+}
+/* 幅640 */
+#contents640 {
+	width: 640px;
+	margin: 0px auto;
+	text-align: left;
+}
+/* 幅760 09.04.09 記事用サイズ追加 */
+#contents760 {
+	width: 760px;
+	margin: 0px auto;
+	text-align: left;
+}
+/* ヘッダ要素
+------------------------------------------------------------------------------------------------ */
+.path {
+	padding: 2px 2px 0px;
+}
+.searchPath {
+	padding-bottom :10px;
+}
+#header {
+height: 4.3em;
+font-size: 13px;
+}
+#contents930 #header {
+	width: 930px;
+}
+#header .headerL {
+	float: left;
+	width: 400px;
+	padding: 0.6em 0px 0.8em;
+}
+#header a {
+	text-decoration: none;
+}
+#header img {
+	vertical-align: middle;
+}
+#header iframe.b4 {
+	margin: 2px 0px 0px;
+}
+#header iframe.c1 {
+	padding: 0px;
+	margin: 0px;
+	vertical-align: middle;
+	text-align: right;
+}
+	/* ■ページ上　カテゴリカラー ------------------- */
+#default #header,
+#hikkoshi #header,
+#shopview #header,
+#business #header,
+#shoes #header,
+#sports-shoes #header,
+#ladies-shoes #header,
+#mens-shoes #header,
+#kids-shoes #header,
+#shoes-accessories #header{
+	border-top: 8px solid #001789;
+}
+#pc #header {
+	border-top: 8px solid #0099ff;
+}
+#kaden #header {
+	border-top: 8px solid #ff6400;
+}
+#camera #header {
+	border-top: 8px solid #009899;
+}
+#keitai #header {
+	border-top: 8px solid #3266cc;
+}
+#bb #header {
+	border-top: 8px solid #670099;
+}
+#game #header {
+	border-top: 8px solid #ffcc33;
+}
+
+#book-cd-dvd #header,
+#book #header,
+#dvd #header {
+	border-top: 8px solid #339933;
+}
+#sports-wear #header,
+#sports #header,
+#golf #header,
+#bicycle #header,
+#snow #header,
+#fishing #header,
+#outdoor #header{/* 111026 sm1 */
+	border-top: 8px solid #3398cc;
+}
+#kuruma #header,
+#bike #header,
+#car-goods #header,
+#bike-goods #header {
+	border-top: 8px solid #013466;
+}
+#insurance #header {
+	border-top: 8px solid #34cc99;
+}
+#money #header {
+	border-top: 8px solid #333367;
+}
+#food-drink #header {
+	border-top: 8px solid #ff9934;
+}
+#fashion #header {
+	border-top: 8px solid #a00000;
+}
+#beauty-health #header,
+#contactlens #header,
+#cosme #header,
+#medicine #header,
+#supplement #header {
+	border-top: 8px solid #99cc33;
+}
+#interior #header {
+	border-top: 8px solid #cdcc00;
+}
+#houseware #header,
+#stationery #header,
+#daily-goods #header{/* 111026 sm1 */
+	border-top: 8px solid #9cb416;
+}
+#pet #header {
+	border-top: 8px solid #d68011;
+}
+/* カテゴリ追加 sm5 120806*/
+#baby #header,
+#maternity #header,
+#baby-goods #header,
+#kids #header {
+	border-top: 8px solid #ffa4d1;
+}
+#used #header {
+	border-top: 8px solid #4467cd;
+}
+#outlet #header {
+	border-top: 8px solid #d20000;
+}
+/* カテゴリ追加 sm03 10.10.01 */
+#drink #header {
+	border-top: 8px solid #ff9934;
+}
+#hobby #header, 
+#gakki #header,
+#toy #header{
+	border-top: 8px solid #feae00;
+}
+#watch-accessory #header {
+	border-top: 8px solid #cc3366;
+}
+#diy #header, 
+#electric-tools #header,
+#reform #header,
+#housing #header {
+	border-top: 8px solid #996633;
+}
+#food #header {
+	border-top: 8px solid #ff9966;
+}
+#health-food #header {
+	border-top: 8px solid #60bf01;
+}
+/* カテゴリ追加 101210sm05 */
+#kitchen #header,
+#cookware #header,/* 111026 sm1 */
+#kitchen-goods #header{
+	border-top: 8px solid #60bf01;
+}
+/* カテゴリ追加 110701 sm1 */
+#mobile-data #header {
+	border-top: 8px solid #5533bb;
+}
+/* カテゴリ追加 11.08.29 sm5 */
+#taiyoukou #header {
+	border-top: 8px solid #001789;
+}
+
+/* ヘッダ　ホーム用設定 ------------------- */
+#home #header {
+	font-size: 13px;
+	border-top: 8px solid #001789;
+	background: url(http://img1.kakaku.k-img.com/images/home/home_header_bg.gif) repeat-x left bottom;
+	padding-bottom: 5px;
+}
+#home #header .headerL {
+	float: left;
+	width: 338px;
+	padding: 0px;
+}
+#header .headerR {
+	text-align: right;
+}
+#home #header iframe.b4 {
+	margin: 8px 0px 0px;
+}
+/* macHACK */
+:root #home #header iframe.b4 {
+	margin: 4px 0px 0px;
+}
+#home #header iframe.c1 {
+	padding: 0px;
+	margin-top: 10px;
+	vertical-align: middle;
+	text-align: right;
+}
+.prText iframe {
+	text-align: right;
+	margin: 5px 0px 0px;
+}
+.c1in {
+	padding: 3px 5px 1px 2px;
+	font-size: 12px;
+	text-align: right;
+}
+.c1in a {
+	text-decoration: none;
+}
+/* macHACK */
+html* .c1in   {
+	padding-bottom: 5px;
+}
+
+/* ヘッダーお知らせ sm12 20140221 add */
+/* ヘッダーお知らせ */
+#header .headerR .noticeIco,
+#header .headerR .newIco,
+#header .headerR .evalIco{
+	position:relative;
+	top:-2px;
+}
+#header .headerR .noticeIco .unread,
+#header .headerR .newIco .unread,
+#header .headerR .evalIco .unread{
+	background:#e02020;
+	color:#fff;
+	display:inline-block;
+	position:relative;
+	left:-5px;
+	top:-5px;
+	font-family:Verdana;
+	font-size:70%;/* 9px */
+	line-height:1;
+	padding:2px 4px;
+	text-align:center;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	-o-border-radius:2px;
+	-ms-border-radius:2px;
+	border-radius:2px;
+	z-index:99;
+}
+.c1in .noticeIco,
+.c1in .newIco,
+.c1in .evalIco{
+	position:relative;
+	top:1px;
+}
+.c1in .noticeIco .unread,
+.c1in .newIco .unread,
+.c1in .evalIco .unread{
+	background:#e02020;
+	color:#fff;
+	display:inline-block;
+	position:relative;
+	left:-5px;
+	top:-6px;
+	font-family:Verdana;
+	font-size:70%;/* 9px */
+	line-height:1;
+	padding:2px 4px;
+	text-align:center;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	-o-border-radius:2px;
+	-ms-border-radius:2px;
+	border-radius:2px;
+	z-index:99;
+}
+.c1in .new{
+	background:#e02020;
+	color:#fff;
+	display:inline-block;
+	position:relative;
+	left:0;
+	top:-1px;
+	font-family:Verdana;
+	font-size:70%;/* 9px */
+	line-height:1;
+	padding:2px 4px;
+	text-align:center;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	-o-border-radius:2px;
+	-ms-border-radius:2px;
+	border-radius:2px;
+	z-index:99;
+	margin:0 2px;
+}
+
+/* ヘッダ　右パーツ ------------------- */
+.prText a {
+	text-decoration: underline;
+}
+a.sign {
+	padding: 2px 0px 0px 18px;
+	line-height: 120%;
+	background: url(http://img1.kakaku.k-img.com/images/icon_login.gif) no-repeat left center;
+}
+a.guide {
+	padding: 2px 2px 0px 18px;
+	background: url(http://img1.kakaku.k-img.com/images/icon_guide.gif) no-repeat left center;
+}
+a.register {
+	padding: 2px 2px 0px 24px;
+	background: url(http://img1.kakaku.k-img.com/images/icon_register.gif) no-repeat left center;
+}
+a.mypage {
+	padding: 2px 0px 0px 18px;
+	line-height: 120%;
+	background: url(http://img1.kakaku.k-img.com/images/icon_mypage.gif) no-repeat left center;
+}
+#header a.mark,
+a.mark{
+	line-height: 120%;
+	padding-left:2px;
+	font-weight:bold;
+	text-decoration:underline;
+}
+#header a:link.mark,a:visited.mark,
+a:link.mark,a:visited.mark {
+	color:#EA2E06;
+}
+#header a:hover.mark,
+a:hover.mark {
+	color:#f00;
+}
+
+/*history 1010 sm01*/
+a.history {
+	padding: 5px 2px 2px 18px;
+	background: url(http://img1.kakaku.k-img.com/images/icon_history.gif) no-repeat left center;
+}
+/*history end*/
+
+/* 静的ページ用 */
+.helptop {
+	margin-top: 25px;
+}
+/* ページ上フルバナー ------------------- */
+.bnSuper {
+	width: 930px;
+	margin: 10px auto 15px;
+	text-align: center;
+}
+/* H1
+------------------------------------------------ */
+.h1Area {
+	position: relative;
+	padding-bottom: 3px;
+	margin-top: 1px;
+	background: url(http://img1.kakaku.k-img.com/images/h1_btm.gif) repeat-x left bottom;
+}
+	* html #contents .h1Area {
+		position: static;
+		padding-bottom: 3px;
+		margin-top: 1px;
+		background: url(http://img1.kakaku.k-img.com/images/h1_btm.gif) repeat-x left bottom;
+		width: 100%;
+	}
+.h1deco {
+	padding: 1px;
+	border: 1px solid #CCCCCC;
+}
+	* html #contents .h1bg {
+		padding: 2px 0px 4px 0px;
+		width: 100%;
+	}
+.h1bg {
+	padding: 2px 2px 4px;
+	background: url(http://img1.kakaku.k-img.com/images/h1bg.gif) repeat-x left top;
+}
+.h1Area img {
+	position: absolute;
+	top: 3px;
+	right: 5px;
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+	* html #contents .h1Area img {
+		width: 24px;
+		height: 24px;
+		float: right;
+		position: static;
+	}
+
+/*090806 sm2*/
+* html #contents h1 {float: left;} 
+
+.h1Area img.iconAd {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 60px;
+	height: 20px;
+	display: block;
+}
+	* html #contents .h1Area img.iconAd {
+		width: 60px;
+		height: 20px;
+		float: right;
+		position: static;
+	}
+/* H1 ------------------- */
+h1 {
+	padding: 2px 30px 0px 4px;
+	margin-top: 1px;
+	font-size: 122%;
+	font-weight: bold;
+	line-height: 120%;
+}
+h1 a:link,h1 a:visited,h1 a:hover {
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none;
+}
+h1 .subtitle {
+  font-size: 92%;
+  color: #E65C51;
+  font-weight	: bold;
+  margin-left:15px;
+}
+/* ■H1　カテゴリカラー ------------------- */
+#home h1 {
+  border-left: none;
+  margin: 0px;
+  padding: 0px;
+}
+#default h1,
+#hikkoshi h1,
+#shopview h1,
+#business h1,
+#shoes h1,
+#sports-shoes h1,
+#ladies-shoes h1,
+#mens-shoes h1,
+#kids-shoes h1,
+#shoes-accessories h1{
+  border-left: 10px solid #001789;
+}
+#pc h1 {
+  border-left: 10px solid #0099ff;
+}
+#kaden h1 {
+  border-left: 10px solid #fe6600;
+}
+#camera h1 {
+  border-left: 10px solid #009899;
+}
+#keitai h1 {
+  border-left: 10px solid #3266cc;
+}
+#bb h1 {
+  border-left: 10px solid #670099;
+}
+#game h1 {
+  border-left: 10px solid #ffcc33;
+}
+#book-cd-dvd h1,
+#book h1,
+#dvd h1 {
+  border-left: 10px solid #339933;
+}
+#sports-wear h1,
+#sports h1,
+#golf h1,
+#bicycle h1,
+#snow h1,
+#fishing h1,
+#outdoor h1{/* 111026 sm1 */
+  border-left: 10px solid #3398cc;
+}
+#kuruma h1,
+#bike h1,
+#car-goods h1,
+#bike-goods h1 {
+  border-left: 10px solid #013466;
+}
+#insurance h1 {
+  border-left: 10px solid #34cc99;
+}
+#money h1 {
+  border-left: 10px solid #333367;
+}
+#food-drink h1 {
+  border-left: 10px solid #ff9934;
+}
+#fashion h1 {
+  border-left: 10px solid #a00000;
+}
+#beauty-health h1,
+#contactlens h1,
+#cosme h1,
+#medicine h1,
+#supplement h1 {
+  border-left: 10px solid #99cc33;
+}
+#interior h1 {
+  border-left: 10px solid #cdcc00;
+}
+#houseware h1,
+#stationery h1,
+#daily-goods h1{/* 111026 sm1 */
+  border-left: 10px solid #9cb416;
+}
+#pet h1 {
+  border-left: 10px solid #d68011;
+}
+/* カテゴリ追加 sm5 120806*/
+#baby h1,
+#maternity h1,
+#baby-goods h1,
+#kids h1 {
+  border-left: 10px solid #ffa4d1;
+}
+#used h1 {
+  border-left: 10px solid #4467cd;
+}
+#outlet h1 {
+  border-left: 10px solid #d20000;
+}
+/* カテゴリ追加 sm03 10.10.01 */
+#drink h1 {
+  border-left: 10px solid #ff9934;
+}
+#hobby h1,
+#gakki h1,
+#toy h1{
+  border-left: 10px solid #feae00;
+}
+#watch-accessory h1 {
+  border-left: 10px solid #cc3366;
+}
+#diy h1,
+#electric-tools h1,
+#reform h1,
+#housing h1 {
+  border-left: 10px solid #996633;
+}
+#food h1 {
+  border-left: 10px solid #ff9966;
+}
+#health-food h1 {
+  border-left: 10px solid #60bf01;
+}
+/* カテゴリ追加 101210sm05 */
+#kitchen h1,
+#cookware h1, /* 111026 sm1 */
+#kitchen-goods h1{
+  border-left: 10px solid #60bf01;
+}
+/* カテゴリ追加 110701 sm1 */
+#mobile-data h1 {
+  border-left: 10px solid #5533bb;
+}
+/* カテゴリ追加 11.08.29 sm5 */
+#taiyoukou h1 {
+  border-left: 10px solid #001789;
+}
+/* socialbtn 1110 sm1 */
+.snsleft h1,.snshelpleft h1,.snsprleft h1,
+.snsleft700 h1,.snsprleft700 h1,
+.snsleft680 h1,.snsprleft680 h1{
+float:left;
+word-wrap:break-word;
+word-break:break-all;
+display:block;
+padding: 2px 0 0 4px;
+}
+.snsleft h1 {
+width:660px;
+/width:700px;
+}
+.snshelpleft h1 {
+width:630px;
+/width:670px;
+}
+.snsprleft h1 {
+width:570px;
+/width:610px;
+}
+.snsleft700 h1 {
+width:440px;
+/width:480px;
+}
+.snsprleft700 h1 {
+width:350px;
+/width:390px;
+}
+.snsleft680 h1 {
+width:420px;
+/width:460px;
+}
+.snsprleft680 h1 {
+width:330px;
+/width:370px;
+}
+ul.bookmarkBox{
+float:right;
+position: relative;
+}
+.snsleft ul.bookmarkBox{
+width:230px;
+/width:190px;
+}
+.snshelpleft ul.bookmarkBox{
+width:260px;
+/width:220px;
+}
+.snsprleft ul.bookmarkBox{
+width:300px;
+/width:260px;
+}
+.snsleft700 ul.bookmarkBox{
+width:230px;
+/width:190px;
+}
+.snsprleft700 ul.bookmarkBox{
+width:300px;
+/width:260px;
+}
+.snsleft680 ul.bookmarkBox{
+width:230px;
+/width:190px;
+}
+.snsprleft680 ul.bookmarkBox{
+width:300px;
+/width:260px;
+}
+
+ul.bookmarkBox li{
+list-style:none;
+position: absolute;
+}
+ul.bookmarkBox li.btnTwitter {
+padding-top:2px;
+left: 0px;
+}
+ul.bookmarkBox li.btnTwitter a{
+width:80px;
+height:20px;
+background:url(http://img1.kakaku.k-img.com/images/itemview/item/bm_tweetn-ja.png) no-repeat;
+display:block;
+}
+ul.bookmarkBox li.btnGoogle {
+padding-top:2px;
+left: 86px;
+/display:none;
+}
+ul.bookmarkBox li.btnFacebook {
+padding-top:2px;
+left: 125px;
+/left: 85px;
+}
+ul.bookmarkBox li.guide {
+left:235px;
+/left:195px;
+}
+ul.bookmarkBox li.guide a{
+width:24px;
+height:26px;
+display:block;
+background:url(http://img1.kakaku.k-img.com/images/itemview/item/icon_guide.gif) no-repeat;
+}
+ul.bookmarkBox li.prmark {
+left:235px;
+/left:195px;
+padding-top:2px;
+}
+ul.bookmarkBox li.prmark span {
+width:60px;
+height:20px;
+background:url(http://img1.kakaku.k-img.com/images/pr_icon.gif) no-repeat;
+display:block;
+}
+
+/* いいモノ調査隊　20120423 sm7 */
+ul.bookmarkBox li.btnHatena {
+	padding-top:2px;
+	left: 107px;
+	top: 3px;}
+
+ul.bookmarkBox li.btnHatena img {
+	width:auto;
+	height:auto;}
+/* いいモノ調査隊　20120423 sm7 end */
+
+
+/* socialbtn end */
+
+/* フッタ
+------------------------------------------------ */
+#footer {
+clear: both;
+margin-top: 15px;
+border-top: 1px solid #666666;
+}
+/* フッタA　コーポレートリンク */
+#footer .footerInfo {
+  padding: 10px 0px;
+  line-height: 140%;
+  text-align: center;
+  background: url(http://img1.kakaku.k-img.com/images/dot_999999.gif) repeat-x left bottom;
+}
+/* フッタB　サイト内リンク */
+#footer .footerNavi ul {
+  padding: 10px 0px;
+  margin: 0px;
+  font-size: 85%;
+  color: #818181;
+  line-height: 120%;
+  text-align: left;
+  background: url(http://img1.kakaku.k-img.com/images/dot_999999.gif) repeat-x left bottom;
+}
+  #footer .footerNavi ul li {
+	  display: inline;
+  }
+  #footer .footerNavi ul li a:link,.footerNavi ul li a:visited {
+	  color: #818181;
+	  text-decoration: none;
+  }
+  #footer .footerNavi ul li a:hover {
+	  color: #0099ff;
+	  text-decoration: none;
+  }
+/* フッタC　キャプション */
+#footer .footerCc {
+  padding: 10px 0px;
+  line-height: 120%;
+  text-align: center;
+}
+  #footer .footerCc a:link,.footerCc a:visited {
+	  color: #000;
+	  text-decoration: underline;
+  }
+  #footer .footerCc a:hover{
+	  color: #0099FF;
+  }
+/* フッタD　コピーライト */
+#footer .copyRight {
+  padding: 2px 0px;
+  margin: 0px;
+  color: #FFFFFF;
+  line-height: 12px;
+  text-align: center;
+  background: #000080;
+}
+  #footer .copyRight a:link,
+  #footer .copyRight a:hover,
+  #footer .copyRight a:visited {
+	  color: #FFFFFF;
+	  text-decoration: none;
+  }
+
+/* 08/05/01 フッターリニューアル追加 ここから */
+/* フッタ　検索 */
+	#footer .footerInfo-new {
+	padding: 10px 0px;
+	line-height: 140%;
+	text-align: left;
+	background: url(http://img1.kakaku.k-img.com/images/dot_999999.gif) repeat-x left bottom;
+}
+#footer .footerInfo-new table {
+	font-size: 85%;
+}
+#footer .footerInfo-new table td {
+	vertical-align:middle;
+	padding:0 0 0 12px;
+}
+#footer .footerInfo-new table td.theme {
+	font-weight:bold;
+	padding:0 0 0 0px;
+}
+#footer .footerInfo-new table td.select {
+	padding:0 10px;
+}
+#footer .footerInfo-new table .search_txt {
+	width:245px;
+	height:20px;
+	line-height:20px;
+	padding:0 2px;
+	border:1px solid #cecece;
+}
+/* フッタB　サイト内リンク */
+#footer .footerNavi-new {
+	border-bottom: 1px solid #666666;
+	padding-bottom:10px;
+}
+#footer .footerNavi-new ul {
+	padding: 10px 0px 0 0;
+	margin: 0px;
+	font-size: 85%;
+	color: #818181;
+	line-height: 130%;
+	text-align: left;
+}
+#footer .footerNavi-new ul li.theme {
+	font-weight:bold;
+	color:#484848;
+	padding-right:15px;
+}
+#footer .footerNavi-new ul li {
+	display:inline;
+	color: #5e5e5e;
+}
+#footer .footerNavi-new ul li a,
+#footer .footerNavi-new ul li a:link, 
+#footer .footerNavi-new ul li a:visited {
+	color: #5e5e5e;
+	text-decoration: none;
+}
+#footer .footerNavi-new ul li.theme a,
+#footer .footerNavi-new ul li.theme a:link, 
+#footer .footerNavi-new ul li.theme a:visited {
+	color:#484848;
+	text-decoration: none;
+}
+#footer .footerNavi-new ul li a:hover {
+	color: #0099ff;
+	text-decoration: none;
+}
+#footer .footerNavi-new ul li.theme a:hover {
+	color: #0099ff;
+	text-decoration: none;
+}
+/* 08/05/01 フッターリニューアル追加 ここまで */
+
+/* メニュー（右240pxの場合） （template_middle.cssより移動 10/12　中小路）
+------------------------------------------------ */
+#menu240 {
+	float: right;
+	width: 240px;
+	font-size: 92%;
+}
+
+#main680 {
+	float: left;
+	width: 680px;
+}
+/* フッター線なしバージョン （template_middle.cssより移動 10/12　八木）
+------------------------------------------------ */
+
+#footer-noBorder {
+	margin-top: 5px;
+}
+#footer-noBorder .copyRight {
+	padding: 2px 0px;
+	margin: 0px;
+	color: #FFFFFF;
+	line-height: 12px;
+	text-align: center;
+	background: #000080;
+}
+#contents930 #footer-noBorder,
+#contents930 #footer-noBorder .copyRight {
+	width: 930px;
+}
+#contents700 #footer-noBorder,
+#contents700 #footer-noBorder .copyRight {
+	width: 700px;
+}
+
+/* フッターリンク （template_middle.cssより移動 10/12　中小路）
+------------------------------------------------ */
+.footerLinks {
+	font-size: 13px;
+}
+.arrowTop a,
+.arrowTop10 a{
+	padding: 5px 20px 5px 0px;
+	background: url(http://img1.kakaku.k-img.com/images/itemview/item/arrow_pagetop.gif) no-repeat right center;
+	line-height: 180%;
+}
+.arrowTop,
+.arrowTop10{
+text-align: right;
+clear:both;
+}
+.arrowTop {
+margin: 30px 0px 10px;
+}
+.arrowTop10/* 08/06/06 追加 */ {
+margin: 10px 0px 10px;
+}
+#linkList {
+	padding: 0px 0px 2px;
+	border: 1px solid #cccccc;
+	background: url(http://img1.kakaku.k-img.com/images/article/pickup/template/link_bk.jpg) repeat-x left bottom;
+}
+#linkList a {
+	background: url(http://img1.kakaku.k-img.com/images/home/arrow_next01.gif) no-repeat left top;
+	line-height: 200%;
+	padding: 2px 0px 3px 18px;
+	margin-left: 10px;
+}
+#contents930 #linkList {
+	width: 928px;
+}
+#contents700 #linkList {
+	width: 698px;
+}
+
+/* 特集・記事系テンプレ用　2007/03　sm1
+------------------------------------------------ */
+#report-pr {
+	color:#333333;
+}
+
+#report-pr p {
+	font-size:131%;
+	line-height:150%;
+	/*text-indent:0.5em;*/
+	margin-bottom:20px;
+}
+
+#report-pr .lead{
+	font-size:107%;
+	line-height:140%;
+	font-weight:bold;
+}
+
+#report-pr .caption {
+	line-height:140%;
+}
+
+#report-pr .tbl {
+	font-size:107%;
+	line-height:150%;	
+}
+
+/* 引越し特殊対応
+------------------------------------------------ */
+#hikkoshi .tabArea .tab {display:none;}
+#hikkoshi .tabArea {background: url("http://img1.kakaku.k-img.com/images/itemview/item/tab_bar_default.gif") no-repeat scroll left bottom;}
+
+/* 幅
+------------------------------------------------ */
+.w930{
+	width: 930px;
+}
+.w750{
+	width: 750px;
+}
+.w700{
+	width: 700px;
+}
+.w605{
+	width: 605px;
+}
+.w150{
+	width: 150px;
+}
+.w135{
+	width: 135px;
+}
+.w120{
+	width: 120px;
+}
+.w90{
+	width: 90px;
+}
+.wLiquid {
+	width: 100%;
+}
+/* スペース
+------------------------------------------------ */
+.mTop5 {
+	margin-top: 5px;
+}
+.mTop8 {
+	margin-top: 8px;
+}
+.mTop10 {
+	margin-top: 10px;
+}
+.mTop15 {
+	margin-top: 15px;
+}
+.mTop20 {
+	margin-top: 20px;
+}
+.mTop30 {
+	margin-top: 30px;
+}
+.mTop40 {
+	margin-top: 40px;
+}
+.mTop50 {
+	margin-top: 50px;
+}
+.mLeft5 {
+	margin-left: 5px;
+}
+.mLeft10 {
+	margin-left: 10px;
+}
+.mLeft20 {
+	margin-left: 20px;
+}
+.mRight5 {
+	margin-right: 5px;
+}
+.mRight10 {
+	margin-right: 10px;
+}
+.mRight20 {
+	margin-right: 20px;
+}
+.mBtm5 {
+	margin-bottom: 5px;
+}
+.mBtm8 {
+	margin-bottom: 8px;
+}
+.mBtm10 {
+	margin-bottom: 10px;
+}
+.mBtm15 {
+	margin-bottom: 15px;
+}
+.mBtm20 {
+	margin-bottom: 20px;
+}
+.mBtm30 {
+	margin-bottom: 30px;
+}
+.mBtm40 {
+	margin-bottom: 40px;
+}
+.mBtm50 {
+	margin-bottom: 50px;
+}
+.p8 {
+	padding: 8px;
+}
+.pTop5 {
+	padding-top: 5px;
+}
+.pTb20 {
+	padding: 20px 0px;
+}
+.pTb40 {
+	padding: 40px 0px;
+}
+
+/* フォント
+------------------------------------------------ */
+.font10 {
+	font-size: 10px;
+}
+.font11 {
+	font-size: 11px;
+}
+.font12 {
+	font-size: 12px;
+}
+.font14 {
+	font-size: 14px;
+}
+.font17 {
+	font-size: 17px;
+}
+.font10L {
+	font-size: 77%;
+}
+.font11L {
+	font-size: 85%;
+}
+.font12L {
+	font-size: 92%;
+}
+.font14L {
+	font-size: 107%;
+}
+.font17L {
+	font-size: 129%;
+}
+.font20 {
+	font-size: 20px;
+}
+.fontNormal {
+	font-weight: normal;
+}
+.fontBold {
+	font-weight:bold;
+}
+.fontRed {
+	color: #FF0000;
+}
+
+/* 表示
+------------------------------------------------ */
+.hand {
+	cursor: pointer;
+}
+.hidden {
+	display: none;
+}
+
+
+
+/* ヘルプバルーン表示(2008/11/20 追加)
+ * バルーン内2カラム表示・画像表示対応(111219 sm8)
+------------------------------------------------ */
+.bl_top, .bl_topL, .bl_topR, 
+.bl_mid, 
+.bl_btm, .bl_btmL, .bl_btmR,
+.bl_w_top, .bl_w_topL, .bl_w_topR, 
+.bl_w_mid, 
+.bl_w_btm, .bl_w_btmL, .bl_w_btmR { behavior: expression(IEPNGFIX.fix(this));} 
+
+.helpBT,
+.helpBTW {
+	cursor:pointer;
+}
+.balloon {
+position:absolute;
+width:324px;
+display:none;
+z-index:999;
+}
+.balloon_wide {
+position:absolute;
+width:538px;
+display:none;
+z-index:999;
+}
+.bl_top {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_tp.png);
+width:324px;
+height:10px;
+overflow:hidden;
+}
+.bl_topL {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_tp2.png);
+width:324px;
+height:27px;
+overflow:hidden;
+}
+.bl_topR {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_tp3.png);
+width:324px;
+height:27px;
+overflow:hidden;
+}
+.bl_w_top {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_tp.png);
+width:538px;
+height:10px;
+overflow:hidden;
+}
+.bl_w_topL {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_tp2.png);
+width:538px;
+height:27px;
+overflow:hidden;
+}
+.bl_w_topR {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_tp3.png);
+width:538px;
+height:27px;
+overflow:hidden;
+}
+.bl_mid {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_md.png) top left repeat-y;
+width:324px;
+}
+.bl_w_mid {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_md.png) top left repeat-y;
+width:538px;
+}
+.bl_mid .Inbox,
+.bl_w_mid .Inbox { padding:0 13px 1px 10px; }
+.bl_mid .Inbox table,
+.bl_w_mid .Inbox table {
+border-top:1px solid #ababab;
+border-left:1px solid #ababab;
+}
+.bl_mid .Inbox table th,
+.bl_mid .Inbox table td,
+.bl_w_mid .Inbox table th,
+.bl_w_mid .Inbox table td {
+border-bottom:1px solid #ababab;
+border-right:1px solid #ababab;
+background:none;
+padding:5px;
+line-height:140%;
+vertical-align:top !important;
+}
+.bl_mid .Inbox table td.list,
+.bl_w_mid .Inbox table td.list { background:#f2f5f7;}
+.bl_mid .Inbox table.catalog,
+.bl_w_mid .Inbox table.catalog, {
+border:none;
+width:100%;
+}
+.bl_mid .Inbox table.catalog td,
+.bl_w_mid .Inbox table.catalog td {
+border:none;
+width:33%;
+text-align:center;
+padding:3px;
+}
+.bl_mid .Inbox table th,
+.bl_w_mid .Inbox table th {
+background:#e5ecf0;
+padding:3px 5px;
+font-weight:bold;
+}
+.bl_btm {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_bt.png);
+width:324px;
+height:34px;
+text-align:right;
+}
+.bl_btmL {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_bt2.png);
+width:324px;
+height:49px;
+text-align:right;
+}
+.bl_btmR {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_bt3.png);
+width:324px;
+height:49px;
+text-align:right;
+}
+.bl_w_btm {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_bt.png);
+width:538px;
+height:34px;
+text-align:right;
+}
+.bl_w_btmL {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_bt2.png);
+width:538px;
+height:49px;
+text-align:right;
+}
+.bl_w_btmR {
+background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_w_bt3.png);
+width:538px;
+height:49px;
+text-align:right;
+}
+.balloon p.Title,
+.balloon_wide p.Title {
+border-left:5px solid #7f7f7f;
+padding:0 5px;
+margin:0 0 10px 0;
+font-weight:bold;
+text-align:left;
+}
+.bl_btm .close, .bl_btmL .close, .bl_btmR .close,
+.bl_w_btm .close, .bl_w_btmL .close, .bl_w_btmR .close { 
+padding:3px 13px 0 10px; 
+}
+
+.balloon p,
+.balloon_wide p {
+color:#333333;
+margin:0;
+padding:0px 0 10px 0;
+}
+.balloon p.caption,
+.balloon_wide p.caption {
+font-size:81%;
+padding:0px 0 0px 0;
+}
+/* 解説アイコン 140403 sm11 */
+.explainIcn {
+	margin-bottom: -3px;
+	bottom: 1px;
+	margin-left: 4px;
+}
+
+
+/*テーブル用スタイル*/
+.bl_mid table.specList,
+.bl_w_mid table.specList {
+	border-left:1px solid #ababab;
+	border-bottom:1px solid #ababab;
+	border-collapse:collapse;
+	border-spacing:0;
+	width:300px;
+	margin-bottom:10px;
+}
+
+.bl_mid table.specList th,
+.bl_w_mid table.specList th {
+	background:#E5ECF0;
+}
+
+.bl_mid table.specList th, .bl_mid table.specList td,
+.bl_w_mid table.specList th, .bl_w_mid table.specList td {
+	border-right:1px solid #ababab;
+	border-top:1px solid #ababab;
+	padding:2px 4px 4px 4px;
+	text-align:center;
+}
+
+/* 2カラム対応 */
+.balloonCol2 div {
+	float:left;
+	width:250px;
+}
+.balloonCol2 div.right {
+	margin-left:15px;
+}
+/* 画像表示対応 */
+.balloon p.useImage .img,
+.balloon_wide p.useImage .img {
+	display:block;
+	float:left;
+	width:60px;
+}
+.balloon p.useImage .txt,
+.balloon_wide p.useImage .txt {
+	display:block;
+	margin-left:70px;
+}
+
+/* リンク 130821 sm4 */
+.balloonLink {
+	font-size:81%;
+	line-height:1.2;
+}
+.balloonLink a {
+	background:url(http://img1.kakaku.k-img.com/images/balloonhelp/balloon_arrow.gif) no-repeat 0 2px;
+	padding:0 0 0 8px;
+}
+
+/* サジェスト
+------------------------------------------------ */
+#suggestion .focused{
+	background-color:#EAEAEA;
+	cursor: pointer;
+}
+#suggestion{
+	position:absolute;
+	display:none;
+	z-index:100;
+	background-color:#FFF;
+	text-align:left;
+	border:1px solid #676767;
+}
+#suggestion div{
+	padding:1px 2px 0 2px;
+	line-height:100%;
+	color:#333;
+	font-size:100%;
+	height:1em;
+	overflow:hidden;
+}
+
+/* printCSS(global) sm03 100108
+------------------------------------------------ */
+@media print {
+/* footer */
+#footer .FSbox {
+	overflow:hidden;
+	width:100%;
+	height:1%;
+}
+#footer form {
+	display:block;
+	width:350px;
+	height:1%;
+	margin:0 auto;
+}
+#footer .FSbox img,#footer .FSbox input {float:left;}
+#footer input#SBtn,#footer input.SBtn {
+	display:block;
+	margin-left:3px;
+}
+}
+
+/* wordBreak sm03 101020
+------------------------------------------------ */	
+table.wordBreak, td.wordBreak {	
+	word-break:break-all;
+	word-wrap:break-word;
+}	
+div.wordBreak, p.wordBreak, dl.wordBreak, dt.wordBreak, dd.wordBreak, ul.wordBreak, li.wordBreak, h2.wordBreak, h3.wordBreak, h4.wordBreak {	
+	word-wrap:break-word;
+}	
+span.wordBreak, strong.wordBreak {	
+	word-wrap:break-word;
+	white-space:pre-wrap;
+}
+
+/* clearfix
+------------------------------------------------ */
+#header:after,
+.h1Area:after,
+.h1bg:after,
+#mainContents:after,
+#main #linkList ul:after {
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	display: block;
+	content: ".";
+}
+
+/*---------------2009.02追加-------------------*/
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+/* add 090708 sm1*/
+.block {
+	display:block;
+}
+/*end*/
+
+/*searchbtn 091008 sm1*/
+/* サーチボタン変更 110721 sm7 */
+input#SBtn,
+input.SBtn,
+input#SBtn02,
+input.SBtn02 {
+	width:52px;
+	height:23px;
+	border:0px solid;
+	cursor:pointer;
+}
+
+input#SBtn,
+input.SBtn{
+	background:url('http://img1.kakaku.k-img.com/images/category/btn_search.gif') no-repeat;
+}
+
+input#SBtn02,
+input.SBtn02 {
+	background:url('http://img1.kakaku.k-img.com/images/category/btn_search_sub.gif') no-repeat;
+}
+
+input#SBtn03,
+input.SBtn03 {
+	background:url('http://img1.kakaku.k-img.com/images/itemlist/btn_search.gif') no-repeat;
+	width:61px;
+	height:19px;
+	border:0px solid;
+	cursor:pointer;
+}
+/* サーチボタン変更end */
+/*searchbtn end*/
+
+/*footer search box 091113 sm1*/
+.FSbox {
+	border-bottom:1px solid #666666;
+	padding:8px 0;
+	text-align:center;
+}
+
+.FSbox input,
+.FSbox img{
+	vertical-align:middle;
+}
+
+.FSbox img {
+	margin-right:5px;
+}
+
+.FSbox input.fsTxt {
+	border-color:#808080 #C3C3C3 #C3C3C3 #808080;
+	border-style:solid;
+	border-width:2px 1px 1px 2px;
+	height:16px;
+	padding:2px;
+	width:245px;
+}
+/*footer search box end*/
+
+/*---------------2012.07追加-------------------*/
+
+#menu .btnArea.noBtmS{
+padding-bottom:3px;
+}
+#article h4{
+margin-top:20px;
+}
+#article ul.listKakakuLink{
+margin:5px;
+overflow:hidden;
+}
+#article ul.listKakakuLink li{
+padding: 2px 10px 2px 10px;
+font-size: 92%;
+line-height: 130%;
+background: url(http://img.kakaku.com/images/news/li_dot.gif) no-repeat left 7px;
+list-style: none;
+display: inline-block;
+#display: inline;
+zoom: 1;
+}
+#article ul.listKakakuLink li a{
+word-break:nowrap;
+white-space:nowrap;
+}
+
+/* 検索キーワード ハイライト */		/* sm6 20120802 */
+span.hilight {
+	background:#FF3;
+	border-bottom:1px dotted #333;
+	font-weight:bold;
+}
+a:hover span.hilight { border-bottom:none;}
+
+/* header searchbox 130326sm5 */
+#header iframe.loginSearchFrame {
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    vertical-align: middle;
+	width:525px;
+	height:23px;
+}
+.loginSearch {
+	position:relative;
+}
+* html .loginSearch {
+	width:525px;
+}
+#header .loginSearch iframe.loginSearchFrame {
+	position:absolute;
+	top:0;
+	right:0;
+	width:570px;
+	height:23px;
+}
+.loginsearchArea {
+	line-height:100%;
+	position:relative;
+}
+.headerR .loginsearchArea {
+	margin-top:-3px;
+	width:545px;
+	margin-left:385px;
+	/width:auto;
+	/margin-left:0;
+}
+.loginsearchArea .loginidList {
+	position:absolute;
+	right:170px;
+	padding:3px 4px 0 0;
+}
+.smallSize .loginidList {
+	right:150px;
+}
+#header .smallSize .loginidList {
+	right:130px;
+}
+.loginsearchArea .loginidList li {
+	float:left;
+	list-style:none;
+	line-height:120%;
+	font-size:92%;
+	background:url(http://img1.kakaku.k-img.com/images/search/parts/bg_line_01.gif) no-repeat right top;
+}
+
+.loginsearchArea .loginidList li.last {
+	background:none;
+}
+.loginsearchArea .loginidList li a {
+	padding:1px 6px 0 16px;
+	background:url(http://img1.kakaku.k-img.com/images/search/parts/icon_arrow_01.gif) no-repeat 6px center;
+}
+.loginsearchArea .loginidList li.noread a {
+	background:none;
+	padding-left:0;
+	color:#ea2e06;
+	font-weight:bold;
+}
+.loginsearchArea .loginidList li a:link {
+	text-decoration:none;
+}
+.loginsearchArea .loginidList li a:visited {
+	text-decoration:none;
+}
+.loginsearchArea .loginidList li a:hover,
+#all .loginsearchArea .loginidList li a:hover {
+	text-decoration:underline;
+}
+.loginsearchArea .minisearchArea {
+	float:right;
+}
+.loginsearchArea .minisearchArea input {
+	float:left;	
+}
+.loginsearchArea .minisearchArea input.minisearchBox {
+	border-top:#808080 solid 2px;
+	border-left:#808080 solid 2px;
+	border-right:#c3c3c3 solid 1px;
+	border-bottom:#c3c3c3 solid 1px;
+	padding:2px 2px 1px;
+	height:14px;
+	margin-right:7px;
+	width:110px;
+	outline:none;
+}
+.smallSize .minisearchArea input.minisearchBox {
+	width:90px;
+}
+#header .smallSize .minisearchArea input.minisearchBox {
+	width:70px;
+}
+.loginsearchArea .minisearchArea input.minisearchBtn {
+	background:url(http://img1.kakaku.k-img.com/images/search/parts/btn_search_01.gif) no-repeat;
+	width:47px;
+	height:20px;
+	border:none;
+	outline:none;
+	cursor:pointer;
+}
+/* header searchbox 130326sm5 END */
+
+/* SNS 130408 sm1 */
+#SNSBTN #snsBkmrkBox,
+#SNSBTNpr #snsBkmrkBox { /* H1 */
+    width: 290px;
+	height:21px;
+	overflow:hidden;
+}
+#snsBkmrkBox li { /* itemview,H1 */
+    list-style: none outside none;
+}
+#snsBkmrkBox ul.liAlignR li { /* itemview,H1 */
+	float:right;
+	margin-left:5px;
+}
+#snsBkmrkBox ul.liAlignL li { /* itemview,H1 */
+	float:left;
+	margin-right:5px;
+}
+#snsBkmrkBox li.bkmrkTwitter a { /* itemview,H1 */
+    background: url(http://img1.kakaku.k-img.com/images/itemview/item/bm_tweetn-ja.png) no-repeat;
+    display: block;
+    height: 20px;
+    width: 80px;
+}
+#snsBkmrkBox li.bkmrkFacebook { /* itemview,H1 */
+	margin-right:-10px;
+}
+#snsBkmrkBox li.guide a { /* itemview,H1 */
+    background: url(http://img1.kakaku.k-img.com/images/itemview/item/icon_guide.gif) no-repeat;
+    display: block;
+    height: 26px;
+    width: 24px;
+	margin-top:-2px;
+}
+#snsBkmrkBox li.prmark span { /* itemview,H1 */
+    background: url(http://img1.kakaku.k-img.com/images/pr_icon.gif) no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 20px;
+    width: 60px;
+}
+#itmArea .SNSListRight { /* itemview */
+	margin-top:5px;
+}
+.h1Area  .SNSListRight { /* H1 */
+	margin-top:2px;
+    float: right;
+}
+#SNSBTN h1,#SNSBTNpr h1 {/* 930px 700px H1 normal,PR,HELP */
+    display: block;
+    float: left;
+    padding: 2px 0 0 4px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+#contents930 #SNSBTN h1 {/* 930px H1 normal,HELP */
+	width:618px;
+}
+#contents930 #SNSBTNpr #snsBkmrkBox {/* 930px H1 PR */
+    width:325px;
+}
+#contents930 #SNSBTNpr h1 {/* 930px H1 PR */
+	width:575px;
+}
+#contents #SNSBTNpr #snsBkmrkBox {/* liquid H1 PR 130902 sm4 */
+    width:325px;
+}
+#contents700 #SNSBTN h1 {/* 700px normal */
+	width:410px;
+	width:470px\9; /* ie8 */
+	/width:575px;　/* ie7 */
+}
+:root #contents700 #SNSBTN h1 {/* 700px normal */
+	width:410px \0/IE9; /* ie9 */
+}
+#contents700 #SNSBTN #snsBkmrkBox {/*  700px normal */
+	width:260px;
+	width:205px\9; /* ie8 */
+	/width:95px;　/* ie7 */
+}
+:root #contents700 #SNSBTN #snsBkmrkBox {/* 700px normal */
+	width:260px \0/IE9; /* ie9 */
+}
+#contents700 #SNSBTNpr h1 { /* 700px H1 PR */
+	width:350px;
+	width:405px\9; /* ie8 */
+	/width:515px;　/* ie7 */
+}
+:root #contents700 #SNSBTNpr h1 {/* 700px normal */
+	width:350px \0/IE9; /* ie9 */
+}
+#contents700 #SNSBTNpr #snsBkmrkBox {/* 700px H1 PR */
+    width:325px;
+	width:270px\9; /* ie8 */
+	/width:160px;　/* ie7 */
+}
+:root #contents700 #SNSBTNpr #snsBkmrkBox {/* 700px H1 PR */
+	width:325px \0/IE9; /* ie9 */
+}
+/* SNS end */
+
+/* HistoryNavi 140307 sm13 */
+#historyContainer, 
+#historyContainerAll{
+	height:0;
+	margin:0 auto;
+	background:#707070;
+}
+#historyContainer{
+	width:930px;
+	_width:100%;
+}
+#historyContainerAll{
+	width:100%;
+}
+#historyNavi, 
+#historyNaviAll{
+	position: fixed;
+	bottom: 0;	
+	margin:0 12px 0 950px;
+	width:96px;
+	height:100px;
+	_right:0;
+}
+#historyNaviAll{
+	right:0;
+}
+/* HistoryNavi end *//* categoryGr add sm1 120919 */
+
+#home {
+	width:930px;
+}
+#mainContents {
+	width:930px;
+	margin-top:8px;
+}
+
+/* common
+------------------------------------------------ */
+p {line-height:1.3;}
+.mLeft73 {margin-left:73px;}
+.mLeft125 {margin-left:125px;}
+.mTop2 {margin-top:2px;}
+.arrowNext {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -750px;
+	padding:5px 0 5px 20px;
+	line-height:auto;
+}
+.arrow02 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1000px;
+	padding-left:15px;
+	line-height:120%;
+}
+.border01 {
+	margin-top:5px;
+	padding-top:5px;
+	border-top:1px solid #e5e5e5;
+}
+.fontPrice {
+	color:#f00;
+	font-family:Verdana;
+}
+.fontPrice a:link,
+.fontPrice a:hover,
+.fontPrice a:visited {
+	color:#f00;
+}
+#mainContents:after,
+#main ul.listNews li:after,
+#main ul.listPickupUser li:after,
+#subMain ul.listNewsUpdate li:after,
+#subMain ul.listRanking li:after,
+#main .boxKeywordBtm:after,
+#subMain ul.listSeasonCalendar li:after {
+	clear:both;
+	content:".";
+	display:block;
+	height:0;
+	visibility:hidden;
+}
+#main a:link,
+#main a:visited,
+#subMain a:link,
+#subMain a:visited,
+#main a.underline:visited {text-decoration:none;}
+#main a.underline:link,
+#subMain a.underline:link,
+#main a.underline:visited,
+#subMain a:hover,
+#main a:hover {text-decoration:underline;}
+.listPR iframe,
+#main .estimate img {vertical-align:middle;}
+#main h2 a:link,
+#main h2 a:visited,
+#subMain h2 a:link,
+#subMain h2 a:visited,
+#subMain ul.listRanking h3 a:link,
+#subMain ul.listRanking h3 a:visited {
+	text-decoration:none;
+	color:#333;
+}
+#main h2 a:hover,
+#subMain h2 a:hover,
+#subMain ul.listRanking h3 a:hover {
+	text-decoration:underline;
+	color:#333;
+}
+#main .imgArea,
+#subMain .imgArea {
+	float:left;
+}
+
+/* main
+------------------------------------------------ */
+#main {
+	float:left;
+	width:620px;
+}
+#main .boxContents {
+	background:#e8e8e8 url(http://img1.kakaku.k-img.com/images/home/box_bg_in.png) repeat-y 0 0;
+	voice-family:inherit;
+	padding:3px 15px;
+}
+#main .boxContentsBtm {
+	background:#e8e8e8 url(http://img1.kakaku.k-img.com/images/home/box_bg.png) no-repeat left bottom;
+	width:620px;
+}
+#main .boxContentsBtm .boxBtm-bg {
+	width:620px;
+	height:8px;
+}
+#main h2 {
+	position:relative;
+	background:url(http://img1.kakaku.k-img.com/images/home/box_bg.png) no-repeat;
+	background-color:#e8e8e8;
+	height:16px;
+	margin:8px 0 0;
+	font-size:100%;
+	voice-family:inherit;
+	padding:11px 5px 9px 48px;
+}
+#main h2 a.logo,
+#main h2 span.logo {
+	position:absolute;
+	display:block;
+	left:0;
+	top:0;
+	width:45px;
+	height:34px;
+}
+#main h2 .logo img {
+	background:url(http://img1.kakaku.k-img.com/images/home/h2_top_all.png) no-repeat;
+}
+#main h2 a.rss {
+	position:absolute;
+	top:11px;
+	right:7px;
+	display:block;
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1750px;
+	width:14px;
+	height:14px;
+}
+#main h2 span {
+	font-size:85%;
+	font-weight:normal;
+}
+#main h3 {
+	height:11px;
+	font-size:100%;
+	voice-family:inherit;
+	padding:5px 5px 5px 40px;
+}
+/* common list */
+#main ul.listNews {
+	background:#fff;
+}
+#main ul.listNews li {
+	list-style:none;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	width:590px;
+	margin-top:0;
+	padding:5px 0 6px 0;
+}
+#main ul.listNews .textArea {margin-left:74px;}
+#main ul.listNews span {
+	margin-right:8px;
+	padding:2px;
+	font-size:85%;
+}
+
+/* 検索 ---------------------------------*/
+#main .boxSearchBtm .box-top {
+	background:url(http://img1.kakaku.k-img.com/images/home/bg_search.png) no-repeat 0 0;
+	height:11px;
+	line-height:0;
+}
+#main .boxSearchBtm .box-top2 {
+	background:url(http://img1.kakaku.k-img.com/images/home/bg_search.png) no-repeat -1260px 0;
+	clear:both;
+	width:590px;
+	height:15px;
+	vertical-align:bottom;
+}
+#main .boxSearchBtm .vm {
+	float:left;
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1850px;
+	width:25px;
+	height:25px;
+	margin:-1px 0 0 12px;
+}
+#main .boxSearchBtm {
+background:url(http://img1.kakaku.k-img.com/images/home/bg_search.png) no-repeat -630px bottom;
+padding-bottom:10px;
+}
+#main .boxSearch {
+	overflow:hidden;
+background:url(http://img1.kakaku.k-img.com/images/home/box_bg_in.png) repeat-y -925px 0;
+	width:620px;
+	text-align:center;
+}
+#main .boxSearch input {
+	margin:0 4px;
+	vertical-align:middle;
+}
+#main .boxSearch a.track1 { /* 検索オプション対応 */
+	letter-spacing: -1px;
+}
+#main .boxSearch .tblSearchSpec input {
+	margin-left:0;
+}
+#main .boxKeywordBtm {
+	background:url(http://img1.kakaku.k-img.com/images/home/bg_search.png) no-repeat -1860px bottom;
+	width:590px;
+	padding:5px;
+}
+#main .boxKeyword {
+	background:url(http://img1.kakaku.k-img.com/images/home/box_bg_in.png) repeat-y -1545px 0;
+	width:590px;
+	margin:0 15px;
+	font-size:92%;
+}
+*html #main .boxKeyword {
+	overflow:hidden;
+}
+#main .boxKeyword span {
+	float:left;
+	color:#686767;
+	white-space:nowrap;
+	text-align:left;
+}
+#main .boxKeyword a:link,
+#main .boxKeyword a:visited,
+#main .boxKeyword a:hover {
+	color:#333;
+	text-decoration:underline;
+	white-space:nowrap;
+	letter-spacing: -0.001em;
+}
+html>body #main .boxKeyword a {
+	color:#333;
+	text-decoration:underline;
+	white-space:normal;
+}
+#main #opBox{
+	float:left;
+	width:80px;
+	padding:4px 0 0 0;
+}
+#main .keywordBox {
+	float:left;
+	display:block;
+	width:420px;
+	height:16px;
+	padding:2px;
+	border-top:#808080 solid 2px;
+	border-left:#808080 solid 2px;
+	border-right:#c3c3c3 solid 1px;
+	border-bottom:#c3c3c3 solid 1px;
+}
+/* 130401SM5 add */
+#main .keywordBoxMini {
+	float:left;
+	display:block;
+	width:366px;
+	height:16px;
+	padding:2px;
+	border-top:#808080 solid 2px;
+	border-left:#808080 solid 2px;
+	border-right:#c3c3c3 solid 1px;
+	border-bottom:#c3c3c3 solid 1px;
+}
+#main .keywordLinkBox {
+	float:left;
+	width:121px;
+	padding:0 0 0 6px;
+}
+#main .keywordLinkBox .keywordLinkBtn {
+	background:url(http://img1.kakaku.k-img.com/images/home/bg_keywordbtn_01.png) no-repeat;
+}
+#main .keywordLinkBox a:hover .keywordLinkBtn {
+	background-position:-300px 0px;
+}
+
+/* バナー(468size) -----------------------*/
+.bn468 {
+	margin:10px auto;
+	text-align:center;
+}
+
+/* カテゴリ一覧 ------------------------------*/
+#main .category a:link {
+	text-decoration:none;
+	color:#00d;
+}
+#main .category a:visited {
+	text-decoration:none;
+	color:#939;
+}
+#main .category a:hover {
+	text-decoration:underline;
+	color:#09f;
+}
+.ie9 #main .category {
+	line-height: 115%\9;
+	letter-spacing: -0.02em\9;
+}
+.category,
+.categoryGr {
+	width:100%;
+	margin:0 0 7px 0;
+}
+.category h2,
+.categoryGr h2 {
+	display:none;
+}
+.category div,
+.categoryGr div {
+	overflow:hidden;
+	width:620px;
+}
+.category div p {
+	float:left;
+	width:207px;
+	line-height:100%;
+	background-image:url(http://img1.kakaku.k-img.com/images/home/bg_category.png);
+}
+.category .left:hover {background-position: -620px 0;}
+.category .center {background-position: -207px 0;}
+.category .center:hover {background-position: -827px 0;}
+.category .right {background-position: -414px 0; width:206px;}
+.category .right:hover {background-position: -1034px 0;}
+.category .top .left {background-position: 0 -90px;}
+.category .top .left:hover {background-position: -620px -90px;}
+.category .top .center {background-position: -207px -90px;}
+.category .top .center:hover {background-position: -827px -90px;}
+.category .top .right {background-position: -414px -90px;}
+.category .top .right:hover {background-position: -1034px -90px;}
+.category .btm .left {background-position: left bottom;}
+.category .btm .left:hover {background-position: -620px bottom;}
+.category .btm .center {background-position: -207px bottom;}
+.category .btm .center:hover {background-position: -827px bottom;}
+.category .btm .right {background-position: -414px bottom;}
+.category .btm .right:hover {background-position: -1034px bottom;}
+.category .btm {
+	border-top:1px solid #cdcdcd;
+}
+.category .new,
+.category .renewal {
+	position:absolute;
+	margin:-4px 0 0 -57px;
+}
+.category div p a {
+	background:url(http://img1.kakaku.k-img.com/images/home/home_category_icon.png) no-repeat;
+	display:block;
+	margin:0 1px;
+	min-height:3.5em;
+	padding:5px 0 0 57px;
+	font-size:85%;
+	border-bottom:1px solid #fff;
+}
+.category div p a strong {
+	display:block;
+	margin-bottom:1px;
+	font-size:117%;
+	font-style:normal;
+	font-weight:bold;
+}
+.category div.btm p a {
+	padding:3px 0 2px 57px;
+	border-top:1px solid #fff;
+	border-bottom:none;
+}
+.category a.pcCat {background-position:0;}
+.category a.kadenCat {background-position:-210px;}
+.category a.cameraCat {background-position:-420px;}
+.category a.bbCat {background-position:-630px;}
+.category a.mobile-dataCat {background-position:-840px;}
+.category a.gameCat {background-position:-1050px;}
+.category a.keitaiCat {background-position:-1260px;}
+.category a.kurumaCat {background-position:-1470px;}
+.category a.hobbyCat {background-position:-1680px;}
+.category a.sportsCat {background-position:-1890px;}
+.category a.book-cd-dvdCat {background-position:-2100px;}
+.category a.diyCat {background-position:-2310px;}
+.category a.moneyCat {background-position:-2520px;}
+.category a.insuranceCat {background-position:-2730px;}
+.category a.housewareCat {background-position:-2940px;}
+.category a.fashionCat {background-position:-3150px;}
+.category a.beauty-healthCat {background-position:-3360px;}
+.category a.watch-accessoryCat {background-position:-3570px;}
+.category a.interiorCat {background-position:-3780px;}
+.category a.babyCat {background-position:-3990px;}
+.category a.petCat {background-position:-4200px;}
+.category a.kitchenCat {background-position:-4410px;}
+.category a.drinkCat {background-position:-4620px;}
+.category a.foodCat {background-position:-4830px;}
+.category a.hikkoshiCat {background-position:-5040px;}
+.category a.taiyoCat {background-position:-5250px;}
+.category a.sougiCat {background-position:-5460px;}
+/* 2012.04.02 sm1 */
+.category a.shoesCat {background-position:-5670px;}
+.category a.giftCat {background-position:-5880px;}
+.category a.usedCat {background-position:-6090px;}
+.category a.fashion2Cat {background-position:-6300px;}
+
+#main .category a:link,
+#main .category a:hover,
+#main .category a:visited {
+	color:#666;
+	text-decoration:none;
+}
+#main .category a:link strong {color:#00d;}
+#main .category a:visited strong {color:#939;}
+#main .category a:hover strong {
+	color:#09f;
+	text-decoration:underline;
+}
+.group {
+	margin:0 0 10px 0;
+}
+.group div p a {
+	background:url(http://img1.kakaku.k-img.com/images/home/home_icon_group.png) no-repeat;
+}
+.group a.groupCat1 {background-position:0;}
+.group a.groupCat2 {background-position:-210px;}
+.group a.groupCat3 {background-position:-420px;}
+.group a.groupCat4 {background-position:-630px;}
+.group a.groupCat5 {background-position:-840px;}
+.group a.groupCat6 {background-position:-1050px;}
+.group a.groupCat7 {background-position:-1260px;}
+.group a.groupCat8 {background-position:-1470px;}
+.group a.groupCat9 {background-position:-1680px;}
+
+.categoryGr div p {
+	float:left;
+	line-height:100%;
+	color:#666;
+	font-size:80%;
+}
+html>/**/body .categoryGr div p, x:-moz-any-link{ /* firefox */
+	font-size:82%;
+	}
+.categoryGr div p span {
+	display:block;
+}
+.categoryGr div p span.cap {
+	margin-top:3px;
+}
+.categoryGr div p span.cap a:link,
+.categoryGr div p span.cap a:visited {
+	color:#666;
+	text-decoration:none;
+}
+.categoryGr div p span.cap a:hover {
+	color:#666;
+	text-decoration:underline;
+}
+.categoryGr div p.long {
+	width:414px;
+	background-image:url(http://img1.kakaku.k-img.com/images/home/bg_categoryL.png);
+}
+.categoryGr div p.short {
+	width:206px;
+	background-image:url(http://img1.kakaku.k-img.com/images/home/bg_categoryL.png);
+}
+.categoryGr .top .long {background-position: 0 -90px;}
+.categoryGr .top .short {background-position: -414px -90px;}
+.categoryGr .middle .short {background-position: -414px 0;}
+.categoryGr .btm .long {
+	background-position: left bottom;
+    border-top: 1px solid #CDCDCD;}
+.categoryGr .btm .short{
+	background-position: -414px bottom;
+    border-top: 1px solid #CDCDCD;}
+
+.categoryGr div p strong {
+	font-size:117%;
+	font-style:normal;
+	font-weight:bold;
+}
+.categoryGr div span.catIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/home_icon_groupsite.png) no-repeat;
+    padding: 10px 0 0 52px;
+    _padding: 10px 0 5px 52px;
+    min-height: 3em;
+}
+.categoryGr div span.groupCat1 {
+	background-position:0 0;
+}
+.categoryGr div span.groupCat2 {
+	background-position:0 -73px;
+}
+.categoryGr div span.groupCat3 {
+	background-position:0 -155px;
+}
+.categoryGr div span.groupCat4 {
+	background-position:0 -223px;
+}
+.categoryGr div span.groupCat5 {
+	background-position:0 -333px;
+}
+.categoryGr div span.groupCat6 {
+	background-position:0 -438px;
+}
+.categoryGr div span.groupCat7 {
+	background-position:0 -539px;
+}
+/* add 121005 sm1 */
+#main .categoryGr span.grSite a {
+	color:#666;
+	text-decoration:none;
+	display:block;
+}
+#main .categoryGr span.grSite a:link strong{
+	color:#0000dd;
+}
+#main .categoryGr span.grSite a:hover strong {
+	color:#0099ff;
+	text-decoration:underline;
+}
+#main .categoryGr span.grSite a:visited strong {
+	color:#993399;
+}
+/* PR ------------------------------------*/
+.listPR {
+	margin:4px auto 8px auto;
+}
+.listPR p {
+	list-style:none;
+	line-height:1.2;
+	margin-top:3px;
+}
+.listPR .pr {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.gif) no-repeat -72px -225px;
+	width:29px;
+	height:13px;
+}
+
+/* slide bnr ------------------------------*/
+#bnrSlideArea {
+  position:relative;
+	overflow:hidden;
+	width:100%;
+	margin-top:10px;
+}
+.bnrSlider {
+	position:relative;
+	overflow:hidden;
+	list-style:none;
+	height:95px;
+}
+.bnrSlider li {
+	position:absolute;
+	display:none;
+	overflow:hidden;
+	top:0;
+	left:0;
+	width:100%;
+	height:95px;
+}
+.bnrSlider li a {
+	float:left;
+	margin-right:10px;
+}
+.bnrSlider li a.last {
+	margin:0;
+}
+.slidePaging {
+	margin-top:5px;
+	position:relative;
+	float:left;
+	left:50%;
+}
+#slidePrev,
+#slideNext,
+.slidePaging span a {
+	position:relative;
+	right:50%;
+	overflow:hidden;
+	float:left;
+	display:block;
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_slider.png);
+	background-position:-40px 0;
+	width:20px;
+	height:20px;
+	margin-top:0;
+	text-indent:-999px;
+}
+.slidePaging span a {background-position:-40px 0;}
+.slidePaging span a:hover {background-position:-60px 0;}
+.slidePaging span.o a,
+.slidePaging span.o a:hover,
+.slidePaging span a.o,
+.slidePaging span a.o:hover {
+	background-position:-20px 0;
+}
+#slidePrev {background-position:0 0;}
+#slideNext {background-position:-80px 0;}
+#slidePrev,
+#slideNext,
+#slidePrev:hover,
+#slideNext:hover,
+#slidePrev:visited,
+#slideNext:visited {
+	text-decoration:none;
+}
+
+/* ニュース -----------------------------*/
+#main h2.news {margin-top:8px;}
+#main h2.news .logo img {background-position:0 0;}
+ul.listNews#newItemNews span {
+	background:#ececec;
+	border-left:3px solid;
+}
+ul.listNews#newItemNews span.pc {border-color:#09f;}
+ul.listNews#newItemNews span.kaden {border-color:#f60;}
+ul.listNews#newItemNews span.camera {border-color:#009899;}
+ul.listNews#newItemNews span.kuruma {border-color:#013466;}
+ul.listNews#newItemNews span.keitai {border-color:#3266cc;}
+ul.listNews#newItemNews span.fashion {border-color:#a00000;}
+
+/* コミュニティ -------------------------*/
+#main h2.pickup {padding-top:12px}
+#main h2.pickup .logo img {background-position:-50px 0;}
+#main h3.bbs {background:url(http://img1.kakaku.k-img.com/images/home/h2_sub_all.png) no-repeat;}
+#main h3.review {background:url(http://img1.kakaku.k-img.com/images/home/h2_sub_all.png) no-repeat -600px 0;}
+#main h3.pickuplist {background:url(http://img1.kakaku.k-img.com/images/home/h2_sub_all.png) no-repeat -1200px 0;}
+ul.listPickupUser {background:#fff;margin:5px 0 7px 0;}
+ul.listPickupUser li {
+	list-style:none;
+	width:590px;
+	margin-top:0;
+	padding:3px 0;
+	line-height:120%;
+}
+ul.listPickupUser .imgArea img {margin-right:2px;}
+ul.listPickupUser .imgArea img.review5 {background:url(http://img1.kakaku.k-img.com/images/home/icon_reviewall.gif) no-repeat 0 -60px;}
+ul.listPickupUser .imgArea img.review4 {background:url(http://img1.kakaku.k-img.com/images/home/icon_reviewall.gif) no-repeat 0 -45px;}
+ul.listPickupUser .imgArea img.review3 {background:url(http://img1.kakaku.k-img.com/images/home/icon_reviewall.gif) no-repeat 0 -30px;}
+ul.listPickupUser .imgArea img.review2 {background:url(http://img1.kakaku.k-img.com/images/home/icon_reviewall.gif) no-repeat 0 -15px;}
+ul.listPickupUser .imgArea img.review1 {background:url(http://img1.kakaku.k-img.com/images/home/icon_reviewall.gif) no-repeat 0 -0px;}
+ul.listPickupUser .textArea {margin-left:43px;}
+ul.listPickupUser span {
+	margin-left:5px;
+	margin-right:3px;
+	font-size:85%;
+}
+ul.listPickupUser p span.lastdate {
+	font-size:100%;
+	font-weight:bold;
+	color:#ff0000;
+}
+ul.listPickupUser span.titleLabel {
+	margin:0 5px 0 0;
+	font-size:100%;
+}
+/* プロフェッショナルレビュー */	/* sm6 20121221 add */
+ul.listPickupUser .prorev {
+	background:url(http://img1.kakaku.k-img.com/images/itemview/item/icon_pro_review.gif) no-repeat right top;
+	font-size:100%;
+	margin-left:10px;
+	padding:0 86px 2px 0;
+}
+ul.listPickupUser .prorev a {
+	color:#C00;
+	font-weight:bold;
+}
+
+/* マガジン -----------------------------*/
+#main h2.magazine {padding:14px 5px 4px 100px;}
+#main h2.magazine .logo {width:100px;}
+#main h2.magazine .logo img {background-position:-100px 0;}
+.iconMag_special {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 0;}
+.iconMag_report {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -20px;}
+.iconMag_event {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -40px;}
+.iconMag_remark {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -60px;}
+.iconMag_spextra {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -80px;}
+.iconMag_serial {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -100px;}
+.iconMag_woman {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -120px;}
+.iconMag_pc {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -140px;}
+.iconMag_kaden {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -160px;}
+.iconMag_camera {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -180px;}
+.iconMag_hobby {background:url(http://img1.kakaku.k-img.com/images/home/icon_mag.png) no-repeat 0 -200px;}
+#magazineBox .magTitle {
+	line-height:115%;
+}
+#magazineBox .magTxt {
+	line-height:120%;
+	margin-top:2px;
+}
+#magazineBox .magNew {
+	font-size:77%;
+	color:#f00;
+	margin-left:5px;
+	vertical-align:text-top;
+}
+#magazineBox .woman {
+	font-size:77%;
+	color:#f6c;
+	margin-left:5px;
+	vertical-align:text-top;
+}
+#magazineBox .iconTxt {
+	font-size:77%;
+	color:#f00;
+	margin-left:5px;
+	vertical-align:text-top;
+	font-weight:normal;
+}
+#magazineBox .imgArea {
+	margin-top:2px;
+}
+#magazineBox li img {
+	margin-right:3px;
+	vertical-align:middle;
+}
+
+/* アキバ -------------------------------*/
+#main h2.akiba {padding: 13px 0 5px 190px;}
+#main h2.akiba.newAkiba {padding: 13px 0 5px 120px;}
+#main h2.akiba .logo {width:120px;}
+#main h2.akiba .logo img {background-position:-195px 1px;}
+#main h2.akiba .renewal{
+	position:absolute;
+	top:12px;
+	left:120px;
+	width:65px;
+	height:12px;
+}
+.idx_akiba_pc, .idx_akiba_hobby, .idx_akiba_pcevent, .idx_akiba_game, .idx_akiba_shop, .idx_akiba_event, .idx_akiba_column, .idx_akiba_etc, .idx_akiba_costumeplay, .idx_akiba_gourmet, .idx_akiba_anime , .idx_akiba_pcparts {
+	background-image:url(http://img1.kakaku.k-img.com/images/home/icon_akiba_all.png);
+}
+.idx_akiba_pc          {background-position:0 0;}
+.idx_akiba_hobby       {background-position:0 -20px;}
+.idx_akiba_pcevent     {background-position:0 -40px;}
+.idx_akiba_game        {background-position:0 -60px;}
+.idx_akiba_shop        {background-position:0 -80px;}
+.idx_akiba_event       {background-position:0 -100px;}
+.idx_akiba_column      {background-position:0 -120px;}
+.idx_akiba_etc         {background-position:0 -140px;}
+.idx_akiba_costumeplay {background-position:0 -160px;}
+.idx_akiba_gourmet     {background-position:0 -180px;}
+.idx_akiba_anime       {background-position:0 -200px;}
+.idx_akiba_pcparts     {background-position:0 -220px;}
+
+/*--記事統合用 20120907--*/
+.idx_akb_anime,.idx_akb_pcParts,.idx_akb_hobby,.idx_akb_akiba,.idx_akb_event,.idx_akb_sp,.idx_akb_camp{
+background:url(http://img1.kakaku.k-img.com/images/home/akiba_icon_02.png) no-repeat;
+}
+.idx_akb_anime{background-position:0 0 ; }
+.idx_akb_pcParts{background-position: 0 -18px;}
+.idx_akb_hobby{background-position:0 -35px ;}
+.idx_akb_event{background-position:0 -53px;}
+.idx_akb_akiba{background-position:0 -71px;}
+.idx_akb_sp{background-position:0 -89px;}
+.idx_akb_camp{background-position:0 -107px;}
+
+
+/* クーポン -----------------------------*/
+#main h2.coupon {padding: 11px 4px 7px 50px;}
+#main h2.coupon .logo img {background-position:-430px 0;}
+#coupon ul.couponLineup {background:#fff;}
+#coupon ul.couponLineup li {
+	list-style:none;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	width:590px;
+	padding:5px 0 3px 0;
+	line-height:120%;
+}
+#coupon ul.couponLineup li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#coupon ul.couponLineup li {display: inline-block;}
+/* Hides from IE-mac \*/
+* html #main #coupon ul.couponLineup li {height: 1%;}
+#main #coupon ul.couponLineup li {display: block;}
+/* End hide from IE-mac */
+#coupon ul.couponLineup .textArea {margin-left:74px;}
+#coupon ul.couponLineup .textArea p {
+	word-wrap:break-word;
+}
+#coupon .imgArea {
+	width:64px;
+	text-align:center;
+}
+#coupon table.couponList {
+	border-collapse:collapse;
+	margin-top:2px;
+}
+#coupon table.couponList td,
+#coupon table.couponList td .couponOffIcon{
+	vertical-align:middle;
+}
+#coupon table.couponList td .couponOffIcon{
+	line-height:1;
+	margin-right:3px;
+	padding-bottom:1px;
+}
+#coupon table.couponList td.rateBox{
+	width:71px;
+}
+#coupon table.couponList td.rateBox p{
+	width:71px;
+	word-wrap:break-word;
+}
+#coupon table.couponList td .rateArea{
+	color:#fc0000;
+	font-weight:bold;
+	margin-right:10px;
+}
+#coupon table.couponList td .couponNum{
+	font-size:107%;
+}
+#coupon table.couponList td.priceArea{
+	font-weight:bold;
+}
+#coupon table.couponList td.priceArea p{
+	width:250px;
+	word-wrap:break-word;
+}
+#coupon table.couponList td .price01{
+	text-decoration:line-through;
+	margin-right:3px;
+}
+#coupon table.couponList td .price01_nodata{
+	margin-right:3px;
+}
+#coupon table.couponList td .price02{
+	color:#fc0000;
+	margin-left:3px;
+}
+
+/* トレンドニュース ---------------------*/
+#main h2.trendnews .logo img {background-position:-380px 0;}
+#main #trendnews ul.Newslist {background:#fff;}
+#main #trendnews ul.Newslist li {
+	height:1%;
+	margin-top:0;
+	list-style:none;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	padding-top:3px;
+	padding-bottom:5px;
+	line-height:120%;
+}
+#main #trendnews ul.Newslist li:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+#main #trendnews ul.Newslist li {display: inline-block;}
+#main #trendnews ul.Newslist li {display: block;}
+#trendnews ul.Newslist .textArea {margin-left:74px;}
+#trendnews ul.Newslist .textArea span {
+	margin-top:3px;
+	font-size:85%;
+	color:#999;
+}
+#trendnews .boxContents span {
+	padding-right:10px;
+	color:#999;
+}
+#trendnews .pcIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/trendnews_category.png) no-repeat;
+	padding:2px 2px 2px 18px;
+}
+#trendnews .kadenIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/trendnews_category.png) no-repeat 0 -17px;
+	padding:2px 2px 2px 18px;
+}
+#trendnews .cameraIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/trendnews_category.png) no-repeat 0 -34px;
+	padding:2px 2px 2px 18px;
+}
+#trendnews .keitaiIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/trendnews_category.png) no-repeat 0 -51px;
+	padding:2px 2px 2px 18px;
+}
+#trendnews .kurumaIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/trendnews_category.png) no-repeat 0 -68px;
+	padding:2px 2px 2px 18px;
+}
+#trendnews .gameIcon {
+	background:url(http://img1.kakaku.k-img.com/images/home/trendnews_category.png) no-repeat 0 -85px;
+	padding:2px 2px 2px 18px;
+}
+#trendnews .imgArea {
+	width:64px;
+	text-align:center;
+}
+
+/* テレビ -------------------------------*/
+#main h2.tv {padding:12px 5px 8px 48px;}
+#main h2.tv .logo img {background-position:-330px 0;}
+#main #tvlogbox dl {
+	widtht:499px;
+	padding-bottom:2px;
+	background:#fff url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x bottom;
+}
+#main #tvlogbox dt, #main #tvlogbox dd {
+	float:left;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left top;
+	padding:6px 0 5px 0;
+}
+#main #tvlogbox dt {
+	clear:both;
+	width:74px;
+}
+#main #tvlogbox dl .top {background:none;padding-top:3px;}
+#main #tvlogbox dl dt img {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_tv.png) no-repeat;
+	display:block;
+}
+#main #tvlogbox .nihon {background-position:0 0;}
+#main #tvlogbox .tbs { background-position:0 -20px;}
+#main #tvlogbox .fuji {background-position:0 -40px;}
+#main #tvlogbox .asahi {background-position:0 -60px;}
+#main #tvlogbox .tokyo {background-position:0 -80px;}
+#main #tvlogbox dd {
+	width:516px;
+}
+.ie6 #main #tvlogbox dd {height:15px;}
+.ie7 #main #tvlogbox dd {min-height:15px;}
+#main #tvlogbox dd a {
+	margin-right:10px;
+}
+#main #tvlogbox .mcname {
+	margin-left:8px;
+	color:#999;
+	font-size:85%;
+}
+
+/* 注目カテゴリ -------------------------*/
+#main h2.pickupCat {margin-top:8px;}
+#main h2.pickupCat .logo img {background-position:-480px 0;}
+#main #pickupbox .boxContents {
+	padding-top:0;
+}
+#main #pickupbox ul.listNews li {
+	color:#ccc;
+}
+#main #pickupbox ul.listNews li.btm,
+#main #pickupbox ul.listNews li:last-child {
+	background:none;
+}
+#pickupbox ul.listNews span {
+	color:#333;
+	background:#ececec;
+	border-left:3px solid;
+}
+#pickupbox ul.listNews span.default {border-color:#001789;}
+#pickupbox ul.listNews span.pc {border-color:#09f;}
+#pickupbox ul.listNews span.kaden {border-color:#f60;}
+#pickupbox ul.listNews span.camera {border-color:#009899;}
+#pickupbox ul.listNews span.keitai {border-color:#3266cc;}
+#pickupbox ul.listNews span.game {border-color:#ffcc33;}
+#pickupbox ul.listNews span.hobby {border-color:#feae00;}
+#pickupbox ul.listNews span.kuruma {border-color:#013466;}
+#pickupbox ul.listNews span.sports {border-color:#3398cc;}
+#pickupbox ul.listNews span.book {border-color:#339933;}
+#pickupbox ul.listNews span.fashion {border-color:#a00000;}
+#pickupbox ul.listNews span.drink {border-color:#ff9934;}
+#pickupbox ul.listNews span.interior {border-color:#cdcc00;}
+#pickupbox ul.listNews span.houseware {border-color:#9cb416;}
+#pickupbox ul.listNews span.beauty_health {border-color:#9c3;}
+#pickupbox ul.listNews span.baby {border-color:#ffa4d1;}
+#pickupbox ul.listNews span.pet {border-color:#d68011;}
+#pickupbox ul.listNews span.watch_accessory {border-color:#c36;}
+#pickupbox ul.listNews span.diy {border-color:#963;}
+#pickupbox ul.listNews span.food {border-color:#f96;}
+#pickupbox ul.listNews span.kitchen {border-color:#60bf01;}
+
+/* いいモノ調査隊 20120423 sm7-------------------------*/
+#main h2.chosatai {padding: 11px 4px 7px 50px;}
+#main h2.chosatai .logo img {background:url(http://img1.kakaku.k-img.com/images/home/h2_top_all.png) -531px 0 no-repeat;}
+
+
+#chosatai ul.chosalist {background:#fff;}
+#chosatai ul.chosalist li {
+	list-style:none;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	width:590px;
+	padding:5px 0 6px 0;
+	line-height:120%;
+}
+#chosatai ul.chosalist li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#chosatai ul.chosalist li {display: inline-block;}
+/* Hides from IE-mac \*/
+* html #main #chosatai ul.chosalist li {height: 1%;}
+#main #chosatai ul.chosalist li {display: block;}
+/* End hide from IE-mac */
+#chosatai ul.chosalist .textArea {margin-left:74px;}
+#chosatai ul.chosalist .textArea p {
+	word-wrap:break-word;
+}
+
+#chosatai ul.chosalist .textArea p span.chosaCate {
+	background-color:#d8ebaa;
+	border-left:#6a930e solid 3px;
+	font-size:85%;
+	font-weight:bold;
+	padding:2px;
+	margin-right:8px;
+	color:#434343;}
+
+#chosatai .imgArea {
+	width:64px;
+	text-align:center;
+}
+/* いいモノ調査隊 end-------------------------*/
+
+/* アイテムナビ 140114sm5-------------------------*/
+#main h2.itemnavi {padding: 11px 4px 7px 50px;}
+#main h2.itemnavi .logo img {
+	background:url(http://img1.kakaku.k-img.com/images/home/h2_top_all.png) no-repeat -580px 0;
+}
+#itemnaviBox ul.itemnavilist li {
+	list-style:none;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	width:590px;
+	padding:7px 0 5px 0;
+	line-height:120%;
+}
+#itemnaviBox ul.itemnavilist li .textArea {
+	margin-left:74px;
+}
+#itemnaviBox .itemnaviTitle {
+	margin-bottom:3px;
+}
+#itemnaviBox .itemnaviCate {
+	background:#2985cc url(http://img1.kakaku.k-img.com/images/home/bg_itemnavi_01.png) no-repeat right -100px;
+	color:#FFF;
+	font-size:85%;
+	font-weight:bold;
+	line-height:111%;
+	letter-spacing:-0.01em;
+	text-align:center;
+	display:inline-block;
+	margin-right:8px;
+	height:15px;
+	position:relative;
+	bottom:2px;
+	/display:inline;
+	/zoom:1;
+	/bottom:0px;
+}
+#itemnaviBox .itemnaviCate span {
+	background:url(http://img1.kakaku.k-img.com/images/home/bg_itemnavi_01.png) no-repeat;
+	display:inline-block;
+	height:13px;
+	padding:2px 5px 0px;
+	vertical-align:middle;
+	/display:inline;
+	/zoom:1;
+	/vertical-align:bottom;
+	/height:12px;
+	/padding:3px 5px 0px;
+}
+#itemnaviBox ul.itemnavilist li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#itemnaviBox ul.itemnavilist li {display: inline-block;}
+/* Hides from IE-mac \*/
+* html #itemnaviBox ul.itemnavilist li {height: 1%;}
+#itemnaviBox ul.itemnavilist li {display: block;}
+/* End hide from IE-mac */
+
+/* アイテムナビ end-------------------------*/
+
+/* misetoku 140121 sm4 */
+/* ミセトク -----------------------------*/
+#main h2.misetoku {padding: 11px 4px 7px 50px;}
+#main h2.misetoku .logo img {background-position:-629px 0;}
+#misetokuBox ul.misetokuLineup {background:#fff;}
+#misetokuBox ul.misetokuLineup li {
+	list-style:none;
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	width:590px;
+	padding:7px 0;
+	line-height:120%;
+}
+#misetokuBox ul.misetokuLineup li:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+#misetokuBox ul.misetokuLineup li {display: inline-block;}
+/* Hides from IE-mac \*/
+* html #main #misetokuBox ul.misetokuLineup li {height: 1%;}
+#main #misetokuBox ul.misetokuLineup li {display: block;}
+/* End hide from IE-mac */
+#misetokuBox ul.misetokuLineup .textArea {margin-left:74px;}
+#misetokuBox ul.misetokuLineup .textArea p {
+	word-wrap:break-word;
+}
+#misetokuBox .imgArea {
+	width:64px;
+	text-align:center;
+}
+#misetokuBox .misetokuTitle {
+	margin-bottom:3px;
+}
+/* ミセトク end-------------------------*/
+
+/* sub
+------------------------------------------------ */
+#subMain {
+	float:right;
+	width:300px;
+}
+#subMain .boxBg {
+	background:#fff;
+	padding:2px 0 0 0;
+	margin:0 13px;
+}
+#subMain .boxBtm {
+	background:url(http://img1.kakaku.k-img.com/images/home/box_bg_in.png) repeat-y -620px 0;
+	background-color:#e8e8e8;
+	width:300px;
+	margin:0;
+	padding:0;
+}
+#subMain .boxBtm-bg {
+	background:url(http://img1.kakaku.k-img.com/images/home/box_bg.png) -620px bottom;
+	background-color:#fff;
+}
+#subMain h2 {
+	position:relative;
+	background:url(http://img1.kakaku.k-img.com/images/home/box_bg.png) no-repeat -620px 0;
+	background-color:#e8e8e8;
+	height:17px;
+	margin-top:8px;
+	font-size:100%;
+	voice-family:inherit;
+	padding:10px 5px 10px 45px;
+}
+#subMain h2 a.logo,
+#subMain h2 span.logo{
+	position:absolute;
+	display:block;
+	left:0;
+	top:0;
+	width:45px;
+	height:34px;
+}
+#subMain h2 .logo img {
+	background:url(http://img1.kakaku.k-img.com/images/home/menu_boxall_h2.png) no-repeat;
+}
+#subMain h2 a.rss {
+	position:absolute;
+	top:11px;
+	right:7px;
+	display:block;
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1750px;
+	width:14px;
+	height:14px;
+}
+
+/* 新着・お知らせ -----------------------*/
+#subMain #newsUpdate .boxBtm-bg,
+#subMain #newsUpdate .boxBtm,
+#subMain #newsUpdate h2 {background-color:#e8e8e8;}
+#subMain #newsUpdate h2 .logo img {background-position:0 0;}
+#newsUpdate ul.listNewsUpdate li {
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	list-style:none;
+	width:274px;
+	padding-top:4px;
+	padding-bottom:6px;
+	line-height:120%;
+}
+#newsUpdate ul.listNewsUpdate li.end {
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline02.gif) repeat-x left bottom;
+	padding-bottom:8px;
+}
+#newsUpdate .textArea {margin-left:70px;}
+#newsUpdate dl#attention {
+	line-height:1;
+	margin:0;
+	padding:8px 0 0;
+}
+#newsUpdate dl#attention dt {
+	width:30px;
+	color:red;
+	font-weight:bold;
+}
+#newsUpdate dl#attention dd {margin:-15px 0 0 30px;}
+#newsUpdate dl#attention dd ul {
+	list-style:none;
+	min-height:1px;
+	_height:1px;
+	margin:0;
+	padding:0;
+}
+#newsUpdate dl#attention dd ul li {
+	float:left;
+	background:url(http://img1.kakaku.k-img.com/images/home/attention_arrow.gif) no-repeat left top;
+	white-space:nowrap;
+	margin:0 5px 3px 0;
+	padding:0 0 0 7px;
+}
+.mac .listNewsUpdate li{font-size:95%;}
+.mac.opera .listNewsUpdate li{font-size:100%;}
+
+/* グループ 新着・お知らせ -----------------------*/
+#subMain #groupNews h2 img {
+	position:absolute;
+	display:block;
+	left:0;
+	top:0;
+	width:45px;
+	height:30px;
+	background:url(http://img1.kakaku.k-img.com/images/home/menu_group_h2.gif) no-repeat ;
+}
+#subMain #groupNews .boxBtm-bg,
+#subMain #groupNews .boxBtm,
+#subMain #groupNews h2 {background-color:#e8e8e8;}
+#groupNews ul.listNewsUpdate li {
+	background:url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	list-style:none;
+	width:274px;
+	padding-top:4px;
+	padding-bottom:6px;
+	line-height:120%;
+}
+#groupNews ul.listNewsUpdate li.listend {background:none;}
+
+/* クーポン -----------------------------*/
+#subMain #couponSearch .boxBtm-bg,
+#subMain #couponSearch .boxBtm,
+#subMain #couponSearch h2 {background-color:#b1e382;}
+#subMain #couponSearch h2 {padding-left:50px;}
+#subMain #couponSearch h2 .logo img {background:url(http://img1.kakaku.k-img.com/images/home/h2_top_all.png) no-repeat -430px 0;}
+#couponSearch .pickupCouponTitle {
+	background-color:#69af26;
+	padding:2px 5px;
+	color:#fff;
+	font-weight:bold;
+}
+#couponSearch ul {
+	position:relative;
+	height:6.5em;
+}
+#couponSearch ul.listCouponSearch li {
+	position:absolute;
+	list-style:none;
+	width:274px;
+	margin-top:0;
+	padding-top:4px;
+	padding-bottom:3px;
+	line-height:120%;
+}
+#couponSearch ul.listCouponSearch li:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+#couponSearch ul.listCouponSearch li {display: inline-block;}
+* html #couponSearch ul.listCouponSearch li {height: 1%;} /* Hides from IE-mac */
+#couponSearch ul.listCouponSearch li.end {
+	padding-bottom:0;
+}
+#couponSearch .textArea {margin-left:70px;}
+#couponSearch .textArea p {line-height:1.2; word-wrap:break-word;}
+#couponSearch table.couponList {
+	border-collapse:collapse;
+	margin-bottom:3px;
+	width:274px;
+}
+#couponSearch table.couponList td,
+#couponSearch table.couponList td .couponOffIcon{
+	vertical-align:middle;
+}
+#couponSearch table.couponList td .couponOffIcon{
+	margin-right:3px;
+	padding-bottom:1px;
+	line-height:1;
+}
+#couponSearch table.couponList td.rateBox{
+	width:71px;
+}
+#couponSearch table.couponList td.rateBox p{
+	width:71px;
+	padding-bottom:1px;
+	word-wrap:break-word;
+}
+#couponSearch table.couponList td .rateArea{
+	color:#fc0000;
+	font-weight:bold;
+	margin-right:10px;
+}
+#couponSearch table.couponList td .couponNum{
+	font-size:107%;
+}
+#couponSearch table.couponList td.priceArea{
+	font-weight:bold;
+	width:175px;
+}
+#couponSearch table.couponList td.priceArea p{
+	width:175px;
+	word-wrap:break-word;
+}
+#couponSearch table.couponList td .price01{
+	text-decoration:line-through;
+	margin-right:3px;
+}
+#couponSearch table.couponList td .price01_nodata{
+	margin-right:3px;
+}
+#couponSearch table.couponList td .price02{
+	color:#fc0000;
+	margin-left:3px;
+}
+
+/* misetoku 140121 sm4 */
+/* ミセトク -----------------------------*/
+#subMain #misetokuPickup .boxBtm-bg,
+#subMain #misetokuPickup .boxBtm,
+#subMain #misetokuPickup h2 {background-color:#fbcdd4;}
+#subMain #misetokuPickup .boxBg {
+	padding-top:5px;
+}
+#subMain #misetokuPickup h2 {padding-left:50px;}
+#subMain #misetokuPickup h2 .logo img {background-position:-450px 0;}
+#misetokuPickup .pickupMisetokuTtl {
+	background-color:#f26c81;
+	margin:0 0 2px;
+	padding:2px 5px;
+	color:#fff;
+	font-weight:bold;
+}
+#misetokuPickup ul {
+	position:relative;
+	height:5em;
+}
+#misetokuPickup ul.listMisetokuSearch li {
+	position:absolute;
+	list-style:none;
+	width:274px;
+	margin-top:0;
+	padding-top:4px;
+	padding-bottom:3px;
+	line-height:120%;
+}
+#misetokuPickup ul.listMisetokuSearch li:after {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+#misetokuPickup ul.listMisetokuSearch li {display: inline-block;}
+* html #misetokuPickup ul.listMisetokuSearch li {height: 1%;} /* Hides from IE-mac */
+#misetokuPickup ul.listMisetokuSearch li.end {
+	padding-bottom:0;
+}
+#misetokuPickup .textArea {margin-left:70px;}
+#misetokuPickup .textArea p {line-height:1.2; word-wrap:break-word;}
+#misetokuPickup .textArea .pickupMisetokuCom {
+	font-size:81%;
+	margin-top:3px;
+	color:#666666;
+}
+#misetokuPickup .imgArea {margin-bottom:5px;}
+/* misetoku 140121 sm4 end */
+
+/* お買い物カレンダー -------------------*/
+#subMain #seasonCalendar .boxBtm-bg,
+#subMain #seasonCalendar .boxBtm,
+#subMain #seasonCalendar h2 {background-color:#d4e0fa;}
+#subMain #seasonCalendar h2 .logo img {background-position:-300px 0;}
+#seasonCalendar ul.listSeasonCalendar li {
+	list-style:none;
+	width:274px;
+	margin-top:0;
+	padding:4px 0 6px 0;
+	line-height:1.2;
+}
+#seasonCalendar ul.listSeasonCalendar li.end {
+	padding-bottom:0;
+}
+#seasonCalendar .textArea {margin-left:70px;}
+#seasonCalendar .textArea p {line-height:1.2;}
+
+/* 値下がり製品リスト -------------------*/
+#subMain #pricedownList .boxBtm-bg,
+#subMain #pricedownList .boxBtm,
+#subMain #pricedownList h2 {background-color:#b9e3f7;}
+#subMain #pricedownList h2 .logo img {background-position:-250px 0;}
+#pricedownList .textArea{margin-left:85px;}
+#pricedownList .textArea p {word-wrap:break-word;}
+
+/* モバイル -----------------------------*/
+#subMain #mobile .boxBtm-bg,
+#subMain #mobile .boxBtm,
+#subMain #mobile h2 {background-color:#ffd4b6;}
+#subMain #mobile h2 .logo img {background-position:-200px 0;}
+
+/* ランキング ---------------------------*/
+#subMain #ranking .boxBtm-bg,
+#subMain #ranking .boxBtm,
+#subMain #ranking h2 {background-color:#eee3a7;}
+#subMain #ranking h2 .logo img {background-position: -50px 0;}
+#subMain #ranking h3 {
+	background:#ffe972;
+	margin-bottom:5px;
+	padding:3px 3px 3px 6px;
+	font-size:100%;
+}
+#ranking ul.listRanking li {
+	list-style:none;
+	width:274px;
+	margin-top:0;
+	padding:2px 0 3px 0;
+	line-height:120%;
+}
+#ranking .textArea {margin-left:85px;}
+#ranking .ranking1 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1938px;
+	padding:0 2px 2px 22px;
+	font-weight:bold;
+}
+#ranking .ranking2 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -2189px;
+	padding:0 2px 2px 22px;
+	font-weight:bold;
+}
+#ranking .ranking3 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -2439px;
+	padding:0 2px 2px 22px;
+	font-weight:bold;
+}
+#ranking p {
+	word-wrap:break-word;
+}
+#ranking p span {
+	margin-left:5px;
+	font-weight:normal;
+}
+#ranking .rankingDot {
+	background:transparent url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x scroll left bottom;
+}
+
+/* renewal 111121 sm1 */
+#subMain #ranking h3.allR {
+	background:#b4992f;
+}
+#subMain #ranking h3.allR a:link,
+#subMain #ranking h3.allR a:visited {
+	color:#FFF;
+	text-decoration:none;
+}
+#subMain #ranking h3.allR a:hover {
+	text-decoration:underline;
+}
+#subMain #ranking .goRtop{
+	margin:5px auto;
+	text-align:right;
+	background: url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x scroll left top transparent;
+	padding:5px 5px 0 0;
+}
+#subMain #ranking .goRtop .arrowNext {
+    background: url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat scroll 0 -2686px transparent;
+    padding: 5px 0 5px 20px;
+}
+#subMain #ranking .RankingBox li {
+	padding: 2px 0 5px 5px;
+	width:269px;
+}
+#subMain #ranking .RankingBox .linkall {
+	margin:3px auto;
+	border:1px #fff solid;
+}
+
+/* phase2 110130 sm1 */
+#subMain #Wranking h2 span.logo {
+    display: block;
+    height: 34px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+}
+#subMain #Wranking #WholeR,
+#subMain #Wranking #CateR,
+#subMain #Wranking #SCateR {
+	margin-bottom:10px;
+}
+#subMain #Wranking .WboxBg {
+	padding:2px 0 0 0;
+	margin:0 13px;
+}
+#subMain #Wranking .boxBtm-bg,
+#subMain #Wranking .boxBtm,
+#subMain #Wranking h2 {background-color:#eee3a7;}
+#subMain #Wranking h2 .logo img {background-position: -50px 0;}
+#subMain #Wranking h3 {
+	background:#ffe972;
+	margin-bottom:5px;
+	padding:3px 3px 3px 6px;
+	font-size:100%;
+}
+#Wranking ul.listRanking li {
+	list-style:none;
+	width:274px;
+	margin-top:0;
+	padding:2px 0 3px 0;
+	line-height:120%;
+}
+#Wranking .textArea {margin-left:85px;}
+#Wranking .ranknum {
+	padding:0 2px 2px 22px;
+	font-weight:bold;
+	color:#736119;
+}
+#Wranking .ranking1 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1938px;
+}
+#Wranking .ranking2 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -2189px;
+}
+#Wranking .ranking3 {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -2439px;
+}
+#Wranking p {
+	word-wrap:break-word;
+}
+#Wranking p span {
+	font-weight:normal;
+}
+#Wranking .rankingDot {
+	background:transparent url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x scroll left bottom;
+}
+
+#subMain #Wranking .linkall {
+	border:1px #fff solid;
+	margin:3px auto;
+}
+#subMain #Wranking #WholeR h3.allR {
+	background:#b4992f;
+}
+#subMain #Wranking #WholeR h3.allR a:link,
+#subMain #Wranking #WholeR h3.allR a:visited {
+	color:#FFF;
+	text-decoration:none;
+}
+#subMain #Wranking #CateR h3.allR a:link,
+#subMain #Wranking #CateR h3.allR a:visited,
+#subMain #Wranking #SCateR h3.allR a:link,
+#subMain #Wranking #SCateR h3.allR a:visited,
+#subMain #Wranking #BbR h3.allR a:link,
+#subMain #Wranking #BbR h3.allR a:visited{
+	color:#333;
+	text-decoration:none;
+}
+#subMain #Wranking .listRanking li {
+	width:260px;
+	margin-left:5px;
+}
+#subMain #Wranking .listRanking .rankinItem {
+	font-weight:bold;
+	color:#666;
+	line-height:110%;
+}
+#subMain #Wranking .listRanking .rankinItem span {
+	font-size:85%;
+}
+#subMain #Wranking .listRanking .fontPrice {
+	margin-bottom:5px;
+	font-family:"ＭＳ Ｐゴシック","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,arial,verdana,sans-serif;
+}
+#subMain #Wranking .listRanking .fontPrice span {
+	font-size:85%;
+}
+#subMain #Wranking .listRanking .fontPrice strong {
+	font-family:Verdana;
+}
+
+
+/* リサーチ -----------------------------*/
+#subMain #research .boxBtm-bg,
+#subMain #research .boxBtm,
+#subMain #research h2 {background-color:#d9dcec;}
+#subMain #research h2 .logo img {background-position:-100px 0;}
+#research ul.listResearch li {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat -2px -1240px;
+	list-style:none;
+	width:260px;
+	padding:2px 2px 2px 10px;
+	line-height:120%;
+}
+* html #research .mTop5 {height:1%;}
+
+/* PR -----------------------------------*/
+.prBn {
+	background:#e3ecf3;
+	width:300px;
+	margin-top:10px;
+	padding-bottom:10px;
+	text-align:center;
+}
+.prBn .menuTitle {
+	background:#8caec7;
+	padding:2px;
+	color:#fff;
+	font-size:85%;
+	font-weight:bold;
+	text-align:left;
+}
+
+/* PR (2014.2-) -------------------------*/
+/* adサーバー切替対応 140204 sm8 */
+#div-gpt-ad-k_top_text1,
+#div-gpt-ad-k_top_text2 {
+	display:inline-block;
+	/display:inline;
+	/zoom:1;
+	vertical-align:middle;
+	width:585px;
+}
+/* adサーバー切替対応 140204 end */
+
+/* プレゼント ---------------------------*/
+#subMain #campaign .boxBtm-bg,
+#subMain #campaign .boxBtm,
+#subMain #campaign h2 {background-color:#ffdbce;}
+#subMain #campaign h2 .logo img {background-position:-150px 0;}
+#subMain #campaign .boxBtm {
+	overflow:hidden;
+	background:#ffdbce url(http://img1.kakaku.k-img.com/images/home/box_bg.png) -620px bottom;
+	padding-bottom:10px;
+}
+#campaign ul.listPresent {
+	list-style:none;
+	margin-top:5px;
+}
+#campaign ul.listPresent li {
+	background:url(http://img1.kakaku.k-img.com/images/home/icon_all.png) no-repeat 0 -1495px;
+	padding:2px 2px 2px 13px;
+	line-height:110%;
+}
+
+/* SNS ---------------------------*/
+#subMain #sns h2 span.logo {
+    display: block;
+    height: 34px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 45px;
+}
+#subMain #sns .boxBtm-bg,
+#subMain #sns .boxBtm,
+#subMain #sns h2 {background-color:#ffe6bf;}
+#subMain #sns h2 .logo img {background-position:-400px 0;}
+#subMain #sns .boxBtm {
+	overflow:hidden;
+	background:#ffe6bf url(http://img1.kakaku.k-img.com/images/home/box_bg.png) -620px bottom;
+	padding-bottom:10px;
+}
+#sns .snsList {
+    width: 274px;
+    background: url(http://img1.kakaku.k-img.com/images/home/dotline_y.gif) repeat-y 137px 0;
+	margin-bottom:3px;
+}
+#sns .snsList div {
+    background: url(http://img1.kakaku.k-img.com/images/home/dotline01.gif) repeat-x left bottom;
+	padding-bottom:1px;
+}
+#sns .snsList p {
+	width:137px;
+	float:left;
+	line-height:110%;
+	position:relative;
+}
+#sns .snsList p a {
+	display:block;
+    background: url(http://img1.kakaku.k-img.com/images/home/sns_icon_01.png) no-repeat 5px 3px;
+	width:103px;
+	padding:6px 0 0 34px;
+	height:24px;
+	float:left;
+	line-height:110%;
+	font-weight:bold;
+}
+#sns .snsList .snsTwitter a {
+	background-position:10px -97px;
+	width:95px;
+	padding-left:42px;
+}
+#sns .snsList .snsMixi a {
+	background-position:4px -194px;
+	height:20px;
+	padding:10px 0 0 34px;
+}
+#sns .snsList .snsGoogle a {
+	background:none;
+	height:20px;
+	padding:10px 0 0 34px;
+}
+#sns .snsList .snsGoogle a {
+	background:none;
+	width:95px;
+	padding-left:42px;
+}
+#sns .snsList .snsGoogle img {
+	width:19px;
+	height:19px;
+	position:absolute;
+	left:14px;
+	top:7px;
+}
+/* facebook LikeBotton */		/* sm6 20130111 */
+#subMain #sns.fblikebox .boxBtm {
+	background:url(http://img1.kakaku.k-img.com/images/home/box_bg_in.png) repeat-y -620px 0 #FFE6BF;
+	padding-bottom:0;
+}
+#subMain #sns.fblikebox .boxBg {
+	margin-left:5px;
+	margin-right:5px;
+	padding-top:0;
+}
+#subMain #sns.fblikebox #fbLikeBx {
+	height:165px;
+	margin-top:-8px;
+	overflow:hidden;
+	position:relative;
+	width:290px;
+}
+#subMain #sns.fblikebox #fbLikeBx iframe {
+	position:relative;
+	top:-1px;
+	left:-1px;
+}
+#subMain #sns.fblikebox .snsList {
+	border-top:1px dotted #999;
+	margin:8px 8px 0;
+	padding-top:3px;
+}
+
+/* other
+------------------------------------------------ */
+/*マイナーブラウザ対応*/
+.safari #main .boxSearchBtm input,
+.safari #main .boxSearchBtm .vm{
+margin-bottom:6px;
+}
+.safari #main .keywordBox {
+margin-top:1px;
+}
+.safari #main .boxSearchBtm .box-top2{
+margin-top:-6px;
+}
+.mac.safari #main .boxKeyword #header_topics {
+font-size:88% !important;
+}
+.mac.gecko #main .boxKeyword #header_topics{
+font-size:100% !important;
+}
+.mac.safari #main .category a,
+.mac.gecko #main .categoryArea a{
+font-size:80% !important;
+}
+.mac.gecko #main .category a.keitaiCat strong {
+letter-spacing:-0.5px;
+}
+.mac.opera #main .boxKeyword {
+	background:#fff;
+	width:588px;
+	margin:0 15px;
+	font-size:95% !important;
+	border-left:1px solid #c2c1c1;
+	border-right:1px solid #c2c1c1;
+}
+.mac.opera #main .boxKeywordBtm {margin-left:-1px;}
+.mac.gecko #subMain .boxBtm-bg,
+.win.gecko #subMain #ranking .boxBtm-bg,
+.mac.gecko #main .boxContentsBtm .boxBtm-bg {margin-top:-1px;}
+
+/* printCSS ver.FF(totalTop) */
+@media print {
+html:not([lang*=""]) div#mainContents{
+	display:table;
+}
+html:not([lang*=""]) div#mainContents div#main,
+html:not([lang*=""]) div#mainContents div#subMain{
+	display:table-cell;
+	float:none;
+}
+html:not([lang*=""]) div#mainContents div#subMain .bnArea:before {
+    content:"<br>";
+    font-size:1px;
+}
+}
+
+/* noscript */
+.noscript {margin:10px 0; padding:10px; border:2px solid #ccc;}
+.noscript p {font-size:88%; line-height:140%;}
+
+/* _____________________other end

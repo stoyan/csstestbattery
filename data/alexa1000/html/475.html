@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Adnxs Login</title>
+	    <link rel="stylesheet" href="/js/yui.2.5.2/build/reset-fonts-grids/reset-fonts-grids.css?48de923443652fc71b7b0b39f12ff8bd" type="text/css">
+    <link rel="stylesheet" href="/styles/main.css?48de923443652fc71b7b0b39f12ff8bd" type="text/css">
+	    <script type="text/javascript" src="/js/yui.2.5.2/build/yahoo-dom-event/yahoo-dom-event.js?48de923443652fc71b7b0b39f12ff8bd"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-1.3.1.min.js?48de923443652fc71b7b0b39f12ff8bd"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.tablesorter.min.js?48de923443652fc71b7b0b39f12ff8bd"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.metadata.js?48de923443652fc71b7b0b39f12ff8bd"></script>
+    <script type="text/javascript" src="/js/anx/common.js?48de923443652fc71b7b0b39f12ff8bd"></script>
+	<script>var adUrl = 'http://ib.adnxs.com'; </script>
+
+</head>
+
+<body class="yui-skin-sam home">
+	<div id="shell">
+		<div id="doc4" class="yui-t7"> 
+			<div id="hd">
+				<br clear="all">
+				<!-- ********************************** Navigation ************************************  -->
+				<div id="topbox">
+				    <div id="logo_help_container">
+				        <div id="logo_left">
+				            <a href="/" style="text-decoration:none;"></a>
+				        </div>
+				        <div id="logout">
+				        							</div>
+				        <br clear="all">
+				    </div>
+
+				    <!-- ********************************** end of Navigation ******************************** -->
+				    <br clear="all">
+				</div>
+				
+			</div>
+			
+							
+			<div id="bd">
+			
+				<div id="yui-main">
+					<div class="yui-b">
+						<div class="yui-g">
+							
+<style type="text/css">
+	#forgot-password-container {
+		display:none; 
+		font-size: 11px;
+		margin:10px;
+	}
+	#forgot-password-container p strong {
+		font-weight: bold;
+	}
+	.password-reset-error {
+		color: red;
+	}
+	.password-reset-success {
+		color: green;
+	}
+</style>
+
+<div id="rpt_form_container">
+	<h1>Please Sign In</h1>
+	<form action="https://www.adnxs.com/index/login" id="signin_form" method="post">
+		<table cellspacing="0" cellpadding="4">
+	        <tbody><tr>
+	        	<th>Username: </th>
+	            <td><input type="text" name="username" id="username" value="" size="25"></td>
+	        </tr>
+	        <tr>
+	        	<th>Password: </th>
+	            <td><input type="password" name="password" value="" size="25"></td>
+	        </tr>
+	    	<tr>
+		      	<td colspan="2" align="right">
+					<input type="submit" value="Sign In">
+					<input type="button" id="forgot-password-button" value="Forgot password?">
+				</td>
+			</tr>
+		</tbody></table>
+	</form>
+	
+	<div id="forgot-password-container">
+		<p style="display:none;" id="login-reset-msg"></p>
+		<p>
+			Enter your username in the field below and click the 'Reset password' button to initiate the reset password process.
+		</p>
+		<p>
+			<strong>Username:</strong> <input type="text" name="username" id="reset-username" size="12"> <input type="button" id="reset-password" value="Reset password">
+		</p> 
+	</div>
+</div>
+
+<script>
+<!--
+	YAHOO.util.Event.onDOMReady(function() {
+		YAHOO.util.Dom.get('username').focus();
+	});
+
+	$(function() {
+		$("#forgot-password-button").click(function() {
+			document.location.href="/password-reset";
+		});
+		
+		$("#reset-password").click(function() {
+			$.getJSON("/index/reset-password?username=" + $("#reset-username").val(), function(data) {
+				if (data.success) {
+					$("#login-reset-msg").removeClass('password-reset-error').addClass('password-reset-success').html(data.msg).show();
+				} else {
+					$("#login-reset-msg").removeClass('password-reset-success').addClass('password-reset-error').html(data.msg).show();
+				}
+			});
+		});
+	});
+-->
+</script>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="ft"><br></div>
+		</div>
+	</div> 	
+
+</body></html>

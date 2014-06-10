@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#"><head>
+
+
+    <link id="iconimg" rel="icon" href="http://static.aparat.com//public/images/icon/favicon2.gif?1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript">
+    var lastTarget;
+
+    function CloobHandleError() {
+        return true;
+    }
+    window.onerror = CloobHandleError;
+
+    var appimgHost = "http://static.aparat.com/";
+
+</script>
+<script type="text/javascript" src="http://www.aparat.com/public/public/scripts/run/g.site.new.v4.js?1"></script><script type="text/javascript" src="http://www.aparat.com/public/public/scripts/src/video.js?21"></script>     <style type="text/css">
+            /*<![CDATA[*/
+        @import url(http://www.aparat.com/public/public/styles/run/style.v2.v8.css?6270);
+        @import url(http://www.aparat.com/public/public/styles/run/star.v1.css?629);
+        @import url(http://www.aparat.com/public/public/styles/run/video-js.css?6);
+            /*]]>*/
+    </style>
+
+
+
+<script type="application/javascript">
+    set_src_advert_frame = function(){
+        var framesrc;
+        var timeDiff = 500;
+        var winWidth = c_getWidth(window);
+        setTimeout(function(){
+            for(FrameQue in advert_frame_que_arr){
+                framesrc = c_$(advert_frame_que_arr[FrameQue]).getAttribute('framesrc');
+                if(advert_frame_que_arr[FrameQue] && c_$(advert_frame_que_arr[FrameQue]) && framesrc && framesrc!=c_$(advert_frame_que_arr[FrameQue]).getAttribute('src')){
+                    if(winWidth>979){
+                        c_$(advert_frame_que_arr[FrameQue]).src = framesrc ;
+                        c_$(advert_frame_que_arr[FrameQue]).setAttribute('framesrc','');
+                    }
+                }
+            }
+
+            advert_frame_que_arr = new Array();
+        },timeDiff);
+    };
+</script>
+<meta http-equiv="content-language" content="fa">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<meta name="description" content="ویدیوهای خود را با دوستان، آشنایان و دهها هزار کاربر ایرانی به اشتراک بگذارید">
+    <meta name="keywords" content="aparat,video,clip,movie,animation,آپارات , ویدیو ,ویدئو ,فیلم ,کلیپ ,کارتون ,انیمیشن ,سینما, تیزر">
+
+
+    <meta name="verify-v1" content="PC18uVI6U1HMyblxoEkQvpSr3ILr1oswK0gqsWM6WW0=">
+<title>آپارات - سرویس اشتراک ویدیو</title>
+
+
+</head>
+
+
+
+
+
+<!--<body --><!-- >-->
+<body class="video">
+
+<div id="loading-temp" style="display:none">
+    <img src="http://static.aparat.com//public/images/loading.gif" style="margin-top:40px;"></div>
+
+
+
+
+<div id="hiddenDiv" style="display:none"></div>
+
+<div id="ajax-load">
+</div>
+
+<div id="ajax_msg">
+    در حال بارگذاری
+</div>
+
+
+<div id="ajax-inner" class="layer-loading" style="position:absolute;display:none;margin:0px auto;z-index:50000000">
+
+
+
+</div>
+
+<div id="ajaxrequest"></div>
+<div id="message_div" onclick="hidemessage();"></div>
+
+
+
+<div class="v2_header clearfix ">
+<div class="v2_page-width v2_header_inner">
+<!--            <div style="padding-right: 300px;color:#fff">--><!--</div>-->
+
+
+    <a href="http://www.aparat.com/" onmousedown="this.href='http://www.aparat.com/'" title="" class=""><div class="v2_header_logo">&nbsp;</div></a>
+
+<div class="v2_header_btn_box">
+
+
+        <div id="header_notify_list" class="header_notify_list">
+        <div class="header_notify_list_arrow" id="header_notify_list_arrow"></div>
+        <div onclick="showHideDropDownListBox(0,'notify');" class="header_close_dropDown" id="header_close_dropDown_notify"></div>
+        <div id="header_notify_list_content"></div>
+    </div>
+
+
+
+    <div class="v2_header_btn show_help" style="position:relative"><a href="http://www.aparat.com/profile/login/authenticate" onmousedown="this.href='http://www.aparat.com/profile/login/authenticate'" title="" class="" rel="nofollow"><div class="v2_user_login"><b class="hidden_s1">ورود</b></div></a>        <span class="v2_help clearfix">
+                            <span class="help_arrow clearfix"></span>
+                            <span class="help_text">ورود - ثبت نام</span>
+                        </span>
+        </div>
+    
+
+
+    
+    <div class="v2_header_btn">
+        <a href="http://www.aparat.com/video/video/list" onclick="if(showHideDropDownListBox(1,'category')) return false; ; getContent(this, {target:'',cache:false},true); return false;" onmousedown="this.href='http://www.aparat.com/video/video/list'" title="" class=""><div class="v2_category_info hidden_s1"><span class="header_category_list_arrow" id="header_category_list_arrow"></span><span>دسته بندی ها</span></div></a>
+        <a href="http://www.aparat.com/video/video/list" title="" class=""><div class="v2_category_info v2_category_thin show_s1"></div></a>
+
+
+
+        <style>
+            .v2_worldCup{
+                margin-left: 5px;
+                padding: 5px 7px 11px 7px;
+            }
+            @media (max-width: 980px)
+            {
+                .v2_worldCup{
+                    display: none;
+                }
+            }
+            @media (max-width: 767px)
+            {
+                .v2_worldCup{
+                    display: block;
+                }
+            }
+            @media (max-width: 600px)
+            {
+                .v2_worldCup{
+                    display: none;
+                }
+            }
+            @media (max-width: 480px)
+            {
+                .v2_worldCup{
+                    display: block;
+                }
+            }
+
+        </style>
+        <a href="http://www.aparat.com/worldcup2014" title="" class=""><div class="v2_worldCup "><img src="http://static.aparat.com//public/images/template/new/2014.png"></div></a>
+
+    </div>
+    
+    <div class="v2_header_btn v2_header_btn_search">
+        <a href="http://www.aparat.com/video/video/search" title="" class=""><div class="v2_search"></div></a>    </div>
+
+
+
+
+        <div id="header_category_list" class="header_category_list">
+        <div onclick="showHideDropDownListBox(0,'category');" class="header_close_dropDown" id="header_close_dropDown_category"></div>
+        <div><style type="text/css">
+    .category_menu_contents{
+        float:right;
+        padding: 0 5px;
+        background: #fff
+    }
+
+    ul.category_menu_list{
+        float:right;
+        margin-bottom:4px;
+    }
+    ul.category_menu_list li{
+        border-bottom:1px dotted #ccc;
+        width:100px;
+        margin-right: 15px;
+        float:right;
+    }
+    ul.category_menu_list li:hover{
+        background-color: #F1F1F1;
+    }
+
+    ul.category_menu_list li a span{
+        color: #ADADAD;
+        float: left;
+        font-weight: bold;
+        padding: 0 2px 0 4px;
+        display:block
+    }
+
+.category_menu_list li a {
+    display:block;
+    padding:6px;
+    font-weight:normal
+}
+
+.category_menu_list li.longShow{
+    margin: 3px 4%;
+    text-align: center;
+    width: 92%;
+}
+
+
+</style>
+
+<div class="category_menu_contents"><ul class="category_menu_list"><li><h3><a href="http://www.aparat.com/video/video/list/catid/1" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/1'" title="" class="">شخصی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/2" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/2'" title="" class="">طنز<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/3" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/3'" title="" class="">آموزشی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/4" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/4'" title="" class="">تفریحی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/5" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/5'" title="" class="">فیلم<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/6" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/6'" title="" class="">مذهبی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/7" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/7'" title="" class="">موسیقی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/8" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/8'" title="" class="">خبری<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/9" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/9'" title="" class="">سیاسی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/10" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/10'" title="" class="">علمی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/11" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/11'" title="" class="">ورزشی<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/12" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/12'" title="" class="">حوادث<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/13" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/13'" title="" class="">طبیعت<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/14" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/14'" title="" class="">حیوانات<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/15" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/15'" title="" class="">متفرقه<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/16" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/16'" title="" class="">تبلیغات<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/17" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/17'" title="" class="">هنری<span></span></a></h3></li><li><h3><a href="http://www.aparat.com/video/video/list/catid/18" onmousedown="this.href='http://www.aparat.com/video/video/list/catid/18'" title="" class="">کارتون<span></span></a></h3></li><li class="longShow"><a href="http://www.aparat.com/official" onmousedown="this.href='http://www.aparat.com/official'" title="" class="" style=""><b>کانالهای رسمی</b></a></li></ul></div></div>
+    </div>
+
+</div>
+
+
+
+<script>
+    showHideDropDownListBox = function(type,part)
+    {
+
+        if(part=='category' && type==1){
+            showHideDropDownListBox(0,'notify');
+        }
+        if(part=='notify' && type==1){
+            showHideDropDownListBox(0,'category');
+        }
+
+        if(type == 1){
+            if(c_$('header_'+part+'_list').style.display == 'block'){
+                c_$('header_'+part+'_list').style.display = 'none';
+                c_$('header_close_dropDown_'+part+'').style.display = 'none';
+                c_$('header_'+part+'_list_arrow').style.display = 'none';
+            }else{
+                c_$('header_'+part+'_list').style.display = 'block';
+                c_$('header_close_dropDown_'+part+'').style.display = 'block';
+                c_$('header_'+part+'_list_arrow').style.display = 'block';
+            }
+        }else if(type == 0){
+            c_$('header_'+part+'_list').style.display = 'none';
+            c_$('header_close_dropDown_'+part+'').style.display = 'none';
+            c_$('header_'+part+'_list_arrow').style.display = 'none';
+        }
+
+
+        return 1;
+    }
+</script>
+
+
+
+
+<div class="v2_header_search clearfix hidden_s1" id="header_search">
+    <div style="direction: rtl" id="form-wrapper-140223229053945de26de2c"><form id="frm-140223229053945de26de2c" method="GET" action="http://www.aparat.com/video/video/result" onsubmit="" target="">    <div class="header_search_border clearfix ">
+
+        <div class="header_search_txt">
+            <input type="text" name="text" id="text" value="" class="input_text_default " placeholder="... جستجو">        </div>
+        <div style="float: right;">
+            <input type="hidden" name="secfrdcodedvar" id="secfrdcodedvar" value="ba43b4c2d35ede9e76c12262d6c702cfb196477b"><input type="submit" name="btnSubmit" id="btnSubmit" value=" " class="header_search_btn">        </div>
+
+    </div>
+    <input type="hidden" name="data[checkgetrequest]" value="true" id="data[checkgetrequest]"><input type="hidden" name="frm-id" value="140223229053945de26de2c" id="frm-id"></form></div><div id="container-getfocus_140223229053945de26de2c" style="display:none"><input type="text" id="getfocus_txt_140223229053945de26de2c" name="getfocus_txt_140223229053945de26de2c"></div>				<script type="text/javascript">formtarget['140223229053945de26de2c'] = 'main';</script></div>
+
+
+
+<div class="clearfix v2_header_search_large fullPage_s1">
+    <div style="direction: rtl" id="form-wrapper-140223229053945de26e5fa"><form id="frm-140223229053945de26e5fa" method="GET" action="http://www.aparat.com/video/video/result" onsubmit="" target="">    <div style="width:98%;padding:1%;"><input type="text" name="text" id="text" value="" class="input_text_default " placeholder="جستجو ... "></div>
+    <div style="display: none"><input type="hidden" name="secfrdcodedvar" id="secfrdcodedvar" value="89f4e096604291efb90b852ba917eabc3d86d66e"><input type="submit" name="btnSubmit" id="btnSubmit" value=" " class="header_search_btn"></div>
+    <input type="hidden" name="data[checkgetrequest]" value="true" id="data[checkgetrequest]"><input type="hidden" name="frm-id" value="140223229053945de26e5fa" id="frm-id"></form></div><div id="container-getfocus_140223229053945de26e5fa" style="display:none"><input type="text" id="getfocus_txt_140223229053945de26e5fa" name="getfocus_txt_140223229053945de26e5fa"></div>				<script type="text/javascript">formtarget['140223229053945de26e5fa'] = 'main';</script></div>
+
+</div>
+</div>
+
+
+
+
+<div class="clearfix v2_page-width   video_video_index" id="wrapper">    	
+		<div id="main">
+			<div class="clearfix">
+	<script type="text/javascript" src="http://www.aparat.com/public/public/scripts/run/flashdetect.js?1"></script>
+<style>
+    .special_left > a > img{
+        float:left
+    }
+    .special_left > a{
+        display: block;
+    }
+    .index_special_video .special_right{
+        width: 65%;
+    }
+
+    #logo_index_img{
+        display: none;
+    }
+    @media (max-width: 980px)
+    {
+        #logo_index_img{
+            display: block;
+        }
+        #logo_index_swf{
+            display: none;
+        }
+    }
+    @media (max-width: 640px)
+    {
+        .index_special_video .special_right{
+            width: 100%;
+        }
+        .index_special_video .special_left{
+            display: none;;
+        }
+    }
+
+        .mobileWrapper{
+            position: relative;
+        }
+        .mobileWrapper img:hover{
+            opacity: 0.8;
+        }
+        .mobileWrapper img{
+            width: 100%;
+            border-radius: 2px;
+        }
+
+
+    .mobile_dl {
+        color: #fff;
+    border-radius: 2px;
+    margin-bottom: 5px;;
+        display: block;
+        padding:4px 10px 4px 32px;
+
+        position: absolute;
+        right: 5px;
+        width: 60px;;
+    }
+    .mobile_dl_ios{
+        background: #D14836 url(http://static.aparat.com//public/images/etc_mobile/apple-b.png) 2px 3px no-repeat;
+        bottom: 5px;
+    }
+    .mobile_dl_android{
+        bottom: 55px;
+        background: #D14836 url(http://static.aparat.com//public/images/etc_mobile/android_2.png) 7px 5px no-repeat;
+    }
+
+
+</style>
+
+<div class="clearfix">
+
+    <div class="clearfix">
+
+
+        <div class="index_special_video clearfix">
+
+
+                        <div class="special_right">
+
+
+
+                                                <script>
+                    handleLogoSwf = function(){
+                        if(!FlashDetect.installed){
+                            c_$('logo_index').innerHTML = '<a href="http://www.aparat.com/worldcup2014" title="" class=""rel="nofollow"><img src="http://static.aparat.com//public/images/template/new/worldcup_index_624_new2.jpg" style="text-align:center" /></a>';
+                        }
+                    }
+                </script>
+                <div id="logo_index" class="clearfix mobileWrapper"><a href="http://www.aparat.com/worldcup2014" title="" class="" rel="nofollow"><img src="http://static.aparat.com//public/images/template/new/worldcup_index_624_new2.jpg" style="text-align:center"></a></div><div class="font_custom clearfix" style="-color:#0db24c;-text-align:center;">جام جهانی در آپارات</div><script>handleLogoSwf()</script>
+                            </div>
+
+            <div class="special_left">
+                <div class="clearfix video_one " title="دیدار رییس جمهور با سپ بلاتر - آبان 92"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/kWirH" onmousedown="this.href='http://www.aparat.com/v/kWirH'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263967_1_b.jpg);" class="video_thumb" id="video_thumb_1263967">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/kWirH" onmousedown="this.href='http://www.aparat.com/v/kWirH'" title="" class="duration">۰:۴۹</a></div><div class="video_one_side clearfix" style=""><div class="clearfix" style=""></div></div></div><div class="special_video_title font_custom clearfix"><a href="http://www.aparat.com/v/kWirH" onmousedown="this.href='http://www.aparat.com/v/kWirH'" title="" class="special_video_title font_custom">دیدار رییس جمهور با سپ بلاتر - آبان 92</a></div><div class="special_video_videoinfo clearfix"><div class="special_video_userinfo hidden_s1"><a href="http://www.aparat.com/president.ir" title="" class="" style="width:100%"><div style="min-width: 21px;background-color:white;padding:1px;"><div id="cls_59868010" class="" style="background: url(http://static.aparat.com/public/user_data/profile_photo/109/324749-s.jpg?826 ) no-repeat;background-size:100% 100%;background-position-x:50%;background-position-y:50%;background-color:#272727;border-radius: 2px;border: 1px solid #CCCCCC;padding-top:100%;"></div></div></a></div><div class="special_video_visit_cnt hidden_s3">۴۱۸ بازدید</div><div class="special_video_owner"><a href="http://www.aparat.com/president.ir" onmousedown="this.href='http://www.aparat.com/president.ir'" title="" class="" rel="follow">پایگاه اطلاع رسانی ریاست جمهوری اسلامی ایران</a></div></div>            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="clearfix v2_index_vitrin">
+        <div class="clearfix v2_index_vitrin_inner">
+
+            <div class="v2_index_right_center v2_box fullPage_s0">
+
+                <div class="special_video_title font_custom clearfix">
+                    <a href="http://www.aparat.com/v/yr9s3" onmousedown="this.href='http://www.aparat.com/v/yr9s3'" title="" class="special_video_title font_custom">گل ها و دریبل های نیمار در سال 2014</a>                </div>
+                <div id="aparat_player_box" class="aparat_player_box"><script type="text/javascript" src="http://www.aparat.com//public/public/scripts/src/aparatplayer.min.new.js?33"></script>
+                    <div id="ap_wrapper_752203" style="z-index:1000;position:relative; margin: 0 auto; width:100%; height:100%">
+                        <div id="ap_box_752203" style="margin-top: 0px; margin-right: auto; margin-bottom: 0px; margin-left: auto; background-color: rgb(0, 0, 0); position: relative; width: 100%; height: 100%; "><div id="needflashplayer" style="direction:rtl;color:#fff;text-align:center;display:block;padding-top:70px;background: url('http://static.aparat.com/public/images/template/flashplayer_instal.gif' center top no-repeat;"><a href="http://www.flashplayer.ir/#flashplayer" target="_blank"><img style="border-width: 0px" src="http://static.aparat.com/public/images/template/fp_large.gif"></a><br><span> برای مشاهده ویدیو، باید <a href="http://www.flashplayer.ir/#flashplayer" style="color:#0086B4;text-decoration:none;" target="_blank">Flash Player </a>بر روی مرورگر شما نصب شده باشد.<br><a href="http://www.flashplayer.ir/#flashplayer" style="color:#0086B4;text-decoration:none;" target="_blank">برای نصب این برنامه اینجا کلیک کنید </a></span></div></div>
+                        <div id="ap_box_752203_recom" style="position:absolute;z-index:1000;left:0;top:0;background-color:#000;width:100%;height:100%;display:none;">
+							<div id="ap_box_752203_recomcontent"></div>
+						</div>
+						
+						
+						<div id="ap_logo_752203" class="aparat_player_logo"></div>
+                        <div id="ap_replay_752203" class="replay" onclick="ap_replay('752203');"></div>
+                        <div id="ap_title_752203" style="pointer-events: none;margin-top: -56px;display: none; float: left; font-family: Arial, sans-serif;
+                                    font-size: 11px; font-variant: normal; line-height: 30px; color: rgb(238, 238, 238);
+                                    text-align: center; font-weight: bold; font-style: normal; cursor: default;
+                                    padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; width: 100%; ">
+                                <div style="height:29px;overflow:hidden;right:0px;margin-right:0px;width: 100%;cursor: default;text-align:right;position: absolute;direction: rtl;
+                                    background:url(http://static.aparat.com//public/playerskins/glow/controlbar/background_v1.png)">
+                                    <span style="padding-right: 10px;">
+                                        گل ها و دریبل های نیمار در سال 2014
+                                    </span>
+                                </div>
+                        </div>
+
+                    </div>
+
+
+                    <script type="text/javascript">
+                        var playerModes = [{
+                            type: "flash",
+                            src: "http://www.aparat.com//public/public/player/AparatPlayer.swf",
+                            config: {
+                                "provider": "http",
+                                "http.startparam":"start"                            }
+                        },{
+                            type: "html5",
+                            config: {
+                                "provider": "video"
+                            }
+                        }];
+                        var playerModesHtml5 = [{
+                            type: "html5",
+                            config: {
+                                "provider": "video"
+                            }
+                        },{
+                            type: "flash",
+                            src: "http://www.aparat.com//public/public/player/AparatPlayer.swf",
+                            config: {
+                                "provider": "http",
+                                "http.startparam":"start"                            }
+                        }];
+                        var try_752203=0;
+                        var seeking_752203=false;
+                        var oldpos_752203=0;
+                        var sk_752203 = new Array();
+
+
+                        var ap_752203;
+                        setUpPlayer_752203 = function(fileNumber){
+
+                            var fileList = new Array();fileList[0] = "http://hn13.asset.aparat.com/aparat-video/107da93586d6da78123b16f5f63502a51261335.apt";fileList[1] = "http://host17.aparat.com//public/user_data/flv_video_new/421/107da93586d6da78123b16f5f63502a51261335.apt";fileList[2] = "http://host10.aparat.com//public/user_data/flv_video_new/421/107da93586d6da78123b16f5f63502a51261335.apt";
+
+                            ap_752203 = jwplayer("ap_box_752203").setup({
+
+
+                                author: "aparat.com",
+                                aparatlink: "http://www.aparat.com/v/yr9s3",
+                                showinaparat: "false",
+                                bufferlength: "5",
+                                autoStart: "false",
+                                volume: "80",
+                                controlbar: "over",
+                                logourl: "http://static.aparat.com//public/images/player/logo.png",
+                                width: "100%",
+                                height: "100%",
+                                skin: "http://www.aparat.com//public/public/playerskins/glow/glow_v1.xml",
+                                image: "http://static.aparat.com/public/user_data/video_thumb/253/1261335_1_b.jpg?832",
+                                file: fileList[fileNumber],
+                                title: "گل ها و دریبل های نیمار در سال 2014",
+                                events: {
+                                    onError: function(e){
+                                        if(e.message=="Video not found"){
+                                            fileNumber++;
+                                            if(fileNumber<fileList.length){
+                                                setUpPlayer_752203(fileNumber);
+                                                ap_752203.play();
+                                                return;
+                                            }
+                                        }
+                                        var p = this;
+                                        if(e.type=="jwplayerError"){
+                                            if (++try_752203<6){
+                                                setTimeout(function(){
+                                                    var vplay = p.getState()=="PAUSED" ? false : true;
+                                                    p.play(vplay);
+                                                }, 1000);
+                                            }else{
+                                                try_752203=0;
+                                                try{
+                                                    if (c_$("ap_box_752203_jwplayer_display_text") && e.errmessage){
+                                                        c_$("ap_box_752203_jwplayer_display_text").innerHTML=e.errmessage;
+                                                    }
+                                                }catch(ex){}
+                                            }
+                                        }
+                                    },
+                                    onControlBarShow: function() {
+                                        if (this.renderingMode=="flash"){
+                                            var apTitle = c_$("ap_title_752203").style;
+                                            if (apTitle.display != "block"){
+                                                apTitle.display = "block";
+                                            }
+                                        }
+                                    },
+                                    
+                                        onControlBarHide: function() {
+                                            if (this.renderingMode=="flash"){
+                                                var apTitle = c_$("ap_title_752203").style;
+                                                if (apTitle.display != "none"){
+                                                    apTitle.display = "none";
+                                                }
+                                            }
+                                        },
+                                    
+                                    onComplete: function() {
+                                        
+                                        ap_callRecoms("752203", "http://www.aparat.com//video/recom/recom/recmodetype/html/rand/752203/videohash/yr9s3/watchtype/site/utime/594_1402232290/hutime/018901730134ce1df693ecf989a44fabad9a9464");
+                                        c_$("ap_box_752203_recom").style.display="block";
+                                        c_$("ap_replay_752203").style.display="block";
+                                        ap_recomResize("752203");
+                                    },
+                                    onTime: function(e) {
+                                        var pos = e.position;
+                                        var dur = e.duration;
+                                        var per = 0;
+                                        try{per = dur/5;}catch(ex){per = dur-5;}
+                                        if (pos >= per && !videoEnding[752203] && dur>0) {
+                                            ap_callRecoms("752203", "http://www.aparat.com//video/recom/recom/recmodetype/html/rand/752203/videohash/yr9s3/watchtype/site/utime/594_1402232290/hutime/018901730134ce1df693ecf989a44fabad9a9464");
+                                        }
+                                        
+                                    },
+                                    
+                                    onPlay:function(){
+                                        ap_hideRecoms("752203");
+                                    },
+                                    
+                                },
+                                modes: playerModes
+
+                            });
+                            if (ap_752203.renderingMode=="flash"){
+                                c_$("ap_logo_752203").style.display = "none";
+                            }
+                        }
+
+                        setUpPlayer_752203(0);
+                    </script>
+                    </div><div class="clearfix hidden_s0 player_panel" style="border:0px solid #EEE">&nbsp;</div>
+            </div>
+
+            <div class="v2_index_left_center hidden_s0">
+                <div class="v2_box">
+                    <div class="hidden_s0"><center><div style="margin-top:17px;">
+                        <iframe frameborder="0" width="300px" height="100px" framesrc="http://aparat.ads.saba-e.com/showads.php?posid=159" src="http://www.saba-e.com/blank.html" id="frame_538053" name="frame_538053" scrolling="No"></iframe>
+                    </div><div style="margin-top:17px;">
+                        <iframe frameborder="0" width="300px" height="100px" framesrc="http://aparat.ads.saba-e.com/showads.php?posid=211" src="http://www.saba-e.com/blank.html" id="frame_363691" name="frame_363691" scrolling="No"></iframe>
+                    </div><div style="margin-top:17px;">
+                        <iframe frameborder="0" width="300px" height="100px" framesrc="http://aparat.ads.saba-e.com/showads.php?posid=158" src="http://www.saba-e.com/blank.html" id="frame_854112" name="frame_854112" scrolling="No"></iframe>
+                    </div><script type="text/javascript">
+                            advert_frame_que_arr[advert_frame_que_arr.length]="frame_538053";
+                        </script>
+                        <script type="text/javascript">
+                            advert_frame_que_arr[advert_frame_que_arr.length]="frame_363691";
+                        </script>
+                        <script type="text/javascript">
+                            advert_frame_que_arr[advert_frame_que_arr.length]="frame_854112";
+                        </script>
+                        </center></div>                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="clearfix" style="">
+
+        <div class="v2_index_right_bot v2_box fullPage_s2">
+                        <ul class="video_box clearfix">
+                <li class="index_video_list"><div class="clearfix video_one " title="فیلم فانتزی شیطان صفت"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/X5fvY" onmousedown="this.href='http://www.aparat.com/v/X5fvY'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263432_1.jpg);" class="video_thumb" id="video_thumb_1263432">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/X5fvY" onmousedown="this.href='http://www.aparat.com/v/X5fvY'" title="" class="duration">۱:۱۴</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/X5fvY" onmousedown="this.href='http://www.aparat.com/v/X5fvY'" title="فیلم فانتزی شیطان صفت" class="clearfix video_one_title">فیلم فانتزی شیطان صفت</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/lightninglove" onmousedown="this.href='http://www.aparat.com/lightninglove'" title="" class="">ویدا</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="سقوط بالگرد توسط گردباد"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/UKrDL" onmousedown="this.href='http://www.aparat.com/v/UKrDL'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260340_1.jpg);" class="video_thumb" id="video_thumb_1260340">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/UKrDL" onmousedown="this.href='http://www.aparat.com/v/UKrDL'" title="" class="duration">۰:۲۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/UKrDL" onmousedown="this.href='http://www.aparat.com/v/UKrDL'" title="سقوط بالگرد توسط گردباد" class="clearfix video_one_title">سقوط بالگرد توسط گردباد</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/yadeyaranejang" onmousedown="this.href='http://www.aparat.com/yadeyaranejang'" title="" class="">کامبیز زندی</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="جقد"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/AMFQ1" onmousedown="this.href='http://www.aparat.com/v/AMFQ1'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260070_1.jpg);" class="video_thumb" id="video_thumb_1260070">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/AMFQ1" onmousedown="this.href='http://www.aparat.com/v/AMFQ1'" title="" class="duration">۰:۵۰</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/AMFQ1" onmousedown="this.href='http://www.aparat.com/v/AMFQ1'" title="جقد" class="clearfix video_one_title">جقد</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/hsarailoo" onmousedown="this.href='http://www.aparat.com/hsarailoo'" title="" class="">حسین</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="سریال اوای باران فرید و باران"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/jw4Q8" onmousedown="this.href='http://www.aparat.com/v/jw4Q8'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1261841_1.jpg);" class="video_thumb" id="video_thumb_1261841">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/jw4Q8" onmousedown="this.href='http://www.aparat.com/v/jw4Q8'" title="" class="duration">۵:۲۷</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/jw4Q8" onmousedown="this.href='http://www.aparat.com/v/jw4Q8'" title="سریال اوای باران فرید و باران" class="clearfix video_one_title">سریال اوای باران فرید و باران</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/saaaaadgirl" onmousedown="this.href='http://www.aparat.com/saaaaadgirl'" title="" class="">مریم</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="کیا سراتو TD"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/ubmPo" onmousedown="this.href='http://www.aparat.com/v/ubmPo'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260058_1.jpg);" class="video_thumb" id="video_thumb_1260058">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/ubmPo" onmousedown="this.href='http://www.aparat.com/v/ubmPo'" title="" class="duration">۳:۰۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/ubmPo" onmousedown="this.href='http://www.aparat.com/v/ubmPo'" title="کیا سراتو TD" class="clearfix video_one_title">کیا سراتو TD</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/cerato2013iran" onmousedown="this.href='http://www.aparat.com/cerato2013iran'" title="" class="">کیا سراتو</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="ذوق مرگ خرگوشی 5"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/H0wr3" onmousedown="this.href='http://www.aparat.com/v/H0wr3'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260019_1.jpg);" class="video_thumb" id="video_thumb_1260019">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/H0wr3" onmousedown="this.href='http://www.aparat.com/v/H0wr3'" title="" class="duration">۱:۱۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/H0wr3" onmousedown="this.href='http://www.aparat.com/v/H0wr3'" title="ذوق مرگ خرگوشی 5" class="clearfix video_one_title">ذوق مرگ خرگوشی 5</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/aoaoz" onmousedown="this.href='http://www.aparat.com/aoaoz'" title="" class="">گوگوری</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="گودزیلا! نیسان R35 GTR-تیزر جدید رینگ ووسن(منتخب کانال)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/nxw8C" onmousedown="this.href='http://www.aparat.com/v/nxw8C'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1262431_1.jpg);" class="video_thumb" id="video_thumb_1262431">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/nxw8C" onmousedown="this.href='http://www.aparat.com/v/nxw8C'" title="" class="duration">۱:۴۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/nxw8C" onmousedown="this.href='http://www.aparat.com/v/nxw8C'" title="گودزیلا! نیسان R35 GTR-تیزر جدید رینگ ووسن(منتخب کانال)" class="clearfix video_one_title">گودزیلا! نیسان R35 GTR-تیزر جدید رینگ ووسن(منتخب کانال)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/alemorad" onmousedown="this.href='http://www.aparat.com/alemorad'" title="" class="">Net Car Show</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="روشن کردن خودرو پژو ۴۰۵ بوسیله آب توسط علاءالدین جاسمی2"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/EwOqK" onmousedown="this.href='http://www.aparat.com/v/EwOqK'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259745_1.jpg);" class="video_thumb" id="video_thumb_1259745">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/EwOqK" onmousedown="this.href='http://www.aparat.com/v/EwOqK'" title="" class="duration">۲:۳۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/EwOqK" onmousedown="this.href='http://www.aparat.com/v/EwOqK'" title="روشن کردن خودرو پژو ۴۰۵ بوسیله آب توسط علاءالدین جاسمی2" class="clearfix video_one_title">روشن کردن خودرو پژو ۴۰۵ بوسیله آب توسط علاءالدین جاسمی2</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/jasemi1350" onmousedown="this.href='http://www.aparat.com/jasemi1350'" title="" class="">علاءالدین جاسمی زرگا...</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="تیزر جدید فیلم Transformers 4 با بازی مارک والبرگ"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/x2Jo8" onmousedown="this.href='http://www.aparat.com/v/x2Jo8'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1261168_1.jpg);" class="video_thumb" id="video_thumb_1261168">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/x2Jo8" onmousedown="this.href='http://www.aparat.com/v/x2Jo8'" title="" class="duration">۰:۳۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/x2Jo8" onmousedown="this.href='http://www.aparat.com/v/x2Jo8'" title="تیزر جدید فیلم Transformers 4 با بازی مارک والبرگ" class="clearfix video_one_title">تیزر جدید فیلم Transformers 4 با بازی مارک والبرگ</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/AGH79" onmousedown="this.href='http://www.aparat.com/AGH79'" title="" class="">AGH TRAILERS</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="دریاچه خمیران تصاویر هوایی از تصویر سرزمین امید و آرزو"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/Dfhzt" onmousedown="this.href='http://www.aparat.com/v/Dfhzt'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1262011_1.jpg);" class="video_thumb" id="video_thumb_1262011">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/Dfhzt" onmousedown="this.href='http://www.aparat.com/v/Dfhzt'" title="" class="duration">۲:۵۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/Dfhzt" onmousedown="this.href='http://www.aparat.com/v/Dfhzt'" title="دریاچه خمیران تصاویر هوایی از تصویر سرزمین امید و آرزو" class="clearfix video_one_title">دریاچه خمیران تصاویر هوایی از تصویر سرزمین امید و آرزو</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/sovaltd" onmousedown="this.href='http://www.aparat.com/sovaltd'" title="" class="">تصویر سرزمین امید و ...</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="درس خواندن با اواز و اعمال شاقه"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/MwuA6" onmousedown="this.href='http://www.aparat.com/v/MwuA6'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259967_1.jpg);" class="video_thumb" id="video_thumb_1259967">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/MwuA6" onmousedown="this.href='http://www.aparat.com/v/MwuA6'" title="" class="duration">۱:۲۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/MwuA6" onmousedown="this.href='http://www.aparat.com/v/MwuA6'" title="درس خواندن با اواز و اعمال شاقه" class="clearfix video_one_title">درس خواندن با اواز و اعمال شاقه</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/01001" onmousedown="this.href='http://www.aparat.com/01001'" title="" class="">مینا</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="مردها سه دسته اند(شوخی کردم)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/aJ8qG" onmousedown="this.href='http://www.aparat.com/v/aJ8qG'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260742_1.jpg);" class="video_thumb" id="video_thumb_1260742">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/aJ8qG" onmousedown="this.href='http://www.aparat.com/v/aJ8qG'" title="" class="duration">۱:۲۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/aJ8qG" onmousedown="this.href='http://www.aparat.com/v/aJ8qG'" title="مردها سه دسته اند(شوخی کردم)" class="clearfix video_one_title">مردها سه دسته اند(شوخی کردم)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/shalmani" onmousedown="this.href='http://www.aparat.com/shalmani'" title="" class="">علی جون</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="Forza Horizon 2"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/KIAGR" onmousedown="this.href='http://www.aparat.com/v/KIAGR'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259625_1.jpg);" class="video_thumb" id="video_thumb_1259625">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/KIAGR" onmousedown="this.href='http://www.aparat.com/v/KIAGR'" title="" class="duration">۰:۳۹</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/KIAGR" onmousedown="this.href='http://www.aparat.com/v/KIAGR'" title="Forza Horizon 2" class="clearfix video_one_title">Forza Horizon 2</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/_Alucard_" onmousedown="this.href='http://www.aparat.com/_Alucard_'" title="" class="">مهدی</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="سریال ساختمان پزشکان - قسمت3 - پارت 5(پارت پایانی)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/rkGCd" onmousedown="this.href='http://www.aparat.com/v/rkGCd'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260345_1.jpg);" class="video_thumb" id="video_thumb_1260345">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/rkGCd" onmousedown="this.href='http://www.aparat.com/v/rkGCd'" title="" class="duration">۳:۱۰</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/rkGCd" onmousedown="this.href='http://www.aparat.com/v/rkGCd'" title="سریال ساختمان پزشکان - قسمت3 - پارت 5(پارت پایانی)" class="clearfix video_one_title">سریال ساختمان پزشکان - قسمت3 - پارت 5(پارت پایانی)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/tonel" onmousedown="this.href='http://www.aparat.com/tonel'" title="" class="">TV</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="ماهیگیری"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/5Wnta" onmousedown="this.href='http://www.aparat.com/v/5Wnta'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260342_1.jpg);" class="video_thumb" id="video_thumb_1260342">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/5Wnta" onmousedown="this.href='http://www.aparat.com/v/5Wnta'" title="" class="duration">۱:۲۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/5Wnta" onmousedown="this.href='http://www.aparat.com/v/5Wnta'" title="ماهیگیری" class="clearfix video_one_title">ماهیگیری</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/fadakyas" onmousedown="this.href='http://www.aparat.com/fadakyas'" title="" class="">نیما</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="کشتن فیل بالغ و کرگدن بالغ توسط شیر تنها"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/qPgB1" onmousedown="this.href='http://www.aparat.com/v/qPgB1'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259965_1.jpg);" class="video_thumb" id="video_thumb_1259965">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/qPgB1" onmousedown="this.href='http://www.aparat.com/v/qPgB1'" title="" class="duration">۰:۱۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/qPgB1" onmousedown="this.href='http://www.aparat.com/v/qPgB1'" title="کشتن فیل بالغ و کرگدن بالغ توسط شیر تنها" class="clearfix video_one_title">کشتن فیل بالغ و کرگدن بالغ توسط شیر تنها</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/goraz3" onmousedown="this.href='http://www.aparat.com/goraz3'" title="" class="">عرفان</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="تریلری از MultiPlayer بازی Sniper Elite 3"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/T8Zwm" onmousedown="this.href='http://www.aparat.com/v/T8Zwm'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259997_1.jpg);" class="video_thumb" id="video_thumb_1259997">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/T8Zwm" onmousedown="this.href='http://www.aparat.com/v/T8Zwm'" title="" class="duration">۲:۴۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/T8Zwm" onmousedown="this.href='http://www.aparat.com/v/T8Zwm'" title="تریلری از MultiPlayer بازی Sniper Elite 3" class="clearfix video_one_title">تریلری از MultiPlayer بازی Sniper Elite 3</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/gameemag" onmousedown="this.href='http://www.aparat.com/gameemag'" title="" class="">مجله ویدئویی گیم ایم...</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="قناری قرمز"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/5ahQx" onmousedown="this.href='http://www.aparat.com/v/5ahQx'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259809_1.jpg);" class="video_thumb" id="video_thumb_1259809">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/5ahQx" onmousedown="this.href='http://www.aparat.com/v/5ahQx'" title="" class="duration">۰:۳۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/5ahQx" onmousedown="this.href='http://www.aparat.com/v/5ahQx'" title="قناری قرمز" class="clearfix video_one_title">قناری قرمز</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/MOHAMMADBAKHTIRY" onmousedown="this.href='http://www.aparat.com/MOHAMMADBAKHTIRY'" title="" class="">محمد بختیاری</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="متور سوار حرفه ای"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/fCiQU" onmousedown="this.href='http://www.aparat.com/v/fCiQU'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259942_1.jpg);" class="video_thumb" id="video_thumb_1259942">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/fCiQU" onmousedown="this.href='http://www.aparat.com/v/fCiQU'" title="" class="duration">۰:۶</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/fCiQU" onmousedown="this.href='http://www.aparat.com/v/fCiQU'" title="متور سوار حرفه ای" class="clearfix video_one_title">متور سوار حرفه ای</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/morje" onmousedown="this.href='http://www.aparat.com/morje'" title="" class="">moje</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="خالی بندی خانم شیرزاد درباره خطرات کار(آخر خنده)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/ICdq4" onmousedown="this.href='http://www.aparat.com/v/ICdq4'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260955_1.jpg);" class="video_thumb" id="video_thumb_1260955">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/ICdq4" onmousedown="this.href='http://www.aparat.com/v/ICdq4'" title="" class="duration">۱:۲۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/ICdq4" onmousedown="this.href='http://www.aparat.com/v/ICdq4'" title="خالی بندی خانم شیرزاد درباره خطرات کار(آخر خنده)" class="clearfix video_one_title">خالی بندی خانم شیرزاد درباره خطرات کار(آخر خنده)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/amirhosein4" onmousedown="this.href='http://www.aparat.com/amirhosein4'" title="" class="">گروه تتلو</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="ویدیو بررسی سیستم جستجوی  iOS 8 - زومیت"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/yYuSv" onmousedown="this.href='http://www.aparat.com/v/yYuSv'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1261385_1.jpg);" class="video_thumb" id="video_thumb_1261385">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/yYuSv" onmousedown="this.href='http://www.aparat.com/v/yYuSv'" title="" class="duration">۱:۳۳</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/yYuSv" onmousedown="this.href='http://www.aparat.com/v/yYuSv'" title="ویدیو بررسی سیستم جستجوی  iOS 8 - زومیت" class="clearfix video_one_title">ویدیو بررسی سیستم جستجوی  iOS 8 - زومیت</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/zoomit" onmousedown="this.href='http://www.aparat.com/zoomit'" title="" class="">زومیت - دنیای فناوری</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="تیزر رسمی: معرفی نسل جدید ب ام و X6 مدل 2015"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/kYz71" onmousedown="this.href='http://www.aparat.com/v/kYz71'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259996_1.jpg);" class="video_thumb" id="video_thumb_1259996">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/kYz71" onmousedown="this.href='http://www.aparat.com/v/kYz71'" title="" class="duration">۷:۴۹</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/kYz71" onmousedown="this.href='http://www.aparat.com/v/kYz71'" title="تیزر رسمی: معرفی نسل جدید ب ام و X6 مدل 2015" class="clearfix video_one_title">تیزر رسمی: معرفی نسل جدید ب ام و X6 مدل 2015</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/pedal" onmousedown="this.href='http://www.aparat.com/pedal'" title="" class="">سایت پدال</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="حرف زدن خنجری با سگ...وحشتناک خنده داره"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/gyURk" onmousedown="this.href='http://www.aparat.com/v/gyURk'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260254_1.jpg);" class="video_thumb" id="video_thumb_1260254">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/gyURk" onmousedown="this.href='http://www.aparat.com/v/gyURk'" title="" class="duration">۰:۵۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/gyURk" onmousedown="this.href='http://www.aparat.com/v/gyURk'" title="حرف زدن خنجری با سگ...وحشتناک خنده داره" class="clearfix video_one_title">حرف زدن خنجری با سگ...وحشتناک خنده داره</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/a23" onmousedown="this.href='http://www.aparat.com/a23'" title="" class="">علیرضا 23</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="بالا رفتن بچه دو ساله از دیوار"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/Vox0H" onmousedown="this.href='http://www.aparat.com/v/Vox0H'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1261676_1.jpg);" class="video_thumb" id="video_thumb_1261676">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/Vox0H" onmousedown="this.href='http://www.aparat.com/v/Vox0H'" title="" class="duration">۰:۱۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/Vox0H" onmousedown="this.href='http://www.aparat.com/v/Vox0H'" title="بالا رفتن بچه دو ساله از دیوار" class="clearfix video_one_title">بالا رفتن بچه دو ساله از دیوار</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/saeidhhh" onmousedown="this.href='http://www.aparat.com/saeidhhh'" title="" class="">mma.com</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="ماشینی که کثیف نمی‌شود!"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/uO2Zf" onmousedown="this.href='http://www.aparat.com/v/uO2Zf'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259932_1.jpg);" class="video_thumb" id="video_thumb_1259932">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/uO2Zf" onmousedown="this.href='http://www.aparat.com/v/uO2Zf'" title="" class="duration">۱:۰۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/uO2Zf" onmousedown="this.href='http://www.aparat.com/v/uO2Zf'" title="ماشینی که کثیف نمی‌شود!" class="clearfix video_one_title">ماشینی که کثیف نمی‌شود!</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/carpress" onmousedown="this.href='http://www.aparat.com/carpress'" title="" class="">پایگاه خبری کار پرس</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="طوفان تهران"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/od9jz" onmousedown="this.href='http://www.aparat.com/v/od9jz'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259670_1.jpg);" class="video_thumb" id="video_thumb_1259670">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/od9jz" onmousedown="this.href='http://www.aparat.com/v/od9jz'" title="" class="duration">۰:۱۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/od9jz" onmousedown="this.href='http://www.aparat.com/v/od9jz'" title="طوفان تهران" class="clearfix video_one_title">طوفان تهران</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/yasingol" onmousedown="this.href='http://www.aparat.com/yasingol'" title="" class="">جشنواره</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="تبلیغ جالب چیپس"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/w74H9" onmousedown="this.href='http://www.aparat.com/v/w74H9'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259772_1.jpg);" class="video_thumb" id="video_thumb_1259772">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/w74H9" onmousedown="this.href='http://www.aparat.com/v/w74H9'" title="" class="duration">۰:۲۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/w74H9" onmousedown="this.href='http://www.aparat.com/v/w74H9'" title="تبلیغ جالب چیپس" class="clearfix video_one_title">تبلیغ جالب چیپس</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/5240081" onmousedown="this.href='http://www.aparat.com/5240081'" title="" class="">CowBoy</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="قناری"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/rymJz" onmousedown="this.href='http://www.aparat.com/v/rymJz'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260346_1.jpg);" class="video_thumb" id="video_thumb_1260346">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/rymJz" onmousedown="this.href='http://www.aparat.com/v/rymJz'" title="" class="duration">۱:۰۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/rymJz" onmousedown="this.href='http://www.aparat.com/v/rymJz'" title="قناری" class="clearfix video_one_title">قناری</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/sabahie" onmousedown="this.href='http://www.aparat.com/sabahie'" title="" class="">امیرمهدی</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="ابراز علاقه ی سگ به کودک"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/XNAdi" onmousedown="this.href='http://www.aparat.com/v/XNAdi'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/252/1259902_1.jpg);" class="video_thumb" id="video_thumb_1259902">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/XNAdi" onmousedown="this.href='http://www.aparat.com/v/XNAdi'" title="" class="duration">۲:۴۷</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/XNAdi" onmousedown="this.href='http://www.aparat.com/v/XNAdi'" title="ابراز علاقه ی سگ به کودک" class="clearfix video_one_title">ابراز علاقه ی سگ به کودک</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/www.aparat.commm" onmousedown="this.href='http://www.aparat.com/www.aparat.commm'" title="" class="">علی</a></div><div class="clearfix" style=""></div></div></div></li><li class="index_video_list"><div class="clearfix video_one " title="تصاویر حمله داعش به حرمین عسگریین"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/Gob54" onmousedown="this.href='http://www.aparat.com/v/Gob54'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1260378_1.jpg);" class="video_thumb" id="video_thumb_1260378">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/Gob54" onmousedown="this.href='http://www.aparat.com/v/Gob54'" title="" class="duration">۱:۱۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/Gob54" onmousedown="this.href='http://www.aparat.com/v/Gob54'" title="تصاویر حمله داعش به حرمین عسگریین" class="clearfix video_one_title">تصاویر حمله داعش به حرمین عسگریین</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/irinn" onmousedown="this.href='http://www.aparat.com/irinn'" title="" class="">شبکه خبر</a></div><div class="clearfix" style=""></div></div></div></li>            </ul>
+                    </div>
+
+
+
+
+        <div class="v2_index_left_bot v2_box fullPage_s2">
+
+
+
+            
+
+            
+            
+
+
+            <style>
+                .rightrl{
+                    background-color: white;
+                    border-radius: 5px 0 0 5px;
+                    float: right;
+                    margin-right: -1px;
+                    padding: 2px 13px 3px 7px;
+                    direction:ltr;
+                }
+
+            </style>
+
+            
+
+
+            
+            <div class="clearfix box_header "><div class="box_header_right">آخرین ویدیو ها</div><div class="box_header_left"></div></div><div class="clearfix box_inner">
+            <div class="video_box clearfix">
+
+                <div class="clearfix video_one detailSide" title="کلاه قرمزی و دختر همسایه ههه"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/GZtKn" onmousedown="this.href='http://www.aparat.com/v/GZtKn'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264534_1.jpg);" class="video_thumb" id="video_thumb_1264534">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/GZtKn" onmousedown="this.href='http://www.aparat.com/v/GZtKn'" title="" class="duration">۰:۱۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/GZtKn" onmousedown="this.href='http://www.aparat.com/v/GZtKn'" title="کلاه قرمزی و دختر همسایه ههه" class="clearfix video_one_title">کلاه قرمزی و دختر همسایه ههه</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/jojo25" onmousedown="this.href='http://www.aparat.com/jojo25'" title="" class="">ماهرخ</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="شاهین امیری"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/9GEpi" onmousedown="this.href='http://www.aparat.com/v/9GEpi'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264508_1.jpg);" class="video_thumb" id="video_thumb_1264508">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/9GEpi" onmousedown="this.href='http://www.aparat.com/v/9GEpi'" title="" class="duration">۴:۲۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/9GEpi" onmousedown="this.href='http://www.aparat.com/v/9GEpi'" title="شاهین امیری" class="clearfix video_one_title">شاهین امیری</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/sh325" onmousedown="this.href='http://www.aparat.com/sh325'" title="" class="">park</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="رضا عطاران در بزنگاه(حیفین شما)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/fodNP" onmousedown="this.href='http://www.aparat.com/v/fodNP'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264463_1.jpg);" class="video_thumb" id="video_thumb_1264463">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/fodNP" onmousedown="this.href='http://www.aparat.com/v/fodNP'" title="" class="duration">۱:۳۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/fodNP" onmousedown="this.href='http://www.aparat.com/v/fodNP'" title="رضا عطاران در بزنگاه(حیفین شما)" class="clearfix video_one_title">رضا عطاران در بزنگاه(حیفین شما)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/shalmani" onmousedown="this.href='http://www.aparat.com/shalmani'" title="" class="">علی جون</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="حرف زدن آتیلا پسیانی با لهجه شیرین آذری"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/I0vx8" onmousedown="this.href='http://www.aparat.com/v/I0vx8'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264416_1.jpg);" class="video_thumb" id="video_thumb_1264416">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/I0vx8" onmousedown="this.href='http://www.aparat.com/v/I0vx8'" title="" class="duration">۴:۰۰</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/I0vx8" onmousedown="this.href='http://www.aparat.com/v/I0vx8'" title="حرف زدن آتیلا پسیانی با لهجه شیرین آذری" class="clearfix video_one_title">حرف زدن آتیلا پسیانی با لهجه شیرین آذری</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/Hasanpour" onmousedown="this.href='http://www.aparat.com/Hasanpour'" title="" class="">سجاد</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="دوربین مخفی....."><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/4HXg7" onmousedown="this.href='http://www.aparat.com/v/4HXg7'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264321_1.jpg);" class="video_thumb" id="video_thumb_1264321">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/4HXg7" onmousedown="this.href='http://www.aparat.com/v/4HXg7'" title="" class="duration">۱:۱۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/4HXg7" onmousedown="this.href='http://www.aparat.com/v/4HXg7'" title="دوربین مخفی....." class="clearfix video_one_title">دوربین مخفی.....</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/mirage2000" onmousedown="this.href='http://www.aparat.com/mirage2000'" title="" class="">MIRAGE 2000</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="تیزر خوب نت"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/D0Kc3" onmousedown="this.href='http://www.aparat.com/v/D0Kc3'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264277_1.jpg);" class="video_thumb" id="video_thumb_1264277">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/D0Kc3" onmousedown="this.href='http://www.aparat.com/v/D0Kc3'" title="" class="duration">۰:۲۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/D0Kc3" onmousedown="this.href='http://www.aparat.com/v/D0Kc3'" title="تیزر خوب نت" class="clearfix video_one_title">تیزر خوب نت</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/miladclub" onmousedown="this.href='http://www.aparat.com/miladclub'" title="" class="">باشگاه هواداران برج ...</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="Day One, Session Three, Jean Sentenac - En"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/PJpus" onmousedown="this.href='http://www.aparat.com/v/PJpus'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264259_1.jpg);" class="video_thumb" id="video_thumb_1264259">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/PJpus" onmousedown="this.href='http://www.aparat.com/v/PJpus'" title="" class="duration">۱۸:۵۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/PJpus" onmousedown="this.href='http://www.aparat.com/v/PJpus'" title="Day One, Session Three, Jean Sentenac - En" class="clearfix video_one_title">Day One, Session Three, Jean Sentenac - En</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/ipf2014" onmousedown="this.href='http://www.aparat.com/ipf2014'" title="" class="">همایش پتروشیمی</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="چیپوتله"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/hNB87" onmousedown="this.href='http://www.aparat.com/v/hNB87'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264147_1.jpg);" class="video_thumb" id="video_thumb_1264147">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/hNB87" onmousedown="this.href='http://www.aparat.com/v/hNB87'" title="" class="duration">۳:۲۲</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/hNB87" onmousedown="this.href='http://www.aparat.com/v/hNB87'" title="چیپوتله" class="clearfix video_one_title">چیپوتله</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/fidilio" onmousedown="this.href='http://www.aparat.com/fidilio'" title="" class="">فیدیلیو</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="خوشبختی : سروش و صحت و خوشبختی با صدای شهاب رمضان"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/3Laiu" onmousedown="this.href='http://www.aparat.com/v/3Laiu'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1264139_1.jpg);" class="video_thumb" id="video_thumb_1264139">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/3Laiu" onmousedown="this.href='http://www.aparat.com/v/3Laiu'" title="" class="duration">۵:۰۰</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/3Laiu" onmousedown="this.href='http://www.aparat.com/v/3Laiu'" title="خوشبختی : سروش و صحت و خوشبختی با صدای شهاب رمضان" class="clearfix video_one_title">خوشبختی : سروش و صحت و خوشبختی با صدای شهاب رمضان</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/najmeh_h" onmousedown="this.href='http://www.aparat.com/najmeh_h'" title="" class="">نجمه</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="برنامه عینک گوگل برای سازنده تسلیحات TarckingPoint"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/sIqni" onmousedown="this.href='http://www.aparat.com/v/sIqni'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263995_1.jpg);" class="video_thumb" id="video_thumb_1263995">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/sIqni" onmousedown="this.href='http://www.aparat.com/v/sIqni'" title="" class="duration">۰:۵۹</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/sIqni" onmousedown="this.href='http://www.aparat.com/v/sIqni'" title="برنامه عینک گوگل برای سازنده تسلیحات TarckingPoint" class="clearfix video_one_title">برنامه عینک گوگل برای سازنده تسلیحات TarckingPoint</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/Footofan" onmousedown="this.href='http://www.aparat.com/Footofan'" title="" class="">فوت و فن</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="فراری 458 Italia در مقابل دوکاتی 1198S"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/HI4X1" onmousedown="this.href='http://www.aparat.com/v/HI4X1'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263947_1.jpg);" class="video_thumb" id="video_thumb_1263947">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/HI4X1" onmousedown="this.href='http://www.aparat.com/v/HI4X1'" title="" class="duration">۹:۲۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/HI4X1" onmousedown="this.href='http://www.aparat.com/v/HI4X1'" title="فراری 458 Italia در مقابل دوکاتی 1198S" class="clearfix video_one_title">فراری 458 Italia در مقابل دوکاتی 1198S</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/b_shadpour" onmousedown="this.href='http://www.aparat.com/b_shadpour'" title="" class="">Dark Knight</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="طوطی زبون دراز(خیلی جالبه)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/XrQDT" onmousedown="this.href='http://www.aparat.com/v/XrQDT'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263945_1.jpg);" class="video_thumb" id="video_thumb_1263945">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/XrQDT" onmousedown="this.href='http://www.aparat.com/v/XrQDT'" title="" class="duration">۳:۰۰</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/XrQDT" onmousedown="this.href='http://www.aparat.com/v/XrQDT'" title="طوطی زبون دراز(خیلی جالبه)" class="clearfix video_one_title">طوطی زبون دراز(خیلی جالبه)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/surizor" onmousedown="this.href='http://www.aparat.com/surizor'" title="" class="">ژید (نجمبی پریده)</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="خلاصه بازی آلمان - آرژانتین (جام جهانی 2010)"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/AB7Eg" onmousedown="this.href='http://www.aparat.com/v/AB7Eg'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263909_1.jpg);" class="video_thumb" id="video_thumb_1263909">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/AB7Eg" onmousedown="this.href='http://www.aparat.com/v/AB7Eg'" title="" class="duration">۳:۳۹</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/AB7Eg" onmousedown="this.href='http://www.aparat.com/v/AB7Eg'" title="خلاصه بازی آلمان - آرژانتین (جام جهانی 2010)" class="clearfix video_one_title">خلاصه بازی آلمان - آرژانتین (جام جهانی 2010)</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/sport1" onmousedown="this.href='http://www.aparat.com/sport1'" title="" class="">ورزشی</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="شوخی کردم"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/SGkNy" onmousedown="this.href='http://www.aparat.com/v/SGkNy'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263877_1.jpg);" class="video_thumb" id="video_thumb_1263877">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/SGkNy" onmousedown="this.href='http://www.aparat.com/v/SGkNy'" title="" class="duration">۱:۰۸</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/SGkNy" onmousedown="this.href='http://www.aparat.com/v/SGkNy'" title="شوخی کردم" class="clearfix video_one_title">شوخی کردم</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/amin999" onmousedown="this.href='http://www.aparat.com/amin999'" title="" class="">اسفرجانی</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="فیلم سینمایی گردباد"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/QAVhI" onmousedown="this.href='http://www.aparat.com/v/QAVhI'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263843_1.jpg);" class="video_thumb" id="video_thumb_1263843">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/QAVhI" onmousedown="this.href='http://www.aparat.com/v/QAVhI'" title="" class="duration">۳:۳۹</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/QAVhI" onmousedown="this.href='http://www.aparat.com/v/QAVhI'" title="فیلم سینمایی گردباد" class="clearfix video_one_title">فیلم سینمایی گردباد</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/aydinst30" onmousedown="this.href='http://www.aparat.com/aydinst30'" title="" class="">سینما البرز</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="walking dead - رسیدن گروه گلن به ترمینال"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/Mzkej" onmousedown="this.href='http://www.aparat.com/v/Mzkej'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263800_1.jpg);" class="video_thumb" id="video_thumb_1263800">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/Mzkej" onmousedown="this.href='http://www.aparat.com/v/Mzkej'" title="" class="duration">۰:۵۱</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/Mzkej" onmousedown="this.href='http://www.aparat.com/v/Mzkej'" title="walking dead - رسیدن گروه گلن به ترمینال" class="clearfix video_one_title">walking dead - رسیدن گروه گلن به ترمینال</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/Ahmad.1" onmousedown="this.href='http://www.aparat.com/Ahmad.1'" title="" class="">Ahmad.1</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="انیمیشن سینمایی لاک پشت ها برای همیشه (پارت 8) صدمین"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/LUOsV" onmousedown="this.href='http://www.aparat.com/v/LUOsV'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263767_1.jpg);" class="video_thumb" id="video_thumb_1263767">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/LUOsV" onmousedown="this.href='http://www.aparat.com/v/LUOsV'" title="" class="duration">۷:۴۵</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/LUOsV" onmousedown="this.href='http://www.aparat.com/v/LUOsV'" title="انیمیشن سینمایی لاک پشت ها برای همیشه (پارت 8) صدمین" class="clearfix video_one_title">انیمیشن سینمایی لاک پشت ها برای همیشه (پارت 8) صدمین</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/AFARAZ" onmousedown="this.href='http://www.aparat.com/AFARAZ'" title="" class="">faraz</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="کنسرت گروه لیان بوشهر(محسن شریفیان) در تالار وحدت تهران"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/BQvGH" onmousedown="this.href='http://www.aparat.com/v/BQvGH'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263735_1.jpg);" class="video_thumb" id="video_thumb_1263735">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/BQvGH" onmousedown="this.href='http://www.aparat.com/v/BQvGH'" title="" class="duration">۰:۱۴</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/BQvGH" onmousedown="this.href='http://www.aparat.com/v/BQvGH'" title="کنسرت گروه لیان بوشهر(محسن شریفیان) در تالار وحدت تهران" class="clearfix video_one_title">کنسرت گروه لیان بوشهر(محسن شریفیان) در تالار وحدت تهران</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/mybushehr" onmousedown="this.href='http://www.aparat.com/mybushehr'" title="" class="">بوشهر من</a></div><div class="clearfix" style=""></div></div></div><div class="clearfix video_one detailSide" title="قسمتی از دوبله فیلم زندانیان"><div class="clearfix video_one_thumbWrapper"><a href="http://www.aparat.com/v/bdKoj" onmousedown="this.href='http://www.aparat.com/v/bdKoj'" title="" class="video_one_thumb"><div style="background-image:url(http://static.aparat.com/public/user_data/video_thumb/253/1263661_1.jpg);" class="video_thumb" id="video_thumb_1263661">
+            <div id="test_123" class="video_one_filter_pic"></div>
+        </div></a><a href="http://www.aparat.com/v/bdKoj" onmousedown="this.href='http://www.aparat.com/v/bdKoj'" title="" class="duration">۱:۱۳</a></div><div class="video_one_side clearfix" style=""><h2><a href="http://www.aparat.com/v/bdKoj" onmousedown="this.href='http://www.aparat.com/v/bdKoj'" title="قسمتی از دوبله فیلم زندانیان" class="clearfix video_one_title">قسمتی از دوبله فیلم زندانیان</a></h2><div class="video_one_sender">از <a href="http://www.aparat.com/film_duble" onmousedown="this.href='http://www.aparat.com/film_duble'" title="" class="">فیلم دوبله</a></div><div class="clearfix" style=""></div></div></div>
+            </div>
+
+            </div>
+            
+
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>		</div></div><div id="v2_footer-line">
+
+
+    <div class="clearfix v2_page-width">
+
+
+        <!--paeeen-->
+        
+
+
+
+        <!--Bala-->
+        
+
+
+
+<!--        <div style="float:right">-->
+
+            <div class="v2_footer-line_link clearfix">
+
+
+
+                <div class="clearfix" style="float:right">
+                    <a href="http://www.aparat.com/advert" onmousedown="this.href='http://www.aparat.com/advert'" title="" class="" rel="nofollow"> تبلیغات &nbsp;|&nbsp;</a>
+                    <a href="http://www.aparat.com/etc/main/policy" onmousedown="this.href='http://www.aparat.com/etc/main/policy'" title="" class="" rel="nofollow">قوانین&nbsp;|&nbsp;</a>
+                    <a href="http://www.aparat.com/blog" onmousedown="this.href='http://www.aparat.com/blog'" title="" class="">وبلاگ مدیریت&nbsp;|&nbsp;</a>
+                    <a href="http://www.aparat.com/about" onmousedown="this.href='http://www.aparat.com/about'" title="" class="">درباره ما - تماس با ما&nbsp;|&nbsp;</a>
+                    <a href="http://www.aparat.com/job" onmousedown="this.href='http://www.aparat.com/job'" title="" class="">به ما بپیوندید&nbsp;|&nbsp;</a>
+                    <a href="http://www.aparat.com/official" onmousedown="this.href='http://www.aparat.com/official'" title="" class="">کانالهای رسمی</a>
+                    
+
+                </div>
+
+
+                <div class="footer_app_dl">
+                    <a href="http://www.aparat.com/app" onmousedown="this.href='http://www.aparat.com/app'" title="" class="" rel="nofollow"><div class="app_dl app_dl_android">
+                                <b>دانلود</b>
+                                <br>اندرویدی ها
+                            </div>
+
+                            <div class="app_dl app_dl_ios">
+                                <b>دانلود</b>
+                                <br>آیفونی ها
+                            </div></a>                </div>
+
+
+
+            </div>
+
+
+        
+        
+
+
+
+
+
+
+
+
+            <div class="v2_footer-line_text clearfix">
+                  تمام حقوق این سایت متعلق به <b>آپارات</b> می باشد. <br>مسولیت محتوای ویدئو ها با منتشر کننده آن است  و <b>آپارات</b> مسولیتی نسبت به آن ندارد.  <br>تمامي كالاها و خدمات اين سایت، حسب مورد، داراي مجوزهاي لازم از مراجع مربوطه مي‌باشند و فعاليت‌هاي اين سايت تابع قوانين و مقررات جمهوري اسلامي ايران است.            </div>
+
+
+    </div>
+</div>
+
+
+<div id="wrapper-layer" style=";filter:alpha(opacity=70);-moz-opacity:.70;opacity:.70;"></div>
+
+<div id="inner-container" class="system-color1-video" style="width:600px;padding:1px;display:none;position:absolute;top:200px;left:200px;z-index:3000000;border:1px solid #1F4B98">
+    <div style="background-color:#fff">
+        <div style="height:23px;background-color:#C3D9FF">
+            <div onclick="closewrapper();" style="background: url(http://static.aparat.com//public/images/icon/icons_16.gif) no-repeat 100% -128px;;width:17px;height:22px;;;float:left;"></div>        </div>
+
+        <div id="inner-layer" style="margin:5px"></div>
+
+        <div style="padding:3px;background-color:#C3D9FF">
+            <div class="btn btnclose linkbtn" onclick="closewrapper();">بستن</div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    errortxt = '<div class="ui-widget clearfix"><div class="ui-state-error ui-corner-all" style="margin: 10px 0; padding: 0 .7em;"><p><span class="ui-icon ui-icon-error" style="float: right; margin-left: .3em;width:16px;height:16px;margin-top: 5px;"></span>در ارتباط شما با سایت مشکلی رخ داده است. لطفاً مجدداً تلاش نمایید.</p></div></div>';
+        
+    $d('');
+</script>
+
+<script type="text/javascript">
+
+    set_src_advert_frame();
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-13']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+            '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+            function urchinTracker(googleurl){
+        googleurl = googleurl.replace('http://www.aparat.com/', '/');
+        _gaq.push(['_trackPageview',googleurl]);
+    }
+        
+</script>
+
+
+</body></html>

@@ -1,0 +1,1613 @@
+<!DOCTYPE html><!--[if LT IE 10]><html class="lt-ie10" lang="en" ng-app="vube"><![endif]--><!--[if !IE]><!--><html lang="en" ng-app="vube" style="display: block; " class="ng-scope"><!--[endif]----><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}</style>
+		<title ng-bind="pageTitle" class="ng-binding">Vube.com</title>
+		<meta name="alexaVerifyID" content="g2RA-sXZs-rctrRw5BRYDGnhknk">
+		 <meta name="msapplication-config" content="none">
+		<meta charset="utf-8"><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"><meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" name="viewport"><meta href="http://vube.com/" rel="canonical"><meta content="Vube - Video Sharing" property="og:title"><meta content="Vube is a new player in the Video Sharing space. We hold monthly contests and pay out thousands of dollars to the most popular videos uploaded by people just like you." property="og:description"><meta content="200" property="og:image:width"><meta content="200" property="og:image:height"><meta content="Vube.com" property="og:site_name"><meta content="http://vube.com/" property="og:url"><meta content="http://m1.thestaticvube.com/v/346.760/static/images/sq-og-image.jpg" property="og:image"><meta content="https://m1.thestaticvube.com/v/346.760/static/images/sq-og-image.jpg" property="og:image:secure_url"><meta content="Vube is a new player in the Video Sharing space. We hold monthly contests and pay out thousands of dollars to the most popular videos uploaded by people just like you." name="description">
+		
+			<link href="http://m1.thestaticvube.com/v/346.760/web3/css/shared.min.css" rel="stylesheet">
+			<link href="http://m2.thestaticvube.com/v/346.760/web3/css/web.min.css" rel="stylesheet">
+		
+		<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script>
+			var vconf = {
+				version: "",
+				vash: "105.000:346.760",
+				paths: {
+					hostname: "http://vube.com",
+					secureHostname: "https://vube.com",
+					static: "http://m1.thestaticvube.com/v/346.760/web3",
+					staticNoVer: "http://m1.thestaticvube.com/web3",
+					base: "/static/",
+					template: "/v/346.760/static3/templates/en/web",
+					templateNoVer: "/static3/templates/en/web",
+					templateModules: "/v/346.760/static3/templates/en/modules",
+					data: "/v/346.760/static3/templates/en/web/core/data/",
+					apiV1: "",
+					apiV2: "",
+					thumbnail: "//frame.thestaticvube.com/snap"
+				},
+				api: {
+					version: null
+				},
+				upload: {
+					path: "/upload",
+					host: "http://upload.vube.com",
+					port: "8082",
+					legacy: false,
+					chunked: false,  
+					chunkSize: 2097152, 
+					extensions: ["webm", "ogv", "ogg", "mp4", "mov", "mpeg", "mpg", "flv", "avi", "3gp", "wmv", "mkv", "m4v"]
+				},
+				grid: {
+					imageSize: {
+						width: 480,
+						height: 270
+					}
+				},
+				country: "US",
+				region: "",
+				targetAudience: "US",
+				dev: {
+					imageReplace: ""
+				},
+				videoUrlRoot: "http://video.thestaticvube.com",
+				videoStreamRoot: "//video.thestaticvube.com/hds/",
+				analytics: {
+					GA: ""
+				},
+				defaultResolution: "5",
+				isAdmin:  false ,
+				media: {
+					thumbnail: {
+						sizes: [{"height":128,"width":228},{"height":270,"width":480},{"height":542,"width":964},{"height":675,"width":1200}]
+					}
+				},
+				cookiePrefix: ""
+			};
+
+			
+			var FileAPI = {
+				jsUrl: "http://m1.thestaticvube.com/v/346.760/web3/vendor/angular-file-upload/dist/FileAPI.min.js",
+				flashUrl: "http://m2.thestaticvube.com/v/346.760/web3/vendor/angular-file-upload/dist/FileAPI.flash.swf"
+			};
+		</script>
+		<style> html{display:none;} </style>
+		<script>
+			if(self == top) {
+				document.documentElement.style.display = 'block'; 
+			} else {
+				top.location = self.location; 
+			}
+		</script>
+		<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/nkhlffiaajpkbhkbfloiccddngnialib">
+	<script async="" src="//connect.facebook.net/en_US/all.js"></script></head>
+	<body class="loading categories-closed nav-closed search-closed fontsSupported ng-scope" ng-class="{'user-logged-in': user.loggedIn}" ng-controller="BodyCtrl">
+		<header class="page-header">
+			<h1 class="logo"><a href="/" title="Vube.com">Vube</a></h1>
+			<button class="show-nav-btn" ng-click="toggleNav()"></button>
+			<button class="show-search-btn" ng-click="toggleSearch()"></button>
+			<div vube-search="" class="search-wrap"><label for="site-search">Search</label>
+<input id="site-search" type="text" element="searchInputElement" ng-keydown="checkSearchKey($event)" placeholder="Search">
+<button class="search-btn" ng-click="execSearch()" title="Search" alt="Search"></button>
+</div>
+			<nav vube-nav="" class="nav-wrap"><!-- ngIf: user.loggedIn -->
+<!-- ngIf: user.loggedIn -->
+<!-- ngIf: user.loggedIn && user.channel -->
+<a class="browse" ng-click="openCategories()">Browse</a>
+<a class="tags capitalize" href="/tags">tags</a>
+<!-- ngIf: !user.loggedIn --><a ng-if="!user.loggedIn" class="join ng-scope" href="/account/register">Join</a><!-- end ngIf: !user.loggedIn -->
+<a class="upload" href="/upload">Upload</a>
+<!-- ngIf: user.loggedIn -->
+<!-- ngIf: !user.loggedIn --><a ng-if="!user.loggedIn" vube-login="" class="ng-scope">Login</a><!-- end ngIf: !user.loggedIn -->
+</nav>
+		</header>
+		<noscript>
+			&lt;div class="no-script-content"&gt;
+				&lt;h1&gt;Vube.com&lt;/h1&gt;
+				&lt;p&gt;Vube is a new player in the Video Sharing space. We hold monthly contests and pay out thousands of dollars to the most popular videos uploaded by people just like you.&lt;/p&gt;
+				&lt;p&gt;This site relies on javascript.  Please enable it and refresh your page.&lt;/p&gt;
+			&lt;/div&gt;
+		</noscript>
+		<div class="content-wrap">
+			<nav vube-categories="" class="category-wrap"><div class="scroll-container">
+	<h2>Browse<button class="close" ng-click="closeCategories()"></button></h2>
+	<ul>
+		
+		<li><a href="/c/Music/videos">Music</a></li>
+		
+		<li><a href="/c/Movies/videos">Movies</a></li>
+		
+		<li><a href="/c/Series/videos">Series</a></li>
+		
+		<li><a href="/c/Dance/videos">Dance</a></li>
+		
+		<li><a href="/c/Gaming/videos">Gaming</a></li>
+		
+		<li><a href="/c/Food-Drink/videos">Food &amp; Drink</a></li>
+		
+		<li><a href="/c/Sports/videos">Sports</a></li>
+		
+		<li><a href="/c/Comedy/videos">Comedy</a></li>
+		
+		<li><a href="/c/Health-Fitness/videos">Health &amp; Fitness</a></li>
+		
+		<li><a href="/c/News/videos">News</a></li>
+		
+		<li><a href="/c/Politics/videos">Politics</a></li>
+		
+		<li><a href="/c/Fashion-Beauty/videos">Fashion &amp; Beauty</a></li>
+		
+		<li><a href="/c/Education/videos">Education</a></li>
+		
+		<li><a href="/c/Animals/videos">Animals</a></li>
+		
+		<li><a href="/c/People-Video-Blogs/videos">People &amp; Video Blogs</a></li>
+		
+		<li><a href="/c/Animation/videos">Animation</a></li>
+		
+		<li><a href="/c/Science/videos">Science</a></li>
+		
+		<li><a href="/c/Technology/videos">Technology</a></li>
+		
+		<li><a href="/c/Travel/videos">Travel</a></li>
+		
+		<li><a href="/c/Art/videos">Art</a></li>
+		
+		<li><a href="/c/Autos-Vehicles/videos">Autos &amp; Vehicles</a></li>
+		
+		<li><a href="/c/Activist-Non-Profit/videos">Activist &amp; Non-Profit</a></li>
+		
+		<li><a href="/c/Nature/videos">Nature</a></li>
+		
+		<li><a href="/c/Products/videos">Products</a></li>
+		
+		<li><a href="/c/Action-Adventure/videos">Action &amp; Adventure</a></li>
+		
+		<li><a href="/c/Celebrity-Showbiz/videos">Celebrity &amp; Showbiz</a></li>
+		
+		<li><a href="/c/Entertainment/videos">Entertainment</a></li>
+		
+		<li><a href="/c/Lifestyle/videos">Lifestyle</a></li>
+		
+		<li><a href="/c/Family/videos">Family</a></li>
+		
+	</ul>
+</div>
+</nav>
+			<!-- ngView:  --><section class="content ng-scope" ng-view=""><nav class="nav-bar" vube-nav-bar="">
+	<a stat-action="nav-trending" ng-class="{on:url.sort == 'trending'}" ng-href="/trending" class="trending on" href="/trending">Trending</a>
+	<a stat-action="nav-popular" ng-class="{on:url.sort == 'popular'}" ng-href="/popular" class="popular" href="/popular">Popular</a>
+	<a stat-action="nav-recent" ng-class="{on:url.sort == 'new'}" ng-href="/new" class="recent" href="/new">new</a>
+	<a stat-action="nav-contest" ng-class="{on:url.sort == 'contest'}" href="/contest" class="contest">contest</a>
+	<a ng-class="{on:u.channel == 'my-singing-monsters'}" href="/my-singing-monsters/contest" class="cover-contest">MSM Contest</a>
+	<!-- ngIf: user.loggedIn -->
+	<!-- ngIf: user.loggedIn -->
+	<!-- ngIf: !user.loggedIn --><a ng-if="!user.loggedIn" href="/testimonials" class="contest-link nav-bar-right ng-scope">Testimonials</a><!-- end ngIf: !user.loggedIn -->
+	<div class="social-widgets ng-scope" vube-social-widgets=""></div>
+</nav>
+<section ng-class="{testimonials: url.sort == 'testimonials'}" class="ng-scope">
+	<div class="social-widgets ng-scope" vube-social-widgets=""></div>
+
+	<!-- ngIf: !url.category && url.sort == 'trending' --><h3 class="page-title ng-scope" ng-if="!url.category &amp;&amp; url.sort == 'trending'">today's trending videos</h3><!-- end ngIf: !url.category && url.sort == 'trending' -->
+	<!-- ngIf: !url.category && url.sort == 'popular' -->
+	<!-- ngIf: !url.category && url.sort == 'new' -->
+	<!-- ngIf: !url.category && url.search -->
+	<!-- ngIf: url.category && !url.search -->
+	<!-- ngIf: url.category && url.search -->
+	<!-- ngIf: videos.datetitle -->
+	<!-- ngIf: tag -->
+	<!-- ngIf: url.sort == 'testimonials' -->
+
+	<!-- ngIf: noSearchResults -->
+	<!-- ngIf: noSearchResults -->
+
+	<!-- ngIf: videos.videos.length > 0 --><div vube-grid="" ng-if="videos.videos.length &gt; 0" videos="videos.videos" load-more="loadMore" options="gridOptions" class="ng-scope ng-isolate-scope vube-grid vube-grid-mobile"><div><div class="vube-grid-videos"><div class="vube-grid-group"><div class="vube-grid-group-inner" style="opacity: 0; "><div class="vube-thumbnail vube-quarter-sm-lt" url-id="NDegA7S1Nr">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/LED/l.e.d-all-life-long-msm-contest/NDegA7S1Nr">
+
+<span class="vube-thumbnail-duration">04:24</span>
+
+
+<span class="vube-thumbnail-likes">224</span>
+
+
+<span class="vube-thumbnail-views">164.7k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/LED/l.e.d-all-life-long-msm-contest/NDegA7S1Nr" class="vube-thumbnail-title">L.e.d All Life Long (MSM Contest)</a>
+
+
+<a href="/LED" class="vube-thumbnail-channel">LED</a>
+
+
+<span class="vube-thumbnail-date">2 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">224</span>
+
+
+<span class="vube-thumbnail-views">164.7k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr-sm" url-id="X8mtRTGlo2">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">1<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$15,000</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/ThePortraitArt/drawing-chloe-moretz-full-color-realistic-pastel-p/X8mtRTGlo2">
+
+<span class="vube-thumbnail-duration">02:27</span>
+
+
+<span class="vube-thumbnail-likes">5.8k</span>
+
+
+<span class="vube-thumbnail-views">1.8m</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/ThePortraitArt/drawing-chloe-moretz-full-color-realistic-pastel-p/X8mtRTGlo2" class="vube-thumbnail-title">Drawing chloe moretz - Full color realistic pastel portrait</a>
+
+
+<a href="/ThePortraitArt" class="vube-thumbnail-channel">ThePortraitArt</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">5.8k</span>
+
+
+<span class="vube-thumbnail-views">1.8m</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-bar" url-id="v7MA0TaiNt">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">100</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Alaila+Production/dean-make-me-feel-(msm-contest)/v7MA0TaiNt">
+
+<span class="vube-thumbnail-duration">03:07</span>
+
+
+<span class="vube-thumbnail-likes">349</span>
+
+
+<span class="vube-thumbnail-views">144.3k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Alaila+Production/dean-make-me-feel-(msm-contest)/v7MA0TaiNt" class="vube-thumbnail-title">Dean - Make Me Feel (MSM Contest)</a>
+
+
+<a href="/Alaila+Production" class="vube-thumbnail-channel">Alaila Production</a>
+
+
+<span class="vube-thumbnail-date">4 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">349</span>
+
+
+<span class="vube-thumbnail-views">144.3k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-quarter-sm-lt" url-id="ZWZP6g4WDw">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">12<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$900</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/The+Janes/ariana-grande-problem-acoustic-the-janes/ZWZP6g4WDw">
+
+<span class="vube-thumbnail-duration">03:38</span>
+
+
+<span class="vube-thumbnail-likes">1.6k</span>
+
+
+<span class="vube-thumbnail-views">663k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/The+Janes/ariana-grande-problem-acoustic-the-janes/ZWZP6g4WDw" class="vube-thumbnail-title">Ariana Grande - Problem (acoustic) The Janes</a>
+
+
+<a href="/The+Janes" class="vube-thumbnail-channel">The Janes</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.6k</span>
+
+
+<span class="vube-thumbnail-views">663k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr-sm" url-id="ZZBGeEzkKG">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">71</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/MrVikyRed/just-for-you-msm-contest-by-viky-red/ZZBGeEzkKG">
+
+<span class="vube-thumbnail-duration">03:29</span>
+
+
+<span class="vube-thumbnail-likes">524</span>
+
+
+<span class="vube-thumbnail-views">293.6k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/MrVikyRed/just-for-you-msm-contest-by-viky-red/ZZBGeEzkKG" class="vube-thumbnail-title">Just for you (MSM Contest) by Viky Red</a>
+
+
+<a href="/MrVikyRed" class="vube-thumbnail-channel">MrVikyRed</a>
+
+
+<span class="vube-thumbnail-date">5 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">524</span>
+
+
+<span class="vube-thumbnail-views">293.6k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr-sm" url-id="8Xvs1bofTi">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Havaiia+Family+Band/tehila-eternal-nights-msm-contest-original-song/8Xvs1bofTi">
+
+<span class="vube-thumbnail-duration">03:50</span>
+
+
+<span class="vube-thumbnail-likes">203</span>
+
+
+<span class="vube-thumbnail-views">114k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Havaiia+Family+Band/tehila-eternal-nights-msm-contest-original-song/8Xvs1bofTi" class="vube-thumbnail-title">Tehila - Eternal Nights (MSM Contest) Original Song</a>
+
+
+<a href="/Havaiia+Family+Band" class="vube-thumbnail-channel">Havaiia Family Band</a>
+
+
+<span class="vube-thumbnail-date">4 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">203</span>
+
+
+<span class="vube-thumbnail-views">114k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-quarter-sm" url-id="Q9uZdgIl4D">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">4<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$3,500</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Atoxi+chaine/spacedrum-by-yuki-koshimoto/Q9uZdgIl4D">
+
+<span class="vube-thumbnail-duration">03:03</span>
+
+
+<span class="vube-thumbnail-likes">4.1k</span>
+
+
+<span class="vube-thumbnail-views">1.7m</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Atoxi+chaine/spacedrum-by-yuki-koshimoto/Q9uZdgIl4D" class="vube-thumbnail-title">Spacedrum By Yuki Koshimoto</a>
+
+
+<a href="/Atoxi+chaine" class="vube-thumbnail-channel">Atoxi chaine</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">4.1k</span>
+
+
+<span class="vube-thumbnail-views">1.7m</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-lt" url-id="HhkmClvrQa">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">50<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$130</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Christoffer+Brandsborg+-+Acoustic+Guitarist/emotions-msm-contest-christoffer-brandsborg/HhkmClvrQa">
+
+<span class="vube-thumbnail-duration">02:32</span>
+
+
+<span class="vube-thumbnail-likes">771</span>
+
+
+<span class="vube-thumbnail-views">380.8k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Christoffer+Brandsborg+-+Acoustic+Guitarist/emotions-msm-contest-christoffer-brandsborg/HhkmClvrQa" class="vube-thumbnail-title">Emotions (MSM Contest) - Christoffer Brandsborg</a>
+
+
+<a href="/Christoffer+Brandsborg+-+Acoustic+Guitarist" class="vube-thumbnail-channel">Christoffer Brandsborg - Acoustic Guitarist</a>
+
+
+<span class="vube-thumbnail-date">7 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">771</span>
+
+
+<span class="vube-thumbnail-views">380.8k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr" url-id="LCzGLBWJp3">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">10<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$1,000</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Carl+Rag/one-more-time-remix-by-carl-rag/LCzGLBWJp3">
+
+<span class="vube-thumbnail-duration">01:53</span>
+
+
+<span class="vube-thumbnail-likes">1.8k</span>
+
+
+<span class="vube-thumbnail-views">951.1k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Carl+Rag/one-more-time-remix-by-carl-rag/LCzGLBWJp3" class="vube-thumbnail-title">One More Time Remix by Carl Rag</a>
+
+
+<a href="/Carl+Rag" class="vube-thumbnail-channel">Carl Rag</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.8k</span>
+
+
+<span class="vube-thumbnail-views">951.1k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr" url-id="W3iYYsCeqE">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Cuantune/addiction-msm-contest-by-cuantune/W3iYYsCeqE">
+
+<span class="vube-thumbnail-duration">04:27</span>
+
+
+<span class="vube-thumbnail-likes">40</span>
+
+
+<span class="vube-thumbnail-views">22.8k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Cuantune/addiction-msm-contest-by-cuantune/W3iYYsCeqE" class="vube-thumbnail-title">Addiction (MSM Contest) By Cuantune</a>
+
+
+<a href="/Cuantune" class="vube-thumbnail-channel">Cuantune</a>
+
+
+<span class="vube-thumbnail-date">3 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">40</span>
+
+
+<span class="vube-thumbnail-views">22.8k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect" url-id="DkEBeZl6xv">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">97</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/ThePortraitArt/drawing-the-gorgeous-miranda-kerr/DkEBeZl6xv">
+
+<span class="vube-thumbnail-duration">02:33</span>
+
+
+<span class="vube-thumbnail-likes">355</span>
+
+
+<span class="vube-thumbnail-views">210.9k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/ThePortraitArt/drawing-the-gorgeous-miranda-kerr/DkEBeZl6xv" class="vube-thumbnail-title">Drawing the gorgeous Miranda Kerr</a>
+
+
+<a href="/ThePortraitArt" class="vube-thumbnail-channel">ThePortraitArt</a>
+
+
+<span class="vube-thumbnail-date">5 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">355</span>
+
+
+<span class="vube-thumbnail-views">210.9k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-quarter-sm-lt" url-id="JlqMFKBq1W">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">40<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$180</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/lovelycover/adele-rolling-in-the-deep-mongolian-cover/JlqMFKBq1W">
+
+<span class="vube-thumbnail-duration">04:01</span>
+
+
+<span class="vube-thumbnail-likes">1.1k</span>
+
+
+<span class="vube-thumbnail-views">540.4k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/lovelycover/adele-rolling-in-the-deep-mongolian-cover/JlqMFKBq1W" class="vube-thumbnail-title">Adele - Rolling in The Deep Mongolian Cover</a>
+
+
+<a href="/lovelycover" class="vube-thumbnail-channel">lovelycover</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.1k</span>
+
+
+<span class="vube-thumbnail-views">540.4k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr-sm" url-id="QJbWMWiOLl">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">8<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$1,250</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Sabrina+Gray/say-something-a-great-big-world-christina-aguilera/QJbWMWiOLl">
+
+<span class="vube-thumbnail-duration">03:48</span>
+
+
+<span class="vube-thumbnail-likes">2.9k</span>
+
+
+<span class="vube-thumbnail-views">1.4m</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Sabrina+Gray/say-something-a-great-big-world-christina-aguilera/QJbWMWiOLl" class="vube-thumbnail-title">Say Something - A Great Big World &amp; Christina Aguilera (Cover by Sabrina Gray)</a>
+
+
+<a href="/Sabrina+Gray" class="vube-thumbnail-channel">Sabrina Gray</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">2.9k</span>
+
+
+<span class="vube-thumbnail-views">1.4m</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr" url-id="yYCFKpA95m">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">94</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/valentinascheffold/your-record-msm-contest-original-song-by-valentina/yYCFKpA95m">
+
+<span class="vube-thumbnail-duration">02:50</span>
+
+
+<span class="vube-thumbnail-likes">373</span>
+
+
+<span class="vube-thumbnail-views">220k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/valentinascheffold/your-record-msm-contest-original-song-by-valentina/yYCFKpA95m" class="vube-thumbnail-title">Your Record - MSM contest (Original Song) By Valentina Scheffold</a>
+
+
+<a href="/valentinascheffold" class="vube-thumbnail-channel">valentinascheffold</a>
+
+
+<span class="vube-thumbnail-date">7 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">373</span>
+
+
+<span class="vube-thumbnail-views">220k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect" url-id="1yyXEuYve5">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/ThePortraitArt/girl-by-the-ocean-drawing-art-video/1yyXEuYve5">
+
+<span class="vube-thumbnail-duration">02:31</span>
+
+
+<span class="vube-thumbnail-likes">138</span>
+
+
+<span class="vube-thumbnail-views">96.7k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/ThePortraitArt/girl-by-the-ocean-drawing-art-video/1yyXEuYve5" class="vube-thumbnail-title">Girl by the Ocean Drawing - Art Video</a>
+
+
+<a href="/ThePortraitArt" class="vube-thumbnail-channel">ThePortraitArt</a>
+
+
+<span class="vube-thumbnail-date">4 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">138</span>
+
+
+<span class="vube-thumbnail-views">96.7k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-quarter-sm-lt" url-id="iQjRFl7SgW">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/derekcate/you-re-my-life-msm-contest-original-by-derek-cate/iQjRFl7SgW">
+
+<span class="vube-thumbnail-duration">03:23</span>
+
+
+<span class="vube-thumbnail-likes">123</span>
+
+
+<span class="vube-thumbnail-views">110.8k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/derekcate/you-re-my-life-msm-contest-original-by-derek-cate/iQjRFl7SgW" class="vube-thumbnail-title">You're My Life (MSM Contest) Original By Derek Cate</a>
+
+
+<a href="/derekcate" class="vube-thumbnail-channel">derekcate</a>
+
+
+<span class="vube-thumbnail-date">4 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">123</span>
+
+
+<span class="vube-thumbnail-views">110.8k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr-sm" url-id="1n1SZd9ezK">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">56</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/BILLbilly01/how-long-will-i-love-you-by-ellie-goulding-cover-b/1n1SZd9ezK">
+
+<span class="vube-thumbnail-duration">03:12</span>
+
+
+<span class="vube-thumbnail-likes">669</span>
+
+
+<span class="vube-thumbnail-views">340k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/BILLbilly01/how-long-will-i-love-you-by-ellie-goulding-cover-b/1n1SZd9ezK" class="vube-thumbnail-title">How Long Will I Love You By Ellie Goulding Cover By Billbilly01 And Jasmine</a>
+
+
+<a href="/BILLbilly01" class="vube-thumbnail-channel">BILLbilly01</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">669</span>
+
+
+<span class="vube-thumbnail-views">340k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-box" url-id="45ESixQhux">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/John+Concepcion/sam-smith-latch-cover-john-concepcion/45ESixQhux">
+
+<span class="vube-thumbnail-duration">04:01</span>
+
+
+<span class="vube-thumbnail-likes">96</span>
+
+
+<span class="vube-thumbnail-views">73k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/John+Concepcion/sam-smith-latch-cover-john-concepcion/45ESixQhux" class="vube-thumbnail-title">Sam Smith - Latch (Cover) - John Concepcion</a>
+
+
+<a href="/John+Concepcion" class="vube-thumbnail-channel">John Concepcion</a>
+
+
+<span class="vube-thumbnail-date">4 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">96</span>
+
+
+<span class="vube-thumbnail-views">73k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-quarter-sm-lt" url-id="eu1LJqsH5P">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Cristina+Electric+Violinist/&quot;pirates-of-the-caribbean&quot;-violin-theme-&quot;he-s-a-pi/eu1LJqsH5P">
+
+<span class="vube-thumbnail-duration">02:20</span>
+
+
+<span class="vube-thumbnail-likes">208</span>
+
+
+<span class="vube-thumbnail-views">131.6k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Cristina+Electric+Violinist/&quot;pirates-of-the-caribbean&quot;-violin-theme-&quot;he-s-a-pi/eu1LJqsH5P" class="vube-thumbnail-title">"Pirates Of The Caribbean" (Violin Theme "He's A Pirate")</a>
+
+
+<a href="/Cristina+Electric+Violinist" class="vube-thumbnail-channel">Cristina Electric Violinist</a>
+
+
+<span class="vube-thumbnail-date">6 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">208</span>
+
+
+<span class="vube-thumbnail-views">131.6k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr-sm" url-id="PXggmnFLor">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">27<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$425</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Tantrumjas/magic-coldplay-cover-by-jasmine-thompson/PXggmnFLor">
+
+<span class="vube-thumbnail-duration">04:00</span>
+
+
+<span class="vube-thumbnail-likes">1.3k</span>
+
+
+<span class="vube-thumbnail-views">919.5k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Tantrumjas/magic-coldplay-cover-by-jasmine-thompson/PXggmnFLor" class="vube-thumbnail-title">Magic - Coldplay (Cover by Jasmine Thompson)</a>
+
+
+<a href="/Tantrumjas" class="vube-thumbnail-channel">Tantrumjas</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.3k</span>
+
+
+<span class="vube-thumbnail-views">919.5k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-box" url-id="oxwyXstX1T">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/derekcate/queen-of-breaking-hearts-derek-cate-original/oxwyXstX1T">
+
+<span class="vube-thumbnail-duration">03:28</span>
+
+
+<span class="vube-thumbnail-likes">186</span>
+
+
+<span class="vube-thumbnail-views">171.7k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/derekcate/queen-of-breaking-hearts-derek-cate-original/oxwyXstX1T" class="vube-thumbnail-title">Queen Of Breaking Hearts (MSM Contest) Derek Cate Original</a>
+
+
+<a href="/derekcate" class="vube-thumbnail-channel">derekcate</a>
+
+
+<span class="vube-thumbnail-date">5 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">186</span>
+
+
+<span class="vube-thumbnail-views">171.7k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-lt" url-id="MTv97SNhmL">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">73</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Luciana+Zogbi/i-see-fire/MTv97SNhmL">
+
+<span class="vube-thumbnail-duration">03:44</span>
+
+
+<span class="vube-thumbnail-likes">805</span>
+
+
+<span class="vube-thumbnail-views">412.2k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Luciana+Zogbi/i-see-fire/MTv97SNhmL" class="vube-thumbnail-title">I See Fire (Ed Sheeran) - Luciana Zogbi &amp; Gianfranco Casanova</a>
+
+
+<a href="/Luciana+Zogbi" class="vube-thumbnail-channel">Luciana Zogbi</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">805</span>
+
+
+<span class="vube-thumbnail-views">412.2k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr" url-id="VlcTL1tfay">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">34<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$250</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/AldrichAndJames/let-it-go-(frozen-ost)-cover-by-aldrich-james/VlcTL1tfay">
+
+<span class="vube-thumbnail-duration">04:13</span>
+
+
+<span class="vube-thumbnail-likes">1.9k</span>
+
+
+<span class="vube-thumbnail-views">901.9k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/AldrichAndJames/let-it-go-(frozen-ost)-cover-by-aldrich-james/VlcTL1tfay" class="vube-thumbnail-title">Let It Go (Frozen OST) Cover by Aldrich &amp; James</a>
+
+
+<a href="/AldrichAndJames" class="vube-thumbnail-channel">AldrichAndJames</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.9k</span>
+
+
+<span class="vube-thumbnail-views">901.9k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-bar" url-id="iSddZH1Gth">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">41<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$175</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Sabrina+Gray/christina-perri-a-thousand-years-(cover-by-sabrina/iSddZH1Gth">
+
+<span class="vube-thumbnail-duration">03:43</span>
+
+
+<span class="vube-thumbnail-likes">1.5k</span>
+
+
+<span class="vube-thumbnail-views">716.8k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Sabrina+Gray/christina-perri-a-thousand-years-(cover-by-sabrina/iSddZH1Gth" class="vube-thumbnail-title">Christina Perri - A Thousand Years (Cover By Sabrina Gray)</a>
+
+
+<a href="/Sabrina+Gray" class="vube-thumbnail-channel">Sabrina Gray</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.5k</span>
+
+
+<span class="vube-thumbnail-views">716.8k</span>
+
+</div>
+</div>
+</div></div></div><div class="vube-grid-group"><div class="vube-grid-group-inner" style="opacity: 0; "><div class="vube-thumbnail vube-sqr-sm" url-id="MVYmgnNu9j">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">35<span class="pipe"> | </span></span>
+
+
+<span class="vube-thumbnail-cash">$225</span>
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/ThePortraitArt/drawing-jennifer-lawrence-upside-down-art-video/MVYmgnNu9j">
+
+<span class="vube-thumbnail-duration">03:05</span>
+
+
+<span class="vube-thumbnail-likes">1.5k</span>
+
+
+<span class="vube-thumbnail-views">663.8k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/ThePortraitArt/drawing-jennifer-lawrence-upside-down-art-video/MVYmgnNu9j" class="vube-thumbnail-title">Drawing Jennifer Lawrence upside down ! Art Video</a>
+
+
+<a href="/ThePortraitArt" class="vube-thumbnail-channel">ThePortraitArt</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">1.5k</span>
+
+
+<span class="vube-thumbnail-views">663.8k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-quarter-sm" url-id="9DMG7lEDLG">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/ThePortraitArt/drawing-einstein-art-video/9DMG7lEDLG">
+
+<span class="vube-thumbnail-duration">01:50</span>
+
+
+<span class="vube-thumbnail-likes">160</span>
+
+
+<span class="vube-thumbnail-views">125.5k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/ThePortraitArt/drawing-einstein-art-video/9DMG7lEDLG" class="vube-thumbnail-title">Drawing Einstein - Art Video</a>
+
+
+<a href="/ThePortraitArt" class="vube-thumbnail-channel">ThePortraitArt</a>
+
+
+<span class="vube-thumbnail-date">5 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">160</span>
+
+
+<span class="vube-thumbnail-views">125.5k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-bar" url-id="LOLFSJFBBk">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">93</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Tantrumjas/run-msm-contest-by-jasmine-thompson/LOLFSJFBBk">
+
+<span class="vube-thumbnail-duration">03:48</span>
+
+
+<span class="vube-thumbnail-likes">375</span>
+
+
+<span class="vube-thumbnail-views">264.2k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Tantrumjas/run-msm-contest-by-jasmine-thompson/LOLFSJFBBk" class="vube-thumbnail-title">Run (MSM Contest) by Jasmine Thompson</a>
+
+
+<a href="/Tantrumjas" class="vube-thumbnail-channel">Tantrumjas</a>
+
+
+<span class="vube-thumbnail-date">1 week ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">375</span>
+
+
+<span class="vube-thumbnail-views">264.2k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-lt" url-id="qpvLQqwBhC">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Roshan+Dahal/one-day-msm-contest-roshan-dahal-original-song/qpvLQqwBhC">
+
+<span class="vube-thumbnail-duration">03:48</span>
+
+
+<span class="vube-thumbnail-likes">181</span>
+
+
+<span class="vube-thumbnail-views">122k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Roshan+Dahal/one-day-msm-contest-roshan-dahal-original-song/qpvLQqwBhC" class="vube-thumbnail-title">One Day (MSM Contest) - Roshan Dahal (Original Song)</a>
+
+
+<a href="/Roshan+Dahal" class="vube-thumbnail-channel">Roshan Dahal</a>
+
+
+<span class="vube-thumbnail-date">6 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">181</span>
+
+
+<span class="vube-thumbnail-views">122k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-sqr" url-id="seaPmomcEM">
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/Brigitte+Wickens/hallelujah-cover-by-brigitte-wickens/seaPmomcEM">
+
+<span class="vube-thumbnail-duration">03:34</span>
+
+
+<span class="vube-thumbnail-likes">240</span>
+
+
+<span class="vube-thumbnail-views">170.1k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/Brigitte+Wickens/hallelujah-cover-by-brigitte-wickens/seaPmomcEM" class="vube-thumbnail-title">HALLELUJAH - Cover By Brigitte Wickens</a>
+
+
+<a href="/Brigitte+Wickens" class="vube-thumbnail-channel">Brigitte Wickens</a>
+
+
+<span class="vube-thumbnail-date">6 days ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">240</span>
+
+
+<span class="vube-thumbnail-views">170.1k</span>
+
+</div>
+</div>
+</div><div class="vube-thumbnail vube-rect-bar" url-id="kHWl3MBWYH">
+<div class="vube-thumbnail-contest">
+
+<span class="vube-thumbnail-rank">92</span>
+
+
+</div>
+
+<div class="vube-thumbnail-wrap">
+<a class="vube-thumbnail-link" href="/SoNevable/nev-plays-tetris-hero-98-expert-launchpad-edition/kHWl3MBWYH">
+
+<span class="vube-thumbnail-duration">01:57</span>
+
+
+<span class="vube-thumbnail-likes">706</span>
+
+
+<span class="vube-thumbnail-views">454.2k</span>
+
+</a>
+</div>
+
+<div class="vube-thumbnail-metadata">
+
+<a href="/SoNevable/nev-plays-tetris-hero-98-expert-launchpad-edition/kHWl3MBWYH" class="vube-thumbnail-title">Nev Plays: Tetris Hero 98% Expert (Launchpad Edition)</a>
+
+
+<a href="/SoNevable" class="vube-thumbnail-channel">SoNevable</a>
+
+
+<span class="vube-thumbnail-date">2 weeks ago</span>
+
+<div class="vube-thumbnail-mobile">
+
+<span class="vube-thumbnail-likes">706</span>
+
+
+<span class="vube-thumbnail-views">454.2k</span>
+
+</div>
+</div>
+</div></div></div></div>
+<p class="vube-grid-no-results" style="display: none; ">No More Results</p>
+<button class="vube-grid-load-more" style="display: block; ">Load More Results</button></div></div><!-- end ngIf: videos.videos.length > 0 -->
+</section>
+</section>
+			<div vube-upload=""></div>
+		</div>
+		<footer class="page-footer" vube-footer=""><div class="footer-top">
+	<nav class="footer-nav">
+		<a href="/p/contact">Contact Us</a>
+		<a href="/p/terms">Terms &amp; Conditions</a>
+		<a href="/p/privacy">Privacy Policy</a>
+		<a href="/contest/rules">Contest Rules</a>
+		<a href="/testimonials">Testimonials</a>
+		<a href="https://advertising.vube.com/" target="_blank">advertising</a>
+		<a href="/my-singing-monsters/contest" target="_blank">MSM Contest</a>
+	</nav>
+	<div class="locale-select">
+		<select vube-change="changeLocale(value, $el)" element="localeSelectElement">
+			
+			<option ng-selected="selectedLocaleCode == 'id'" value="id">Bahasa Indonesia - Indonesian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ms'" value="ms">Bahasa Melayu - Malay</option>
+			
+			<option ng-selected="selectedLocaleCode == 'bs'" value="bs">bosanski - Bosnian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'da'" value="da">dansk - Danish</option>
+			
+			<option ng-selected="selectedLocaleCode == 'de'" value="de">Deutsch - German</option>
+			
+			<option ng-selected="selectedLocaleCode == 'et'" value="et">Eesti - Estonian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'en-au'" value="en-au">English (AU/NZ)</option>
+			
+			<option ng-selected="selectedLocaleCode == 'en-gb'" value="en-gb">English (GB/UK/ZA)</option>
+			
+			<option ng-selected="selectedLocaleCode == 'en'" value="en">English (US/Canada) - English</option>
+			
+			<option ng-selected="selectedLocaleCode == 'es'" value="es">español - Spanish</option>
+			
+			<option ng-selected="selectedLocaleCode == 'fr'" value="fr">français - French</option>
+			
+			<option ng-selected="selectedLocaleCode == 'fr-ca'" value="fr-ca">français (canadien) - French (Canada)</option>
+			
+			<option ng-selected="selectedLocaleCode == 'sq'" value="sq">gjuha shqipe - Albanian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'hr'" value="hr">hrvatski jezik - Croatian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'it'" value="it">italiano - Italian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'pl'" value="pl">język polski - Polish</option>
+			
+			<option ng-selected="selectedLocaleCode == 'sw'" value="sw">Kiswahili - Swahili</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ht'" value="ht">Kreyòl ayisyen - Haitian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'lv'" value="lv">latviešu valoda - Latvian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'lt'" value="lt">lietuvių kalba - Lithuanian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'hu'" value="hu">magyar - Hungarian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'nl'" value="nl">Nederlands - Dutch</option>
+			
+			<option ng-selected="selectedLocaleCode == 'nl-be'" value="nl-be">Nederlands (Belgisch) - Dutch (Flemish)</option>
+			
+			<option ng-selected="selectedLocaleCode == 'no'" value="no">norsk - Norwegian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'uz'" value="uz">Oʻzbek - Uzbek</option>
+			
+			<option ng-selected="selectedLocaleCode == 'pt'" value="pt">português - Portuguese</option>
+			
+			<option ng-selected="selectedLocaleCode == 'pt-br'" value="pt-br">português (do Brasil) - Portuguese (Brazil)</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ro'" value="ro">română - Romanian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'sl'" value="sl">slovenski jezik - Slovenian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'sk'" value="sk">slovenčina - Slovak</option>
+			
+			<option ng-selected="selectedLocaleCode == 'fi'" value="fi">Suomen kieli - Finnish</option>
+			
+			<option ng-selected="selectedLocaleCode == 'sv'" value="sv">svenska - Swedish</option>
+			
+			<option ng-selected="selectedLocaleCode == 'tl'" value="tl">Tagalog</option>
+			
+			<option ng-selected="selectedLocaleCode == 'vi'" value="vi">Tiếng Việt - Vietnamese</option>
+			
+			<option ng-selected="selectedLocaleCode == 'tr'" value="tr">Türkçe - Turkish</option>
+			
+			<option ng-selected="selectedLocaleCode == 'cs'" value="cs">čeština - Czech</option>
+			
+			<option ng-selected="selectedLocaleCode == 'el'" value="el">ελληνικά - Greek</option>
+			
+			<option ng-selected="selectedLocaleCode == 'az'" value="az">Азәрбајҹан - Azerbaijani</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ky'" value="ky">Кыргызча - Kirghiz</option>
+			
+			<option ng-selected="selectedLocaleCode == 'mk'" value="mk">Македонски јазик - Macedonian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'uk'" value="uk">Українська мова - Ukrainian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'be'" value="be">беларуская мова  - Belarusian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'bg'" value="bg">български език - Bulgarian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ru'" value="ru">русский язык - Russian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'sr'" value="sr">српски - Serbian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'tg'" value="tg">тоҷикӣ - Tajik</option>
+			
+			<option ng-selected="selectedLocaleCode == 'kk'" value="kk">қазақ - Kazakh</option>
+			
+			<option ng-selected="selectedLocaleCode == 'hy'" value="hy">հայերեն - Armenian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'he'" value="he">עִבְרִית - Hebrew</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ar'" value="ar">العربية - Arabic</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ur'" value="ur">اُردُو - Urdu</option>
+			
+			<option ng-selected="selectedLocaleCode == 'fa'" value="fa">فارسی - Persian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ps'" value="ps">پښتو - Pashto</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ne'" value="ne">नेपाली - Nepali</option>
+			
+			<option ng-selected="selectedLocaleCode == 'mr'" value="mr">मराठी - Marathi</option>
+			
+			<option ng-selected="selectedLocaleCode == 'hi'" value="hi">हिन्दी - Hindi</option>
+			
+			<option ng-selected="selectedLocaleCode == 'bn'" value="bn">বাংলা - Bengali</option>
+			
+			<option ng-selected="selectedLocaleCode == 'pa'" value="pa">ਪੰਜਾਬੀ - Punjabi</option>
+			
+			<option ng-selected="selectedLocaleCode == 'gu'" value="gu">ગુજરાતી - Gujarati</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ta'" value="ta">தமிழ் - Tamil</option>
+			
+			<option ng-selected="selectedLocaleCode == 'te'" value="te">తెలుగు - Telugu</option>
+			
+			<option ng-selected="selectedLocaleCode == 'kn'" value="kn">ಕನ್ನಡ - Kannada</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ml'" value="ml">മലയാളം - Malayalam</option>
+			
+			<option ng-selected="selectedLocaleCode == 'si'" value="si">සිංහල - Sinhala</option>
+			
+			<option ng-selected="selectedLocaleCode == 'th'" value="th">ภาษาไทย - Thai</option>
+			
+			<option ng-selected="selectedLocaleCode == 'lo'" value="lo">ພາສາລາວ - Lao</option>
+			
+			<option ng-selected="selectedLocaleCode == 'my'" value="my">မြန်မာစာ - Burmese</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ka'" value="ka">ქართული - Georgian</option>
+			
+			<option ng-selected="selectedLocaleCode == 'km'" value="km">ភាសាខ្មែរ - Khmer</option>
+			
+			<option ng-selected="selectedLocaleCode == 'zh-hans'" value="zh-hans">中文 (简体) - Chinese (Simplified)</option>
+			
+			<option ng-selected="selectedLocaleCode == 'zh'" value="zh">中文 (繁體) - Traditional Chinese</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ja'" value="ja">日本語 - Japanese</option>
+			
+			<option ng-selected="selectedLocaleCode == 'ko'" value="ko">한국어 - Korean</option>
+			
+		</select>
+		<span class="selected ng-binding"></span>
+	</div>
+</div>
+<small class="copywrite">Copyright (c) 2014 by <a href="/">Vube</a></small>
+</footer>
+
+		
+			<script src="http://m1.thestaticvube.com/v/346.760/web3/js/web-en.min.js"></script><div class="vube-meow-container"><div class="vube-meow-scroll-container"></div></div>
+		
+		<script type="text/ng-template" id="/static3/templates/en/web/core/templates/translations.json">{
+	"VS_ACCOUNT_NOT_YET_VERIFIED_HTML": "Your account hasn't been verified. Please click on the link in your email. If you need another link, go to 'My Account' and click 'Resend Verification Email.",
+	"VS_SIGN_IN_SUCCESS_MESSAGE": "You have successfully signed in",
+	"VS_EMAIL_VERIFICATION_SUCCESS_PLEASE_LOGIN": "Congratulations! Your email is now verified.",
+	"VS_EMAIL_VERIFICATION_FAILED": "There was a problem verifying your email. Your key has probably expired. Go to \"My Account\" and send another verification email.",
+	"VS_FILE_TYPE_NOT_ALLOWED": "File type not allowed",
+	"VS_LOAD_MORE_RESULTS": "Load More Results",
+	"VS_NO_MORE_RESULTS": "No More Results",
+	"VS_LOADING_MORE": "Loading More...",
+	"VS_HELP_ME_WIN": "Help Me Win {{dollar_amount}}",
+	"VS_CHOOSE_A_CATEGORY": "Choose a category",
+	"VS_LANGUAGE": "Language",
+	"VS_ERROR_SAVING": "Error saving changes.",
+	"VS_CHANGES_SAVED": "Changes have been saved.",
+	"VS_VIDEO_CANCELED": "Video Cancelled",
+	"VS_RESULTS_FOR_SEARCH_WORD": "Results for {{search}}",
+	"VS_LIKE_VIDEO": "I like this @Vube video.",
+	"VS_MY_ACCOUNT": "My Account",
+	"VS_SAVE_BUTTON": "Save",
+	"VS_ERROR_MESSAGE": "An error has occurred Please try again later.",
+	"VS_ACCOUNT_ALREADY_EXISTS": "An account is already registered with this email",
+	"VS_TITLE":"Title",
+
+
+	"FLOATEE": {
+		"description"    : "Description",
+		"comments"       : "Comments",
+		"comment"        : "Comment",
+		"embed"          : "embed", 
+		"commentOnVideo" : "Comment on this video",
+		"plays"          : "<ng-pluralize count=\"views\" when=\"{&quot;one&quot;:&quot;{{ views| number }} play&quot;,&quot;other&quot;:&quot;{{ views| number }} plays&quot;}\"></ng-pluralize>",
+		"subscribe"      : "Subscribe",
+		"unsubscribe"    : "Unsubscribe",
+		"share"          : "Share",
+		"pcLodeLetter"   : "Load More Results",
+		"stepTitle"      : "Help Me Win $15,000",
+		"joinWith"       : "join with",
+		"joinOther"      : "or <a class=\"join-here-link\" href=\"/account/register\">join here</a> and confirm your email",
+		"likeMyVideo"    : "\"Like\" My Video!",
+		"help"           : "Help me win $15,000 by \"Liking\" my Video!",
+		"more"           : "Currently I'm ranked #{{ rank }}. I need <ng-pluralize count=\"mLikes\" when=\"{&quot;one&quot;:&quot;{{ mLikes | number }} more \\&quot;like\\&quot;&quot;,&quot;other&quot;:&quot;{{ mLikes | number }} more \\&quot;likes\\&quot;&quot;}\"></ng-pluralize> to reach #{{ nRank }}",
+		"stay"           : "Currently I'm ranked #1. I need more \"likes\" to stay #1"
+	}
+}
+</script>
+
+
+		<script>
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-38943666-1']);
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			
+		</script>
+		
+	
+<div id="fb-root"></div></body></html>

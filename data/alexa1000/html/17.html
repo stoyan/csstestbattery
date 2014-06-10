@@ -1,0 +1,97 @@
+<!DOCTYPE html><html><head>
+    <meta http-equiv="Content-type" content="text/html; charset=gb2312">
+    <title>Sina Visitor System</title>
+</head>
+<body>
+<span id="message"></span>
+<script type="text/javascript" src="/js/visitor/mini.js"></script>
+<script type="text/javascript">
+    var url = url || {};
+    (function () {
+        this.l = function (u, c) {
+            try {
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s[document.all ? "onreadystatechange" : "onload"] = function () {
+
+                    if (document.all && this.readyState != "loaded" && this.readyState != "complete") {
+                        return
+                    }
+                    this[document.all ? "onreadystatechange" : "onload"] = null;
+                    this.parentNode.removeChild(this);
+                    if (c) {
+                        c()
+                    }
+                };
+                s.src = u;
+                document.getElementsByTagName("head")[0].appendChild(s)
+            } catch (e) {
+            }
+        };
+    }).call(url);
+
+    // 流程入口
+    wload(function () {
+
+        try {
+            tid.get(function (tid, where, confidence) {
+                incarnate(tid, where, confidence);
+            });
+        } catch (e) {
+            // 出错
+            error_back();
+        }
+    });
+
+    // 跳转回初始页面
+    var return_back = function (response) {
+
+        if (response['retcode'] == 20000000) {
+            var url = "http://weibo.com/";
+            if (url != "none") {
+                window.location.href = url;
+            }
+        } else {
+            // 出错
+            error_back(response['msg']);
+        }
+    };
+
+    // 向新浪域发送请求，为新浪域种下访客 cookie
+    var cross_domain = function (response) {
+
+        if (response['retcode'] == 20000000) {
+            var cross_domain_intr = "http://login.sina.com.cn/visitor/visitor?a=crossdomain&cb=return_back&s=" +
+                    encodeURIComponent(response['data']['sub']) + "&sp=" + encodeURIComponent(response['data']['subp']) + "&_rand=" + Math.random();
+            url.l(cross_domain_intr);
+        } else {
+            // 出错
+            error_back(response['msg']);
+        }
+    };
+
+    // 为用户赋予访客 cookie
+    var incarnate = function (tid, where, conficence) {
+        var gen_conf = "";
+        var incarnate_intr = "http://passport.weibo.com/visitor/visitor?a=incarnate&t=" +
+                encodeURIComponent(tid) + "&w=" + encodeURIComponent(where) + "&c=" + encodeURIComponent(conficence) +
+                "&gc=" + encodeURIComponent(gen_conf) + "&cb=cross_domain&_rand=" + Math.random();
+        url.l(incarnate_intr);
+    };
+
+    // 出错情况返回原页面
+    var error_back = function (msg) {
+        var url = "http://weibo.com/";
+        if (url != "none") {
+            if (url.indexOf('ssovie4c55=0') === -1) {
+                url += (((url.indexOf('?') === -1) ? '?' : '&') + 'ssovie4c55=0');
+            }
+            window.location.href = 'http://weibo.com/login.php';
+        } else {
+            document.getElementById('message').innerHTML = 'Error occurred' + (msg ? (': ' + msg) : '');
+        }
+    }
+
+</script>
+
+<div style="position: absolute; height: 1px; width: 1px; left: 1px; top: 0px; z-index: 9999; "><div id="swfid1continner" style="visibility: visible; "></div></div><div style="position: absolute; height: 1px; width: 1px; left: 1px; top: 0px; z-index: 9999; "><div id="ufpswfcontiner" style="visibility: visible; "></div></div><div id="ufp" style="display: none; "></div></body></html>

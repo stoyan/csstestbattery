@@ -1,0 +1,367 @@
+
+@charset "utf-8";
+/* = 车讯网首页
+     作者：班亚南
+	 创建日期：2014-2-15
+	 修改人：
+	 修改日期：
+	 修改内容：
+-------------------------------------------------------------------------------------------------*/
+/* 公用的base */
+@import url(http://i0.chexun.net/images/site/commoncss/base.css);
+/* 焦点图 */
+@import url(focus.css);
+/* 网站布局layout */
+@import url(http://i0.chexun.net/images/site/commoncss/layout.css);
+/*头部header*/
+@import url(header.css);
+/*页脚footer*/
+@import url(footer.css);
+/*选择车型*/
+.select{position: relative;}
+.select-tab{width:905px; float: left;}
+.select-tab-hd li{width:92px; height:99px; text-align: center; float:left;background-position: 0 -126px; margin:-45px 0 0 10px; position:relative; z-index:999; cursor: pointer;}
+.select-tab-hd li span{ display: block;}
+.select-tab-hd h4{ font-weight: normal; color: #27cde9}
+.select-cur{background-position:-93px -126px !important;}
+.select-tab-hd li a{color: #27cde9}
+.select-icon{width:44px; height:24px; margin:22px auto 3px auto;background-position:-402px -43px;}
+.select-icon1{width:40px; height:19px;margin:24px auto 6px auto;background-position:-452px -43px;}
+.select-icon2{width:42px; height:24px;margin:24px auto 1px auto;background-position:-402px -67px;}
+.select-icon3{width:40px; height:31px;margin:17px auto 1px auto;background-position:-450px -67px;}
+.select-icon4{width:40px; height:26px;margin:22px auto 1PX auto;background-position:-500px -198px;}
+.select-tab-bd{border-bottom:2px solid #1B1C20;border-top:2px solid #1B1C20; padding:1px 0;}
+.select-tab-bd a{display: block; color: #64C0CB; font-size: 12px;}
+.select-tab-bd dt {
+	width: 69px;
+	height: 50px;
+	color: #64C0CB;
+	background-position: -186px -126px;
+	float: left;
+	text-align: center;
+	padding: 12px 0 0 0;
+	font-family: Arial;
+	font-size: 16px;
+	line-height: 50px;
+	border-bottom: 1px solid #1D1E22;
+}
+.select-tab-bd h3{font-weight: normal;}
+.select-tab-bd h3 a{width:100%!important;color: #15779E!important; }
+.select-tab-bd dd {width:836px; float: left; height: 62px;border-bottom: 1px dotted #A4A4A4; overflow: hidden;}
+.select-tab-bd dd a{width:33%;color: #676767; display: block; float: left; text-align: center;}
+.select-tab-bd dd li{width:110px; float: left; padding:10px 4px;}
+/*广告*/
+.selcet-ad{width:260px; float: right; padding: 15px 0 0 0; }
+.selcet-ad h3{height:30px; overflow: hidden; line-height: 42px; font-size: 16px;color:#717173; background:url(http://i2.chexun.net/images/images_index_new/index_2014/adbg.jpg) no-repeat right center; vertical-align: bottom; padding: 0 30px 0 0; text-align: right}
+.selcet-ad strong{color: #F19F00; font-weight: normal;}
+.selcet-ad .selcet-ad-tt{padding: 10px 0 0 0; font-size: 16px; color: #222}
+.selcet-ad .selcet-ad-tt a{color: #222}
+.selcet-ad .selcet-ad-tt a:hover{color:#15779e;}
+.selcet-ad span{width:8px; height:18px;display: block-inline; background:#27A9BF; float: left; margin:4px 5px 0 0; line-height: 18px}
+.selcet-ad-img{display: block; text-align: center;}
+.selcet-ad .selcet-look a{color: #FFF;}
+.selcet-look{width:180px;height:40px; padding: 0 40px !important; overflow: hidden; line-height: 52px !important; font-size: 14px; background: url(http://i0.chexun.net/images/images_index_new/index_2014/ad-bg.jpg) no-repeat;}
+.selcet-ad p{line-height: 24px; color: #8A8A8A}
+.selcet-ad p a{color: #8A8A8A}
+/*搜索条*/
+.search{width:400px;height:28px; position: absolute; left:600px; top:12px; line-height:24px;}
+.search-l{width:292px;height:28px;background-position: -205px -98px;}
+.search-l input{width:160px;height:24px;border:none;  float:left;background:none;color:#EEE; margin:1px 0 0 15px;display:inline;}
+#search-all{width:73px;float: left; height:24px; color: #EEE;padding: 0 0 0 10px}
+.search a{width:32px; height: 24px; display: block; float: left; text-indent: -9999px;}
+#search-list{width:83px; background: #000; color: #FFF; position: absolute;left:1px;top:24px; display: none; padding: 0 0 10px 0}
+.search-sec{position: relative;width:80px; float: left;}
+.search-sec li{ text-indent: 10px; line-height: 24px; cursor: pointer;}
+/*您可能感兴趣*/
+.like h2{font-size: 24px;color: #222; padding:25px 0 0 0;}
+#imgs{position: absolute;}
+#imgs li{width:;float: left}
+#imgs span{padding:10px;height:127px;display:block; background:#FFF;}
+#imgs b a{color:#257B9E;display:block; text-align: center;line-height: 30px;}
+#imgs h4{width:236px;text-align: center;line-height: 30px;border-top-width:4x;border-top-style:solid;color:#000}
+#imgs p{color:#676767; text-indent: 2em;line-height: 18px; text-align: justify;}
+#imgs li{width:241px;float: left;}
+.imgs-con{width:226px !important;height:147px;border: 1px solid #6FA6BB; padding:4px; background:#CFE2E8}
+.m0{margin: 0!important}
+.like-con{position:relative;}
+#prev,#next{width:63px;height:91px; cursor: pointer; position:absolute;top:70px;display: block;}
+#prev{left:-65px; background-position:-257px -126px }
+#next{right:-65px; background-position:-321px -126px}
+.like-con .w1200 {
+	width: 1205px;
+	height: 200px;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+	background: #ededed;
+}
+/*ads*/
+.ads{padding:25px 0 0 0;height:280px;overflow:hidden;}
+.ads-l{width:410px;float:left;}
+.ads-txt{height:90px; text-align:center;font-size:28px; background:#006088;  padding:20px 0 0 0; color:#FFF}
+.ads-txt span{display:block; font-size:14px;}
+.ads-txt a{color:#FFF}
+.ads-img{padding:10px 0 0 0}
+.ads-c{width:500px;height:280px;overflow:hidden;float:left;margin:0 10px;display:inline}
+#img-list li{position:relative;height:280px;}
+#img-list span{width:100%;display:block;height:32px;background:#000;opacity:0.5;filter:alpha(opacity=50);position:absolute;bottom:0;left:0}
+#img-list strong{width:400px;height:32px;line-height:32px;color:#FFF;text-align:center;font-size:16px; display:block;position:absolute;left:0;bottom:0;}
+#cur {width:51px;height:32px;position:absolute; z-index:100;right:10px;bottom:0}
+#cur li{width:12px;height:12px;margin:10px 0 0 5px;display:inline;float:left;background-position:-358px -71px}
+#cur li.on{width:12px;height:12px;background-position:-342px -71px}
+.ads-r{width:270px;float:right;}
+.ads-r .ads-txt{height:85px;background:#DD8200;font-size:24px;padding:25px 0 0 0}
+.big-ad{padding:15px 0;height:114px;overflow:hidden;}
+.big-ad img{display:block}
+
+/*lfet*/
+/*焦点热文*/
+.hot{position:relative; height: 600px;overflow:hidden;}
+.hot .img img{display:block;}
+.hot-news-hd{width:120px;height:62px;opacity:100;filter:alpha(opacity=100);position:absolute; z-index: 200; background-position:0 -227px;right:10px;top:15px;}
+.hot-news-bd{width:380px;height:420px;opacity:100;filter:alpha(opacity=100);position:absolute; z-index: 200;top: 70px;left:0;}
+.hot-bg{width:380px;height:600px;background:#02a7c4;opacity:0.9;filter:alpha(opacity=90); display:block;position:absolute;top:0;left:0;z-index: 2;}
+#hot-news{width:380px;height:600px;position:absolute;right:0;bottom:0;}
+#hot-news-btn-l,#hot-news-btn-r{width:100px;height:100px;display:block;position:absolute;bottom:0;cursor:pointer;z-index:1000}
+#hot-news-btn-l{background-position:-630px 0;left:220px;}
+#hot-news-btn-r{background-position:-731px 0;right:0; opacity:0; filter:alpha(opacity:0)}
+.hot-news-bd h2{font-size:16px; text-align:center;padding:15px 0  0 0}
+.hot-news-bd h2 a{color:#ECCE2E}
+.hot-news-bd p{text-align:center;font-size:14px;}
+.hot-news-bd p a{padding:0 3px;}
+.hot-news-bd a{color:#FFF}
+.hot-news-bd li{line-height:30px;font-size:14px; padding:0 10px; background:url(http://i1.chexun.net/images/images_index_new/index_2014/hlibg.jpg) no-repeat 8px center}
+.hot-news-bd ul{padding:10px 0 0 0}
+.hot-news-bd li a{padding:0 3px;font-family:"宋体";text-decoration:underline;}
+.hot-news-bd li a:hover{color:#ECCE2E}
+/*新车*/
+.news-car-l{width:450px;float:left;height:750px;overflow:hidden;}
+.news-car dl{clear:both;margin:0 0 8px 0;height:100px; overflow:hidden;}
+.news-car dd{float:left;width:280px;padding:0 10px;}
+.news-car dt{float:right;width:150px;}
+.news-car dt img{display:block;}
+.news-car h4 a{font-size:16px;color:#666; line-height:32px}
+.news-car p{color:#666;line-height:20px;}
+.news-car p a{color:#907200;}
+.news-car-bg{background:#232323;}
+.news-car-bg a{color:#FDFF00!important;}
+.news-car-bg p{color:#FFF!important}
+.news-car-r{width:150px;height:750px;background:#B70283;float:left;position:relative}
+.news-car-r h3{width:60px;height:65px;position:absolute;right:10px;top:15px;background-position:-125px -227px;}
+.news-car-r h3 a{display:block;height:100%;}
+.more{background:#9A1372;position:absolute;right:0;bottom:0;width:150px;height:150px;}
+.more a{width:80px;height:32px;background-position:-386px -125px;display:block;position:absolute;right:10px;bottom:15px;}
+/*车型*/
+.car-model-l{width:450px;float:left;height:520px; overflow:hidden}
+.car-model-l h4{font-size:16px;line-height:32px;}
+.car-model-l li{border-bottom:1px dotted #CCC; background:url(http://i2.chexun.net/images/images_index_new/index_2014/li-bg.jpg) no-repeat left 20px; padding:12px 0 12px 20px; margin:0 15px 0 0;}
+.car-model-l p{text-align:justify;line-height:24px;color:#666}
+.car-model-l a{color:#666}
+.car-model-l p a{color:#907200}
+.car-model-r{width:150px;float:right;background:#1D2124;height:520px; font-size:24px;position:relative}
+.car-model-r li{width:66px;height:120px;line-height:120px; text-align:center;color:#485158;font-weight:bold; cursor:pointer}
+.car-model-cur{text-decoration: underline;color:#FFFF00!important; background:#1C1C1E;border:1px solid #2A2B2F;border-left:none}
+.car-model-r h3{width:60px;height:64px;position:absolute;right:10px;top:15px; background-position:-188px -227px;}
+.car-model-r h3 a{display:block;height:100%;}
+.car-model-r .more{background:#000}
+/*往期回顾*/
+.review-l{width:450px;float:left;height:150px; overflow:hidden; position:relative; border-top:1px solid #333}
+.review-l img{float:left;}
+.review-r{width:150px;height:151px;float:right;position:relative; background:#BE2517}
+.review-r h3{width:100px;height:64px;position:absolute;right:10px;top:15px;background-position:-254px -227px;}
+.review-r h3 a{display:block;height:100%;}
+.review .more{width:150px;height:150px; background:#A51F13;}
+/*精彩车图*/
+.car-imgs{width:600px;height:750px;position:relative; overflow:hidden}
+.car-imgs-con{width:600px;height:300px; clear:both}
+.car-imgs-con img{float:left}
+.car-imgs img{display:block}
+.car-imgs-l{width:450px; height:450px; overflow:hidden; float:left;}
+.car-imgs-r{width:150px; height:450px; background:#000; position:relative; float:left;}
+.car-imgs-r h3 {
+	width: 119px;
+	height: 42px;
+	position: absolute;
+	right: 10px;
+	top: 55px;
+	background-position: -360px -249px;
+}
+.car-imgs-r h3 a{display:block; height:100%;}
+.car-imgs-r img{ position:absolute; left:0; bottom:0}
+/*美图秀*/
+.show-pic-l{width:430px; padding:9px 10px; background:#72A11F;height:132px; float:left}
+.show-pic-l img{float:left}
+.big-more{width:140px; height:132px; float:left;}
+.big-more a{width:136px;height:125px; background-position:-834px 0;display:block; margin:2px 0 0 10px}
+.show-pic-r{width:150px;height:150px; background:#5F8E0E; float:left; position:relative}
+.show-pic-r h3{width:72px;height:64px; background-position:-488px -227px; position:absolute;right:10px; top:15px;}
+.show-pic-r h3 a{display:block;height:100%;}
+
+/*右边*/
+/*右边广告*/
+.right-ad img{display:block; float:right; padding:0 0 2px 0}
+/*hots*/
+.hots{padding:0 0 0 3px;}
+.hots li{float:left; background:#54AED0; font-size:14px; font-weight:bold;height:57px; text-align:center; margin:0 0 15px 8px; color:#FFF; display:inline; line-height:57px;}
+/*车市*/
+.car-city{height:406px; overflow:hidden; position:relative;}
+.car-city-l{width:150px;height:406px;background:#BE2517; position:relative;}
+.car-city-l .more{background:#B01709}
+.car-city-l h3{width:60px; height:64px; position:absolute;right:10px; top:15px; background-position:-565px -227px}
+.car-city-l h3 a{display:block;height:100%;}
+.car-city-r{width:453px; position:absolute; left:150px; top:0}
+.car-city li{float:left; display:inline; height:98px; overflow:hidden; margin:0 3px 3px 0; position:relative}
+.car-city span {
+	display: none;
+	width: 100%;
+	height: 98px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.car-city strong{ display:none;padding:10px; font-size:14px; color:#FFF; position:absolute; left:0; top:0; z-index:3;}
+.car-city-cur span,.car-city-cur strong{display:block !important;}
+.car-city p {
+	padding: 15px 0 0 0;
+	float: left;
+}
+.car-city p a {
+	width: 130px;
+	color: #333;
+	line-height: 24px;
+	padding: 0 0 0 20px;
+	display: block;
+	background: url(http://i0.chexun.net/images/images_index_new/index_2014/clibg.jpg) no-repeat 10px center;
+	float: left;
+	height: 24px;
+	overflow: hidden;
+}
+
+/*汽车报价&汽车行情*/
+.car-box{height:670px; overflow:hidden}
+.car-box-l{width:150px; float:left; height:670px; background:#303032; position:relative}
+.car-box-l li{width:155px; height:92px; position:absolute; left:0; top:0; cursor:pointer;}
+.car-box-l ul{height:500px;}
+.car-box-l .more{ background:#202021}
+.car-box-price,.car-box-market{width:113px;height:64px; position:absolute; right:10px; top:15px;}
+.car-box-market{ background-position:-626px -227px;}
+.car-box-price{width:105px; background-position:-741px -227px}
+.car-box-cur{width:155px; background:url(http://i1.chexun.net/images/images_index_new/index_2014/boxbg.png) no-repeat;}
+.car-box-r{width:450px; float:left;}
+.car-box dt{ position:relative; height:185px; overflow:hidden;}
+.car-box dt span{background:#000; display:block; width:100%; height:30px; position:absolute; bottom:0; left:0;  opacity:0.5; flter:alpha(opacity=50)}
+.car-box dt strong{ display:block; width:100%; height:30px; line-height:30px; position:absolute; bottom:0; left:0; color:#FFF; z-index:2; text-indent:10px}
+.market ul{padding:0 10px;}
+.market li{ padding:10px 0; line-height:24px; background:url(http://i2.chexun.net/images/images_index_new/index_2014/li-bg.jpg) no-repeat right center; border-bottom:1px dashed #CCC;}
+.market li a{
+	color: #666;
+	font-size: 16px;
+}
+.market li em{ float:left; margin:3px 0 0 5px; display:block; height:15px; line-height:15px !important; width:64px; font-size:12px; text-indent:5px;color:#FFF; background:url(http://i0.chexun.net/images/images_index_new/index_2014/blibg.jpg) no-repeat}
+.market li p{
+	color: #666;
+	clear: both;
+}
+.market li strong{float:left;}
+.market li span{padding:0 15px 0 0;}
+.price li{ float:left; margin:10px 0 0 10px; display:inline}
+.price h4{ line-height:32px; text-align:center; color:#333;}
+.price p{border:1px solid #DF515A; font-size:14px; border-radius:2px;height:20px; line-height:20px; text-align:center; color:#DF515A;}
+.price li a:hover p{background:#DF515A; color:#FFF;}
+.price li a{text-decoration:none;}
+/*行业*/
+.life{height:500px; overflow:hidden;}
+.life-l{width:150px; height:500px; float:left; position:relative; background:#EEBF00;}
+.life-l .more{background:#E0B300;}
+.life-l h3{position:absolute;right:10px;top:15px; background-position:-848px -228px;width:65px; height:64px}
+.life-l h3 a{display:block;height:100%;}
+.life-l ul{width:79px; position:absolute;right:-5px; top:90px;}
+.life-l li{width:74px; position:relative; text-indent:20px; line-height:65px; font-size:16px; cursor:pointer; font-weight:bold; color:#EEBD00; height:65px; background:#8D7400;}
+.life-l li.life-cur{width:79px; height:65px; background:url(http://i0.chexun.net/images/images_index_new/index_2014/lifebg.jpg) no-repeat;}
+.life-l span{width:64px;display:block; height:1px; background:#7D6100; position:absolute; z-index:1; left:5px; bottom:0;}
+.life-r{width:450px; float:left;}
+.life-r dl{padding:13px 10px; border-bottom:1px dashed #CCC}
+.life-r dt a{ font-size:16px; color:#666;}
+.life-r dt a span{color:#EC2923}
+.life-r p{color:#666; padding:5px 0 0 0}
+.life-r p span{padding:0 10px 0  0}
+.life-r dd{color: #666;padding: 12px 0 0 0;font-size: 12px;}
+.life-r em{color:#8D7209}
+/*视频*/
+.video{height:450px; overflow:hidden;}
+.video-l{width:150px; height:450px; background:#5F8E0E; float:left; position:relative}
+.video-l h3{width:62px;height:64px; position:absolute;right:10px; top:15px; background-position:-916px -228px} 
+.video-l h3 a{display:block;height:100%;}
+.video-r img{display:block}
+.video-r li{float:left; position:relative;}
+.video-r .big-more{width:150px;height:150px;background:#507806}
+.video-r .big-more a{ margin:10px 0 0 2px;}
+.video-r span {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	display: block;
+	background-position: -957px -129px;
+}
+/*拆车坊*/
+.chop-shop{height:594px; overflow:hidden;}
+.chop-shop-l{width:150px;height:600px; float:left; background:#1D5DA5; position:relative}
+.chop-shop-l h3{width:80px;height:66px; position:absolute; right:10px; top:15px; background-position:-631px -129px;} 
+.chop-shop-l h3 a{display:block;height:100%;}
+.chop-shop-l .more{ background:#0B478D;}
+.chop-shop-r{width:450px; float:left;}
+.chop-shop-r dl img{display:block}
+.chop-shop-r dd{padding:10px 0 0 0; float:left}
+.d-l{width:280px; padding:0 10px; float:left}
+.d-r{width:150px; float:left; overflow:hidden; position:relative}
+.d-l a{color:#515151}
+.d-l h4{ padding:0 0 5px 0; font-size:14px;}
+.d-l p {color:#666; line-height:20px;}
+.d-l p a{color:#1E5CA9;}
+.d-r span {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	display: block;
+	background-position: -957px -130px;
+}
+/*r-ad*/
+.r-ad img{display:block}
+/*车模*/
+#model li{float:left; height:300px; position:relative}
+#model span{display:none; height:30px;width:100%; position:absolute; bottom:0; left:0; background:#000; opacity:0.5; flter:alpha(opacity=50); z-index:2}
+#model strong{display:none; height:32px; line-height:32px; text-align:center; width:100%; color:#FFF; font-weight:normal; z-index:5; position:absolute; left:0; bottom:0}
+#model .model-cur span, #model .model-cur strong,#model li img{display:block !important}
+
+
+
+
+
+
+
+
+
+
+
+
+/**** inline ****/
+
+.z3g{width:970px;border:5px solid #ddd;margin:0 auto;height:300px;background:#f9f9f9;display:none}
+.z3g span.close {
+    background: url("http://file.chexun.com/images_index_new/index_revision/close3g.gif") no-repeat;
+    cursor: pointer;border:0px solid #003C82;
+    display: block;margin:5px 5px 0 0;
+    float: right;
+    height: 70px;
+    width: 70px;
+}
+.z3g p{text-align:center;padding-top:80px;font-size:60px; font-family:微软雅黑;line-height:80px;}
+.z3g .djck{color:#003C82; text-decoration:underline;}

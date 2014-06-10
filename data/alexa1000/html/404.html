@@ -1,0 +1,1124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!--
+Modified on - 15/May/2012
+Modified by - Shakti Singh  
+--><html data-useragent="Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.1 Safari/534.34" data-platform="MacIntel"><head>
+<title>IRCTC Online Passenger Reservation System</title>
+<meta http-equiv="cache-control" content="public">
+<meta http-equiv="expires" content="Mon, 03 Dec 2012 12:00:01 GMT">
+<meta name="ROBOTS" content="INDEX,FOLLOW">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="IRCTC's Online Passenger Reservation System provides booking facility of Railway tickets online and offers other services like checking reservation status, train schedules, train routes, availability of tickets and cancellation.">
+<meta name="keywords" content="irctc,train,ticket,eticket,iticket,ticket booking,E-booking,E-Ticket,I-Ticket,rail booking,railway ticket,railway booking,I-booking,catering,tourism,agent booking,E ticket booking,I ticket Booking,cancellation ticket,tatkal,tatkal booking,general booking,lady quota booking,indian rail,indian railway,enquiry,hotel,loyalty booking,soft booking,mobile booking,quick booking,subh yatra,railway reservation,online tickets,online ticket booking,online reservation,current,ITZ booking,PNR,MSST,mumbai ticket,season ticket,waitlisted ticket,train enquiry,SBI railway,irctc mobile booking,irctc mobile application,irctc agent,sms rail,sms rail to 139,irctc sms service,irctc fare enquiry,popular trains,train schedules,availability of ticket,reservation status,popular stations,track of tikcet,sbi railway card,know your ers,know your PNR,know your ticket,know your eticket,cancel  eticket,cancel railway ticket,trav
+ el,passenger,journey,rail journey,planner,plannerbody,plannerresults,bankresponse,Senior Citizen,Boarding Point,Reservation Upto,Train Name,Train No,TDR filing,file TDR,TDR History,banner,banner auction,offline cancellation,refund status,TDR Refund ,partially travelled,Train Cancelled,Ticket Deposit Receipt,chart preparation,File Online TDR Refund Request,Passenger Travel Lists,reservation form,booked history,Cancellation Procedure">
+<link href="/beta_stylesheet/homestylesheet.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/beta_stylesheet/bluetabs.css">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png">
+
+
+
+<!-- Added by Shakti on 15/May/2012 (Compressed JS) -->
+<script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script type="text/javascript" src="/betaJS/showhidenew2.js"></script>
+<!--<script type="text/javascript" src="/betaJS/homeslider_v1.js"></script>-->
+<script type="text/javascript" src="/betaJS/dropdowntabs.js"></script>
+<script type="text/javascript">
+//SYNTAX: tabdropdown.init("menu_id", [integer OR "auto"])
+tabdropdown.init("bluemenu")
+</script>
+<script type="text/javascript">
+window.onload=function(){
+// Start :: Added by Shakty Singh on 06/Mar/2014 to check user agent and add that to the html tag onload
+setCookie('id_','_1',7);
+var b = document.documentElement;
+b.setAttribute('data-useragent',  navigator.userAgent);
+b.setAttribute('data-platform', navigator.platform );
+// End :: Added by Shakty Singh on 06/Mar/2014 to check user agent and add that to the html tag onload
+showdefaults();fillDefault(); startTime();noBack();
+ }
+ function setCookie(cname,cvalue,exdays)
+{
+var d = new Date();
+d.setTime(d.getTime()+(exdays*24*60*60*1000));
+var expires = "expires="+d.toGMTString();
+document.cookie = cname + "=" + cvalue + "; " + expires+"; path=/";
+}
+	function isEmpty(s,txt_fld)
+{
+        if ((s == null) || (s.length == 0)){
+			alert("Enter Value for  "+txt_fld);
+           	 return false;
+		}//end of if
+
+       for (var i=0; i<s.length; i++){
+           if(s.charAt(i) != " ")
+		      return true;
+           else{
+		      alert("Enter Value for "+txt_fld);
+		  	  return false
+		   }//end of else
+		 }//end of for
+		 return true;
+}
+	function validate()
+	{
+		if(!isEmpty(document.LoginForm.userName.value,"UserName"))
+		{
+			document.LoginForm.userName.focus();
+			return false;
+		}
+		if(document.LoginForm.password.value.length==0)
+		{
+			alert("Please Enter The Password");
+			document.LoginForm.password.focus();
+			return false;
+		}
+
+	}
+/*function ipFinder()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("ipContent").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","ip_finder.asp",true);
+xmlhttp.send();
+}*/
+
+
+	</script>
+	<script type="text/javascript">
+     function noBack()
+     {
+       document.getElementById('button').disabled=false;
+     }
+
+    </script>
+
+</head>
+<body style="margin:0; padding:0; font:12px arial;" onpageshow="if (event.persisted) noBack();">
+<script async="async" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<input type="hidden" id="indicator" value="0">
+<div style="width:auto; background-color:#2781BA; margin:0 auto; text-align:center;">
+<div style="width:905px; margin:0 auto; background:url(/beta_images/bgnd_sides.gif) repeat-y; text-align:center;">
+<div class="header"><img src="beta_images/header_print.gif" alt="IRCTC header"></div>
+<div style="height:19px; width:874px; background-color:#FFAC1B; text-align:center; margin:0 auto; margin-right:16px; margin-left:15px;">
+
+<div id="orngnavi">
+<a href="/enquiry.html" class="enquiries" style="float:left; border-left:0px;" target="_blank"></a>
+
+<!-- <a href="#" style="border-left:1px solid #fff; float:left; margin-left:5px; border-right:0px solid #fff; " onclick="window.open('http://www.teriin.org/survey/irctc/index.php');"><b>Online Survey</b></a> -->
+<!-- <a href="#" style="border-left:0px; margin-right:0px; border-right:1px solid #fff; " onclick="window.open('/beta_htmls/acspecialfeedback.html','','toolbar=no,height=400px,left=350px,top=50px,width=600px,scrollbars=no,status=yes,resizable=no');" class="topmenu">Premium AC Special Feedback</a> -->
+<!-- <a href="#" style="border-left:0px; margin-right:50px; border-right:1px solid #fff; " onclick="window.open('http://www.irctc.com/gerenalComplaints.jsp','','toolbar=yes,scrollbars=yes,status=yes,resizable=yes');" class="topmenu">Feedback</a> -->
+<a href="/homebodyh.html" style="border:0px;" tabindex="-2" class="hindilink"></a>
+<a href="#" style="border-left:1px solid #fff; margin-left:65px;" tabindex="-2" onclick="window.open('/beta_htmls/contact1.html','','width=480,height=450,toolbar=no,scrollbars=yes,status=no,resizable=no');" class="topmenu">Contact Us</a>
+
+
+
+</div>
+</div>
+
+<!-- Code added for Topnav -->
+<style>
+.new_icon{background:url(beta_images/new_navicon.gif) no-repeat left top; padding:9px 10px; border:1px solid #000;}
+</style>
+<div id="bluemenu" class="bluetabs">
+<ul>
+<li><a href="http://www.railtourismindia.com/cgi-bin/dev1.dll/irctc/booking/vatplanner.do?click=true&amp;screen=fromHome&amp;offset=0" target="_blank">Tour Packages</a></li>
+<li><a href="http://air.irctc.co.in" target="_blank">Flights</a></li>
+<li><a href="http://www.railtourismindia.com/cgi-bin/hotel.dll/irctc/booking/search-hotel.jsp" style="/*padding:0px;*/" target="_blank">
+Hotels &amp; Lounge</a></li>
+<li><a href="http://www.railtourismindia.com/cgi-bin/dev1.dll/irctc/booking/planner.do?click=true&amp;screen=FromTrainType" target="_blank">Tourist Train</a></li>
+<li><a href="http://www.railtourismindia.com/cgi-bin/dev1.dll/irctc/booking/vatplanner.do?screen=customized&amp;custType=splholiday" target="_blank">Special Holidays</a></li>
+
+<li><a style="padding:9px 37px;" href="http://www.shop.irctc.co.in/index.aspx" target="_blank" rel="dropmenu1_b">Shop <img src="/beta_images/arrow_navdown.gif"></a> </li>
+ 
+ <li><a style="border-right:none" href="http://www.railtourismindia.com/cgi-bin/dev1.dll/irctc/services/rrhome.do" target="_blank"><div style="position:absolute; margin-left:-22px; margin-top:-9px; 
+ /*padding-top:-30px;*/ float:left;"><img src="beta_images/new_navicon.gif" width="35"></div>Retiring Room</a></li>
+</ul>
+</div>
+
+<!--1st drop down menu -->                                                   
+<div id="dropmenu1_b" class="dropmenudiv_b">
+
+<a href="http://www.shop.irctc.co.in/buy-online/offer-coupons.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Deals&amp;aff=LGE9HQL" target="_blank">Deals<span class="delas"></span></a>
+<a href="http://www.shop.irctc.co.in/buy-online/value-picks-men.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=ValuePicks&amp;aff=LGE9HQL" target="_blank">Value Picks<span class="valuepack"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/books.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Books&amp;aff=LGE9HQL" target="_blank">Books<span class="book"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/luggage.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Luggage&amp;aff=LGE9HQL" target="_blank">Luggage<span class="luggage"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/mobile-phones.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Mob_and_tab&amp;aff=LGE9HQL" target="_blank">Mobiles and Tablets<span class="mobile"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/electronics.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Electronics&amp;aff=LGE9HQL" target="_blank">Electronics<span class="Electronics"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/home-furnishing.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Home_Furnishing&amp;aff=LGE9HQL" target="_blank">Home furnishing<span class="furnishing"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/furniture.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Furniture&amp;aff=LGE9HQL" target="_blank">Furniture<span class="furniture"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/handbags.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Bags&amp;aff=LGE9HQL" target="_blank">Bags and handbags<span class="handbags"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/apparels.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Clothing&amp;aff=LGE9HQL" target="_blank">Clothing<span class="cloth"></span></a>
+<a href="http://www.shop.irctc.co.in/online-shopping/shoes.html?utm_source=irctc&amp;utm_medium=shop-home&amp;utm_campaign=Shoes&amp;aff=LGE9HQL" target="_blank" id="shoes">Shoes <span class="Shoe"></span></a>
+
+</div>
+
+
+
+
+
+<div class="productstus">
+<div class="inrbdyprosts">
+<!-- &nbsp;&nbsp;&nbsp;<a href="/beta_htmls/irctc_app.html" target="_blank"><span style="color:#333"><B>IRCTC App for Windows Smartphone, Tablet and PC &nbsp;<img style="vertical-align:top; margin-top:-2px;" width="18" src="/beta_images/window_logo.gif" alt="IRCTC Shopping" /></b></span></a>
+<a href="http://www.shop.irctc.co.in" target="_blank"><img style="vertical-align:middle; margin-left:300px; " src="/beta_images/irctc_shopping.gif" alt="IRCTC Shopping" /></a> -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+<!-- <td width="30%">&nbsp;<b><a href="/betaDoc/Dynamic_fare.pdf"  target="blank">Dynamic Pricing Trains - from 24.12.13</a></b></td> -->
+<td width="25%">&nbsp;<b>
+<a href="#" onclick="window.open('/beta_htmls/Premium_Special_Trains.html','','width=240,height=200,toolbar=no,scrollbars=yes,status=no,resizable=no');" class="topmenu">Premium Special Trains</a></b></td>
+
+
+<!-- <td width="25%">&nbsp;<b><a href="https://www.irctc.co.in/betaDoc/list of dynamic train running in prod.pdf" target="_blank" style="color:#FF0000" > List of Premium Special Trains </a></b></td> -->
+
+
+<!-- <td width="50%">&nbsp;<b><a href="http://www.irctc.co.in/beta_htmls/Premium_Special_Daynamic_Train.pdf" target="_blank">Booking in Premium Special Train Started </b></a></td>
+ --> 
+
+ <td width="45%" style="padding-right:10px;"><marquee scrollamount="2" ;="" style="color:#FF0000">&nbsp;<b>"SMS Alerts". Indian Railways has started the service of SMS Alerts for updating passengers about their pnr status. IRCTC users are requested to give correct mobile number of the passenger.
+</b></marquee></td>
+ 
+
+<!-- <td width="50%" style="padding-right:10px ;"><marquee scrollamount="2"; style="color:#FF0000" >&nbsp;<b>Booking Opened  in Premium Special Trains 09417:ADI-DEE
+(Sun/Fri) for Journey date 11/13/18/20/25/27-04-2014;02067:LTT-BSB (Fri)
+ for Journey date 11/18-04-2014; 02068:BSB-LTT (Sat) for Journey date
+ 12-04-2014;02069:LTT-BSB (Fri) for Journey date 25-04-2014;
+ 02015:LTT-GKP (Sun) for Journey date 13/20-04-2014; 02016:GKP-LTT (Tue)
+for Journey date 15/22-04-2014; 02204:SC-VSKP (Thu) for Journey date
+ 17-04-2014;02203:VSKP-SC (Sun) for Journey date 20-04-2014;
+22913:BCT-NDLS(Wed/Fri/Sun) for
+ Journey date
+11/13/16/18/20/23/25/27/30-04-2014;22914:NDLS-BCT(Mon/Thu/Sat) for
+Journey
+ date 12/14/17/19/21-04-2014;00851:BBS-YPR (Wed) for Journey date
+ 16/23-04-2014; 00852:YPR-BBS (Thu) for Journey date 17/4,24/4,01/05-2014;
+ 02503:KYQ-NDLS(Wed) for Journey 16/23/30-04-2014;02695:YPR-JP  (Thu) for
+ Journey 10/4/17/4/24/4/01-05-2014;02696:JP-YPR  (Sat) for Journey
+ 12/19/26-04-2014;09725:JP-BDTS (Sun) for Journey
+ 13/20-04-2014;09726:BDTS-JP
+ (Mon) for Journey 14/21/28-04-2014;02353:PNBE-BNC(Thu) for Journey
+ 17/24-04-2014;02445:NDLS-JAT(Tue/Fri/Sun) for Journey
+ 11/13/15/18/20-04-2014;02446:JAT-NDLS(Mon/Wed/Sat) for Journey
+ 12/14/16/19/21-04-2014;02451:CNB-JAT (Thu) for Journey
+ 10/17-04-2014;02452:JAT-CNB (Fri) for Journey
+ 11/18-04-2014;02504:NDLS-KYQ(Thu) for Journey 17/24-04-2014;02863:HWH-YPR
+(Mon) for Journey 21/28-04-2014;08797:DURG-UMB(Sun) for Journey
+20/23/27/30-04-2014;09418:DEE-ADI (Mon/Sat) for Journey
+12/14/19/21-04-2014;09726:BDTS-JP (Mon) for Journey
+14/21-04-2014;02017:LTT-GKP (Sun) for journey 27-04-2014;02354: BNC-PNBE
+(Sun) for journey 20/27-04-2014;02864:YPR-HWH (Wed) for journey
+23/30-04-2014;08798:UMB-DURG(Mon/Thu) for journey
+21/4/24/4/28/4/01-05-2014;09051:ST-CPR(Sat) for journey
+19/26-04-2014;02841:HWH-MAS(Fri)
+for journey 25-04-2014;02723:SC-NDLS(Fri) for Journey
+25-04-2014;06311:MAS-TVC(Thu) for Journey 24-04-2014;09052:CPR-ST(Sun) for
+Journey 20-04-2014;06312:TVC-MAS(Wed) for journey
+23-04-2014;02070:BSB-LTT(Sat) for Journey 26-04-2014;06745:MAS-TEN(Fri)
+for journey 25-04-2014”;02018:GKP-LTT(Tue) for journey
+29-04-2014;02842:MAS-HWH(Sat) for journey 26-04-2014;06746:TEN-MAS(Fri)
+for journey 25-04-2014.
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Attention: Dear International Card holders, for booking rail tickets through International Credit Cards kindly login to www.cleartrip.com(Web-services Service Provider of IRCTC)
+</b></marquee></td>
+ -->
+
+ <!-- <td width="50%" style="padding-right:10px;"><marquee scrollamount="2"; style="color:#ff0000">&nbsp;<b>Booking in Premium Special Trains 02445: NDLS–JAT, 02446: JAT-NDLS extended.</b></marquee></td> -->
+
+<td width="30%">&nbsp;<b><a href="https://www.irctc.co.in/beta_images/sms_booking/sms_ussd.pdf" target="_blank">Mobile SMS/USSD E-Ticketing</a></b></td>
+
+<td width="10%" align="right"><a href="https://www.irctc.co.in/betaDoc/IRCTC E Wallet User Guide.pdf" target="_blank"><img style="margin-right:5px; width:93px; height:15px; " src="/beta_images/irctc_ewallet.gif" alt="IRCTC Shopping"></a></td></tr></tbody></table>
+</div>
+</div>
+
+
+<div style="width:850px; height:202px; margin:10px auto 0 auto;">
+
+<div style="float:left; display:inline; height:200px; border:1px solid #4A9ACE; width:210px;">
+<div class="boxHead"> <div class="heading">Login</div></div>
+
+ <form method="post" action="https://www.irctc.co.in/cgi-bin/bv60.dll/irctc/services/login.do" name="LoginForm" autocomplete="off" style="margin:0; padding:0;" onsubmit="document.getElementById('button').disabled=true;">
+  <input type="hidden" name="screen" value="home">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tbody><tr>
+    <td>
+	<table width="96%" style="margin-top:10px; border-bottom:1px solid #ccc" border="0" cellspacing="0" cellpadding="3" align="center" class="txt1">
+
+  <tbody><tr>
+    <td width="40%">Username</td>
+    <td width="1%">:</td>
+    <td width="59%"><input type="text" name="userName" class="txtfld" autocomplete="off" size="12"></td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>:</td>
+    <td><input type="password" name="password" class="txtfld" autocomplete="off" size="12"></td>
+  </tr>
+  <tr>
+    <td colspan="3" height="1"></td>
+  </tr>
+
+  <tr id="hide_home">
+    <td colspan="3" align="right">
+	<input type="submit" name="button" id="button" class="buttonSubmit" value="Login" onclick="return validate();">	</td>
+  </tr>
+
+
+<tr>
+<td align="right" colspan="3">
+
+<table width="76%" style="height:42px;" border="0" align="right" cellspacing="0" cellpadding="2">
+<tbody><tr>
+<td align="right">
+<a href="https://www.irctc.co.in/cgi-bin/bv60.dll/irctc/services/register.do?click=true" id="tabslinksright">Signup</a>
+</td>
+</tr>
+
+<tr>
+<td align="right">
+<a href="https://www.irctc.co.in/cgi-bin/bv60.dll/irctc/services/forgotpassword.do?username=" id="tabslinksright1">Forgot Password?</a>
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+
+
+</tbody></table></td>
+  </tr>
+  <tr>
+<td bgcolor="#E9F1F1">
+
+<table width="100%" border="0" align="right" cellspacing="0" cellpadding="0">
+<tbody><tr>
+<td align="right" height="19"><a href="https://www.irctc.co.in/rtsa_home.asp" id="tabslinksright3">Agent Login</a>&nbsp;&nbsp;&nbsp;</td>
+</tr>
+
+<tr>
+<td align="right" height="20"><a style="color:#176294" href="https://www.irctc.co.in/cgi-bin/bv71.dll/irctc/services/login.do" id="tabslinksright4">Mumbai Suburban Season Ticket</a>&nbsp;&nbsp;&nbsp;</td>
+</tr>
+</tbody></table>
+
+</td>
+  </tr>
+</tbody></table>
+
+</form>
+</div>
+<!-- Start :: This js css are for Alerts and Updates Scroller -->
+<script src="scroll_bar/js/jquery-1.7.1.min.js"></script>
+<script src="scroll_bar/js/bjqs-1.3.min.js"></script>
+<link rel="stylesheet" href="scroll_bar/css/bjqs.css">
+<link rel="stylesheet" href="scroll_bar/css/demo.css">
+<link rel="stylesheet" type="text/css" media="screen" href="scroll_bar/css/style.css">
+<script type="text/javascript" src="scroll_bar/js/mootools.js"></script>
+<script type="text/javascript" src="scroll_bar/js/demos.js"></script>
+<script type="text/javascript">
+		window.addEvent('domready', function(){
+			/* Tips 1 */
+			var Tips1 = new Tips($$('.Tips1'));
+			
+			/* Tips 2 */
+			var Tips2 = new Tips($$('.Tips2'), {
+				initialize:function(){
+					this.fx = new Fx.Style(this.toolTip, 'opacity', {duration: 500, wait: false}).set(0);
+				},
+				onShow: function(toolTip) {
+					this.fx.start(1);
+				},
+				onHide: function(toolTip) {
+					this.fx.start(0);
+				}
+			});
+			
+			/* Tips 3 */
+			var Tips3 = new Tips($$('.Tips3'), {
+				showDelay: 400,
+				hideDelay: 400,
+				fixed: true
+			});
+			
+			/* Tips 4 */
+			var Tips4 = new Tips($$('.Tips4'), {
+				className: 'custom'
+			});
+		}); 
+	</script>
+<!-- End :: This js css are for Alerts and Updates Scroller -->
+<div style="float:left; display:inline; margin-left:1em; border:1px solid #4A9ACE; height:200px; width:304px;">
+<div class="boxHead"><div class="heading">Alerts &amp; Updates</div></div>
+
+
+  <div id="container">
+  <!--  Outer wrapper for presentation only, this can be anything you like -->
+      <div id="banner-fade" style="max-width: 304px; position: relative; height: 109.70394736842105px; ">
+
+        <!-- start Basic Jquery Slider -->
+        <ul class="bjqs" style="font: normal normal normal 11px/normal arial; color: rgb(51, 51, 51); width: 100%; height: 109.70394736842105px; display: block; ">
+
+
+<li style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-align: left; width: 100%; height: 109.70394736842105px; display: list-item; " class="bjqs-slide">
+		<div style=" padding:5px 0;">
+	    <a href="http://www.youtube.com/watch?v=hsNAbWeeTkM" class="change_clr" target="_blank"><img src="beta_images/newbanner/ehsaas.jpg"></a></div>
+</li>
+
+<li style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+		<div style=" padding:5px 0;">
+	    <a href="https://www.irctc.co.in/beta_images/sms_booking/sms_ussd.pdf" class="change_clr" target="_blank"><img src="beta_images/newbanner/ussd_sms.gif"></a></div>
+</li>
+
+ <li style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+		<div style=" padding:5px 0;">
+	    <a href="https://www.irctc.co.in/betaDoc/IRCTC E Wallet User Guide.pdf" class="change_clr" target="_blank"><img src="beta_images/newbanner/ewallet_small.gif"></a></div>
+</li>
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+	
+     <div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	 <a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Attention: Dear International Card holders, for booking rail&lt;br&gt; tickets
+through International Credit Cards kindly login to&lt;br&gt; www.cleartrip.com(Web-services Service Provider of IRCTC)">Attention: Dear International Card holders, for booking ...
+	</a></div>
+
+
+
+	
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: Source Station of Special train number 04053 presently running ex. &lt;br&gt;
+DLI has been changed to ANVT instead of DLI w.e.f  08.04.2014">Source Station of Special train number....
+	</a></div>
+
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="http://www.railtourismindia.com/cgi-bin/dev1.dll/irctc/services/rrhome.do" class="change_clr" target="_blank">Now You Can Book Indian Railways Retiring Room Online</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/betaDoc/Salient Features of Premium Special Train on Dynamic Pricing.pdf" class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: Salient Features of Premium Special Train on DynamicPricing">Salient Features of Premium Special Train....
+	</a></div>
+
+</li>
+      
+
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/betaDoc/ECR -PNBE JN NOTIFICATION.pdf" class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: In view of Apron work of PF no.1 at Patna Jn from 27.01.2014 to 12.03.2014,&lt;br&gt; some trains are cancelled and short terminated">In view of Apron work of PF no.1 at Patna Jn from....
+	</a></div>
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="http://shop.irctc.co.in" class="change_clr" target="_blank">IRCTC launches Shopping website www.shop.irctc.co.in
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a style="font:" href="https://www.irctc.co.in/betaDoc/special_train_list.pdf" class="change_clr" target="_blank">Special Train List
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/betaDoc/Amendments_RefundRules_2406.pdf" class="change_clr" target="_blank">Amendments in the certain provision of Refund Rules.
+	</a></div>
+</li>
+          
+
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title="::SOFT (Scheme for Frequent Traveler) / **Shubh Yatra Programme ** has been  &lt;br&gt;discontinued in terms of Commercial Circular No 11 to 2013 issued by Ministry of Railways*.">SOFT (Scheme for Frequent Traveler)....
+	</a></div>
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Toll free Number only for Railway Catering Complaints: 1800111321">Toll free Number only for Railway Catering Complaints...
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Customer Care No. for Internet Ticket : 011 39340000">Customer Care No. for Internet Ticket : 011 23340000...
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a style="font:" href="https://www.irctc.co.in/beta_images/A5 Pumplets IRCTC.jpg" class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: IRCTC opens World class Executive Lounge at New Delhi Railway Station"> IRCTC opens World class Executive Lounge at...
+	</a></div>
+</li>
+
+<li style="padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+		<div style=" padding:5px 0;">
+	    <a href="https://www.irctc.co.in/betaDoc/IRCTC E Wallet User Guide.pdf" class="change_clr" target="_blank"><img src="beta_images/newbanner/ewallet_small.gif"></a></div>
+</li>
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/betaDoc/circular for penalties for activities.pdf" class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Penalties for activities affecting cleanliness at railway premises">Penalties for activities affecting cleanliness at...
+	</a></div>
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::A verification call may be made for the bookings done between &lt;br&gt;10:00 am to 10:15 am to verify userid, pnr, passenger mobile&lt;br&gt; number and passenger details">A verification call may be made for the bookings....
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Any misleading information may lead to cancellation &lt;br&gt;of e-ticket and an appropriate legal action.">Any misleading information may lead to cancellation... 
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: Internet booking is not permitted in the overseas train&lt;br&gt; nos 14001,14002,14889,13108 &amp; 13109."> Internet booking is not permitted in the overseas...
+	</a></div>
+</li>
+
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Never purchase e-ticket from unauthorised agents or persons,&lt;br&gt; using their personal IDs for commercial purposes. Such tickets&lt;br&gt; are liable to be forfeited under section(143) of the Indian Railway&lt;br&gt; Act 1989. List of authorised agents are available on www.irctc.com&lt;br&gt;E-Ticket Agent Locator">Never purchase e-ticket from unauthorised agents...
+	</a></div>
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a style="font:" href="https://www.irctc.co.in/beta_htmls/Alerts_mone_debited.html" class="change_clr" target="_blank">Money debited but ticket not booked?
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/beta_htmls/Canelled_train.html" class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::In Case Of train cancellation E-ticket can be cancelled&lt;br&gt; Upto 72 hours from the Departure of Train.">In Case Of train cancellation E-ticket can be cancelled... 
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/betaDoc/CC_68_2012_id_proof.pdf" class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: ERS/VRM along with any one of the ten(10) prescribed &lt;br&gt;ID proofs in original and the indication of the passenger(s)&lt;br&gt; name(s) in the Reservation Chart will authorize the passenger(s)&lt;br&gt; to travel on train.">ERS/VRM along with any one of the ten...
+	</a></div>
+	</li>
+
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::Cases of fraudulent claims of refund are liable for legal action.&lt;br&gt;Users registered on irctc.co.in are requested to update their user &lt;br&gt;profile with valid address, email-ID and mobile number. The registrations &lt;br&gt;with invalid address, email-IDs and mobile numbers are liable to be deactivated">Cases of fraudulent claims of refund are liable for ...
+	</a></div>
+	
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" ::E-ticket confirmed through charting at originating station or at the &lt;br&gt;previous remote location cannot be cancelled. The refund of such&lt;br&gt; ticket will be processed through TDR.">E-ticket confirmed through charting at originating... 
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/betadoc/BannerAuctionDetail_2014.pdf" class="change_clr" target="_blank">For details on Banner auction click here
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/beta_htmls/viewbanner.html" class="change_clr" target="_blank">For Banner view, click here
+	</a></div>
+</li>
+
+<li style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; text-align: left; width: 100%; height: 109.70394736842105px; " class="bjqs-slide">
+    <div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="https://www.irctc.co.in/beta_htmls/browser.html#Q7" class="change_clr" target="_blank">For Browser settings click here
+	</a></div>
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+    <a>Multiple logins at www.irctc.co.in are not allowed.</a></div>
+
+	<!-- <div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a style="font:" href="http://www.railtourismindia.com/Trains/BharatDarshan/NZPT03.html" class="change_clr" target="_blank">Panj Takht Train</a></div> -->
+
+	 <!-- <div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a  class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank"  title=" :: Accrual and Redemption of SBI Travel Reward Points is on hold due to <br>
+technical reasons and points under revision post SOFT scheme closure.">Accrual and Redemption of SBI Travel....
+	</a></div> -->
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank" title=" :: Customer Care no.011-23340000 is working.Reliance PRI no.011-39340000 is still down">Due to Technical Issue Customer Care Lines....
+	</a></div>
+
+</li>
+
+
+<!-- <li style="padding:5px; text-align:left;">
+   
+    
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a  class="Tips1" onmouseover="tooltip.pop(this, 'Testing')" target="_blank"  title=" ::Indian Railways has launched SMS Alerts Service for status of reserved <br> tickets-Please give correct mobile number while booking tickets">Indian Railways has launched SMS Alerts....
+	</a></div>
+
+</li> -->
+
+<!-- <li style="padding:5px; text-align:left;">
+	
+
+	<div style=" border-bottom:1px dashed #CCCCCC; padding:6px 0;">
+	<a href="http://www.railtourismindia.com/cgi-bin/dev1.dll/irctc/services/rrhome.do" class="change_clr" target="_blank">Now You Can Book Indian Railways Retiring Room Online</a></div>
+</li>
+ -->
+
+        </ul>
+        <!-- end Basic jQuery Slider -->
+
+      <ul class="bjqs-controls v-centered"><li class="bjqs-prev"><a href="#" data-direction="previous" style="top: 31.73913043478261%; ">Prev</a></li><li class="bjqs-next"><a href="#" data-direction="forward" style="top: 31.73913043478261%; ">Next</a></li></ul><ol class="bjqs-markers h-centered" style="left: 7px; "><li class="active-marker"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li><a href="#">6</a></li><li><a href="#">7</a></li><li><a href="#">8</a></li><li><a href="#">9</a></li><li><a href="#">10</a></li><li><a href="#">11</a></li></ol></div></div>
+      <!-- End outer wrapper -->
+
+      <script class="secret-source">
+        jQuery(document).ready(function($) {
+
+          $('#banner-fade').bjqs({
+            height      : 115,
+            width       : 304,
+            responsive  : true
+          });
+
+        });
+      </script>
+
+
+<div class="Advt">
+
+<div class="promoImgfirst">
+<a href="#" class="sms139" onclick="window.open('/sms_139.html','','width=400,height=300,left=325,top=100,toolbar=no,menubar=no,scrollbars=no,status=no,resizable=no');" alt="SMS 139"></a></div>
+
+<div class="promoImgfirst">
+<a href="#" onclick="window.open('/banner.html','','width=400,height=400,left=325,top=100,toolbar=no,menubar=no,scrollbars=no,status=no,resizable=no');">
+<img style="margin-top:4px; margin-left:8px; height:36px; width:197px;" align="left" src="/beta_images/banner_139.gif" alt="Call 139"></a></div>
+
+</div>
+
+
+<!--Advt Close-->
+</div>
+
+
+<div style="float:left; display:inline; margin-left:1em; border:1px solid #4A9ACE; height:200px; width:306px;">
+<div class="boxHead"><div class="heading1">Indian Railways introduces Premium Special Trains</div></div>
+
+
+<a href="https://www.irctc.co.in/betaDoc/list of dynamic train running in prod.pdf" target="_blank"><img src="/beta_images/newbanner/spl_train.gif" border="0" alt="Special Train" height="176" width="306"> </a>
+
+
+
+<!-- <div class="boxHead"><div class="heading">An Appeal to passengers</div></div>
+
+
+<div style="height:122px; width:288px; border:0px solid #000; margin:14px 7px 0px 7px;">
+<img src="/beta_images/printout1.gif" alt="Save Paper">
+</div>
+
+<div class="Advt" style=" background-color:#4A9ACE">
+
+<div style="float:left; display:inline; height:22px; width:90px; margin:9px 0 0 6px; border:0px solid #000;"><a href="#"
+onclick="window.open('https://www.irctc.co.in/VRM.htm','','width=750,height=650,left=325,top=100,toolbar=no,menubar=no,scrollbars=no,status=no,resizable=no');"><img src="/beta_images/knowmore.gif" alt="Konw More"></a></div>
+
+<div style="float:left; display:inline; width:190px; margin:9px 0 0 6px; border:0px solid #000; font:bold 12px arial; color:#fff; padding:4px 0 0 4px;">Must carry your valid ID</div>
+
+</div> -->
+
+ <!-- <a href="https://www.irctc.co.in/betaDoc/IRCTC E Wallet User Guide.pdf" target="_blank"><img src="/images/newbanner/ewallet.gif" alt="Windows App" width="307" height="200" /></a>  -->
+
+<!-- <img src="/images/newbanner/ewallet.gif" alt="Windows App" width="306" /> -->
+</div>
+
+</div>
+
+
+<table cellpadding="0" cellspacing="0" border="0" width="850" align="center" style="margin-top:18px; margin-bottom:18px;"><tbody><tr>
+<td align="left">
+<a href="http://www.shop.irctc.co.in/online-shopping/offer-1.html?utm_source=itctc&amp;utm_medium=website&amp;utm_campaign=ticketing-hp-top&amp;aff=IJG5M89" target="_blank"><img src="/beta_images/newbanner/BannerA-25-04-14.jpg" height="90" width="115"></a></td>
+<td align="right">
+ <!-- <script type="text/javascript">
+	var imageCounter=1;
+	function startTime()
+	{
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		if(imageCounter==3)
+		{
+			imageCounter=1;
+		}
+		hideAllImg();
+		document.getElementById("image-"+imageCounter).style.display="";
+		imageCounter=imageCounter;
+		//imageCounter=imageCounter+1;
+		t = setTimeout(function(){startTime()},5000);
+	}
+	function hideAllImg()
+	{
+		document.getElementById("image-1").style.display="none";
+		//document.getElementById("image-2").style.display="none";
+		
+		
+	}
+</script>  -->
+<!--<div id="slider" style="width:426px; height:200px; float:left; margin-right:5px; width:426px; height:200px;">
+    <div id="image-1"   style="display:none; width:426px; height:200px;">
+		<a href="http://www.shop.irctc.co.in/online-shopping/wh-sale.html?utm_source=itctc&utm_medium=website&utm_campaign=ticketing-hp-top&aff=IJG5M89" target="_blank">
+			<img src="beta_images/newbanner/BannerA-24-02-14.jpg"/>
+		</a>
+	</div>
+      <div id="image-2"  style="display:none; width:426px; height:200px;">
+		<a href="http://www.shop.irctc.co.in/online-shopping/flat-40-sale.html?utm_source=itctc&utm_medium=website&utm_campaign=ticketing-hp-top&aff=IJG5M89" target="_blank">
+			<img src="beta_images/shopbanner/BannerA-24-02-14.jpg"/>
+		</a>
+	</div>  
+
+	</div>-->
+<!-- <a href="http://www.shop.irctc.co.in/online-shopping/wh-sale.html?utm_source=itctc&utm_medium=website&utm_campaign=ticketing-hp-top&aff=IJG5M89" target="_blank">
+			<img src="beta_images/newbanner/BannerA-24-02-14.jpg"/> -->
+			<!-- <a href="http://www.shop.irctc.co.in/online-shopping/wh-sale.html?utm_source=itctc&utm_medium=website&utm_campaign=ticketing-hp-top&aff=IJG5M89" target="_blank">
+			<img src="beta_images/shopbanner/BannerA-27-03-14.jpg"/>
+		</a> -->
+
+		<!-- </a>
+<a href="http://n.admagnet.net/d/ck/?zoneid=7440&bannerid=61036&amc=1"><img src="/beta_images/newbanner/Home page main 06mar2014.gif" alt="" width="418" height="200"></a> --> 
+<!-- Google AdSense Home Page Middle -->
+<ins class="adsbygoogle" style="width:728px;height:90px" data-ad-client="ca-pub-6685711026657277" data-ad-slot="8148407052" data-adsbygoogle-status="done"><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6685711026657277";
+/* IRCTC_HP_TOP_728_90 */
+google_ad_slot = "8148407052";
+google_ad_width = 728;
+google_ad_height = 90;
+(adsbygoogle = window.adsbygoogle || []).push({params: {}});
+//--> 
+ </script>
+<!-- <script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>  -->
+
+</td>
+</tr>
+</tbody></table>
+<div style="border:1px solid #4a9ace; width:850px; margin:0 auto; padding:6px 0 6px 0; margin-top:6px;">
+<table width="838" align="center" cellpadding="0" cellspacing="0" border="0">
+<tbody><tr>
+<td width="50%" valign="top">
+<div id="demo" style="width:414px; float:left;">
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaa -->
+
+
+<div style="float:left; margin-top:6px; margin-right:5px; border:1px solid #ccc; margin-left:6px;"><img name="userImg" onclick="showforall('user')" id="userImg" src="/beta_images/plus_icon_home.gif" alt="Collapse"></div>
+<div id="userTab" onclick="showforall('user')" style="background-color: rgb(74, 154, 206); color: rgb(255, 255, 255); ">SMS/USSD based Mobile booking</div>
+
+
+<div id="user" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks10">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+
+<tr>
+<td width="25%" class="borderR"><a href="https://irctc.co.in/airtel.html" target="_blank">Airtel Money</a></td>
+<td width="25%" class="borderR"><a href="https://irctc.co.in/beta_images/sms_booking/SMS_BOOKING_139.htm" target="_blank">Bharat BPO</a></td>
+<td width="25%" class="borderR"><a href="https://irctc.co.in/mobitkt.html" target="_blank">Frequency Weekly</a></td>
+<td width="25%"><a href="https://irctc.co.in/beta_htmls/COMPLETE_IRCTC/welcome.html" target="_blank">Pyro Group</a></td>
+</tr>
+
+<tr>
+<td width="25%" class="borderR"><a href="https://www.irctc.co.in/beta_images/sms_booking/sms_ussd.pdf">Download Brochure</a></td>
+
+
+
+</tr><tr>
+<td height="5" colspan="4"></td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaaa -->
+
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="ussImg" onclick="showforall('uss')" id="ussImg" src="/beta_images/plus_icon_home.gif" alt="Collapse" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div>
+<div id="ussTab" onclick="showforall('uss')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">IRCTC Official App</div>
+
+
+<div id="uss" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+<tr>
+<td width="25%" class="borderR"><a href="https://www.irctc.co.in/beta_htmls/irctc_app.html " target="_blank">Windows Phone &amp; Windows 8 App</a></td>
+
+</tr>
+
+
+
+<tr>
+<td height="5" colspan="4"></td>
+</tr>
+</tbody></table>
+</div>
+<!--User Tab Close-->
+
+
+
+
+
+
+
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="smsImg" onclick="showforall('sms')" id="smsImg" src="/beta_images/plus_icon_home.gif" alt="Collapse" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div>
+<div id="smsTab" onclick="showforall('sms')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">User Guide</div>
+
+
+<div id="sms" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks9">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+<tr>
+<td width="25%" class="borderR"><a href="/beta_htmls/Registation.htm">User Registration Guide</a></td>
+<td width="25%" class="borderR"><a href="/beta_htmls/eticketguides.html">Booking E-Ticket</a></td>
+<td width="25%" class="borderR"><a href="/beta_htmls/MSSTGUIDE.html">Booking Season Ticket</a></td>
+<td width="25%"><a href="/beta_htmls/quickbookguide.html"> Quick Book Ticket Guide</a></td>
+</tr>
+
+<tr>
+<td width="25%" class="borderR"><a href="/beta_htmls/iticketGuide.html">Booking I-Ticket</a></td>
+<td class="borderR"><a href="/beta_htmls/etktcanc.html">Canceling E-Ticket</a></td>
+ <td class="borderR" width="25%"><a href="/beta_htmls/browser.html">Browser Settings</a></td>
+  <td width="25%"><a href="/betaDoc/NGET_JP_Userguide.pdf" target="_blank">Next Generation e-ticketing Journey Planner User guide</a></td>
+</tr>
+<tr>
+<td class="borderR"><a href="/beta_htmls/itktcanc_new.html">Canceling I-Ticket</a></td>
+<td class="borderR"><a href="/beta_htmls/CompatibleBrowser.html">Compatible Browser</a></td>
+<td><a href="/beta_htmls/TatkalBookingGuide.htm">Tatkal Booking Guide</a></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+
+</tr>
+
+<tr>
+<td height="5" colspan="4"></td>
+</tr>
+</tbody></table>
+</div>
+<!--SMS Tab Close-->
+
+
+
+
+<!--User Tab Start-->
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;" id="forchange" onmouseover="fillcolor('enqu')"><img name="enquImg" onclick="showforall('enqu')" id="enquImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div>
+<div id="enquTab" onclick="showforall('enqu')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">Enquiries</div>
+
+<div id="enqu" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks1">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+
+
+<tr>
+  <td class="borderR" width="25%"><a href="http://www.indianrail.gov.in/index.html" target="_Blank">Reservation Enquiries</a></td>
+  <td class="borderR" width="25%"><a href="http://www.indianrail.gov.in/pnr_Enq.html" target="_Blank">PNR Enquiry</a></td>
+  <td class="borderR" width="25%"><a href="http://www.trainenquiry.com/" target="_Blank">Train Enquiry</a></td>
+  <td width="25%"><a href="http://www.indianrailways.gov.in/railwayboard/view_section.jsp?lang=0&amp;id=0,1,304,366,537" target="_Blank">Trains at a Glance</a></td>
+</tr>
+
+<tr>
+  <td class="borderR"><a href="http://www.indianrail.gov.in/inet_srcdest_names.html" target="_Blank">Train/Fare Accommodation</a></td>
+  <td class="borderR"><a href="http://www.indianrail.gov.in/inet_metro_trns.html" target="_Blank">Train Between Important Stations</a></td>
+  <td class="borderR"><a href="http://indianrail.gov.in/inet_trnno_enq.html" target="_Blank">New Train Number <br>(w.e.f.20/12/2010)</a></td>
+   <td><a href="/beta_htmls/SMS139.html" target="_Blank">Railway Enquiry-139</a></td>
+    <td>&nbsp;</td>
+</tr>
+
+<tr>
+    <td height="5" colspan="4"></td>
+   </tr>
+</tbody></table>
+</div>
+<!--Enquiries Tab Close-->
+
+<!--General Information Tab Start-->
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;">
+<img name="GeneralImg" onclick="showforall('General')" id="GeneralImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div>
+<div id="GeneralTab" onclick="showforall('General')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">General Information</div>
+
+<div id="General" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks2">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+
+<tr>
+<td width="25%" class="borderR"><a href="/beta_htmls/IRRules.html" target="_Blank">Rules &amp; Policies</a></td>
+<td width="25%" class="borderR"><a href="/beta_htmls/newfaqs.html" target="_Blank">Frequently Asked Questions</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/PG_SuccessRate.pdf" target="_Blank">Statistics</a></td>
+<td width="25%"><a href="/beta_htmls/term.html" target="_Blank">Terms And Conditions</a></td>
+</tr>
+
+<tr>
+<td class="borderR"><a href="/beta_htmls/Eticket_new_cancel.html" target="_Blank">New Facilities In E-Ticket</a></td>
+<td class="borderR"><a href="/beta_htmls/womenconc.html" target="_Blank">Women Sr.Citizens Concession</a></td>
+<td class="borderR"><a href="/beta_htmls/Waitlisted_E-Ticket.html" target="_Blank">Scheme for issue of waitlisted E-tickets</a></td>
+<td><a href="/beta_htmls/refundrules.html">Refund Rules (Old)</a></td>
+</tr>
+
+<tr>
+<td class="borderR"><a href="/beta_htmls/Deliverypopup.html" target="_Blank">Areas Covered</a></td>
+<td class="borderR"><a href="https://www.irctc.co.in/cgi-bin/bv60.dll/irctc/services/pinNarea.do?">Pincodes Covered</a></td>
+<td class="borderR"><a href="/beta_htmls/emailAlert.html" target="_Blank">Protect against fraudulent emails</a></td>
+<td class="borderR"><a href="/beta_htmls/REFUND RULES wef 1-Jul-13.pdf" target="_Blank">Amended Refund Rules w.e.f 01-07-2013</a></td>
+
+</tr>
+
+<tr><td height="5" colspan="4"></td></tr>
+</tbody></table>
+</div>
+
+<!--Agent Tab Close-->
+
+
+</div></td>
+<td width="50%" valign="top">
+<div id="demo" style="width:414px;  float:right;">
+
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="shopImg" onclick="showforall('shop')" id="shopImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div><div id="shopTab" onclick="showforall('shop')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">IRCTC Shopping Zone</div>
+
+<div id="shop" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks8">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+<tr>
+<td class="borderR" colspan="4"><a href="https://www.irctc.co.in/cgi-bin/bv60.dll/irctc/services/ShopAtIrctc.jsp" target="_blank">Register as Affiliate /Seller with IRCTC Shop</a></td>
+
+<td class="borderR" colspan="4"><a href="http://www.shop.irctc.co.in/buy-online/mobile-apps.html" target="_blank">IRCTC Shop Mobile App</a></td>
+</tr>
+
+<tr>
+    <td height="5" colspan="4"></td>
+   </tr>
+</tbody></table>
+</div>
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="mobImg" onclick="showforall('mob')" id="mobImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div>
+<div id="mobTab" onclick="showforall('mob')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">Mobile Zone</div>
+
+<div id="mob" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table width="98%" align="center" cellpadding="3" cellspacing="0" id="tabslinks6" style="text-align:left">
+  <tbody><tr><td height="5" colspan="4"></td></tr>
+	
+	
+<tr>
+    <td width="25%" class="borderR"><a href="/beta_htmls/index.htm" target="_blank">IRCTC on mobile -Steps for booking rail tickets on mobile
+</a></td>
+<td width="25%" class="borderR"><a href="/BankHelpFile/imps/imps_help.htm" target="_blank">IMPS (Interbank Mobile Payment Service)</a></td>
+</tr>
+
+<tr>
+    <td width="25%" class="borderR"><a href="/ngpay/index.html" target="_blank">NgPay Mobile App
+</a></td>
+<td width="25%" class="borderR"><a href="http://www.cleartrip.com/mobile/" target="_blank">Cleartrip Mobile App</a></td>
+</tr>
+
+</tbody></table>
+</div>
+<div style="clear:both;"></div>
+<!-- Mobile Zone Tab Close-->
+
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="irctcImg" onclick="showforall('irctc')" id="irctcImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div><div id="irctcTab" onclick="showforall('irctc')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">IRCTC Zone</div>
+
+<div id="irctc" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks5">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+<tr>
+<td width="25%" class="borderR"><a href="http://www.irctc.com/rti.html" target="_Blank">RTI Information</a></td>
+<td width="25%" class="borderR"><a href="/jago_yatri.pdf">Jago yatri jago </a></td>
+<td class="borderR"><a href="/beta_htmls/sbidetails.html">SBI Railway Credit Card</a></td>
+
+</tr>
+
+
+
+<tr>
+
+<td class="borderR"><a href="http://www.jsk.gov.in" target="_blank">Jansankhya Sthirata Kosh</a></td>
+<!-- <td class="borderR"><a href="/Dial-a-Meal.pdf"> Dial a Meal </a></td> -->
+<td class="borderR"><a href="/beta_htmls/Awards_Achievements.html">Awards &amp; Achievements</a></td>
+<td class="borderR"><a href="/beta_htmls/irctc_menu.html">Standard Menu</a></td>
+
+</tr>
+  <tr>
+    <!-- <td class="borderR"><a href="/beta_htmls/alacarte.html"> A-la-carte </a></td> -->
+	<td class="borderR"><a href="/beta_htmls/cyclicMenuRajdhani.html"> Rajdhani Menu </a></td>
+	<td class="borderR"><a href="/betaDoc/SMS_Services_Tender.pdf" target="blank">Tender for messaging process &amp;
+advertising rights for irctc e/i-ticket customers</a></td>
+	
+	 <td class="borderR"><a href="http://www.the-maharajas.com" target="blank">Maharajas' Express</a></td>
+
+  </tr>
+
+
+
+<tr>
+    <td height="5" colspan="4"></td>
+   </tr>
+</tbody></table>
+</div>
+<!--IRCTC Zone-->
+
+
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="agentImg" onclick="showforall('agent')" id="agentImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div><div id="agentTab" onclick="showforall('agent')" style="background-color: rgb(241, 241, 241); color: rgb(51, 51, 51); ">Agents</div>
+
+<div id="agent" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks3">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+
+<tr>
+
+<td width="25%" class="borderR"><a href="/betaDoc/NewAgentsPolicy.pdf" target="blank">New Agent Policy</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/IRCTC Authorised Principal Service Providers.pdf" target="blank">IRCTC Authorised Principal Service Providers</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/List of BlackListAgent.xls" target="blank">List of Blacklist Agent</a></td>
+<td class="borderR"><a href="https://www.irctc.co.in/cgi-bin/bv60.dll/irctc/enquiry/FindAgents.do?click=true">Find Agents</a></td>
+</tr>
+
+<tr>
+<td width="25%" class="borderR"><a href="/betaDoc/Class III Digital Certificate Creation Process.pdf" target="blank">Digital Certificate Generation Process</a>
+</td>
+</tr>
+
+
+<!-- <td width="25%"  class="borderR" ><a href="/betaDoc/Class III Digital Certificate Creation Process.pdf"  target="blank">Norms for all schemes</a>
+</td> -->
+
+<!-- <div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="allschemesImg" onclick="showforall('allschemes')" id="allschemesImg" src="/beta_images/plus_icon_home.gif" alt="Expand" ></div><div id="allschemestab" onclick="showforall('allschemes')">Norms for all schemes</div> -->
+
+
+<!-- <div id="allschemes" style="float:left; width:100%; display:none; background-color:#fff;"> -->
+</tbody></table><table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks4">
+
+<tbody><tr><td height="5" colspan="4" bgcolor="#4C99CC" align="center" style=" font:11px arial; color:#ffffff;"><b>Norms for all schemes</b></td></tr>
+
+<tr>
+<td width="25%" class="borderR"><a href="/betaDoc/NormsforRTSA.pdf" target="blank">Norms for RTSA</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/NormsforIATA.pdf" target="blank">Norms for IATA</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/NormsforGSA.pdf" target="blank">Norms for GSA</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/NormsforInternetCafeScheme.pdf" target="blank">Norms for Internet Cafe Scheme</a></td>
+
+</tr>
+
+<tr>
+
+
+<td width="25%" class="borderR"><a href="/betaDoc/NormsforB2B.pdf" target="blank">Norms for B2B Scheme</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/NormsforB2CMobile.pdf" target="blank">Norms for B2C &amp; Mobile Scheme</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/RegistrationForm.pdf" target="blank">Registration Form</a></td>
+<td width="25%" class="borderR"><a href="/betaDoc/requisition5/23/20145/23/20145/23/2014slip.JPG" target="blank">Requisition Slip</a></td>
+
+</tr>
+
+
+<tr>
+    <td height="5" colspan="4"></td>
+   </tr>
+</tbody></table>
+</div>
+<!-- Agent Tab Closed-->
+
+<div style="float:left; margin-top:6px; margin-right:5px; margin-left:6px;"><img name="auctionImg" onclick="showforall('auction')" id="auctionImg" src="/beta_images/plus_icon_home.gif" alt="Expand" style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(204, 204, 204); border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); "></div><div id="auctionTab" onclick="showforall('auction')" style="color: rgb(51, 51, 51); background-color: rgb(241, 241, 241); ">Advertise with us</div>
+
+<div id="auction" style="float: left; width: 100%; background-color: rgb(255, 255, 255); display: none; ">
+<table border="0" cellpadding="3" cellspacing="0" style="width:98%" align="center" id="tabslinks4">
+<tbody><tr><td height="5" colspan="4"></td></tr>
+
+
+<tr>
+<!-- <td class="borderR" width="25%"><a  href="/betaDoc/BannerAuctionDetail_2014.pdf"  target="blank" >Banner Auction Details</a></td> -->
+<td class="borderR" width="25%"><a href="/beta_htmls/Marketing.html" target="_blank">Mailers and TextLinks</a></td>
+<!-- <td class="borderR" width="25%"><a href="/beta_htmls/viewbanner.html"  target="blank">Banner View</a></td> -->
+ <td class="" width="25%"><a href="/beta_htmls/adwithus.html" target="_blank">Advertisement Enquiries</a></td>
+
+
+
+
+
+<!-- <td width="20%">&nbsp;</td> -->
+</tr>
+<tr>
+ <!-- <td class="borderR" width="25%"><a href="/betaDoc/Termscondition.pdf " target="_blank">Terms&nbsp;&amp;Conditions_ Banners</a></td> -->
+ <td class="borderR" width="25%"><a href="/betaDoc/Terms_condition_Mailers.pdf " target="_blank">Terms&nbsp;&amp;Conditions_ Mailers</a></td>
+    <td height="5" colspan="2"></td>
+   </tr>
+</tbody></table>
+</div>
+
+</div>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+<div style="height:12px; float:left; width:100%"></div>
+<div style="width:850px; height:95px; margin:0px auto 0 auto; clear:both">
+
+
+<!-- Google AdSense Home Page Bottom -->
+<ins class="adsbygoogle" style="width:728px;height:90px" data-ad-client="ca-pub-6685711026657277" data-ad-slot="9625114932" data-adsbygoogle-status="done"><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6685711026657277";
+/* IRCTC_HP_BOTTOM_728_90 */
+google_ad_slot = "9625114932";
+google_ad_width = 728;
+google_ad_height = 90;
+(adsbygoogle = window.adsbygoogle || []).push({params: {}});
+//--> 
+ </script>
+<!-- <script type="text/javascript"
+src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>  -->
+<!-- <a href="http://air.irctc.co.in" target="blank"><img align="left" src="/beta_images/newbanner/banner_133.jpg" alt="Banner" width="419" height="133" border="0" /></a> -->
+
+<!-- <a href="http://www.shop.irctc.co.in/online-shopping/apparels/shoes/men/women.html?price=14:500&utm_source=itctc&utm_medium=website&utm_campaign=hp-r&aff=3CCB54D" target="blank"><img align="right" src="/beta_images/shopbanner/Screenshot-J-17-02-14.jpg" alt="Banner" width="419" height="133" border="0" /></a> -->
+
+<!-- <a href="http://www.railtourismindia.com/cgi-bin/hotel.dll/irctc/booking/search-hotel.jsp" target="blank"><img align="right" src="/beta_images/newbanner/IRCTC-Banner-419x133.jpg" alt="Banner" width="419" height="133" border="0" /></a> -->
+ 
+  <!--  <a href="http://www.shop.irctc.co.in" target="blank"><img src="https://www.irctc.co.in/beta_images/irctc_shop_l.jpg" alt="banner" width="419" height="133" border="0" /></a>   -->
+
+    
+</div> 
+
+<div class="footer">
+<div class="footerborder">
+
+<div id="footerlogo">
+<ul>
+<li><a href="http://www.cris.org.in" target="_blank" class="cris"></a></li>
+<!--<li><a href="https://sealinfo.thawte.com/thawtesplash?form_file=fdf/thawtesplash.fdf&dn=WWW.IRCTC.CO.IN&lang=en" target="_blank" class="verisign"></a></li>-->
+<!-- <li><a href="http://usa.visa.com/personal/security/visa_security_program/vbv/verified_by_visa_faq.html" target="_blank" class="verisignvisa"></a></li> -->
+<li><a href="http://www.the-maharajas.com" target="_blank" class="maharaja"></a></li>
+<li><a href="http://www.railtourismindia.com" target="_blank" class="tourism"></a></li>
+<li><a href="http://www.mastercard.com/us/personal/en/cardholderservices/securecode/index.html" target="_blank" class="masterc"></a></li>
+<li><a href="#" class="safekey"></a></li>
+</ul>
+</div>
+
+
+<div class="footerlink">Copyright © <script type="text/javascript">
+var d = new Date();
+var curr_year = d.getFullYear();
+document.write(curr_year);</script>2014 - www.irctc.co.in. All Rights Reserved&nbsp;<br>
+Site best viewed in IE 6 and above&nbsp;<span id="sip" style="color:#FFFFFF"><iframe name="inlineframe" src="serverIp.html" style="height:11px;" frameborder="0" scrolling="no" width="20" height="18" marginwidth="0" marginheight="0"></iframe></span></div>
+
+    
+
+<!--Footerborder Close-->
+</div>
+<!--Footer Close-->
+</div>
+<!--Main Close-->
+</div>
+<!--wrapper Close-->
+<!-- Google Analytics code start -->
+
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5620340-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Analytics code end -->
+
+<script type="text/javascript">
+//SYNTAX: tabdropdown.init("menu_id", [integer OR "auto"])
+tabdropdown.init("bluemenu")
+</script>
+
+</div></body></html>

@@ -1,0 +1,1807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head id="ctl00_Head1"><title>
+	اخبار ايران و جهان |خبرگزاري فارس| Fars News Agency 
+</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="content-language" content="fa"><meta name="keywords" content="سايت خبرگزاري فارس، کليپ فارسي، اخبار ايران، آخرين نتايج، اخبار فوري، فوتبال ايران و جهان،گزارش تصويري FarsNews,Fars News Agency,Persian Clip,"><meta name="dc.publisher" content="Fars News Agency"><meta name="description" content="تازه ترين اخبار ورزشي، حوادث، سياسي و اقتصادي ايران، افغانستان، آسياي مرکزي و ساير مناطق جهان را در اينجا بخوانيد. مي توانيد کليپ هاي صوتي و تصويري را از خبرگزاري فارس دريافت کنيد."><meta id="ctl00_Meta1" name="keywords"><meta name="dc.identifier" content="http://www.farsnews.com/"><meta name="copyright" content="© 2012 Fars News Agency (www.farsnews.com)"><meta name="dcterms.created" content="2002-10-14T15:24:23+00:00">
+    <meta name="dcterms.modified" content="2014-06-08T05:38:22+00:00">
+
+    <link rel="icon" href="shares/img/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="shares/img/favicon.ico" type="image/x-icon"><link href="shares/CSS/mpStyle.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script><script src="shares/javascripts/jquery.js" type="text/javascript"></script>
+    <script src="shares/javascripts/carousel.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $('#selectedimage').cycle({
+            fx: 'fade',
+            speed: 2000,
+            timeout: 5000
+        });
+    </script>
+
+    <script src="shares/javascripts/jquery.js" type="text/javascript"></script>
+    <script src="shares/javascripts/jquery.jscrollpane.js" type="text/javascript"></script>
+    <script src="shares/javascripts/marquee.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript">
+
+        /******************************** get cookie ********************************/
+        function getCookie(c_name) {
+            var c_value = document.cookie;
+            var c_start = c_value.indexOf(" " + c_name + "=");
+            if (c_start == -1) {
+                c_start = c_value.indexOf(c_name + "=");
+            }
+            if (c_start == -1) {
+                c_value = null;
+            }
+            else {
+                c_start = c_value.indexOf("=", c_start) + 1;
+                var c_end = c_value.indexOf(";", c_start);
+                if (c_end == -1) {
+                    c_end = c_value.length;
+                }
+                c_value = unescape(c_value.substring(c_start, c_end));
+            }
+            return c_value;
+        }
+
+        /******************************** set cookie ********************************/
+        function setCookie(c_name, value, exdays) {
+            var exdate = new Date();
+            exdate.setDate(exdate.getDate() + exdays);
+            var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString()) + "; path=/; domain=www.farsnews.com";
+            document.cookie = c_name + "=" + c_value;
+        }
+
+        /******************************** check cookie ********************************/
+        function checkCookie() {
+            var expidate = new Date();
+            expidate.setDate(expidate.getDate());
+            document.cookie = "deskuser=deskuser; expires=" + expidate.toUTCString() + "; path=/mobile/; domain=www.farsnews.com";
+            var username = getCookie("mobileuser");
+            if (username != null && username != "" && username == "mobileuser") {
+                window.location = "/mobile";
+            }
+            else {
+                username = "mobileuser";
+                if (username != null && username != "") {
+                    setCookie("mobileuser", username, 365);
+                    window.location = "/mobile";
+                }
+            }
+        }
+
+        /******************************** get for reload cookie ********************************/
+        function getMyCookie() {
+            var username = getCookie("mobileuser");
+            if (username != null && username != "" && username == "mobileuser") {
+                window.location = "/mobile";
+            }
+        }
+
+        var current = 0, timeOfChange = 5000;
+        function changpic(type, isManual) {
+            for (i = 0; i < 6; i++) {
+                document.getElementById("mpviewpointitem" + i).style.display = 'none';
+            }
+            if (type == 0) {
+                current--;
+                if (current < 1) current = 6;
+            }
+            else if (type == 1) {
+                current++;
+                if (current > 6) current = 1;
+            }
+            document.getElementById("mpviewpointitem" + (current - 1)).style.display = 'block';
+            document.getElementById("currentviewedpoint").innerHTML = current;
+            if (isManual == 0) setTimeout(function () { changpic(1, 0); }, timeOfChange);
+        }
+        window.onload = function () {
+            changpic(1, 0);
+        }
+        //setInterval(alert('ok'), 5 * 1000);
+
+        function extend(subMenu, level) {
+            if (!document.getElementById("mm" + subMenu)) return;
+            main = document.getElementById("mm" + subMenu);
+            if (!level == 2) {
+                for (i = 0; i < 20; i++) {
+                    if (document.getElementById("sm" + i)) {
+                        if (i != subMenu) {
+                            document.getElementById("mm" + i).className = 'submenu';
+                            document.getElementById("sm" + i).className = 'smcollapsed';
+                            document.getElementById("cm" + i).className = 'clsubmenu';
+                        }
+                    }
+                    else break;
+                }
+            }
+            if (main.className == "submenu") {
+                main.className = 'submenuexpanded';
+                document.getElementById("sm" + subMenu).className = 'smexpanded';
+            }
+            else if(main.className == "clsubmenu"){
+                main.className = 'clsubmenuexpanded';
+                document.getElementById("cm" + subMenu).className = 'clsmexpanded'; 
+            }
+            else if(main.className == "clsubmenuexpanded"){
+                main.className = "clsubmenu";
+                document.getElementById("cm" + subMenu).className = 'smcollapsed';
+            }
+            else {
+                main.className = "submenu";
+                document.getElementById("sm" + subMenu).className = 'smcollapsed';
+            }
+
+        }
+        		
+
+
+    </script>
+<script type="text/javascript" src="http://feedback.farsnews.com/stcs.js.aspx?h=aHR0cDovL3R1cmtleS1wZXJzaWFuXyZfXyZfdHVya2V5LXBlcnNpYW5fJl9GTi1UUi1XZWItRlItMl8mXzIxMi42OC40NC4xNg%3d%3d|1680X1050"></script></head>
+<body style="">
+    <center>
+        ﻿
+
+
+    <title></title>
+    <script src="../../../shares/javascripts/jq.min.js"></script>
+    <script src="../../../shares/javascripts/jquery.cycle.all.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var img = "<div id='loading'><span style='color : #FFFFFF;'>لطفا صبر کنید</span>&nbsp;&nbsp;<img id='loadingImg' src='../../../shares/img/loading.gif'/></div>";
+
+            LoadWidgets();
+            selectWidgets();
+            lang();
+            ie_ver();
+
+            function addCommas(nStr) {
+                nStr += '';
+                x = nStr.split('.');
+                x1 = x[0];
+                x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                return x1 + x2;
+            }
+
+            function ie_ver() {
+                var iev = 0;
+                var ieold = (/MSIE (\d+\.\d+);/.test(navigator.userAgent));
+                var trident = !!navigator.userAgent.match(/Trident\/7.0/);
+                var rv = navigator.userAgent.indexOf("rv:11.0");
+
+                if (ieold) iev = new Number(RegExp.$1);
+                if (navigator.appVersion.indexOf("MSIE 10") != -1) iev = 10;
+                if (trident && rv != -1) iev = 11;
+
+                if (iev > 0) {
+                    $("#wrapper").css("margin-top", "-21px");
+                }
+
+            }
+
+
+            function LoadWidgets(id) {
+                if (id == null || id == "") {
+                    id = "2";
+                }
+                $("#navigate").empty().append(img);
+
+                $.ajax({
+                    url: "../../../webService/navigate.asmx/CreateNav",
+                    type: "get",
+                    contentType: "application/json; charset=utf-8",
+                    data: {'id' :id},
+                    dataType: "json",
+                    success: function (data) {
+                        $("#navigate").empty();
+
+                        if (id == "1") {
+                            $("#navigate").empty();
+                            $("#loading").fadeOut();
+
+                            CreateBouce(data.d);
+                        }
+                        else if (id == "2") {
+                            $("#navigate").empty();
+                            $("#loading").fadeOut();
+
+                            CreateCurrency(data.d);
+                        }
+                        else if (id == "3") {
+                            $("#navigate").empty();
+                            $("#loading").fadeOut();
+
+                            CreateCars(data.d);
+                        }
+                    },
+                    error: function (jqxr, status, msg) {
+                        var err = "<div style='margin-right : 5px; color : #FF0000;'>با عرض معذرت در حال حاضر این قسمت در دسترس نمی باشد</div>";
+
+                        $("#navigate").empty().append(err);
+                    }
+                });
+            };
+
+            function CreateBouce(data) {
+                $("#navigate").empty();
+                var myJson = JSON.parse(data);
+                var val = "";
+                var allTbl = "";
+
+                $.each(myJson, function (key, value) {
+                    var tbl = "<table id='tbl'><tr><td class='tdNames'>نام شاخص:</td><td id='Name'>" + value.IndexName + "</td><td class='tdNames'>ارزش:</td><td id='Value'>" + value.Value + "</td><td class='tdNames'>بالاترین ارزش:</td><td id='maxVal'>" + value.Max + "</td><td class='tdNames'>پایین ترین ارزش:</td><td id='minVal'>" + value.Min + "</td><td class='tdNames'>تفاوت:</td><td id='diff'>" + diffColor(value.Diff) + "</td></tr></table>";
+                    val = value.Diff;
+                    $("#navigate").append(tbl);
+                });
+                NumberConvert();
+                cycle();
+
+                $("#navigate table").click(function () {
+                    window.open("http://widgets.farsnews.com/bource/", '_blank');
+                });
+            };
+
+            function CreateCurrency(data) {
+                $("#navigate").empty();
+                var myJson = JSON.parse(data);
+                var count = 0;
+                var allTbl = "";
+                $.each(myJson, function (key, value) {
+                    var verLine = "";
+                    if (count % 2 == 0) {
+                        verLine = "<td style = 'color : #73ff5a;' >&nbsp;|&nbsp;</td>";
+                    }
+
+                    var tbl = "<td class='tdNames'>&nbsp;</td><td id='Name'>" + value.IndexNameCur + "</td><td class='tdNames'> بازار:</td><td id='Value'>" + addCommas(value.ValueCur) + "</td>" + verLine;
+                    count++;
+                    allTbl += tbl;
+
+                    if (count % 2 == 0) {
+                        $("#navigate").append("<table id='tbl'><tr>" + allTbl + "</tr></table>");
+                        allTbl = "";
+                    }
+                });
+                NumberConvert();
+                cycle();
+
+                $("#navigate table").click(function () {
+                    window.open("http://widgets.farsnews.com/currency/", '_blank');
+                });
+            };
+
+            function CreateCars(data) {
+                $("#navigate").empty();
+                var myJson = JSON.parse(data);
+                var allTbl = "";
+                $.each(myJson, function (key, value) {
+                    var tbl = "<table id='tbl'><tr><td class='tdNames'>&nbsp;</td><td id='Value'>" + value.carName + "</td><td class='tdNames' style='padding-right : 25px;'>نمایندگی:</td><td id='namPrice' style='color : #73ff5a'>" + addCommas(value.companyPrice) + "</td><td class='tdNames' style='padding-right : 25px;'>بازار:</td><td id='Value' style='color : #ff7676'>" + addCommas(value.marketPrice) + "</td></tr></table>";
+
+
+                    $("#navigate").append(tbl);
+                });
+                NumberConvert();
+                cycle();
+
+                $("#navigate table").click(function () {
+                    window.open("http://widgets.farsnews.com/cars/", '_blank');
+                });
+
+            }
+
+            function NumberConvert() {
+                var numConversion = {
+                    '0': '&#1776;',
+                    '1': '&#1777;',
+                    '2': '&#1778;',
+                    '3': '&#1779;',
+                    '4': '&#1780;',
+                    '5': '&#1781;',
+                    '6': '&#1782;',
+                    '7': '&#1783;',
+                    '8': '&#1784;',
+                    '9': '&#1785;'
+                };
+
+                var grid = $("#navigate");
+
+                var gridContent = grid.contents();
+                convertText(gridContent);
+
+                function convertText(contents) {
+                    contents.each(function () {
+
+                        if (this.nodeType == 3) {
+                            this.nodeValue =
+                            $("<td>").html(convert(this.nodeValue)).text();
+                        } else if (this.nodeType == 1) {
+                            convertText($(this).contents());
+                        }
+                    });
+                }
+
+                $("#navigate").html(grid.html());
+
+                function convert(txt) {
+                    var resultTxt = '';
+                    var textChar = '';
+                    for (var i = 0; i < txt.length; i++) {
+                        textChar = txt.charAt(i);
+                        if (numConversion.hasOwnProperty(textChar)) {
+                            resultTxt += numConversion[textChar];
+                        } else {
+                            resultTxt += textChar;
+                        }
+                    }
+                    return resultTxt;
+                }
+            }
+
+            function cycle() {
+                $('#navigate').cycle({
+                    fx: 'scrollUp',
+                    speed: 2000,
+                    timeout: 300,
+                    delay: 600,
+                    next: '#next2',
+                    prev: '#prev2'
+                });
+            }
+
+            function diffColor(val) {
+                if (val > 0) {
+                    var a = "<span style='color : #73ff5a'>" + val + "</span>";
+                    return a;
+                }
+                else if (val < 0) {
+                    var a = "<span style='color : #ff7676'>" + val + "</span>";
+                    return a;
+                }
+                else if (val == 0) {
+                    var a = "<span style='color : #ffffff'>" + val + "</span>";
+                    return a;
+                }
+            }
+
+            function selectWidgets() {
+                $('#widgets ul li').not(':first').hide();
+
+                $('.prevWid, .nextWid').click(function () {
+
+                    var dir = $(this).hasClass('prevWid') ? -1 : 1;
+
+                    var current = $('#widgets ul li:visible');
+
+                    var new_el = dir < 0 ? current.prev('li') : current.next('li');
+
+                    if (new_el.size() == 0) {
+                        new_el = $('#widgets ul li:' + (dir < 0 ? 'last' : 'first'));
+                    }
+
+                    $('#widgets ul li').hide(1000);
+                    setTimeout(function () { new_el.show(1500); }, 500);
+
+                    $("#navigate").fadeOut(1000);
+
+                    setTimeout(function () {
+
+                        LoadWidgets(new_el.attr("id"));
+                        $("#navigate").fadeIn(1000);
+                    }, 1000);
+
+                    return false;
+
+                });
+            };
+
+            function lang() {
+                $(document).click(function () {
+                    $("#lang ul li:first-child").css("display", "block");
+                    $("#lang ul li").not("#lang ul li:first-child").css("display", "none");
+                });
+
+                $("#lang").click(function (e) {
+                    e.stopPropagation();
+                    $("#lang ul li:first-child").css("display", "none");
+                    $("#lang ul li").not("#lang ul li:first-child").css("display", "block");
+                });
+            }
+
+        });
+    </script>
+
+    <style type="text/css">
+        #wrapper {
+            margin: 0 auto;
+            margin-top: -20px;
+            margin-top: -21px\9;
+            padding: 0;
+            direction: rtl;
+            font-family: Tahoma;
+            font-size: 12px;
+            background: #404040;
+            width: 990px;
+            height: 30px;
+        }
+
+        #subWrap {
+            margin-top: 2px;
+            width: 990px;
+            height: 30px;
+            background: #404040 url(../../../shares/img/widgetBg.png) right bottom no-repeat;
+            z-index: 99;
+            position: absolute;
+        }
+
+        #navigate {
+            margin: 5px 0px 0 0;
+            height: 20px;
+            width: 772px;
+            padding: 0;
+            float: right;
+            color: #ffffff;
+            right: 0;
+        }
+
+            #navigate table {
+                margin: -2px 3px 0 0;
+                cursor: pointer;
+                position: absolute;
+                right: 0;
+                white-space: nowrap;
+            }
+
+        #navButton {
+            margin-top: 6px;
+            float: right;
+            padding: 0;
+        }
+
+        #next2 {
+            margin-top: 10px;
+        }
+
+        #navButton img {
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .tdNames {
+            color: #b0b0b0;
+        }
+
+        #Name, #Value, #maxVal, #minVal {
+            padding-left: 10px;
+            COLOR: #ffffff;
+        }
+
+        #diff {
+            direction: ltr;
+        }
+
+        #widgets {
+            margin: 0;
+            width: 118px;
+            height: 30px;
+            float: right;
+            padding: 2px 5px 0 2px;
+            margin-left: 6px;
+            color: #ffffff;
+        }
+
+        #WidButton {
+            float: right;
+            margin: 3px 5px 0 8px;
+        }
+
+            #WidButton img {
+                cursor: pointer;
+            }
+
+        .nextWid {
+            margin-left: 7px;
+        }
+
+        #widgets ul {
+            list-style: none;
+            font-family: Tahoma;
+            font-size: 11px;
+            position: relative;
+            margin: 3px 0 2px 0;
+            padding: 0 1px 3px 0;
+            width: 70px;
+            float: right;
+        }
+
+        #space {
+            float: right;
+            width: 2px;
+            height: 30px;
+            background: #DEDEDE;
+            margin-left: 2px;
+        }
+
+        #lang {
+            height: 30px;
+            width: 65px;
+            background: #4B4B4B;
+            float: left;
+            margin: 0 5px 0 2px;
+            border-radius: 2px;
+            position: relative;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+            #lang a {
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            #lang ul {
+                margin: 5px 0 5px 0px;
+                padding: 0 5px 0 0;
+                list-style: none;
+                float: right;
+                background: #4B4B4B;
+                width: 60px;
+                border-radius: 3px;
+                position: absolute;
+                z-index: 98;
+            }
+
+                #lang ul li {
+                    color: #ffffff;
+                }
+
+                    #lang ul li:not(:first-child) {
+                        display: none;
+                    }
+
+                    #lang ul li:last-child {
+                        padding-bottom: 4px;
+                    }
+
+            #lang img {
+                float: right;
+                position: absolute;
+                left: 8px;
+                top: 11px;
+                z-index: 99;
+            }
+
+        #loading {
+            margin-right: 15px;
+        }
+
+        #loadingImg {
+            width: 20px;
+        }
+
+        #loading span {
+            float: right;
+        }
+
+        #widgetBack {
+            margin: 0;
+            height: 30px;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background: #404040;
+        }
+    </style>
+
+
+
+
+    <div id="wrapper">
+        <div id="subWrap">
+            <div id="widgets">
+                <div id="WidButton">
+                    <img class="nextWid" src="../../../shares/img/TopNavigate/right.png">
+                    <img class="prevWid" src="../../../shares/img/TopNavigate/left.png">
+                </div>
+
+                <ul>
+                    <li id="2">طلا، سکه و ارز</li>
+                    <li id="1" style="display: none; ">بورس</li>
+                    <li id="3" style="display: none; ">قیمت خودرو</li>
+                </ul>
+
+            </div>
+
+            <div id="navButton">
+                <div id="prev2">
+                    <img src="../../../shares/img/TopNavigate/top.png">
+
+                </div>
+                <div id="next2">
+                    <img src="../../../shares/img/TopNavigate/bottom.png">
+                </div>
+            </div>
+
+            <div id="navigate" style="position: relative; overflow-x: hidden; overflow-y: hidden; "><table id="tbl" style="position: absolute; top: 0px; right: 0px; opacity: 1; display: table; z-index: 13; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">اونس طلا (دلار)</td><td class="tdNames"> بازار:</td><td id="Value">۱,۲۵۳.۳</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">طلا بازار تهران</td><td class="tdNames"> بازار:</td><td id="Value">۴,۱۸۵,۰۰۰</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 11; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">سکه طرح قديم</td><td class="tdNames"> بازار:</td><td id="Value">۹,۴۳۰,۰۰۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">سکه طرح جديد</td><td class="tdNames"> بازار:</td><td id="Value">۹,۴۶۰,۰۰۰</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 10; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">نيم سکه</td><td class="tdNames"> بازار:</td><td id="Value">۴,۷۶۰,۰۰۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">ربع سکه</td><td class="tdNames"> بازار:</td><td id="Value">۲,۷۸۰,۰۰۰</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 9; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">سکه گرمي</td><td class="tdNames"> بازار:</td><td id="Value">۱,۸۵۰,۰۰۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">گرم ۱۸ عيار</td><td class="tdNames"> بازار:</td><td id="Value">۹۶۵,۴۱۹</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 8; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">گرم ۲۴ عيار</td><td class="tdNames"> بازار:</td><td id="Value">۱,۲۸۶,۹۰۴</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">نقره (دلار)</td><td class="tdNames"> بازار:</td><td id="Value">۱۹.۱۱</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 7; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">پلاتينيوم (دلار)</td><td class="tdNames"> بازار:</td><td id="Value">۱,۴۵۸</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">پالاديوم (دلار)</td><td class="tdNames"> بازار:</td><td id="Value">۸۴۳</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 6; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">دلار-بازار</td><td class="tdNames"> بازار:</td><td id="Value">۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">پوند-بازارتهران</td><td class="tdNames"> بازار:</td><td id="Value">۴۹۰,۰۰۰</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 5; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">يورو-بازارتهران</td><td class="tdNames"> بازار:</td><td id="Value">۴۴,۵۸۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">يورو به پوند</td><td class="tdNames"> بازار:</td><td id="Value">۰.۸۱۲۱</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 4; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">ين به دلار</td><td class="tdNames"> بازار:</td><td id="Value">۰.۰۰۹۸</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">يورو به دلار</td><td class="tdNames"> بازار:</td><td id="Value">۱.۳۶۴۳</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 3; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">پوند به دلار</td><td class="tdNames"> بازار:</td><td id="Value">۱.۶۸۰۲</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">دلار-ملي</td><td class="tdNames"> بازار:</td><td id="Value">۱۲,۲۶۰</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 2; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">يورو-ملي</td><td class="tdNames"> بازار:</td><td id="Value">۱۵,۱۱۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">پوند-ملي</td><td class="tdNames"> بازار:</td><td id="Value">۱۹,۲۹۷</td></tr></tbody></table><table id="tbl" style="top: 0px; right: 0px; z-index: 1; position: absolute; display: none; "><tbody><tr><td class="tdNames">&nbsp;</td><td id="Name">درهم امارات</td><td class="tdNames"> بازار:</td><td id="Value">۸,۸۵۰</td><td style="color : #73ff5a;">&nbsp;|&nbsp;</td><td class="tdNames">&nbsp;</td><td id="Name">نفت</td><td class="tdNames"> بازار:</td><td id="Value">۱۰۲.۶۶</td></tr></tbody></table></div>
+            <div id="lang">
+                <ul>
+                    <li>فارسی</li>
+                    <li><a href="http://www.farsnews.com">فارسی</a></li>
+                    <li><a href="http://arabic.farsnews.com">العربیة</a></li>
+                    <li><a href="http://turkish.farsnews.com">Türkçe</a></li>
+                    <li><a href="http://english.farsnews.com">English</a></li>
+                </ul>
+
+                <img src="../../../shares/img/TopNavigate/langB2.png">
+            </div>
+        </div>
+    </div>
+    <div id="widgetBack">&nbsp;</div>
+    <div style="clear : both; border : 1px solid #b00909; height : 0px;"></div>
+
+
+
+
+        <div class="header">
+
+            <div class="logo">
+
+                <a id="logoImg" href="http://www.farsnews.com/">
+                    <img src="shares/img/logo.png" alt="Fars News Agency"></a>
+
+                <a id="logoLeft" href="http://www.farsnews.com/">
+                    <img src="shares/img/logo2.png" alt="Fars News Agency"></a>
+
+                <div class="dates">
+
+                    <span class="seldate">يکشنبه ۱۸ خرداد ۱۳۹۳ - ۱۷:۳۸</span>
+                </div>
+
+                <div class="Tickernews">
+
+                    <script language="javascript" type="text/javascript"> var theSummaries = new Array("محمد احسانی برای حبشی،فرجی و موسوی حکم صادر کرد","عصر روح‌الله عصر بالندگی فرهنگ مهدویت است","دستور دادستان برای رسیدگی به حادثه ریزش چاه در بازار قزوین","تولید ۲۰ فیلم‌تلویزیونی جدید در شبکه دو/ رهبر قنبری و کارگردانی &#171;رسم رفاقت&#187;","پادکست/ آخرین وضعیت رئیس مجلس خبرگان/ حرف‌های تازه وزیر درباره وایبر و واتس‌اپ/ اعتراض به نحوه انتخاب روسای دانشگاه/ ادامه پرداخت یارانه به شکل فعلی");var theSiteLinks = new Array("/newstext.php?nn=13930318001205","/newstext.php?nn=13930318001209","/newstext.php?nn=13930318001190","/newstext.php?nn=13930318001204","/newstext.php?nn=13930313001161");</script> <div class="tickerpane">●&nbsp;<span id="theTicker"><a class="jstop" target="_blank" href="/newstext.php?nn=13930318001205">محمد احسان-</a></span></div><script src="shares/javascripts/fars.js" type="text/javascript"></script>
+                    
+
+                    <div class="newscountviewer">
+                        تعداد اخبار امروز:
+                        ۱۰۶۲
+                        خبر
+                    </div>
+                    <div id="QuickIcons">
+                        <a href="http://farsnews.com/rsslinks.php" target="_blank">
+                            <img src="shares/img/rssIcon.png" alt="RSS"></a>
+                        <a href="http://search.farsnews.com/" target="_blank">
+                            <img src="shares/img/SearchIcon.png" alt="Seach"></a>
+                        <a href="http://farsnews.com/mobile/" target="_blank">
+                            <img src="shares/img/mobileIcon.png" alt="Mobile">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="LogoBack">&nbsp;</div>
+
+        </div>
+
+
+        <div class="mainframe">
+            <div class="backtotop">
+                <div class="backbutslider">
+                    <div class="circlearr"></div>
+                </div>
+            </div>
+
+            <div class="rightcolumn">
+                <div class="sdmenu" id="left-navbar-menu">
+                    <div class="hadisframe">
+                        <span style="float: right; width: 55%; color: #cf1a11; font: normal 12px tahoma; margin: 0 5px 0 0;">کلام علی(ع)</span>
+                        <div class="bgline"></div>
+                        <div class="hadispain">
+                            <div class="Prhadis"><div id="scroller"><div class="scrollingtext" style="left: -767.2209968261719px; ">دنیا و آخرت به منزله مشرق و مغرب هستند و کسی که میان آن دو راه می پیماید هر اندازه به یکی نزدیک شود از دیگری دور می شود. (نهج البلاغه/ حکمت 103)</div></div></div>
+                        </div>
+                    </div>
+
+                    ﻿
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="fa">
+    <meta charset="utf-8">
+
+
+        <div class="forigntv">
+        <div>
+            <span style="float: right; width: 45%; color: #cf1a11; font: normal 12px Tahoma; margin: 0 5px 0 0;">پخش زنده</span>
+            <div class="bgliveline"></div>
+        </div>
+        <div class="presstv">
+            <a target="_blank" href="http://www.presstv.com/live.html">
+                <img alt="" src="banner/MainPage/Right/presstv.png">
+            </a>
+        </div>
+        <div class="alalam">
+            <a target="_blank" href="http://www.alalam.ir/live">
+                <img alt="" src="banner/MainPage/Right/alalam.png">
+            </a>
+        </div>
+    </div>
+        <div class="bgbotline"></div>
+
+
+
+﻿
+
+
+    <meta charset="UTF-8">
+    <title>Breaking News Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: tahoma;
+        }
+
+        .qmenu li * {
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        .qmenu {
+            list-style: none;
+            position: relative;
+            right: 0px;
+            width: 122px;
+            height: 25px;
+            direction: rtl;
+            margin: 0 auto;
+            margin-bottom : 10px;
+        }
+
+            .qmenu li {
+                width: 35px;
+                height: 30px;
+                position: absolute;
+                cursor: pointer;
+                display : list-item;
+            }
+
+                .qmenu li a {
+                    display: block;
+                    color: #fff;
+                }
+
+                .qmenu li i {
+                    border-radius: 2px;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    background: #ffdcb9;
+                    width: 35px;
+                    height: 30px;
+                    z-index: 10;
+                }
+
+                .qmenu li:hover i {
+                    background: #d14027;
+                    border-radius: 0px 3px 3px 0px;
+                }
+
+                .qmenu li label {
+                    width: 24px;
+                    height: 22px;
+                    float: right;
+                    position: relative;
+                    z-index: 11;
+                    margin: 3px 5px 0 0;
+                    cursor: pointer;
+                }
+
+                .qmenu li:hover label {
+                    background-position: 0px -22px;
+                }
+
+                .qmenu li span {
+                    cursor: pointer;
+                    padding: 5px 6px 0 0px;
+                    width: 86px;
+                    height: 25px;
+                    position: absolute;
+                    z-index: 12;
+                    top: 0;
+                    right: 32px;
+                    background: #FFDCB9;
+                    opacity: 1;
+                    border-radius: 3px 0px 0px 3px;
+                    font-size: 12px;
+                    color: #000000;
+                }
+
+                .qmenu li:hover span {
+                    top: 0;
+                    opacity: 1;
+                    z-index: 12;
+                    width: 86px;
+                    color: #ffffff;
+                    background: #d14027;
+                }
+
+            .qmenu .arz {
+                top: 0;
+                right: 0;
+            }
+
+                .qmenu .arz label {
+                    background: url(/banner/MainPage/Right/rcgold.png);
+                }
+
+            .qmenu .bourse {
+                top: 0;
+                right: 0px;
+            }
+
+                .qmenu .bourse label {
+                    background: url(/banner/MainPage/Right/rccurrency.png);
+                }
+
+            .qmenu .weather {
+                top: 0;
+                right: 0px;
+            }
+
+                .qmenu .weather label {
+                    background: url();
+                }
+
+            .qmenu .car {
+                top: 0;
+                right: 0px;
+            }
+
+                .qmenu .car label {
+                    background: url(/banner/MainPage/Right/rccar.png);
+                }
+
+            .qmenu .sport {
+                top: 0px;
+                right: 0;
+            }
+
+                .qmenu .sport label {
+                    background: url(/banner/MainPage/Right/rcsoccer.png);
+                }
+
+            .qmenu .rss {
+                top: 0px;
+                right: 0px;
+            }
+
+                .qmenu .rss label {
+                    background: url(/banner/MainPage/Right/rcrss.png);
+                }
+
+            .qmenu .search {
+                top: 0px;
+                right: 0px;
+            }
+
+                .qmenu .search label {
+                    background: url(/banner/MainPage/Right/rcsearch.png);
+                }
+    </style>
+
+
+    <div style="margin : -10px 0 -8px 0;">
+    <!--<div class="rightbannertiles" >-->
+    <!--<div class="wrp" style="border : 1px solid;">-->
+    <!--<ul class="qmenu">
+        <li class="arz"><a href="http://widgets.farsnews.com/currency/" target="_blank"><label></label><i></i><span>طلا، سکه و ارز</span></a></li>
+        <li class="bourse"><a href="http://widgets.farsnews.com/bource/" target="_blank"><label></label><i></i><span>شاخص بورس</span></a></li>
+        <li class="car"><a href="http://widgets.farsnews.com/cars/" target="_blank"><label></label><i></i><span>قیمت خودرو</span></a></li>
+        <li class="sport"><a href="http://widgets.farsnews.com/leagues/" target="_blank"><label></label><i></i><span>جدول فوتبال</span></a></li>
+        <li class="rss"><a href="http://www.farsnews.com/rsslinks.php" target="_blank"><label></label><i></i><span>نسخه rss</span></a></li>
+        <li class="search"><a href="http://search.farsnews.com/" target="_blank"><label></label><i></i><span>جستجو</span></a></li>
+    </ul>-->
+    <ul class="qmenu">
+        <li class="arz"><a href="http://widgets.farsnews.com/currency/" target="_blank"><label></label><i></i><span>طلا، سکه و ارز</span></a></li>
+    </ul>
+
+    <ul class="qmenu">
+        <li class="bourse"><a href="http://widgets.farsnews.com/bource/" target="_blank"><label></label><i></i><span>شاخص بورس</span></a></li>
+    </ul>
+
+    <ul class="qmenu">
+        <li class="car"><a href="http://widgets.farsnews.com/cars/" target="_blank"><label></label><i></i><span>قیمت خودرو</span></a></li>
+    </ul>
+
+    <ul class="qmenu">
+        <li class="sport"><a href="http://widgets.farsnews.com/leagues/" target="_blank"><label></label><i></i><span>جدول فوتبال</span></a></li>
+    </ul>
+
+    <!--<ul class="qmenu">
+        <li class="rss"><a href="http://www.farsnews.com/rsslinks.php" target="_blank"><label></label><i></i><span>نسخه rss</span></a></li>
+    </ul>
+
+    <ul class="qmenu">
+        <li class="search"><a href="http://search.farsnews.com/" target="_blank"><label></label><i></i><span>جستجو</span></a></li>
+    </ul>-->
+
+    </div>
+
+
+                    <div class="menutitlepane">
+                        <span>گروه های خبری</span>
+                    </div>
+                    <div class="menupane">
+                        <img class="rcollinksarr" src="shares/img/rcollinksarr.png" alt="">
+                        <div>
+                            <span class="unsubmenu"><a href="/">صفحه اصلي </a></span>
+                        </div>
+                        <div>
+                            <span id="mm0" onclick="extend('0')" class="submenu">عناوين کل اخبار</span> <span id="sm0" class="smcollapsed"><a href="newsv.php?title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+                                <a href="newsv.php?tal=1">&nbsp;&nbsp;&nbsp;تيتر و ليد</a> <a href="newsv.php">&nbsp;&nbsp;&nbsp;تيتر
+                                    ، ليد و عکس</a> </span>
+                        </div>
+                        <div>
+                            <span class="unsubmenu"><a href="topnews.php">اخبار برگزيده</a></span>
+                        </div>
+                        <br>
+                        
+
+
+
+
+
+
+
+    <div><span class="submenu" id="mm3" onclick="extend('3')">اجتماعي</span>
+    	<span id="sm3" class="smcollapsed">
+            <a href="newsv.php?srv=3">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=3&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+			<a href="newsh.php?hoz=240">&nbsp;&nbsp;&nbsp;آموزش و پرورش</a>
+            <a href="newsh.php?hoz=70">&nbsp;&nbsp;&nbsp;علمي</a>
+            <a href="newsh.php?hoz=46">&nbsp;&nbsp;&nbsp;بهداشت و درمان</a>
+            <a href="newsh.php?hoz=48">&nbsp;&nbsp;&nbsp;حوادث</a>
+            <a href="newsh.php?hoz=17">&nbsp;&nbsp;&nbsp;رسانه</a>
+            <a href="newsh.php?hoz=47">&nbsp;&nbsp;&nbsp;زنان و جوانان</a>
+            <a href="newsh.php?hoz=45">&nbsp;&nbsp;&nbsp;شهري و رفاهي</a>
+            <a href="newsh.php?hoz=10">&nbsp;&nbsp;&nbsp;قضايي و انتظامي</a>
+            <a href="newsh.php?hoz=44">&nbsp;&nbsp;&nbsp;گردشگري و ميراث فرهنگي</a>
+            <a href="newsh.php?hoz=460">&nbsp;&nbsp;&nbsp;مشاور سلامت</a>
+            <a href="newsh.php?hoz=52">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+        </span>
+    </div>
+    <div><span class="submenu" id="mm2" onclick="extend('2')">اقتصادي</span>
+    	<span id="sm2" class="smcollapsed">
+            <a href="newsv.php?srv=2">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=2&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=13">&nbsp;&nbsp;&nbsp;ارتباطات و فن آوري اطلاعات</a>
+            <a href="newsh.php?hoz=43">&nbsp;&nbsp;&nbsp;اقتصاد بين الملل</a>
+            <a href="newsh.php?hoz=14">&nbsp;&nbsp;&nbsp;اقتصاد کلان و بودجه</a>
+            <a href="newsh.php?hoz=86">&nbsp;&nbsp;&nbsp;تعاون و اشتغال</a>
+            <a href="newsh.php?hoz=42">&nbsp;&nbsp;&nbsp;بورس</a>
+            <a href="newsh.php?hoz=16">&nbsp;&nbsp;&nbsp;بيمه و بانک</a>
+            <a href="newsh.php?hoz=15">&nbsp;&nbsp;&nbsp;راه و ساختمان</a>
+            <a href="newsh.php?hoz=39">&nbsp;&nbsp;&nbsp;بازرگانی و صنعت</a>
+            <a href="newsh.php?hoz=38">&nbsp;&nbsp;&nbsp;نفت و انرژي</a>
+            <a href="newsh.php?hoz=12">&nbsp;&nbsp;&nbsp;کشاورزي و امور دام</a>
+            <a href="newsh.php?hoz=51">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+       </span>
+    </div>
+    <div><span class="submenu" id="mm6" onclick="extend('6')">بين الملل</span>
+    	<span id="sm6" class="smcollapsed">
+            <a href="newsv.php?srv=6">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=6&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=31">&nbsp;&nbsp;&nbsp;آسيا، اقيانوسيه</a>
+            <a href="newsh.php?hoz=71">&nbsp;&nbsp;&nbsp;آسياي مرکزي و قفقاز</a>
+            <a href="newsh.php?hoz=72">&nbsp;&nbsp;&nbsp;آفريقا</a>
+            <a href="newsh.php?hoz=29">&nbsp;&nbsp;&nbsp;آمريکا، اروپا</a>
+            <a href="newsh.php?hoz=18">&nbsp;&nbsp;&nbsp;ايران در جهان</a>
+            <a href="newsh.php?hoz=28">&nbsp;&nbsp;&nbsp;خاورميانه</a>
+            <a href="newsh.php?hoz=73">&nbsp;&nbsp;&nbsp;شبه قاره هند</a>
+            <a href="newsh.php?hoz=67">&nbsp;&nbsp;&nbsp;حقوق بشر</a>
+            <a href="newsh.php?hoz=55">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+        </span>
+    </div>
+    <div><span class="submenu" id="mm1" onclick="extend('1')">سياسي</span>
+	    <span id="sm1" class="smcollapsed">
+            <a href="newsv.php?srv=1">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=1&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=23">&nbsp;&nbsp;&nbsp;احزاب و تشکلها</a>
+            <a href="newsh.php?hoz=11">&nbsp;&nbsp;&nbsp;امنيتي و دفاعي</a>
+			<a href="newsh.php?hoz=27">&nbsp;&nbsp;&nbsp;انتخابات</a>
+            <a href="newsh.php?hoz=26">&nbsp;&nbsp;&nbsp;دولت</a>      
+            <a href="newsh.php?hoz=24">&nbsp;&nbsp;&nbsp;مجلس</a>
+            <a href="newsh.php?hoz=50">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+        </span>
+    </div>
+	
+	<div><span class="submenu" id="mm36" onclick="extend('36')">دانشگاه</span>
+	    <span id="sm36" class="smcollapsed">
+            <a href="newsv.php?srv=36">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=36&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=226">&nbsp;&nbsp;&nbsp;سياسي</a>
+            <a href="newsh.php?hoz=227">&nbsp;&nbsp;&nbsp;صنفي-آموزشي</a>
+			<a href="newsh.php?hoz=228">&nbsp;&nbsp;&nbsp;علمي_فن آوري</a>
+            <a href="newsh.php?hoz=229">&nbsp;&nbsp;&nbsp;فرهنگي-هنري</a>
+            <a href="newsh.php?hoz=230">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+        </span>
+    </div>
+	
+    <div><span class="submenu" id="mm7" onclick="extend('7')">فرهنگي</span>
+    	<span id="sm7" class="smcollapsed">
+            <a href="newsv.php?srv=7">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=7&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=102">&nbsp;&nbsp;&nbsp;راهبرد فرهنگ</a>
+            <a href="newsh.php?hoz=103">&nbsp;&nbsp;&nbsp;سينما</a>
+            <a href="newsh.php?hoz=104">&nbsp;&nbsp;&nbsp;تئاتر</a>
+            <a href="newsh.php?hoz=108">&nbsp;&nbsp;&nbsp;راديو و تلويزيون</a>
+            <a href="newsh.php?hoz=107">&nbsp;&nbsp;&nbsp;موسيقي و هنرهاي تجسمي</a>
+            <a href="newsh.php?hoz=35">&nbsp;&nbsp;&nbsp;کتاب و ادبيات</a>
+            <a href="newsh.php?hoz=373">&nbsp;&nbsp;&nbsp;تازه هاي نشر</a>
+            <a href="newsh.php?hoz=106">&nbsp;&nbsp;&nbsp;آيين و انديشه</a>
+            <a href="newsh.php?hoz=368">&nbsp;&nbsp;&nbsp;ادبیات انقلاب اسلامی</a>
+            <a href="newsh.php?hoz=56">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+	        <a href="newsh.php?hoz=410">&nbsp;&nbsp;&nbsp;فعالیت های قرآنی</a>
+        </span>
+    </div>
+    <div><span class="submenu" id="mm4" onclick="extend('4')">ورزشي</span>
+	    <span id="sm4" class="smcollapsed">
+            <a href="newsv.php?srv=4">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=4&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=94">&nbsp;&nbsp;&nbsp;فوتبال ايران</a>
+            <a href="newsh.php?hoz=89">&nbsp;&nbsp;&nbsp;فوتبال جهان</a>            
+            <a href="newsh.php?hoz=445">&nbsp;&nbsp;&nbsp;نقل و انتقالات</a>
+            <a href="newsh.php?hoz=242">&nbsp;&nbsp;&nbsp;ورزش بانوان</a>
+            <a href="newsh.php?hoz=87">&nbsp;&nbsp;&nbsp;کشتي - وزنه برداري</a>
+            <a href="newsh.php?hoz=90">&nbsp;&nbsp;&nbsp;رزمي</a>
+            <a href="newsh.php?hoz=88">&nbsp;&nbsp;&nbsp;اخبار خارجي</a>
+            <a href="newsh.php?hoz=441">&nbsp;&nbsp;&nbsp;توپ و تور</a>
+	    <a href="newsh.php?hoz=513">&nbsp;&nbsp;&nbsp;روز شمار جام جهانی</a>
+            <a href="newsh.php?hoz=53">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+        </span>
+    </div>
+    <div><span class="submenu" id="mm15" onclick="extend('15')">استانها</span>
+    	<span id="sm15" class="smcollapsed">
+            <a href="newsv.php?srv=15">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=15&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <span class="submenu" id="mm700" onclick="extend('700', '2')">شمالي</span>
+            <span id="sm700" class="smcollapsed">
+                <a href="newsh.php?hoz=3301&amp;spc=1">&nbsp;&nbsp;&nbsp;اردبيل</a>
+				<a href="newsH.php?hoz=3310&amp;spc=1">&nbsp;&nbsp;&nbsp;البرز</a>
+                <span class="submenu" id="mm750" onclick="extend('750', '3')">شهرستانهاي استان تهران</span>
+				<span id="sm750" class="smcollapsed">
+                    <a href="newsH.php?hoz=3311&amp;spc=1">&nbsp;&nbsp;&nbsp;جنوب استان تهران</a>
+                    <a href="newsH.php?hoz=3312&amp;spc=1">&nbsp;&nbsp;&nbsp;شرق استان تهران</a>
+				</span>
+                <a href="newsh.php?hoz=3305&amp;spc=1">&nbsp;&nbsp;&nbsp;خراسان رضوي</a>
+                <a href="newsh.php?hoz=3304&amp;spc=1">&nbsp;&nbsp;&nbsp;خراسان شمالي</a>
+                <a href="newsh.php?hoz=3303&amp;spc=1">&nbsp;&nbsp;&nbsp;سمنان</a>
+                <a href="newsh.php?hoz=3309&amp;spc=1">&nbsp;&nbsp;&nbsp;قزوين</a>
+                <a href="newsh.php?hoz=3307&amp;spc=1">&nbsp;&nbsp;&nbsp;گلستان</a>
+                <a href="newsh.php?hoz=3306&amp;spc=1">&nbsp;&nbsp;&nbsp;گيلان</a>
+                <a href="newsh.php?hoz=3308&amp;spc=1">&nbsp;&nbsp;&nbsp;مازندران</a>
+            </span>
+            <span class="submenu" id="mm701" onclick="extend('701', '2')">جنوبي</span>
+            <span id="sm701" class="smcollapsed">
+				<span class="submenu" id="mm755" onclick="extend('755', '3')">&nbsp;&nbsp;&nbsp;بوشهر</span>
+				<span id="sm755" class="smcollapsed">
+					<a href="newsH.php?hoz=3601&amp;spc=1">&nbsp;&nbsp;&nbsp;بوشهر</a>
+                    <a href="newsH.php?hoz=3610&amp;spc=1">&nbsp;&nbsp;&nbsp;عسلويه</a>
+				</span>
+				<a href="newsH.php?hoz=3602&amp;spc=1">&nbsp;&nbsp;&nbsp;خوزستان</a>
+                <a href="newsh.php?hoz=3603&amp;spc=1">&nbsp;&nbsp;&nbsp;فارس</a>
+                <a href="newsh.php?hoz=3604&amp;spc=1">&nbsp;&nbsp;&nbsp;هرمزگان</a>            </span>
+            <span class="submenu" id="mm702" onclick="extend('702', '2')">شرقي</span>
+            <span id="sm702" class="smcollapsed">
+                <a href="newsh.php?hoz=4101&amp;spc=1">&nbsp;&nbsp;&nbsp;خراسان جنوبي</a>
+                <a href="newsh.php?hoz=4102&amp;spc=1">&nbsp;&nbsp;&nbsp;سيستان و بلوچستان</a>
+                <span class="submenu" id="mm160" onclick="extend('160', '3')">&nbsp;&nbsp;&nbsp;کرمان</span>
+				<span id="sm160" class="smcollapsed">
+					<a href="newsh.php?hoz=331&amp;spc=1">&nbsp;&nbsp;&nbsp;شمال کرمان</a>
+                    <a href="newsh.php?hoz=332&amp;spc=1">&nbsp;&nbsp;&nbsp;جنوب کرمان</a>
+				</span>
+            </span>
+            <span class="submenu" id="mm703" onclick="extend('703', '2')">غربي</span>
+            <span id="sm703" class="smcollapsed">
+                <a href="newsh.php?hoz=4001&amp;spc=1">&nbsp;&nbsp;&nbsp;آذربايجان شرقي</a>
+                <a href="newsh.php?hoz=4002&amp;spc=1">&nbsp;&nbsp;&nbsp;آذربايجان غربي</a>
+                <a href="newsh.php?hoz=4003&amp;spc=1">&nbsp;&nbsp;&nbsp;ايلام</a>
+                <a href="newsh.php?hoz=4004&amp;spc=1">&nbsp;&nbsp;&nbsp;زنجان</a>
+                <a href="newsh.php?hoz=4005&amp;spc=1">&nbsp;&nbsp;&nbsp;کردستان</a>
+                <a href="newsh.php?hoz=4006&amp;spc=1">&nbsp;&nbsp;&nbsp;کرمانشاه</a>
+                <a href="newsh.php?hoz=4007&amp;spc=1">&nbsp;&nbsp;&nbsp;كهگيلويه و بوير احمد</a>
+                <a href="newsh.php?hoz=4008&amp;spc=1">&nbsp;&nbsp;&nbsp;لرستان</a>
+                <a href="newsh.php?hoz=4009&amp;spc=1">&nbsp;&nbsp;&nbsp;همدان</a>
+            </span>
+            <span class="submenu" id="mm704" onclick="extend('704', '2')">مرکزي</span>
+            <span id="sm704" class="smcollapsed">
+				<span class="submenu" id="mm754" onclick="extend('754', '3')">&nbsp;&nbsp;&nbsp;اصفهان</span>
+				<span id="sm754" class="smcollapsed">
+					<a href="newsh.php?hoz=4901&amp;spc=1">&nbsp;&nbsp;&nbsp;اصفهان</a>
+                    <a href="newsh.php?hoz=4906&amp;spc=1">&nbsp;&nbsp;&nbsp;كاشان</a>
+				</span>
+                <a href="newsh.php?hoz=4902&amp;spc=1">&nbsp;&nbsp;&nbsp;چهار محال و بختياري</a>
+                <a href="newsh.php?hoz=4903&amp;spc=1">&nbsp;&nbsp;&nbsp;قم</a>
+                <a href="newsh.php?hoz=4904&amp;spc=1">&nbsp;&nbsp;&nbsp;استان مرکزي(اراك)</a>
+                <a href="newsh.php?hoz=4905&amp;spc=1">&nbsp;&nbsp;&nbsp;يزد</a>
+            </span>
+         </span>
+    </div>
+    
+    <div><span class="submenu" id="mm8" onclick="extend('8')">عکس</span>
+    	<span id="sm8" class="smcollapsed">
+            <a href="newspics.php">&nbsp;&nbsp;&nbsp;گزارش تصويري</a>
+            <a href="countypics.php">&nbsp;&nbsp;&nbsp;عكس استانها</a>
+            <a href="receivedpics.php">&nbsp;&nbsp;&nbsp;عكس دريافتي</a>
+            <a href="pics.php">&nbsp;&nbsp;&nbsp;عكس خبری</a>
+            <a href="http://search.farsnews.com" ?pic="0&quot;">&nbsp;&nbsp;&nbsp;جستجوي عکس</a>
+        </span>
+    </div>
+	    <div><span class="submenu" id="mm17" onclick="extend('17')">گرافیک و کاریکاتور</span>
+        <span id="sm17" class="smcollapsed">
+            <a href="drawing.php?id=523">&nbsp;&nbsp;&nbsp;کاریکاتور</a>
+            <a href="drawing.php?id=522">&nbsp;&nbsp;&nbsp;گرافیک</a>
+            <a href="drawing.php?id=530">&nbsp;&nbsp;&nbsp;رویدادهای تجسمی</a>
+        </span>
+    </div>
+
+    <div><span class="submenu" id="mm501" onclick="extend('501')">صوت وتصویر</span>
+    	<span id="sm501" class="smcollapsed">
+            <a href="/MultiMedia.aspx">&nbsp;&nbsp;&nbsp;صفحه اصلی گروه</a>
+            <a href="/MultiMedia.aspx?ctg=3">&nbsp;&nbsp;&nbsp;صوت</a>
+            <a href="/MultiMedia.aspx?ctg=2">&nbsp;&nbsp;&nbsp;تصویر</a>
+        </span>
+    </div>
+
+    <div><span class="submenu" id="mm13" onclick="extend('13')">سياست خارجي</span>
+		<span id="sm13" class="smcollapsed">
+            <a href="newsv.php?srv=13">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=13&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+			<a href="newsh.php?hoz=60">&nbsp;&nbsp;&nbsp;انرژي اتمي</a>
+            <a href="newsh.php?hoz=59">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+		</span>
+	</div>
+	
+<div><span class="submenu" id="mm447" onclick="extend('447')">دفاتر منطقه ای فارس</span>
+    <span id="sm447" class="smcollapsed">
+        <a href="newsv.php?srv=447">&nbsp;&nbsp;&nbsp;صفحه اصلی گروه</a> 
+            <a href="newsv.php?srv=447&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+        <a href="newsh.php?hoz=448">&nbsp;&nbsp;&nbsp;خاورمیانه</a>
+        <a href="newsh.php?hoz=449">&nbsp;&nbsp;&nbsp;آسیا مرکزی و روسیه</a>
+        <a href="newsh.php?hoz=450">&nbsp;&nbsp;&nbsp;شمال آفریقا</a>
+        <a href="newsh.php?hoz=580">&nbsp;&nbsp;&nbsp;آمریکای لاتین</a>
+        <a href="newsh.php?hoz=451">&nbsp;&nbsp;&nbsp;سوریه</a>
+        <a href="newsh.php?hoz=452">&nbsp;&nbsp;&nbsp;افغانستان</a>
+        <a href="newsh.php?hoz=453">&nbsp;&nbsp;&nbsp;پاکستان</a>
+        <a href="newsh.php?hoz=454">&nbsp;&nbsp;&nbsp;سایر حوزه ها</a>
+
+    </span>
+</div>
+
+    <div><span class="submenu" id="mm11" onclick="extend('11')">ديدگاه</span>
+    	<span id="sm11" class="smcollapsed">
+            <a href="newsv.php?srv=11">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=11&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+			<a href="newsh.php?hoz=219">&nbsp;&nbsp;&nbsp;در سایه سار ولایت</a>
+            <a href="newsh.php?hoz=20">&nbsp;&nbsp;&nbsp;دين پژوهي</a>
+            <a href="newsh.php?hoz=342">&nbsp;&nbsp;&nbsp;انقلاب اسلامی</a>
+            <a href="newsh.php?hoz=343">&nbsp;&nbsp;&nbsp;مهدویت</a>
+            <a href="newsh.php?hoz=344">&nbsp;&nbsp;&nbsp;تاریخ و تمدن اسلامی</a>
+            <a href="newsh.php?hoz=99">&nbsp;&nbsp;&nbsp;سياست و امنيت</a>
+            <a href="newsh.php?hoz=19">&nbsp;&nbsp;&nbsp;حکمت و فلسفه</a>
+            <a href="newsh.php?hoz=21">&nbsp;&nbsp;&nbsp;اقتصاد و حقوق</a>
+            <a href="newsh.php?hoz=345">&nbsp;&nbsp;&nbsp;فرهنگ و اندیشه</a>
+            <a href="newsh.php?hoz=346">&nbsp;&nbsp;&nbsp;جامعه، خانواده و جوان</a>
+            <a href="newsh.php?hoz=30">&nbsp;&nbsp;&nbsp;هنر و ادبيات</a>
+            <a href="newsh.php?hoz=347">&nbsp;&nbsp;&nbsp;رسانه و جنگ نرم</a>
+            <a href="newsh.php?hoz=348">&nbsp;&nbsp;&nbsp;الگوی اسلامی ایرانی پیشرفت</a>
+            <a href="newsh.php?hoz=367">&nbsp;&nbsp;&nbsp;تولید ملی، حمایت از کار و سرمایه ایرانی</a>
+            <a href="newsh.php?hoz=22">&nbsp;&nbsp;&nbsp;علم و فن آوري</a>
+            <a href="newsh.php?hoz=349">&nbsp;&nbsp;&nbsp;مناسبت ها</a>
+            <a href="newsh.php?hoz=66">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+			<a href="newsh.php?hoz=350">&nbsp;&nbsp;&nbsp;تاریخ نگار</a>
+        </span>
+    </div>
+
+    <div><span class="submenu" id="mm514" onclick="extend('514')">تاریخ</span>
+    	<span id="sm514" class="smcollapsed">
+			<a href="newsv.php?srv=514">&nbsp;&nbsp;&nbsp;صفحه اصلي</a>
+			<a href="newsv.php?srv=514&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+			<a href="newsH.php?hoz=515">&nbsp;&nbsp;&nbsp;تاریخ اسلام</a>
+			<a href="newsH.php?hoz=516">&nbsp;&nbsp;&nbsp;تاریخ معاصر</a>
+			<a href="newsH.php?hoz=517">&nbsp;&nbsp;&nbsp;تاریخ تمدن</a>
+			<a href="newsH.php?hoz=518">&nbsp;&nbsp;&nbsp;سایر حوزه ها</a>
+		</span>
+    </div>
+
+	<div><span class="submenu" id="mm406" onclick="extend('406')">دانستنی ها</span>
+	    <span id="sm406" class="smcollapsed">
+            <a href="newsv.php?srv=406">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+            <a href="newsv.php?srv=406&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+            <a href="newsh.php?hoz=554">&nbsp;&nbsp;&nbsp;پزشکی</a>
+            <a href="newsh.php?hoz=556">&nbsp;&nbsp;&nbsp;علمی</a>
+			<a href="newsh.php?hoz=557">&nbsp;&nbsp;&nbsp;خواندنی ها</a>
+            <a href="newsh.php?hoz=558">&nbsp;&nbsp;&nbsp;سایر حوزه ها</a>
+        </span>
+    </div>
+    <div><span class="unsubmenu"><a href="http://special.farsnews.com/">اخبار ويژه</a></span></div>
+
+
+	<div><span class="submenu" id="mm30" onclick="extend('30')">فضاي مجازي</span>
+    	<span id="sm30" class="smcollapsed">
+			<a href="newsv.php?srv=30">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+			<a href="newsv.php?srv=30&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+			<a href="newsH.php?hoz=182">&nbsp;&nbsp;&nbsp;وبلاگها</a>
+			<a href="newsH.php?hoz=183">&nbsp;&nbsp;&nbsp;نرم افزارها</a>
+			<a href="newsH.php?hoz=184">&nbsp;&nbsp;&nbsp;وب سايتها</a>
+			<a href="newsH.php?hoz=185">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+		</span>
+	</div>
+	
+    
+
+	<div><span class="submenu" id="mm32" onclick="extend('32')">حماسه و مقاومت</span>
+    	<span id="sm32" class="smcollapsed">
+			<a href="newsv.php?srv=357">&nbsp;&nbsp;&nbsp;صفحه اصلي</a>
+			<a href="newsv.php?srv=357&amp;title=1">&nbsp;&nbsp;&nbsp;تيتر اخبار</a>
+			<a href="newsH.php?hoz=358">&nbsp;&nbsp;&nbsp;نهضت جهانی اسلام</a>
+			<a href="newsH.php?hoz=359">&nbsp;&nbsp;&nbsp;انقلاب اسلامی</a>
+			<a href="newsH.php?hoz=360">&nbsp;&nbsp;&nbsp;دفاع مقدس</a>
+			<a href="sppics.php?prt=249">&nbsp;&nbsp;&nbsp;عكس</a>
+		</span>
+	</div>
+				
+	
+
+    <div><span class="unsubmenu"><a href="newsH.php?hoz=412">بیداری اسلامی</a></span></div>
+    <div><span class="unsubmenu"><a href="newsH.php?hoz=279">تحولات سوریه</a></span></div>
+
+
+    <div><span class="submenu" id="mm34" onclick="extend('34')">انتشارات</span>
+    	<span id="sm34" class="smcollapsed">
+			<a href="newsv.php?srv=337">&nbsp;&nbsp;&nbsp;صفحه اصلي گروه</a>
+			<a href="newsH.php?hoz=338">&nbsp;&nbsp;&nbsp;کتاب</a>
+			<a href="newsH.php?hoz=339">&nbsp;&nbsp;&nbsp;مجله</a>
+			<a href="newsH.php?hoz=340">&nbsp;&nbsp;&nbsp;بولتن</a>
+			<a href="newsH.php?hoz=341">&nbsp;&nbsp;&nbsp;ساير حوزه ها</a>
+		</span>
+	</div>
+
+
+
+
+    
+                    </div>
+
+                    <div class="menutitlepane">
+                        <span>سایر خدمات</span>
+                    </div>
+
+                    <div class="menupane">
+                        <img class="rcollinksarr" src="shares/img/rcollinksarr.png" alt="">
+
+                        <div>
+                            <span class="unsubmenu">
+                                <a href="http://search.farsnews.com">جستجو</a></span>
+                        </div>
+                        <div>
+                            <span class="unsubmenu"><a href="mailto:info@farsnews.ir">ارتباط با ما</a></span>
+                        </div>
+                        <div>
+                            <span class="unsubmenu"><a href="aboutus.php">سخن ما</a></span>
+                        </div>
+                        <div>
+                            <span class="submenu" id="mm10" onclick="extend('10')">پيوندها</span> <span id="sm10" class="smcollapsed"><span class="clsubmenu" id="mm1000" onclick="extend('1000', '2')">خبرگزاريها</span> <span id="cm1000" class="smcollapsed">
+                                    <a href="http://www.ipna.ir/">&nbsp;&nbsp;&nbsp;ایپنا</a>
+                                    <a href="http://www.irna.ir/">&nbsp;&nbsp;&nbsp;ایرنا</a>
+                                    <a href="http://www.isna.ir/">&nbsp;&nbsp;&nbsp;ایسنا</a>
+                                    <a href="http://www.iqna.ir/">&nbsp;&nbsp;&nbsp;ایکنا</a>
+                                    <a href="http://www.ilna.ir/">&nbsp;&nbsp;&nbsp;ایلنا</a>
+                                    <a href="http://basijnews.ir/">&nbsp;&nbsp;&nbsp;بسیج</a>
+                                    <a href="http://www.pana.ir/">&nbsp;&nbsp;&nbsp;پانا</a>
+                                    <a href="http://www.yjc.ir/">&nbsp;&nbsp;&nbsp;خبرنگاران جوان</a>
+                                    <a href="http://www.snn.ir/">&nbsp;&nbsp;&nbsp;دانشجو</a>
+                                    <a href="http://www.defapress.ir/">&nbsp;&nbsp;&nbsp;دفاع مقدس</a>
+                                    <a href="http://www.rasanews.ir/">&nbsp;&nbsp;&nbsp;رسا</a>
+                                    <a href="http://www.shabestan.ir/">&nbsp;&nbsp;&nbsp;شبستان</a>
+                                    <a href="http://www.mehrnews.com/">&nbsp;&nbsp;&nbsp;مهر</a>
+                                    <a href="http://www.iribnews.ir/">&nbsp;&nbsp;&nbsp;واحد مرکزي خبر</a>
+                                    <a href="http://www.hawzahnews.com/">&nbsp;&nbsp;&nbsp;خبرگزاری حوزه</a>
+
+                                </span>
+
+                                <span class="clsubmenu" id="mm1001" onclick="extend('1001', '2')">سايتهاي خبري</span>
+                                <span id="cm1001" class="smcollapsed">
+                                    <a href="http://www.palestine-persian.info/">&nbsp;&nbsp;&nbsp;مرکز اطلاع رساني فلسطين</a>
+                                    <a href="http://www.sepahnews.com/">&nbsp;&nbsp;&nbsp;پایگاه خبری سپاه پاسداران</a>
+                                    <a href="http://www.irinn.ir/">&nbsp;&nbsp;&nbsp;شبکه خبر</a>
+                                </span>
+
+                                <span class="clsubmenu" id="mm1002" onclick="extend('1002', '2')">ساير سايتها</span>
+                                <span id="cm1002" class="smcollapsed">
+                                    <a href="http://www.leader.ir/">&nbsp;&nbsp;&nbsp;سايت دفتر مقام معظم رهبري</a>
+                                    <a href="http://www.president.ir/">&nbsp;&nbsp;&nbsp;سايت رياست جمهوري</a>
+                                    <a href="http://www.irib.com/">&nbsp;&nbsp;&nbsp;سايت صدا و سيما</a>
+                                    <a href="http://www2.irib.ir/opinion/">&nbsp;&nbsp;&nbsp;مرکز تحقيقات صدا و سيما</a>
+                                    <a href="http://www.s-q.ir/">&nbsp;&nbsp;&nbsp;بنياد صبح قريب</a>
+                                    <a href="http://www.iranpl.ir/">&nbsp;&nbsp;&nbsp;نهاد کتابخانه هاي عمومي کشور</a>
+                                </span>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="unsubmenu"><a href="javascript:void();" onclick="window.open('comments/ads.php','','height=520,width=630');">تبليغات در سايت</a></span>
+                        </div>
+                        <div>
+                            <span class="unsubmenu"><a href="javascript:void();" onclick="window.open('comments/problem.php','','height=450,width=400');">اعلام مشکلات سايت</a></span>
+                        </div>
+                        <div>
+                            <span class="unsubmenu"><a href="rsslinks.php">نسخه هاي RSS</a></span>
+                        </div>
+                    </div>
+                    <div class="menutitlepane">
+                        <span>آرشیو اخبار</span>
+                    </div>
+
+                    <div class="menupane">
+                        <img class="rcollinksarr" src="shares/img/rcollinksarr.png" alt="">
+
+                        
+                        <form action="http://archive.farsnews.com/archive.php" method="get">
+                            
+                            <div class="archiveScroll">
+                                <select name="day">
+                                    <option value="01">۱</option><option value="02">۲</option><option value="03">۳</option><option value="04">۴</option><option value="05">۵</option><option value="06">۶</option><option value="07">۷</option><option value="08">۸</option><option value="09">۹</option><option value="10">۱۰</option><option value="11">۱۱</option><option value="12">۱۲</option><option value="13">۱۳</option><option value="14">۱۴</option><option value="15">۱۵</option><option value="16">۱۶</option><option value="17">۱۷</option><option value="18" selected="">۱۸</option><option value="19">۱۹</option><option value="20">۲۰</option><option value="21">۲۱</option><option value="22">۲۲</option><option value="23">۲۳</option><option value="24">۲۴</option><option value="25">۲۵</option><option value="26">۲۶</option><option value="27">۲۷</option><option value="28">۲۸</option><option value="29">۲۹</option><option value="30">۳۰</option><option value="31">۳۱</option>
+                                </select>
+                                <div class="backimg">
+                                    <img src="shares/img/archiveScroll.png" class="archiveScrollImg">
+                                </div>
+                            </div>
+                            <div class="archiveScroll">
+                                <select name="mon">
+                                    <option value="01">۱</option><option value="02">۲</option><option value="03" selected="selected">۳</option><option value="04">۴</option><option value="05">۵</option><option value="06">۶</option><option value="07">۷</option><option value="08">۸</option><option value="09">۹</option><option value="10">۱۰</option><option value="11">۱۱</option><option value="12">۱۲</option>
+                                </select>
+                                <div class="backimg">
+                                    <img src="shares/img/archiveScroll.png" class="archiveScrollImg">
+                                </div>
+
+                            </div>
+                            <div class="archiveScroll" style="width: 46px;">
+                                <select name="yer" style="width: 52px;">
+                                    <option value="81">۱۳۸۱</option><option value="82">۱۳۸۲</option><option value="83">۱۳۸۳</option><option value="84">۱۳۸۴</option><option value="85">۱۳۸۵</option><option value="86">۱۳۸۶</option><option value="87">۱۳۸۷</option><option value="88">۱۳۸۸</option><option value="89">۱۳۸۹</option><option value="90">۱۳۹۰</option><option value="91">۱۳۹۱</option><option value="92">۱۳۹۲</option><option value="93" selected="selected">۱۳۹۳</option>
+                                </select>
+                                <div class="backimg">
+                                    <img src="shares/img/archiveScroll.png" class="archiveScrollImgYear">
+                                </div>
+
+                            </div>
+                            <br>
+                            <input type="submit" value="" id="archiveSubmit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+
+    <div class="centercolumn">
+        <div class="newsmainpane"><div class="impnews2New"><div class="impnewspic"><a href="/newstext.php?nn=13930318000586" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/03/27/13920327000438_PhotoA.jpg" alt="صحن علنی مجلس شورای اسلامی" title="صحن علنی مجلس شورای اسلامی"></a></div><div class="impnewsinfo"><a href="/newstext.php?nn=13930318000586" target="_blank"><div class="newsrotitr">با صدور بیانیه‌ای صورت گرفت</div><div class="impnewsinfotitle">حمایت ۲۳۰ نماینده مجلس از انتخابات سوریه/ ملت سوریه توطئه دشمنان را خنثی کرد</div></a><p class="newslead" style="line-height: 160%;">۲۳۰ نفر از نمایندگان مجلس شورای اسلامی با صدور بیانیه‌ای پیروزی بشار اسد در انتخابات سوریه را تبریک گفتند.<br><br></p></div><div class="impnewsHasAtch"></div></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318001105" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1391/12/22/13911222000020_PhotoB.jpg" alt="شریعتمداری" title="شریعتمداری"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318001105" target="_blank"><div class="newsrotitr">درباره محتوای دیدار خود با وزیر اطلاعات</div><div class="topnewsinfotitle">شریعتمداری:اگر فاش کنم اصلاح‌طلبان از خجالت آب می‌شوند و کارگزاران از عصبانیت بی‌تاب</div></a><p class="newslead" style="line-height: 160%;">خبرنگار فارس در تماس مجدد با حسین شریعتمداری به گمانه زنی روزنامه دولت اشاره کرد که در آن وزیر اطلاعات را حامل هشدار به مدیرمسئول کیهان دانسته بود.شریعتمداری گفت: روزنامه‌های زنجیره ای مثل همیشه آرزوهای خود را تبدیل به خبر کرده‌اند.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000946" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/14/13930314000116_PhotoB.jpg" alt="وزش باد،طوفان،گردوغبار" title="وزش باد،طوفان،گردوغبار"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000946" target="_blank"><div class="newsrotitr">کارشناس سازمان هواشناسی در گفت‌وگو با فارس:</div><div class="topnewsinfotitle">ساعت‌های پایانی امروز وزش شدید باد و رعد و برق تهران را در برمی‌گیرد</div></a><p class="newslead" style="line-height: 160%;">کارشناس سازمان هواشناسی با بیان اینکه در ساعات آینده شاهد وزش باد شدید در پایتخت خواهیم بود، گفت: پیش‌بینی می‌شود در اواخر وقت امروز آسمان تهران رگبار و رعد و برق داشته باشد.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318001110" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/18/13930318000650_PhotoB.jpg" alt="آیت‌الله محمد محمدی گیلانی" title="آیت‌الله محمد محمدی گیلانی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318001110" target="_blank"><div class="topnewsinfotitle">آیت‌الله محمدی گیلانی در بیمارستان بستری شد</div></a><p class="newslead" style="line-height: 160%;">آیت‌الله محمد محمدی گیلانی به دلیل مشکل ریوی در یکی از بیمارستان‌های تهران بستری شد.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000544" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/08/13930308000399_PhotoB.jpg" alt="ولی الله سیف رئیس کل بانک مرکزی" title="ولی الله سیف رئیس کل بانک مرکزی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000544" target="_blank"><div class="newsrotitr">رئیس کل بانک مرکزی:</div><div class="topnewsinfotitle">عرضه ایران‌چک‌های ۱۰۰ هزار تومانی آغاز شد/ انتقال قسط ششم پول‌‌های بلوکه‌شده ایران</div></a><p class="newslead" style="line-height: 160%;">رئیس کل بانک مرکزی با بیان اینکه قسط ششم پول‌های بلوکه‌شده ایران در آستانه انتقال است، از عرضه ایران‌چک‌های ۱۰۰ هزار تومانی حداکثر تا روز آینده خبر داد.</p></div></div><div class="topnewsrelateditm"><ul><li><a href="/newstext.php?nn=13930318000380" target="_blank">سیستم بانکی بیش از توان خود تسهیلات پرداخت کرده است/ ضرورت تحول در بازار سرمایه و اصلاح ساختار بیمه</a></li></ul></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318001160" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1391/02/22/13910222000100_PhotoB.jpg" alt="ایران و ترکیه" title="ایران و ترکیه"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318001160" target="_blank"><div class="newsrotitr">جزئیات دقیق سفر روحانی به استانبول</div><div class="topnewsinfotitle">گلف نیوز: ایران و ترکیه سطح مبادلات تجاری خود را به ۳۰ میلیارد دلار می‌رسانند</div></a><p class="newslead" style="line-height: 160%;">روزنامه «گلف نیوز» در تحلیلی درباره سفر رییس جمهور ایران به ترکیه نوشت: روحانی، در حالی فردا عازم ترکیه خواهد شد که امور اقتصادی در راس گفت‌وگوهای دوجانبه جای دارند.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318001134" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/08/18/13920818000377_PhotoB.jpg" alt="سوشا مکانی" title="سوشا مکانی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318001134" target="_blank"><div class="topnewsinfotitle">سوشا مکانی به تیم فوتبال پرسپولیس پیوست</div></a><p class="newslead" style="line-height: 160%;">دروازه‌بان ملی‌پوش کشورمان پس از جلسه با علی دایی و علیرضا رحیمی به تیم فوتبال پرسپولیس پیوست.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000413" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/13/13930313000378_PhotoB.jpg" alt="علی جنتی" title="علی جنتی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000413" target="_blank"><div class="newsrotitr">وزیر فرهنگ و ارشاد اسلامی در جمع اعضای اتاق بازرگانی:</div><div class="topnewsinfotitle">در گیر و دار استفاده از وایبر، واتس‌آپ و ماهواره‌ایم/پارازیت‌اندازی دیگر سودی ندارد/ وزرای اقتصاد و صنعت با معافیت مالیاتی ناشران مخالفند</div></a><p class="newslead" style="line-height: 160%;">وزیر ارشاد در جمع فعالان اقتصادی گفت: همیشه در کشور با هر پدیده نویی ابتدا مخالفت می‌شود و پس از آنکه آن پدیده بر ما غلبه کرد، آن را می‌پذیریم به همین دلیل در این حوزه همیشه ۲۰ سال از دنیا عقب‌تریم.</p></div></div><div class="topnewsrelateditm"><ul><li><a href="/newstext.php?nn=13930318000379" target="_blank">خواسته فعالان اقتصادی از وزیر ارشاد، افزایش سرعت اینترنت و کاهش زمان اخذ مجوز</a></li><li><a href="/newstext.php?nn=13930318000337" target="_blank">لغو اجرای «تانگوی تخم‌مرغ داغ» از طرف قوه قضائیه اتفاق افتاده است/کلیه نمایشگاه‌ها و جشنواره‌های ارشاد به بخش خصوصی واگذار می‌شود</a></li></ul></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318001075" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/07/21/13920721000124_PhotoB.jpg" alt="ایران و آمریکا" title="ایران و آمریکا"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318001075" target="_blank"><div class="newsrotitr">لس‌آنجلس تایمز گزارش داد</div><div class="topnewsinfotitle">مذاکرات مستقیم تهران-واشنگتن نشانه بروز مشکل در روند مذاکرات هسته‌ای است</div></a><p class="newslead" style="line-height: 160%;">یک روزنامه آمریکایی در گزارشی نوشت که مذاکرات مستقیم تهران-واشنگتن نشان می‌دهد که مذاکرات ایران و گروه ۱+۵ در وین به مشکل برخورد کرده است.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000597" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/07/18/13920718000121_PhotoB.jpg" alt="علوی وزیر اطلاعات" title="علوی وزیر اطلاعات"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000597" target="_blank"><div class="newsrotitr">در صحن علنی اعلام وصول شد</div><div class="topnewsinfotitle">سؤال ۴۲ نماینده مجلس از وزیر اطلاعات درباره تهدیدات امنیت ملی</div></a><p class="newslead" style="line-height: 160%;">سؤال ملی ۴۲ نماینده مجلس از وزیر اطلاعات درباره اقدامات این وزارتخانه در زمینه برخورد با مصادیق تهدیدات امنیت ملی اعلام وصول شد.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000866" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/09/05/13920905000371_PhotoB.jpg" alt="سید کمال‌الدین سجادی" title="سید کمال‌الدین سجادی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000866" target="_blank"><div class="newsrotitr">سجادی در گفت‌و‌گو با فارس:</div><div class="topnewsinfotitle">دیدار هیأت رئیسه جبهه پیروان با حزب موتلفه/ جلسه با جامعتین در وقت مقتضی انجام می‌شود</div></a><p class="newslead" style="line-height: 160%;">سخنگوی جبهه پیروان از دیدار هیأت رئیسه این جبهه با حزب موتلفه خبر داد و گفت: دیدار با جامعتین در وقت مقتضی انجام خواهد شد.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318001034" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/02/21/13930221000415_PhotoB.jpg" alt="هاشمی" title="هاشمی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318001034" target="_blank"><div class="newsrotitr">در دیدار اعضای ستاد برگزاری هفته جوان مطرح شد</div><div class="topnewsinfotitle">واکنش هاشمی رفسنجانی به سئوالی درباره حضور مجددش در نماز جمعه</div></a><p class="newslead" style="line-height: 160%;">رئیس مجمع تشخیص مصلحت نظام درباره حضور مجدد در خطبه‌های نماز جمعه گفت: نماز جمعه یک تریبون سیاسی، عبادی برای نظام است و خطبه‌های آن به جای دو رکعت نماز، ایراد می‌شود و نباید نگاه باندی داشت.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000836" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1391/11/29/13911129000314_PhotoB.jpg" alt="موسسه رسانه‌های تصویری" title="موسسه رسانه‌های تصویری"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000836" target="_blank"><div class="newsrotitr">فکر می‌کنم صحبت‌های وزیر ارشاد به درستی منتقل نشده است</div><div class="topnewsinfotitle">مسافر آستانه: برای انحلال موسسه رسانه‌های تصویری باید دلایل منطقی وجود داشته باشد</div></a><p class="newslead" style="line-height: 160%;">مدیرعامل موسسه رسانه‌های تصویری در خصوص صحبت‌های امروز وزیر ارشاد مبنی بر امکان انحلال این سازمان گفت: برای انحلال رسانه‌های تصویری باید دلایل منطقی وجود داشته باشد.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000978" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/01/16/13930116000238_PhotoB.jpg" alt="سید حسن نصرالله" title="سید حسن نصرالله"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000978" target="_blank"><div class="newsrotitr">در پی بستری شدن رئیس مجلس خبرگان در بیمارستان صورت گرفت</div><div class="topnewsinfotitle">دعای سیدحسن نصرالله و مردم لبنان برای شفای آیت‌الله مهدوی کنی</div></a><p class="newslead" style="line-height: 160%;">سیدحسن نصرالله گفت: در لبنان همه برای شفای عاجل آیت‌الله مهدوی کنی دعا می‌کنیم و مراسم زیارت عاشورا و دعای توسل برگزار کردیم.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000759" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1391/05/22/285292_PhotoB.jpg" alt="کیسه سیمان" title="کیسه سیمان"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000759" target="_blank"><div class="newsrotitr">دبیر انجمن سیمان در گفت‌وگو با فارس خبر داد</div><div class="topnewsinfotitle">ارائه گزارش قیمت تمام شده سیمان به وزارت صنعت/ پیشنهاد افزایش قیمت بیش از ۲۱ درصد</div></a><p class="newslead" style="line-height: 160%;">دبیر انجمن سیمان از ارائه گزارش جدیدی در مورد قیمت تمام شده تولید سیمان به وزارت صنعت خبر داد و گفت: قیمت جدید سیمان بر اساس این گزارش و پس از کارشناسی دقیق تعیین خواهد شد که پیشنهاد ما رشد قیمت بیش از ۲۱ درصد است.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000517" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/09/06/13920906000501_PhotoB.jpg" alt="توافق هسته‌ای" title="توافق هسته‌ای"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000517" target="_blank"><div class="topnewsinfotitle">خبرگزاری فرانسه: هدف رایزنی ایران با آمریکا تدارک توافق جامع برای لغو تمامی تحریم‌هاست</div></a><p class="newslead" style="line-height: 160%;">خبرگزاری فرانسه طی گزارشی با اشاره به نشست آتی ایران با آمریکا و روسیه اعلام کرد هدف از این نشست، تدارک و آماده‌سازی توافق جامعی است که ماهیت صلح‌آمیز برنامه هسته‌ای ایران را تضمین و تحریم‌های بین‌المللی را لغو می‌کند.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000546" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/11/09/13921109000559_PhotoB.jpg" alt="جهانگیری" title="جهانگیری"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000546" target="_blank"><div class="newsrotitr">معاون اول رئیس‌جمهور در گفت‌وگو با فارس:</div><div class="topnewsinfotitle">پرداخت یارانه به شیوه فعلی ادامه می‌یابد</div></a><p class="newslead" style="line-height: 160%;">معاون اول رئیس‌جمهور از پرداخت یارانه به شیوه فعلی و تداوم آن طی ماه‌های آینده به همه سرپرستان خبر داد.</p></div></div><div class="topnewsrelateditm"><ul><li><a href="/newstext.php?nn=13930318000576" target="_blank">بررسی وضعیت بورس در ستاد هماهنگی اقتصادی با حضور رئیس‌جمهور</a></li></ul></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000930" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1391/07/22/13910722000356_PhotoB.jpg" alt="کمیسیون حقوقی و قضایی مجلس" title="کمیسیون حقوقی و قضایی مجلس"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000930" target="_blank"><div class="topnewsinfotitle">اللهیار ملکشاهی رئیس کمیسیون قضایی مجلس ماند/ جلوس غضنفرآبادی بر کرسی طباطبایی</div></a><p class="newslead" style="line-height: 160%;">اللّهیار ملکشاهی به عنوان رئیس و موسی غضنفرآبادی و محمد رزم به عنوان نواب اول و دوم هیأت رئیسه کمیسیون قضایی مجلس انتخاب شدند.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000480" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/18/13930318000580_PhotoB.jpg" alt="السیسی" title="السیسی"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000480" target="_blank"><div class="topnewsinfotitle">السیسی رسما قدرت را از عدلی منصور تحویل گرفت +عکس و فیلم</div></a><p class="newslead" style="line-height: 160%;">مراسم تحلیف عبدالفتاح السیسی رئیس جمهور منتخب مصر در برابر شورای عمومی دادگاه قانون اساسی مصر برگزار شد و السیسی رسما سوگند یاد کرد.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div><div class="topnews"><div class="topnewspic"><a href="/newstext.php?nn=13930318000859" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/10/19/13921019000179_PhotoB.jpg" alt="ظریف" title="ظریف"></a></div><div class="topnewsinfo"><a href="/newstext.php?nn=13930318000859" target="_blank"><div class="newsrotitr">در دیدار رئیس مجلس سنگاپور</div><div class="topnewsinfotitle">ظریف: تداوم تحریم‌ها باعث تعمیق بدبینی و نگرش منفی مردم ایران به غرب می‌شود</div></a><p class="newslead" style="line-height: 160%;">وزیر امور خارجه کشورمان با اشاره به تاثیر بسیار سلبی برخی تحریم‌های ضدانسانی از جمله در حوزه‌های دارویی، پزشکی و علمی، گفت: تداوم این محدودیت‌ها تنها موجب تعمیق بدبینی و نگرش منفی مردم ایران نسبت به غرب می‌شود.</p></div></div><div class="topdownline2New">...............................................................................................................................................................................................................................................</div><div class="ctgtopnewsclear"></div></div>
+
+        <p class="linktoalltops"><a href="TopNews.php">تمام اخبار برگزيده روز</a></p>
+
+    </div>
+
+    <div class="leftcolumn">
+        <div class="leftmainnewspane">
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="200" height="80">
+	<param name="movie" value="banner/MainPage/Left/azima-1.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/azima-1.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="200" height="80"></object>
+</p>
+            <div class="fars24">
+                <a href="http://media.farsnews.com/Media-NR/Uploaded/Files/Documents/Fars24/lastedition.pdf">
+                    <img src="http://media.farsnews.com/Media-NR/Uploaded/Files/Documents/Fars24/fars24.jpg" alt="fars24"></a>
+            </div>
+
+
+            
+
+<p style="text-align: center; padding: 3px 0; margin: 0;">
+    
+
+
+<!--
+<p align="center">
+	<a target="_blank" href="http://www.farsnews.com/election">
+	<img border="0" src="Banner/MainPage/Left/election.jpg" width="196" height="174"></a>
+</p>
+ 
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="190" height="100">
+	<param name="movie" value="banner/MainPage/Left/moafi.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/moafi.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="190" height="100"></object>
+</p>
+
+
+-->
+
+
+
+</p><p align="center" style="margin-bottom : 10px;">
+	<a target="_blank" href="http://worldcup.farsnews.com/">
+	<img border="0" src="Banner/MainPage/Left/worldCup.jpg" width="200" height="123"></a>
+</p>
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="200" height="60">
+	<param name="movie" value="banner/MainPage/Left/rightel-16.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/rightel-16.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="200" height="60"></object>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p></p>
+
+
+            <p align="center" style="margin: 7px 0">
+                <a target="_blank" href="/GetPhoto.html">
+                    <img border="0" src="shares/img/banerfars.gif" alt="photo" width="200" height="60">
+                </a>
+            </p>
+            
+
+    <div class="mpviewpointTopBorder" style="margin-top : 10px">
+        <div class="mpviewpointTopBorderRight">&nbsp;</div>
+        <div class="mpviewpointTopBorderLeft">&nbsp;</div>
+    </div>
+
+<div class="mpviewpointleftcolumntopics">
+    <div class="mpviewpointlcttitle"><b><a href="newsv.php?srv=11"><span style="color : #000000">دیدگاه</span></a></b>&nbsp; </div>
+    <div class="mpviewpointlctguid">
+        <div id="prevviewedpoint" class="mpvpprevviewedpoint" onclick="changpic(0, 1);"><img src="shares/img/arrowRight.png" alt="قبلی"></div>
+        <div id="viewedpointDiv"> <span id="currentviewedpoint" style="color : #FF7F00;">1</span><span class="viewedpointColor"> از </span><span id="totalviewedpoint" class="viewedpointColor">6</span></div>
+        <div id="nextviewedpoint" class="mpvpnextviewedpoint" onclick="changpic(1, 1);"><img src="shares/img/arrowLeft.png" alt="بعدی"></div>
+    </div><div class="clearboth"></div>
+</div>
+<div class="mpviewpoint">
+<ul id="mpviewpoint">
+<li class="mpviewpointitem" id="mpviewpointitem0"><a href="/newstext.php?nn=13930313000133" target="_blank" title="نگاهی حقوقی به جایگاه برنامه موشکی بالستیک در مذاکرات هسته ای"></a><span style=" border: 1px solid #CEC8C8; padding : 3px; margin: 7px 3px; float: right; "><img style=" width: 54px; height: 66px; " src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/12/17/13921217000183_PhotoD.jpg"> </span> <p>دکتر نادر ساعد</p><div class="mpvpleft"><a href="/newstext.php?nn=13930313000133" target="_blank" title="دکتر نادر ساعد">نگاهی حقوقی به جایگاه برنامه موشکی بالستیک در مذاکرات هسته ای</a></div><div class="clearboth"></div></li><li class="mpviewpointitem" id="mpviewpointitem1"><a href="/newstext.php?nn=13930312001399" target="_blank" title="جنگ اراده‌ها در مذاکرات هسته‌ای"></a><span style=" border: 1px solid #CEC8C8; padding : 3px; margin: 7px 3px; float: right; "><img style=" width: 54px; height: 66px; " src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/06/04/13920604000518_PhotoD.jpg"> </span> <p>دکتر مصطفی ملکوتیان</p><div class="mpvpleft"><a href="/newstext.php?nn=13930312001399" target="_blank" title="دکتر مصطفی ملکوتیان">جنگ اراده‌ها در مذاکرات هسته‌ای</a></div><div class="clearboth"></div></li><li class="mpviewpointitem" id="mpviewpointitem2"><a href="/newstext.php?nn=13930311001162" target="_blank" title="میراث گفتمانی حضرت امام (ره) در سیاست خارجی ایران"></a><span style=" border: 1px solid #CEC8C8; padding : 3px; margin: 7px 3px; float: right; "><img style=" width: 54px; height: 66px; " src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/05/27/13920527000053_PhotoD.jpg"> </span> <p>دکتر رضا سیمبر</p><div class="mpvpleft"><a href="/newstext.php?nn=13930311001162" target="_blank" title="دکتر رضا سیمبر">میراث گفتمانی حضرت امام (ره) در سیاست خارجی ایران</a></div><div class="clearboth"></div></li><li class="mpviewpointitem" id="mpviewpointitem3"><a href="/newstext.php?nn=13930312001155" target="_blank" title="تلاش‌های مرتجعانه برای رواج بی حجابی"></a><span style=" border: 1px solid #CEC8C8; padding : 3px; margin: 7px 3px; float: right; "><img style=" width: 54px; height: 66px; " src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/12/11/13921211000214_PhotoD.jpg"> </span> <p>حجت الاسلام رضا غلامی</p><div class="mpvpleft"><a href="/newstext.php?nn=13930312001155" target="_blank" title="حجت الاسلام رضا غلامی">تلاش‌های مرتجعانه برای رواج بی حجابی</a></div><div class="clearboth"></div></li><li class="mpviewpointitem" id="mpviewpointitem4"><a href="/newstext.php?nn=13930311000018" target="_blank" title="نظام بازرگانی ما و سایه سنگین یک توهم"></a><span style=" border: 1px solid #CEC8C8; padding : 3px; margin: 7px 3px; float: right; "><img style=" width: 54px; height: 66px; " src="http://media.farsnews.com/media/Uploaded/Files/Images/1391/06/04/13910604000219_PhotoD.jpg"> </span> <p>سید‌یاسر جبرائیلی</p><div class="mpvpleft"><a href="/newstext.php?nn=13930311000018" target="_blank" title="سید‌یاسر جبرائیلی">نظام بازرگانی ما و سایه سنگین یک توهم</a></div><div class="clearboth"></div></li><li class="mpviewpointitem" id="mpviewpointitem5"><a href="/newstext.php?nn=13930307000004" target="_blank" title="انتخابات اروپا؛ دموکراسی علیه دموکراسی"></a><span style=" border: 1px solid #CEC8C8; padding : 3px; margin: 7px 3px; float: right; "><img style=" width: 54px; height: 66px; " src="http://media.farsnews.com/media/Uploaded/Files/Images/1392/07/03/13920703000647_PhotoD.jpg"> </span> <p>دکتر احمد نادری</p><div class="mpvpleft"><a href="/newstext.php?nn=13930307000004" target="_blank" title="دکتر احمد نادری">انتخابات اروپا؛ دموکراسی علیه دموکراسی</a></div><div class="clearboth"></div></li>
+</ul></div>
+            
+
+<div class="leftcolumntopicsTopBorder">
+    <div class="leftcolumntopicsTopBorderRight">&nbsp;</div>
+    <div class="leftcolumntopicsTopBorderLeft">&nbsp;</div>
+</div>
+
+
+<div class="leftcolumntopics">
+   <span style="color : #000;"> <b>برگزیده ها</b></span>&nbsp; 
+</div>
+<div class="lastnews">
+
+    <div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318001172" target="_blank" title="">عشق‌کودکانه به‌رهبرانقلاب ‌درقاب‌تصویر</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:09</div><div class="lastnewsiteminsulatorhr"></div></div>--><div style=" position : relative;" class="lastnewsitem2New"><img style="position : absolute; top : 0px; " src="../../shares/img/videoSpc.png">&nbsp;<a style=" margin-right : 14px; " href="/newstext.php?nn=13930318001142" target="_blank" title="">حادثه‌دراستقبال‌ازرئیس‌جمهوراوکراین</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">16:44</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318001144" target="_blank" title="به دعوت گروه دوستی پارلمانی ایران و الجزایر">سفر هیأت پارلمانی الجزایر به تهران</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">16:40</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318001110" target="_blank" title="">‌آیت‌الله‌ محمدی‌گیلانی‌ بستری شد</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">16:20</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318001095" target="_blank" title="طاهر شعبانی">کاریکاتور/ برزیل تسلیم شد</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">16:09</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000577" target="_blank" title="مسعود فراستی به فارس خبر داد">هیچکاک و جان فورد به روایت فراستی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:26</div><div class="lastnewsiteminsulatorhr"></div></div>--><div style=" position : relative;" class="lastnewsitem2New"><img style="position : absolute; top : 2px; " src="../../shares/img/pictureSpc.png">&nbsp;<a style=" margin-right : 14px; " href="/newstext.php?nn=13930318000647" target="_blank" title="مرتضی رفیع خواه/Morteza Rafikhah">برنجکاران گیلان</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:52</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000527" target="_blank" title="">زمان مصاحبه 109 رشته دکتری</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:16</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000786" target="_blank" title="در جلسه امروز دادگاه مطبوعات">مجرمیت سایت «نکات پرس»</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">13:36</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000339" target="_blank" title="عضو سابق کابینه انگلیس:">اعتراف عضو سابق کابینه انگلیس</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:04</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000511" target="_blank" title="این خبر تا ساعت ۱۶ به روز می‌شود">ترویج بهائیت در پارک‌های پایتخت</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:58</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000679" target="_blank" title="ناصر فیض:">سوژه طنز در دولت قبل بیشتر بود</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">13:10</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000753" target="_blank" title="گروه کلیات و ادبیات برگزیده ندارد/ رواج ترجمه در حوزه فلسفه و کتاب کودک">گستاخی فرهنگی در حوزه کتاب</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">13:32</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000773" target="_blank" title="با حکم رئیس قوه قضاییه">دادستان کل عازم مناطق سیل زده</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">13:41</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000224" target="_blank" title="">تصاویر ناب از آیت‌الله مهدوی کنی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">10:24</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000272" target="_blank" title="دنیای موبایل و کامپیوتر">ساعت هوشمند می‌آید</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:20</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000418" target="_blank" title="مدیرعامل ایران‌ایر در گفت‌وگو با رویترز:">ایران به 100 هواپیمای مسافر‌ی نیاز دارد</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:30</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000429" target="_blank" title="تازه‌های دنیای فناوری">ابزاری برای استفاده ناشنوایان از تبلت</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:56</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000229" target="_blank" title="تازه‌های دنیای فناوری">عینک گوگل به کمک تیرانداز‌ها می‌آید</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">10:18</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000337" target="_blank" title="وزیر ارشاد در جمع خبرنگاران:">چگونگی لغو «تانگوی تخم‌مرغ داغ»</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:02</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000317" target="_blank" title="">«روی موج ۱۴»</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">13:04</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000379" target="_blank" title="صبح امروز عنوان شد">خواسته فعالان اقتصادی از وزیر ارشاد</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:18</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000199" target="_blank" title="">ورزش کردن اوباما+فیلم</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">10:58</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000238" target="_blank" title="درس‌های قرآن «معلم دوست‌داشتنی»">ایمان اضطراری</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">10:53</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000416" target="_blank" title="همزمان با میلاد حضرت علی اکبر(ع) در فرهنگسرای بهمن برگزار خواهد شد">جشن تولدی برای یک شهید مفقودالاثر</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:44</div><div class="lastnewsiteminsulatorhr"></div></div>--><div style=" position : relative;" class="lastnewsitem2New"><img style="position : absolute; top : 0px; " src="../../shares/img/videoSpc.png">&nbsp;<a style=" margin-right : 14px; " href="/newstext.php?nn=13930318000506" target="_blank" title="">فیلم/ شادی جوانان فلسطینی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:49</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000597" target="_blank" title="در صحن علنی اعلام وصول شد">سؤال ۴۲ نماینده از وزیر اطلاعات</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:47</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000192" target="_blank" title="گزارش فارس از بازار IT">جدیدترین قیمت تبلت+جدول</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">10:51</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000204" target="_blank" title="">چرا مردم کالای خارجی می‌خرند</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">10:15</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001303" target="_blank" title="">تلاوتی از «منشاوی»+ دانلود</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:42</div><div class="lastnewsiteminsulatorhr"></div></div>--><div style=" position : relative;" class="lastnewsitem2New"><img style="position : absolute; top : 0px; " src="../../shares/img/videoSpc.png">&nbsp;<a style=" margin-right : 14px; " href="/newstext.php?nn=13930318000539" target="_blank" title="">سرگرمی امروزی جوانان عرب</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:46</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000546" target="_blank" title="معاون اول رئیس‌جمهور در گفت‌وگو با فارس:">سرنوشت پرداخت یارانه</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:16</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000360" target="_blank" title="">عیادت وزرای کشور و امور خارجه از آیت‌الله مهدوی کنی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:02</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000047" target="_blank" title="فارس گزارش می‌دهد">سلامت 700 خانوار سیاهویی در خطر</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:28</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000069" target="_blank" title="معاون پشتیبانی شرکت بهره برداری مترو تهران و حومه در گفت‌وگو با فارس:">دریافت کارت‌های منزلت مترو</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">08:31</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000483" target="_blank" title="تحقیقات نشان داد">افزایش توانایی مغز با خواب کافی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">11:56</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000398" target="_blank" title="تازه‌های وب و اینترنت">اینترنت فوق سریع گوگل</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">12:20</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000063" target="_blank" title="فارس گزارش می‌دهد‌">آتش زنجره خرما بر جان نخلستان‌ها</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:15</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317000836" target="_blank" title="وزیر آموزش و پرورش در گفت‌وگو با فارس خبر داد">شرایط‌وضوابط‌استخدام‌در‌آموزش‌وپرورش</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:07</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001490" target="_blank" title="33 سال پیش در چنین روزی">وقتی کاسه صبر امام لبریز شد</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:05</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000133" target="_blank" title="4 روز تا جام‌جهانی 2014 برزیل">حالت تهوع مسی در جریان بازی/فیلم</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:15</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000152" target="_blank" title="">درمان ارزان و بی‌درد مشکلات دندان+تصاویر</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:51</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000022" target="_blank" title="مهم‌ترین اخبار رسانه‌های مجازی کشور">مهم‌ترین اخبار رسانه‌های مجازی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">01:14</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000046" target="_blank" title="مدیرکل ستاد حوادث غیر مترقبه استان لرستان:">زاغه لرستان لرزید</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">08:04</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000082" target="_blank" title="شرکت ارتباطات زیرساخت اعلام کرد">سرویس‌دهی بی‌وقفه سرورهای DNS ایران</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">09:50</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930311000596" target="_blank" title="هادی محمدی فر">بحران سوریه آزمونی برای جهان اسلام</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">07:10</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001442" target="_blank" title="در تلاش برای مهار بیداری اسلامی در آفریقا">تهاجم فرهنگی آمریکا به نیجریه</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:14</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001261" target="_blank" title="اختصاصی فارس/">پرفروش‌ترین آلبوم‌های موسیقی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:01</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001062" target="_blank" title="">ترتیل صفحه 30 قرآن+دانلود</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">08:00</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317000147" target="_blank" title="آسیای مرکزی در 24 ساعت گذشته">آسیای مرکزی در 24 ساعت گذشته</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">01:08</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001115" target="_blank" title="">جایگاه «تفکر» در مردم‌سالاری دینی </a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">06:19</div><div class="lastnewsiteminsulatorhr"></div></div>--><div style=" position : relative;" class="lastnewsitem2New"><img style="position : absolute; top : 2px; " src="../../shares/img/pictureSpc.png">&nbsp;<a style=" margin-right : 14px; " href="/newstext.php?nn=13930317001387" target="_blank" title="هادی هیربدوش / Hadi Hirbodvash">اولین تمرین سرخپوشان پایتخت</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">21:46</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001326" target="_blank" title="سوریه در 24 ساعت گذشته">سوریه در 24 ساعت گذشته</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:01</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000021" target="_blank" title="">تحویل ‌اولین اف16 به‌ عراق+عکس</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">01:17</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13920929000723" target="_blank" title="">بصیرت اخلاقی در عصر ظهور</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">03:00</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930318000016" target="_blank" title="">تصاویرصفحه‌اول‌روزنامه‌های امروز</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">01:02</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001152" target="_blank" title="">تحلیل نتایج انتخابات هند برای ایران </a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">02:15</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930313000231" target="_blank" title="">مسابقه وبلاگ‌نویسی با موضوع سوادآموزی</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:14</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930317001454" target="_blank" title="">پربازدیدترین‌اخبارفارس‌‌در۱۷خرداد</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:15</div><div class="lastnewsiteminsulatorhr"></div></div>--><div class="lastnewsitem2New"><a href="/newstext.php?nn=13930314000028" target="_blank" title="">روی دیوار یک ساختمان قدیمی+تصاویر</a></div><!--<div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">00:06</div><div class="lastnewsiteminsulatorhr"></div></div>-->
+    <div style="text-align: center;"><a href="chosen.php">ادامه اخبار برگزیده</a></div>
+</div>
+
+            
+
+<div class="leftcolumnChsnPicTopBorder" style="margin-top : 10px;">
+    <div class="leftcolumnChsnPicTopBorderRight">&nbsp;</div>
+    <div class="leftcolumnChsnPicTopBorderLeft">&nbsp;</div>
+</div>
+
+<div class="leftcolumntopics"><span style=" color : #000000">  <b>تصوير برگزيده</b></span></div>
+			
+			<div class="selectedimage">
+                <div id="selectedimage" style="position: relative; max-height: 150px; overflow-x: hidden; overflow-y: hidden; width: 204px; height: 100px; ">
+				    <div style="position: absolute; top: 0px; left: 0px; opacity: 1; display: block; z-index: 4; "><a href="imgrep.php?nn=13930318000647" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/18/13930318124551162_PhotoM.jpg" alt="نشاء برنج" title="نشاء برنج"></a></div><div style="top: 0px; left: 0px; z-index: 2; position: absolute; opacity: 0; display: none; "><a href="imgrep.php?nn=13930318000127" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/18/13930318090218921_PhotoM.jpg" alt="چهره شهدا در بزرگراه قائم(عج)" title="چهره شهدا در بزرگراه قائم(عج)"></a></div><div style="top: 0px; left: 0px; z-index: 1; position: absolute; opacity: 0; display: none; "><a href="imgrep.php?nn=13930315000048" target="_blank"><img src="http://media.farsnews.com/media/Uploaded/Files/Images/1393/03/15/13930315100814593_PhotoM.jpg" alt="اعلام نتایج انتخابات ریاست جمهوری و کارناوال‌های شادی مردم سوریه -1" title="اعلام نتایج انتخابات ریاست جمهوری و کارناوال‌های شادی مردم سوریه -1"></a></div>
+                     </div>
+			</div>
+
+            
+
+
+<div class="leftcolumnLastnewsTopBorder" style="margin-top: 10px;">
+    <div class="leftcolumnLastnewsTopBorderRight">&nbsp;</div>
+    <div class="leftcolumnLastnewsTopBorderLeft">&nbsp;</div>
+</div>
+
+
+<div class="leftcolumntopics"><span style="color: #000000;"><b>آخرين اخبار</b> </span></div>
+<div class="lastnews">
+    <div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001231" target="_blank" title="سجاد جعفری">نتیجه انتخابات سوریه</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:35</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001206" target="_blank" title="فرزند آیت‌الله محمدی گیلانی در گفت‌وگو با فارس:">آیت‌الله گیلانی از 30 اردیبهشت ماه به دلیل مشکل ریوی در بیمارستان بستری است</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:35</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001196" target="_blank" title="شهردار شیراز:">شهرداری نیاز به افراد نخبه و کارآفرین دارد</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:35</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001097" target="_blank" title="بازیگر فیلم «ترانه شرقی»:">وجود عشق، مشکلات اقتصادی را ناچیز می‌کند</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:35</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001213" target="_blank" title="از استقلال پیشنهاد داشتم اما شرایط فنی‌ام در پرسپولیس مهیاتر بود">مکانی: دوست داشتم روزی زیر نظر دایی کار کنم/ او اسطوره فوتبال ایران است</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:34</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001194" target="_blank" title="کارگردان ترانه شرقی:">بافت تاریخی همدان کمرنگ شده است</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:33</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001205" target="_blank" title="یک تئاتری دیگر در صف مدیران سینمایی">محمد احسانی برای حبشی،فرجی و موسوی حکم صادر کرد</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:31</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001179" target="_blank" title="بازیگر فیلم «ترانه شرقی»:">صنایع دستی ایران به خوبی به جهان معرفی نشده است</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:31</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001208" target="_blank" title="">رونمایی از پوستر «دربست آزادی» در برج آزادی</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:30</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318000261" target="_blank" title="یک عضو کمیسیون انرژی مجلس در گفت‌وگو با فارس:">کاش وزارت نفت از وکلایی باسابقه درخشان استفاده می‌کرد/ از طرح شکایت بنزین استقبال می‌کنیم</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:30</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001209" target="_blank" title="محمد نبی حبیبی:">عصر روح‌الله عصر بالندگی فرهنگ مهدویت است</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:26</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001202" target="_blank" title="پس از عقد قرارداد دوساله با قرمزپوشان">سوشا مکانی با نشان دادن عدد ۶ باشگاه را ترک کرد</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:26</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001190" target="_blank" title="امروز صورت گرفت">دستور دادستان برای رسیدگی به حادثه ریزش چاه در بازار قزوین</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:26</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001106" target="_blank" title="رئیس پلیس راه قم:">اتوبوس اسکانیا در اتوبان قم ـ تهران آتش گرفت</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:26</div><div class="lastnewsiteminsulatorhr"></div></div><div style=" position : relative;" class="lastnewsitem"><a href="/newstext.php?nn=13930318001204" target="_blank" title="">تولید ۲۰ فیلم‌تلویزیونی جدید در شبکه دو/ رهبر قنبری و کارگردانی «رسم رفاقت»</a></div><div class="lastnewsiteminsulator"><div class="lastnewsiteminsulatortm">17:24</div><div class="lastnewsiteminsulatorhr"></div></div>
+</div>
+
+        </div>
+    </div>
+
+    <div class="adscolumn">
+        <div class="advertisement">
+            
+
+<p style="text-align: center; padding: 3px 0; margin: 0;">
+    <!--
+<p align="center">
+	<a target="_blank" href="http://basij.ir/main">
+	<img border="0" src="Banner/MainPage/Left/basij.gif" width="140" height="180"></a>
+</p>
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/padide.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/padide.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="140" height="180"></object>
+</p>
+
+-->
+
+</p><p align="center">
+	<a target="_blank" href="http://www.farsnews.com/comments/ads.php">
+	<img border="0" src="Banner/MainPage/Left/agahihaye-jadid.gif" width="140" height="20"></a>
+</p>
+
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj12" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/hamraheaval-9.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/hamraheaval-9.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj12" width="140" height="180"></object>
+</p>
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj12" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/ansar-2-.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/ansar-2-.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj12" width="140" height="180"></object>
+</p>
+
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="140">
+	<param name="movie" value="banner/MainPage/Left/samen-18-2-93.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/samen-18-2-93.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="140" height="140"></object>
+</p>
+
+
+<p align="center">
+	<a target="_blank" href="http://www.0211525.ir">
+	<img border="0" src="Banner/MainPage/Left/negin.gif" width="140" height="180"></a>
+</p>
+
+
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj12" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/tejarat-8.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/tejarat-8.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj12" width="140" height="180"></object>
+</p>
+
+
+
+<p align="center">
+	<a target="_blank" href="http://www.iranfinex.com">
+	<img border="0" src="Banner/MainPage/Left/eghtesadi.gif" width="140" height="140"></a>
+</p>
+
+
+
+<p align="center">
+	<a target="_blank" href="http://www.iranrahjoo.com">
+	<img border="0" src="Banner/MainPage/Left/sony-3.gif" width="140" height="180"></a>
+</p>
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj12" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/padvish.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/padvish.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj12" width="140" height="180"></object>
+</p>
+
+
+<p align="center">
+	<a target="_blank" href="http://bmi.ir/Fa/ShowNews.aspx?nwsId=12712">
+	<img border="0" src="Banner/MainPage/Left/bankmelli-8.gif" width="140" height="180"></a>
+</p>
+
+
+
+
+<!--
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj12" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/sadra.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/sadra.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj12" width="140" height="180"></object>
+</p>
+-->
+
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="150">
+	<param name="movie" value="banner/MainPage/Left/gardeshgari-1.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/gardeshgari-1.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="140" height="150"></object>
+</p>
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj12" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/saderat-1.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/saderat-1.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj12" width="140" height="180"></object>
+</p>
+
+
+
+
+<p align="center">
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="obj1" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0" border="0" width="140" height="180">
+	<param name="movie" value="banner/MainPage/Left/madaran.swf">
+	<param name="quality" value="High">
+	<embed src="banner/MainPage/Left/madaran.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj1" width="140" height="180"></object>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p></p>
+
+        </div>
+    </div>
+
+
+        </div>
+
+        <div class="footerpane">
+            <div class="copyright">
+                ©2014
+                Fars News Agency. All rights reserved
+            </div>
+        </div>
+    </center>
+    <script type="text/javascript">
+        getMyCookie();
+        <!--
+    var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "http://feedback.farsnews.com/stcs.js.aspx?h=aHR0cDovL3R1cmtleS1wZXJzaWFuXyZfXyZfdHVya2V5LXBlcnNpYW5fJl9GTi1UUi1XZWItRlItMl8mXzIxMi42OC40NC4xNg%3d%3d" + "|" + screen.width + "X" + screen.height;
+        document.getElementsByTagName("head")[0].appendChild(s);
+        //-->
+    </script>
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-512452-1']);
+        _gaq.push(['_setDomainName', 'farsnews.com']);
+        //_gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() != 0) {
+                    $(".backtotop").fadeIn();
+                }
+                else {
+                    $(".backtotop").fadeOut();
+                }
+            });
+            $('.backtotop').click(function () {
+                $('body,html').animate({ scrollTop: 0 }, 800);
+            });
+        });
+    </script>
+
+
+
+</body></html>
